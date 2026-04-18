@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LEDGR — Connect Bank</title>
+<style>
+body{background:#08080e;color:#eeeef8;font-family:'IBM Plex Mono',monospace;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;}
+.box{background:#121220;border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:32px;width:320px;text-align:center;}
+h2{font-family:sans-serif;font-weight:800;font-size:22px;margin-bottom:4px;color:#c8f060;}
+.sub{font-size:10px;color:#5e5e7a;margin-bottom:24px;letter-spacing:1px;}
+input{width:100%;padding:10px;background:#191926;border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#eeeef8;font-family:monospace;font-size:12px;margin-bottom:12px;box-sizing:border-box;}
+button{width:100%;padding:11px;background:#c8f060;color:#08080e;border:none;border-radius:6px;font-weight:700;font-size:12px;cursor:pointer;margin-bottom:8px;}
+button:hover{opacity:.88;}
+.status{font-size:10px;color:#5e5e7a;margin-top:12px;line-height:1.6;}
+.ok{color:#38d99a;} .err{color:#f05a5a;} .warn{color:#f0a020;}
+#accounts{margin-top:16px;text-align:left;}
+.acct{background:#191926;border-radius:6px;padding:8px 10px;margin-bottom:6px;font-size:10px;}
+.acct-name{font-weight:600;color:#c8f060;}
+.acct-bal{float:right;color:#5dd8f5;}
+</style>
+</head>
+<body>
+<div class="box">
+  <h2>LEDGR</h2>
+  <div class="sub">CONNECT YOUR BANK</div>
+
+  <input id="nickname" placeholder="Nickname (e.g. bofa, wf, td, discover)" />
+  <button onclick="startLink()">🔗 Connect Bank Account</button>
+  <button onclick="triggerSync()" style="background:#191926;color:#c8f060;border:1px solid rgba(200,240,96,0.3)">↻ Sync Now</button>
+
+  <div class="status" id="status">Enter a nickname then tap Connect.</div>
+  <div id="accounts"></div>
+</div>
+
+<script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
+<script>
+const API = window.location.origin;
+
+async function startLink() {
+  const nickname = document.getElementById('nickname').value.trim().toLowerCase();
+  if (!nickname) { setStatus('Enter a nickname first.', 'err'); return; }
+  setStatus('Getting link token...', 'warn');
+  try {
+    const r = await fetch(API + '/api/create-link-token', { method: 'POST', headers: {'Content-Type':'application/json'} });
+    const { link_token, error } = await r.json();
+    if (error) throw new Error(error);
+    const handler = Plaid.create({
+      token: link_token,
+      onSuccess: async (public_token, metadata) => {
+        setStatus('Exchanging token for ' + nickname + '...', 'warn');
+        const resp = await fetch(API + '/api/exchange-token', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ public_token, nickname })
+        });
+        const data = await resp.json();
+        if (data.success) {
+          setStatus('✓ Connected! Now copy this access token and add it to Replit Secrets:\n\nKey: PLAID_TOKEN_' + nickname.toUpperCase() + '\nValue: ' + data.access_token, 'ok');
+        } else {
+          setStatus('Error: ' + data.error, 'err');
+        }
+      },
+      onExit: (err) => {
+        if (err) setStatus('Exited: ' + err.display_message, 'err');
+        else setStatus('Cancelled.', 'warn');
+      },
+    });
+    handler.open();
+  } catch (err) {
+    setStatus('Error: ' + err.message, 'err');
+  }
+}
+
+async function triggerSync() {
+  setStatus('Syncing all accounts...', 'warn');
+  try {
+    const r = await fetch(API + '/api/sync', { method: 'POST' });
+    const d = await r.json();
+    if (d.success) {
+      setStatus('✓ Synced! ' + d.accounts_synced + ' accounts, ' + d.transactions_synced + ' transactions.\ndata.json pushed to GitHub.', 'ok');
+      loadAccounts();
+    } else {
+      setStatus('Error: ' + d.error, 'err');
+    }
+  } catch (err) {
+    setStatus('Error: ' + err.message, 'err');
+  }
+}
+
+async function loadAccounts() {
+  try {
+    const r = await fetch(API + '/api/accounts');
+    const accounts = await r.json();
+    if (!accounts.length) return;
+    let html = '';
+    accounts.forEach(a => {
+      html += '<div class="acct"><span class="acct-name">' + a.nickname.toUpperCase() + ' · ' + a.name + ' ••' + a.mask + '</span>';
+      html += '<span class="acct-bal">$' + (a.balance || 0).toLocaleString('en-US', {minimumFractionDigits:2}) + '</span></div>';
+    });
+    document.getElementById('accounts').innerHTML = html;
+  } catch {}
+}
+
+function setStatus(msg, cls) {
+  const el = document.getElementById('status');
+  el.textContent = msg;
+  el.className = 'status ' + (cls || '');
+}
+
+loadAccounts();
+</script>
+</body>
+</html>
