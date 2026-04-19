@@ -287,10 +287,25 @@ function buildStructuredData(accounts, transactions) {
   });
 
   // Find specific accounts
-  const bofa   = accounts.find(a => (a.official_name||a.name||'').toLowerCase().includes('bank of america') || a._nickname === 'bofa');
-  const wf     = accounts.find(a => (a.official_name||a.name||'').toLowerCase().includes('wells fargo') || a._nickname === 'wf');
-  const td     = accounts.find(a => (a.official_name||a.name||'').toLowerCase().includes('td') || a._nickname === 'td');
-  const disc   = accounts.find(a => (a.official_name||a.name||'').toLowerCase().includes('discover') || a._nickname === 'discover');
+  // For each bank, prefer checking/savings over credit card accounts
+  const findChecking = (nick) => {
+    const bankAccts = accounts.filter(a => a._nickname === nick);
+    return bankAccts.find(a => a.subtype === 'checking') ||
+           bankAccts.find(a => a.subtype === 'savings') ||
+           bankAccts[0] || {};
+  };
+  const findCredit = (nick) => {
+    const bankAccts = accounts.filter(a => a._nickname === nick);
+    return bankAccts.find(a => a.subtype === 'credit card') ||
+           bankAccts.find(a => a.type === 'credit') ||
+           bankAccts[0] || {};
+  };
+
+  const bofa  = findChecking('mybofa') || findChecking('bofa');
+  const wf    = findCredit('wf');
+  const td    = findChecking('td');
+  const disc  = findCredit('mydisc') || findCredit('discover');
+  const robin = accounts.find(a => ['robin','robinhood'].includes(a._nickname)) || {};
 
   // Monthly spending from transactions
   const monthlySpending = {};
@@ -348,7 +363,8 @@ function buildStructuredData(accounts, transactions) {
     if (!monthlyIncome[period]) monthlyIncome[period] = { label: month, bofa: 0, td: 0, total: 0 };
     const absAmt = Math.abs(t.amount);
     if (t._nickname === 'td') monthlyIncome[period].td += absAmt;
-    else monthlyIncome[period].bofa += absAmt;
+      else if (['mybofa','bofa'].includes(t._nickname)) monthlyIncome[period].bofa += absAmt;
+      else monthlyIncome[period].bofa += absAmt;
     monthlyIncome[period].total += absAmt;
   });
 
@@ -396,11 +412,23 @@ function buildStructuredData(accounts, transactions) {
       india_total: 1083.67, // static until ICICI connected
     },
     accounts: {
-      bofa:    { balance: bofa?.balances?.current || 0, is_checking: true, period_label: 'Live', payroll: 0, outflows: 0 },
-      wf:      { balance: wf?.balances?.current || 0, is_credit: true, period_label: 'Live' },
-      td:      { balance: td?.balances?.current || 0, is_checking: true, period_label: 'Live', payroll: 0 },
-      discover:{ balance: disc?.balances?.current || 0, is_credit: true, period_label: 'Live' },
-      icici_savings: { balance_inr: 0, balance_usd: 0 }, // PDF still needed
+      bofa:    { 
+        balance: accounts.filter(a => ['mybofa','bofa'].includes(a._nickname) && ['checking','savings'].includes(a.subtype)).reduce((s,a) => s+(a.balances?.current||0), 0),
+        is_checking: true, period_label: 'Live', payroll: 0, outflows: 0 
+      },
+      wf:      { 
+        balance: accounts.filter(a => a._nickname === 'wf' && a.type === 'credit').reduce((s,a) => s+(a.balances?.current||0), 0),
+        is_credit: true, period_label: 'Live' 
+      },
+      td:      { 
+        balance: td?.balances?.current || 0,
+        is_checking: true, period_label: 'Live', payroll: 0 
+      },
+      discover:{ 
+        balance: disc?.balances?.current || 0,
+        is_credit: true, period_label: 'Live' 
+      },
+      icici_savings: { balance_inr: 0, balance_usd: 0 },
       icici_loan:    { casagrand_emi_inr: 0, casagrand_emi_usd: 0 },
     },
     india: { hdfc_usd: 283.43, casagrand_usd: 755.0, pnb_usd: 35.66, yes_bank_usd: 9.58, total_usd: 1083.67, by_month: [] },

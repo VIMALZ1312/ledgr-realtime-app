@@ -129,8 +129,12 @@ exports.handler = async (event) => {
       xoom: 0, investments: 0,
     }));
 
-    const find = (nick) => allAccounts.find(a => a._nickname === nick) || {};
-    const bofa = find('bofa'), wf = find('wf'), td = find('td'), disc = find('discover');
+    const findAcct = (nicks) => allAccounts.find(a => nicks.includes(a._nickname)) || {};
+    const bofa = findAcct(['bofa','mybofa']);
+    const wf   = findAcct(['wf']);
+    const td   = findAcct(['td']);
+    const disc = findAcct(['discover','mydisc']);
+    const robin= findAcct(['robin','robinhood']);
 
     const travel = [];
     const HOME = ['NJ','NY','CT','PA'];
