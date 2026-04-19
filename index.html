@@ -323,9 +323,11 @@ function filterTxns(){
   set('txn-list',html);
 }
 
+
 // ── RECURRING ─────────────────────────────────────────────────
 function rRecurring(){
   var ob=D.fixed_obligations||{};
+  var dr=D.detected_recurring||[];
   var items=[{key:'mortgage',name:'Mr. Cooper Mortgage',e:'🏠'},{key:'car_loan',name:'KMF / Kia Car Loan',e:'🚗'},{key:'verizon',name:'Verizon Phone',e:'📱'},{key:'pseg',name:'PSEG Electric',e:'⚡'},{key:'hoa',name:'Renaissance HOA',e:'🏘️'},{key:'cable',name:'Optimum Cable',e:'📺'}];
   var total=items.reduce(function(s,i){return s+(ob[i.key]||0);},0);
   var html='<div class="panel"><div class="ph2"><div class="ptitle">🔁 Fixed Bills</div><div class="pact">'+fmt2(total)+'/mo</div></div>';
@@ -335,30 +337,67 @@ function rRecurring(){
   html+='<div class="acct-row"><span style="font-size:10px;font-weight:600">Monthly Total</span><span class="acct-amt" style="color:var(--pink)"><span class="sym">$</span>'+Number(total).toFixed(2)+'</span></div>';
   html+='<div class="acct-row"><span style="font-size:10px;color:var(--muted)">Annual</span><span class="acct-amt" style="color:var(--muted)"><span class="sym">$</span>'+Number(total*12).toLocaleString()+'</span></div>';
   html+='</div>';
+  if(dr.length){
+    html+='<div class="panel"><div class="ph2"><div class="ptitle">🔍 Detected Recurring</div><div class="pact">from Plaid · tap to expand</div></div>';
+    var cats={};
+    dr.forEach(function(r){var c=r.category||'Other';if(!cats[c])cats[c]=[];cats[c].push(r);});
+    Object.keys(cats).sort().forEach(function(cat){
+      var col=CAT_COLORS[cat]||'#5e5e7a';
+      html+='<div style="font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--muted2);padding:6px 0 3px;border-top:1px solid var(--border2)">'+cat+'</div>';
+      cats[cat].forEach(function(r){
+        var txns=[];
+        Object.values(D.monthly_spending||{}).forEach(function(v){(v.transactions||[]).forEach(function(t){if(t.desc===r.desc)txns.push(t);});});
+        txns.sort(function(a,b){return b.amount-a.amount;});
+        var rid='rec_'+Math.random().toString(36).substr(2,8);
+        html+='<div class="acct-row" style="cursor:pointer" onclick="toggleSection(\''+rid+'\')">';
+        html+='<div><div style="font-size:10px;font-weight:500">'+r.desc+'</div>';
+        html+='<div style="font-size:8px;color:var(--muted)">'+r.months+'× months · avg '+fmt2(r.avg_amount)+'</div></div>';
+        html+='<div style="display:flex;align-items:center;gap:8px"><div class="acct-amt" style="color:'+col+'"><span class="sym">$</span>'+Number(r.last_amount).toFixed(2)+'</div><span style="font-size:10px;color:var(--muted)">›</span></div>';
+        html+='</div>';
+        html+='<div id="'+rid+'" style="display:none;padding:4px 0 8px">';
+        txns.forEach(function(t){html+='<div class="txn-item"><span class="txn-date">'+t.date+'</span><span class="txn-desc">'+t.desc+'</span><span class="txn-amt" style="color:'+col+'">'+fmt2(t.amount)+'</span></div>';});
+        html+='</div>';
+      });
+    });
+    html+='</div>';
+  }
   set('mc',html);
 }
+
+function toggleSection(id){var el=document.getElementById(id);if(el)el.style.display=el.style.display==='none'?'block':'none';}
 
 // ── ANALYTICS ─────────────────────────────────────────────────
 function rAnalytics(){
   var mh=D.monthly_history||[];
-  var maxV=mh.reduce(function(m,r){return Math.max(m,r.income,r.outflows);},1);
-  var html='<div class="panel"><div class="ph2"><div class="ptitle">📊 Monthly Cash Flow</div></div>';
-  mh.slice(-6).reverse().forEach(function(m){
+  var ms=D.monthly_spending||{};
+  var enriched=mh.map(function(m){return {period_label:m.period_label,income:m.income,outflows:m.outflows||(ms[m.period]||{}).total||0,period:m.period};});
+  var maxV=enriched.reduce(function(mx,r){return Math.max(mx,r.income,r.outflows);},1);
+  var html='<div class="panel"><div class="ph2"><div class="ptitle">📊 Monthly Cash Flow</div><div class="pact">tap outflow → transactions</div></div>';
+  enriched.slice(-6).reverse().forEach(function(m){
     var ip=Math.round(m.income/maxV*100),op=Math.round(m.outflows/maxV*100);
+    var spendTxns=ms[m.period]?ms[m.period].transactions:[];
     html+='<div style="margin-bottom:12px">';
-    html+='<div style="display:flex;justify-content:space-between;font-size:9px;color:var(--muted);margin-bottom:3px"><span style="font-weight:500">'+m.period_label+'</span><span style="display:flex;gap:10px"><span style="color:var(--accent)">In '+fmt(m.income)+'</span><span style="color:var(--pink)">Out '+fmt(m.outflows)+'</span></span></div>';
+    html+='<div style="display:flex;justify-content:space-between;font-size:9px;color:var(--muted);margin-bottom:3px"><span style="font-weight:500">'+m.period_label+'</span><span style="display:flex;gap:10px"><span style="color:var(--accent)">In '+fmt(m.income)+'</span><span style="color:var(--pink);cursor:pointer" onclick="showTxns(\''+m.period_label+'\','+JSON.stringify(spendTxns)+',\'#f05a9e\')">Out '+fmt(m.outflows)+' ›</span></span></div>';
     html+='<div style="height:7px;background:var(--s2);border-radius:4px;overflow:hidden;margin-bottom:3px"><div style="height:100%;width:'+ip+'%;background:var(--accent);border-radius:4px"></div></div>';
-    html+='<div style="height:7px;background:var(--s2);border-radius:4px;overflow:hidden"><div style="height:100%;width:'+op+'%;background:var(--pink);border-radius:4px"></div></div>';
+    html+='<div style="height:7px;background:var(--s2);border-radius:4px;overflow:hidden;cursor:pointer" onclick="showTxns(\''+m.period_label+'\','+JSON.stringify(spendTxns)+',\'#f05a9e\')"><div style="height:100%;width:'+op+'%;background:var(--pink);border-radius:4px"></div></div>';
     html+='</div>';
   });
   html+='</div>';
-  // Spending by month
-  var ms=D.monthly_spending||{};
   var sp=Object.keys(ms).sort().filter(function(p){return ms[p].total>0;});
   if(sp.length){
-    html+='<div class="panel"><div class="ph2"><div class="ptitle">💳 Card Spending</div></div>';
+    html+='<div class="panel"><div class="ph2"><div class="ptitle">💳 Spending by Month</div><div class="pact">tap to expand</div></div>';
     sp.reverse().forEach(function(p){
-      html+='<div class="acct-row"><span style="font-size:10px">'+ms[p].label+'</span><span class="acct-amt" style="color:var(--blue)"><span class="sym">$</span>'+Number(ms[p].total).toLocaleString('en-US',{maximumFractionDigits:0})+'</span></div>';
+      var v=ms[p];
+      html+='<div class="acct-row" style="cursor:pointer" onclick="toggleSection(\'anl_'+p+'\')">';
+      html+='<span style="font-size:10px">'+v.label+'</span><span class="acct-amt" style="color:var(--blue)"><span class="sym">$</span>'+Number(v.total).toLocaleString('en-US',{maximumFractionDigits:0})+' ›</span></div>';
+      html+='<div id="anl_'+p+'" style="display:none;padding-bottom:8px">';
+      Object.keys(v.categories||{}).sort(function(a,b){return v.categories[b]-v.categories[a];}).forEach(function(cat){
+        var col=CAT_COLORS[cat]||'#5e5e7a';
+        var catTxns=(v.transactions||[]).filter(function(t){return t.category===cat;});
+        html+='<div class="acct-row" style="cursor:pointer;padding:4px 0" onclick="showTxns(\''+cat+' · '+v.label+'\','+JSON.stringify(catTxns)+',\''+col+'\')">';
+        html+='<span style="font-size:9px;color:'+col+'">'+cat+'</span><span style="font-family:var(--mono);font-size:10px;color:'+col+'">'+fmt(v.categories[cat])+' ›</span></div>';
+      });
+      html+='</div>';
     });
     html+='</div>';
   }
@@ -371,24 +410,10 @@ function rIndia(){
   var items=[{key:'hdfc_usd',name:'HDFC Home Loan',sub:'₹23,659/mo'},{key:'casagrand_usd',name:'Casagrand EMI',sub:'ICICI ••075462'},{key:'pnb_usd',name:'PNB Housing',sub:'₹2,977/mo'},{key:'yes_bank_usd',name:'Yes Bank',sub:'₹800/mo'}];
   var xm=mh.filter(function(m){return m.xoom>0;});
   var html='<div class="panel"><div class="ph2"><div class="ptitle">🇮🇳 India Obligations</div><div class="pact">~'+fmt2(ind.total_usd||0)+'/mo</div></div>';
-  if(xm.length){
-    html+='<div style="overflow-x:auto"><table class="mtable"><thead><tr><th>Obligation</th>';
-    xm.forEach(function(m){html+='<th>'+short(m.period_label)+'</th>';});
-    html+='<th>/mo</th></tr></thead><tbody>';
-    items.forEach(function(i){var v=ind[i.key]||0;if(!v)return;
-      html+='<tr><td><div style="font-size:10px;font-weight:500">'+i.name+'</div><div style="font-size:8px;color:var(--muted)">'+i.sub+'</div></td>';
-      xm.forEach(function(){html+='<td style="color:var(--warn)">'+fmt2(v)+'</td>';});
-      html+='<td style="color:var(--warn);font-weight:600">'+fmt2(v)+'</td></tr>';
-    });
-    html+='<tr><td><div style="font-size:10px;font-weight:500">Xoom / Remitly</div></td>';
-    xm.forEach(function(m){html+='<td style="color:var(--orange)">'+fmt(m.xoom)+'</td>';});
-    html+='<td style="color:var(--muted)">varies</td></tr>';
-    html+='</tbody></table></div>';
-  } else {
-    items.forEach(function(i){var v=ind[i.key]||0;if(!v)return;
-      html+='<div class="acct-row"><div><div style="font-size:10px;font-weight:500">'+i.name+'</div><div style="font-size:8px;color:var(--muted)">'+i.sub+'</div></div><div style="font-family:var(--num);font-size:20px;color:var(--warn)">'+fmt2(v)+'</div></div>';
-    });
-  }
+  items.forEach(function(i){var v=ind[i.key]||0;if(!v)return;
+    html+='<div class="acct-row"><div><div style="font-size:10px;font-weight:500">'+i.name+'</div><div style="font-size:8px;color:var(--muted)">'+i.sub+'</div></div><div style="font-family:var(--num);font-size:20px;color:var(--warn)">'+fmt2(v)+'</div></div>';
+  });
+  html+='<div class="acct-row"><span style="font-size:10px;font-weight:600">Monthly Total</span><span style="font-family:var(--num);font-size:20px;color:var(--warn)">'+fmt2(ind.total_usd||0)+'</span></div>';
   html+='</div>';
   var is=a.icici_savings||{};
   html+='<div class="panel"><div class="ph2"><div class="ptitle">ICICI Savings ••000582</div><div class="pact">PDF sync</div></div>';
@@ -399,21 +424,25 @@ function rIndia(){
 }
 
 // ── TRAVEL ────────────────────────────────────────────────────
+var BILLING_MERCHANTS=['APPLE','AMAZON','AMZN','VZWRLSS','VERIZON','SIMPLISAFE','CVS','PAYPAL','NETFLIX','SPOTIFY','HULU','ZEE5','CLAUDE','ANTHROPIC','NORD','TURBOTAX','GOOGLE','COMCAST','ATT ','TMOBILE'];
+function isBillingMerchant(desc){return BILLING_MERCHANTS.some(function(b){return (desc||'').toUpperCase().indexOf(b)>=0;});}
+
 function rTravel(){
-  var all=(D.travel||[]).filter(function(t){return t.state&&['NJ','NY','CT','PA'].indexOf(t.state)<0;});
-  if(!all.length){set('mc','<div class="panel"><div style="font-size:10px;color:var(--muted);padding:8px">No travel transactions found. Plaid includes location data when merchants provide it.</div></div>');return;}
+  var HOME=['NJ','NY','CT','PA'];
+  var all=(D.travel||[]).filter(function(t){return t.state&&HOME.indexOf(t.state)<0&&!isBillingMerchant(t.desc);});
+  if(!all.length){set('mc','<div class="panel"><div style="font-size:10px;color:var(--muted);padding:8px">No travel transactions found.</div></div>');return;}
+  all.sort(function(a,b){return ((b.period||'')+(b.date||'')).localeCompare((a.period||'')+(a.date||''));});
   var byState={};
   all.forEach(function(t){
     var st=t.state;
     if(!byState[st])byState[st]={total:0,cities:{},online:[]};
     byState[st].total+=t.amount;
-    if(t.city){
-      if(!byState[st].cities[t.city])byState[st].cities[t.city]={txns:[],total:0};
-      byState[st].cities[t.city].txns.push(t);byState[st].cities[t.city].total+=t.amount;
-    } else byState[st].online.push(t);
+    if(t.city){if(!byState[st].cities[t.city])byState[st].cities[t.city]={txns:[],total:0};byState[st].cities[t.city].txns.push(t);byState[st].cities[t.city].total+=t.amount;}
+    else byState[st].online.push(t);
   });
   var states=Object.keys(byState).sort(function(a,b){return byState[b].total-byState[a].total;});
   var grand=all.reduce(function(s,t){return s+t.amount;},0);
+  var SN={'CA':'California','NC':'North Carolina','VA':'Virginia','DC':'Washington D.C.','TX':'Texas','FL':'Florida','TN':'Tennessee','MD':'Maryland','GA':'Georgia','CO':'Colorado','NV':'Nevada','AZ':'Arizona'};
   var html='<div class="panel"><div class="ph2"><div class="ptitle">✈️ Travel Spending</div><div class="pact">'+states.length+' states · '+fmt(grand)+'</div></div>';
   html+='<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:4px">';
   states.forEach(function(st){html+='<div style="background:var(--s2);border-radius:6px;padding:3px 8px;font-size:9px;color:var(--warn)">'+st+' <span style="color:var(--muted)">'+fmt(byState[st].total)+'</span></div>';});
@@ -422,23 +451,28 @@ function rTravel(){
     var sv=byState[st];
     var months=[...new Set(all.filter(function(t){return t.state===st;}).map(function(t){return t.period_label;}))].join(', ');
     html+='<div style="background:var(--s2);border-radius:8px;padding:10px;margin-bottom:10px">';
-    html+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">';
-    html+='<div style="font-family:var(--head);font-size:20px;font-weight:800;color:var(--warn);width:36px;text-align:center">'+st+'</div>';
-    html+='<div style="flex:1"><div style="font-size:12px;font-weight:700">'+(STATE_NAMES[st]||st)+'</div><div style="font-size:9px;color:var(--muted)">'+months+'</div></div>';
+    html+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><div style="font-family:var(--head);font-size:20px;font-weight:800;color:var(--warn);width:36px;text-align:center">'+st+'</div>';
+    html+='<div style="flex:1"><div style="font-size:12px;font-weight:700">'+(SN[st]||st)+'</div><div style="font-size:9px;color:var(--muted)">'+months+'</div></div>';
     html+='<div style="font-family:var(--num);font-size:20px;color:var(--warn)">'+fmt(sv.total)+'</div></div>';
     Object.keys(sv.cities).sort(function(a,b){return sv.cities[b].total-sv.cities[a].total;}).forEach(function(city){
       var cv=sv.cities[city];
-      html+='<div style="margin:6px 0 3px;padding:3px 0;border-top:1px solid var(--border2);display:flex;justify-content:space-between"><span style="font-size:10px;font-weight:600">📍 '+city+'</span><span style="font-size:10px;font-family:var(--mono);color:var(--warn)">'+fmt(cv.total)+'</span></div>';
-      cv.txns.sort(function(a,b){return b.amount-a.amount;}).forEach(function(t){
-        html+='<div style="display:flex;justify-content:space-between;font-size:9px;padding:2px 0;border-bottom:1px solid var(--border2);color:var(--muted)"><span>'+t.desc+'</span><span style="color:var(--warn)">'+fmt2(t.amount)+'</span></div>';
-      });
+      var cid='city_'+st+'_'+city.replace(/\W/g,'_');
+      cv.txns.sort(function(a,b){return ((b.period||'')+(b.date||'')).localeCompare((a.period||'')+(a.date||''));});
+      html+='<div style="margin:4px 0 2px;padding:3px 0;border-top:1px solid var(--border2);display:flex;justify-content:space-between;cursor:pointer;align-items:center" onclick="toggleSection(\''+cid+'\')">';
+      html+='<span style="font-size:10px;font-weight:600">📍 '+city+'</span><span style="display:flex;align-items:center;gap:6px"><span style="font-size:10px;font-family:var(--mono);color:var(--warn)">'+fmt(cv.total)+'</span><span style="font-size:10px;color:var(--muted)">›</span></span></div>';
+      html+='<div id="'+cid+'" style="display:none">';
+      cv.txns.forEach(function(t){html+='<div style="display:flex;justify-content:space-between;align-items:baseline;font-size:9px;padding:3px 0;border-bottom:1px solid var(--border2);color:var(--muted)"><span style="color:var(--muted2);width:38px;flex-shrink:0">'+t.date+'</span><span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+t.desc+'</span><span style="color:var(--warn);font-family:var(--mono);white-space:nowrap;margin-left:6px">'+fmt2(t.amount)+'</span></div>';});
+      html+='</div>';
     });
     if(sv.online.length){
       var ot=sv.online.reduce(function(s,t){return s+t.amount;},0);
-      html+='<div style="margin:6px 0 3px;padding:3px 0;border-top:1px solid var(--border2);display:flex;justify-content:space-between"><span style="font-size:10px;color:var(--muted)">🌐 Online / '+st+'</span><span style="font-size:10px;font-family:var(--mono);color:var(--muted)">'+fmt(ot)+'</span></div>';
-      sv.online.forEach(function(t){
-        html+='<div style="display:flex;justify-content:space-between;font-size:9px;padding:2px 0;color:var(--muted2)"><span>'+t.desc+'</span><span>'+fmt2(t.amount)+'</span></div>';
-      });
+      var oid='online_'+st+'_'+Math.random().toString(36).substr(2,5);
+      sv.online.sort(function(a,b){return ((b.period||'')+(b.date||'')).localeCompare((a.period||'')+(a.date||''));});
+      html+='<div style="margin:4px 0 2px;padding:3px 0;border-top:1px solid var(--border2);display:flex;justify-content:space-between;cursor:pointer;align-items:center" onclick="toggleSection(\''+oid+'\')">';
+      html+='<span style="font-size:10px;color:var(--muted)">🌐 Online / '+st+'</span><span style="display:flex;align-items:center;gap:6px"><span style="font-size:10px;font-family:var(--mono);color:var(--muted)">'+fmt(ot)+'</span><span style="font-size:10px;color:var(--muted)">›</span></span></div>';
+      html+='<div id="'+oid+'" style="display:none">';
+      sv.online.forEach(function(t){html+='<div style="display:flex;justify-content:space-between;align-items:baseline;font-size:9px;padding:3px 0;border-bottom:1px solid var(--border2);color:var(--muted2)"><span style="width:38px;flex-shrink:0">'+t.date+'</span><span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+t.desc+'</span><span style="font-family:var(--mono);white-space:nowrap;margin-left:6px">'+fmt2(t.amount)+'</span></div>';});
+      html+='</div>';
     }
     html+='</div>';
   });

@@ -396,7 +396,7 @@ function buildStructuredData(accounts, transactions) {
     income: monthlyIncome[p]?.total || 0,
     bofa_income: monthlyIncome[p]?.bofa || 0,
     td_income: monthlyIncome[p]?.td || 0,
-    outflows: 0, // calculated from bills below
+    outflows: Math.round((monthlySpending[p]?.total || 0) * 100) / 100,
     xoom: 0,
     investments: 0,
   }));
@@ -411,6 +411,28 @@ function buildStructuredData(accounts, transactions) {
     mortgage: 3800.14, car_loan: 631.65, verizon: 515.0,
     pseg: 290.0, hoa: 105.95, cable: 50.66,
   };
+
+  // Auto-detect recurring from transaction patterns (2+ months, consistent amount)
+  const merchantMap = {};
+  Object.entries(monthlySpending).forEach(([period, v]) => {
+    (v.transactions || []).forEach(t => {
+      const key = (t.desc || '').toUpperCase().trim().substring(0, 35);
+      if (!merchantMap[key]) merchantMap[key] = { desc: t.desc, amounts: [], months: new Set(), category: t.category };
+      merchantMap[key].amounts.push(t.amount);
+      merchantMap[key].months.add(period);
+    });
+  });
+  const detectedRecurring = Object.values(merchantMap)
+    .filter(m => m.months.size >= 2)
+    .map(m => ({
+      desc: m.desc,
+      category: m.category,
+      count: m.amounts.length,
+      months: m.months.size,
+      avg_amount: Math.round(m.amounts.reduce((s,a) => s+a, 0) / m.amounts.length * 100) / 100,
+      last_amount: m.amounts[m.amounts.length - 1],
+    }))
+    .sort((a, b) => b.months - a.months || b.avg_amount - a.avg_amount);
 
   // Zelle from transactions
   const zelle = transactions
@@ -451,7 +473,8 @@ function buildStructuredData(accounts, transactions) {
       )
     ),
     zelle_received: zelle,
-    monthly_history: monthlyHistory,
+    detected_recurring: detectedRecurring,
+    fixed_obligations: fixedObligations,
     monthly_spending: monthlySpending,
     travel: travelTxns,
     fixed_obligations: fixedObligations,
