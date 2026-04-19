@@ -345,7 +345,7 @@ function buildStructuredData(accounts, transactions) {
     const month = new Date(date + 'T00:00:00').toLocaleString('en-US', { month: 'long', year: 'numeric' });
 
     if (!monthlySpending[period]) {
-      monthlySpending[period] = { label: month, categories: {}, total: 0, transactions: [] };
+      monthlySpending[period] = { label: month, period: period, categories: {}, total: 0, transactions: [] };
     }
     monthlySpending[period].categories[cat] = (monthlySpending[period].categories[cat] || 0) + t.amount;
     monthlySpending[period].total += t.amount;
@@ -474,7 +474,7 @@ function buildStructuredData(accounts, transactions) {
     ),
     zelle_received: zelle,
     detected_recurring: detectedRecurring,
-    fixed_obligations: fixedObligations,
+    monthly_history: monthlyHistory,
     monthly_spending: monthlySpending,
     travel: travelTxns,
     fixed_obligations: fixedObligations,

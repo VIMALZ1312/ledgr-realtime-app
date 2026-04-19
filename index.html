@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
@@ -110,7 +110,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--mono);font-weight:
     <div class="sidebar-foot">
       <button class="btn-p" onclick="triggerSync()" id="sync-btn">⚡ Sync Now</button>
       <button class="btn-s" onclick="loadData()" id="refresh-btn">↻ Refresh</button>
-      <button class="btn-s" onclick="toggleTheme()" style="margin-top:4px">☀️ / 🌙</button>
+      <button class="btn-s theme-btn" onclick="toggleTheme()" style="margin-top:4px">🌙 Night</button>
       <div class="gen-tag" id="gen-tag">Loading...</div>
     </div>
   </div>
@@ -118,6 +118,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--mono);font-weight:
     <div class="topbar">
       <button class="hamburger" onclick="openDrawer()">☰</button>
       <div class="tlogo"><em>LEDGR</em> RT</div>
+      <button class="icon-btn theme-btn" onclick="toggleTheme()">🌙</button>
       <button class="icon-btn" onclick="triggerSync()" id="sync-btn-top">⚡</button>
       <button class="icon-btn" onclick="loadData()">↻</button>
     </div>
@@ -161,7 +162,21 @@ function buildTabsBar(){
 function switchTab(id){currentTab=id;buildNav('sidebar-nav',false);buildNav('drawer-nav',true);buildTabsBar();renderAll();}
 function openDrawer(){document.getElementById('drawer').classList.add('open');document.getElementById('overlay').classList.add('open');}
 function closeDrawer(){document.getElementById('drawer').classList.remove('open');document.getElementById('overlay').classList.remove('open');}
-function toggleTheme(){var t=document.documentElement.getAttribute('data-theme');document.documentElement.setAttribute('data-theme',t==='dark'?'light':'dark');}
+function toggleTheme(){
+  var t=document.documentElement.getAttribute('data-theme');
+  var next=t==='dark'?'light':'dark';
+  document.documentElement.setAttribute('data-theme',next);
+  localStorage.setItem('ledgr-theme',next);
+  var btns=document.querySelectorAll('.theme-btn');
+  btns.forEach(function(b){b.textContent=next==='dark'?'☀️ Day':'🌙 Night';});
+}
+// Apply saved or system theme on load
+(function(){
+  var saved=localStorage.getItem('ledgr-theme');
+  var sys=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+  var theme=saved||sys;
+  document.documentElement.setAttribute('data-theme',theme);
+})();
 function openModal(title,sub,body){set('modal-title',title);set('modal-sub',sub);set('modal-body',body);document.getElementById('modal').classList.add('open');}
 function closeModal(e){if(e.target===document.getElementById('modal'))document.getElementById('modal').classList.remove('open');}
 
@@ -283,12 +298,24 @@ function rSpending(){
   set('mc',html);
 }
 function showTxns(title,txns,col){
-  var total=txns.reduce(function(s,t){return s+t.amount;},0);
-  var body='<div style="font-family:var(--mono);font-size:13px;color:'+col+';margin-bottom:10px">'+fmt2(total)+'</div>';
-  txns.sort(function(a,b){return b.amount-a.amount;}).forEach(function(t){
-    body+='<div class="txn-item"><span class="txn-date">'+t.date+'</span><span class="txn-desc">'+t.desc+'</span><span class="txn-amt" style="color:'+col+'">'+fmt2(t.amount)+'</span></div>';
+  if(!txns||!txns.length){openModal(title,'No transactions','-');return;}
+  var total=txns.reduce(function(s,t){return s+(t.amount||0);},0);
+  // Sort by date descending
+  var sorted=txns.slice().sort(function(a,b){
+    var da=(a.period||'')+(a.date||'');
+    var db=(b.period||'')+(b.date||'');
+    return db.localeCompare(da);
   });
-  openModal(title,txns.length+' transactions',body);
+  var body='<div style="font-family:var(--mono);font-size:13px;color:'+col+';margin-bottom:10px">'+fmt2(total)+'</div>';
+  sorted.forEach(function(t){
+    body+='<div style="display:flex;align-items:baseline;gap:6px;padding:5px 0;border-bottom:1px solid var(--border2);font-size:10px">';
+    body+='<span style="color:var(--muted2);white-space:nowrap;width:42px;flex-shrink:0">'+(t.date||'')+'</span>';
+    // Full original description — no truncation
+    body+='<span style="flex:1;word-break:break-word;line-height:1.4">'+(t.desc||t.name||'')+'</span>';
+    body+='<span style="font-family:var(--mono);font-weight:500;color:'+col+';white-space:nowrap;margin-left:6px">'+fmt2(t.amount)+'</span>';
+    body+='</div>';
+  });
+  openModal(title,sorted.length+' transactions · sorted newest first',body);
 }
 
 // ── TRANSACTIONS ──────────────────────────────────────────────
@@ -328,34 +355,64 @@ function filterTxns(){
 function rRecurring(){
   var ob=D.fixed_obligations||{};
   var dr=D.detected_recurring||[];
+
+  // Split detected recurring: same amount 3+ months = fixed, else variable
+  var fixedDetected=dr.filter(function(r){return r.months>=3&&r.avg_amount===r.last_amount;});
+  var variable=dr.filter(function(r){return !(r.months>=3&&r.avg_amount===r.last_amount)&&r.months>=2;});
+
+  // Known fixed bills (from parser)
   var items=[{key:'mortgage',name:'Mr. Cooper Mortgage',e:'🏠'},{key:'car_loan',name:'KMF / Kia Car Loan',e:'🚗'},{key:'verizon',name:'Verizon Phone',e:'📱'},{key:'pseg',name:'PSEG Electric',e:'⚡'},{key:'hoa',name:'Renaissance HOA',e:'🏘️'},{key:'cable',name:'Optimum Cable',e:'📺'}];
-  var total=items.reduce(function(s,i){return s+(ob[i.key]||0);},0);
-  var html='<div class="panel"><div class="ph2"><div class="ptitle">🔁 Fixed Bills</div><div class="pact">'+fmt2(total)+'/mo</div></div>';
+  var knownTotal=items.reduce(function(s,i){return s+(ob[i.key]||0);},0);
+  var detectedFixedTotal=fixedDetected.reduce(function(s,r){return s+r.avg_amount;},0);
+  var grandTotal=knownTotal+detectedFixedTotal;
+
+  var html='<div class="panel"><div class="ph2"><div class="ptitle">🔁 Fixed Monthly Bills</div><div class="pact">'+fmt2(grandTotal)+'/mo est.</div></div>';
+
+  // Known bills
   items.forEach(function(i){var a=ob[i.key]||0;if(!a)return;
     html+='<div class="acct-row"><div style="font-size:10px;font-weight:500">'+i.e+' '+i.name+'</div><div class="acct-amt" style="color:var(--pink)"><span class="sym">$</span>'+Number(a).toFixed(2)+'</div></div>';
   });
-  html+='<div class="acct-row"><span style="font-size:10px;font-weight:600">Monthly Total</span><span class="acct-amt" style="color:var(--pink)"><span class="sym">$</span>'+Number(total).toFixed(2)+'</span></div>';
-  html+='<div class="acct-row"><span style="font-size:10px;color:var(--muted)">Annual</span><span class="acct-amt" style="color:var(--muted)"><span class="sym">$</span>'+Number(total*12).toLocaleString()+'</span></div>';
+
+  // Detected same-amount recurring promoted to fixed
+  if(fixedDetected.length){
+    html+='<div style="font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--muted2);padding:8px 0 3px;border-top:1px solid var(--border2)">Detected Fixed (same amt · 3+ months)</div>';
+    fixedDetected.forEach(function(r){
+      var col=CAT_COLORS[r.category]||'#5e5e7a';
+      var txns=[];
+      Object.values(D.monthly_spending||{}).forEach(function(v){(v.transactions||[]).forEach(function(t){if(t.desc===r.desc)txns.push(t);});});
+      txns.sort(function(a,b){return ((b.period||'')+(b.date||'')).localeCompare((a.period||'')+(a.date||''));});
+      var rid='rec_f_'+Math.random().toString(36).substr(2,8);
+      html+='<div class="acct-row" style="cursor:pointer" onclick="toggleSection(\''+rid+'\')">';
+      html+='<div><div style="font-size:10px;font-weight:500">'+r.desc+'</div><div style="font-size:8px;color:var(--muted)">'+r.months+'× · '+r.category+'</div></div>';
+      html+='<div style="display:flex;align-items:center;gap:8px"><div class="acct-amt" style="color:var(--pink)"><span class="sym">$</span>'+Number(r.avg_amount).toFixed(2)+'</div><span style="color:var(--muted)">›</span></div></div>';
+      html+='<div id="'+rid+'" style="display:none;padding:4px 0 8px">';
+      txns.forEach(function(t){html+='<div style="display:flex;gap:6px;padding:4px 0;border-bottom:1px solid var(--border2);font-size:10px"><span style="color:var(--muted2);width:42px;flex-shrink:0">'+t.date+'</span><span style="flex:1;word-break:break-word">'+t.desc+'</span><span style="font-family:var(--mono);color:var(--pink)">'+fmt2(t.amount)+'</span></div>';});
+      html+='</div>';
+    });
+  }
+
+  html+='<div class="acct-row" style="margin-top:6px"><span style="font-size:10px;font-weight:600">Total Fixed /mo</span><span class="acct-amt" style="color:var(--pink)"><span class="sym">$</span>'+Number(grandTotal).toFixed(2)+'</span></div>';
+  html+='<div class="acct-row"><span style="font-size:10px;color:var(--muted)">Annual est.</span><span class="acct-amt" style="color:var(--muted)"><span class="sym">$</span>'+Number(grandTotal*12).toLocaleString()+'</span></div>';
   html+='</div>';
-  if(dr.length){
-    html+='<div class="panel"><div class="ph2"><div class="ptitle">🔍 Detected Recurring</div><div class="pact">from Plaid · tap to expand</div></div>';
+
+  // Variable recurring
+  if(variable.length){
+    html+='<div class="panel"><div class="ph2"><div class="ptitle">🔄 Variable Recurring</div><div class="pact">2+ months · tap to expand</div></div>';
     var cats={};
-    dr.forEach(function(r){var c=r.category||'Other';if(!cats[c])cats[c]=[];cats[c].push(r);});
+    variable.forEach(function(r){var c=r.category||'Other';if(!cats[c])cats[c]=[];cats[c].push(r);});
     Object.keys(cats).sort().forEach(function(cat){
       var col=CAT_COLORS[cat]||'#5e5e7a';
       html+='<div style="font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--muted2);padding:6px 0 3px;border-top:1px solid var(--border2)">'+cat+'</div>';
       cats[cat].forEach(function(r){
         var txns=[];
         Object.values(D.monthly_spending||{}).forEach(function(v){(v.transactions||[]).forEach(function(t){if(t.desc===r.desc)txns.push(t);});});
-        txns.sort(function(a,b){return b.amount-a.amount;});
-        var rid='rec_'+Math.random().toString(36).substr(2,8);
+        txns.sort(function(a,b){return ((b.period||'')+(b.date||'')).localeCompare((a.period||'')+(a.date||''));});
+        var rid='rec_v_'+Math.random().toString(36).substr(2,8);
         html+='<div class="acct-row" style="cursor:pointer" onclick="toggleSection(\''+rid+'\')">';
-        html+='<div><div style="font-size:10px;font-weight:500">'+r.desc+'</div>';
-        html+='<div style="font-size:8px;color:var(--muted)">'+r.months+'× months · avg '+fmt2(r.avg_amount)+'</div></div>';
-        html+='<div style="display:flex;align-items:center;gap:8px"><div class="acct-amt" style="color:'+col+'"><span class="sym">$</span>'+Number(r.last_amount).toFixed(2)+'</div><span style="font-size:10px;color:var(--muted)">›</span></div>';
-        html+='</div>';
+        html+='<div><div style="font-size:10px;font-weight:500">'+r.desc+'</div><div style="font-size:8px;color:var(--muted)">'+r.months+'× months · avg '+fmt2(r.avg_amount)+'</div></div>';
+        html+='<div style="display:flex;align-items:center;gap:8px"><div class="acct-amt" style="color:'+col+'"><span class="sym">$</span>'+Number(r.last_amount).toFixed(2)+'</div><span style="color:var(--muted)">›</span></div></div>';
         html+='<div id="'+rid+'" style="display:none;padding:4px 0 8px">';
-        txns.forEach(function(t){html+='<div class="txn-item"><span class="txn-date">'+t.date+'</span><span class="txn-desc">'+t.desc+'</span><span class="txn-amt" style="color:'+col+'">'+fmt2(t.amount)+'</span></div>';});
+        txns.forEach(function(t){html+='<div style="display:flex;gap:6px;padding:4px 0;border-bottom:1px solid var(--border2);font-size:10px"><span style="color:var(--muted2);width:42px;flex-shrink:0">'+t.date+'</span><span style="flex:1;word-break:break-word">'+t.desc+'</span><span style="font-family:var(--mono);color:'+col+'">'+fmt2(t.amount)+'</span></div>';});
         html+='</div>';
       });
     });
@@ -363,8 +420,6 @@ function rRecurring(){
   }
   set('mc',html);
 }
-
-function toggleSection(id){var el=document.getElementById(id);if(el)el.style.display=el.style.display==='none'?'block':'none';}
 
 // ── ANALYTICS ─────────────────────────────────────────────────
 function rAnalytics(){
