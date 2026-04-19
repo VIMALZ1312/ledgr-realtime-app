@@ -286,26 +286,46 @@ function buildStructuredData(accounts, transactions) {
     acctMap[key] = a;
   });
 
-  // Find specific accounts
-  // For each bank, prefer checking/savings over credit card accounts
-  const findChecking = (nick) => {
-    const bankAccts = accounts.filter(a => a._nickname === nick);
-    return bankAccts.find(a => a.subtype === 'checking') ||
-           bankAccts.find(a => a.subtype === 'savings') ||
-           bankAccts[0] || {};
-  };
-  const findCredit = (nick) => {
-    const bankAccts = accounts.filter(a => a._nickname === nick);
-    return bankAccts.find(a => a.subtype === 'credit card') ||
-           bankAccts.find(a => a.type === 'credit') ||
-           bankAccts[0] || {};
+  // ── ALL ACCOUNTS — show every account from every bank ────────
+  // Nickname aliases: map any nickname to a canonical bank name
+  const NICK_TO_BANK = {
+    'mybofa': 'BofA', 'bofa': 'BofA',
+    'wf': 'Wells Fargo',
+    'td': 'TD Bank',
+    'mydisc': 'Discover', 'discover': 'Discover',
+    'robin': 'Robinhood', 'robinhood': 'Robinhood',
   };
 
-  const bofa  = findChecking('mybofa') || findChecking('bofa');
-  const wf    = findCredit('wf');
-  const td    = findChecking('td');
-  const disc  = findCredit('mydisc') || findCredit('discover');
-  const robin = accounts.find(a => ['robin','robinhood'].includes(a._nickname)) || {};
+  // Build flat list of all accounts with bank label
+  const allAccountsList = accounts.map(a => ({
+    bank: NICK_TO_BANK[a._nickname] || a._nickname,
+    nickname: a._nickname,
+    name: a.name,
+    mask: a.mask,
+    type: a.type,
+    subtype: a.subtype,
+    balance: a.balances?.current || 0,
+    available: a.balances?.available || null,
+    is_credit: a.type === 'credit',
+    is_checking: a.subtype === 'checking',
+    is_savings: a.subtype === 'savings',
+  }));
+
+  // Totals by type across all banks
+  const totalChecking = allAccountsList.filter(a => ['checking','savings'].includes(a.subtype)).reduce((s,a) => s+a.balance, 0);
+  const totalCredit   = allAccountsList.filter(a => a.is_credit).reduce((s,a) => s+a.balance, 0);
+  const netWorth      = totalChecking - totalCredit;
+
+  // For backward compat with dashboard — pick primary account per bank
+  const bofaAccts  = allAccountsList.filter(a => a.bank === 'BofA');
+  const wfAccts    = allAccountsList.filter(a => a.bank === 'Wells Fargo');
+  const tdAccts    = allAccountsList.filter(a => a.bank === 'TD Bank');
+  const discAccts  = allAccountsList.filter(a => a.bank === 'Discover');
+  const bofaBal    = bofaAccts.filter(a => !a.is_credit).reduce((s,a) => s+a.balance, 0);
+  const wfBal      = wfAccts.filter(a => a.is_credit).reduce((s,a) => s+a.balance, 0);
+  const tdBal      = tdAccts.filter(a => a.is_checking).reduce((s,a) => s+a.balance, 0);
+  const discBal    = discAccts.reduce((s,a) => s+a.balance, 0);
+  const wfCheckBal = wfAccts.filter(a => a.is_checking).reduce((s,a) => s+a.balance, 0);
 
   // Monthly spending from transactions
   const monthlySpending = {};
@@ -412,24 +432,15 @@ function buildStructuredData(accounts, transactions) {
       india_total: 1083.67, // static until ICICI connected
     },
     accounts: {
-      bofa:    { 
-        balance: accounts.filter(a => ['mybofa','bofa'].includes(a._nickname) && ['checking','savings'].includes(a.subtype)).reduce((s,a) => s+(a.balances?.current||0), 0),
-        is_checking: true, period_label: 'Live', payroll: 0, outflows: 0 
-      },
-      wf:      { 
-        balance: accounts.filter(a => a._nickname === 'wf' && a.type === 'credit').reduce((s,a) => s+(a.balances?.current||0), 0),
-        is_credit: true, period_label: 'Live' 
-      },
-      td:      { 
-        balance: td?.balances?.current || 0,
-        is_checking: true, period_label: 'Live', payroll: 0 
-      },
-      discover:{ 
-        balance: disc?.balances?.current || 0,
-        is_credit: true, period_label: 'Live' 
-      },
+      bofa:    { balance: bofaBal,  is_checking: true,  period_label: 'Live', payroll: 0, outflows: 0 },
+      wf:      { balance: wfBal,    is_credit: true,    period_label: 'Live', wf_checking: wfCheckBal },
+      td:      { balance: tdBal,    is_checking: true,  period_label: 'Live', payroll: 0 },
+      discover:{ balance: discBal,  is_credit: true,    period_label: 'Live' },
       icici_savings: { balance_inr: 0, balance_usd: 0 },
       icici_loan:    { casagrand_emi_inr: 0, casagrand_emi_usd: 0 },
+    },
+    all_accounts: allAccountsList,
+    net_worth: { total_checking: totalChecking, total_credit: totalCredit, net: netWorth },
     },
     india: { hdfc_usd: 283.43, casagrand_usd: 755.0, pnb_usd: 35.66, yes_bank_usd: 9.58, total_usd: 1083.67, by_month: [] },
     spending: Object.fromEntries(

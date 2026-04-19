@@ -179,9 +179,11 @@ function renderAll(){
 // ── OVERVIEW ──────────────────────────────────────────────────
 function rOverview(){
   var a=D.accounts,k=D.kpis,mh=D.monthly_history||[];
-  var checkingBal=(a.bofa.balance||0)+(a.td.balance||0);
-  var creditBal=(a.wf.balance||0)+(a.discover.balance||0);
-  var netWorth=checkingBal-creditBal;
+  var allAccts=D.all_accounts||[];
+  var nw=D.net_worth||{};
+  var checkingBal=nw.total_checking||(a.bofa.balance||0)+(a.td.balance||0);
+  var creditBal=nw.total_credit||(a.wf.balance||0)+(a.discover.balance||0);
+  var netWorth=nw.net||(checkingBal-creditBal);
 
   var html='';
   // Sync banner
@@ -198,11 +200,30 @@ function rOverview(){
   html+=kpi('India Obligations',fmt(k.india_total),'var(--warn)','Monthly est.','USD/mo');
   html+='</div>';
 
-  html+='<div class="panel"><div class="ph2"><div class="ptitle">Account Balances</div></div>';
-  html+=arow('BofA ••7309','Checking',a.bofa.balance,'var(--accent)');
-  html+=arow('TD ••0069','Checking',a.td.balance,'var(--accent)');
-  html+=arow('WF ••9762','Credit card',a.wf.balance,'var(--pink)','',true);
-  html+=arow('Discover ••0494','Credit card',a.discover.balance,'var(--pink)','',true);
+  html+='<div class="panel"><div class="ph2"><div class="ptitle">Account Balances</div><div class="pact">'+fmt2(checkingBal)+' checking · '+fmt2(creditBal)+' credit</div></div>';
+
+  // Group by bank and show every account
+  var allAccts=D.all_accounts||[];
+  var banks=[...new Set(allAccts.map(function(a){return a.bank;}))];
+  banks.forEach(function(bank){
+    var bankAccts=allAccts.filter(function(a){return a.bank===bank;});
+    html+='<div style="font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--muted2);padding:8px 0 3px;border-top:1px solid var(--border2)">'+bank+'</div>';
+    bankAccts.forEach(function(a){
+      var col=a.is_credit?'var(--pink)':'var(--accent)';
+      var sign=a.is_credit&&a.balance>0?'-':'';
+      var label=a.name+(a.mask?' ••'+a.mask:'');
+      var sublabel=a.subtype||a.type;
+      html+='<div class="acct-row"><div><div style="font-size:10px;font-weight:500">'+label+'</div><div style="font-size:8px;color:var(--muted)">'+sublabel+'</div></div>';
+      html+='<div class="acct-amt" style="color:'+col+'">'+sign+'<span class="sym">$</span>'+Number(Math.abs(a.balance)).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})+'</div></div>';
+    });
+  });
+
+  // ICICI — still PDF based
+  var is=a.icici_savings;
+  if(is&&is.balance_usd>0){
+    html+='<div style="font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--muted2);padding:8px 0 3px;border-top:1px solid var(--border2)">ICICI India</div>';
+    html+=arow('ICICI ••000582','Savings',is.balance_usd,'var(--orange)');
+  }
   html+='</div>';
 
   if(mh.length){
