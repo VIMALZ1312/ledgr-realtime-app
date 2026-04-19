@@ -128,7 +128,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--mono);font-weight:
 <script>
 // ── CONFIG ────────────────────────────────────────────────────
 // Set your Replit backend URL here after deploying
-var BACKEND_URL = 'https://realtimefin.replit.app';
+var BACKEND_URL = '';
 
 var D=null, currentTab='overview';
 var CAT_COLORS={'Restaurants':'#f07840','Groceries':'#c8f060','Amazon':'#5dd8f5','Shopping':'#9f6cf5','Gas/Travel':'#80b0ff','Kids':'#60c0ff','Entertainment':'#9f6cf5','Tech/Subs':'#b090ff','Pharmacy':'#38d9c8','Healthcare':'#38d9c8','Home Security':'#f0c040','Insurance':'#f0a020','Tax/Professional':'#f05a5a','Other':'#5e5e7a'};
@@ -426,22 +426,19 @@ function rTravel(){
 
 // ── SYNC ──────────────────────────────────────────────────────
 async function triggerSync(){
-  if(!BACKEND_URL){
-    alert('Set your Replit backend URL in the BACKEND_URL variable in index.html');return;
-  }
   var btn=document.getElementById('sync-btn'),btnT=document.getElementById('sync-btn-top');
   if(btn){btn.textContent='⟳ Syncing...';btn.disabled=true;}
   if(btnT){btnT.textContent='⟳';btnT.disabled=true;}
   try{
-    var r=await fetch(BACKEND_URL+'/api/sync',{method:'POST'});
+    var r=await fetch('/.netlify/functions/sync',{method:'POST'});
     var d=await r.json();
     if(d.success){
-      setTimeout(loadData,2000); // wait 2s for GitHub to update
+      setTimeout(loadData,2000);
     } else {
       alert('Sync error: '+d.error);
     }
   } catch(e){
-    alert('Cannot reach backend: '+e.message+'\n\nMake sure your Replit server is running.');
+    alert('Sync failed: '+e.message);
   }
   if(btn){btn.textContent='⚡ Sync Now';btn.disabled=false;}
   if(btnT){btnT.textContent='⚡';btnT.disabled=false;}
