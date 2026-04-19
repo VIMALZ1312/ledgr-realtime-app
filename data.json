@@ -1,15 +1,15 @@
 {
   "kpis": {
-    "income": 2500.02,
+    "income": 4478.46,
     "income_period": "April 2026",
-    "true_outflows": 2226.55,
+    "true_outflows": 4263.87,
     "outflows_period": "April 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 0,
+      "balance": 7756.35,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -121,6 +121,71 @@
       "is_savings": false
     },
     {
+      "bank": "BofA",
+      "nickname": "bofa",
+      "name": "Premium Rewards Visa Signature",
+      "mask": "0910",
+      "type": "credit",
+      "subtype": "credit card",
+      "balance": 0,
+      "available": 21000,
+      "is_credit": true,
+      "is_checking": false,
+      "is_savings": false
+    },
+    {
+      "bank": "BofA",
+      "nickname": "bofa",
+      "name": "Adv Plus Banking",
+      "mask": "1739",
+      "type": "depository",
+      "subtype": "checking",
+      "balance": 68.13,
+      "available": 68.13,
+      "is_credit": false,
+      "is_checking": true,
+      "is_savings": false
+    },
+    {
+      "bank": "BofA",
+      "nickname": "bofa",
+      "name": "Advantage Savings",
+      "mask": "5677",
+      "type": "depository",
+      "subtype": "savings",
+      "balance": 2056.79,
+      "available": 2056.79,
+      "is_credit": false,
+      "is_checking": false,
+      "is_savings": true
+    },
+    {
+      "bank": "BofA",
+      "nickname": "bofa",
+      "name": "Adv Plus Banking",
+      "mask": "7309",
+      "type": "depository",
+      "subtype": "checking",
+      "balance": 5116.75,
+      "available": 5116.75,
+      "is_credit": false,
+      "is_checking": true,
+      "is_savings": false
+    },
+    {
+      "bank": "BofA",
+      "nickname": "bofa",
+      "name": "Advantage Savings",
+      "mask": "8206",
+      "type": "depository",
+      "subtype": "savings",
+      "balance": 514.68,
+      "available": 514.68,
+      "is_credit": false,
+      "is_checking": false,
+      "is_savings": true
+    },
+    {
       "bank": "Discover",
       "nickname": "discover",
       "name": "Discover it Card",
@@ -135,9 +200,9 @@
     }
   ],
   "net_worth": {
-    "total_checking": 322.03,
+    "total_checking": 8078.38,
     "total_credit": 3495.89,
-    "net": -3173.8599999999997
+    "net": 4582.49
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -148,14 +213,14 @@
     "by_month": []
   },
   "spending": {
-    "Shopping": 2317.38,
-    "Tech/Subs": 2105.25,
+    "Shopping": 3124.47,
+    "Tech/Subs": 4885.150000000001,
     "Groceries": 1022.6999999999998,
     "Restaurants": 1478.02,
     "Gas/Travel": 1964.56,
-    "Entertainment": 1291.11,
-    "Healthcare": 384.44,
-    "Other": 2262.64
+    "Healthcare": 814.07,
+    "Entertainment": 2098.9900000000002,
+    "Other": 19710.64
   },
   "zelle_received": [
     {
@@ -181,9 +246,173 @@
       "amount": 88,
       "period": "2026-03",
       "period_label": "March 2026"
+    },
+    {
+      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 0K50JXGHN",
+      "amount": 1700,
+      "period": "2026-04",
+      "period_label": "April 2026"
+    },
+    {
+      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 0K50JY5CB",
+      "amount": 1000,
+      "period": "2026-04",
+      "period_label": "April 2026"
+    },
+    {
+      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 022XHHHP4",
+      "amount": 1500,
+      "period": "2026-04",
+      "period_label": "April 2026"
+    },
+    {
+      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 022XHGNF0",
+      "amount": 1000,
+      "period": "2026-04",
+      "period_label": "April 2026"
+    },
+    {
+      "from": "payment from VIMAL RAJ LOGANATHAN for \"Loan\"; Conf# 022FYOQ4A",
+      "amount": 1500,
+      "period": "2026-03",
+      "period_label": "March 2026"
+    },
+    {
+      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 022FYOQ28",
+      "amount": 1000,
+      "period": "2026-03",
+      "period_label": "March 2026"
+    },
+    {
+      "from": "payment from RAJIREDDY KOMATREDDY Conf# bk2ahcmi2",
+      "amount": 30,
+      "period": "2026-03",
+      "period_label": "March 2026"
+    },
+    {
+      "from": "payment from PRADEEP CHELLUR for \"game-30morecomingfromRaji\"; Conf# 99c7bkmeo",
+      "amount": 36,
+      "period": "2026-03",
+      "period_label": "March 2026"
+    },
+    {
+      "from": "payment from NAGA BONALA Conf# surfuawrc",
+      "amount": 40,
+      "period": "2026-03",
+      "period_label": "March 2026"
+    },
+    {
+      "from": "payment from DEEPAK REDDY DEVULAPALLY for \"Monthly Phone Bill\"; Conf# 99c7bc80n",
+      "amount": 40.71,
+      "period": "2026-03",
+      "period_label": "March 2026"
+    },
+    {
+      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 021UDQBEH",
+      "amount": 1500,
+      "period": "2026-03",
+      "period_label": "March 2026"
+    },
+    {
+      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 021UDQ4JM",
+      "amount": 1000,
+      "period": "2026-02",
+      "period_label": "February 2026"
+    },
+    {
+      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 021P9GDHK",
+      "amount": 1000,
+      "period": "2026-02",
+      "period_label": "February 2026"
+    },
+    {
+      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 021P9GDLJ",
+      "amount": 1500,
+      "period": "2026-02",
+      "period_label": "February 2026"
+    },
+    {
+      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 021EMNC23",
+      "amount": 264.07,
+      "period": "2026-02",
+      "period_label": "February 2026"
+    },
+    {
+      "from": "payment from NAGA BONALA Conf# svdxsk38e",
+      "amount": 6,
+      "period": "2026-02",
+      "period_label": "February 2026"
+    },
+    {
+      "from": "payment from PRUDHVI ANANTHULA for \"HARI AMOUNT\"; Conf# T0ZS9CGX6",
+      "amount": 27,
+      "period": "2026-02",
+      "period_label": "February 2026"
+    },
+    {
+      "from": "payment from DURGA TUBATI Conf# bdfmnkd9p",
+      "amount": 40,
+      "period": "2026-02",
+      "period_label": "February 2026"
+    },
+    {
+      "from": "payment from PRUDHVI ANANTHULA for \"FOOD AMOUNT\"; Conf# T0ZS93LZ8",
+      "amount": 111,
+      "period": "2026-02",
+      "period_label": "February 2026"
+    },
+    {
+      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 0214D4WDW",
+      "amount": 1000,
+      "period": "2026-02",
+      "period_label": "February 2026"
+    },
+    {
+      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 0214D5KZF",
+      "amount": 1500,
+      "period": "2026-02",
+      "period_label": "February 2026"
+    },
+    {
+      "from": "payment from AHMED MOHAMMED Conf# fs7pmboku",
+      "amount": 279.4,
+      "period": "2026-01",
+      "period_label": "January 2026"
+    },
+    {
+      "from": "payment from VENKATESH KASANAGOTTU Conf# 04B91TKQN",
+      "amount": 414,
+      "period": "2026-01",
+      "period_label": "January 2026"
+    },
+    {
+      "from": "payment from DEEPAK REDDY DEVULAPALLY for \"Monthly Phone Bill\"; Conf# 99c3ht75r",
+      "amount": 40.71,
+      "period": "2026-01",
+      "period_label": "January 2026"
+    },
+    {
+      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 020Q0GI6B",
+      "amount": 1000,
+      "period": "2026-01",
+      "period_label": "January 2026"
+    },
+    {
+      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 020Q0G9MH",
+      "amount": 1500,
+      "period": "2026-01",
+      "period_label": "January 2026"
     }
   ],
   "detected_recurring": [
+    {
+      "desc": "Best Buy",
+      "category": "Shopping",
+      "count": 4,
+      "months": 4,
+      "avg_amount": 170,
+      "last_amount": 200
+    },
     {
       "desc": "Amazon",
       "category": "Shopping",
@@ -199,6 +428,14 @@
       "months": 4,
       "avg_amount": 17.58,
       "last_amount": 28.24
+    },
+    {
+      "desc": "Planet Fitness",
+      "category": "Healthcare",
+      "count": 4,
+      "months": 4,
+      "avg_amount": 10.66,
+      "last_amount": 10.66
     },
     {
       "desc": "Vzn Br Cafe Basking Ridgenj",
@@ -217,6 +454,22 @@
       "last_amount": 597.78
     },
     {
+      "desc": "Verizon",
+      "category": "Tech/Subs",
+      "count": 3,
+      "months": 3,
+      "avg_amount": 454.42,
+      "last_amount": 520.84
+    },
+    {
+      "desc": "Republic Services",
+      "category": "Tech/Subs",
+      "count": 3,
+      "months": 3,
+      "avg_amount": 312.27,
+      "last_amount": 303.93
+    },
+    {
       "desc": "Big Blue Swim School",
       "category": "Tech/Subs",
       "count": 3,
@@ -231,6 +484,14 @@
       "months": 3,
       "avg_amount": 250,
       "last_amount": 250
+    },
+    {
+      "desc": "Zelle payment to KAVI MUSIC LLC for \"Aryan Mar and Apr\"; Conf# taivjlhgp",
+      "category": "Entertainment",
+      "count": 3,
+      "months": 3,
+      "avg_amount": 160,
+      "last_amount": 120
     },
     {
       "desc": "Patel Brothers",
@@ -257,12 +518,28 @@
       "last_amount": 76.41
     },
     {
+      "desc": "Walgreens",
+      "category": "Healthcare",
+      "count": 10,
+      "months": 3,
+      "avg_amount": 49.44,
+      "last_amount": 303.5
+    },
+    {
       "desc": "ShopRite",
       "category": "Groceries",
       "count": 5,
       "months": 3,
       "avg_amount": 29.96,
       "last_amount": 31.98
+    },
+    {
+      "desc": "Netflix",
+      "category": "Entertainment",
+      "count": 3,
+      "months": 3,
+      "avg_amount": 19.18,
+      "last_amount": 19.18
     },
     {
       "desc": "Aitubo.ai Hunghom",
@@ -297,6 +574,14 @@
       "last_amount": 1.99
     },
     {
+      "desc": "North Brunswick",
+      "category": "Entertainment",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 340.16,
+      "last_amount": 448.32
+    },
+    {
       "desc": "Costco",
       "category": "Shopping",
       "count": 2,
@@ -311,6 +596,14 @@
       "months": 2,
       "avg_amount": 129.21,
       "last_amount": 25
+    },
+    {
+      "desc": "Renaissance Gree",
+      "category": "Tech/Subs",
+      "count": 3,
+      "months": 2,
+      "avg_amount": 105.95,
+      "last_amount": 105.95
     },
     {
       "desc": "Uber",
@@ -361,6 +654,14 @@
       "last_amount": 75
     },
     {
+      "desc": "Optimum",
+      "category": "Tech/Subs",
+      "count": 3,
+      "months": 2,
+      "avg_amount": 50.66,
+      "last_amount": 50.66
+    },
+    {
       "desc": "Shaan Halal Meat Market",
       "category": "Groceries",
       "count": 2,
@@ -385,20 +686,20 @@
       "last_amount": 55.22
     },
     {
-      "desc": "Walgreens",
-      "category": "Healthcare",
-      "count": 5,
-      "months": 2,
-      "avg_amount": 21.47,
-      "last_amount": 2.68
-    },
-    {
       "desc": "Shaan Halal Zabiha Meat",
       "category": "Groceries",
       "count": 2,
       "months": 2,
       "avg_amount": 16.1,
       "last_amount": 22.49
+    },
+    {
+      "desc": "Hulu",
+      "category": "Entertainment",
+      "count": 3,
+      "months": 2,
+      "avg_amount": 12.78,
+      "last_amount": 12.78
     }
   ],
   "fixed_obligations": {
@@ -413,15 +714,16 @@
     "2026-04": {
       "label": "April 2026",
       "categories": {
-        "Shopping": 423.38,
-        "Tech/Subs": 663.4399999999999,
+        "Shopping": 583.38,
+        "Tech/Subs": 1325.92,
         "Groceries": 302.19,
         "Restaurants": 253.16000000000003,
         "Gas/Travel": 283.59000000000003,
-        "Entertainment": 258.18,
-        "Healthcare": 42.61
+        "Healthcare": 53.269999999999996,
+        "Entertainment": 749.36,
+        "Other": 713
       },
-      "total": 2226.5499999999997,
+      "total": 4263.87,
       "transactions": [
         {
           "date": "04-16",
@@ -640,6 +942,70 @@
           "state": "CA"
         },
         {
+          "date": "04-17",
+          "desc": "Planet Fitness",
+          "amount": 10.66,
+          "category": "Healthcare",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-16",
+          "desc": "Verizon",
+          "amount": 395.66,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-13",
+          "desc": "Best Buy",
+          "amount": 160,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-13",
+          "desc": "North Brunswick",
+          "amount": 232,
+          "category": "Entertainment",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-09",
+          "desc": "Netflix",
+          "amount": 19.18,
+          "category": "Entertainment",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-08",
+          "desc": "Zelle payment to KAVI MUSIC LLC for \"Aryan Mar and Apr\"; Conf# taivjlhgp",
+          "amount": 240,
+          "category": "Entertainment",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-01",
+          "desc": "Republic Services",
+          "amount": 266.82,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-01",
+          "desc": "New Jersey Tgi",
+          "amount": 713,
+          "category": "Other",
+          "city": null,
+          "state": null
+        },
+        {
           "date": "04-04",
           "desc": "Cricketdata",
           "amount": 5.99,
@@ -756,16 +1122,16 @@
     "2026-03": {
       "label": "March 2026",
       "categories": {
-        "Shopping": 951.7399999999999,
+        "Shopping": 1111.7399999999998,
         "Restaurants": 772.9000000000001,
         "Gas/Travel": 1003.22,
-        "Other": 618.77,
-        "Tech/Subs": 696.88,
-        "Entertainment": 501.45,
+        "Other": 17353.77,
+        "Tech/Subs": 1832.92,
+        "Entertainment": 666.19,
         "Groceries": 295.65,
-        "Healthcare": 35.33
+        "Healthcare": 45.989999999999995
       },
-      "total": 4875.940000000001,
+      "total": 23082.379999999994,
       "transactions": [
         {
           "date": "03-31",
@@ -1272,6 +1638,118 @@
           "state": null
         },
         {
+          "date": "03-31",
+          "desc": "Optimum",
+          "amount": 50.66,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "03-31",
+          "desc": "Renaissance Gree",
+          "amount": 105.95,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "03-30",
+          "desc": "Hulu",
+          "amount": 12.78,
+          "category": "Entertainment",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "03-23",
+          "desc": "Zelle payment to DEVI AGENCIES LLC Conf# ykrfzd1f6",
+          "amount": 10,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "03-31",
+          "desc": "Internal Revenue Service",
+          "amount": 16735,
+          "category": "Other",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "03-17",
+          "desc": "Planet Fitness",
+          "amount": 10.66,
+          "category": "Healthcare",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "03-16",
+          "desc": "Verizon",
+          "amount": 446.77,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "03-13",
+          "desc": "Best Buy",
+          "amount": 160,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "03-11",
+          "desc": "Zelle payment to KAVI MUSIC LLC for \"Aryan Feb\"; Conf# zrsis27pi",
+          "amount": 120,
+          "category": "Entertainment",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "03-09",
+          "desc": "Netflix",
+          "amount": 19.18,
+          "category": "Entertainment",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "03-03",
+          "desc": "Optimum",
+          "amount": 50.66,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "03-02",
+          "desc": "Hulu",
+          "amount": 12.78,
+          "category": "Entertainment",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "03-02",
+          "desc": "Renaissance Gree",
+          "amount": 105.95,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "03-02",
+          "desc": "Republic Services",
+          "amount": 366.05,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
           "date": "03-20",
           "desc": "Mercury",
           "amount": 597.77,
@@ -1388,16 +1866,16 @@
     "2026-02": {
       "label": "February 2026",
       "categories": {
-        "Shopping": 469.32,
+        "Shopping": 629.3199999999999,
         "Gas/Travel": 225.16,
-        "Tech/Subs": 696.14,
+        "Tech/Subs": 1373.5900000000001,
         "Groceries": 261.83,
         "Restaurants": 306.35999999999996,
-        "Healthcare": 103.42000000000002,
-        "Entertainment": 503.24,
+        "Healthcare": 114.08000000000001,
+        "Entertainment": 522.4200000000001,
         "Other": 597.77
       },
-      "total": 3163.24,
+      "total": 4030.5299999999993,
       "transactions": [
         {
           "date": "02-26",
@@ -1760,6 +2238,54 @@
           "state": "NJ"
         },
         {
+          "date": "02-17",
+          "desc": "Planet Fitness",
+          "amount": 10.66,
+          "category": "Healthcare",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "02-17",
+          "desc": "Verizon",
+          "amount": 520.84,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "02-13",
+          "desc": "Best Buy",
+          "amount": 160,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "02-09",
+          "desc": "Netflix",
+          "amount": 19.18,
+          "category": "Entertainment",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "02-02",
+          "desc": "Optimum",
+          "amount": 50.66,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "02-02",
+          "desc": "Renaissance Gree",
+          "amount": 105.95,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
           "date": "02-03",
           "desc": "365 Retail Markets",
           "amount": 5.77,
@@ -1813,15 +2339,15 @@
       "label": "January 2026",
       "categories": {
         "Gas/Travel": 452.59,
-        "Healthcare": 203.07999999999998,
-        "Tech/Subs": 48.790000000000006,
-        "Shopping": 472.94000000000005,
+        "Healthcare": 600.73,
+        "Tech/Subs": 352.72,
+        "Shopping": 800.0300000000001,
         "Restaurants": 145.6,
-        "Entertainment": 28.24,
+        "Entertainment": 161.01999999999998,
         "Groceries": 163.03,
         "Other": 1046.1
       },
-      "total": 2560.3699999999994,
+      "total": 3721.8199999999993,
       "transactions": [
         {
           "date": "01-24",
@@ -2038,6 +2564,94 @@
           "category": "Groceries",
           "city": null,
           "state": null
+        },
+        {
+          "date": "01-30",
+          "desc": "Republic Services",
+          "amount": 303.93,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "01-28",
+          "desc": "Hulu",
+          "amount": 12.78,
+          "category": "Entertainment",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "01-22",
+          "desc": "Macy's",
+          "amount": 127.09,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "01-21",
+          "desc": "Walgreens",
+          "amount": 14.99,
+          "category": "Healthcare",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "01-21",
+          "desc": "Best Buy",
+          "amount": 200,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "01-20",
+          "desc": "Walgreens",
+          "amount": 2.5,
+          "category": "Healthcare",
+          "city": "North Brunswick",
+          "state": "NJ"
+        },
+        {
+          "date": "01-20",
+          "desc": "Walgreens",
+          "amount": 2.5,
+          "category": "Healthcare",
+          "city": "North Brunswick",
+          "state": "NJ"
+        },
+        {
+          "date": "01-20",
+          "desc": "Planet Fitness",
+          "amount": 10.66,
+          "category": "Healthcare",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "01-20",
+          "desc": "Zelle payment to KAVI MUSIC LLC for \"Aryan's Jan'26 music fees\"; Conf# ztl97g8tw",
+          "amount": 120,
+          "category": "Entertainment",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "01-20",
+          "desc": "Walgreens",
+          "amount": 63.5,
+          "category": "Healthcare",
+          "city": "North Brunswick",
+          "state": "NJ"
+        },
+        {
+          "date": "01-20",
+          "desc": "Walgreens",
+          "amount": 303.5,
+          "category": "Healthcare",
+          "city": "North Brunswick",
+          "state": "NJ"
         },
         {
           "date": "01-20",
@@ -2738,7 +3352,7 @@
       "period_label": "February 2026"
     }
   ],
-  "statement_count": "3 live accounts",
-  "generated_at": "2026-04-19T21:37:32.368Z",
+  "statement_count": "4 live accounts",
+  "generated_at": "2026-04-19T21:39:31.148Z",
   "source": "plaid_realtime"
 }
