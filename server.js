@@ -233,16 +233,14 @@ const CAT_MAP = {
 
 function categorize(txn) {
   if (!txn.personal_finance_category) {
-    // Fall back to legacy category
     const cat = (txn.category || []).join(' ');
     for (const [k, v] of Object.entries(CAT_MAP)) {
       if (cat.includes(k)) return v;
     }
-    return 'Other';
+    return categorizeName(txn.name || txn.merchant_name || '');
   }
   const primary = txn.personal_finance_category.primary || '';
   const detailed = txn.personal_finance_category.detailed || '';
-  // Skip transfers/payments (double-counting)
   if (['TRANSFER_IN','TRANSFER_OUT','LOAN_PAYMENTS','BANK_FEES'].includes(primary)) return null;
   if (primary === 'INCOME') return null;
   const catMap2 = {
@@ -257,13 +255,36 @@ function categorize(txn) {
     'EDUCATION': 'Kids',
     'HOME_IMPROVEMENT': 'Shopping',
     'RENT_AND_UTILITIES': 'Tech/Subs',
-    'GOVERNMENT_AND_NON_PROFIT': 'Other',
+    'GOVERNMENT_AND_NON_PROFIT': 'Tax/Professional',
   };
-  if (detailed.includes('AMAZON') || detailed.includes('AMAZON_SHOPPING')) return 'Amazon';
+  if (detailed.includes('AMAZON')) return 'Amazon';
   if (detailed.includes('GROCERIES') || detailed.includes('SUPERMARKET')) return 'Groceries';
   if (detailed.includes('GAS') || detailed.includes('FUEL')) return 'Gas/Travel';
   if (detailed.includes('PHARMACY')) return 'Pharmacy';
-  return catMap2[primary] || 'Other';
+  if (detailed.includes('RESTAURANT') || detailed.includes('COFFEE') || detailed.includes('FAST_FOOD')) return 'Restaurants';
+  if (detailed.includes('GYMS')) return 'Healthcare';
+  if (detailed.includes('TAX') || detailed.includes('GOVERNMENT')) return 'Tax/Professional';
+  if (detailed.includes('INSURANCE')) return 'Insurance';
+  const result = catMap2[primary];
+  if (result) return result;
+  // Last resort: name-based
+  return categorizeName(txn.merchant_name || txn.name || '');
+}
+
+function categorizeName(name) {
+  const n = name.toUpperCase();
+  if (/ESMERALDA|TGI\s*FRIDAY|MCDONALD|BURGER|PIZZA|SUSHI|DINER|GRILL|KITCHEN|BISTRO|CAFE|TACO|BRUNDAVANAM|TRIVENI|BIRYANI|SPICE|HALAL CART/.test(n)) return 'Restaurants';
+  if (/SHOPRITE|PATIDAR|PATEL|COSTCO|TRADER JOE|WHOLE FOOD|ALDI|STOP & SHOP|FOOD BAZAAR/.test(n)) return 'Groceries';
+  if (/MERCURY|GEICO|ALLSTATE|PROGRESSIVE|INSURANCE/.test(n)) return 'Insurance';
+  if (/IRS|INTERNAL REVENUE|TURBO TAX|H&R BLOCK|TAX/.test(n)) return 'Tax/Professional';
+  if (/NORTH BRUNSWICK|TOWNSHIP|COUNTY|STATE OF NJ|DMV|PERMIT/.test(n)) return 'Tax/Professional';
+  if (/SHELL|BP |EXXON|GULF|SUNOCO|WAWA|LUKOIL|GAS|FUEL|EZPASS|E-ZPASS/.test(n)) return 'Gas/Travel';
+  if (/WALGREEN|CVS|RITE AID|PHARMACY/.test(n)) return 'Pharmacy';
+  if (/TARGET|WALMART|HOME DEPOT|MARSHALLS|TJMAXX|ROSS|DOLLAR/.test(n)) return 'Shopping';
+  if (/NETFLIX|SPOTIFY|HULU|DISNEY|HBO|APPLE\.COM|GOOGLE|ANTHROPIC|CLAUDE|AITUBO|ZEE5|NORD|FANBASIS/.test(n)) return 'Tech/Subs';
+  if (/PLANET FITNESS|GYM|SWIM|YMCA|DENTAL|DOCTOR|MEDICAL|VISION|OPTOM/.test(n)) return 'Healthcare';
+  if (/BIG BLUE|KIDS|SCHOOL|TUTORING|BRIGHTCHAMP|SCHOLASTIC/.test(n)) return 'Kids';
+  return 'Other';
 }
 
 function isIncome(txn) {
