@@ -128,7 +128,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--mono);font-weight:
 <script>
 // ── CONFIG ────────────────────────────────────────────────────
 // Set your Replit backend URL here after deploying
-var BACKEND_URL = '';
+var BACKEND_URL = 'https://realtimefin.replit.app';
 
 var D=null, currentTab='overview';
 var CAT_COLORS={'Restaurants':'#f07840','Groceries':'#c8f060','Amazon':'#5dd8f5','Shopping':'#9f6cf5','Gas/Travel':'#80b0ff','Kids':'#60c0ff','Entertainment':'#9f6cf5','Tech/Subs':'#b090ff','Pharmacy':'#38d9c8','Healthcare':'#38d9c8','Home Security':'#f0c040','Insurance':'#f0a020','Tax/Professional':'#f05a5a','Other':'#5e5e7a'};
@@ -430,7 +430,7 @@ async function triggerSync(){
   if(btn){btn.textContent='⟳ Syncing...';btn.disabled=true;}
   if(btnT){btnT.textContent='⟳';btnT.disabled=true;}
   try{
-    var r=await fetch('/.netlify/functions/sync',{method:'POST'});
+    var r=await fetch(BACKEND_URL+'/api/sync',{method:'POST'});
     var d=await r.json();
     if(d.success){
       setTimeout(loadData,2000);
