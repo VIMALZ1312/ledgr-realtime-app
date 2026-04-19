@@ -197,12 +197,64 @@
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
+    },
+    {
+      "bank": "Robinhood",
+      "nickname": "robin",
+      "name": "Robinhood Checking",
+      "mask": "6390",
+      "type": "depository",
+      "subtype": "checking",
+      "balance": 0,
+      "available": null,
+      "is_credit": false,
+      "is_checking": true,
+      "is_savings": false
+    },
+    {
+      "bank": "Robinhood",
+      "nickname": "robin",
+      "name": "Robinhood Savings",
+      "mask": "6644",
+      "type": "depository",
+      "subtype": "savings",
+      "balance": 35118.18,
+      "available": 35118.18,
+      "is_credit": false,
+      "is_checking": false,
+      "is_savings": true
+    },
+    {
+      "bank": "Robinhood",
+      "nickname": "robin",
+      "name": "Robinhood individual",
+      "mask": "7119",
+      "type": "investment",
+      "subtype": "brokerage",
+      "balance": 1417.8,
+      "available": 674.34,
+      "is_credit": false,
+      "is_checking": false,
+      "is_savings": false
+    },
+    {
+      "bank": "Robinhood",
+      "nickname": "robin",
+      "name": "Robinhood Credit Card",
+      "mask": "8479",
+      "type": "credit",
+      "subtype": "credit card",
+      "balance": -174.5,
+      "available": 3174,
+      "is_credit": true,
+      "is_checking": false,
+      "is_savings": false
     }
   ],
   "net_worth": {
-    "total_checking": 8078.38,
-    "total_credit": 3495.89,
-    "net": 4582.49
+    "total_checking": 43196.56,
+    "total_credit": 3321.39,
+    "net": 39875.17
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -213,12 +265,12 @@
     "by_month": []
   },
   "spending": {
-    "Healthcare": 814.07,
+    "Healthcare": 874.07,
     "Tech/Subs": 4885.150000000001,
-    "Shopping": 3124.4699999999993,
+    "Shopping": 3658.22,
     "Entertainment": 2098.9900000000002,
-    "Other": 19710.64,
-    "Groceries": 1022.6999999999998,
+    "Other": 19718.82,
+    "Groceries": 1112.6999999999998,
     "Restaurants": 1478.02,
     "Gas/Travel": 1964.56
   },
@@ -494,20 +546,20 @@
       "last_amount": 120
     },
     {
-      "desc": "Patel Brothers",
-      "category": "Groceries",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 115.92,
-      "last_amount": 82.65
-    },
-    {
       "desc": "Walmart",
       "category": "Shopping",
-      "count": 3,
+      "count": 5,
       "months": 3,
-      "avg_amount": 64.17,
-      "last_amount": 77.3
+      "avg_amount": 118.1,
+      "last_amount": 83.74
+    },
+    {
+      "desc": "Patel Brothers",
+      "category": "Groceries",
+      "count": 4,
+      "months": 3,
+      "avg_amount": 109.44,
+      "last_amount": 82.65
     },
     {
       "desc": "Houseofbi",
@@ -612,6 +664,14 @@
       "months": 2,
       "avg_amount": 90.55,
       "last_amount": 100.98
+    },
+    {
+      "desc": "Garden Farm",
+      "category": "Shopping",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 80.82,
+      "last_amount": 102.29
     },
     {
       "desc": "Shell",
@@ -1124,14 +1184,14 @@
       "categories": {
         "Tech/Subs": 1832.92,
         "Entertainment": 666.19,
-        "Other": 17353.77,
+        "Other": 17361.95,
         "Healthcare": 45.99,
-        "Shopping": 1111.7399999999998,
+        "Shopping": 1502.4099999999999,
         "Restaurants": 772.9000000000001,
         "Gas/Travel": 1003.22,
         "Groceries": 295.65
       },
-      "total": 23082.379999999997,
+      "total": 23481.23,
       "transactions": [
         {
           "date": "03-31",
@@ -1860,6 +1920,30 @@
           "category": "Groceries",
           "city": null,
           "state": null
+        },
+        {
+          "date": "03-22",
+          "desc": "Burlington",
+          "amount": 76.4,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "03-28",
+          "desc": "Walmart",
+          "amount": 314.27,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "03-14",
+          "desc": "Patidar",
+          "amount": 8.18,
+          "category": "Other",
+          "city": null,
+          "state": null
         }
       ]
     },
@@ -1868,14 +1952,14 @@
       "categories": {
         "Healthcare": 114.08000000000001,
         "Tech/Subs": 1373.5900000000001,
-        "Shopping": 629.3199999999999,
+        "Shopping": 688.66,
         "Entertainment": 522.4200000000001,
         "Gas/Travel": 225.16,
-        "Groceries": 261.83,
+        "Groceries": 351.83,
         "Restaurants": 306.35999999999996,
         "Other": 597.77
       },
-      "total": 4030.53,
+      "total": 4179.870000000001,
       "transactions": [
         {
           "date": "02-17",
@@ -2332,6 +2416,22 @@
           "category": "Other",
           "city": null,
           "state": "CA"
+        },
+        {
+          "date": "02-21",
+          "desc": "Garden Farm",
+          "amount": 59.34,
+          "category": "Shopping",
+          "city": "Brunswick",
+          "state": null
+        },
+        {
+          "date": "02-21",
+          "desc": "Patel Brothers",
+          "amount": 90,
+          "category": "Groceries",
+          "city": null,
+          "state": null
         }
       ]
     },
@@ -2340,14 +2440,14 @@
       "categories": {
         "Tech/Subs": 352.72,
         "Entertainment": 161.02,
-        "Shopping": 800.03,
-        "Healthcare": 600.73,
+        "Shopping": 883.77,
+        "Healthcare": 660.73,
         "Gas/Travel": 452.59,
         "Restaurants": 145.6,
         "Groceries": 163.03,
         "Other": 1046.1
       },
-      "total": 3721.82,
+      "total": 3865.56,
       "transactions": [
         {
           "date": "01-30",
@@ -2714,6 +2814,22 @@
           "desc": "Desi Halal Meat",
           "amount": 35.26,
           "category": "Groceries",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "01-31",
+          "desc": "Walmart",
+          "amount": 83.74,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "01-31",
+          "desc": "Hair Time Salon",
+          "amount": 60,
+          "category": "Healthcare",
           "city": null,
           "state": null
         }
@@ -3352,7 +3468,7 @@
       "period_label": "February 2026"
     }
   ],
-  "statement_count": "4 live accounts",
-  "generated_at": "2026-04-19T21:44:49.653Z",
+  "statement_count": "5 live accounts",
+  "generated_at": "2026-04-19T21:49:10.565Z",
   "source": "plaid_realtime"
 }
