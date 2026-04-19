@@ -9,19 +9,20 @@
   },
   "accounts": {
     "bofa": {
-      "balance": 0,
+      "balance": 7756.35,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
       "outflows": 0
     },
     "wf": {
-      "balance": 1556.09,
+      "balance": 3425.95,
       "is_credit": true,
-      "period_label": "Live"
+      "period_label": "Live",
+      "wf_checking": 200
     },
     "td": {
-      "balance": 0,
+      "balance": 122.03,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0
@@ -39,6 +40,156 @@
       "casagrand_emi_inr": 0,
       "casagrand_emi_usd": 0
     }
+  },
+  "all_accounts": [
+    {
+      "bank": "BofA",
+      "nickname": "bofa",
+      "name": "Premium Rewards Visa Signature",
+      "mask": "0910",
+      "type": "credit",
+      "subtype": "credit card",
+      "balance": 0,
+      "available": 21000,
+      "is_credit": true,
+      "is_checking": false,
+      "is_savings": false
+    },
+    {
+      "bank": "BofA",
+      "nickname": "bofa",
+      "name": "Adv Plus Banking",
+      "mask": "1739",
+      "type": "depository",
+      "subtype": "checking",
+      "balance": 68.13,
+      "available": 68.13,
+      "is_credit": false,
+      "is_checking": true,
+      "is_savings": false
+    },
+    {
+      "bank": "BofA",
+      "nickname": "bofa",
+      "name": "Advantage Savings",
+      "mask": "5677",
+      "type": "depository",
+      "subtype": "savings",
+      "balance": 2056.79,
+      "available": 2056.79,
+      "is_credit": false,
+      "is_checking": false,
+      "is_savings": true
+    },
+    {
+      "bank": "BofA",
+      "nickname": "bofa",
+      "name": "Adv Plus Banking",
+      "mask": "7309",
+      "type": "depository",
+      "subtype": "checking",
+      "balance": 5116.75,
+      "available": 5116.75,
+      "is_credit": false,
+      "is_checking": true,
+      "is_savings": false
+    },
+    {
+      "bank": "BofA",
+      "nickname": "bofa",
+      "name": "Advantage Savings",
+      "mask": "8206",
+      "type": "depository",
+      "subtype": "savings",
+      "balance": 514.68,
+      "available": 514.68,
+      "is_credit": false,
+      "is_checking": false,
+      "is_savings": true
+    },
+    {
+      "bank": "Wells Fargo",
+      "nickname": "wf",
+      "name": "BOBS DISCOUNT FURNITURE ...1432",
+      "mask": "1432",
+      "type": "credit",
+      "subtype": "credit card",
+      "balance": 1556.09,
+      "available": 3543,
+      "is_credit": true,
+      "is_checking": false,
+      "is_savings": false
+    },
+    {
+      "bank": "Wells Fargo",
+      "nickname": "wf",
+      "name": "EVERYDAY CHECKING ...3068",
+      "mask": "3068",
+      "type": "depository",
+      "subtype": "checking",
+      "balance": 200,
+      "available": 200,
+      "is_credit": false,
+      "is_checking": true,
+      "is_savings": false
+    },
+    {
+      "bank": "Wells Fargo",
+      "nickname": "wf",
+      "name": "WELLS FARGO REFLECT VISA�� CARD ...8036",
+      "mask": "8036",
+      "type": "credit",
+      "subtype": "credit card",
+      "balance": 73.2,
+      "available": 926,
+      "is_credit": true,
+      "is_checking": false,
+      "is_savings": false
+    },
+    {
+      "bank": "Wells Fargo",
+      "nickname": "wf",
+      "name": "WELLS FARGO ACTIVE CASH VISA�� CARD ...9762",
+      "mask": "9762",
+      "type": "credit",
+      "subtype": "credit card",
+      "balance": 1796.66,
+      "available": 1054,
+      "is_credit": true,
+      "is_checking": false,
+      "is_savings": false
+    },
+    {
+      "bank": "TD Bank",
+      "nickname": "td",
+      "name": "CREDITCARD",
+      "mask": "5186",
+      "type": "credit",
+      "subtype": "credit card",
+      "balance": 0,
+      "available": 8500,
+      "is_credit": true,
+      "is_checking": false,
+      "is_savings": false
+    },
+    {
+      "bank": "TD Bank",
+      "nickname": "td",
+      "name": "TD BEYOND CHECKING",
+      "mask": "9222",
+      "type": "depository",
+      "subtype": "checking",
+      "balance": 122.03,
+      "available": 122.03,
+      "is_credit": false,
+      "is_checking": true,
+      "is_savings": false
+    }
+  ],
+  "net_worth": {
+    "total_checking": 8078.38,
+    "total_credit": 3425.95,
+    "net": 4652.43
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -2506,6 +2657,6 @@
     "cable": 50.66
   },
   "statement_count": "4 live accounts",
-  "generated_at": "2026-04-19T18:40:39.910Z",
+  "generated_at": "2026-04-19T18:48:37.267Z",
   "source": "plaid_realtime"
 }
