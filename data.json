@@ -266,13 +266,14 @@
   },
   "spending": {
     "Healthcare": 874.07,
-    "Tech/Subs": 4885.150000000001,
+    "Tech/Subs": 4699.21,
     "Shopping": 3658.22,
     "Entertainment": 2098.9900000000002,
-    "Other": 19718.82,
-    "Groceries": 1112.6999999999998,
-    "Restaurants": 1478.02,
-    "Gas/Travel": 1964.56
+    "Tax/Professional": 18149.589999999997,
+    "Groceries": 1120.8799999999999,
+    "Restaurants": 1499.02,
+    "Gas/Travel": 1711.29,
+    "Insurance": 1979.26
   },
   "zelle_received": [
     {
@@ -499,7 +500,7 @@
     },
     {
       "desc": "Mercury",
-      "category": "Other",
+      "category": "Insurance",
       "count": 3,
       "months": 3,
       "avg_amount": 597.77,
@@ -659,7 +660,7 @@
     },
     {
       "desc": "Uber",
-      "category": "Gas/Travel",
+      "category": "Tax/Professional",
       "count": 2,
       "months": 2,
       "avg_amount": 90.55,
@@ -762,26 +763,61 @@
       "last_amount": 12.78
     }
   ],
-  "fixed_obligations": {
-    "mortgage": 3800.14,
-    "car_loan": 631.65,
-    "verizon": 515,
-    "pseg": 290,
-    "hoa": 105.95,
-    "cable": 50.66
-  },
+  "monthly_history": [
+    {
+      "period": "2026-01",
+      "period_label": "January 2026",
+      "income": 1835.08,
+      "bofa_income": 1835.08,
+      "td_income": 0,
+      "outflows": 3865.56,
+      "xoom": 0,
+      "investments": 0
+    },
+    {
+      "period": "2026-02",
+      "period_label": "February 2026",
+      "income": 30135.05,
+      "bofa_income": 25135.05,
+      "td_income": 5000,
+      "outflows": 4179.87,
+      "xoom": 0,
+      "investments": 0
+    },
+    {
+      "period": "2026-03",
+      "period_label": "March 2026",
+      "income": 8843.6,
+      "bofa_income": 3843.5899999999997,
+      "td_income": 5000.01,
+      "outflows": 23481.23,
+      "xoom": 0,
+      "investments": 0
+    },
+    {
+      "period": "2026-04",
+      "period_label": "April 2026",
+      "income": 4478.460000000001,
+      "bofa_income": 1978.44,
+      "td_income": 2500.02,
+      "outflows": 4263.87,
+      "xoom": 0,
+      "investments": 0
+    }
+  ],
   "monthly_spending": {
     "2026-04": {
       "label": "April 2026",
+      "period": "2026-04",
       "categories": {
         "Healthcare": 53.269999999999996,
         "Tech/Subs": 1325.92,
         "Shopping": 583.38,
         "Entertainment": 749.36,
-        "Other": 713,
+        "Tax/Professional": 793.12,
         "Groceries": 302.19,
         "Restaurants": 253.16000000000003,
-        "Gas/Travel": 283.59000000000003
+        "Gas/Travel": 203.47
       },
       "total": 4263.869999999999,
       "transactions": [
@@ -845,7 +881,7 @@
           "date": "04-01",
           "desc": "New Jersey Tgi",
           "amount": 713,
-          "category": "Other",
+          "category": "Tax/Professional",
           "city": null,
           "state": null
         },
@@ -1085,7 +1121,7 @@
           "date": "04-04",
           "desc": "Uber",
           "amount": 80.12,
-          "category": "Gas/Travel",
+          "category": "Tax/Professional",
           "city": null,
           "state": null
         },
@@ -1181,15 +1217,17 @@
     },
     "2026-03": {
       "label": "March 2026",
+      "period": "2026-03",
       "categories": {
         "Tech/Subs": 1832.92,
         "Entertainment": 666.19,
-        "Other": 17361.95,
+        "Tax/Professional": 16908.149999999998,
         "Healthcare": 45.99,
         "Shopping": 1502.4099999999999,
-        "Restaurants": 772.9000000000001,
-        "Gas/Travel": 1003.22,
-        "Groceries": 295.65
+        "Restaurants": 793.9000000000001,
+        "Gas/Travel": 830.07,
+        "Groceries": 303.83,
+        "Insurance": 597.77
       },
       "total": 23481.23,
       "transactions": [
@@ -1229,7 +1267,7 @@
           "date": "03-31",
           "desc": "Internal Revenue Service",
           "amount": 16735,
-          "category": "Other",
+          "category": "Tax/Professional",
           "city": null,
           "state": null
         },
@@ -1397,7 +1435,7 @@
           "date": "03-29",
           "desc": "Esmeralda",
           "amount": 21,
-          "category": "Other",
+          "category": "Restaurants",
           "city": "Santa Monica",
           "state": "CA"
         },
@@ -1813,7 +1851,7 @@
           "date": "03-20",
           "desc": "Mercury",
           "amount": 597.77,
-          "category": "Other",
+          "category": "Insurance",
           "city": null,
           "state": "CA"
         },
@@ -1837,7 +1875,7 @@
           "date": "03-27",
           "desc": "Uber",
           "amount": 100.98,
-          "category": "Gas/Travel",
+          "category": "Tax/Professional",
           "city": null,
           "state": null
         },
@@ -1861,7 +1899,7 @@
           "date": "03-28",
           "desc": "Lyft",
           "amount": 72.17,
-          "category": "Gas/Travel",
+          "category": "Tax/Professional",
           "city": null,
           "state": null
         },
@@ -1941,7 +1979,7 @@
           "date": "03-14",
           "desc": "Patidar",
           "amount": 8.18,
-          "category": "Other",
+          "category": "Groceries",
           "city": null,
           "state": null
         }
@@ -1949,15 +1987,16 @@
     },
     "2026-02": {
       "label": "February 2026",
+      "period": "2026-02",
       "categories": {
         "Healthcare": 114.08000000000001,
-        "Tech/Subs": 1373.5900000000001,
+        "Tech/Subs": 1187.65,
         "Shopping": 688.66,
         "Entertainment": 522.4200000000001,
         "Gas/Travel": 225.16,
         "Groceries": 351.83,
-        "Restaurants": 306.35999999999996,
-        "Other": 597.77
+        "Insurance": 783.71,
+        "Restaurants": 306.35999999999996
       },
       "total": 4179.870000000001,
       "transactions": [
@@ -2069,7 +2108,7 @@
           "date": "02-28",
           "desc": "Kidsempire East Eastbrunswick",
           "amount": 6.14,
-          "category": "Tech/Subs",
+          "category": "Insurance",
           "city": null,
           "state": null
         },
@@ -2077,7 +2116,7 @@
           "date": "02-28",
           "desc": "Kidsempire East Eastbrunswick",
           "amount": 6,
-          "category": "Tech/Subs",
+          "category": "Insurance",
           "city": null,
           "state": null
         },
@@ -2085,7 +2124,7 @@
           "date": "02-28",
           "desc": "Kidsempire East Eastbrunswick",
           "amount": 4.26,
-          "category": "Tech/Subs",
+          "category": "Insurance",
           "city": null,
           "state": null
         },
@@ -2093,7 +2132,7 @@
           "date": "02-28",
           "desc": "Kidsempire East Eastbrunswick",
           "amount": 169.54,
-          "category": "Tech/Subs",
+          "category": "Insurance",
           "city": null,
           "state": null
         },
@@ -2413,7 +2452,7 @@
           "date": "02-20",
           "desc": "Mercury",
           "amount": 597.77,
-          "category": "Other",
+          "category": "Insurance",
           "city": null,
           "state": "CA"
         },
@@ -2437,6 +2476,7 @@
     },
     "2026-01": {
       "label": "January 2026",
+      "period": "2026-01",
       "categories": {
         "Tech/Subs": 352.72,
         "Entertainment": 161.02,
@@ -2445,7 +2485,8 @@
         "Gas/Travel": 452.59,
         "Restaurants": 145.6,
         "Groceries": 163.03,
-        "Other": 1046.1
+        "Tax/Professional": 448.32,
+        "Insurance": 597.78
       },
       "total": 3865.56,
       "transactions": [
@@ -2725,7 +2766,7 @@
           "date": "01-20",
           "desc": "North Brunswick",
           "amount": 448.32,
-          "category": "Other",
+          "category": "Tax/Professional",
           "city": "North Brunswick",
           "state": "NJ"
         },
@@ -2765,7 +2806,7 @@
           "date": "01-20",
           "desc": "Mercury",
           "amount": 597.78,
-          "category": "Other",
+          "category": "Insurance",
           "city": null,
           "state": "CA"
         },
@@ -3111,7 +3152,7 @@
       "date": "03-29",
       "desc": "Esmeralda",
       "amount": 21,
-      "category": "Other",
+      "category": "Restaurants",
       "city": "Santa Monica",
       "state": "CA",
       "period": "2026-03",
@@ -3381,7 +3422,7 @@
       "date": "03-20",
       "desc": "Mercury",
       "amount": 597.77,
-      "category": "Other",
+      "category": "Insurance",
       "city": null,
       "state": "CA",
       "period": "2026-03",
@@ -3441,7 +3482,7 @@
       "date": "01-20",
       "desc": "Mercury",
       "amount": 597.78,
-      "category": "Other",
+      "category": "Insurance",
       "city": null,
       "state": "CA",
       "period": "2026-01",
@@ -3461,14 +3502,22 @@
       "date": "02-20",
       "desc": "Mercury",
       "amount": 597.77,
-      "category": "Other",
+      "category": "Insurance",
       "city": null,
       "state": "CA",
       "period": "2026-02",
       "period_label": "February 2026"
     }
   ],
+  "fixed_obligations": {
+    "mortgage": 3800.14,
+    "car_loan": 631.65,
+    "verizon": 515,
+    "pseg": 290,
+    "hoa": 105.95,
+    "cable": 50.66
+  },
   "statement_count": "5 live accounts",
-  "generated_at": "2026-04-19T21:49:10.565Z",
+  "generated_at": "2026-04-19T23:11:46.493Z",
   "source": "plaid_realtime"
 }
