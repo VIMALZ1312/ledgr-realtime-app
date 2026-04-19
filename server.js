@@ -441,7 +441,6 @@ function buildStructuredData(accounts, transactions) {
     },
     all_accounts: allAccountsList,
     net_worth: { total_checking: totalChecking, total_credit: totalCredit, net: netWorth },
-    },
     india: { hdfc_usd: 283.43, casagrand_usd: 755.0, pnb_usd: 35.66, yes_bank_usd: 9.58, total_usd: 1083.67, by_month: [] },
     spending: Object.fromEntries(
       Object.entries(
@@ -464,7 +463,7 @@ function buildStructuredData(accounts, transactions) {
 async function pushToGitHub(data) {
   const token = process.env.GITHUB_TOKEN;
   const repo  = process.env.GITHUB_REPO || 'VIMALZ1312/ledgr-realtime-app';
-  const path  = 'data.json';
+  const path  = 'data.json';  // always lowercase
   const apiUrl = `https://api.github.com/repos/${repo}/contents/${path}`;
 
   // Get current SHA (needed for update)
