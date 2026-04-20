@@ -606,6 +606,36 @@ cron.schedule('0 13 * * *', async () => {
   }
 });
 
+// ── AUTO-UPDATE: check GitHub for new server.js every 30 min ──
+let _currentHash = null;
+async function checkForUpdate() {
+  try {
+    const ghToken = process.env.GITHUB_TOKEN;
+    const repo = process.env.GITHUB_REPO || 'VIMALZ1312/ledgr-realtime-app';
+    const r = await fetch(`https://api.github.com/repos/${repo}/contents/server.js`, {
+      headers: { Authorization: `token ${ghToken}`, 'User-Agent': 'ledgr-bot' }
+    });
+    if (!r.ok) return;
+    const j = await r.json();
+    const sha = j.sha;
+    if (_currentHash === null) {
+      _currentHash = sha; // first run — just record current
+      console.log('Auto-update: tracking server.js sha', sha.substring(0,8));
+      return;
+    }
+    if (sha !== _currentHash) {
+      console.log('Auto-update: new server.js detected, pulling and restarting...');
+      const newCode = Buffer.from(j.content, 'base64').toString('utf8');
+      require('fs').writeFileSync('./server.js', newCode);
+      console.log('✓ server.js updated — restarting');
+      process.exit(0); // Replit Always-On restarts automatically
+    }
+  } catch (e) {
+    // Silently ignore — don't crash server on update check failure
+  }
+}
+cron.schedule('*/30 * * * *', checkForUpdate); // every 30 minutes
+
 // ── START ─────────────────────────────────────────────────────
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
