@@ -288,14 +288,18 @@ function categorizeName(name) {
 }
 
 function isIncome(txn) {
-  if (txn.amount < 0) { // Plaid: negative = money in
-    const name = (txn.name || '').toUpperCase();
-    if (name.includes('VERIZON') && name.includes('DIR DEP')) return true;
-    if (name.includes('DIRECT DEP')) return true;
-    if (name.includes('PAYROLL')) return true;
-    const primary = txn.personal_finance_category?.primary || '';
-    if (primary === 'INCOME') return true;
-  }
+  // Plaid: negative amount = money coming IN to account
+  if (txn.amount >= 0) return false;
+  const primary = txn.personal_finance_category?.primary || '';
+  const detailed = txn.personal_finance_category?.detailed || '';
+  const name = (txn.name || txn.merchant_name || '').toUpperCase();
+  // Plaid category-based detection
+  if (primary === 'INCOME') return true;
+  if (detailed.includes('INCOME') || detailed.includes('PAYROLL') || detailed.includes('WAGES')) return true;
+  // Name-based detection
+  if (name.includes('DIRECT DEP') || name.includes('DIR DEP')) return true;
+  if (name.includes('PAYROLL') || name.includes('PAYCHEX') || name.includes('ADP')) return true;
+  if (name.includes('VERIZON') && Math.abs(txn.amount) > 1000) return true; // Verizon payroll
   return false;
 }
 
@@ -332,9 +336,9 @@ function buildStructuredData(accounts, transactions) {
     is_savings: a.subtype === 'savings',
   }));
 
-  // Totals by type across all banks
-  const totalChecking = allAccountsList.filter(a => ['checking','savings'].includes(a.subtype)).reduce((s,a) => s+a.balance, 0);
-  const totalCredit   = allAccountsList.filter(a => a.is_credit).reduce((s,a) => s+a.balance, 0);
+  // Totals by type — only count positive credit balances as "owed"
+  const totalChecking = allAccountsList.filter(a => ['checking','savings','brokerage'].includes(a.subtype)).reduce((s,a) => s+a.balance, 0);
+  const totalCredit   = allAccountsList.filter(a => a.is_credit && a.balance > 0).reduce((s,a) => s+a.balance, 0);
   const netWorth      = totalChecking - totalCredit;
 
   // For backward compat with dashboard — pick primary account per bank
