@@ -115,7 +115,7 @@ body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-ser
     <div class="nav" id="sidebar-nav"></div>
     <div class="sidebar-foot">
       <button class="btn-sync" id="sync-btn" onclick="triggerSync()">Sync</button>
-      <button class="btn-sec theme-btn" onclick="toggleTheme()">Night Mode</button>
+      <button class="btn-sec theme-btn-text" onclick="toggleTheme()" id="theme-sidebar">&#9790; Night</button>
       <div class="synced-at" id="synced-at">--</div>
     </div>
   </div>
@@ -123,7 +123,7 @@ body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-ser
     <div class="topbar">
       <button class="hamburger" onclick="openDrawer()">&#9776;</button>
       <div class="t-logo">LED<span>GR</span></div>
-      <button class="t-btn theme-btn" onclick="toggleTheme()">&#9790;</button>
+      <button class="t-btn theme-btn-icon" onclick="toggleTheme()" id="theme-topbar">&#9790;</button>
       <button class="t-btn" onclick="triggerSync()" id="sync-btn-top">&#9889;</button>
     </div>
     <div class="main" id="main-content">
@@ -146,10 +146,10 @@ var CAT_COLORS = {
   'Home Security':'#fb923c','Religious':'#e879f9','Other':'#6b6b80'
 };
 var PAGES = [
-  {id:'overview',  label:'Overview',  icon:'O'},
-  {id:'accounts',  label:'Accounts',  icon:'A'},
-  {id:'travel',    label:'Travel',    icon:'T'},
-  {id:'recurring', label:'Recurring', icon:'R'}
+  {id:'overview',  label:'Overview',  icon:'&#9672;'},
+  {id:'accounts',  label:'Accounts',  icon:'&#127974;'},
+  {id:'travel',    label:'Travel',    icon:'&#9992;'},
+  {id:'recurring', label:'Recurring', icon:'&#128260;'}
 ];
 var _tid = 0;
 function uid() { return 'el' + (++_tid); }
@@ -249,7 +249,10 @@ function toggleTheme() {
   var next = t === 'dark' ? 'light' : 'dark';
   document.documentElement.setAttribute('data-theme', next);
   localStorage.setItem('lgr-theme', next);
-  document.querySelectorAll('.theme-btn').forEach(function(b) { b.textContent = next === 'dark' ? 'Day Mode' : 'Night Mode'; });
+  var sb = document.getElementById('theme-sidebar');
+  var tb = document.getElementById('theme-topbar');
+  if(sb) sb.innerHTML = next === 'dark' ? '&#9728; Day' : '&#9790; Night';
+  if(tb) tb.innerHTML = next === 'dark' ? '&#9728;' : '&#9790;';
   if(_chartInst) { _chartInst.destroy(); _chartInst = null; }
   render();
 }
@@ -716,7 +719,7 @@ function renderRecurring() {
 function triggerSync() {
   var b = $('sync-btn'), bt = $('sync-btn-top');
   if(b) { b.textContent = 'Syncing...'; b.disabled = true; }
-  if(bt) { bt.textContent = '...'; bt.disabled = true; }
+  if(bt) { bt.innerHTML = '&#8987;'; bt.disabled = true; }
   fetch(BACKEND + '/api/sync', {method:'POST'})
     .then(function(r){ return r.json(); })
     .then(function(d) {
@@ -726,7 +729,7 @@ function triggerSync() {
     .catch(function(e){ alert('Cannot reach backend: ' + e.message); })
     .finally(function() {
       if(b) { b.textContent = 'Sync'; b.disabled = false; }
-      if(bt) { bt.textContent = 'S'; bt.disabled = false; }
+      if(bt) { bt.innerHTML = '&#9889;'; bt.disabled = false; }
     });
 }
 
