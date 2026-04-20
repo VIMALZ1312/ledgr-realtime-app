@@ -358,9 +358,15 @@ function buildStructuredData(accounts, transactions) {
   const travelTxns = [];
 
   // Plaid: positive amount = money out (debit), negative = money in (credit)
+  // Deduplicate cross-account transactions (same date + name + amount = same transaction)
+  const seenTxns = new Set();
   const spendTxns = transactions.filter(t => {
     const cat = categorize(t);
-    return cat !== null && t.amount > 0;
+    if (cat === null || t.amount <= 0) return false;
+    const key = t.date + '|' + (t.merchant_name || t.name) + '|' + t.amount;
+    if (seenTxns.has(key)) return false;
+    seenTxns.add(key);
+    return true;
   });
 
   spendTxns.forEach(t => {
@@ -402,7 +408,13 @@ function buildStructuredData(accounts, transactions) {
   });
 
   // Income
-  transactions.filter(isIncome).forEach(t => {
+  const seenIncome = new Set();
+  transactions.filter(isIncome).filter(t => {
+    const key = t.date + '|' + (t.name||'') + '|' + t.amount;
+    if (seenIncome.has(key)) return false;
+    seenIncome.add(key);
+    return true;
+  }).forEach(t => {
     const period = t.date.substring(0, 7);
     const month = new Date(t.date + 'T00:00:00').toLocaleString('en-US', { month: 'long', year: 'numeric' });
     if (!monthlyIncome[period]) monthlyIncome[period] = { label: month, bofa: 0, td: 0, total: 0 };
