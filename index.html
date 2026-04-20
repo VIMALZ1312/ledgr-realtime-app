@@ -731,7 +731,7 @@ function triggerSync() {
 }
 
 function loadData() {
-  fetch('./data.json?t=' + Date.now())
+  fetch('https://raw.githubusercontent.com/VIMALZ1312/ledgr-realtime-app/main/data.json?t=' + Date.now())
     .then(function(r){ return r.json(); })
     .then(function(data) {
       _rawD = JSON.parse(JSON.stringify(data));
