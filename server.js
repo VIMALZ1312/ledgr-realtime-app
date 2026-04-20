@@ -595,9 +595,9 @@ async function fetchCurrentData() {
   return JSON.parse(Buffer.from(j.content, 'base64').toString());
 }
 
-// ── DAILY CRON: sync at 8am ET every day ─────────────────────
-cron.schedule('0 13 * * *', async () => {
-  console.log('⏰ Daily cron sync starting...');
+// ── CRON: sync every 6 hours ──────────────────────────────────
+cron.schedule('0 */6 * * *', async () => {
+  console.log('⏰ 6-hour cron sync starting...');
   try {
     const result = await buildDataJson();
     console.log('✓ Cron sync complete:', result);
