@@ -46,6 +46,33 @@ app.get('/', (req, res) => {
   });
 });
 
+// Auto-update: GitHub Actions calls this after pushing server.js changes
+// Server pulls latest code from GitHub and restarts itself
+app.post('/api/update', async (req, res) => {
+  const token = req.headers['x-deploy-token'];
+  if (token !== process.env.DEPLOY_TOKEN) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+  res.json({ status: 'updating', message: 'Pulling latest code and restarting...' });
+  // Pull latest server.js from GitHub then exit (Replit restarts automatically)
+  setTimeout(async () => {
+    try {
+      const ghToken = process.env.GITHUB_TOKEN;
+      const repo = process.env.GITHUB_REPO || 'VIMALZ1312/ledgr-realtime-app';
+      const r = await fetch(`https://api.github.com/repos/${repo}/contents/server.js`, {
+        headers: { Authorization: `token ${ghToken}`, 'User-Agent': 'ledgr-bot' }
+      });
+      const j = await r.json();
+      const newCode = Buffer.from(j.content, 'base64').toString('utf8');
+      require('fs').writeFileSync('./server.js', newCode);
+      console.log('✓ server.js updated from GitHub — restarting...');
+      process.exit(0); // Replit Always-On restarts automatically
+    } catch (e) {
+      console.error('Update failed:', e.message);
+    }
+  }, 500);
+});
+
 // Step 1: Create link token (used by frontend to open Plaid Link)
 app.post('/api/create-link-token', async (req, res) => {
   try {
