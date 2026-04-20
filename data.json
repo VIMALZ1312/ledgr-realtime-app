@@ -231,8 +231,8 @@
       "mask": "7119",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 1417.8,
-      "available": 674.34,
+      "balance": 1423.52,
+      "available": 1069.68,
       "is_credit": false,
       "is_checking": false,
       "is_savings": false
@@ -3205,6 +3205,6 @@
     "cable": 50.66
   },
   "statement_count": "5 live accounts",
-  "generated_at": "2026-04-20T13:00:19.145Z",
+  "generated_at": "2026-04-20T23:10:14.986Z",
   "source": "plaid_realtime"
 }
