@@ -157,7 +157,7 @@ function $(id) { return document.getElementById(id); }
 function set(id, html) { var e = $(id); if(e) e.innerHTML = html; }
 function fmt(n) { return '$' + Number(n||0).toLocaleString('en-US', {maximumFractionDigits:0}); }
 function fmt2(n) { return '$' + Number(n||0).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2}); }
-function short(s) { return (s||'').replace(' 2026',"'26").replace(' 2025',"'25"); }
+function short(s) { return (s||'').replace(' 2026',' 26').replace(' 2025',' 25'); }
 function expand(id) { var e = $(id); if(e) e.classList.toggle('open'); }
 
 function saveOverrides() {
