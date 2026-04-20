@@ -550,7 +550,7 @@ function buildStructuredData(accounts, transactions) {
 async function pushToGitHub(data) {
   const token = process.env.GITHUB_TOKEN;
   const repo  = process.env.GITHUB_REPO || 'VIMALZ1312/ledgr-realtime-app';
-  const path  = 'data.json';  // always lowercase
+  const path  = process.env.GITHUB_FILE_PATH || 'data.json';
   const apiUrl = `https://api.github.com/repos/${repo}/contents/${path}`;
 
   // Get current SHA (needed for update)
@@ -587,7 +587,7 @@ async function pushToGitHub(data) {
 async function fetchCurrentData() {
   const token = process.env.GITHUB_TOKEN;
   const repo  = process.env.GITHUB_REPO || 'VIMALZ1312/ledgr-realtime-app';
-  const r = await fetch(`https://api.github.com/repos/${repo}/contents/data.json`, {
+  const r = await fetch(`https://api.github.com/repos/${repo}/contents/${process.env.GITHUB_FILE_PATH || 'data.json'}`, {
     headers: { Authorization: `token ${token}`, 'User-Agent': 'ledgr-bot' }
   });
   if (!r.ok) return {};
