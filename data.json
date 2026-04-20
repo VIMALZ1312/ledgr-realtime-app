@@ -304,9 +304,9 @@
     }
   ],
   "net_worth": {
-    "total_checking": 53958.49999999999,
-    "total_credit": 3644.33,
-    "net": 50314.16999999999
+    "total_checking": 52534.98,
+    "total_credit": 3469.83,
+    "net": 49065.15
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -318,14 +318,13 @@
   },
   "spending": {
     "Healthcare": 917.07,
-    "Tech/Subs": 5953.000000000001,
+    "Tech/Subs": 6138.9400000000005,
     "Shopping": 10173.74,
     "Entertainment": 2108.9900000000002,
-    "Tax/Professional": 35608.590000000004,
-    "Groceries": 1764.6099999999997,
-    "Restaurants": 1565.9,
-    "Gas/Travel": 6099.530000000001,
-    "Insurance": 1979.26
+    "Other": 37177.81999999999,
+    "Groceries": 1756.4299999999998,
+    "Restaurants": 1544.9,
+    "Gas/Travel": 6352.800000000001
   },
   "zelle_received": [
     {
@@ -515,360 +514,6 @@
       "period_label": "January 2026"
     }
   ],
-  "detected_recurring": [
-    {
-      "desc": "Best Buy",
-      "category": "Shopping",
-      "count": 4,
-      "months": 4,
-      "avg_amount": 170,
-      "last_amount": 200
-    },
-    {
-      "desc": "Garden Farm",
-      "category": "Shopping",
-      "count": 6,
-      "months": 4,
-      "avg_amount": 64.16,
-      "last_amount": 38.76
-    },
-    {
-      "desc": "Delight Big Bazar",
-      "category": "Groceries",
-      "count": 5,
-      "months": 4,
-      "avg_amount": 59.03,
-      "last_amount": 27.72
-    },
-    {
-      "desc": "Amazon",
-      "category": "Shopping",
-      "count": 19,
-      "months": 4,
-      "avg_amount": 32.45,
-      "last_amount": 21.53
-    },
-    {
-      "desc": "ShopRite",
-      "category": "Groceries",
-      "count": 8,
-      "months": 4,
-      "avg_amount": 28.07,
-      "last_amount": 31.98
-    },
-    {
-      "desc": "Regal Cinemas",
-      "category": "Entertainment",
-      "count": 5,
-      "months": 4,
-      "avg_amount": 17.58,
-      "last_amount": 28.24
-    },
-    {
-      "desc": "Planet Fitness",
-      "category": "Healthcare",
-      "count": 4,
-      "months": 4,
-      "avg_amount": 10.66,
-      "last_amount": 10.66
-    },
-    {
-      "desc": "Vzn Br Cafe Basking Ridgenj",
-      "category": "Restaurants",
-      "count": 7,
-      "months": 4,
-      "avg_amount": 3.28,
-      "last_amount": 6.25
-    },
-    {
-      "desc": "Mercury",
-      "category": "Insurance",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 597.77,
-      "last_amount": 597.78
-    },
-    {
-      "desc": "Verizon",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 454.42,
-      "last_amount": 520.84
-    },
-    {
-      "desc": "Republic Services",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 312.27,
-      "last_amount": 303.93
-    },
-    {
-      "desc": "Big Blue Swim School",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 288.17,
-      "last_amount": 266
-    },
-    {
-      "desc": "Kumon Of North",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 280,
-      "last_amount": 280
-    },
-    {
-      "desc": "Fanbasis",
-      "category": "Entertainment",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 250,
-      "last_amount": 250
-    },
-    {
-      "desc": "Zelle payment to KAVI MUSIC LLC for \"Aryan Mar and Apr\"; Conf# taivjlhgp",
-      "category": "Entertainment",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 160,
-      "last_amount": 120
-    },
-    {
-      "desc": "Patel Brothers",
-      "category": "Groceries",
-      "count": 4,
-      "months": 3,
-      "avg_amount": 109.44,
-      "last_amount": 82.65
-    },
-    {
-      "desc": "Walmart",
-      "category": "Shopping",
-      "count": 7,
-      "months": 3,
-      "avg_amount": 97.36,
-      "last_amount": 83.74
-    },
-    {
-      "desc": "Houseofbi",
-      "category": "Restaurants",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 59.06,
-      "last_amount": 76.41
-    },
-    {
-      "desc": "BP",
-      "category": "Gas/Travel",
-      "count": 7,
-      "months": 3,
-      "avg_amount": 50.27,
-      "last_amount": 44.08
-    },
-    {
-      "desc": "Walgreens",
-      "category": "Healthcare",
-      "count": 10,
-      "months": 3,
-      "avg_amount": 49.44,
-      "last_amount": 303.5
-    },
-    {
-      "desc": "Trader Joe's",
-      "category": "Groceries",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 33.49,
-      "last_amount": 13.14
-    },
-    {
-      "desc": "Shaan Halal Zabiha Meat",
-      "category": "Groceries",
-      "count": 6,
-      "months": 3,
-      "avg_amount": 19.9,
-      "last_amount": 42.14
-    },
-    {
-      "desc": "Netflix",
-      "category": "Entertainment",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 19.18,
-      "last_amount": 19.18
-    },
-    {
-      "desc": "Aitubo.ai Hunghom",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 15,
-      "last_amount": 15
-    },
-    {
-      "desc": "Apple",
-      "category": "Shopping",
-      "count": 8,
-      "months": 3,
-      "avg_amount": 13.05,
-      "last_amount": 13.84
-    },
-    {
-      "desc": "CVS ExtraCare",
-      "category": "Healthcare",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 5.33,
-      "last_amount": 5.33
-    },
-    {
-      "desc": "Google One",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 1.99,
-      "last_amount": 1.99
-    },
-    {
-      "desc": "North Brunswick",
-      "category": "Entertainment",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 340.16,
-      "last_amount": 448.32
-    },
-    {
-      "desc": "Spirit Airlines",
-      "category": "Gas/Travel",
-      "count": 4,
-      "months": 2,
-      "avg_amount": 336.72,
-      "last_amount": 1188.4
-    },
-    {
-      "desc": "Costco",
-      "category": "Shopping",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 296.89,
-      "last_amount": 322.99
-    },
-    {
-      "desc": "United Airlines",
-      "category": "Gas/Travel",
-      "count": 7,
-      "months": 2,
-      "avg_amount": 187.55,
-      "last_amount": 301.4
-    },
-    {
-      "desc": "NJ E-ZPass",
-      "category": "Gas/Travel",
-      "count": 4,
-      "months": 2,
-      "avg_amount": 129.21,
-      "last_amount": 25
-    },
-    {
-      "desc": "Renaissance Gree",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 2,
-      "avg_amount": 105.95,
-      "last_amount": 105.95
-    },
-    {
-      "desc": "Uber",
-      "category": "Tax/Professional",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 90.55,
-      "last_amount": 100.98
-    },
-    {
-      "desc": "Patidar Supermarket Nort",
-      "category": "Groceries",
-      "count": 4,
-      "months": 2,
-      "avg_amount": 73.33,
-      "last_amount": 99.27
-    },
-    {
-      "desc": "Shell",
-      "category": "Gas/Travel",
-      "count": 4,
-      "months": 2,
-      "avg_amount": 73.31,
-      "last_amount": 138.42
-    },
-    {
-      "desc": "Replit Inc.",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 2,
-      "avg_amount": 66.81,
-      "last_amount": 50.17
-    },
-    {
-      "desc": "Desi Halal Meat",
-      "category": "Groceries",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 56.97,
-      "last_amount": 35.26
-    },
-    {
-      "desc": "H&M",
-      "category": "Shopping",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 54.52,
-      "last_amount": 32.95
-    },
-    {
-      "desc": "Optimum",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 2,
-      "avg_amount": 50.66,
-      "last_amount": 50.66
-    },
-    {
-      "desc": "Shaan Halal Meat Market",
-      "category": "Groceries",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 40.33,
-      "last_amount": 48.78
-    },
-    {
-      "desc": "Simplisafe",
-      "category": "Shopping",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 35.18,
-      "last_amount": 35.18
-    },
-    {
-      "desc": "CVS",
-      "category": "Healthcare",
-      "count": 4,
-      "months": 2,
-      "avg_amount": 25.09,
-      "last_amount": 55.22
-    },
-    {
-      "desc": "Hulu",
-      "category": "Entertainment",
-      "count": 3,
-      "months": 2,
-      "avg_amount": 12.78,
-      "last_amount": 12.78
-    }
-  ],
   "monthly_history": [
     {
       "period": "2026-01",
@@ -876,7 +521,7 @@
       "income": 5416.34,
       "bofa_income": 5416.34,
       "td_income": 0,
-      "outflows": 4131.04,
+      "outflows": 0,
       "xoom": 0,
       "investments": 0
     },
@@ -886,7 +531,7 @@
       "income": 37914.84,
       "bofa_income": 32914.84,
       "td_income": 5000,
-      "outflows": 15022.32,
+      "outflows": 0,
       "xoom": 0,
       "investments": 0
     },
@@ -896,7 +541,7 @@
       "income": 15893,
       "bofa_income": 10892.99,
       "td_income": 5000.01,
-      "outflows": 41229.29,
+      "outflows": 0,
       "xoom": 0,
       "investments": 0
     },
@@ -906,7 +551,7 @@
       "income": 7933.090000000001,
       "bofa_income": 5433.07,
       "td_income": 2500.02,
-      "outflows": 5788.04,
+      "outflows": 0,
       "xoom": 0,
       "investments": 0
     }
@@ -914,16 +559,15 @@
   "monthly_spending": {
     "2026-04": {
       "label": "April 2026",
-      "period": "2026-04",
       "categories": {
         "Healthcare": 76.27,
         "Tech/Subs": 1605.92,
         "Shopping": 874.26,
         "Entertainment": 749.36,
-        "Tax/Professional": 1506.12,
+        "Other": 1426,
         "Groceries": 425.71,
         "Restaurants": 253.16000000000003,
-        "Gas/Travel": 297.24
+        "Gas/Travel": 377.36
       },
       "total": 5788.039999999998,
       "transactions": [
@@ -987,7 +631,7 @@
           "date": "04-01",
           "desc": "New Jersey Tgi",
           "amount": 713,
-          "category": "Tax/Professional",
+          "category": "Other",
           "city": null,
           "state": null
         },
@@ -1227,7 +871,7 @@
           "date": "04-01",
           "desc": "New Jersey Tgi",
           "amount": 713,
-          "category": "Tax/Professional",
+          "category": "Other",
           "city": null,
           "state": null
         },
@@ -1315,7 +959,7 @@
           "date": "04-04",
           "desc": "Uber",
           "amount": 80.12,
-          "category": "Tax/Professional",
+          "category": "Gas/Travel",
           "city": null,
           "state": null
         },
@@ -1411,17 +1055,15 @@
     },
     "2026-03": {
       "label": "March 2026",
-      "period": "2026-03",
       "categories": {
         "Tech/Subs": 2133.34,
         "Entertainment": 676.19,
-        "Tax/Professional": 33643.15,
+        "Other": 34096.95,
         "Healthcare": 45.99,
         "Shopping": 1776.6399999999996,
-        "Restaurants": 815.7800000000002,
-        "Gas/Travel": 933.9300000000001,
-        "Groceries": 606.4999999999999,
-        "Insurance": 597.77
+        "Restaurants": 794.7800000000002,
+        "Gas/Travel": 1107.0800000000002,
+        "Groceries": 598.3199999999999
       },
       "total": 41229.28999999998,
       "transactions": [
@@ -1461,7 +1103,7 @@
           "date": "03-31",
           "desc": "Internal Revenue Service",
           "amount": 16735,
-          "category": "Tax/Professional",
+          "category": "Other",
           "city": null,
           "state": null
         },
@@ -1629,7 +1271,7 @@
           "date": "03-29",
           "desc": "Esmeralda",
           "amount": 21,
-          "category": "Restaurants",
+          "category": "Other",
           "city": "Santa Monica",
           "state": "CA"
         },
@@ -2045,7 +1687,7 @@
           "date": "03-31",
           "desc": "Internal Revenue Service",
           "amount": 16735,
-          "category": "Tax/Professional",
+          "category": "Other",
           "city": null,
           "state": null
         },
@@ -2189,7 +1831,7 @@
           "date": "03-20",
           "desc": "Mercury",
           "amount": 597.77,
-          "category": "Insurance",
+          "category": "Other",
           "city": null,
           "state": "CA"
         },
@@ -2213,7 +1855,7 @@
           "date": "03-27",
           "desc": "Uber",
           "amount": 100.98,
-          "category": "Tax/Professional",
+          "category": "Gas/Travel",
           "city": null,
           "state": null
         },
@@ -2237,7 +1879,7 @@
           "date": "03-28",
           "desc": "Lyft",
           "amount": 72.17,
-          "category": "Tax/Professional",
+          "category": "Gas/Travel",
           "city": null,
           "state": null
         },
@@ -2317,7 +1959,7 @@
           "date": "03-14",
           "desc": "Patidar",
           "amount": 8.18,
-          "category": "Groceries",
+          "category": "Other",
           "city": null,
           "state": null
         }
@@ -2325,17 +1967,15 @@
     },
     "2026-02": {
       "label": "February 2026",
-      "period": "2026-02",
       "categories": {
         "Healthcare": 134.08,
-        "Tech/Subs": 1662.02,
+        "Tech/Subs": 1847.96,
         "Shopping": 6600.31,
         "Entertainment": 522.4200000000001,
         "Gas/Travel": 4415.77,
         "Groceries": 541.6499999999999,
-        "Insurance": 783.71,
         "Restaurants": 351.35999999999996,
-        "Tax/Professional": 11
+        "Other": 608.77
       },
       "total": 15022.32,
       "transactions": [
@@ -2447,7 +2087,7 @@
           "date": "02-28",
           "desc": "Kidsempire East Eastbrunswick",
           "amount": 6.14,
-          "category": "Insurance",
+          "category": "Tech/Subs",
           "city": null,
           "state": null
         },
@@ -2455,7 +2095,7 @@
           "date": "02-28",
           "desc": "Kidsempire East Eastbrunswick",
           "amount": 6,
-          "category": "Insurance",
+          "category": "Tech/Subs",
           "city": null,
           "state": null
         },
@@ -2463,7 +2103,7 @@
           "date": "02-28",
           "desc": "Kidsempire East Eastbrunswick",
           "amount": 4.26,
-          "category": "Insurance",
+          "category": "Tech/Subs",
           "city": null,
           "state": null
         },
@@ -2471,7 +2111,7 @@
           "date": "02-28",
           "desc": "Kidsempire East Eastbrunswick",
           "amount": 169.54,
-          "category": "Insurance",
+          "category": "Tech/Subs",
           "city": null,
           "state": null
         },
@@ -2863,7 +2503,7 @@
           "date": "02-19",
           "desc": "Hindu Temple & Cultural Society Of USA Inc",
           "amount": 11,
-          "category": "Tax/Professional",
+          "category": "Other",
           "city": "Bridgewater",
           "state": "NJ"
         },
@@ -2983,7 +2623,7 @@
           "date": "02-20",
           "desc": "Mercury",
           "amount": 597.77,
-          "category": "Insurance",
+          "category": "Other",
           "city": null,
           "state": "CA"
         },
@@ -3007,7 +2647,6 @@
     },
     "2026-01": {
       "label": "January 2026",
-      "period": "2026-01",
       "categories": {
         "Tech/Subs": 551.72,
         "Entertainment": 161.02,
@@ -3016,8 +2655,7 @@
         "Gas/Travel": 452.59,
         "Restaurants": 145.6,
         "Groceries": 190.75,
-        "Tax/Professional": 448.32,
-        "Insurance": 597.78
+        "Other": 1046.1
       },
       "total": 4131.039999999999,
       "transactions": [
@@ -3297,7 +2935,7 @@
           "date": "01-20",
           "desc": "North Brunswick",
           "amount": 448.32,
-          "category": "Tax/Professional",
+          "category": "Other",
           "city": "North Brunswick",
           "state": "NJ"
         },
@@ -3361,7 +2999,7 @@
           "date": "01-20",
           "desc": "Mercury",
           "amount": 597.78,
-          "category": "Insurance",
+          "category": "Other",
           "city": null,
           "state": "CA"
         },
@@ -3707,7 +3345,7 @@
       "date": "03-29",
       "desc": "Esmeralda",
       "amount": 21,
-      "category": "Restaurants",
+      "category": "Other",
       "city": "Santa Monica",
       "state": "CA",
       "period": "2026-03",
@@ -4047,7 +3685,7 @@
       "date": "03-20",
       "desc": "Mercury",
       "amount": 597.77,
-      "category": "Insurance",
+      "category": "Other",
       "city": null,
       "state": "CA",
       "period": "2026-03",
@@ -4107,7 +3745,7 @@
       "date": "01-20",
       "desc": "Mercury",
       "amount": 597.78,
-      "category": "Insurance",
+      "category": "Other",
       "city": null,
       "state": "CA",
       "period": "2026-01",
@@ -4127,7 +3765,7 @@
       "date": "02-20",
       "desc": "Mercury",
       "amount": 597.77,
-      "category": "Insurance",
+      "category": "Other",
       "city": null,
       "state": "CA",
       "period": "2026-02",
@@ -4143,6 +3781,6 @@
     "cable": 50.66
   },
   "statement_count": "6 live accounts",
-  "generated_at": "2026-04-20T23:20:50.642Z",
+  "generated_at": "2026-04-20T23:47:55.076Z",
   "source": "plaid_realtime"
 }
