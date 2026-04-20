@@ -182,6 +182,41 @@ body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-ser
 <script>
 var D=null, TAB='overview';
 var BACKEND='https://realtimefin.replit.app';
+// Category overrides stored in localStorage — key = "desc|amount", value = new category
+var CAT_OVERRIDES={};
+try{CAT_OVERRIDES=JSON.parse(localStorage.getItem('lgr_cat_overrides')||'{}');}catch(e){}
+
+function saveOverrides(){try{localStorage.setItem('lgr_cat_overrides',JSON.stringify(CAT_OVERRIDES));}catch(e){}}
+
+function applyOverrides(data){
+  if(!data||!data.monthly_spending)return data;
+  Object.values(data.monthly_spending).forEach(function(v){
+    (v.transactions||[]).forEach(function(t){
+      var key=t.desc+'|'+t.amount;
+      if(CAT_OVERRIDES[key]){
+        // Update category total
+        var oldCat=t.category;
+        var newCat=CAT_OVERRIDES[key];
+        if(oldCat!==newCat){
+          v.categories[oldCat]=(v.categories[oldCat]||0)-t.amount;
+          if(v.categories[oldCat]<=0)delete v.categories[oldCat];
+          v.categories[newCat]=(v.categories[newCat]||0)+t.amount;
+          t.category=newCat;
+        }
+      }
+    });
+  });
+  // Also fix travel
+  if(data.travel){
+    data.travel.forEach(function(t){
+      var key=t.desc+'|'+t.amount;
+      if(CAT_OVERRIDES[key])t.category=CAT_OVERRIDES[key];
+    });
+  }
+  return data;
+}
+
+var ALL_CATS=['Restaurants','Groceries','Amazon','Shopping','Gas/Travel','Kids','Entertainment','Tech/Subs','Pharmacy','Healthcare','Insurance','Tax/Professional','Home Security','Religious','Other'];
 var CAT_COLORS={
   'Restaurants':'#ff8c42','Groceries':'#c8f060','Amazon':'#4da8ff',
   'Shopping':'#a78bfa','Gas/Travel':'#67e8f9','Kids':'#60d0ff',
@@ -264,15 +299,16 @@ function renderOverview(){
   html+=mkKpi('CREDIT OWED',fmt(nw.total_credit||0),'var(--red)','cards balance','showCredit()');
   html+='</div>';
 
-  // Line chart
-  var labels=periods.map(function(p){return short(ms[p].label);});
-  var spends=periods.map(function(p){return ms[p].total||0;});
-  var incomes=periods.map(function(p){
-    var mhEntry=(D.monthly_history||[]).find(function(m){return m.period===p;});
-    return mhEntry?mhEntry.income:0;
-  });
+  // Line chart — pass data as JSON attributes to avoid closure issues
+  var chartLabels=JSON.stringify(periods.map(function(p){return short(ms[p].label);}));
+  var chartSpends=JSON.stringify(periods.map(function(p){return ms[p].total||0;}));
+  var chartIncomes=JSON.stringify(periods.map(function(p){
+    var mh=D.monthly_history||[];
+    var entry=mh.find(function(m){return m.period===p;});
+    return entry?Number(entry.income)||0:0;
+  }));
   html+='<div class="panel"><div class="panel-head"><div class="panel-title">Monthly Cash Flow</div><div class="panel-action">'+short(latestV.label)+'</div></div>';
-  html+='<div class="chart-wrap"><canvas id="cfChart"></canvas></div></div>';
+  html+='<div class="chart-wrap"><canvas id="cfChart" data-labels=\''+chartLabels+'\' data-spends=\''+chartSpends+'\' data-incomes=\''+chartIncomes+'\'></canvas></div></div>';
 
   // Two columns
   html+='<div class="two-col">';
@@ -294,13 +330,7 @@ function renderOverview(){
     html+='<div class="cat-bar-amt" style="color:'+col+'">'+fmt(e[1])+' <span style="color:var(--muted);font-size:10px">›</span></div>';
     html+='</div>';
     html+='<div id="'+cid+'" class="expand-body" style="padding-left:4px">';
-    txns.forEach(function(t){
-      html+='<div style="display:flex;align-items:baseline;gap:8px;padding:5px 0;border-bottom:1px solid var(--border2);font-size:12px">';
-      html+='<span style="font-family:IBM Plex Mono,monospace;color:var(--muted);width:40px;flex-shrink:0">'+t.date+'</span>';
-      html+='<span style="flex:1;word-break:break-word;line-height:1.4;color:var(--muted)">'+t.desc+'</span>';
-      html+='<span style="font-family:IBM Plex Mono,monospace;color:'+col+';white-space:nowrap">'+fmt2(t.amount)+'</span>';
-      html+='</div>';
-    });
+    txns.forEach(function(t){html+=txnLine(t,col,0);});
     html+='</div></div>';
   });
   html+='</div>';
@@ -325,33 +355,40 @@ function renderOverview(){
 
   set('main-content',html);
 
-  // Draw chart
+  // Draw chart — read data from canvas data attributes to avoid closure issues
   setTimeout(function(){
     var ctx=document.getElementById('cfChart');
     if(!ctx)return;
     if(_chartInst){_chartInst.destroy();_chartInst=null;}
+    var labels=JSON.parse(ctx.getAttribute('data-labels')||'[]');
+    var spends=JSON.parse(ctx.getAttribute('data-spends')||'[]');
+    var incomes=JSON.parse(ctx.getAttribute('data-incomes')||'[]');
+    var hasIncome=incomes.some(function(v){return v>0;});
     var isDark2=document.documentElement.getAttribute('data-theme')==='dark';
     var gridCol=isDark2?'rgba(255,255,255,0.05)':'rgba(0,0,0,0.06)';
     var textCol=isDark2?'#60607a':'#9ca3af';
+    var datasets=[
+      {label:'Spending',data:spends,borderColor:'#ff4060',backgroundColor:'rgba(255,64,96,0.08)',tension:.35,pointRadius:5,pointBackgroundColor:'#ff4060',fill:true,borderWidth:2}
+    ];
+    if(hasIncome){
+      datasets.push({label:'Income',data:incomes,borderColor:'#00d084',backgroundColor:'rgba(0,208,132,0.08)',tension:.35,pointRadius:5,pointBackgroundColor:'#00d084',fill:true,borderWidth:2});
+    }
     _chartInst=new Chart(ctx,{
       type:'line',
-      data:{
-        labels:labels,
-        datasets:[
-          {label:'Spending',data:spends,borderColor:'#ff4060',backgroundColor:'rgba(255,64,96,0.08)',tension:.35,pointRadius:4,pointBackgroundColor:'#ff4060',fill:true},
-          {label:'Income',data:incomes,borderColor:'#00d084',backgroundColor:'rgba(0,208,132,0.08)',tension:.35,pointRadius:4,pointBackgroundColor:'#00d084',fill:true}
-        ]
-      },
+      data:{labels:labels,datasets:datasets},
       options:{
         responsive:true,maintainAspectRatio:false,
-        plugins:{legend:{position:'top',labels:{font:{family:'IBM Plex Mono',size:11},color:textCol,boxWidth:12,padding:16}},tooltip:{callbacks:{label:function(c){return ' '+c.dataset.label+': '+fmt2(c.raw);}}}},
+        plugins:{
+          legend:{position:'top',labels:{font:{family:'IBM Plex Mono',size:11},color:textCol,boxWidth:12,padding:16}},
+          tooltip:{callbacks:{label:function(c){return ' '+c.dataset.label+': '+fmt2(c.raw);}}}
+        },
         scales:{
           x:{grid:{color:gridCol},ticks:{font:{family:'IBM Plex Mono',size:11},color:textCol}},
-          y:{grid:{color:gridCol},ticks:{font:{family:'IBM Plex Mono',size:11},color:textCol,callback:function(v){return '$'+Number(v/1000).toFixed(0)+'k';}}}
+          y:{grid:{color:gridCol},ticks:{font:{family:'IBM Plex Mono',size:11},color:textCol,callback:function(v){return '$'+Number(v/1000).toFixed(1)+'k';}}}
         }
       }
     });
-  },50);
+  },80);
 }
 function mkKpi(lbl,val,col,sub,fn){
   return '<div class="kpi" onclick="'+fn+'">'
@@ -391,7 +428,52 @@ function acctLine(a){
     +'<div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:'+col+'">'+sign+fmt2(Math.abs(a.balance))+'</div>'
     +'</div>';
 }
-function showTxns(title,txns,col){
+function editCat(desc,amount,currentCat){
+  var key=desc+'|'+amount;
+  var b='<div style="font-size:13px;color:var(--muted);margin-bottom:14px;word-break:break-word">'+desc+'<br><span style="font-family:IBM Plex Mono,monospace;color:var(--text)">'+fmt2(amount)+'</span></div>';
+  b+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">';
+  ALL_CATS.forEach(function(cat){
+    var col=CAT_COLORS[cat]||'#6b6b80';
+    var active=cat===currentCat;
+    b+='<div style="padding:9px 12px;border-radius:8px;border:1px solid '+(active?col:'var(--border)')+';background:'+(active?col+'22':'var(--s2)')+';cursor:pointer;font-size:13px;color:'+(active?col:'var(--muted)')+';font-weight:'+(active?'600':'400')+'" onclick="setCat(\''+key.replace(/'/g,"\\'")+'\'\'','  '\''+cat+'\'\'','  \''+'render()'+'\')">'+cat+'</div>';
+  });
+  b+='</div>';
+  // Store key/cat for inline handler
+  window._editKey=key;
+  window._editOldCat=currentCat;
+  b='<div style="font-size:13px;color:var(--muted);margin-bottom:14px;word-break:break-word">'+desc+'<br><span style="font-family:IBM Plex Mono,monospace;color:var(--text)">'+fmt2(amount)+'</span></div>';
+  b+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">';
+  ALL_CATS.forEach(function(cat){
+    var col=CAT_COLORS[cat]||'#6b6b80';
+    var active=cat===currentCat;
+    b+='<div style="padding:9px 12px;border-radius:8px;border:1px solid '+(active?col:'var(--border)')+';background:'+(active?col+'22':'var(--s2)')+';cursor:pointer;font-size:13px;color:'+(active?col:'var(--muted)')+';font-weight:'+(active?'600':'400')+'" onclick="setCat('+JSON.stringify(key)+','+JSON.stringify(cat)+')">'+cat+'</div>';
+  });
+  b+='</div>';
+  if(CAT_OVERRIDES[key]){b+='<div style="margin-top:12px"><button style="font-size:12px;padding:6px 14px;border-radius:6px;border:1px solid var(--border);background:var(--s2);color:var(--muted);cursor:pointer" onclick="setCat('+JSON.stringify(key)+',null)">↩ Reset to original</button></div>';}
+  openModal('Recategorize','Change where this transaction is counted',b);
+}
+function setCat(key,cat){
+  if(cat===null){delete CAT_OVERRIDES[key];}
+  else{CAT_OVERRIDES[key]=cat;}
+  saveOverrides();
+  D=applyOverrides(JSON.parse(JSON.stringify(window._rawD)));
+  document.getElementById('modal').classList.remove('open');
+  render();
+}
+
+// Helper: render a single transaction row with edit button
+function txnLine(t,col,indent){
+  var pad=indent?'padding-left:'+(indent||12)+'px;':'';
+  var key=t.desc+'|'+t.amount;
+  var isEdited=CAT_OVERRIDES[key];
+  var html='<div style="display:flex;align-items:baseline;gap:8px;padding:6px 0;border-bottom:1px solid var(--border2);font-size:12px;'+pad+'">';
+  html+='<span style="font-family:IBM Plex Mono,monospace;color:var(--muted);width:40px;flex-shrink:0">'+(t.date||'')+'</span>';
+  html+='<span style="flex:1;word-break:break-word;line-height:1.4;color:var(--muted)">'+t.desc+(isEdited?'<span style="font-size:10px;color:var(--yellow);margin-left:4px">✎</span>':'')+'</span>';
+  html+='<span style="font-family:IBM Plex Mono,monospace;color:'+(col||'var(--muted)')+';white-space:nowrap;margin-right:6px">'+fmt2(t.amount)+'</span>';
+  html+='<span style="font-size:11px;color:var(--muted);cursor:pointer;flex-shrink:0" title="Change category" onclick="editCat('+JSON.stringify(t.desc)+','+t.amount+','+JSON.stringify(t.category)+')">✎</span>';
+  html+='</div>';
+  return html;
+}
   if(!txns||!txns.length){openModal(title,'No transactions','<div style="color:var(--muted);font-size:13px;padding:12px 0">No transactions found.</div>');return;}
   var total=txns.reduce(function(s,t){return s+(t.amount||0);},0);
   var sorted=txns.slice().sort(function(a,b){return ((b.period||'')+(b.date||'')).localeCompare((a.period||'')+(a.date||''));});
@@ -823,7 +905,8 @@ function loadData(){
   fetch('./data.json?t='+Date.now())
     .then(function(r){return r.json();})
     .then(function(data){
-      D=data;
+      window._rawD=JSON.parse(JSON.stringify(data)); // save raw copy
+      D=applyOverrides(data);
       buildNav();
       render();
       if(data.generated_at){
