@@ -190,9 +190,10 @@ var CAT_COLORS={
   'Home Security':'#fb923c','Religious':'#e879f9','Other':'#6b6b80'
 };
 var PAGES=[
-  {id:'overview', label:'Overview', icon:'◈'},
-  {id:'accounts', label:'Accounts', icon:'🏦'},
-  {id:'travel',   label:'Travel',   icon:'✈️'},
+  {id:'overview',  label:'Overview',   icon:'◈'},
+  {id:'accounts',  label:'Accounts',   icon:'🏦'},
+  {id:'travel',    label:'Travel',     icon:'✈️'},
+  {id:'recurring', label:'Recurring',  icon:'🔁'},
 ];
 
 function $(id){return document.getElementById(id);}
@@ -243,6 +244,7 @@ function render(){
   if(TAB==='overview') renderOverview();
   else if(TAB==='accounts') renderAccounts();
   else if(TAB==='travel') renderTravel();
+  else if(TAB==='recurring') renderRecurring();
 }
 
 // ── PAGE 1: OVERVIEW ─────────────────────────────────────────
@@ -279,15 +281,27 @@ function renderOverview(){
   var cats=Object.entries(latestV.categories||{}).sort(function(a,b){return b[1]-a[1];}).slice(0,10);
   var maxCat=cats.length?cats[0][1]:1;
   html+='<div class="panel"><div class="panel-head"><div class="panel-title">Top Spend · '+short(latestV.label)+'</div><div class="panel-action">'+fmt(latestV.total)+'</div></div>';
-  cats.forEach(function(e){
+  cats.forEach(function(e,ci){
     var col=CAT_COLORS[e[0]]||'#6b6b80';
     var pct=Math.round(e[1]/maxCat*100);
     var txns=(latestV.transactions||[]).filter(function(t){return t.category===e[0];});
-    html+='<div class="cat-bar-row" style="cursor:pointer" onclick="showTxns(\''+e[0]+' · '+short(latestV.label)+'\','+JSON.stringify(txns)+',\''+col+'\')">';
+    txns.sort(function(a,b){return b.date.localeCompare(a.date);});
+    var cid='ov_cat_'+ci;
+    html+='<div>';
+    html+='<div class="cat-bar-row expandable" onclick="expand(\''+cid+'\')">';
     html+='<div class="cat-bar-label" style="color:'+col+'">'+e[0]+'</div>';
     html+='<div class="cat-bar-track"><div class="cat-bar-fill" style="width:'+pct+'%;background:'+col+'"></div></div>';
-    html+='<div class="cat-bar-amt" style="color:'+col+'">'+fmt(e[1])+'</div>';
+    html+='<div class="cat-bar-amt" style="color:'+col+'">'+fmt(e[1])+' <span style="color:var(--muted);font-size:10px">›</span></div>';
     html+='</div>';
+    html+='<div id="'+cid+'" class="expand-body" style="padding-left:4px">';
+    txns.forEach(function(t){
+      html+='<div style="display:flex;align-items:baseline;gap:8px;padding:5px 0;border-bottom:1px solid var(--border2);font-size:12px">';
+      html+='<span style="font-family:IBM Plex Mono,monospace;color:var(--muted);width:40px;flex-shrink:0">'+t.date+'</span>';
+      html+='<span style="flex:1;word-break:break-word;line-height:1.4;color:var(--muted)">'+t.desc+'</span>';
+      html+='<span style="font-family:IBM Plex Mono,monospace;color:'+col+';white-space:nowrap">'+fmt2(t.amount)+'</span>';
+      html+='</div>';
+    });
+    html+='</div></div>';
   });
   html+='</div>';
 
@@ -489,15 +503,51 @@ function renderAccounts(){
     html+='<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:'+(owed>0?'var(--red)':'var(--green)')+'">'+fmt2(owed)+'</div><span style="color:var(--muted)">›</span></div>';
     html+='</div>';
     html+='<div id="'+crid+'" class="expand-body">';
-    ba.forEach(function(a){
+    ba.forEach(function(a,ai){
       var cleanName=a.name.replace(/\s*\.\.\.\d{4}/g,'').trim();
       var col=a.balance>0?'var(--red)':'var(--green)';
       var sign=a.balance>0?'-':'';
-      html+='<div style="padding:7px 0 7px 12px;border-bottom:1px solid var(--border2);display:flex;justify-content:space-between;align-items:baseline;font-size:13px">';
+      var cardId='cr_card_'+bi+'_'+ai;
+      html+='<div style="padding:7px 0 7px 12px;border-bottom:1px solid var(--border2)">';
+      // Card row — expandable to show spending
+      html+='<div style="display:flex;justify-content:space-between;align-items:baseline;font-size:13px;cursor:pointer" onclick="expand(\''+cardId+'\')">';
       html+='<div><div>'+cleanName+' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted);font-size:12px">••'+a.mask+'</span></div>';
-      html+='<div style="font-size:11px;color:var(--muted)">'+a.subtype+'</div></div>';
-      html+='<div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:'+col+'">'+sign+fmt2(Math.abs(a.balance))+'</div>';
+      html+='<div style="font-size:11px;color:var(--muted)">'+a.subtype+' · tap to see spending</div></div>';
+      html+='<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:'+col+'">'+sign+fmt2(Math.abs(a.balance))+'</div><span style="color:var(--muted)">›</span></div>';
       html+='</div>';
+      // Spending by month for this card (all transactions since we can't isolate per-card)
+      html+='<div id="'+cardId+'" class="expand-body">';
+      periods.forEach(function(p){
+        var v=ms[p];
+        var pmid='cr_pm_'+bi+'_'+ai+'_'+p;
+        html+='<div style="padding:5px 0 5px 8px;border-top:1px solid var(--border2)">';
+        html+='<div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:12px" onclick="expand(\''+pmid+'\')">';
+        html+='<div style="color:var(--muted)">'+v.label+'</div>';
+        html+='<div style="display:flex;align-items:center;gap:6px"><span style="font-family:IBM Plex Mono,monospace;color:var(--red)">'+fmt2(v.total)+'</span><span style="color:var(--muted)">›</span></div>';
+        html+='</div>';
+        html+='<div id="'+pmid+'" class="expand-body">';
+        Object.entries(v.categories||{}).sort(function(a,b){return b[1]-a[1];}).forEach(function(ce,ci){
+          var ccol=CAT_COLORS[ce[0]]||'#6b6b80';
+          var catTxns=(v.transactions||[]).filter(function(t){return t.category===ce[0];});
+          var catId='cr_cat_'+bi+'_'+ai+'_'+p+'_'+ci;
+          html+='<div style="padding:5px 0 5px 12px;border-top:1px solid var(--border2)">';
+          html+='<div style="display:flex;justify-content:space-between;cursor:pointer;font-size:12px" onclick="expand(\''+catId+'\')">';
+          html+='<span style="color:'+ccol+'">'+ce[0]+'</span>';
+          html+='<div style="display:flex;align-items:center;gap:6px"><span style="font-family:IBM Plex Mono,monospace;color:'+ccol+'">'+fmt2(ce[1])+'</span><span style="color:var(--muted)">›</span></div>';
+          html+='</div>';
+          html+='<div id="'+catId+'" class="expand-body">';
+          catTxns.sort(function(a,b){return b.date.localeCompare(a.date);}).forEach(function(t){
+            html+='<div style="display:flex;align-items:baseline;gap:8px;padding:4px 0 4px 12px;border-top:1px solid var(--border2);font-size:11px">';
+            html+='<span style="font-family:IBM Plex Mono,monospace;color:var(--muted);width:38px;flex-shrink:0">'+t.date+'</span>';
+            html+='<span style="flex:1;word-break:break-word;line-height:1.4;color:var(--muted)">'+t.desc+'</span>';
+            html+='<span style="font-family:IBM Plex Mono,monospace;color:'+ccol+';white-space:nowrap">'+fmt2(t.amount)+'</span>';
+            html+='</div>';
+          });
+          html+='</div></div>';
+        });
+        html+='</div></div>';
+      });
+      html+='</div></div>';
     });
     html+='</div>';
     html+='<div class="divider"></div>';
@@ -623,7 +673,136 @@ function renderTravel(){
   set('main-content',html);
 }
 
-// ── SYNC & LOAD ───────────────────────────────────────────────
+// ── PAGE 4: RECURRING + ZELLE ─────────────────────────────────
+function cleanZelleName(raw){
+  var m=raw.match(/payment from ([A-Z][A-Za-z\s]+?)(?:\s+for\s+|\s+Conf#|;)/i);
+  if(m)return m[1].trim().replace(/\b\w/g,function(c){return c.toUpperCase();});
+  m=raw.match(/payment from ([A-Z][A-Za-z\s]{3,40})/i);
+  if(m)return m[1].trim().replace(/\b\w/g,function(c){return c.toUpperCase();});
+  return raw.substring(0,30);
+}
+
+function renderRecurring(){
+  var ms=D.monthly_spending||{};
+  var periods=Object.keys(ms).sort();
+  var html='';
+
+  // ── COMPUTE SAME-AMOUNT RECURRING FROM SPENDING DATA ──
+  var merchantMap={};
+  periods.forEach(function(p){
+    (ms[p].transactions||[]).forEach(function(t){
+      var key=(t.desc||'').trim().toUpperCase().substring(0,40);
+      if(!merchantMap[key])merchantMap[key]={desc:t.desc,cat:t.category,entries:[]};
+      merchantMap[key].entries.push({period:p,label:ms[p].label,date:t.date,amount:t.amount,desc:t.desc});
+    });
+  });
+
+  // Same-amount: all occurrences are same amount, appears 2+ months
+  var sameAmt=Object.values(merchantMap).filter(function(m){
+    if(m.entries.length<2)return false;
+    var months=new Set(m.entries.map(function(e){return e.period;}));
+    if(months.size<2)return false;
+    var amounts=m.entries.map(function(e){return e.amount;});
+    var first=amounts[0];
+    return amounts.every(function(a){return Math.abs(a-first)<0.01;});
+  }).map(function(m){
+    var months=new Set(m.entries.map(function(e){return e.period;}));
+    return {desc:m.desc,cat:m.cat,amount:m.entries[0].amount,months:months.size,entries:m.entries.sort(function(a,b){return b.period.localeCompare(a.period);})};
+  }).sort(function(a,b){return b.amount-a.amount;});
+
+  var totalFixed=sameAmt.reduce(function(s,r){return s+r.amount;},0);
+
+  html+='<div class="panel"><div class="panel-head"><div class="panel-title">Fixed Recurring</div>';
+  html+='<div class="panel-action" style="color:var(--red)">'+fmt2(totalFixed)+'/mo est.</div></div>';
+  if(!sameAmt.length){
+    html+='<div style="color:var(--muted);font-size:13px;padding:8px 0">No fixed recurring found yet — needs more months of data.</div>';
+  } else {
+    sameAmt.forEach(function(r,ri){
+      var col=CAT_COLORS[r.cat]||'#6b6b80';
+      var rid='rec_'+ri;
+      html+='<div class="row expandable" onclick="expand(\''+rid+'\')">';
+      html+='<div><div class="row-label" style="font-weight:500">'+r.desc+'</div>';
+      html+='<div class="row-sub" style="color:'+col+'">'+r.cat+' · '+r.months+'× months</div></div>';
+      html+='<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:var(--red)">'+fmt2(r.amount)+'</div><span style="color:var(--muted)">›</span></div>';
+      html+='</div>';
+      html+='<div id="'+rid+'" class="expand-body">';
+      r.entries.forEach(function(e){
+        html+='<div style="display:flex;align-items:baseline;gap:8px;padding:5px 0 5px 12px;border-bottom:1px solid var(--border2);font-size:12px">';
+        html+='<span style="font-family:IBM Plex Mono,monospace;color:var(--muted);width:40px;flex-shrink:0">'+e.date+'</span>';
+        html+='<span style="flex:1;color:var(--muted)">'+e.label+'</span>';
+        html+='<span style="font-family:IBM Plex Mono,monospace;color:var(--red);white-space:nowrap">'+fmt2(e.amount)+'</span>';
+        html+='</div>';
+      });
+      html+='</div>';
+      html+='<div class="divider"></div>';
+    });
+  }
+  html+='</div>';
+
+  // ── ZELLE BY NAME BY MONTH ──
+  var rawZelle=D.zelle_received||[];
+  // Clean and group by name
+  var byName={};
+  rawZelle.forEach(function(z){
+    var name=cleanZelleName(z.from);
+    // Skip self-transfers
+    if(name.toLowerCase().includes('vimal'))return;
+    // Also skip unreadable TD reference IDs
+    if(/^TD\s+RECEIVED/i.test(name))return;
+    if(!byName[name])byName[name]={total:0,months:{}};
+    byName[name].total+=z.amount;
+    var p=z.period||'';
+    if(!byName[name].months[p])byName[name].months[p]={label:z.period_label||p,total:0,entries:[]};
+    byName[name].months[p].total+=z.amount;
+    byName[name].months[p].entries.push(z);
+  });
+
+  var zelleNames=Object.keys(byName).sort(function(a,b){return byName[b].total-byName[a].total;});
+  var zelleTotal=zelleNames.reduce(function(s,n){return s+byName[n].total;},0);
+
+  html+='<div class="panel"><div class="panel-head"><div class="panel-title">Zelle Received</div>';
+  html+='<div class="panel-action" style="color:var(--green)">'+fmt2(zelleTotal)+' total</div></div>';
+
+  if(!zelleNames.length){
+    html+='<div style="color:var(--muted);font-size:13px;padding:8px 0">No Zelle received found.</div>';
+  } else {
+    // Build month columns header
+    var allPeriods=[...new Set(rawZelle.filter(function(z){return !cleanZelleName(z.from).toLowerCase().includes('vimal');}).map(function(z){return z.period;}))].sort();
+    html+='<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:13px">';
+    html+='<thead><tr><th style="text-align:left;padding:6px 8px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border);font-weight:500">From</th>';
+    allPeriods.forEach(function(p){
+      html+='<th style="text-align:right;padding:6px 8px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border);white-space:nowrap;font-weight:500">'+short((ms[p]||{}).label||p)+'</th>';
+    });
+    html+='<th style="text-align:right;padding:6px 8px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border);font-weight:500">Total</th>';
+    html+='</tr></thead><tbody>';
+    zelleNames.forEach(function(name){
+      var nv=byName[name];
+      html+='<tr>';
+      html+='<td style="padding:8px;border-bottom:1px solid var(--border2);font-weight:500">'+name+'</td>';
+      allPeriods.forEach(function(p){
+        var mv=nv.months[p];
+        html+='<td style="padding:8px;border-bottom:1px solid var(--border2);text-align:right;font-family:IBM Plex Mono,monospace">';
+        if(mv){html+='<span style="color:var(--green)">'+fmt2(mv.total)+'</span>';}
+        else{html+='<span style="color:var(--muted2)">—</span>';}
+        html+='</td>';
+      });
+      html+='<td style="padding:8px;border-bottom:1px solid var(--border2);text-align:right;font-family:IBM Plex Mono,monospace;font-weight:600;color:var(--green)">'+fmt2(nv.total)+'</td>';
+      html+='</tr>';
+    });
+    // Total row
+    html+='<tr style="background:var(--s2)"><td style="padding:8px;font-weight:600;font-size:12px;letter-spacing:.5px">Total</td>';
+    allPeriods.forEach(function(p){
+      var pTotal=zelleNames.reduce(function(s,n){return s+(byName[n].months[p]?byName[n].months[p].total:0);},0);
+      html+='<td style="padding:8px;text-align:right;font-family:IBM Plex Mono,monospace;font-weight:600;color:var(--green)">'+(pTotal?fmt2(pTotal):'—')+'</td>';
+    });
+    html+='<td style="padding:8px;text-align:right;font-family:IBM Plex Mono,monospace;font-weight:600;color:var(--green)">'+fmt2(zelleTotal)+'</td>';
+    html+='</tr></tbody></table></div>';
+  }
+  html+='</div>';
+  set('main-content',html);
+}
+
+
 function triggerSync(){
   var b=$('sync-btn'),bt=$('sync-btn-top');
   if(b){b.textContent='Syncing…';b.disabled=true;}
