@@ -1,8 +1,8 @@
 {
   "kpis": {
-    "income": 4478.46,
+    "income": 7933.09,
     "income_period": "April 2026",
-    "true_outflows": 4263.87,
+    "true_outflows": 5788.04,
     "outflows_period": "April 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -186,6 +186,58 @@
       "is_savings": false
     },
     {
+      "bank": "wifebofa",
+      "nickname": "wifebofa",
+      "name": "Adv Plus Banking",
+      "mask": "1739",
+      "type": "depository",
+      "subtype": "checking",
+      "balance": 68.13,
+      "available": 68.13,
+      "is_credit": false,
+      "is_checking": true,
+      "is_savings": false
+    },
+    {
+      "bank": "wifebofa",
+      "nickname": "wifebofa",
+      "name": "Customized Cash Rewards Visa Signature",
+      "mask": "2776",
+      "type": "credit",
+      "subtype": "credit card",
+      "balance": 148.44,
+      "available": 551.56,
+      "is_credit": true,
+      "is_checking": false,
+      "is_savings": false
+    },
+    {
+      "bank": "wifebofa",
+      "nickname": "wifebofa",
+      "name": "Advantage Savings",
+      "mask": "5677",
+      "type": "depository",
+      "subtype": "savings",
+      "balance": 2056.79,
+      "available": 2056.79,
+      "is_credit": false,
+      "is_checking": false,
+      "is_savings": true
+    },
+    {
+      "bank": "wifebofa",
+      "nickname": "wifebofa",
+      "name": "Adv Plus Banking",
+      "mask": "9715",
+      "type": "depository",
+      "subtype": "checking",
+      "balance": 7213.5,
+      "available": 7003.5,
+      "is_credit": false,
+      "is_checking": true,
+      "is_savings": false
+    },
+    {
       "bank": "Discover",
       "nickname": "discover",
       "name": "Discover it Card",
@@ -252,9 +304,9 @@
     }
   ],
   "net_worth": {
-    "total_checking": 44620.079999999994,
-    "total_credit": 3495.89,
-    "net": 41124.189999999995
+    "total_checking": 53958.49999999999,
+    "total_credit": 3644.33,
+    "net": 50314.16999999999
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -265,14 +317,14 @@
     "by_month": []
   },
   "spending": {
-    "Healthcare": 874.07,
-    "Tech/Subs": 4699.21,
-    "Shopping": 3658.22,
-    "Entertainment": 2098.9900000000002,
-    "Tax/Professional": 18149.589999999997,
-    "Groceries": 1120.8799999999999,
-    "Restaurants": 1499.02,
-    "Gas/Travel": 1711.29,
+    "Healthcare": 917.07,
+    "Tech/Subs": 5953.000000000001,
+    "Shopping": 10173.74,
+    "Entertainment": 2108.9900000000002,
+    "Tax/Professional": 35608.590000000004,
+    "Groceries": 1764.6099999999997,
+    "Restaurants": 1565.9,
+    "Gas/Travel": 6099.530000000001,
     "Insurance": 1979.26
   },
   "zelle_received": [
@@ -455,6 +507,12 @@
       "amount": 88,
       "period": "2026-03",
       "period_label": "March 2026"
+    },
+    {
+      "from": "payment from RAKESH VISTARAKULA for \"Enjoy\"; Conf# txd9tvy96",
+      "amount": 2500,
+      "period": "2026-01",
+      "period_label": "January 2026"
     }
   ],
   "detected_recurring": [
@@ -467,12 +525,36 @@
       "last_amount": 200
     },
     {
+      "desc": "Garden Farm",
+      "category": "Shopping",
+      "count": 6,
+      "months": 4,
+      "avg_amount": 64.16,
+      "last_amount": 38.76
+    },
+    {
+      "desc": "Delight Big Bazar",
+      "category": "Groceries",
+      "count": 5,
+      "months": 4,
+      "avg_amount": 59.03,
+      "last_amount": 27.72
+    },
+    {
       "desc": "Amazon",
       "category": "Shopping",
       "count": 19,
       "months": 4,
       "avg_amount": 32.45,
       "last_amount": 21.53
+    },
+    {
+      "desc": "ShopRite",
+      "category": "Groceries",
+      "count": 8,
+      "months": 4,
+      "avg_amount": 28.07,
+      "last_amount": 31.98
     },
     {
       "desc": "Regal Cinemas",
@@ -531,6 +613,14 @@
       "last_amount": 266
     },
     {
+      "desc": "Kumon Of North",
+      "category": "Tech/Subs",
+      "count": 3,
+      "months": 3,
+      "avg_amount": 280,
+      "last_amount": 280
+    },
+    {
       "desc": "Fanbasis",
       "category": "Entertainment",
       "count": 3,
@@ -547,20 +637,20 @@
       "last_amount": 120
     },
     {
-      "desc": "Walmart",
-      "category": "Shopping",
-      "count": 5,
-      "months": 3,
-      "avg_amount": 118.1,
-      "last_amount": 83.74
-    },
-    {
       "desc": "Patel Brothers",
       "category": "Groceries",
       "count": 4,
       "months": 3,
       "avg_amount": 109.44,
       "last_amount": 82.65
+    },
+    {
+      "desc": "Walmart",
+      "category": "Shopping",
+      "count": 7,
+      "months": 3,
+      "avg_amount": 97.36,
+      "last_amount": 83.74
     },
     {
       "desc": "Houseofbi",
@@ -571,6 +661,14 @@
       "last_amount": 76.41
     },
     {
+      "desc": "BP",
+      "category": "Gas/Travel",
+      "count": 7,
+      "months": 3,
+      "avg_amount": 50.27,
+      "last_amount": 44.08
+    },
+    {
       "desc": "Walgreens",
       "category": "Healthcare",
       "count": 10,
@@ -579,12 +677,20 @@
       "last_amount": 303.5
     },
     {
-      "desc": "ShopRite",
+      "desc": "Trader Joe's",
       "category": "Groceries",
-      "count": 5,
+      "count": 3,
       "months": 3,
-      "avg_amount": 29.96,
-      "last_amount": 31.98
+      "avg_amount": 33.49,
+      "last_amount": 13.14
+    },
+    {
+      "desc": "Shaan Halal Zabiha Meat",
+      "category": "Groceries",
+      "count": 6,
+      "months": 3,
+      "avg_amount": 19.9,
+      "last_amount": 42.14
     },
     {
       "desc": "Netflix",
@@ -635,12 +741,28 @@
       "last_amount": 448.32
     },
     {
+      "desc": "Spirit Airlines",
+      "category": "Gas/Travel",
+      "count": 4,
+      "months": 2,
+      "avg_amount": 336.72,
+      "last_amount": 1188.4
+    },
+    {
       "desc": "Costco",
       "category": "Shopping",
       "count": 2,
       "months": 2,
       "avg_amount": 296.89,
       "last_amount": 322.99
+    },
+    {
+      "desc": "United Airlines",
+      "category": "Gas/Travel",
+      "count": 7,
+      "months": 2,
+      "avg_amount": 187.55,
+      "last_amount": 301.4
     },
     {
       "desc": "NJ E-ZPass",
@@ -667,12 +789,12 @@
       "last_amount": 100.98
     },
     {
-      "desc": "Garden Farm",
-      "category": "Shopping",
-      "count": 2,
+      "desc": "Patidar Supermarket Nort",
+      "category": "Groceries",
+      "count": 4,
       "months": 2,
-      "avg_amount": 80.82,
-      "last_amount": 102.29
+      "avg_amount": 73.33,
+      "last_amount": 99.27
     },
     {
       "desc": "Shell",
@@ -691,14 +813,6 @@
       "last_amount": 50.17
     },
     {
-      "desc": "Patidar Supermarket Nort",
-      "category": "Groceries",
-      "count": 3,
-      "months": 2,
-      "avg_amount": 64.68,
-      "last_amount": 6.38
-    },
-    {
       "desc": "Desi Halal Meat",
       "category": "Groceries",
       "count": 2,
@@ -707,12 +821,12 @@
       "last_amount": 35.26
     },
     {
-      "desc": "Spirit Airlines",
-      "category": "Gas/Travel",
-      "count": 3,
+      "desc": "H&M",
+      "category": "Shopping",
+      "count": 2,
       "months": 2,
-      "avg_amount": 52.83,
-      "last_amount": 75
+      "avg_amount": 54.52,
+      "last_amount": 32.95
     },
     {
       "desc": "Optimum",
@@ -747,14 +861,6 @@
       "last_amount": 55.22
     },
     {
-      "desc": "Shaan Halal Zabiha Meat",
-      "category": "Groceries",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 16.1,
-      "last_amount": 22.49
-    },
-    {
       "desc": "Hulu",
       "category": "Entertainment",
       "count": 3,
@@ -767,40 +873,40 @@
     {
       "period": "2026-01",
       "period_label": "January 2026",
-      "income": 1835.08,
-      "bofa_income": 1835.08,
+      "income": 5416.34,
+      "bofa_income": 5416.34,
       "td_income": 0,
-      "outflows": 3865.56,
+      "outflows": 4131.04,
       "xoom": 0,
       "investments": 0
     },
     {
       "period": "2026-02",
       "period_label": "February 2026",
-      "income": 30135.05,
-      "bofa_income": 25135.05,
+      "income": 37914.84,
+      "bofa_income": 32914.84,
       "td_income": 5000,
-      "outflows": 4179.87,
+      "outflows": 15022.32,
       "xoom": 0,
       "investments": 0
     },
     {
       "period": "2026-03",
       "period_label": "March 2026",
-      "income": 8843.6,
-      "bofa_income": 3843.5899999999997,
+      "income": 15893,
+      "bofa_income": 10892.99,
       "td_income": 5000.01,
-      "outflows": 23481.23,
+      "outflows": 41229.29,
       "xoom": 0,
       "investments": 0
     },
     {
       "period": "2026-04",
       "period_label": "April 2026",
-      "income": 4478.460000000001,
-      "bofa_income": 1978.44,
+      "income": 7933.090000000001,
+      "bofa_income": 5433.07,
       "td_income": 2500.02,
-      "outflows": 4263.87,
+      "outflows": 5788.04,
       "xoom": 0,
       "investments": 0
     }
@@ -810,16 +916,16 @@
       "label": "April 2026",
       "period": "2026-04",
       "categories": {
-        "Healthcare": 53.269999999999996,
-        "Tech/Subs": 1325.92,
-        "Shopping": 583.38,
+        "Healthcare": 76.27,
+        "Tech/Subs": 1605.92,
+        "Shopping": 874.26,
         "Entertainment": 749.36,
-        "Tax/Professional": 793.12,
-        "Groceries": 302.19,
+        "Tax/Professional": 1506.12,
+        "Groceries": 425.71,
         "Restaurants": 253.16000000000003,
-        "Gas/Travel": 203.47
+        "Gas/Travel": 297.24
       },
-      "total": 4263.869999999999,
+      "total": 5788.039999999998,
       "transactions": [
         {
           "date": "04-17",
@@ -1102,6 +1208,94 @@
           "state": "CA"
         },
         {
+          "date": "04-06",
+          "desc": "United Airlines",
+          "amount": 40,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-01",
+          "desc": "Kumon Of North",
+          "amount": 280,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-01",
+          "desc": "New Jersey Tgi",
+          "amount": 713,
+          "category": "Tax/Professional",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-19",
+          "desc": "Delight Big Bazar",
+          "amount": 81.11,
+          "category": "Groceries",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-18",
+          "desc": "Shaan Halal Zabiha Meat",
+          "amount": 12.57,
+          "category": "Groceries",
+          "city": "Dayton",
+          "state": "NJ"
+        },
+        {
+          "date": "04-18",
+          "desc": "Apna Bazaar Cash & Carry",
+          "amount": 44.08,
+          "category": "Shopping",
+          "city": "Dayton",
+          "state": "NJ"
+        },
+        {
+          "date": "04-13",
+          "desc": "Great Clips",
+          "amount": 23,
+          "category": "Healthcare",
+          "city": "North Brunswick",
+          "state": "NJ"
+        },
+        {
+          "date": "04-13",
+          "desc": "Garden Farm",
+          "amount": 68.79,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-09",
+          "desc": "BP",
+          "amount": 53.77,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-09",
+          "desc": "Trendia Trendia.co",
+          "amount": 178.01,
+          "category": "Shopping",
+          "city": null,
+          "state": "IL"
+        },
+        {
+          "date": "04-08",
+          "desc": "ShopRite",
+          "amount": 29.84,
+          "category": "Groceries",
+          "city": null,
+          "state": null
+        },
+        {
           "date": "04-04",
           "desc": "Cricketdata",
           "amount": 5.99,
@@ -1219,17 +1413,17 @@
       "label": "March 2026",
       "period": "2026-03",
       "categories": {
-        "Tech/Subs": 1832.92,
-        "Entertainment": 666.19,
-        "Tax/Professional": 16908.149999999998,
+        "Tech/Subs": 2133.34,
+        "Entertainment": 676.19,
+        "Tax/Professional": 33643.15,
         "Healthcare": 45.99,
-        "Shopping": 1502.4099999999999,
-        "Restaurants": 793.9000000000001,
-        "Gas/Travel": 830.07,
-        "Groceries": 303.83,
+        "Shopping": 1776.6399999999996,
+        "Restaurants": 815.7800000000002,
+        "Gas/Travel": 933.9300000000001,
+        "Groceries": 606.4999999999999,
         "Insurance": 597.77
       },
-      "total": 23481.23,
+      "total": 41229.28999999998,
       "transactions": [
         {
           "date": "03-31",
@@ -1848,6 +2042,150 @@
           "state": null
         },
         {
+          "date": "03-31",
+          "desc": "Internal Revenue Service",
+          "amount": 16735,
+          "category": "Tax/Professional",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "03-30",
+          "desc": "Wp Griffith P",
+          "amount": 20.42,
+          "category": "Tech/Subs",
+          "city": "Los Angeles",
+          "state": "CA"
+        },
+        {
+          "date": "03-30",
+          "desc": "Griffith Observatory",
+          "amount": 10,
+          "category": "Entertainment",
+          "city": "Los Angeles",
+          "state": "CA"
+        },
+        {
+          "date": "03-21",
+          "desc": "Garden Farm",
+          "amount": 46.53,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "03-02",
+          "desc": "Kumon Of North",
+          "amount": 280,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "03-19",
+          "desc": "BP",
+          "amount": 56.09,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "03-18",
+          "desc": "Patidar Supermarket Nort",
+          "amount": 99.27,
+          "category": "Groceries",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "03-18",
+          "desc": "Avasflowers",
+          "amount": 88.38,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "03-16",
+          "desc": "Delight Big Bazar",
+          "amount": 36.89,
+          "category": "Groceries",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "03-16",
+          "desc": "Singas Famous Pizza",
+          "amount": 10.94,
+          "category": "Restaurants",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "03-16",
+          "desc": "Singas Famous Pizza",
+          "amount": 10.94,
+          "category": "Restaurants",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "03-13",
+          "desc": "BP",
+          "amount": 47.77,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "03-12",
+          "desc": "H&M",
+          "amount": 32.95,
+          "category": "Shopping",
+          "city": null,
+          "state": "NY"
+        },
+        {
+          "date": "03-11",
+          "desc": "Old Navy",
+          "amount": 42.77,
+          "category": "Shopping",
+          "city": null,
+          "state": "CA"
+        },
+        {
+          "date": "03-09",
+          "desc": "Delight Big Bazar",
+          "amount": 102.99,
+          "category": "Groceries",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "03-05",
+          "desc": "Trader Joe's",
+          "amount": 53.7,
+          "category": "Groceries",
+          "city": "North Brunswick",
+          "state": "NJ"
+        },
+        {
+          "date": "03-04",
+          "desc": "Shaan Halal Zabiha Meat",
+          "amount": 9.82,
+          "category": "Groceries",
+          "city": "Dayton",
+          "state": "NJ"
+        },
+        {
+          "date": "03-04",
+          "desc": "Walmart",
+          "amount": 63.6,
+          "category": "Shopping",
+          "city": null,
+          "state": "AR"
+        },
+        {
           "date": "03-20",
           "desc": "Mercury",
           "amount": 597.77,
@@ -1989,16 +2327,17 @@
       "label": "February 2026",
       "period": "2026-02",
       "categories": {
-        "Healthcare": 114.08000000000001,
-        "Tech/Subs": 1187.65,
-        "Shopping": 688.66,
+        "Healthcare": 134.08,
+        "Tech/Subs": 1662.02,
+        "Shopping": 6600.31,
         "Entertainment": 522.4200000000001,
-        "Gas/Travel": 225.16,
-        "Groceries": 351.83,
+        "Gas/Travel": 4415.77,
+        "Groceries": 541.6499999999999,
         "Insurance": 783.71,
-        "Restaurants": 306.35999999999996
+        "Restaurants": 351.35999999999996,
+        "Tax/Professional": 11
       },
-      "total": 4179.870000000001,
+      "total": 15022.32,
       "transactions": [
         {
           "date": "02-17",
@@ -2409,6 +2748,198 @@
           "state": "NJ"
         },
         {
+          "date": "02-24",
+          "desc": "Airbnb",
+          "amount": 1410.04,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "02-17",
+          "desc": "R K Jewels",
+          "amount": 5815,
+          "category": "Shopping",
+          "city": "Iselin",
+          "state": "NJ"
+        },
+        {
+          "date": "02-17",
+          "desc": "Zelle payment to HEALTHY DELIGHTS LLC for \"Chaitanyacake\"; Conf# zids94s1l",
+          "amount": 45,
+          "category": "Restaurants",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "02-11",
+          "desc": "Spirit Airlines",
+          "amount": 1188.4,
+          "category": "Gas/Travel",
+          "city": "Miramar",
+          "state": "FL"
+        },
+        {
+          "date": "02-06",
+          "desc": "United Airlines",
+          "amount": 35,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "02-06",
+          "desc": "United Airlines",
+          "amount": 32.24,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "02-06",
+          "desc": "United Airlines",
+          "amount": 301.4,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "02-06",
+          "desc": "United Airlines",
+          "amount": 301.4,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "02-06",
+          "desc": "United Airlines",
+          "amount": 301.4,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "02-06",
+          "desc": "United Airlines",
+          "amount": 301.4,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "02-02",
+          "desc": "Kumon Of North",
+          "amount": 280,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "02-28",
+          "desc": "ShopRite",
+          "amount": 33.5,
+          "category": "Groceries",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "02-21",
+          "desc": "Trader Joe's",
+          "amount": 33.64,
+          "category": "Groceries",
+          "city": "North Brunswick",
+          "state": "NJ"
+        },
+        {
+          "date": "02-20",
+          "desc": "Shaan Halal Zabiha Meat",
+          "amount": 22.65,
+          "category": "Groceries",
+          "city": "Dayton",
+          "state": "NJ"
+        },
+        {
+          "date": "02-19",
+          "desc": "Hindu Temple & Cultural Society Of USA Inc",
+          "amount": 11,
+          "category": "Tax/Professional",
+          "city": "Bridgewater",
+          "state": "NJ"
+        },
+        {
+          "date": "02-17",
+          "desc": "Shaan Halal Zabiha Meat",
+          "amount": 42.14,
+          "category": "Groceries",
+          "city": "Dayton",
+          "state": "NJ"
+        },
+        {
+          "date": "02-14",
+          "desc": "Bidabadi Pediatrics",
+          "amount": 20,
+          "category": "Healthcare",
+          "city": "Kendall Park",
+          "state": "NJ"
+        },
+        {
+          "date": "02-12",
+          "desc": "BP",
+          "amount": 44.08,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "02-11",
+          "desc": "Garden Farm",
+          "amount": 69.26,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "02-09",
+          "desc": "Walmart",
+          "amount": 27.39,
+          "category": "Shopping",
+          "city": null,
+          "state": "AR"
+        },
+        {
+          "date": "02-06",
+          "desc": "Eventifyuco",
+          "amount": 194.37,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "02-05",
+          "desc": "ShopRite",
+          "amount": 11.45,
+          "category": "Groceries",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "02-05",
+          "desc": "Kame",
+          "amount": 275.25,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "02-02",
+          "desc": "Delight Big Bazar",
+          "amount": 46.44,
+          "category": "Groceries",
+          "city": null,
+          "state": null
+        },
+        {
           "date": "02-03",
           "desc": "365 Retail Markets",
           "amount": 5.77,
@@ -2478,17 +3009,17 @@
       "label": "January 2026",
       "period": "2026-01",
       "categories": {
-        "Tech/Subs": 352.72,
+        "Tech/Subs": 551.72,
         "Entertainment": 161.02,
-        "Shopping": 883.77,
+        "Shopping": 922.53,
         "Healthcare": 660.73,
         "Gas/Travel": 452.59,
         "Restaurants": 145.6,
-        "Groceries": 163.03,
+        "Groceries": 190.75,
         "Tax/Professional": 448.32,
         "Insurance": 597.78
       },
-      "total": 3865.56,
+      "total": 4131.039999999999,
       "transactions": [
         {
           "date": "01-30",
@@ -2791,6 +3322,30 @@
           "desc": "ShopRite",
           "amount": 31.98,
           "category": "Groceries",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "01-24",
+          "desc": "Garden Farm",
+          "amount": 38.76,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "01-22",
+          "desc": "Delight Big Bazar",
+          "amount": 27.72,
+          "category": "Groceries",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "01-22",
+          "desc": "Shvasa",
+          "amount": 199,
+          "category": "Tech/Subs",
           "city": null,
           "state": null
         },
@@ -3419,6 +3974,76 @@
       "period_label": "January 2026"
     },
     {
+      "date": "04-09",
+      "desc": "Trendia Trendia.co",
+      "amount": 178.01,
+      "category": "Shopping",
+      "city": null,
+      "state": "IL",
+      "period": "2026-04",
+      "period_label": "April 2026"
+    },
+    {
+      "date": "03-30",
+      "desc": "Wp Griffith P",
+      "amount": 20.42,
+      "category": "Tech/Subs",
+      "city": "Los Angeles",
+      "state": "CA",
+      "period": "2026-03",
+      "period_label": "March 2026"
+    },
+    {
+      "date": "03-30",
+      "desc": "Griffith Observatory",
+      "amount": 10,
+      "category": "Entertainment",
+      "city": "Los Angeles",
+      "state": "CA",
+      "period": "2026-03",
+      "period_label": "March 2026"
+    },
+    {
+      "date": "02-11",
+      "desc": "Spirit Airlines",
+      "amount": 1188.4,
+      "category": "Gas/Travel",
+      "city": "Miramar",
+      "state": "FL",
+      "period": "2026-02",
+      "period_label": "February 2026"
+    },
+    {
+      "date": "03-11",
+      "desc": "Old Navy",
+      "amount": 42.77,
+      "category": "Shopping",
+      "city": null,
+      "state": "CA",
+      "period": "2026-03",
+      "period_label": "March 2026"
+    },
+    {
+      "date": "03-04",
+      "desc": "Walmart",
+      "amount": 63.6,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-03",
+      "period_label": "March 2026"
+    },
+    {
+      "date": "02-09",
+      "desc": "Walmart",
+      "amount": 27.39,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-02",
+      "period_label": "February 2026"
+    },
+    {
       "date": "03-20",
       "desc": "Mercury",
       "amount": 597.77,
@@ -3517,7 +4142,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "statement_count": "5 live accounts",
-  "generated_at": "2026-04-20T23:19:42.379Z",
+  "statement_count": "6 live accounts",
+  "generated_at": "2026-04-20T23:20:50.642Z",
   "source": "plaid_realtime"
 }
