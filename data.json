@@ -43,6 +43,19 @@
   },
   "all_accounts": [
     {
+      "bank": "myrobin",
+      "nickname": "myrobin",
+      "name": "Robinhood individual",
+      "mask": "5772",
+      "type": "investment",
+      "subtype": "brokerage",
+      "balance": 29244.0234065771,
+      "available": null,
+      "is_credit": false,
+      "is_checking": false,
+      "is_savings": false
+    },
+    {
       "bank": "BofA",
       "nickname": "bofa",
       "name": "Premium Rewards Visa Signature",
@@ -3780,7 +3793,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "statement_count": "6 live accounts",
-  "generated_at": "2026-04-21T02:02:30.994Z",
+  "statement_count": "7 live accounts",
+  "generated_at": "2026-04-21T02:05:14.057Z",
   "source": "plaid_realtime"
 }
