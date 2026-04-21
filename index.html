@@ -206,13 +206,14 @@ function editCat(desc, amount, currentCat) {
   ALL_CATS.forEach(function(cat) {
     var col = CAT_COLORS[cat] || '#6b6b80';
     var active = cat === currentCat;
-    var ks = JSON.stringify(key);
-    var cs = JSON.stringify(cat);
-    b += '<div onclick="setCat(' + ks + ',' + cs + ')" style="padding:9px 12px;border-radius:8px;border:1px solid ' + (active ? col : 'var(--border)') + ';background:' + (active ? col + '22' : 'var(--s2)') + ';cursor:pointer;font-size:13px;color:' + (active ? col : 'var(--muted)') + ';font-weight:' + (active ? '600' : '400') + '">' + cat + '</div>';
+    var keyEsc = key.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+    var catEsc2 = cat.replace(/'/g,"\\'");
+    b += '<div onclick="setCat(\'' + keyEsc + '\',\'' + catEsc2 + '\')" style="padding:9px 12px;border-radius:8px;border:1px solid ' + (active ? col : 'var(--border)') + ';background:' + (active ? col + '22' : 'var(--s2)') + ';cursor:pointer;font-size:13px;color:' + (active ? col : 'var(--muted)') + ';font-weight:' + (active ? '600' : '400') + '">' + cat + '</div>';
   });
   b += '</div>';
   if(CAT_OVERRIDES[key]) {
-    b += '<div style="margin-top:12px"><button onclick="setCat(' + JSON.stringify(key) + ',null)" style="font-size:12px;padding:6px 14px;border-radius:6px;border:1px solid var(--border);background:var(--s2);color:var(--muted);cursor:pointer">Reset to original</button></div>';
+    var keyEsc2 = key.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+    b += '<div style="margin-top:12px"><button onclick="setCat(\'' + keyEsc2 + '\',null)" style="font-size:12px;padding:6px 14px;border-radius:6px;border:1px solid var(--border);background:var(--s2);color:var(--muted);cursor:pointer">Reset to original</button></div>';
   }
   openModal('Recategorize', 'Move this transaction to a different category', b);
 }
@@ -230,12 +231,15 @@ function txnLine(t, col, extraStyle) {
     var bankShort = {'BofA':'BOA','Wells Fargo':'WF','TD Bank':'TD','Discover':'DISC','Robinhood':'RH'}[t.bank] || t.bank.substring(0,4).toUpperCase();
     bankLabel = '<span style="font-size:9px;font-family:IBM Plex Mono,monospace;color:var(--muted2);background:var(--s2);border-radius:3px;padding:1px 4px;flex-shrink:0;margin-right:2px">' + bankShort + '</span>';
   }
+  // Encode desc safely for inline onclick attribute
+  var descEsc = t.desc.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+  var catEsc = (t.category||'Other').replace(/'/g,"\\'");
   var html = '<div style="' + style + '">';
   html += '<span style="font-family:IBM Plex Mono,monospace;color:var(--muted);width:40px;flex-shrink:0">' + (t.date || '') + '</span>';
   html += bankLabel;
   html += '<span style="flex:1;word-break:break-word;line-height:1.4;color:var(--muted)">' + t.desc + (isEdited ? '<span class="edited-badge">*</span>' : '') + '</span>';
   html += '<span style="font-family:IBM Plex Mono,monospace;color:' + col + ';white-space:nowrap;margin-right:6px">' + fmt2(t.amount) + '</span>';
-  html += '<button class="edit-btn" onclick="editCat(' + ds + ',' + t.amount + ',' + cs + ')">&#9998;</button>';
+  html += '<button class="edit-btn" onclick="editCat(\'' + descEsc + '\',' + t.amount + ',\'' + catEsc + '\')">&#9998;</button>';
   html += '</div>';
   return html;
 }
