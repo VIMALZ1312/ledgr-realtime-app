@@ -218,8 +218,15 @@ function txnLine(t, col, extraStyle) {
   var cs = JSON.stringify(t.category);
   var ds = JSON.stringify(t.desc);
   var style = 'display:flex;align-items:baseline;gap:8px;padding:6px 0;border-bottom:1px solid var(--border2);font-size:12px;' + (extraStyle || '');
+  // Bank label — short abbreviation
+  var bankLabel = '';
+  if (t.bank) {
+    var bankShort = {'BofA':'BOA','Wells Fargo':'WF','TD Bank':'TD','Discover':'DISC','Robinhood':'RH'}[t.bank] || t.bank.substring(0,4).toUpperCase();
+    bankLabel = '<span style="font-size:9px;font-family:IBM Plex Mono,monospace;color:var(--muted2);background:var(--s2);border-radius:3px;padding:1px 4px;flex-shrink:0;margin-right:2px">' + bankShort + '</span>';
+  }
   var html = '<div style="' + style + '">';
   html += '<span style="font-family:IBM Plex Mono,monospace;color:var(--muted);width:40px;flex-shrink:0">' + (t.date || '') + '</span>';
+  html += bankLabel;
   html += '<span style="flex:1;word-break:break-word;line-height:1.4;color:var(--muted)">' + t.desc + (isEdited ? '<span class="edited-badge">*</span>' : '') + '</span>';
   html += '<span style="font-family:IBM Plex Mono,monospace;color:' + col + ';white-space:nowrap;margin-right:6px">' + fmt2(t.amount) + '</span>';
   html += '<button class="edit-btn" onclick="editCat(' + ds + ',' + t.amount + ',' + cs + ')">&#9998;</button>';

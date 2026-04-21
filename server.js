@@ -414,6 +414,7 @@ function buildStructuredData(accounts, transactions) {
       category: cat,
       city: t.location?.city || null,
       state: t.location?.region || null,
+      bank: NICK_TO_BANK[t._nickname] || t._nickname || null,
     });
 
     // Travel detection
