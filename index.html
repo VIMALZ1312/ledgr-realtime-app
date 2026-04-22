@@ -244,7 +244,55 @@ function txnLine(t, col, extraStyle) {
   return html;
 }
 
-function buildNav() {
+function buildMonthlyCats(ms, period) {
+  var v = ms[period];
+  if (!v) return '<div style="color:var(--muted);font-size:13px;padding:8px 0">No data.</div>';
+  var cats = Object.entries(v.categories || {}).sort(function(a,b){return b[1]-a[1];});
+  var maxCat = cats.length ? cats[0][1] : 1;
+  var html = '';
+  cats.forEach(function(e, ci) {
+    var col = CAT_COLORS[e[0]] || '#6b6b80';
+    var pct = Math.round(e[1] / maxCat * 100);
+    var txns = (v.transactions || []).filter(function(t){ return t.category === e[0]; }).sort(function(a,b){return b.date.localeCompare(a.date);});
+    var cid = 'mc_' + period + '_' + ci;
+    html += '<div>';
+    html += '<div class="cat-bar-row expandable" onclick="expand(\'' + cid + '\')">';
+    html += '<div class="cat-bar-label" style="color:' + col + '">' + e[0] + '</div>';
+    html += '<div class="cat-bar-track"><div class="cat-bar-fill" style="width:' + pct + '%;background:' + col + '"></div></div>';
+    html += '<div class="cat-bar-amt" style="color:' + col + '">' + fmt(e[1]) + '</div>';
+    html += '</div>';
+    html += '<div id="' + cid + '" class="expand-body">';
+    txns.forEach(function(t){ html += txnLine(t, col, ''); });
+    html += '</div></div>';
+  });
+  return html;
+}
+
+function selectMonth(period) {
+  var ms = D.monthly_spending || {};
+  var periods = Object.keys(ms).sort().reverse();
+  // Update tab styles
+  periods.forEach(function(p) {
+    var tab = $('mtab_' + p);
+    if (!tab) return;
+    var isActive = p === period;
+    tab.style.borderColor = isActive ? 'var(--green)' : 'var(--border)';
+    tab.style.background = isActive ? 'rgba(0,208,132,0.12)' : 'var(--s2)';
+    tab.style.color = isActive ? 'var(--green)' : 'var(--muted)';
+  });
+  // Update category bars
+  var el = $('monthly-cats');
+  if (el) el.innerHTML = buildMonthlyCats(ms, period);
+  // Update total in panel head
+  var v = ms[period];
+  var actionEl = el ? el.closest('.panel') : null;
+  if (actionEl) {
+    var action = actionEl.querySelector('.panel-action');
+    if (action) action.textContent = fmt(v ? v.total : 0);
+  }
+}
+
+
   var html = '';
   PAGES.forEach(function(p) {
     html += '<div class="nav-item' + (p.id === TAB ? ' active' : '') + '" onclick="switchTab(\'' + p.id + '\')">' + p.label + '</div>';
@@ -319,25 +367,21 @@ function renderOverview() {
 
   html += '<div class="two-col">';
 
-  // Top categories
-  var cats = Object.entries(latestV.categories || {}).sort(function(a,b){return b[1]-a[1];}).slice(0,10);
-  var maxCat = cats.length ? cats[0][1] : 1;
-  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Top Spend</div><div class="panel-action">' + short(latestV.label) + ' ' + fmt(latestV.total) + '</div></div>';
-  cats.forEach(function(e, ci) {
-    var col = CAT_COLORS[e[0]] || '#6b6b80';
-    var pct = Math.round(e[1] / maxCat * 100);
-    var txns = (latestV.transactions || []).filter(function(t){ return t.category === e[0]; }).sort(function(a,b){return b.date.localeCompare(a.date);});
-    var cid = uid();
-    html += '<div>';
-    html += '<div class="cat-bar-row expandable" onclick="expand(\'' + cid + '\')">';
-    html += '<div class="cat-bar-label" style="color:' + col + '">' + e[0] + '</div>';
-    html += '<div class="cat-bar-track"><div class="cat-bar-fill" style="width:' + pct + '%;background:' + col + '"></div></div>';
-    html += '<div class="cat-bar-amt" style="color:' + col + '">' + fmt(e[1]) + '</div>';
-    html += '</div>';
-    html += '<div id="' + cid + '" class="expand-body">';
-    txns.forEach(function(t){ html += txnLine(t, col, ''); });
-    html += '</div></div>';
+  // Monthly Spend — month tabs, category bars, clickable
+  var activePeriod = latest;
+  html += '<div class="panel">';
+  html += '<div class="panel-head"><div class="panel-title">Monthly Spend</div><div class="panel-action">' + fmt(ms[activePeriod] ? ms[activePeriod].total : 0) + '</div></div>';
+  // Month selector tabs
+  html += '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">';
+  periods.slice().reverse().forEach(function(p) {
+    var isActive = p === activePeriod;
+    html += '<div onclick="selectMonth(\'' + p + '\')" id="mtab_' + p + '" style="padding:4px 10px;border-radius:20px;font-size:11px;font-family:IBM Plex Mono,monospace;cursor:pointer;border:1px solid ' + (isActive ? 'var(--green)' : 'var(--border)') + ';background:' + (isActive ? 'rgba(0,208,132,0.12)' : 'var(--s2)') + ';color:' + (isActive ? 'var(--green)' : 'var(--muted)') + '">' + short(ms[p].label) + '</div>';
   });
+  html += '</div>';
+  // Category bars for selected month
+  html += '<div id="monthly-cats">';
+  html += buildMonthlyCats(ms, activePeriod);
+  html += '</div>';
   html += '</div>';
 
   // Recent transactions
