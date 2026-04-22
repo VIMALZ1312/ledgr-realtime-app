@@ -234,10 +234,11 @@ function txnLine(t, col, extraStyle) {
   // Encode desc safely for inline onclick attribute
   var descEsc = t.desc.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
   var catEsc = (t.category||'Other').replace(/'/g,"\\'");
-  var html = '<div style="' + style + '">';
+  var pendingBadge = t.pending ? '<span style="font-size:9px;color:var(--yellow);margin-left:3px">⏳</span>' : '';
+  var html = '<div style="' + style + (t.pending ? 'opacity:0.75;' : '') + '">';
   html += '<span style="font-family:IBM Plex Mono,monospace;color:var(--muted);width:40px;flex-shrink:0">' + (t.date || '') + '</span>';
   html += bankLabel;
-  html += '<span style="flex:1;word-break:break-word;line-height:1.4;color:var(--muted)">' + t.desc + (isEdited ? '<span class="edited-badge">*</span>' : '') + '</span>';
+  html += '<span style="flex:1;word-break:break-word;line-height:1.4;color:var(--muted)">' + t.desc + pendingBadge + (isEdited ? '<span class="edited-badge">*</span>' : '') + '</span>';
   html += '<span style="font-family:IBM Plex Mono,monospace;color:' + col + ';white-space:nowrap;margin-right:6px">' + fmt2(t.amount) + '</span>';
   html += '<button class="edit-btn" onclick="editCat(\'' + descEsc + '\',' + t.amount + ',\'' + catEsc + '\')">&#9998;</button>';
   html += '</div>';
@@ -366,6 +367,27 @@ function renderOverview() {
   }));
   html += '<div class="panel"><div class="panel-head"><div class="panel-title">Monthly Cash Flow</div><div class="panel-action">' + short(latestV.label) + '</div></div>';
   html += '<div class="chart-wrap"><canvas id="cfChart" data-l=\'' + chartLabels + '\' data-s=\'' + chartSpends + '\' data-i=\'' + chartIncomes + '\'></canvas></div></div>';
+
+  // Pending transactions panel
+  var pending = D.pending_transactions || [];
+  if (pending.length) {
+    html += '<div class="panel" style="border-color:rgba(245,197,24,0.3);background:rgba(245,197,24,0.04)">';
+    html += '<div class="panel-head"><div class="panel-title" style="color:var(--yellow)">⏳ Pending · Not Yet Settled</div>';
+    html += '<div class="panel-action" style="color:var(--yellow)">' + pending.length + ' transactions</div></div>';
+    pending.forEach(function(t) {
+      var col = CAT_COLORS[t.category] || '#6b6b80';
+      var bankShort = {'BofA':'BOA','Wells Fargo':'WF','TD Bank':'TD','Discover':'DISC','Robinhood':'RH'}[t.bank] || (t.bank||'').substring(0,4).toUpperCase();
+      html += '<div style="display:flex;align-items:baseline;gap:8px;padding:6px 0;border-bottom:1px solid var(--border2);font-size:12px;opacity:0.8">';
+      html += '<span style="font-family:IBM Plex Mono,monospace;color:var(--yellow);font-size:10px;width:40px;flex-shrink:0">PEND</span>';
+      if(bankShort) html += '<span style="font-size:9px;font-family:IBM Plex Mono,monospace;color:var(--muted2);background:var(--s2);border-radius:3px;padding:1px 4px;flex-shrink:0">' + bankShort + '</span>';
+      html += '<span style="flex:1;word-break:break-word;line-height:1.4;color:var(--muted)">' + t.desc + '</span>';
+      html += '<span style="font-size:10px;color:'+col+';margin-right:6px">' + t.category + '</span>';
+      html += '<span style="font-family:IBM Plex Mono,monospace;color:var(--yellow);white-space:nowrap">' + fmt2(t.amount) + '</span>';
+      html += '</div>';
+    });
+    html += '<div style="font-size:10px;color:var(--muted);padding:6px 0 2px">These will appear in spending once settled (1-2 days)</div>';
+    html += '</div>';
+  }
 
   html += '<div class="two-col">';
 

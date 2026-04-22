@@ -396,6 +396,25 @@ function buildStructuredData(accounts, transactions) {
     return true;
   });
 
+  // Separate pending transactions (not yet settled)
+  const seenPending = new Set();
+  const pendingTxns = transactions.filter(t => {
+    if (!t.pending || t.amount <= 0) return false;
+    const cat = categorize(t);
+    if (cat === null) return false;
+    const key = (t.merchant_name || t.name) + '|' + t.amount;
+    if (seenPending.has(key)) return false;
+    seenPending.add(key);
+    return true;
+  }).map(t => ({
+    date: t.date ? t.date.substring(5) : '',
+    desc: t.merchant_name || t.name,
+    amount: t.amount,
+    category: categorize(t) || 'Other',
+    bank: NICK_TO_BANK[t._nickname] || t._nickname || null,
+    pending: true,
+  }));
+
   spendTxns.forEach(t => {
     const date = t.date; // YYYY-MM-DD
     const period = date.substring(0, 7); // YYYY-MM
@@ -415,6 +434,7 @@ function buildStructuredData(accounts, transactions) {
       city: t.location?.city || null,
       state: t.location?.region || null,
       bank: NICK_TO_BANK[t._nickname] || t._nickname || null,
+      pending: false,
     });
 
     // Travel detection
@@ -538,6 +558,7 @@ function buildStructuredData(accounts, transactions) {
       )
     ),
     zelle_received: zelle,
+    pending_transactions: pendingTxns,
     detected_recurring: detectedRecurring,
     monthly_history: monthlyHistory,
     monthly_spending: monthlySpending,
