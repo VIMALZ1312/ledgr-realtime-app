@@ -292,40 +292,6 @@ function selectMonth(period) {
   }
 }
 
-
-  var html = '';
-  PAGES.forEach(function(p) {
-    html += '<div class="nav-item' + (p.id === TAB ? ' active' : '') + '" onclick="switchTab(\'' + p.id + '\')">' + p.label + '</div>';
-  });
-  set('sidebar-nav', html);
-  set('drawer-nav', html);
-  set('bottom-tabs', PAGES.map(function(p) {
-    return '<button class="btab' + (p.id === TAB ? ' active' : '') + '" onclick="switchTab(\'' + p.id + '\')">' + '<span class="btab-icon">' + p.icon + '</span>' + p.label + '</button>';
-  }).join(''));
-}
-
-function switchTab(id) { TAB = id; buildNav(); render(); }
-function openDrawer() { $('drawer').classList.add('open'); $('overlay').classList.add('open'); }
-function closeDrawer() { $('drawer').classList.remove('open'); $('overlay').classList.remove('open'); }
-function openModal(title, sub, body) { set('modal-title', title); set('modal-sub', sub); set('modal-body', body); $('modal').classList.add('open'); }
-function closeModal(e) { if(e.target === $('modal')) $('modal').classList.remove('open'); }
-function toggleTheme() {
-  var t = document.documentElement.getAttribute('data-theme');
-  var next = t === 'dark' ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', next);
-  localStorage.setItem('lgr-theme', next);
-  var sb = document.getElementById('theme-sidebar');
-  var tb = document.getElementById('theme-topbar');
-  if(sb) sb.innerHTML = next === 'dark' ? '&#9728; Day' : '&#9790; Night';
-  if(tb) tb.innerHTML = next === 'dark' ? '&#9728;' : '&#9790;';
-  if(_chartInst) { _chartInst.destroy(); _chartInst = null; }
-  render();
-}
-(function() {
-  var t = localStorage.getItem('lgr-theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
-  document.documentElement.setAttribute('data-theme', t);
-})();
-
 function buildNav() {
   var html = '';
   PAGES.forEach(function(p) {
