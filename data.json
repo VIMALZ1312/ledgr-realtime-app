@@ -2,7 +2,7 @@
   "kpis": {
     "income": 7933.09,
     "income_period": "April 2026",
-    "true_outflows": 5788.04,
+    "true_outflows": 5965.95,
     "outflows_period": "April 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 3425.95,
+      "balance": 3722.73,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 200
@@ -28,7 +28,7 @@
       "payroll": 0
     },
     "discover": {
-      "balance": 69.94,
+      "balance": 667.71,
       "is_credit": true,
       "period_label": "Live"
     },
@@ -49,7 +49,7 @@
       "mask": "5772",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 29244.0234065771,
+      "balance": 28715.38485923,
       "available": null,
       "is_credit": false,
       "is_checking": false,
@@ -102,7 +102,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 5116.75,
-      "available": 5116.75,
+      "available": 4043.76,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -166,8 +166,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 1796.66,
-      "available": 1054,
+      "balance": 2093.44,
+      "available": 901,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -218,8 +218,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 148.44,
-      "available": 551.56,
+      "balance": 229.55,
+      "available": 470.45,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -244,7 +244,7 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 7213.5,
+      "balance": 7003.5,
       "available": 7003.5,
       "is_credit": false,
       "is_checking": true,
@@ -257,8 +257,8 @@
       "mask": "0494",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 69.94,
-      "available": 12333,
+      "balance": 667.71,
+      "available": 12322,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -296,8 +296,8 @@
       "mask": "7119",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 1423.52,
-      "available": 1069.68,
+      "balance": 1294.31,
+      "available": 1242.31,
       "is_credit": false,
       "is_checking": false,
       "is_savings": false
@@ -317,9 +317,9 @@
     }
   ],
   "net_worth": {
-    "total_checking": 52534.98,
-    "total_credit": 3469.83,
-    "net": 49065.15
+    "total_checking": 52324.98,
+    "total_credit": 4445.49,
+    "net": 47879.49
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -330,14 +330,14 @@
     "by_month": []
   },
   "spending": {
-    "Healthcare": 917.07,
+    "Healthcare": 967.07,
     "Tech/Subs": 6138.9400000000005,
-    "Shopping": 10173.74,
+    "Shopping": 10245.4,
     "Entertainment": 2108.9900000000002,
     "Other": 37177.81999999999,
     "Groceries": 1756.4299999999998,
     "Restaurants": 1544.9,
-    "Gas/Travel": 6352.800000000001
+    "Gas/Travel": 6409.050000000001
   },
   "zelle_received": [
     {
@@ -573,16 +573,16 @@
     "2026-04": {
       "label": "April 2026",
       "categories": {
-        "Healthcare": 76.27,
+        "Healthcare": 126.27,
         "Tech/Subs": 1605.92,
-        "Shopping": 874.26,
+        "Shopping": 945.92,
         "Entertainment": 749.36,
         "Other": 1426,
         "Groceries": 425.71,
         "Restaurants": 253.16000000000003,
-        "Gas/Travel": 377.36
+        "Gas/Travel": 433.61
       },
-      "total": 5788.039999999998,
+      "total": 5965.949999999998,
       "transactions": [
         {
           "date": "04-17",
@@ -865,6 +865,38 @@
           "state": "CA"
         },
         {
+          "date": "04-18",
+          "desc": "Simplisafe",
+          "amount": 35.18,
+          "category": "Shopping",
+          "city": null,
+          "state": "MA"
+        },
+        {
+          "date": "04-18",
+          "desc": "Conoco",
+          "amount": 56.25,
+          "category": "Gas/Travel",
+          "city": "Dayton",
+          "state": "NJ"
+        },
+        {
+          "date": "04-17",
+          "desc": "Kids Smile",
+          "amount": 50,
+          "category": "Healthcare",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-17",
+          "desc": "Amazon",
+          "amount": 25.99,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
           "date": "04-06",
           "desc": "United Airlines",
           "amount": 40,
@@ -885,14 +917,6 @@
           "desc": "New Jersey Tgi",
           "amount": 713,
           "category": "Other",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "04-19",
-          "desc": "Delight Big Bazar",
-          "amount": 81.11,
-          "category": "Groceries",
           "city": null,
           "state": null
         },
@@ -948,6 +972,14 @@
           "date": "04-08",
           "desc": "ShopRite",
           "amount": 29.84,
+          "category": "Groceries",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-20",
+          "desc": "Delight Big Bazar",
+          "amount": 81.11,
           "category": "Groceries",
           "city": null,
           "state": null
@@ -1061,6 +1093,22 @@
           "desc": "Houseofbi",
           "amount": 69.94,
           "category": "Restaurants",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-21",
+          "desc": "Nokia Of America Corpo",
+          "amount": 9.99,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-21",
+          "desc": "Nokia Of America Corpo",
+          "amount": 0.5,
+          "category": "Shopping",
           "city": null,
           "state": null
         }
@@ -3625,6 +3673,16 @@
       "period_label": "January 2026"
     },
     {
+      "date": "04-18",
+      "desc": "Simplisafe",
+      "amount": 35.18,
+      "category": "Shopping",
+      "city": null,
+      "state": "MA",
+      "period": "2026-04",
+      "period_label": "April 2026"
+    },
+    {
       "date": "04-09",
       "desc": "Trendia Trendia.co",
       "amount": 178.01,
@@ -3794,6 +3852,6 @@
     "cable": 50.66
   },
   "statement_count": "7 live accounts",
-  "generated_at": "2026-04-21T02:06:45.070Z",
+  "generated_at": "2026-04-22T13:10:30.179Z",
   "source": "plaid_realtime"
 }
