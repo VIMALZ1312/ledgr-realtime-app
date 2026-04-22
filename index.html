@@ -326,6 +326,20 @@ function toggleTheme() {
   document.documentElement.setAttribute('data-theme', t);
 })();
 
+function buildNav() {
+  var html = '';
+  PAGES.forEach(function(p) {
+    html += '<div class="nav-item' + (p.id === TAB ? ' active' : '') + '" onclick="switchTab(\'' + p.id + '\')">';
+    html += '<span class="nav-icon">' + p.icon + '</span>' + p.label + '</div>';
+  });
+  set('sidebar-nav', html);
+  set('drawer-nav', html);
+  set('bottom-tabs', PAGES.map(function(p) {
+    return '<button class="btab' + (p.id === TAB ? ' active' : '') + '" onclick="switchTab(\'' + p.id + '\')">'
+      + '<span class="btab-icon">' + p.icon + '</span>' + p.label + '</button>';
+  }).join(''));
+}
+
 function render() {
   if(!D) { set('main-content', '<div style="display:flex;align-items:center;justify-content:center;height:200px;font-size:13px;color:var(--muted);font-family:IBM Plex Mono,monospace">No data. Tap Sync.</div>'); return; }
   _tid = 0;
