@@ -176,23 +176,22 @@ function applyOverrides(data) {
   Object.keys(msp).forEach(function(p) {
     var v = msp[p];
     (v.transactions || []).forEach(function(t) {
-      var key = t.desc + '|' + t.amount;
-      if(CAT_OVERRIDES[key] && CAT_OVERRIDES[key] !== t.category) {
-        var oldCat = t.category;
-        var newCat = CAT_OVERRIDES[key];
-        v.categories[oldCat] = (v.categories[oldCat] || 0) - t.amount;
-        if(v.categories[oldCat] <= 0) delete v.categories[oldCat];
-        v.categories[newCat] = (v.categories[newCat] || 0) + t.amount;
-        t.category = newCat;
+      // Key is desc only — applies GLOBALLY across all months and amounts
+      var override = CAT_OVERRIDES[t.desc];
+      if(override && override !== t.category) {
+        v.categories[t.category] = (v.categories[t.category] || 0) - t.amount;
+        if(v.categories[t.category] <= 0) delete v.categories[t.category];
+        v.categories[override] = (v.categories[override] || 0) + t.amount;
+        t.category = override;
       }
     });
   });
   return data;
 }
 
-function setCat(key, cat) {
-  if(cat === null) { delete CAT_OVERRIDES[key]; }
-  else { CAT_OVERRIDES[key] = cat; }
+function setCat(desc, cat) {
+  if(cat === null) { delete CAT_OVERRIDES[desc]; }
+  else { CAT_OVERRIDES[desc] = cat; }
   saveOverrides();
   D = applyOverrides(JSON.parse(JSON.stringify(_rawD)));
   $('modal').classList.remove('open');
@@ -200,30 +199,46 @@ function setCat(key, cat) {
 }
 
 function editCat(desc, amount, currentCat) {
-  var key = desc + '|' + amount;
-  var b = '<div style="font-size:13px;color:var(--muted);margin-bottom:14px;word-break:break-word">' + desc + '<br><span style="font-family:IBM Plex Mono,monospace;color:var(--text)">' + fmt2(amount) + '</span></div>';
-  b += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">';
-  ALL_CATS.forEach(function(cat) {
-    var col = CAT_COLORS[cat] || '#6b6b80';
-    var active = cat === currentCat;
-    var keyEsc = key.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
-    var catEsc2 = cat.replace(/'/g,"\\'");
-    b += '<div onclick="setCat(\'' + keyEsc + '\',\'' + catEsc2 + '\')" style="padding:9px 12px;border-radius:8px;border:1px solid ' + (active ? col : 'var(--border)') + ';background:' + (active ? col + '22' : 'var(--s2)') + ';cursor:pointer;font-size:13px;color:' + (active ? col : 'var(--muted)') + ';font-weight:' + (active ? '600' : '400') + '">' + cat + '</div>';
+  // Key is desc only — change applies to ALL transactions with same name globally
+  var descEsc = desc.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+  var curCat = CAT_OVERRIDES[desc] || currentCat;
+  var b = '<div style="font-size:13px;color:var(--muted);margin-bottom:6px;word-break:break-word">' + desc + '</div>';
+  b += '<div style="font-size:11px;color:var(--yellow);margin-bottom:12px">Applies globally to all \'' + desc + '\' transactions</div>';
+  b += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">';
+  var allCatsNow = ALL_CATS.slice();
+  // Add any custom categories from overrides
+  Object.values(CAT_OVERRIDES).forEach(function(cat) {
+    if(allCatsNow.indexOf(cat) < 0) allCatsNow.push(cat);
+  });
+  allCatsNow.forEach(function(cat) {
+    var col = CAT_COLORS[cat] || '#a78bfa';
+    var active = cat === curCat;
+    var catEsc = cat.replace(/'/g,"\\'");
+    b += '<div onclick="setCat(\'' + descEsc + '\',\'' + catEsc + '\')" style="padding:9px 12px;border-radius:8px;border:1px solid ' + (active ? col : 'var(--border)') + ';background:' + (active ? col + '22' : 'var(--s2)') + ';cursor:pointer;font-size:13px;color:' + (active ? col : 'var(--muted)') + ';font-weight:' + (active ? '600' : '400') + '">' + cat + '</div>';
   });
   b += '</div>';
-  if(CAT_OVERRIDES[key]) {
-    var keyEsc2 = key.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
-    b += '<div style="margin-top:12px"><button onclick="setCat(\'' + keyEsc2 + '\',null)" style="font-size:12px;padding:6px 14px;border-radius:6px;border:1px solid var(--border);background:var(--s2);color:var(--muted);cursor:pointer">Reset to original</button></div>';
+  // Custom category input
+  b += '<div style="display:flex;gap:8px;margin-bottom:10px">';
+  b += '<input id="custom-cat-input" placeholder="New category name..." style="flex:1;padding:8px 10px;background:var(--s2);border:1px solid var(--border);border-radius:6px;color:var(--text);font-family:IBM Plex Mono,monospace;font-size:12px">';
+  b += '<button onclick="addCustomCat(\'' + descEsc + '\')" style="padding:8px 14px;background:var(--green);color:#000;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer">Add</button>';
+  b += '</div>';
+  if(CAT_OVERRIDES[desc]) {
+    b += '<button onclick="setCat(\'' + descEsc + '\',null)" style="font-size:12px;padding:6px 14px;border-radius:6px;border:1px solid var(--border);background:var(--s2);color:var(--muted);cursor:pointer">Reset to original</button>';
   }
-  openModal('Recategorize', 'Move this transaction to a different category', b);
+  openModal('Recategorize', 'Global — affects all months', b);
+}
+
+function addCustomCat(desc) {
+  var input = document.getElementById('custom-cat-input');
+  var val = input ? input.value.trim() : '';
+  if(!val) return;
+  // Capitalize first letter of each word
+  val = val.replace(/\b\w/g, function(c){return c.toUpperCase();});
+  setCat(desc, val);
 }
 
 function txnLine(t, col, extraStyle) {
-  var key = t.desc + '|' + t.amount;
-  var isEdited = !!CAT_OVERRIDES[key];
-  var ks = JSON.stringify(key);
-  var cs = JSON.stringify(t.category);
-  var ds = JSON.stringify(t.desc);
+  var isEdited = !!CAT_OVERRIDES[t.desc]; // global key = desc only
   var style = 'display:flex;align-items:baseline;gap:8px;padding:6px 0;border-bottom:1px solid var(--border2);font-size:12px;' + (extraStyle || '');
   // Bank label — short abbreviation
   var bankLabel = '';
@@ -233,7 +248,7 @@ function txnLine(t, col, extraStyle) {
   }
   // Encode desc safely for inline onclick attribute
   var descEsc = t.desc.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
-  var catEsc = (t.category||'Other').replace(/'/g,"\\'");
+  var catEsc = (CAT_OVERRIDES[t.desc] || t.category || 'Other').replace(/'/g,"\\'");
   var pendingBadge = t.pending ? '<span style="font-size:9px;color:var(--yellow);margin-left:3px">⏳</span>' : '';
   var html = '<div style="' + style + (t.pending ? 'opacity:0.75;' : '') + '">';
   html += '<span style="font-family:IBM Plex Mono,monospace;color:var(--muted);width:40px;flex-shrink:0">' + (t.date || '') + '</span>';
@@ -391,22 +406,58 @@ function renderOverview() {
 
   html += '<div class="two-col">';
 
-  // Monthly Spend — month tabs, category bars, clickable
-  var activePeriod = latest;
-  html += '<div class="panel">';
-  html += '<div class="panel-head"><div class="panel-title">Monthly Spend</div><div class="panel-action">' + fmt(ms[activePeriod] ? ms[activePeriod].total : 0) + '</div></div>';
-  // Month selector tabs
-  html += '<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">';
-  periods.slice().reverse().forEach(function(p) {
-    var isActive = p === activePeriod;
-    html += '<div onclick="selectMonth(\'' + p + '\')" id="mtab_' + p + '" style="padding:4px 10px;border-radius:20px;font-size:11px;font-family:IBM Plex Mono,monospace;cursor:pointer;border:1px solid ' + (isActive ? 'var(--green)' : 'var(--border)') + ';background:' + (isActive ? 'rgba(0,208,132,0.12)' : 'var(--s2)') + ';color:' + (isActive ? 'var(--green)' : 'var(--muted)') + '">' + short(ms[p].label) + '</div>';
+  // Monthly Spend — months as columns, categories as rows
+  var allCats = {};
+  periods.forEach(function(p) {
+    Object.keys(ms[p].categories || {}).forEach(function(c) { allCats[c] = true; });
   });
-  html += '</div>';
-  // Category bars for selected month
-  html += '<div id="monthly-cats">';
-  html += buildMonthlyCats(ms, activePeriod);
-  html += '</div>';
-  html += '</div>';
+  var catList = Object.keys(allCats).sort(function(a,b) {
+    var ta = periods.reduce(function(s,p){return s+(ms[p].categories[a]||0);},0);
+    var tb = periods.reduce(function(s,p){return s+(ms[p].categories[b]||0);},0);
+    return tb - ta;
+  });
+  var recentPeriods = periods.slice().reverse(); // newest first
+  html += '<div class="panel" style="overflow-x:auto">';
+  html += '<div class="panel-head"><div class="panel-title">Monthly Spend</div>';
+  var grandTotal = periods.reduce(function(s,p){return s+(ms[p].total||0);},0);
+  html += '<div class="panel-action">' + fmt(grandTotal) + ' total</div></div>';
+  html += '<table style="width:100%;border-collapse:collapse;font-size:12px">';
+  html += '<thead><tr><th style="text-align:left;padding:6px 8px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border);font-weight:500">Category</th>';
+  recentPeriods.forEach(function(p) {
+    html += '<th style="text-align:right;padding:6px 8px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border);white-space:nowrap;font-weight:500">' + short(ms[p].label) + '</th>';
+  });
+  html += '</tr></thead><tbody>';
+  catList.forEach(function(cat, ci) {
+    var col = CAT_COLORS[cat] || '#6b6b80';
+    var rowTotal = periods.reduce(function(s,p){return s+(ms[p].categories[cat]||0);},0);
+    if (!rowTotal) return;
+    var rid = 'msc_' + ci;
+    html += '<tr>';
+    html += '<td style="padding:6px 8px;border-bottom:1px solid var(--border2);font-weight:500;color:' + col + ';cursor:pointer" onclick="expand(\'' + rid + '\')">' + cat + '</td>';
+    recentPeriods.forEach(function(p) {
+      var a = ms[p].categories[cat] || 0;
+      if (a) {
+        var txns = (ms[p].transactions||[]).filter(function(t){return t.category===cat;});
+        html += '<td style="padding:6px 8px;border-bottom:1px solid var(--border2);text-align:right;font-family:IBM Plex Mono,monospace;color:' + col + ';cursor:pointer" onclick="showTxns(\'' + cat + ' · ' + short(ms[p].label) + '\',' + JSON.stringify(txns) + ',\'' + col + '\')">' + fmt(a) + '</td>';
+      } else {
+        html += '<td style="padding:6px 8px;border-bottom:1px solid var(--border2);text-align:right;color:var(--muted2)">—</td>';
+      }
+    });
+    html += '</tr>';
+    // Expanded transactions row (all months combined for this category)
+    var allCatTxns = [];
+    periods.forEach(function(p){(ms[p].transactions||[]).filter(function(t){return t.category===cat;}).forEach(function(t){allCatTxns.push(t);});});
+    allCatTxns.sort(function(a,b){return b.date.localeCompare(a.date);});
+    html += '<tr id="' + rid + '" style="display:none"><td colspan="' + (recentPeriods.length+1) + '" style="padding:0 8px 8px">';
+    allCatTxns.forEach(function(t){ html += txnLine(t, col, ''); });
+    html += '</td></tr>';
+  });
+  // Total row
+  html += '<tr style="background:var(--s2)"><td style="padding:6px 8px;font-weight:600;font-size:11px">Total</td>';
+  recentPeriods.forEach(function(p) {
+    html += '<td style="padding:6px 8px;text-align:right;font-family:IBM Plex Mono,monospace;font-weight:600">' + fmt(ms[p].total||0) + '</td>';
+  });
+  html += '</tr></tbody></table></div>';
 
   // Recent transactions
   var allTxns = [];
