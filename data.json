@@ -1,22 +1,22 @@
 {
   "kpis": {
-    "income": 7933.09,
+    "income": 12411.85,
     "income_period": "April 2026",
-    "true_outflows": 5408.35,
+    "true_outflows": 7143.52,
     "outflows_period": "April 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 7756.35,
+      "balance": 6683.52,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
       "outflows": 0
     },
     "wf": {
-      "balance": 3727.73,
+      "balance": 4028.7,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 200
@@ -28,7 +28,7 @@
       "payroll": 0
     },
     "discover": {
-      "balance": 667.71,
+      "balance": 677.7,
       "is_credit": true,
       "period_label": "Live"
     },
@@ -49,7 +49,7 @@
       "mask": "5772",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 28715.38485923,
+      "balance": 28786.38228704,
       "available": null,
       "is_credit": false,
       "is_checking": false,
@@ -88,8 +88,8 @@
       "mask": "5677",
       "type": "depository",
       "subtype": "savings",
-      "balance": 2056.79,
-      "available": 2056.79,
+      "balance": 2056.95,
+      "available": 2056.95,
       "is_credit": false,
       "is_checking": false,
       "is_savings": true
@@ -101,8 +101,8 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 5116.75,
-      "available": 4043.76,
+      "balance": 4043.76,
+      "available": 7190.55,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -141,7 +141,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 200,
-      "available": 200,
+      "available": 700,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -154,7 +154,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 73.2,
-      "available": 926,
+      "available": 916,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -166,8 +166,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 2098.44,
-      "available": 871,
+      "balance": 2399.41,
+      "available": 442,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -218,8 +218,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 229.55,
-      "available": 470.45,
+      "balance": 275.47,
+      "available": 424.53,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -231,8 +231,8 @@
       "mask": "5677",
       "type": "depository",
       "subtype": "savings",
-      "balance": 2056.79,
-      "available": 2056.79,
+      "balance": 2056.95,
+      "available": 2056.95,
       "is_credit": false,
       "is_checking": false,
       "is_savings": true
@@ -245,7 +245,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 7003.5,
-      "available": 7003.5,
+      "available": 6003.5,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -257,8 +257,8 @@
       "mask": "0494",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 667.71,
-      "available": 12322,
+      "balance": 677.7,
+      "available": 12294,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -297,7 +297,7 @@
       "type": "investment",
       "subtype": "brokerage",
       "balance": 1247.81,
-      "available": 1092.11,
+      "available": 1247.81,
       "is_credit": false,
       "is_checking": false,
       "is_savings": false
@@ -317,9 +317,9 @@
     }
   ],
   "net_worth": {
-    "total_checking": 82288.17485923,
-    "total_credit": 4624.99,
-    "net": 77663.18485923
+    "total_checking": 51252.31,
+    "total_credit": 4807.37,
+    "net": 46444.94
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -330,15 +330,14 @@
     "by_month": []
   },
   "spending": {
-    "Healthcare": 964.57,
-    "Tech/Subs": 5967.000000000001,
-    "Shopping": 10297.910000000002,
+    "Healthcare": 1273.51,
+    "Tech/Subs": 6765.710000000001,
+    "Shopping": 10307.9,
     "Entertainment": 2108.9900000000002,
-    "Tax/Professional": 18160.589999999997,
-    "Groceries": 1810.5299999999997,
-    "Restaurants": 1622.81,
-    "Gas/Travel": 5226.700000000001,
-    "Insurance": 1979.26
+    "Other": 37177.81999999999,
+    "Groceries": 1802.3499999999997,
+    "Restaurants": 1612.75,
+    "Gas/Travel": 6477.140000000001
   },
   "zelle_received": [
     {
@@ -528,432 +527,44 @@
       "period_label": "January 2026"
     }
   ],
-  "pending_transactions": [
-    {
-      "date": "04-21",
-      "desc": "ShopRite",
-      "amount": 45.92,
-      "category": "Groceries",
-      "bank": "wifebofa",
-      "pending": true
-    },
-    {
-      "date": "04-21",
-      "desc": "Nokia Of America Corpo",
-      "amount": 9.99,
-      "category": "Shopping",
-      "bank": "Discover",
-      "pending": true
-    },
-    {
-      "date": "04-21",
-      "desc": "Nokia Of America Corpo",
-      "amount": 0.5,
-      "category": "Shopping",
-      "bank": "Discover",
-      "pending": true
-    }
-  ],
-  "detected_recurring": [
-    {
-      "desc": "Best Buy",
-      "category": "Shopping",
-      "count": 4,
-      "months": 4,
-      "avg_amount": 170,
-      "last_amount": 200
-    },
-    {
-      "desc": "Garden Farm",
-      "category": "Shopping",
-      "count": 6,
-      "months": 4,
-      "avg_amount": 64.16,
-      "last_amount": 38.76
-    },
-    {
-      "desc": "Delight Big Bazar",
-      "category": "Groceries",
-      "count": 5,
-      "months": 4,
-      "avg_amount": 59.03,
-      "last_amount": 27.72
-    },
-    {
-      "desc": "Amazon",
-      "category": "Shopping",
-      "count": 20,
-      "months": 4,
-      "avg_amount": 32.13,
-      "last_amount": 21.53
-    },
-    {
-      "desc": "ShopRite",
-      "category": "Groceries",
-      "count": 9,
-      "months": 4,
-      "avg_amount": 30.06,
-      "last_amount": 31.98
-    },
-    {
-      "desc": "Regal Cinemas",
-      "category": "Entertainment",
-      "count": 5,
-      "months": 4,
-      "avg_amount": 17.58,
-      "last_amount": 28.24
-    },
-    {
-      "desc": "Planet Fitness",
-      "category": "Healthcare",
-      "count": 4,
-      "months": 4,
-      "avg_amount": 10.66,
-      "last_amount": 10.66
-    },
-    {
-      "desc": "Vzn Br Cafe Basking Ridgenj",
-      "category": "Restaurants",
-      "count": 7,
-      "months": 4,
-      "avg_amount": 3.28,
-      "last_amount": 6.25
-    },
-    {
-      "desc": "Mercury",
-      "category": "Insurance",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 597.77,
-      "last_amount": 597.78
-    },
-    {
-      "desc": "Verizon",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 454.42,
-      "last_amount": 520.84
-    },
-    {
-      "desc": "Republic Services",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 312.27,
-      "last_amount": 303.93
-    },
-    {
-      "desc": "Big Blue Swim School",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 288.17,
-      "last_amount": 266
-    },
-    {
-      "desc": "Kumon Of North",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 280,
-      "last_amount": 280
-    },
-    {
-      "desc": "Fanbasis",
-      "category": "Entertainment",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 250,
-      "last_amount": 250
-    },
-    {
-      "desc": "Zelle payment to KAVI MUSIC LLC for \"Aryan Mar and Apr\"; Conf# taivjlhgp",
-      "category": "Entertainment",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 160,
-      "last_amount": 120
-    },
-    {
-      "desc": "Patel Brothers",
-      "category": "Groceries",
-      "count": 4,
-      "months": 3,
-      "avg_amount": 109.44,
-      "last_amount": 82.65
-    },
-    {
-      "desc": "Walmart",
-      "category": "Shopping",
-      "count": 7,
-      "months": 3,
-      "avg_amount": 97.36,
-      "last_amount": 83.74
-    },
-    {
-      "desc": "Houseofbi",
-      "category": "Restaurants",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 59.06,
-      "last_amount": 76.41
-    },
-    {
-      "desc": "Walgreens",
-      "category": "Healthcare",
-      "count": 9,
-      "months": 3,
-      "avg_amount": 54.65,
-      "last_amount": 303.5
-    },
-    {
-      "desc": "BP",
-      "category": "Gas/Travel",
-      "count": 7,
-      "months": 3,
-      "avg_amount": 50.27,
-      "last_amount": 44.08
-    },
-    {
-      "desc": "Simplisafe",
-      "category": "Shopping",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 35.18,
-      "last_amount": 35.18
-    },
-    {
-      "desc": "Trader Joe's",
-      "category": "Groceries",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 33.49,
-      "last_amount": 13.14
-    },
-    {
-      "desc": "Shaan Halal Zabiha Meat",
-      "category": "Groceries",
-      "count": 6,
-      "months": 3,
-      "avg_amount": 19.9,
-      "last_amount": 42.14
-    },
-    {
-      "desc": "Netflix",
-      "category": "Entertainment",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 19.18,
-      "last_amount": 19.18
-    },
-    {
-      "desc": "Aitubo.ai Hunghom",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 15,
-      "last_amount": 15
-    },
-    {
-      "desc": "Apple",
-      "category": "Shopping",
-      "count": 8,
-      "months": 3,
-      "avg_amount": 13.05,
-      "last_amount": 13.84
-    },
-    {
-      "desc": "CVS ExtraCare",
-      "category": "Healthcare",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 5.33,
-      "last_amount": 5.33
-    },
-    {
-      "desc": "Google One",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 1.99,
-      "last_amount": 1.99
-    },
-    {
-      "desc": "North Brunswick",
-      "category": "Entertainment",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 340.16,
-      "last_amount": 448.32
-    },
-    {
-      "desc": "Spirit Airlines",
-      "category": "Gas/Travel",
-      "count": 4,
-      "months": 2,
-      "avg_amount": 336.72,
-      "last_amount": 1188.4
-    },
-    {
-      "desc": "Costco",
-      "category": "Shopping",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 296.89,
-      "last_amount": 322.99
-    },
-    {
-      "desc": "NJ E-ZPass",
-      "category": "Gas/Travel",
-      "count": 4,
-      "months": 2,
-      "avg_amount": 129.21,
-      "last_amount": 25
-    },
-    {
-      "desc": "Renaissance Gree",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 2,
-      "avg_amount": 105.95,
-      "last_amount": 105.95
-    },
-    {
-      "desc": "United Airlines",
-      "category": "Gas/Travel",
-      "count": 4,
-      "months": 2,
-      "avg_amount": 102.16,
-      "last_amount": 301.4
-    },
-    {
-      "desc": "Uber",
-      "category": "Tax/Professional",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 90.55,
-      "last_amount": 100.98
-    },
-    {
-      "desc": "Patidar Supermarket Nort",
-      "category": "Groceries",
-      "count": 4,
-      "months": 2,
-      "avg_amount": 73.33,
-      "last_amount": 99.27
-    },
-    {
-      "desc": "Shell",
-      "category": "Gas/Travel",
-      "count": 4,
-      "months": 2,
-      "avg_amount": 73.31,
-      "last_amount": 138.42
-    },
-    {
-      "desc": "Replit Inc.",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 2,
-      "avg_amount": 66.81,
-      "last_amount": 50.17
-    },
-    {
-      "desc": "Desi Halal Meat",
-      "category": "Groceries",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 56.97,
-      "last_amount": 35.26
-    },
-    {
-      "desc": "H&M",
-      "category": "Shopping",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 54.52,
-      "last_amount": 32.95
-    },
-    {
-      "desc": "Optimum",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 2,
-      "avg_amount": 50.66,
-      "last_amount": 50.66
-    },
-    {
-      "desc": "Shaan Halal Meat Market",
-      "category": "Groceries",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 40.33,
-      "last_amount": 48.78
-    },
-    {
-      "desc": "CVS",
-      "category": "Healthcare",
-      "count": 4,
-      "months": 2,
-      "avg_amount": 25.09,
-      "last_amount": 55.22
-    },
-    {
-      "desc": "Dollar Tree",
-      "category": "Shopping",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 21.19,
-      "last_amount": 19.19
-    },
-    {
-      "desc": "Hulu",
-      "category": "Entertainment",
-      "count": 3,
-      "months": 2,
-      "avg_amount": 12.78,
-      "last_amount": 12.78
-    }
-  ],
   "monthly_history": [
     {
       "period": "2026-01",
       "period_label": "January 2026",
-      "income": 5415,
-      "bofa_income": 5415,
+      "income": 5416.34,
+      "bofa_income": 5416.34,
       "td_income": 0,
-      "outflows": 4128.54,
+      "outflows": 0,
       "xoom": 0,
       "investments": 0
     },
     {
       "period": "2026-02",
       "period_label": "February 2026",
-      "income": 37913.46,
-      "bofa_income": 32913.46,
+      "income": 37914.84,
+      "bofa_income": 32914.84,
       "td_income": 5000,
-      "outflows": 14118.12,
+      "outflows": 0,
       "xoom": 0,
       "investments": 0
     },
     {
       "period": "2026-03",
       "period_label": "March 2026",
-      "income": 15892.31,
-      "bofa_income": 10892.3,
+      "income": 15893,
+      "bofa_income": 10892.99,
       "td_income": 5000.01,
-      "outflows": 24483.35,
+      "outflows": 0,
       "xoom": 0,
       "investments": 0
     },
     {
       "period": "2026-04",
       "period_label": "April 2026",
-      "income": 7933.090000000001,
-      "bofa_income": 5433.07,
+      "income": 12411.850000000002,
+      "bofa_income": 9911.83,
       "td_income": 2500.02,
-      "outflows": 5408.35,
+      "outflows": 0,
       "xoom": 0,
       "investments": 0
     }
@@ -961,18 +572,17 @@
   "monthly_spending": {
     "2026-04": {
       "label": "April 2026",
-      "period": "2026-04",
       "categories": {
-        "Healthcare": 126.27,
-        "Tech/Subs": 1619.92,
-        "Shopping": 998.4300000000001,
+        "Healthcare": 432.7099999999999,
+        "Tech/Subs": 2232.69,
+        "Shopping": 1008.4200000000001,
         "Entertainment": 749.36,
-        "Tax/Professional": 793.12,
+        "Other": 1426,
         "Groceries": 471.63,
         "Restaurants": 321.01,
-        "Gas/Travel": 328.61
+        "Gas/Travel": 501.70000000000005
       },
-      "total": 5408.349999999998,
+      "total": 7143.519999999999,
       "transactions": [
         {
           "date": "04-17",
@@ -980,9 +590,7 @@
           "amount": 10.66,
           "category": "Healthcare",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "04-16",
@@ -990,9 +598,7 @@
           "amount": 395.66,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "04-13",
@@ -1000,9 +606,7 @@
           "amount": 160,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "04-13",
@@ -1010,9 +614,7 @@
           "amount": 232,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "04-09",
@@ -1020,9 +622,7 @@
           "amount": 19.18,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "04-08",
@@ -1030,9 +630,7 @@
           "amount": 240,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "04-01",
@@ -1040,19 +638,15 @@
           "amount": 266.82,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "04-01",
           "desc": "New Jersey Tgi",
           "amount": 713,
-          "category": "Tax/Professional",
+          "category": "Other",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "04-16",
@@ -1060,9 +654,7 @@
           "amount": 10.65,
           "category": "Shopping",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "04-13",
@@ -1070,9 +662,7 @@
           "amount": 1.99,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "04-09",
@@ -1080,9 +670,7 @@
           "amount": 13.84,
           "category": "Shopping",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "04-13",
@@ -1090,9 +678,7 @@
           "amount": 9.99,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "04-12",
@@ -1100,9 +686,7 @@
           "amount": 117.26,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "04-11",
@@ -1110,9 +694,7 @@
           "amount": 116.65,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "04-11",
@@ -1120,9 +702,7 @@
           "amount": 55.45,
           "category": "Tech/Subs",
           "city": null,
-          "state": "PA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "PA"
         },
         {
           "date": "04-10",
@@ -1130,9 +710,7 @@
           "amount": 9.7,
           "category": "Groceries",
           "city": "Dayton",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "04-04",
@@ -1140,9 +718,7 @@
           "amount": 270.79,
           "category": "Shopping",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "04-04",
@@ -1150,9 +726,7 @@
           "amount": 332.5,
           "category": "Tech/Subs",
           "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "04-04",
@@ -1160,9 +734,7 @@
           "amount": 34.09,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "04-04",
@@ -1170,9 +742,7 @@
           "amount": 31.87,
           "category": "Groceries",
           "city": "Franklin Park",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "04-04",
@@ -1180,9 +750,7 @@
           "amount": 112.49,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "04-04",
@@ -1190,9 +758,7 @@
           "amount": 18.31,
           "category": "Restaurants",
           "city": "Sacramento",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "04-03",
@@ -1200,9 +766,7 @@
           "amount": 7,
           "category": "Gas/Travel",
           "city": "Sacramento",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "04-03",
@@ -1210,9 +774,7 @@
           "amount": 76.08,
           "category": "Shopping",
           "city": "Sacramento",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "04-03",
@@ -1220,9 +782,7 @@
           "amount": 24.75,
           "category": "Restaurants",
           "city": "Sacramento",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "04-03",
@@ -1230,9 +790,7 @@
           "amount": 52.77,
           "category": "Restaurants",
           "city": "Sacramento",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "04-03",
@@ -1240,9 +798,7 @@
           "amount": 48.43,
           "category": "Restaurants",
           "city": "Kings Beach",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "04-03",
@@ -1250,9 +806,7 @@
           "amount": 6.28,
           "category": "Gas/Travel",
           "city": "Truckee",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "04-03",
@@ -1260,9 +814,7 @@
           "amount": 17.83,
           "category": "Gas/Travel",
           "city": "Truckee",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "04-03",
@@ -1270,9 +822,7 @@
           "amount": 130.69,
           "category": "Gas/Travel",
           "city": "Truckee",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "04-03",
@@ -1280,9 +830,23 @@
           "amount": 12.44,
           "category": "Gas/Travel",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
+        },
+        {
+          "date": "04-03",
+          "desc": "Yosemite View Lodge",
+          "amount": 12.44,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": "CA"
+        },
+        {
+          "date": "04-03",
+          "desc": "Yosemite View Lodge",
+          "amount": 12.44,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": "CA"
         },
         {
           "date": "04-01",
@@ -1290,9 +854,7 @@
           "amount": 31.48,
           "category": "Groceries",
           "city": "Lodi",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "04-01",
@@ -1300,9 +862,7 @@
           "amount": 4.35,
           "category": "Gas/Travel",
           "city": "Stockton",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "04-18",
@@ -1310,9 +870,7 @@
           "amount": 35.18,
           "category": "Shopping",
           "city": null,
-          "state": "MA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "MA"
         },
         {
           "date": "04-18",
@@ -1320,9 +878,7 @@
           "amount": 56.25,
           "category": "Gas/Travel",
           "city": "Dayton",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "04-17",
@@ -1330,9 +886,7 @@
           "amount": 50,
           "category": "Healthcare",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "04-17",
@@ -1340,9 +894,7 @@
           "amount": 25.99,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "04-20",
@@ -1350,9 +902,7 @@
           "amount": 5,
           "category": "Tech/Subs",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "04-19",
@@ -1360,9 +910,7 @@
           "amount": 67.85,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "04-19",
@@ -1370,9 +918,7 @@
           "amount": 9,
           "category": "Tech/Subs",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "04-19",
@@ -1380,9 +926,7 @@
           "amount": 23.19,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "04-18",
@@ -1390,259 +934,31 @@
           "amount": 29.32,
           "category": "Shopping",
           "city": "Piscataway",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
-          "date": "04-06",
-          "desc": "United Airlines",
-          "amount": 40,
-          "category": "Gas/Travel",
-          "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
-        },
-        {
-          "date": "04-01",
-          "desc": "Kumon Of North",
-          "amount": 280,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
-        },
-        {
-          "date": "04-18",
-          "desc": "Shaan Halal Zabiha Meat",
-          "amount": 12.57,
-          "category": "Groceries",
-          "city": "Dayton",
-          "state": "NJ",
-          "bank": "wifebofa",
-          "pending": false
-        },
-        {
-          "date": "04-18",
-          "desc": "Apna Bazaar Cash & Carry",
-          "amount": 44.08,
-          "category": "Shopping",
-          "city": "Dayton",
-          "state": "NJ",
-          "bank": "wifebofa",
-          "pending": false
-        },
-        {
-          "date": "04-13",
-          "desc": "Great Clips",
-          "amount": 23,
+          "date": "04-22",
+          "desc": "Walgreens",
+          "amount": 10.65,
           "category": "Healthcare",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "wifebofa",
-          "pending": false
+          "state": "NJ"
         },
         {
-          "date": "04-13",
-          "desc": "Garden Farm",
-          "amount": 68.79,
-          "category": "Shopping",
+          "date": "04-22",
+          "desc": "North Brunswick Family De",
+          "amount": 290.46,
+          "category": "Healthcare",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
+          "state": null
         },
         {
-          "date": "04-09",
+          "date": "04-22",
           "desc": "BP",
-          "amount": 53.77,
+          "amount": 68.09,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
-        },
-        {
-          "date": "04-09",
-          "desc": "Trendia Trendia.co",
-          "amount": 178.01,
-          "category": "Shopping",
-          "city": null,
-          "state": "IL",
-          "bank": "wifebofa",
-          "pending": false
-        },
-        {
-          "date": "04-08",
-          "desc": "ShopRite",
-          "amount": 29.84,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
-        },
-        {
-          "date": "04-20",
-          "desc": "Delight Big Bazar",
-          "amount": 81.11,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
-        },
-        {
-          "date": "04-21",
-          "desc": "ShopRite",
-          "amount": 45.92,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
-        },
-        {
-          "date": "04-04",
-          "desc": "Cricketdata",
-          "amount": 5.99,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
-        },
-        {
-          "date": "04-04",
-          "desc": "Regal Cinemas",
-          "amount": 1.59,
-          "category": "Entertainment",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
-        },
-        {
-          "date": "04-04",
-          "desc": "Uber",
-          "amount": 80.12,
-          "category": "Tax/Professional",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
-        },
-        {
-          "date": "04-05",
-          "desc": "Replit Inc.",
-          "amount": 50.12,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": "CA",
-          "bank": "Discover",
-          "pending": false
-        },
-        {
-          "date": "04-05",
-          "desc": "Temu",
-          "amount": 42.03,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
-        },
-        {
-          "date": "04-05",
-          "desc": "CVS",
-          "amount": 28.33,
-          "category": "Healthcare",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
-        },
-        {
-          "date": "04-07",
-          "desc": "Fanbasis",
-          "amount": 250,
-          "category": "Entertainment",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
-        },
-        {
-          "date": "04-08",
-          "desc": "ABC*P 06002 PF NORTH B NORTH BRUNSWINJ APPLE PAY ENDING IN 0913",
-          "amount": 2,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
-        },
-        {
-          "date": "04-09",
-          "desc": "Grok Xai",
-          "amount": 5,
-          "category": "Entertainment",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
-        },
-        {
-          "date": "04-09",
-          "desc": "Vzn Br Cafe Basking Ridgenj",
-          "amount": 2.87,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
-        },
-        {
-          "date": "04-10",
-          "desc": "Regal Cinemas",
-          "amount": 1.59,
-          "category": "Entertainment",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
-        },
-        {
-          "date": "04-10",
-          "desc": "CVS",
-          "amount": 14.28,
-          "category": "Healthcare",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
-        },
-        {
-          "date": "04-11",
-          "desc": "Replit Inc.",
-          "amount": 100.13,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": "CA",
-          "bank": "Discover",
-          "pending": false
-        },
-        {
-          "date": "04-13",
-          "desc": "Houseofbi",
-          "amount": 69.94,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
+          "state": null
         },
         {
           "date": "04-21",
@@ -1650,9 +966,231 @@
           "amount": 9.99,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
+          "state": "NJ"
+        },
+        {
+          "date": "04-21",
+          "desc": "Aitubo.ai Hunghom",
+          "amount": 15,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-21",
+          "desc": "CVS ExtraCare",
+          "amount": 5.33,
+          "category": "Healthcare",
+          "city": null,
+          "state": "RI"
+        },
+        {
+          "date": "04-06",
+          "desc": "United Airlines",
+          "amount": 40,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-01",
+          "desc": "Kumon Of North",
+          "amount": 280,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-01",
+          "desc": "New Jersey Tgi",
+          "amount": 713,
+          "category": "Other",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-18",
+          "desc": "Shaan Halal Zabiha Meat",
+          "amount": 12.57,
+          "category": "Groceries",
+          "city": "Dayton",
+          "state": "NJ"
+        },
+        {
+          "date": "04-18",
+          "desc": "Apna Bazaar Cash & Carry",
+          "amount": 44.08,
+          "category": "Shopping",
+          "city": "Dayton",
+          "state": "NJ"
+        },
+        {
+          "date": "04-13",
+          "desc": "Great Clips",
+          "amount": 23,
+          "category": "Healthcare",
+          "city": "North Brunswick",
+          "state": "NJ"
+        },
+        {
+          "date": "04-13",
+          "desc": "Garden Farm",
+          "amount": 68.79,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-09",
+          "desc": "BP",
+          "amount": 53.77,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-09",
+          "desc": "Trendia Trendia.co",
+          "amount": 178.01,
+          "category": "Shopping",
+          "city": null,
+          "state": "IL"
+        },
+        {
+          "date": "04-08",
+          "desc": "ShopRite",
+          "amount": 29.84,
+          "category": "Groceries",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-20",
+          "desc": "Delight Big Bazar",
+          "amount": 81.11,
+          "category": "Groceries",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-22",
+          "desc": "ShopRite",
+          "amount": 45.92,
+          "category": "Groceries",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-04",
+          "desc": "Cricketdata",
+          "amount": 5.99,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-04",
+          "desc": "Regal Cinemas",
+          "amount": 1.59,
+          "category": "Entertainment",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-04",
+          "desc": "Uber",
+          "amount": 80.12,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-05",
+          "desc": "Replit Inc.",
+          "amount": 50.12,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "CA"
+        },
+        {
+          "date": "04-05",
+          "desc": "Temu",
+          "amount": 42.03,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-05",
+          "desc": "CVS",
+          "amount": 28.33,
+          "category": "Healthcare",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-07",
+          "desc": "Fanbasis",
+          "amount": 250,
+          "category": "Entertainment",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-08",
+          "desc": "ABC*P 06002 PF NORTH B NORTH BRUNSWINJ APPLE PAY ENDING IN 0913",
+          "amount": 2,
+          "category": "Restaurants",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-09",
+          "desc": "Grok Xai",
+          "amount": 5,
+          "category": "Entertainment",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-09",
+          "desc": "Vzn Br Cafe Basking Ridgenj",
+          "amount": 2.87,
+          "category": "Restaurants",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-10",
+          "desc": "Regal Cinemas",
+          "amount": 1.59,
+          "category": "Entertainment",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-10",
+          "desc": "CVS",
+          "amount": 14.28,
+          "category": "Healthcare",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-11",
+          "desc": "Replit Inc.",
+          "amount": 100.13,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "CA"
+        },
+        {
+          "date": "04-13",
+          "desc": "Houseofbi",
+          "amount": 69.94,
+          "category": "Restaurants",
+          "city": null,
+          "state": null
         },
         {
           "date": "04-21",
@@ -1660,27 +1198,39 @@
           "amount": 0.5,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
+          "state": null
+        },
+        {
+          "date": "04-20",
+          "desc": "Mercury",
+          "amount": 597.77,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "CA"
+        },
+        {
+          "date": "04-21",
+          "desc": "Nokia Of America Corpo",
+          "amount": 9.99,
+          "category": "Shopping",
+          "city": null,
+          "state": null
         }
       ]
     },
     "2026-03": {
       "label": "March 2026",
-      "period": "2026-03",
       "categories": {
         "Tech/Subs": 2133.34,
         "Entertainment": 676.19,
-        "Tax/Professional": 16908.149999999998,
+        "Other": 34096.95,
         "Healthcare": 45.99,
         "Shopping": 1776.6399999999996,
-        "Restaurants": 804.8400000000001,
-        "Gas/Travel": 933.9300000000001,
-        "Groceries": 606.4999999999999,
-        "Insurance": 597.77
+        "Restaurants": 794.7800000000002,
+        "Gas/Travel": 1107.0800000000002,
+        "Groceries": 598.3199999999999
       },
-      "total": 24483.35,
+      "total": 41229.28999999998,
       "transactions": [
         {
           "date": "03-31",
@@ -1688,9 +1238,7 @@
           "amount": 50.66,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-31",
@@ -1698,9 +1246,7 @@
           "amount": 105.95,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-30",
@@ -1708,9 +1254,7 @@
           "amount": 12.78,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-23",
@@ -1718,19 +1262,15 @@
           "amount": 10,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-31",
           "desc": "Internal Revenue Service",
           "amount": 16735,
-          "category": "Tax/Professional",
+          "category": "Other",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-17",
@@ -1738,9 +1278,7 @@
           "amount": 10.66,
           "category": "Healthcare",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-16",
@@ -1748,9 +1286,7 @@
           "amount": 446.77,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-13",
@@ -1758,9 +1294,7 @@
           "amount": 160,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-11",
@@ -1768,9 +1302,7 @@
           "amount": 120,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-09",
@@ -1778,9 +1310,7 @@
           "amount": 19.18,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-03",
@@ -1788,9 +1318,7 @@
           "amount": 50.66,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-02",
@@ -1798,9 +1326,7 @@
           "amount": 12.78,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-02",
@@ -1808,9 +1334,7 @@
           "amount": 105.95,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-02",
@@ -1818,9 +1342,7 @@
           "amount": 366.05,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-31",
@@ -1828,9 +1350,7 @@
           "amount": 20.24,
           "category": "Shopping",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "03-31",
@@ -1838,9 +1358,7 @@
           "amount": 8.66,
           "category": "Shopping",
           "city": "Fresno",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "03-31",
@@ -1848,9 +1366,7 @@
           "amount": 241.92,
           "category": "Restaurants",
           "city": "Mariposa",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "03-31",
@@ -1858,9 +1374,7 @@
           "amount": 9.73,
           "category": "Restaurants",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "03-30",
@@ -1868,9 +1382,7 @@
           "amount": 56.29,
           "category": "Restaurants",
           "city": "Mariposa",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "03-30",
@@ -1878,9 +1390,7 @@
           "amount": 31.57,
           "category": "Gas/Travel",
           "city": "Coarsegold",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "03-30",
@@ -1888,9 +1398,7 @@
           "amount": 44.02,
           "category": "Gas/Travel",
           "city": "Coarsegold",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "03-30",
@@ -1898,9 +1406,7 @@
           "amount": 81.33,
           "category": "Gas/Travel",
           "city": "Coarsegold",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "03-30",
@@ -1908,9 +1414,7 @@
           "amount": 138.42,
           "category": "Gas/Travel",
           "city": "Los Angeles",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "03-29",
@@ -1918,9 +1422,7 @@
           "amount": 33.23,
           "category": "Shopping",
           "city": "Santa Monica",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "03-29",
@@ -1928,19 +1430,15 @@
           "amount": 9.97,
           "category": "Restaurants",
           "city": "Culver City",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "03-29",
           "desc": "Esmeralda",
           "amount": 21,
-          "category": "Restaurants",
+          "category": "Other",
           "city": "Santa Monica",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "03-29",
@@ -1948,9 +1446,7 @@
           "amount": 15,
           "category": "Restaurants",
           "city": "Santa Monica",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "03-29",
@@ -1958,9 +1454,7 @@
           "amount": 18.25,
           "category": "Restaurants",
           "city": "Los Angeles",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "03-28",
@@ -1968,9 +1462,7 @@
           "amount": 32.38,
           "category": "Tech/Subs",
           "city": "Los Angeles",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "03-28",
@@ -1978,9 +1470,7 @@
           "amount": 4.49,
           "category": "Gas/Travel",
           "city": "Irving",
-          "state": "TX",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "TX"
         },
         {
           "date": "03-28",
@@ -1988,9 +1478,7 @@
           "amount": 46.2,
           "category": "Entertainment",
           "city": "Los Angeles",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "03-28",
@@ -1998,9 +1486,7 @@
           "amount": 83.89,
           "category": "Shopping",
           "city": "Rosemead",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "03-28",
@@ -2008,9 +1494,7 @@
           "amount": 9.67,
           "category": "Restaurants",
           "city": "Newark",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "03-28",
@@ -2018,9 +1502,7 @@
           "amount": 10,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-27",
@@ -2028,9 +1510,7 @@
           "amount": 15.87,
           "category": "Restaurants",
           "city": "Newark",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "03-26",
@@ -2038,9 +1518,7 @@
           "amount": 79,
           "category": "Gas/Travel",
           "city": null,
-          "state": "FL",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "FL"
         },
         {
           "date": "03-26",
@@ -2048,9 +1526,7 @@
           "amount": 34.99,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-25",
@@ -2058,9 +1534,7 @@
           "amount": 73.07,
           "category": "Restaurants",
           "city": "Dayton",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "03-25",
@@ -2068,9 +1542,7 @@
           "amount": 71.01,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-25",
@@ -2078,9 +1550,7 @@
           "amount": 28.24,
           "category": "Entertainment",
           "city": null,
-          "state": "TN",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "TN"
         },
         {
           "date": "03-25",
@@ -2088,9 +1558,7 @@
           "amount": 5,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-24",
@@ -2098,9 +1566,7 @@
           "amount": 10.65,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-24",
@@ -2108,9 +1574,7 @@
           "amount": 126.66,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-24",
@@ -2118,9 +1582,7 @@
           "amount": 27.62,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-23",
@@ -2128,9 +1590,7 @@
           "amount": 25.57,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-23",
@@ -2138,9 +1598,7 @@
           "amount": 87.02,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-23",
@@ -2148,9 +1606,7 @@
           "amount": 10,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-22",
@@ -2158,9 +1614,7 @@
           "amount": 30,
           "category": "Shopping",
           "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "03-22",
@@ -2168,9 +1622,7 @@
           "amount": 15,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-22",
@@ -2178,9 +1630,7 @@
           "amount": 117.47,
           "category": "Shopping",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "03-21",
@@ -2188,9 +1638,7 @@
           "amount": 117.2,
           "category": "Restaurants",
           "city": "Princeton",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "03-21",
@@ -2198,9 +1646,7 @@
           "amount": 6.39,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-21",
@@ -2208,9 +1654,7 @@
           "amount": 5.33,
           "category": "Healthcare",
           "city": null,
-          "state": "RI",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "RI"
         },
         {
           "date": "03-20",
@@ -2218,9 +1662,7 @@
           "amount": 12.99,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-13",
@@ -2228,9 +1670,7 @@
           "amount": 1.99,
           "category": "Tech/Subs",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "03-05",
@@ -2238,9 +1678,7 @@
           "amount": 13.84,
           "category": "Shopping",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "03-19",
@@ -2248,9 +1686,7 @@
           "amount": 129.96,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-18",
@@ -2258,9 +1694,7 @@
           "amount": 35.18,
           "category": "Shopping",
           "city": null,
-          "state": "MA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "MA"
         },
         {
           "date": "03-17",
@@ -2268,9 +1702,7 @@
           "amount": 123.27,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-17",
@@ -2278,9 +1710,7 @@
           "amount": 39.44,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-17",
@@ -2288,9 +1718,7 @@
           "amount": 25,
           "category": "Gas/Travel",
           "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "03-16",
@@ -2298,9 +1726,7 @@
           "amount": 14.92,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-14",
@@ -2308,9 +1734,7 @@
           "amount": 87.01,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-14",
@@ -2318,9 +1742,7 @@
           "amount": 30,
           "category": "Healthcare",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "03-12",
@@ -2328,9 +1750,7 @@
           "amount": 20,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-07",
@@ -2338,9 +1758,7 @@
           "amount": 322.99,
           "category": "Shopping",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "03-07",
@@ -2348,9 +1766,7 @@
           "amount": 6.38,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-07",
@@ -2358,9 +1774,7 @@
           "amount": 48.78,
           "category": "Groceries",
           "city": "Franklin Park",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "03-05",
@@ -2368,9 +1782,7 @@
           "amount": 70.8,
           "category": "Gas/Travel",
           "city": null,
-          "state": "VA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "VA"
         },
         {
           "date": "03-05",
@@ -2378,9 +1790,7 @@
           "amount": 194.76,
           "category": "Gas/Travel",
           "city": null,
-          "state": "NY",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NY"
         },
         {
           "date": "03-05",
@@ -2388,9 +1798,7 @@
           "amount": 71.28,
           "category": "Gas/Travel",
           "city": null,
-          "state": "NY",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NY"
         },
         {
           "date": "03-05",
@@ -2398,9 +1806,7 @@
           "amount": 9.48,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-05",
@@ -2408,9 +1814,7 @@
           "amount": 89.4,
           "category": "Gas/Travel",
           "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "03-04",
@@ -2418,9 +1822,7 @@
           "amount": 11.27,
           "category": "Restaurants",
           "city": "New Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "03-01",
@@ -2428,9 +1830,7 @@
           "amount": 10.36,
           "category": "Restaurants",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "03-01",
@@ -2438,9 +1838,7 @@
           "amount": 266,
           "category": "Tech/Subs",
           "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "03-01",
@@ -2448,9 +1846,15 @@
           "amount": 50.06,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
+        },
+        {
+          "date": "03-31",
+          "desc": "Internal Revenue Service",
+          "amount": 16735,
+          "category": "Other",
+          "city": null,
+          "state": null
         },
         {
           "date": "03-30",
@@ -2458,9 +1862,7 @@
           "amount": 20.42,
           "category": "Tech/Subs",
           "city": "Los Angeles",
-          "state": "CA",
-          "bank": "wifebofa",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "03-30",
@@ -2468,9 +1870,7 @@
           "amount": 10,
           "category": "Entertainment",
           "city": "Los Angeles",
-          "state": "CA",
-          "bank": "wifebofa",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "03-21",
@@ -2478,9 +1878,7 @@
           "amount": 46.53,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-02",
@@ -2488,9 +1886,7 @@
           "amount": 280,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-19",
@@ -2498,9 +1894,7 @@
           "amount": 56.09,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-18",
@@ -2508,9 +1902,7 @@
           "amount": 99.27,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-18",
@@ -2518,9 +1910,7 @@
           "amount": 88.38,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-16",
@@ -2528,9 +1918,7 @@
           "amount": 36.89,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-16",
@@ -2538,9 +1926,15 @@
           "amount": 10.94,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
+          "state": null
+        },
+        {
+          "date": "03-16",
+          "desc": "Singas Famous Pizza",
+          "amount": 10.94,
+          "category": "Restaurants",
+          "city": null,
+          "state": null
         },
         {
           "date": "03-13",
@@ -2548,9 +1942,7 @@
           "amount": 47.77,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-12",
@@ -2558,9 +1950,7 @@
           "amount": 32.95,
           "category": "Shopping",
           "city": null,
-          "state": "NY",
-          "bank": "wifebofa",
-          "pending": false
+          "state": "NY"
         },
         {
           "date": "03-11",
@@ -2568,9 +1958,7 @@
           "amount": 42.77,
           "category": "Shopping",
           "city": null,
-          "state": "CA",
-          "bank": "wifebofa",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "03-09",
@@ -2578,9 +1966,7 @@
           "amount": 102.99,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-05",
@@ -2588,9 +1974,7 @@
           "amount": 53.7,
           "category": "Groceries",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "wifebofa",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "03-04",
@@ -2598,9 +1982,7 @@
           "amount": 9.82,
           "category": "Groceries",
           "city": "Dayton",
-          "state": "NJ",
-          "bank": "wifebofa",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "03-04",
@@ -2608,19 +1990,15 @@
           "amount": 63.6,
           "category": "Shopping",
           "city": null,
-          "state": "AR",
-          "bank": "wifebofa",
-          "pending": false
+          "state": "AR"
         },
         {
           "date": "03-20",
           "desc": "Mercury",
           "amount": 597.77,
-          "category": "Insurance",
+          "category": "Other",
           "city": null,
-          "state": "CA",
-          "bank": "Discover",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "03-24",
@@ -2628,9 +2006,7 @@
           "amount": 3.08,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-26",
@@ -2638,19 +2014,15 @@
           "amount": 2.51,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-27",
           "desc": "Uber",
           "amount": 100.98,
-          "category": "Tax/Professional",
+          "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-28",
@@ -2658,9 +2030,7 @@
           "amount": 26,
           "category": "Entertainment",
           "city": "Los Angeles",
-          "state": "CA",
-          "bank": "Discover",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "03-28",
@@ -2668,19 +2038,15 @@
           "amount": 64,
           "category": "Entertainment",
           "city": "Los Angeles",
-          "state": "CA",
-          "bank": "Discover",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "03-28",
           "desc": "Lyft",
           "amount": 72.17,
-          "category": "Tax/Professional",
+          "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-30",
@@ -2688,9 +2054,7 @@
           "amount": 50.17,
           "category": "Tech/Subs",
           "city": null,
-          "state": "CA",
-          "bank": "Discover",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "03-03",
@@ -2698,9 +2062,7 @@
           "amount": 2.87,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-08",
@@ -2708,9 +2070,7 @@
           "amount": 250,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-13",
@@ -2718,9 +2078,7 @@
           "amount": 68.34,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-13",
@@ -2728,9 +2086,7 @@
           "amount": 2.51,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-14",
@@ -2738,9 +2094,7 @@
           "amount": 69.36,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-15",
@@ -2748,9 +2102,7 @@
           "amount": 78.67,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-22",
@@ -2758,9 +2110,7 @@
           "amount": 76.4,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-28",
@@ -2768,37 +2118,31 @@
           "amount": 314.27,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "pending": false
+          "state": null
         },
         {
           "date": "03-14",
           "desc": "Patidar",
           "amount": 8.18,
-          "category": "Groceries",
+          "category": "Other",
           "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "pending": false
+          "state": null
         }
       ]
     },
     "2026-02": {
       "label": "February 2026",
-      "period": "2026-02",
       "categories": {
         "Healthcare": 134.08,
-        "Tech/Subs": 1662.02,
+        "Tech/Subs": 1847.96,
         "Shopping": 6600.31,
         "Entertainment": 522.4200000000001,
-        "Gas/Travel": 3511.57,
+        "Gas/Travel": 4415.77,
         "Groceries": 541.6499999999999,
-        "Insurance": 783.71,
         "Restaurants": 351.35999999999996,
-        "Tax/Professional": 11
+        "Other": 608.77
       },
-      "total": 14118.12,
+      "total": 15022.32,
       "transactions": [
         {
           "date": "02-17",
@@ -2806,9 +2150,7 @@
           "amount": 10.66,
           "category": "Healthcare",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-17",
@@ -2816,9 +2158,7 @@
           "amount": 520.84,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-13",
@@ -2826,9 +2166,7 @@
           "amount": 160,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-09",
@@ -2836,9 +2174,7 @@
           "amount": 19.18,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-02",
@@ -2846,9 +2182,7 @@
           "amount": 50.66,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-02",
@@ -2856,9 +2190,7 @@
           "amount": 105.95,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-26",
@@ -2866,9 +2198,7 @@
           "amount": 10.65,
           "category": "Shopping",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "02-19",
@@ -2876,9 +2206,7 @@
           "amount": 10.65,
           "category": "Shopping",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "02-15",
@@ -2886,9 +2214,7 @@
           "amount": 75,
           "category": "Gas/Travel",
           "city": null,
-          "state": "FL",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "FL"
         },
         {
           "date": "02-13",
@@ -2896,9 +2222,7 @@
           "amount": 1.99,
           "category": "Tech/Subs",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "02-12",
@@ -2906,9 +2230,7 @@
           "amount": 10.65,
           "category": "Shopping",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "02-05",
@@ -2916,9 +2238,7 @@
           "amount": 13.84,
           "category": "Shopping",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "02-28",
@@ -2926,49 +2246,39 @@
           "amount": 27,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-28",
           "desc": "Kidsempire East Eastbrunswick",
           "amount": 6.14,
-          "category": "Insurance",
+          "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-28",
           "desc": "Kidsempire East Eastbrunswick",
           "amount": 6,
-          "category": "Insurance",
+          "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-28",
           "desc": "Kidsempire East Eastbrunswick",
           "amount": 4.26,
-          "category": "Insurance",
+          "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-28",
           "desc": "Kidsempire East Eastbrunswick",
           "amount": 169.54,
-          "category": "Insurance",
+          "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-28",
@@ -2976,9 +2286,7 @@
           "amount": 40.13,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-27",
@@ -2986,9 +2294,7 @@
           "amount": 128.73,
           "category": "Restaurants",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "02-26",
@@ -2996,9 +2302,7 @@
           "amount": 45.93,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-26",
@@ -3006,9 +2310,7 @@
           "amount": 85.29,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-26",
@@ -3016,9 +2318,7 @@
           "amount": 5.32,
           "category": "Healthcare",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "02-26",
@@ -3026,9 +2326,7 @@
           "amount": 22.49,
           "category": "Groceries",
           "city": "Dayton",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "02-25",
@@ -3036,9 +2334,7 @@
           "amount": 225,
           "category": "Entertainment",
           "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "02-25",
@@ -3046,9 +2342,7 @@
           "amount": 28.24,
           "category": "Entertainment",
           "city": null,
-          "state": "TN",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "TN"
         },
         {
           "date": "02-23",
@@ -3056,9 +2350,7 @@
           "amount": 148.21,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-22",
@@ -3066,9 +2358,7 @@
           "amount": 15,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-21",
@@ -3076,9 +2366,7 @@
           "amount": 20.73,
           "category": "Healthcare",
           "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "02-21",
@@ -3086,9 +2374,7 @@
           "amount": 79,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-21",
@@ -3096,9 +2382,7 @@
           "amount": 5.33,
           "category": "Healthcare",
           "city": null,
-          "state": "RI",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "RI"
         },
         {
           "date": "02-18",
@@ -3106,9 +2390,7 @@
           "amount": 35.18,
           "category": "Shopping",
           "city": null,
-          "state": "MA",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "MA"
         },
         {
           "date": "02-17",
@@ -3116,9 +2398,7 @@
           "amount": 7.99,
           "category": "Restaurants",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "02-17",
@@ -3126,9 +2406,7 @@
           "amount": 54.38,
           "category": "Restaurants",
           "city": "Edison",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "02-17",
@@ -3136,9 +2414,7 @@
           "amount": 19.19,
           "category": "Restaurants",
           "city": "Edison",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "02-17",
@@ -3146,9 +2422,7 @@
           "amount": 58.01,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-16",
@@ -3156,9 +2430,7 @@
           "amount": 61.62,
           "category": "Shopping",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "02-14",
@@ -3166,9 +2438,7 @@
           "amount": 152.63,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-14",
@@ -3176,9 +2446,7 @@
           "amount": 0.37,
           "category": "Shopping",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "02-14",
@@ -3186,9 +2454,7 @@
           "amount": 47.98,
           "category": "Shopping",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "02-12",
@@ -3196,9 +2462,7 @@
           "amount": 6.39,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-12",
@@ -3206,9 +2470,7 @@
           "amount": 31.31,
           "category": "Shopping",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "02-09",
@@ -3216,9 +2478,7 @@
           "amount": 15.52,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-09",
@@ -3226,9 +2486,7 @@
           "amount": 48.19,
           "category": "Shopping",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "02-07",
@@ -3236,9 +2494,7 @@
           "amount": 52.02,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-07",
@@ -3246,9 +2502,7 @@
           "amount": 56.61,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-04",
@@ -3256,9 +2510,7 @@
           "amount": 27.63,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-04",
@@ -3266,9 +2518,7 @@
           "amount": 25.48,
           "category": "Healthcare",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "02-04",
@@ -3276,9 +2526,7 @@
           "amount": 18.12,
           "category": "Shopping",
           "city": null,
-          "state": "MO",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "MO"
         },
         {
           "date": "02-03",
@@ -3286,9 +2534,7 @@
           "amount": 266,
           "category": "Tech/Subs",
           "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "02-03",
@@ -3296,9 +2542,7 @@
           "amount": 43.88,
           "category": "Healthcare",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "02-03",
@@ -3306,9 +2550,7 @@
           "amount": 2.68,
           "category": "Healthcare",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "02-24",
@@ -3316,9 +2558,7 @@
           "amount": 1410.04,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-17",
@@ -3326,9 +2566,7 @@
           "amount": 5815,
           "category": "Shopping",
           "city": "Iselin",
-          "state": "NJ",
-          "bank": "wifebofa",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "02-17",
@@ -3336,9 +2574,7 @@
           "amount": 45,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-11",
@@ -3346,9 +2582,7 @@
           "amount": 1188.4,
           "category": "Gas/Travel",
           "city": "Miramar",
-          "state": "FL",
-          "bank": "wifebofa",
-          "pending": false
+          "state": "FL"
         },
         {
           "date": "02-06",
@@ -3356,9 +2590,7 @@
           "amount": 35,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-06",
@@ -3366,9 +2598,7 @@
           "amount": 32.24,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-06",
@@ -3376,9 +2606,31 @@
           "amount": 301.4,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
+          "state": null
+        },
+        {
+          "date": "02-06",
+          "desc": "United Airlines",
+          "amount": 301.4,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "02-06",
+          "desc": "United Airlines",
+          "amount": 301.4,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "02-06",
+          "desc": "United Airlines",
+          "amount": 301.4,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
         },
         {
           "date": "02-02",
@@ -3386,9 +2638,7 @@
           "amount": 280,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-28",
@@ -3396,9 +2646,7 @@
           "amount": 33.5,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-21",
@@ -3406,9 +2654,7 @@
           "amount": 33.64,
           "category": "Groceries",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "wifebofa",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "02-20",
@@ -3416,19 +2662,15 @@
           "amount": 22.65,
           "category": "Groceries",
           "city": "Dayton",
-          "state": "NJ",
-          "bank": "wifebofa",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "02-19",
           "desc": "Hindu Temple & Cultural Society Of USA Inc",
           "amount": 11,
-          "category": "Tax/Professional",
+          "category": "Other",
           "city": "Bridgewater",
-          "state": "NJ",
-          "bank": "wifebofa",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "02-17",
@@ -3436,9 +2678,7 @@
           "amount": 42.14,
           "category": "Groceries",
           "city": "Dayton",
-          "state": "NJ",
-          "bank": "wifebofa",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "02-14",
@@ -3446,9 +2686,7 @@
           "amount": 20,
           "category": "Healthcare",
           "city": "Kendall Park",
-          "state": "NJ",
-          "bank": "wifebofa",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "02-12",
@@ -3456,9 +2694,7 @@
           "amount": 44.08,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-11",
@@ -3466,9 +2702,7 @@
           "amount": 69.26,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-09",
@@ -3476,9 +2710,7 @@
           "amount": 27.39,
           "category": "Shopping",
           "city": null,
-          "state": "AR",
-          "bank": "wifebofa",
-          "pending": false
+          "state": "AR"
         },
         {
           "date": "02-06",
@@ -3486,9 +2718,7 @@
           "amount": 194.37,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-05",
@@ -3496,9 +2726,7 @@
           "amount": 11.45,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-05",
@@ -3506,9 +2734,7 @@
           "amount": 275.25,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-02",
@@ -3516,9 +2742,7 @@
           "amount": 46.44,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-03",
@@ -3526,9 +2750,7 @@
           "amount": 5.77,
           "category": "Restaurants",
           "city": "Troy",
-          "state": "MI",
-          "bank": "Discover",
-          "pending": false
+          "state": "MI"
         },
         {
           "date": "02-06",
@@ -3536,9 +2758,7 @@
           "amount": 250,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-07",
@@ -3546,9 +2766,7 @@
           "amount": 30.82,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-14",
@@ -3556,9 +2774,7 @@
           "amount": 59.71,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-19",
@@ -3566,19 +2782,15 @@
           "amount": 2.87,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-20",
           "desc": "Mercury",
           "amount": 597.77,
-          "category": "Insurance",
+          "category": "Other",
           "city": null,
-          "state": "CA",
-          "bank": "Discover",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "02-21",
@@ -3586,9 +2798,7 @@
           "amount": 59.34,
           "category": "Shopping",
           "city": "Brunswick",
-          "state": null,
-          "bank": "Robinhood",
-          "pending": false
+          "state": null
         },
         {
           "date": "02-21",
@@ -3596,27 +2806,23 @@
           "amount": 90,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "pending": false
+          "state": null
         }
       ]
     },
     "2026-01": {
       "label": "January 2026",
-      "period": "2026-01",
       "categories": {
         "Tech/Subs": 551.72,
         "Entertainment": 161.02,
         "Shopping": 922.53,
-        "Healthcare": 658.23,
+        "Healthcare": 660.73,
         "Gas/Travel": 452.59,
         "Restaurants": 145.6,
         "Groceries": 190.75,
-        "Tax/Professional": 448.32,
-        "Insurance": 597.78
+        "Other": 1046.1
       },
-      "total": 4128.539999999999,
+      "total": 4131.039999999999,
       "transactions": [
         {
           "date": "01-30",
@@ -3624,9 +2830,7 @@
           "amount": 303.93,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-28",
@@ -3634,9 +2838,7 @@
           "amount": 12.78,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-22",
@@ -3644,9 +2846,7 @@
           "amount": 127.09,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-21",
@@ -3654,9 +2854,7 @@
           "amount": 14.99,
           "category": "Healthcare",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-21",
@@ -3664,9 +2862,7 @@
           "amount": 200,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-20",
@@ -3674,9 +2870,15 @@
           "amount": 2.5,
           "category": "Healthcare",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "BofA",
-          "pending": false
+          "state": "NJ"
+        },
+        {
+          "date": "01-20",
+          "desc": "Walgreens",
+          "amount": 2.5,
+          "category": "Healthcare",
+          "city": "North Brunswick",
+          "state": "NJ"
         },
         {
           "date": "01-20",
@@ -3684,9 +2886,7 @@
           "amount": 10.66,
           "category": "Healthcare",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-20",
@@ -3694,9 +2894,7 @@
           "amount": 120,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-20",
@@ -3704,9 +2902,7 @@
           "amount": 63.5,
           "category": "Healthcare",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "BofA",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "01-20",
@@ -3714,9 +2910,7 @@
           "amount": 303.5,
           "category": "Healthcare",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "BofA",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "01-24",
@@ -3724,9 +2918,7 @@
           "amount": 377.45,
           "category": "Gas/Travel",
           "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "01-24",
@@ -3734,9 +2926,7 @@
           "amount": 50,
           "category": "Healthcare",
           "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "01-31",
@@ -3744,9 +2934,7 @@
           "amount": 20.56,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-31",
@@ -3754,9 +2942,7 @@
           "amount": 42.99,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-31",
@@ -3764,9 +2950,7 @@
           "amount": 19.19,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-31",
@@ -3774,9 +2958,7 @@
           "amount": 77.3,
           "category": "Shopping",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "01-31",
@@ -3784,9 +2966,7 @@
           "amount": 4.26,
           "category": "Restaurants",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "01-30",
@@ -3794,9 +2974,7 @@
           "amount": 20,
           "category": "Healthcare",
           "city": "Kendall Park",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "01-30",
@@ -3804,9 +2982,7 @@
           "amount": 49.99,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-29",
@@ -3814,9 +2990,7 @@
           "amount": 10.12,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-29",
@@ -3824,9 +2998,7 @@
           "amount": 14.99,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-29",
@@ -3834,9 +3006,7 @@
           "amount": 22.38,
           "category": "Restaurants",
           "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "01-25",
@@ -3844,9 +3014,7 @@
           "amount": 28.24,
           "category": "Entertainment",
           "city": null,
-          "state": "TN",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "TN"
         },
         {
           "date": "01-24",
@@ -3854,9 +3022,7 @@
           "amount": 25,
           "category": "Gas/Travel",
           "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "01-24",
@@ -3864,9 +3030,7 @@
           "amount": 2.53,
           "category": "Healthcare",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "01-24",
@@ -3874,9 +3038,7 @@
           "amount": 13.14,
           "category": "Groceries",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "01-23",
@@ -3884,9 +3046,7 @@
           "amount": 21.53,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-23",
@@ -3894,9 +3054,7 @@
           "amount": 82.65,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-22",
@@ -3904,9 +3062,7 @@
           "amount": 15,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-22",
@@ -3914,9 +3070,7 @@
           "amount": 50.14,
           "category": "Gas/Travel",
           "city": "Somerset",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "01-21",
@@ -3924,9 +3078,7 @@
           "amount": 50,
           "category": "Healthcare",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-21",
@@ -3934,9 +3086,7 @@
           "amount": 5.33,
           "category": "Healthcare",
           "city": null,
-          "state": "RI",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "RI"
         },
         {
           "date": "01-20",
@@ -3944,19 +3094,15 @@
           "amount": 13.23,
           "category": "Tech/Subs",
           "city": null,
-          "state": "TN",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "TN"
         },
         {
           "date": "01-20",
           "desc": "North Brunswick",
           "amount": 448.32,
-          "category": "Tax/Professional",
+          "category": "Other",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "01-19",
@@ -3964,9 +3110,7 @@
           "amount": 75.54,
           "category": "Shopping",
           "city": "Milltown",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "01-19",
@@ -3974,9 +3118,7 @@
           "amount": 102.29,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-19",
@@ -3984,9 +3126,7 @@
           "amount": 31.98,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-24",
@@ -3994,9 +3134,7 @@
           "amount": 38.76,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-22",
@@ -4004,9 +3142,7 @@
           "amount": 27.72,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-22",
@@ -4014,9 +3150,7 @@
           "amount": 199,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "wifebofa",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-20",
@@ -4024,19 +3158,15 @@
           "amount": 36.3,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-20",
           "desc": "Mercury",
           "amount": 597.78,
-          "category": "Insurance",
+          "category": "Other",
           "city": null,
-          "state": "CA",
-          "bank": "Discover",
-          "pending": false
+          "state": "CA"
         },
         {
           "date": "01-23",
@@ -4044,9 +3174,7 @@
           "amount": 6.25,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-24",
@@ -4054,9 +3182,7 @@
           "amount": 55.22,
           "category": "Healthcare",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Discover",
-          "pending": false
+          "state": "NJ"
         },
         {
           "date": "01-24",
@@ -4064,9 +3190,7 @@
           "amount": 76.41,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-25",
@@ -4074,9 +3198,7 @@
           "amount": 59,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-30",
@@ -4084,9 +3206,7 @@
           "amount": 20,
           "category": "Healthcare",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-30",
@@ -4094,9 +3214,7 @@
           "amount": 35.26,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-31",
@@ -4104,9 +3222,7 @@
           "amount": 83.74,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "pending": false
+          "state": null
         },
         {
           "date": "01-31",
@@ -4114,9 +3230,7 @@
           "amount": 60,
           "category": "Healthcare",
           "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "pending": false
+          "state": null
         }
       ]
     }
@@ -4238,6 +3352,26 @@
       "amount": 130.69,
       "category": "Gas/Travel",
       "city": "Truckee",
+      "state": "CA",
+      "period": "2026-04",
+      "period_label": "April 2026"
+    },
+    {
+      "date": "04-03",
+      "desc": "Yosemite View Lodge",
+      "amount": 12.44,
+      "category": "Gas/Travel",
+      "city": null,
+      "state": "CA",
+      "period": "2026-04",
+      "period_label": "April 2026"
+    },
+    {
+      "date": "04-03",
+      "desc": "Yosemite View Lodge",
+      "amount": 12.44,
+      "category": "Gas/Travel",
+      "city": null,
       "state": "CA",
       "period": "2026-04",
       "period_label": "April 2026"
@@ -4376,7 +3510,7 @@
       "date": "03-29",
       "desc": "Esmeralda",
       "amount": 21,
-      "category": "Restaurants",
+      "category": "Other",
       "city": "Santa Monica",
       "state": "CA",
       "period": "2026-03",
@@ -4673,6 +3807,16 @@
       "period_label": "April 2026"
     },
     {
+      "date": "04-21",
+      "desc": "CVS ExtraCare",
+      "amount": 5.33,
+      "category": "Healthcare",
+      "city": null,
+      "state": "RI",
+      "period": "2026-04",
+      "period_label": "April 2026"
+    },
+    {
       "date": "04-09",
       "desc": "Trendia Trendia.co",
       "amount": 178.01,
@@ -4746,7 +3890,7 @@
       "date": "03-20",
       "desc": "Mercury",
       "amount": 597.77,
-      "category": "Insurance",
+      "category": "Other",
       "city": null,
       "state": "CA",
       "period": "2026-03",
@@ -4806,7 +3950,7 @@
       "date": "01-20",
       "desc": "Mercury",
       "amount": 597.78,
-      "category": "Insurance",
+      "category": "Other",
       "city": null,
       "state": "CA",
       "period": "2026-01",
@@ -4826,11 +3970,21 @@
       "date": "02-20",
       "desc": "Mercury",
       "amount": 597.77,
-      "category": "Insurance",
+      "category": "Other",
       "city": null,
       "state": "CA",
       "period": "2026-02",
       "period_label": "February 2026"
+    },
+    {
+      "date": "04-20",
+      "desc": "Mercury",
+      "amount": 597.77,
+      "category": "Tech/Subs",
+      "city": null,
+      "state": "CA",
+      "period": "2026-04",
+      "period_label": "April 2026"
     }
   ],
   "fixed_obligations": {
@@ -4842,6 +3996,6 @@
     "cable": 50.66
   },
   "statement_count": "7 live accounts",
-  "generated_at": "2026-04-23T00:10:27.712Z",
+  "generated_at": "2026-04-25T00:02:45.368Z",
   "source": "plaid_realtime"
 }
