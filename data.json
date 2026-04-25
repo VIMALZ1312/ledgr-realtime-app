@@ -2,7 +2,7 @@
   "kpis": {
     "income": 12411.85,
     "income_period": "April 2026",
-    "true_outflows": 7143.52,
+    "true_outflows": 7174.29,
     "outflows_period": "April 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -49,7 +49,7 @@
       "mask": "5772",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 28786.38228704,
+      "balance": 30662.2315655,
       "available": null,
       "is_credit": false,
       "is_checking": false,
@@ -258,7 +258,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 677.7,
-      "available": 12294,
+      "available": 12195,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -336,7 +336,7 @@
     "Entertainment": 2108.9900000000002,
     "Other": 37177.81999999999,
     "Groceries": 1802.3499999999997,
-    "Restaurants": 1612.75,
+    "Restaurants": 1643.52,
     "Gas/Travel": 6477.140000000001
   },
   "zelle_received": [
@@ -579,10 +579,10 @@
         "Entertainment": 749.36,
         "Other": 1426,
         "Groceries": 471.63,
-        "Restaurants": 321.01,
+        "Restaurants": 351.78,
         "Gas/Travel": 501.70000000000005
       },
-      "total": 7143.519999999999,
+      "total": 7174.289999999998,
       "transactions": [
         {
           "date": "04-17",
@@ -1213,6 +1213,38 @@
           "desc": "Nokia Of America Corpo",
           "amount": 9.99,
           "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-23",
+          "desc": "365 Retail Markets",
+          "amount": 2.98,
+          "category": "Restaurants",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-23",
+          "desc": "Vzn Br Cafe",
+          "amount": 12.53,
+          "category": "Restaurants",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-23",
+          "desc": "Vzn Br Cafe",
+          "amount": 12.39,
+          "category": "Restaurants",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-23",
+          "desc": "Vzn Br Cafe",
+          "amount": 2.87,
+          "category": "Restaurants",
           "city": null,
           "state": null
         }
@@ -3996,6 +4028,6 @@
     "cable": 50.66
   },
   "statement_count": "7 live accounts",
-  "generated_at": "2026-04-25T00:02:45.368Z",
+  "generated_at": "2026-04-25T03:26:46.183Z",
   "source": "plaid_realtime"
 }
