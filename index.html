@@ -869,12 +869,57 @@ function triggerSync() {
     });
 }
 
+function deduplicateData(data) {
+  // Fix duplicates client-side regardless of what server sends
+  if(!data || !data.monthly_spending) return data;
+  Object.keys(data.monthly_spending).forEach(function(p) {
+    var v = data.monthly_spending[p];
+    var seen = {};
+    var deduped = [];
+    (v.transactions || []).forEach(function(t) {
+      var key = t.date + '|' + t.desc + '|' + t.amount;
+      if(!seen[key]) { seen[key] = true; deduped.push(t); }
+    });
+    // Recalculate categories and total from deduped transactions
+    v.transactions = deduped;
+    v.categories = {};
+    v.total = 0;
+    deduped.forEach(function(t) {
+      v.categories[t.category] = (v.categories[t.category] || 0) + t.amount;
+      v.total += t.amount;
+    });
+  });
+  return data;
+}
+
+function migrateOldOverrides() {
+  // Migrate old keys that were "desc|amount" format to just "desc"
+  var migrated = false;
+  Object.keys(CAT_OVERRIDES).forEach(function(key) {
+    if(key.indexOf('|') >= 0) {
+      var desc = key.substring(0, key.lastIndexOf('|'));
+      if(!CAT_OVERRIDES[desc]) {
+        CAT_OVERRIDES[desc] = CAT_OVERRIDES[key];
+        migrated = true;
+      }
+      delete CAT_OVERRIDES[key];
+      migrated = true;
+    }
+  });
+  if(migrated) saveOverrides();
+}
+migrateOldOverrides();
+
 function loadData() {
   fetch('https://raw.githubusercontent.com/VIMALZ1312/ledgr-realtime-app/main/data.json?t=' + Date.now())
     .then(function(r){ return r.json(); })
     .then(function(data) {
+      // 1. Deduplicate first (fixes server-side duplication regardless of Replit version)
+      data = deduplicateData(data);
+      // 2. Store clean raw copy
       _rawD = JSON.parse(JSON.stringify(data));
-      D = applyOverrides(data);
+      // 3. Apply category overrides on top
+      D = applyOverrides(JSON.parse(JSON.stringify(_rawD)));
       buildNav();
       render();
       if(data.generated_at) {
