@@ -265,7 +265,6 @@ function txnLine(t, col, extraStyle) {
   }
   var refundBadge = isRefund ? '<span style="font-size:9px;color:var(--green);background:rgba(0,208,132,0.12);border-radius:3px;padding:1px 5px;margin-left:4px">REFUND</span>' : '';
   var pendingBadge = t.pending ? '<span style="font-size:9px;color:var(--yellow);margin-left:3px">⏳</span>' : '';
-  }
   // Encode desc safely for inline onclick attribute
   var descEsc = t.desc.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
   var catEsc = (CAT_OVERRIDES[t.desc] || t.category || 'Other').replace(/'/g,"\\'");
