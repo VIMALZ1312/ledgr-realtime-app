@@ -1,12 +1,13 @@
 [build]
-  functions = "netlify/functions"
+  publish = "."
 
-[functions]
-  node_bundler = "esbuild"
-  included_files = ["netlify/functions/**"]
+# Only deploy from main branch — no deploy previews for PRs
+[context.production]
+  publish = "."
 
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
+# Disable branch deploys and deploy previews entirely
+[context.branch-deploy]
+  command = "echo skip"
+
+[context.deploy-preview]
+  command = "echo skip"
