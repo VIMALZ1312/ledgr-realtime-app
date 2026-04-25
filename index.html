@@ -143,7 +143,11 @@ var D = null, TAB = 'overview';
 var BACKEND = 'https://realtimefin.replit.app';
 var _rawD = null;
 var CAT_OVERRIDES = {};
-try { CAT_OVERRIDES = JSON.parse(localStorage.getItem('lgr_cat_overrides') || '{}'); } catch(e) {}
+try { 
+  var saved = localStorage.getItem('lgr_cat_overrides');
+  CAT_OVERRIDES = JSON.parse(saved || '{}');
+  if(Object.keys(CAT_OVERRIDES).length) console.log('[LEDGR] Loaded', Object.keys(CAT_OVERRIDES).length, 'category overrides:', Object.keys(CAT_OVERRIDES));
+} catch(e) { console.warn('[LEDGR] Failed to load overrides:', e); }
 var ALL_CATS = ['Restaurants','Groceries','Amazon','Shopping','Gas/Travel','Kids','Entertainment','Tech/Subs','Pharmacy','Healthcare','Insurance','Tax/Professional','Home Security','Religious','Other'];
 var CAT_COLORS = {
   'Restaurants':'#ff8c42','Groceries':'#c8f060','Amazon':'#4da8ff','Shopping':'#a78bfa',
@@ -167,7 +171,10 @@ function short(s) { return (s||'').replace(' 2026',' 26').replace(' 2025',' 25')
 function expand(id) { var e = $(id); if(e) e.classList.toggle('open'); }
 
 function saveOverrides() {
-  try { localStorage.setItem('lgr_cat_overrides', JSON.stringify(CAT_OVERRIDES)); } catch(e) {}
+  try { 
+    localStorage.setItem('lgr_cat_overrides', JSON.stringify(CAT_OVERRIDES));
+    console.log('[LEDGR] Saved overrides:', CAT_OVERRIDES);
+  } catch(e) { console.warn('[LEDGR] Failed to save overrides:', e); }
 }
 
 function applyOverrides(data) {
@@ -193,6 +200,12 @@ function setCat(desc, cat) {
   if(cat === null) { delete CAT_OVERRIDES[desc]; }
   else { CAT_OVERRIDES[desc] = cat; }
   saveOverrides();
+  // Verify it was actually saved
+  try {
+    var check = JSON.parse(localStorage.getItem('lgr_cat_overrides') || '{}');
+    if(cat && !check[desc]) console.error('[LEDGR] Override NOT saved for:', desc);
+    else console.log('[LEDGR] Override confirmed saved. Total:', Object.keys(check).length);
+  } catch(e) {}
   D = applyOverrides(JSON.parse(JSON.stringify(_rawD)));
   $('modal').classList.remove('open');
   render();
