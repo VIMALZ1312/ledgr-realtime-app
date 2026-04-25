@@ -1,15 +1,15 @@
 {
   "kpis": {
-    "income": 12411.85,
+    "income": 15868.01,
     "income_period": "April 2026",
-    "true_outflows": 7174.29,
+    "true_outflows": 7272.07,
     "outflows_period": "April 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 6683.52,
+      "balance": 9830.31,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -28,7 +28,7 @@
       "payroll": 0
     },
     "discover": {
-      "balance": 677.7,
+      "balance": 708.47,
       "is_credit": true,
       "period_label": "Live"
     },
@@ -101,7 +101,7 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 4043.76,
+      "balance": 7190.55,
       "available": 7190.55,
       "is_credit": false,
       "is_checking": true,
@@ -244,8 +244,8 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 7003.5,
-      "available": 6003.5,
+      "balance": 6003.5,
+      "available": 9184.19,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -257,7 +257,7 @@
       "mask": "0494",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 677.7,
+      "balance": 708.47,
       "available": 12195,
       "is_credit": true,
       "is_checking": false,
@@ -317,9 +317,9 @@
     }
   ],
   "net_worth": {
-    "total_checking": 51252.31,
-    "total_credit": 4807.37,
-    "net": 46444.94
+    "total_checking": 53399.1,
+    "total_credit": 4838.14,
+    "net": 48560.96
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -336,7 +336,7 @@
     "Entertainment": 2108.9900000000002,
     "Other": 37177.81999999999,
     "Groceries": 1802.3499999999997,
-    "Restaurants": 1643.52,
+    "Restaurants": 1741.3,
     "Gas/Travel": 6477.140000000001
   },
   "zelle_received": [
@@ -561,8 +561,8 @@
     {
       "period": "2026-04",
       "period_label": "April 2026",
-      "income": 12411.850000000002,
-      "bofa_income": 9911.83,
+      "income": 15868.010000000002,
+      "bofa_income": 13367.99,
       "td_income": 2500.02,
       "outflows": 0,
       "xoom": 0,
@@ -579,10 +579,10 @@
         "Entertainment": 749.36,
         "Other": 1426,
         "Groceries": 471.63,
-        "Restaurants": 351.78,
+        "Restaurants": 449.56,
         "Gas/Travel": 501.70000000000005
       },
-      "total": 7174.289999999998,
+      "total": 7272.069999999998,
       "transactions": [
         {
           "date": "04-17",
@@ -1244,6 +1244,22 @@
           "date": "04-23",
           "desc": "Vzn Br Cafe",
           "amount": 2.87,
+          "category": "Restaurants",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-24",
+          "desc": "Samudhra",
+          "amount": 85.3,
+          "category": "Restaurants",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-24",
+          "desc": "Vzn Br Cafe",
+          "amount": 12.48,
           "category": "Restaurants",
           "city": null,
           "state": null
@@ -4028,6 +4044,6 @@
     "cable": 50.66
   },
   "statement_count": "7 live accounts",
-  "generated_at": "2026-04-25T03:26:46.183Z",
+  "generated_at": "2026-04-25T20:33:34.362Z",
   "source": "plaid_realtime"
 }
