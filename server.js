@@ -389,7 +389,9 @@ function buildStructuredData(accounts, transactions) {
   const seenTxns = new Set();
   const spendTxns = transactions.filter(t => {
     const cat = categorize(t);
-    if (cat === null || t.amount <= 0) return false;
+    if (cat === null) return false;
+    if (t.amount === 0) return false;
+    // Include both positive (purchases) and negative (refunds/credits)
     const key = t.date + '|' + (t.merchant_name || t.name) + '|' + t.amount;
     if (seenTxns.has(key)) return false;
     seenTxns.add(key);
@@ -434,7 +436,10 @@ function buildStructuredData(accounts, transactions) {
       city: t.location?.city || null,
       state: t.location?.region || null,
       bank: NICK_TO_BANK[t._nickname] || t._nickname || null,
+      account_id: t.account_id || null,
+      mask: t.account_id ? (accounts.find(a => a.account_id === t.account_id)?.mask || null) : null,
       pending: false,
+      refund: t.amount < 0, // negative = refund/credit
     });
 
     // Travel detection

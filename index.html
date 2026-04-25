@@ -251,23 +251,29 @@ function addCustomCat(desc) {
 }
 
 function txnLine(t, col, extraStyle) {
-  var isEdited = !!CAT_OVERRIDES[t.desc]; // global key = desc only
+  var isEdited = !!CAT_OVERRIDES[t.desc];
+  var isRefund = t.amount < 0;
+  var effectiveCol = isRefund ? 'var(--green)' : col;
   var style = 'display:flex;align-items:baseline;gap:8px;padding:6px 0;border-bottom:1px solid var(--border2);font-size:12px;' + (extraStyle || '');
-  // Bank label — short abbreviation
   var bankLabel = '';
   if (t.bank) {
     var bankShort = {'BofA':'BOA','Wells Fargo':'WF','TD Bank':'TD','Discover':'DISC','Robinhood':'RH'}[t.bank] || t.bank.substring(0,4).toUpperCase();
     bankLabel = '<span style="font-size:9px;font-family:IBM Plex Mono,monospace;color:var(--muted2);background:var(--s2);border-radius:3px;padding:1px 4px;flex-shrink:0;margin-right:2px">' + bankShort + '</span>';
   }
+  if (t.mask) {
+    bankLabel += '<span style="font-size:9px;font-family:IBM Plex Mono,monospace;color:var(--muted2);background:var(--s2);border-radius:3px;padding:1px 4px;flex-shrink:0;margin-right:2px">••' + t.mask + '</span>';
+  }
+  var refundBadge = isRefund ? '<span style="font-size:9px;color:var(--green);background:rgba(0,208,132,0.12);border-radius:3px;padding:1px 5px;margin-left:4px">REFUND</span>' : '';
+  var pendingBadge = t.pending ? '<span style="font-size:9px;color:var(--yellow);margin-left:3px">⏳</span>' : '';
+  }
   // Encode desc safely for inline onclick attribute
   var descEsc = t.desc.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
   var catEsc = (CAT_OVERRIDES[t.desc] || t.category || 'Other').replace(/'/g,"\\'");
-  var pendingBadge = t.pending ? '<span style="font-size:9px;color:var(--yellow);margin-left:3px">⏳</span>' : '';
   var html = '<div style="' + style + (t.pending ? 'opacity:0.75;' : '') + '">';
   html += '<span style="font-family:IBM Plex Mono,monospace;color:var(--muted);width:40px;flex-shrink:0">' + (t.date || '') + '</span>';
   html += bankLabel;
-  html += '<span style="flex:1;word-break:break-word;line-height:1.4;color:var(--muted)">' + t.desc + pendingBadge + (isEdited ? '<span class="edited-badge">*</span>' : '') + '</span>';
-  html += '<span style="font-family:IBM Plex Mono,monospace;color:' + col + ';white-space:nowrap;margin-right:6px">' + fmt2(t.amount) + '</span>';
+  html += '<span style="flex:1;word-break:break-word;line-height:1.4;color:var(--muted)">' + t.desc + refundBadge + pendingBadge + (isEdited ? '<span class="edited-badge">*</span>' : '') + '</span>';
+  html += '<span style="font-family:IBM Plex Mono,monospace;color:' + effectiveCol + ';white-space:nowrap;margin-right:6px">' + (isRefund ? '+' : '') + fmt2(Math.abs(t.amount)) + '</span>';
   html += '<button class="edit-btn" onclick="editCat(\'' + descEsc + '\',' + t.amount + ',\'' + catEsc + '\')">&#9998;</button>';
   html += '</div>';
   return html;
@@ -556,104 +562,132 @@ function renderAccounts() {
   var allAccts = D.all_accounts || [];
   var ms = D.monthly_spending || {};
   var periods = Object.keys(ms).sort().reverse();
+  var last2 = periods.slice(0, 2); // last 2 months
   var html = '';
 
-  // Checking & Savings
+  // Helper: get transactions for a bank in last 2 months
+  function bankTxns(bank) {
+    var txns = [];
+    last2.forEach(function(p) {
+      (ms[p].transactions || []).forEach(function(t) {
+        if(t.bank === bank) txns.push({period_label: ms[p].label, t: t});
+      });
+    });
+    return txns;
+  }
+
+  // ── CHECKING & SAVINGS ──────────────────────────────────────
   var deposits = allAccts.filter(function(a){return !a.is_credit;});
   var banks = [];
-  deposits.forEach(function(a){ if(banks.indexOf(a.bank) < 0) banks.push(a.bank); });
+  deposits.forEach(function(a){ if(banks.indexOf(a.bank)<0) banks.push(a.bank); });
   var depTotal = deposits.reduce(function(s,a){return s+a.balance;},0);
   html += '<div class="panel"><div class="panel-head"><div class="panel-title">Checking & Savings</div><div class="panel-action">' + fmt2(depTotal) + '</div></div>';
-  banks.forEach(function(bank, bi) {
+
+  banks.forEach(function(bank) {
     var ba = deposits.filter(function(a){return a.bank===bank;});
     var bankTotal = ba.reduce(function(s,a){return s+a.balance;},0);
     var bid = uid();
     html += '<div class="row expandable" onclick="expand(\'' + bid + '\')">';
     html += '<div><div class="row-label" style="font-weight:500">' + bank + '</div><div class="row-sub">' + ba.length + ' account(s)</div></div>';
-    html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:var(--green)">' + fmt2(bankTotal) + '</div><span style="color:var(--muted)">&rsaquo;</span></div></div>';
+    html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:var(--green)">' + fmt2(bankTotal) + '</div><span style="color:var(--muted)">›</span></div></div>';
     html += '<div id="' + bid + '" class="expand-body">';
+    // Each account with balance
     ba.forEach(function(a) {
-      var name = a.name.replace(/\s*\.\.\.\d{4}/g, '').trim();
-      html += '<div style="padding:7px 0 7px 12px;border-bottom:1px solid var(--border2);display:flex;justify-content:space-between;font-size:13px">';
-      html += '<div><div>' + name + ' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted);font-size:12px">xx' + a.mask + '</span></div><div style="font-size:11px;color:var(--muted)">' + a.subtype + '</div></div>';
-      html += '<div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:var(--green)">' + fmt2(a.balance) + '</div></div>';
-    });
-    html += '</div><div style="height:1px;background:var(--border);margin:4px 0"></div>';
-  });
-  html += '</div>';
-
-  // Spending by month - 2 level drill down
-  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Spending by Month</div><div class="panel-action">tap &rsaquo; categories &rsaquo; transactions</div></div>';
-  periods.forEach(function(p) {
-    var v = ms[p];
-    var sid = uid();
-    html += '<div class="row expandable" onclick="expand(\'' + sid + '\')">';
-    html += '<div class="row-label" style="font-weight:500">' + v.label + '</div>';
-    html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:var(--red)">' + fmt2(v.total) + '</div><span style="color:var(--muted)">&rsaquo;</span></div></div>';
-    html += '<div id="' + sid + '" class="expand-body">';
-    Object.entries(v.categories || {}).sort(function(a,b){return b[1]-a[1];}).forEach(function(ce, ci) {
-      var col = CAT_COLORS[ce[0]] || '#6b6b80';
-      var catTxns = (v.transactions || []).filter(function(t){return t.category===ce[0];}).sort(function(a,b){return b.date.localeCompare(a.date);});
-      var cid = uid();
-      html += '<div style="padding:5px 0 5px 12px;border-bottom:1px solid var(--border2)">';
-      html += '<div style="display:flex;justify-content:space-between;cursor:pointer;padding:3px 0" onclick="expand(\'' + cid + '\')">';
-      html += '<div style="font-size:13px;color:' + col + '">' + ce[0] + '</div>';
-      html += '<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-size:13px;color:' + col + '">' + fmt2(ce[1]) + '</div><span style="color:var(--muted)">&rsaquo;</span></div></div>';
-      html += '<div id="' + cid + '" class="expand-body">';
-      catTxns.forEach(function(t){ html += txnLine(t, col, 'padding-left:12px;'); });
+      var name = a.name.replace(/\s*\.\.\.\d{4}/g,'').trim();
+      var aid = uid();
+      html += '<div>';
+      html += '<div style="padding:7px 0 7px 12px;border-bottom:1px solid var(--border2);display:flex;justify-content:space-between;font-size:13px;cursor:pointer" onclick="expand(\'' + aid + '\')">';
+      html += '<div><div>' + name + ' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted);font-size:12px">••' + a.mask + '</span></div>';
+      html += '<div style="font-size:11px;color:var(--muted)">' + a.subtype + ' · tap for transactions</div></div>';
+      html += '<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:var(--green)">' + fmt2(a.balance) + '</div><span style="color:var(--muted)">›</span></div>';
+      html += '</div>';
+      // Last 2 months transactions for this account
+      html += '<div id="' + aid + '" class="expand-body">';
+      var acctTxns = [];
+      last2.forEach(function(p) {
+        (ms[p].transactions||[]).forEach(function(t) {
+          if(t.mask === a.mask || t.bank === bank) acctTxns.push({label:ms[p].label, t:t});
+        });
+      });
+      if(acctTxns.length) {
+        last2.forEach(function(p) {
+          var pTxns = (ms[p].transactions||[]).filter(function(t){return t.bank===bank;});
+          if(!pTxns.length) return;
+          html += '<div style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted2);padding:6px 12px 3px;background:var(--s2)">' + ms[p].label + '</div>';
+          pTxns.sort(function(a,b){return b.t?b.t.date.localeCompare(a.t?a.t.date:''):0;});
+          pTxns.forEach(function(t){ html += txnLine(t, CAT_COLORS[t.category]||'#6b6b80', 'padding-left:12px;'); });
+        });
+      } else {
+        html += '<div style="padding:8px 12px;font-size:12px;color:var(--muted)">No transactions in last 2 months</div>';
+      }
       html += '</div></div>';
     });
     html += '</div><div style="height:1px;background:var(--border);margin:4px 0"></div>';
   });
   html += '</div>';
 
-  // Credit Cards
+  // ── SPENDING BY MONTH ────────────────────────────────────────
+  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Spending by Month</div><div class="panel-action">tap › categories › transactions</div></div>';
+  periods.forEach(function(p) {
+    var v = ms[p];
+    var sid = uid();
+    html += '<div class="row expandable" onclick="expand(\'' + sid + '\')">';
+    html += '<div class="row-label" style="font-weight:500">' + v.label + '</div>';
+    html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:var(--red)">' + fmt2(v.total) + '</div><span style="color:var(--muted)">›</span></div></div>';
+    html += '<div id="' + sid + '" class="expand-body">';
+    Object.entries(v.categories||{}).sort(function(a,b){return b[1]-a[1];}).forEach(function(ce,ci) {
+      var col = CAT_COLORS[ce[0]]||'#6b6b80';
+      var catTxns = (v.transactions||[]).filter(function(t){return t.category===ce[0];});
+      var cid = uid();
+      html += '<div style="padding:5px 0 5px 12px;border-bottom:1px solid var(--border2)">';
+      html += '<div style="display:flex;justify-content:space-between;cursor:pointer;font-size:13px;padding:3px 0" onclick="expand(\'' + cid + '\')">';
+      html += '<span style="color:' + col + '">' + ce[0] + '</span>';
+      html += '<div style="display:flex;align-items:center;gap:6px"><span style="font-family:IBM Plex Mono,monospace;color:' + col + '">' + fmt2(ce[1]) + '</span><span style="color:var(--muted)">›</span></div>';
+      html += '</div>';
+      html += '<div id="' + cid + '" class="expand-body">';
+      catTxns.sort(function(a,b){return b.date.localeCompare(a.date);}).forEach(function(t){ html += txnLine(t, col, 'padding-left:12px;'); });
+      html += '</div></div>';
+    });
+    html += '</div><div style="height:1px;background:var(--border);margin:4px 0"></div>';
+  });
+  html += '</div>';
+
+  // ── CREDIT CARDS ─────────────────────────────────────────────
   var credits = allAccts.filter(function(a){return a.is_credit;});
   var creditBanks = [];
-  credits.forEach(function(a){ if(creditBanks.indexOf(a.bank) < 0) creditBanks.push(a.bank); });
-  var creditOwed = credits.filter(function(a){return a.balance > 0;}).reduce(function(s,a){return s+a.balance;},0);
-  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Credit Cards</div><div class="panel-action" style="color:var(--red)">' + fmt2(creditOwed) + ' owed</div></div>';
-  creditBanks.forEach(function(bank, bi) {
+  credits.forEach(function(a){ if(creditBanks.indexOf(a.bank)<0) creditBanks.push(a.bank); });
+  var creditTotal = credits.filter(function(a){return a.balance>0;}).reduce(function(s,a){return s+a.balance;},0);
+  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Credit Cards</div><div class="panel-action" style="color:var(--red)">' + fmt2(creditTotal) + ' owed</div></div>';
+  creditBanks.forEach(function(bank) {
     var ba = credits.filter(function(a){return a.bank===bank;});
     var owed = ba.filter(function(a){return a.balance>0;}).reduce(function(s,a){return s+a.balance;},0);
     var crid = uid();
     html += '<div class="row expandable" onclick="expand(\'' + crid + '\')">';
     html += '<div><div class="row-label" style="font-weight:500">' + bank + '</div><div class="row-sub">' + ba.length + ' card(s)</div></div>';
-    html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:' + (owed>0?'var(--red)':'var(--green)') + '">' + fmt2(owed) + '</div><span style="color:var(--muted)">&rsaquo;</span></div></div>';
+    html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:' + (owed>0?'var(--red)':'var(--green)') + '">' + fmt2(owed) + '</div><span style="color:var(--muted)">›</span></div></div>';
     html += '<div id="' + crid + '" class="expand-body">';
-    ba.forEach(function(a, ai) {
-      var name = a.name.replace(/\s*\.\.\.\d{4}/g, '').trim();
-      var col = a.balance > 0 ? 'var(--red)' : 'var(--green)';
-      var sign = a.balance > 0 ? '-' : '';
-      var cardId = uid();
-      html += '<div style="padding:7px 0 7px 12px;border-bottom:1px solid var(--border2)">';
-      html += '<div style="display:flex;justify-content:space-between;cursor:pointer;font-size:13px" onclick="expand(\'' + cardId + '\')">';
-      html += '<div><div>' + name + ' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted);font-size:12px">xx' + a.mask + '</span></div>';
-      html += '<div style="font-size:11px;color:var(--muted)">' + a.subtype + ' - tap to see spending</div></div>';
-      html += '<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:' + col + '">' + sign + fmt2(Math.abs(a.balance)) + '</div><span style="color:var(--muted)">&rsaquo;</span></div></div>';
-      html += '<div id="' + cardId + '" class="expand-body">';
-      periods.forEach(function(p) {
-        var v = ms[p];
-        var pmid = uid();
-        html += '<div style="padding:5px 0 5px 8px;border-top:1px solid var(--border2)">';
-        html += '<div style="display:flex;justify-content:space-between;cursor:pointer;font-size:12px" onclick="expand(\'' + pmid + '\')">';
-        html += '<div style="color:var(--muted)">' + v.label + '</div>';
-        html += '<div style="display:flex;align-items:center;gap:6px"><span style="font-family:IBM Plex Mono,monospace;color:var(--red)">' + fmt2(v.total) + '</span><span style="color:var(--muted)">&rsaquo;</span></div></div>';
-        html += '<div id="' + pmid + '" class="expand-body">';
-        Object.entries(v.categories || {}).sort(function(a,b){return b[1]-a[1];}).forEach(function(ce) {
-          var ccol = CAT_COLORS[ce[0]] || '#6b6b80';
-          var catTxns = (v.transactions || []).filter(function(t){return t.category===ce[0];}).sort(function(a,b){return b.date.localeCompare(a.date);});
-          var catId = uid();
-          html += '<div style="padding:5px 0 5px 12px;border-top:1px solid var(--border2)">';
-          html += '<div style="display:flex;justify-content:space-between;cursor:pointer;font-size:12px" onclick="expand(\'' + catId + '\')">';
-          html += '<span style="color:' + ccol + '">' + ce[0] + '</span>';
-          html += '<div style="display:flex;align-items:center;gap:6px"><span style="font-family:IBM Plex Mono,monospace;color:' + ccol + '">' + fmt2(ce[1]) + '</span><span style="color:var(--muted)">&rsaquo;</span></div></div>';
-          html += '<div id="' + catId + '" class="expand-body">';
-          catTxns.forEach(function(t){ html += txnLine(t, ccol, 'padding-left:16px;'); });
-          html += '</div></div>';
-        });
-        html += '</div></div>';
+    ba.forEach(function(a) {
+      var name = a.name.replace(/\s*\.\.\.\d{4}/g,'').trim();
+      var col = a.balance>0?'var(--red)':'var(--green)';
+      var sign = a.balance>0?'-':'';
+      var caid = uid();
+      html += '<div>';
+      html += '<div style="padding:7px 0 7px 12px;border-bottom:1px solid var(--border2);display:flex;justify-content:space-between;font-size:13px;cursor:pointer" onclick="expand(\'' + caid + '\')">';
+      html += '<div><div>' + name + ' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted);font-size:12px">••' + a.mask + '</span></div>';
+      html += '<div style="font-size:11px;color:var(--muted)">' + a.subtype + ' · tap for transactions</div></div>';
+      html += '<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:' + col + '">' + sign + fmt2(Math.abs(a.balance)) + '</div><span style="color:var(--muted)">›</span></div>';
+      html += '</div>';
+      // Last 2 months transactions for this card
+      html += '<div id="' + caid + '" class="expand-body">';
+      var hasAny = false;
+      last2.forEach(function(p) {
+        var pTxns = (ms[p].transactions||[]).filter(function(t){return t.mask===a.mask||t.bank===bank;});
+        if(!pTxns.length) return;
+        hasAny = true;
+        html += '<div style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted2);padding:6px 12px 3px;background:var(--s2)">' + ms[p].label + '</div>';
+        pTxns.sort(function(a,b){return b.date.localeCompare(a.date);}).forEach(function(t){ html += txnLine(t, CAT_COLORS[t.category]||'#6b6b80', 'padding-left:12px;'); });
       });
+      if(!hasAny) html += '<div style="padding:8px 12px;font-size:12px;color:var(--muted)">No transactions in last 2 months</div>';
       html += '</div></div>';
     });
     html += '</div><div style="height:1px;background:var(--border);margin:4px 0"></div>';
@@ -661,10 +695,6 @@ function renderAccounts() {
   html += '</div>';
   set('main-content', html);
 }
-
-var BILLING = ['APPLE','AMAZON','AMZN','VZWRLSS','VERIZON','SIMPLISAFE','PAYPAL','NETFLIX','SPOTIFY','HULU','ZEE5','ANTHROPIC','CLAUDE','NORD','TURBOTAX','GOOGLE','COMCAST'];
-var HOME_ST = ['NJ','NY','CT','PA'];
-var ST_NAMES = {'CA':'California','NC':'North Carolina','VA':'Virginia','DC':'Washington D.C.','TX':'Texas','FL':'Florida','TN':'Tennessee','MD':'Maryland','GA':'Georgia','CO':'Colorado','NV':'Nevada','AZ':'Arizona','MA':'Massachusetts','RI':'Rhode Island','MO':'Missouri'};
 
 function renderTravel() {
   var raw = (D.travel || []).filter(function(t) {
@@ -883,23 +913,48 @@ function triggerSync() {
 }
 
 function deduplicateData(data) {
-  // Fix duplicates client-side regardless of what server sends
   if(!data || !data.monthly_spending) return data;
   Object.keys(data.monthly_spending).forEach(function(p) {
     var v = data.monthly_spending[p];
+    // Step 1: Deduplicate by date+desc+amount
     var seen = {};
     var deduped = [];
     (v.transactions || []).forEach(function(t) {
       var key = t.date + '|' + t.desc + '|' + t.amount;
       if(!seen[key]) { seen[key] = true; deduped.push(t); }
     });
-    // Recalculate categories and total from deduped transactions
-    v.transactions = deduped;
+    // Step 2: Nullify purchase+refund pairs
+    // For each refund (negative amount), find matching purchase (positive same desc)
+    var nullified = {};
+    deduped.forEach(function(t) {
+      if(t.amount < 0) {
+        // Find a matching positive transaction with same desc
+        var match = deduped.find(function(p2) {
+          return !nullified[p2.date+'|'+p2.desc+'|'+p2.amount]
+            && p2.amount === Math.abs(t.amount)
+            && p2.desc === t.desc
+            && p2.amount > 0;
+        });
+        if(match) {
+          // Mark both as nullified
+          nullified[match.date+'|'+match.desc+'|'+match.amount] = true;
+          nullified[t.date+'|'+t.desc+'|'+t.amount] = true;
+          match.refund_matched = true;
+          t.refund_matched = true;
+        }
+      }
+    });
+    // Step 3: Remove nullified pairs, keep unmatched refunds visible
+    var final = deduped.filter(function(t) { return !t.refund_matched; });
+    // Step 4: Recalculate
+    v.transactions = final;
     v.categories = {};
     v.total = 0;
-    deduped.forEach(function(t) {
-      v.categories[t.category] = (v.categories[t.category] || 0) + t.amount;
-      v.total += t.amount;
+    final.forEach(function(t) {
+      if(t.amount > 0) { // only count purchases in totals
+        v.categories[t.category] = (v.categories[t.category] || 0) + t.amount;
+        v.total += t.amount;
+      }
     });
   });
   return data;
