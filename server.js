@@ -23,11 +23,13 @@ const plaid = new PlaidApi(plaidConfig);
 
 // ── IN-MEMORY TOKEN STORE (persisted via env on Replit) ──────
 // access_tokens stored as PLAID_TOKEN_<NICKNAME> in Replit Secrets
+const NICKNAME_ALIASES = { mybofa: 'bofa', mydisc: 'discover', mytd: 'td', mywf: 'wf', myrobin: 'robin', wifebofa: 'bofa' };
 function getTokens() {
   const tokens = {};
   Object.keys(process.env).forEach(k => {
     if (k.startsWith('PLAID_TOKEN_')) {
-      tokens[k.replace('PLAID_TOKEN_', '').toLowerCase()] = process.env[k];
+      const nick = k.replace('PLAID_TOKEN_', '').toLowerCase();
+      tokens[NICKNAME_ALIASES[nick] || nick] = process.env[k];
     }
   });
   return tokens;
