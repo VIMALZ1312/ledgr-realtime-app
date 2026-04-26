@@ -23,13 +23,19 @@ const plaid = new PlaidApi(plaidConfig);
 
 // ── IN-MEMORY TOKEN STORE (persisted via env on Replit) ──────
 // access_tokens stored as PLAID_TOKEN_<NICKNAME> in Replit Secrets
-const NICKNAME_ALIASES = { mybofa: 'bofa', mydisc: 'discover', mytd: 'td', mywf: 'wf', myrobin: 'robin', wifebofa: 'bofa' };
+const NICKNAME_ALIASES = { mybofa: 'bofa', mydisc: 'discover', mytd: 'td', mywf: 'wf', myrobin: 'robin' };
 function getTokens() {
   const tokens = {};
   Object.keys(process.env).forEach(k => {
     if (k.startsWith('PLAID_TOKEN_')) {
       const nick = k.replace('PLAID_TOKEN_', '').toLowerCase();
-      tokens[NICKNAME_ALIASES[nick] || nick] = process.env[k];
+      const canonical = NICKNAME_ALIASES[nick] || nick;
+      // If canonical key already exists (e.g. two BofA tokens), keep both with suffix
+      if (tokens[canonical]) {
+        tokens[canonical + '_2'] = process.env[k];
+      } else {
+        tokens[canonical] = process.env[k];
+      }
     }
   });
   return tokens;
@@ -343,7 +349,7 @@ function buildStructuredData(accounts, transactions) {
   // ── ALL ACCOUNTS — show every account from every bank ────────
   // Nickname aliases: map any nickname to a canonical bank name
   const NICK_TO_BANK = {
-    'mybofa': 'BofA', 'bofa': 'BofA',
+    'mybofa': 'BofA', 'bofa': 'BofA', 'bofa_2': 'BofA', 'wifebofa': 'BofA',
     'wf': 'Wells Fargo',
     'td': 'TD Bank',
     'mydisc': 'Discover', 'discover': 'Discover',
