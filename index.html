@@ -143,6 +143,11 @@ var D = null, TAB = 'overview';
 var BACKEND = 'https://realtimefin.replit.app';
 var _rawD = null;
 var CAT_OVERRIDES = {};
+var REFUNDED_TXNS = {}; // key = "date|desc|amount", value = true
+try {
+  var savedR = localStorage.getItem('lgr_refunded');
+  REFUNDED_TXNS = JSON.parse(savedR || '{}');
+} catch(e) {}
 try { 
   var saved = localStorage.getItem('lgr_cat_overrides');
   CAT_OVERRIDES = JSON.parse(saved || '{}');
@@ -175,6 +180,24 @@ function saveOverrides() {
     localStorage.setItem('lgr_cat_overrides', JSON.stringify(CAT_OVERRIDES));
     console.log('[LEDGR] Saved overrides:', CAT_OVERRIDES);
   } catch(e) { console.warn('[LEDGR] Failed to save overrides:', e); }
+}
+function saveRefunded() {
+  try { localStorage.setItem('lgr_refunded', JSON.stringify(REFUNDED_TXNS)); } catch(e) {}
+}
+function toggleRefunded(date, desc, amount) {
+  var key = date + '|' + desc + '|' + amount;
+  if(REFUNDED_TXNS[key]) {
+    delete REFUNDED_TXNS[key];
+  } else {
+    REFUNDED_TXNS[key] = true;
+  }
+  saveRefunded();
+  // Re-apply dedup+overrides and re-render
+  D = applyOverrides(deduplicateData(JSON.parse(JSON.stringify(_rawD))));
+  render();
+}
+function isRefunded(date, desc, amount) {
+  return !!REFUNDED_TXNS[date + '|' + desc + '|' + amount];
 }
 
 function applyOverrides(data) {
@@ -263,6 +286,7 @@ function txnLine(t, col, extraStyle) {
   if (t.mask) {
     bankLabel += '<span style="font-size:9px;font-family:IBM Plex Mono,monospace;color:var(--muted2);background:var(--s2);border-radius:3px;padding:1px 4px;flex-shrink:0;margin-right:2px">••' + t.mask + '</span>';
   }
+  var manuallyRefunded = isRefunded(t.date||'', t.desc, t.amount);
   var refundBadge = isRefund ? '<span style="font-size:9px;color:var(--green);background:rgba(0,208,132,0.12);border-radius:3px;padding:1px 5px;margin-left:4px">REFUND</span>' : '';
   var pendingBadge = t.pending ? '<span style="font-size:9px;color:var(--yellow);margin-left:3px">⏳</span>' : '';
   // Encode desc safely for inline onclick attribute
@@ -273,6 +297,12 @@ function txnLine(t, col, extraStyle) {
   html += bankLabel;
   html += '<span style="flex:1;word-break:break-word;line-height:1.4;color:var(--muted)">' + t.desc + refundBadge + pendingBadge + (isEdited ? '<span class="edited-badge">*</span>' : '') + '</span>';
   html += '<span style="font-family:IBM Plex Mono,monospace;color:' + effectiveCol + ';white-space:nowrap;margin-right:6px">' + (isRefund ? '+' : '') + fmt2(Math.abs(t.amount)) + '</span>';
+  // Refund toggle button
+  var dateEsc = (t.date||'').replace(/'/g,"\'");
+  var refundTitle = manuallyRefunded ? 'Undo refund mark' : 'Mark as refunded (hides from spending)';
+  var refundIcon = manuallyRefunded ? '↩' : '⟳';
+  var refundStyle = manuallyRefunded ? 'color:var(--green);' : 'color:var(--muted2);';
+  html += '<button class="edit-btn" style="' + refundStyle + 'margin-right:2px" title="' + refundTitle + '" onclick="toggleRefunded(\'' + dateEsc + '\',\'' + descEsc + '\',' + t.amount + ')">&#8635;</button>';
   html += '<button class="edit-btn" onclick="editCat(\'' + descEsc + '\',' + t.amount + ',\'' + catEsc + '\')">&#9998;</button>';
   html += '</div>';
   return html;
@@ -943,8 +973,12 @@ function deduplicateData(data) {
         }
       }
     });
-    // Step 3: Remove nullified pairs, keep unmatched refunds visible
-    var final = deduped.filter(function(t) { return !t.refund_matched; });
+    // Step 3: Remove nullified pairs AND manually refunded transactions
+    var final = deduped.filter(function(t) {
+      if(t.refund_matched) return false;
+      if(isRefunded(t.date, t.desc, t.amount)) return false;
+      return true;
+    });
     // Step 4: Recalculate
     v.transactions = final;
     v.categories = {};
