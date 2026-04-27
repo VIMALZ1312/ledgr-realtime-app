@@ -2,7 +2,7 @@
   "kpis": {
     "income": 15868.01,
     "income_period": "April 2026",
-    "true_outflows": 7782.72,
+    "true_outflows": 8999.59,
     "outflows_period": "April 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 4139.35,
+      "balance": 4334.79,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 700
@@ -28,7 +28,7 @@
       "payroll": 0
     },
     "discover": {
-      "balance": 708.47,
+      "balance": 806.25,
       "is_credit": true,
       "period_label": "Live"
     },
@@ -102,7 +102,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 7190.55,
-      "available": 7190.55,
+      "available": 6138.84,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -166,8 +166,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 2499.41,
-      "available": 306,
+      "balance": 2694.85,
+      "available": 29,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -270,8 +270,8 @@
       "mask": "0494",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 708.47,
-      "available": 12194,
+      "balance": 806.25,
+      "available": 11134,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -331,8 +331,8 @@
   ],
   "net_worth": {
     "total_checking": 57787.37,
-    "total_credit": 4673.32,
-    "net": 53114.05
+    "total_credit": 4966.54,
+    "net": 52820.83
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -344,12 +344,12 @@
   },
   "spending": {
     "Healthcare": 1273.51,
-    "Tech/Subs": 6865.710000000001,
-    "Shopping": 10718.550000000001,
-    "Entertainment": 2108.9900000000002,
+    "Tech/Subs": 7930.710000000001,
+    "Shopping": 10836.390000000001,
+    "Entertainment": 2137.23,
     "Other": 37177.81999999999,
-    "Groceries": 1802.3499999999997,
-    "Restaurants": 1741.3,
+    "Groceries": 1905.9199999999998,
+    "Restaurants": 1643.52,
     "Gas/Travel": 6477.140000000001
   },
   "zelle_received": [
@@ -599,15 +599,15 @@
       "label": "April 2026",
       "categories": {
         "Healthcare": 432.7099999999999,
-        "Tech/Subs": 2332.69,
-        "Shopping": 1419.0700000000002,
-        "Entertainment": 749.36,
+        "Tech/Subs": 3397.69,
+        "Shopping": 1536.91,
+        "Entertainment": 777.6,
         "Other": 1426,
-        "Groceries": 471.63,
-        "Restaurants": 449.56,
+        "Groceries": 575.1999999999999,
+        "Restaurants": 351.78,
         "Gas/Travel": 501.70000000000005
       },
-      "total": 7782.7199999999975,
+      "total": 8999.589999999997,
       "transactions": [
         {
           "date": "04-17",
@@ -672,6 +672,14 @@
           "category": "Other",
           "city": null,
           "state": null
+        },
+        {
+          "date": "04-27",
+          "desc": "Bat X Ball Sports",
+          "amount": 59.71,
+          "category": "Shopping",
+          "city": "North Brunswick",
+          "state": "NJ"
         },
         {
           "date": "04-16",
@@ -1026,6 +1034,38 @@
           "state": null
         },
         {
+          "date": "04-25",
+          "desc": "Netlify Fy",
+          "amount": 5,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "CA"
+        },
+        {
+          "date": "04-25",
+          "desc": "H Mart Edison LLC",
+          "amount": 103.57,
+          "category": "Groceries",
+          "city": "Edison",
+          "state": "NJ"
+        },
+        {
+          "date": "04-25",
+          "desc": "Regal Cinemas",
+          "amount": 28.24,
+          "category": "Entertainment",
+          "city": null,
+          "state": "TN"
+        },
+        {
+          "date": "04-24",
+          "desc": "Costco",
+          "amount": 58.63,
+          "category": "Shopping",
+          "city": null,
+          "state": "WA"
+        },
+        {
           "date": "04-06",
           "desc": "United Airlines",
           "amount": 40,
@@ -1242,14 +1282,6 @@
           "state": null
         },
         {
-          "date": "04-21",
-          "desc": "Nokia Of America Corpo",
-          "amount": 0.5,
-          "category": "Shopping",
-          "city": null,
-          "state": null
-        },
-        {
           "date": "04-20",
           "desc": "Mercury",
           "amount": 597.77,
@@ -1262,22 +1294,6 @@
           "desc": "Nokia Of America Corpo",
           "amount": 9.99,
           "category": "Shopping",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "04-24",
-          "desc": "Samudhra",
-          "amount": 85.3,
-          "category": "Restaurants",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "04-24",
-          "desc": "Vzn Br Cafe",
-          "amount": 12.48,
-          "category": "Restaurants",
           "city": null,
           "state": null
         },
@@ -1310,6 +1326,14 @@
           "desc": "Vzn Br Cafe Basking Ridgenj",
           "amount": 12.53,
           "category": "Restaurants",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "04-26",
+          "desc": "Progressive Insurance",
+          "amount": 1060,
+          "category": "Tech/Subs",
           "city": null,
           "state": null
         }
@@ -3924,6 +3948,36 @@
       "period_label": "April 2026"
     },
     {
+      "date": "04-25",
+      "desc": "Netlify Fy",
+      "amount": 5,
+      "category": "Tech/Subs",
+      "city": null,
+      "state": "CA",
+      "period": "2026-04",
+      "period_label": "April 2026"
+    },
+    {
+      "date": "04-25",
+      "desc": "Regal Cinemas",
+      "amount": 28.24,
+      "category": "Entertainment",
+      "city": null,
+      "state": "TN",
+      "period": "2026-04",
+      "period_label": "April 2026"
+    },
+    {
+      "date": "04-24",
+      "desc": "Costco",
+      "amount": 58.63,
+      "category": "Shopping",
+      "city": null,
+      "state": "WA",
+      "period": "2026-04",
+      "period_label": "April 2026"
+    },
+    {
       "date": "04-09",
       "desc": "Trendia Trendia.co",
       "amount": 178.01,
@@ -4113,6 +4167,6 @@
     "cable": 50.66
   },
   "statement_count": "8 live accounts",
-  "generated_at": "2026-04-27T03:12:03.311Z",
+  "generated_at": "2026-04-27T19:43:51.313Z",
   "source": "plaid_realtime"
 }
