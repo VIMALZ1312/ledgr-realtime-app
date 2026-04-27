@@ -1174,7 +1174,7 @@ function runSearch() {
   if(!el) return;
   if(q.length < 1) { el.innerHTML = ''; return; }
 
-  var ms = D.monthly_spending || {};
+  var ms = (_rawD || D).monthly_spending || {}; // use raw so refunded txns still searchable
   var words = q.split(/\s+/).filter(Boolean);
 
   // Category synonyms for smart matching
@@ -1222,7 +1222,22 @@ function runSearch() {
   // Sort by score desc, then date desc
   results.sort(function(a,b){ return b.score-a.score || ((b.period+b.t.date).localeCompare(a.period+a.t.date)); });
 
-  if(!results.length) {
+  // Also find refunded txns matching query
+  var refundedMatches = [];
+  var allRawTxns = [];
+  Object.keys((_rawD||D).monthly_spending||{}).forEach(function(p) {
+    ((_rawD||D).monthly_spending[p].transactions||[]).forEach(function(t) {
+      if(REFUNDED_TXNS[t.desc]) allRawTxns.push({t:t,period:p});
+    });
+  });
+  allRawTxns.forEach(function(item) {
+    var t=item.t, score=0;
+    var tDesc=(t.desc||'').toLowerCase();
+    words.forEach(function(w){ if(tDesc.indexOf(w)>=0) score+=5; });
+    if(score>0) refundedMatches.push(item);
+  });
+
+  if(!results.length && !refundedMatches.length) {
     el.innerHTML = '<div class="panel" style="color:var(--muted);font-size:13px;padding:12px">No transactions found for "'+q+'"</div>';
     return;
   }
@@ -1253,6 +1268,19 @@ function runSearch() {
     html += '</div></div>';
   });
   html += '</div>';
+
+  // Show refunded matches with restore option
+  if(refundedMatches && refundedMatches.length) {
+    html += '<div class="panel" style="border-color:rgba(245,197,24,0.3);margin-top:10px">';
+    html += '<div class="panel-head"><div class="panel-title" style="color:var(--yellow)">&#8629; Hidden (Refunded)</div>';
+    html += '<div class="panel-action" style="color:var(--muted)">tap &#8629; to restore</div></div>';
+    refundedMatches.forEach(function(item) {
+      var t=item.t; var col=CAT_COLORS[t.category]||'#6b6b80';
+      html += txnLine(t, col, 'opacity:0.6;');
+    });
+    html += '</div>';
+  }
+
   el.innerHTML = html;
 }
 
