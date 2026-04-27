@@ -607,90 +607,90 @@ function renderAccounts() {
   var periods = Object.keys(ms).sort().reverse();
   var last2 = periods.slice(0,2);
   var html = '';
+  var ALIAS = {'wifebofa':'BofA','myrobin':'Robinhood','bofa':'BofA','bofa_2':'BofA'};
 
-  function acctTxnsByBank(bank) {
-    // Match bank OR its aliases (wifebofa=BofA, myrobin=RH)
-    var aliases = {'wifebofa':'BofA','myrobin':'Robinhood','bofa':'BofA','bofa_2':'BofA'};
-    var matchBanks = [bank];
-    Object.keys(aliases).forEach(function(k){ if(aliases[k]===bank) matchBanks.push(k); });
-    var txns = [];
-    last2.forEach(function(p) {
-      (ms[p].transactions||[]).forEach(function(t) {
-        if(matchBanks.indexOf(t.bank||'') >= 0) txns.push(t);
-      });
-    });
-    return txns;
+  function normBank(b){ return ALIAS[b||''] || b || ''; }
+
+  function monthTxnsForBank(p, bank) {
+    var nb = normBank(bank);
+    var all = ms[p] ? ms[p].transactions||[] : [];
+    var hasBankField = all.some(function(t){return t.bank!=null;});
+    if(!hasBankField) return all; // fallback - show all when bank missing
+    return all.filter(function(t){ return normBank(t.bank)===nb || t.bank===bank; });
   }
 
   // ── CHECKING & SAVINGS ──
   var deposits = allAccts.filter(function(a){return !a.is_credit;});
   var bankOrder = []; deposits.forEach(function(a){if(bankOrder.indexOf(a.bank)<0)bankOrder.push(a.bank);});
   var depTotal = deposits.reduce(function(s,a){return s+a.balance;},0);
-  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Checking & Savings</div><div class="panel-action">'+fmt2(depTotal)+'</div></div>';
+
+  html += '<div class="panel">';
+  html += '<div class="panel-head"><div class="panel-title">Checking & Savings</div><div class="panel-action">'+fmt2(depTotal)+'</div></div>';
 
   bankOrder.forEach(function(bank) {
     var ba = deposits.filter(function(a){return a.bank===bank;});
     var bankTotal = ba.reduce(function(s,a){return s+a.balance;},0);
     var bid = uid();
-    var displayBank = BANK_SHORT[bank] ? (bank+' ('+BANK_SHORT[bank]+')') : bank;
-    html += '<div class="row expandable" onclick="expand(\''+bid+'\')">';
-    html += '<div><div class="row-label" style="font-weight:500">'+bank+'</div><div class="row-sub">'+ba.length+' acct(s)</div></div>';
-    html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:var(--green)">'+fmt2(bankTotal)+'</div><span style="color:var(--muted)">›</span></div></div>';
-    html += '<div id="'+bid+'" class="expand-body">';
-    ba.forEach(function(a,ai) {
-      var name = a.name.replace(/\s*\.\.\.\d{4}/g,'').trim();
-      var cid = uid();
-      html += '<div>';
-      html += '<div style="padding:7px 0 7px 12px;border-bottom:1px solid var(--border2);display:flex;justify-content:space-between;font-size:13px;cursor:pointer" onclick="expand(\''+cid+'\')">';
-      html += '<div><div>'+name+' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted);font-size:11px">••'+a.mask+'</span></div>';
-      html += '<div style="font-size:11px;color:var(--muted)">'+a.subtype+' · tap for recent txns</div></div>';
-      html += '<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:var(--green)">'+fmt2(a.balance)+'</div><span style="color:var(--muted)">›</span></div></div>';
-      // Transactions for this bank (last 2 months)
-      html += '<div id="'+cid+'" class="expand-body">';
-      var btxns = acctTxnsByBank(bank);
-      if(btxns.length) {
-        last2.forEach(function(p) {
-          var ptxns = (ms[p].transactions||[]).filter(function(t){
-            var aliases = {'wifebofa':'BofA','myrobin':'Robinhood','bofa':'BofA','bofa_2':'BofA'};
-            var tb = aliases[t.bank||''] || t.bank || '';
-            var ab = aliases[bank] || bank;
-            return tb === ab || t.bank === bank;
-          });
-          if(!ptxns.length) return;
-          html += '<div style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted2);padding:5px 12px 2px;background:var(--s2)">'+ms[p].label+'</div>';
-          ptxns.sort(function(a,b){return b.date.localeCompare(a.date);});
-          ptxns.forEach(function(t){ html += txnLine(t, CAT_COLORS[t.category]||'#6b6b80', 'padding-left:12px;'); });
+    html += '<div>';
+      html += '<div class="row expandable" onclick="expand(\''+bid+'\')">';
+        html += '<div><div class="row-label" style="font-weight:500">'+bank+'</div><div class="row-sub">'+ba.length+' account(s)</div></div>';
+        html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:var(--green)">'+fmt2(bankTotal)+'</div><span style="color:var(--muted)">›</span></div>';
+      html += '</div>';
+      html += '<div id="'+bid+'" class="expand-body">';
+        ba.forEach(function(a) {
+          var name = a.name.replace(/\s*\.\.\.\d{4}/g,'').trim();
+          var cid = uid();
+          html += '<div>';
+            html += '<div style="padding:7px 0 7px 14px;border-bottom:1px solid var(--border2);display:flex;justify-content:space-between;align-items:baseline;font-size:13px;cursor:pointer" onclick="expand(\''+cid+'\')">';
+              html += '<div><div>'+name+' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted);font-size:11px">••'+a.mask+'</span></div>';
+              html += '<div style="font-size:11px;color:var(--muted)">'+a.subtype+'</div></div>';
+              html += '<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:var(--green)">'+fmt2(a.balance)+'</div><span style="color:var(--muted);font-size:11px">› txns</span></div>';
+            html += '</div>';
+            html += '<div id="'+cid+'" class="expand-body">';
+              var hadData = false;
+              last2.forEach(function(p) {
+                var ptxns = monthTxnsForBank(p, bank);
+                if(!ptxns.length) return;
+                hadData = true;
+                html += '<div style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted2);padding:5px 14px 2px;background:var(--s2)">'+ms[p].label+'</div>';
+                ptxns.sort(function(a,b){return b.date.localeCompare(a.date);});
+                ptxns.forEach(function(t){ html += txnLine(t, CAT_COLORS[t.category]||'#6b6b80', 'padding-left:14px;'); });
+              });
+              if(!hadData) html += '<div style="padding:8px 14px;font-size:12px;color:var(--muted)">No transactions in last 2 months</div>';
+            html += '</div>';
+          html += '</div>';
         });
-      } else {
-        html += '<div style="padding:8px 12px;font-size:12px;color:var(--muted)">No transactions in last 2 months</div>';
-      }
-      html += '</div></div>';
-    });
-    html += '</div><div class="divider"></div>';
+      html += '</div>';
+    html += '</div>';
+    html += '<div class="divider"></div>';
   });
   html += '</div>';
 
   // ── SPENDING BY MONTH ──
   html += '<div class="panel"><div class="panel-head"><div class="panel-title">Spending by Month</div></div>';
   periods.forEach(function(p) {
-    var v = ms[p];
-    var sid = uid();
-    html += '<div class="row expandable" onclick="expand(\''+sid+'\')">';
-    html += '<div class="row-label" style="font-weight:500">'+v.label+'</div>';
-    html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:var(--red)">'+fmt2(v.total)+'</div><span style="color:var(--muted)">›</span></div></div>';
-    html += '<div id="'+sid+'" class="expand-body">';
-    Object.entries(v.categories||{}).sort(function(a,b){return b[1]-a[1];}).forEach(function(ce,ci) {
-      var col = CAT_COLORS[ce[0]]||'#6b6b80';
-      var cid = uid();
-      html += '<div style="padding:5px 0 5px 12px;border-bottom:1px solid var(--border2)">';
-      html += '<div style="display:flex;justify-content:space-between;cursor:pointer;font-size:13px;padding:3px 0" onclick="expand(\''+cid+'\')">';
-      html += '<span style="color:'+col+'">'+ce[0]+'</span>';
-      html += '<div style="display:flex;align-items:center;gap:6px"><span style="font-family:IBM Plex Mono,monospace;color:'+col+'">'+fmt2(ce[1])+'</span><span style="color:var(--muted)">›</span></div></div>';
-      html += '<div id="'+cid+'" class="expand-body">';
-      (v.transactions||[]).filter(function(t){return t.category===ce[0];}).sort(function(a,b){return b.date.localeCompare(a.date);}).forEach(function(t){ html += txnLine(t, col, 'padding-left:12px;'); });
-      html += '</div></div>';
-    });
-    html += '</div><div class="divider"></div>';
+    var v = ms[p]; var sid = uid();
+    html += '<div>';
+      html += '<div class="row expandable" onclick="expand(\''+sid+'\')">';
+        html += '<div class="row-label" style="font-weight:500">'+v.label+'</div>';
+        html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:var(--red)">'+fmt2(v.total)+'</div><span style="color:var(--muted)">›</span></div>';
+      html += '</div>';
+      html += '<div id="'+sid+'" class="expand-body">';
+        Object.entries(v.categories||{}).sort(function(a,b){return b[1]-a[1];}).forEach(function(ce) {
+          var col = CAT_COLORS[ce[0]]||'#6b6b80'; var cid = uid();
+          html += '<div style="padding:4px 0 4px 14px;border-bottom:1px solid var(--border2)">';
+            html += '<div style="display:flex;justify-content:space-between;cursor:pointer;font-size:13px;padding:3px 0" onclick="expand(\''+cid+'\')">';
+              html += '<span style="color:'+col+'">'+ce[0]+'</span>';
+              html += '<div style="display:flex;align-items:center;gap:6px"><span style="font-family:IBM Plex Mono,monospace;color:'+col+'">'+fmt2(ce[1])+'</span><span style="color:var(--muted)">›</span></div>';
+            html += '</div>';
+            html += '<div id="'+cid+'" class="expand-body">';
+              (v.transactions||[]).filter(function(t){return t.category===ce[0];}).sort(function(a,b){return b.date.localeCompare(a.date);}).forEach(function(t){ html += txnLine(t, col, 'padding-left:14px;'); });
+            html += '</div>';
+          html += '</div>';
+        });
+      html += '</div>';
+    html += '</div>';
+    html += '<div class="divider"></div>';
   });
   html += '</div>';
 
@@ -698,53 +698,51 @@ function renderAccounts() {
   var credits = allAccts.filter(function(a){return a.is_credit;});
   var creditBanks = []; credits.forEach(function(a){if(creditBanks.indexOf(a.bank)<0)creditBanks.push(a.bank);});
   var creditTotal = credits.filter(function(a){return a.balance>0;}).reduce(function(s,a){return s+a.balance;},0);
-  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Credit Cards</div><div class="panel-action" style="color:var(--red)">'+fmt2(creditTotal)+' owed</div></div>';
+
+  html += '<div class="panel">';
+  html += '<div class="panel-head"><div class="panel-title">Credit Cards</div><div class="panel-action" style="color:var(--red)">'+fmt2(creditTotal)+' owed</div></div>';
+
   creditBanks.forEach(function(bank) {
     var ba = credits.filter(function(a){return a.bank===bank;});
     var owed = ba.filter(function(a){return a.balance>0;}).reduce(function(s,a){return s+a.balance;},0);
     var crid = uid();
-    html += '<div class="row expandable" onclick="expand(\''+crid+'\')">';
-    html += '<div><div class="row-label" style="font-weight:500">'+bank+'</div><div class="row-sub">'+ba.length+' card(s)</div></div>';
-    html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:'+(owed>0?'var(--red)':'var(--green)')+'">'+fmt2(owed)+'</div><span style="color:var(--muted)">›</span></div></div>';
-    html += '<div id="'+crid+'" class="expand-body">';
-    ba.forEach(function(a) {
-      var name = a.name.replace(/\s*\.\.\.\d{4}/g,'').trim();
-      var col = a.balance>0?'var(--red)':'var(--green)';
-      var sign = a.balance>0?'-':'';
-      var caid = uid();
-      html += '<div>';
-      html += '<div style="padding:7px 0 7px 12px;border-bottom:1px solid var(--border2);display:flex;justify-content:space-between;font-size:13px;cursor:pointer" onclick="expand(\''+caid+'\')">';
-      html += '<div><div>'+name+' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted);font-size:11px">••'+a.mask+'</span></div>';
-      html += '<div style="font-size:11px;color:var(--muted)">'+a.subtype+' · tap for recent txns</div></div>';
-      html += '<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:'+col+'">'+sign+fmt2(Math.abs(a.balance))+'</div><span style="color:var(--muted)">›</span></div></div>';
-      // Card transactions last 2 months
-      html += '<div id="'+caid+'" class="expand-body">';
-      var hasAny = false;
-      last2.forEach(function(p) {
-        var aliases = {'wifebofa':'BofA','myrobin':'Robinhood','bofa':'BofA','bofa_2':'BofA'};
-        var normBank = aliases[bank] || bank;
-        var allTxns = ms[p].transactions||[];
-        // Filter by bank if bank field is populated, else show all (bank field may be null from old server)
-        var bankTxnsExist = allTxns.some(function(t){return t.bank!=null;});
-        var ptxns = bankTxnsExist
-          ? allTxns.filter(function(t){
-              var tb = aliases[t.bank||''] || t.bank || '';
-              return tb === normBank || t.bank === bank;
-            })
-          : allTxns; // fallback: show all when bank field is missing
-        if(!ptxns.length) return;
-        hasAny = true;
-        var note = bankTxnsExist ? '' : ' <span style="font-size:9px;color:var(--yellow)">(all banks — tap ⚡ Sync for bank labels)</span>';
-        html += '<div style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted2);padding:5px 12px 2px;background:var(--s2)">'+ms[p].label+note+'</div>';
-        ptxns.sort(function(a,b){return b.date.localeCompare(a.date);});
-        ptxns.forEach(function(t){ html += txnLine(t, CAT_COLORS[t.category]||'#6b6b80','padding-left:12px;'); });
-      });
-      if(!hasAny) html += '<div style="padding:8px 12px;font-size:12px;color:var(--muted)">No transactions in last 2 months</div>';
-      html += '</div></div>';
-    });
-    html += '</div><div class="divider"></div>';
+    html += '<div>';
+      html += '<div class="row expandable" onclick="expand(\''+crid+'\')">';
+        html += '<div><div class="row-label" style="font-weight:500">'+bank+'</div><div class="row-sub">'+ba.length+' card(s)</div></div>';
+        html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:'+(owed>0?'var(--red)':'var(--green)')+'">'+fmt2(owed)+'</div><span style="color:var(--muted)">›</span></div>';
+      html += '</div>';
+      html += '<div id="'+crid+'" class="expand-body">';
+        ba.forEach(function(a) {
+          var name = a.name.replace(/\s*\.\.\.\d{4}/g,'').trim();
+          var col = a.balance>0?'var(--red)':'var(--green)';
+          var sign = a.balance>0?'-':'';
+          var caid = uid();
+          html += '<div>';
+            html += '<div style="padding:7px 0 7px 14px;border-bottom:1px solid var(--border2);display:flex;justify-content:space-between;align-items:baseline;font-size:13px;cursor:pointer" onclick="expand(\''+caid+'\')">';
+              html += '<div><div>'+name+' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted);font-size:11px">••'+a.mask+'</span></div>';
+              html += '<div style="font-size:11px;color:var(--muted)">'+a.subtype+'</div></div>';
+              html += '<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:'+col+'">'+sign+fmt2(Math.abs(a.balance))+'</div><span style="color:var(--muted);font-size:11px">› txns</span></div>';
+            html += '</div>';
+            html += '<div id="'+caid+'" class="expand-body">';
+              var hadCC = false;
+              last2.forEach(function(p) {
+                var ptxns = monthTxnsForBank(p, bank);
+                if(!ptxns.length) return;
+                hadCC = true;
+                html += '<div style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted2);padding:5px 14px 2px;background:var(--s2)">'+ms[p].label+'</div>';
+                ptxns.sort(function(a,b){return b.date.localeCompare(a.date);});
+                ptxns.forEach(function(t){ html += txnLine(t, CAT_COLORS[t.category]||'#6b6b80', 'padding-left:14px;'); });
+              });
+              if(!hadCC) html += '<div style="padding:8px 14px;font-size:12px;color:var(--muted)">No transactions in last 2 months</div>';
+            html += '</div>';
+          html += '</div>';
+        });
+      html += '</div>';
+    html += '</div>';
+    html += '<div class="divider"></div>';
   });
   html += '</div>';
+
   set('main-content', html);
 }
 
@@ -1068,7 +1066,13 @@ function deduplicateData(data) {
       var key = t.date + '|' + t.desc + '|' + t.amount;
       if(!seen[key]) { seen[key] = true; deduped.push(t); }
     });
-    // Step 2: Nullify purchase+refund pairs
+    // Step 1b: Rename legacy categories
+  var CAT_RENAMES = {'Tech/Subs':'Subscription'};
+  deduped.forEach(function(t) {
+    if(CAT_RENAMES[t.category]) t.category = CAT_RENAMES[t.category];
+  });
+
+  // Step 2: Nullify purchase+refund pairs
     // For each refund (negative amount), find matching purchase (positive same desc)
     var nullified = {};
     deduped.forEach(function(t) {
