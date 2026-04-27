@@ -153,13 +153,13 @@ try {
   CAT_OVERRIDES = JSON.parse(saved || '{}');
   if(Object.keys(CAT_OVERRIDES).length) console.log('[LEDGR] Loaded', Object.keys(CAT_OVERRIDES).length, 'category overrides:', Object.keys(CAT_OVERRIDES));
 } catch(e) { console.warn('[LEDGR] Failed to load overrides:', e); }
-var ALL_CATS = ['Restaurants','Groceries','Amazon','Shopping','Gas/Travel','Kids','Entertainment','Tech/Subs','Pharmacy','Healthcare','Insurance','Tax/Professional','Home Security','Religious','Other'];
+var ALL_CATS = ['Restaurants','Groceries','Amazon','Shopping','Gas/Travel','Kids','Entertainment','Subscription','Pharmacy','Healthcare','Insurance','Tax/Professional','Home Security','Religious','Other'];
 var HOME_ST = ['NJ','NY','CT','PA','MA','MD','DE'];
 var BILLING = ['APPLE','AMAZON','AMZN','VZWRLSS','VERIZON','SIMPLISAFE','PAYPAL','NETFLIX','SPOTIFY','HULU','ZEE5','ANTHROPIC','CLAUDE','NORD','TURBOTAX','GOOGLE','COMCAST'];
 var BANK_SHORT = {'BofA':'BOA','Wells Fargo':'WF','TD Bank':'TD','Discover':'DISC','Robinhood':'RH','wifebofa':'BOA','myrobin':'RH'};
 var CAT_COLORS = {
   'Restaurants':'#ff8c42','Groceries':'#c8f060','Amazon':'#4da8ff','Shopping':'#a78bfa',
-  'Gas/Travel':'#67e8f9','Kids':'#60d0ff','Entertainment':'#c084fc','Tech/Subs':'#818cf8',
+  'Gas/Travel':'#67e8f9','Kids':'#60d0ff','Entertainment':'#c084fc','Subscription':'#818cf8','Subscription':'#818cf8',
   'Pharmacy':'#34d399','Healthcare':'#10b981','Insurance':'#f5c518','Tax/Professional':'#f87171',
   'Home Security':'#fb923c','Religious':'#e879f9','Other':'#6b6b80'
 };
@@ -188,7 +188,7 @@ function saveRefunded() {
   try { localStorage.setItem('lgr_refunded', JSON.stringify(REFUNDED_TXNS)); } catch(e) {}
 }
 function toggleRefunded(date, desc, amount) {
-  var key = date + '|' + desc + '|' + amount;
+  var key = desc; // desc-only key - survives date/amount changes across syncs
   if(REFUNDED_TXNS[key]) {
     delete REFUNDED_TXNS[key];
   } else {
@@ -305,7 +305,7 @@ function txnLine(t, col, extraStyle) {
   var refundTitle = manuallyRefunded ? 'Undo refund mark' : 'Mark as refunded (hides from spending)';
   var refundIcon = manuallyRefunded ? '↩' : '⟳';
   var refundStyle = manuallyRefunded ? 'color:var(--green);' : 'color:var(--muted2);';
-  html += '<button class="edit-btn" style="' + refundStyle + 'margin-right:2px" title="' + refundTitle + '" onclick="toggleRefunded(\'' + dateEsc + '\',\'' + descEsc + '\',' + t.amount + ')">&#8635;</button>';
+  html += '<button class="edit-btn" style="' + refundStyle + 'margin-right:2px" title="' + refundTitle + '" onclick="toggleRefunded(\'' + dateEsc + '\',\'' + descEsc + '\',' + t.amount + ')">&#8635;</button>'; // key stored as desc-only
   html += '<button class="edit-btn" onclick="editCat(\'' + descEsc + '\',' + t.amount + ',\'' + catEsc + '\')">&#9998;</button>';
   html += '</div>';
   return html;
@@ -721,15 +721,21 @@ function renderAccounts() {
       html += '<div id="'+caid+'" class="expand-body">';
       var hasAny = false;
       last2.forEach(function(p) {
-        var ptxns = (ms[p].transactions||[]).filter(function(t){
-          var aliases = {'wifebofa':'BofA','myrobin':'Robinhood','bofa':'BofA','bofa_2':'BofA'};
-          var tb = aliases[t.bank||''] || t.bank || '';
-          var ab = aliases[bank] || bank;
-          return tb === ab || t.bank === bank;
-        });
+        var aliases = {'wifebofa':'BofA','myrobin':'Robinhood','bofa':'BofA','bofa_2':'BofA'};
+        var normBank = aliases[bank] || bank;
+        var allTxns = ms[p].transactions||[];
+        // Filter by bank if bank field is populated, else show all (bank field may be null from old server)
+        var bankTxnsExist = allTxns.some(function(t){return t.bank!=null;});
+        var ptxns = bankTxnsExist
+          ? allTxns.filter(function(t){
+              var tb = aliases[t.bank||''] || t.bank || '';
+              return tb === normBank || t.bank === bank;
+            })
+          : allTxns; // fallback: show all when bank field is missing
         if(!ptxns.length) return;
         hasAny = true;
-        html += '<div style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted2);padding:5px 12px 2px;background:var(--s2)">'+ms[p].label+'</div>';
+        var note = bankTxnsExist ? '' : ' <span style="font-size:9px;color:var(--yellow)">(all banks — tap ⚡ Sync for bank labels)</span>';
+        html += '<div style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted2);padding:5px 12px 2px;background:var(--s2)">'+ms[p].label+note+'</div>';
         ptxns.sort(function(a,b){return b.date.localeCompare(a.date);});
         ptxns.forEach(function(t){ html += txnLine(t, CAT_COLORS[t.category]||'#6b6b80','padding-left:12px;'); });
       });
@@ -907,6 +913,23 @@ function renderTravel() {
   set('main-content',html);
 }
 
+function cleanZelleName(raw){
+  if(!raw) return '';
+  // Pattern 1: "payment from NAME for..." or "payment from NAME Conf#..."
+  var m=raw.match(/payment from ([A-Z][A-Za-z\s]+?)(?:\s+for\s+|\s+Conf#|;)/i);
+  if(m) return m[1].trim().replace(/\b\w/g,function(c){return c.toUpperCase();});
+  // Pattern 2: "FROM NAME Conf#..." (newer format)
+  m=raw.match(/^FROM ([A-Z][A-Z\s]+?)(?:\s+Conf#|\s*$)/i);
+  if(m) return m[1].trim().replace(/\b\w/g,function(c){return c.toUpperCase();});
+  // Pattern 3: TD received with name "Zelle NAME ..."
+  m=raw.match(/Zelle ([A-Z][A-Z\s]{3,30})/i);
+  if(m) return m[1].trim().replace(/\b\w/g,function(c){return c.toUpperCase();});
+  // Pattern 4: plain "payment from NAME"
+  m=raw.match(/payment from ([A-Z][A-Za-z\s]{3,40})/i);
+  if(m) return m[1].trim().replace(/\b\w/g,function(c){return c.toUpperCase();});
+  return raw.substring(0,30);
+}
+
 function renderRecurring() {
   var ms = D.monthly_spending || {};
   var periods = Object.keys(ms).sort();
@@ -1069,7 +1092,7 @@ function deduplicateData(data) {
     // Step 3: Remove nullified pairs AND manually refunded transactions
     var final = deduped.filter(function(t) {
       if(t.refund_matched) return false;
-      if(isRefunded(t.date, t.desc, t.amount)) return false;
+      if(isRefunded(t.date, t.desc, t.amount)) return false; // key is desc-only
       return true;
     });
     // Step 4: Recalculate
