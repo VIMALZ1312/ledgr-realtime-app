@@ -200,7 +200,7 @@ function toggleRefunded(date, desc, amount) {
   render();
 }
 function isRefunded(date, desc, amount) {
-  return !!REFUNDED_TXNS[date + '|' + desc + '|' + amount];
+  return !!REFUNDED_TXNS[desc]; // desc-only key matches toggleRefunded
 }
 
 function applyOverrides(data) {
@@ -289,11 +289,11 @@ function txnLine(t, col, extraStyle) {
   if (t.mask) {
     bankLabel += '<span style="font-size:9px;font-family:IBM Plex Mono,monospace;color:var(--muted2);background:var(--s2);border-radius:3px;padding:1px 4px;flex-shrink:0;margin-right:2px">••' + t.mask + '</span>';
   }
-  var manuallyRefunded = isRefunded(t.date||'', t.desc, t.amount);
+  var manuallyRefunded = !!REFUNDED_TXNS[t.desc]; // desc-only
   var refundBadge = isRefund ? '<span style="font-size:9px;color:var(--green);background:rgba(0,208,132,0.12);border-radius:3px;padding:1px 5px;margin-left:4px">REFUND</span>' : '';
   var pendingBadge = t.pending ? '<span style="font-size:9px;color:var(--yellow);margin-left:3px">⏳</span>' : '';
   // Encode desc safely for inline onclick attribute
-  var descEsc = t.desc.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+  var descEsc = t.desc.replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/"/g,'&quot;');
   var catEsc = (CAT_OVERRIDES[t.desc] || t.category || 'Other').replace(/'/g,"\\'");
   var html = '<div style="' + style + (t.pending ? 'opacity:0.75;' : '') + '">';
   html += '<span style="font-family:IBM Plex Mono,monospace;color:var(--muted);width:40px;flex-shrink:0">' + (t.date || '') + '</span>';
