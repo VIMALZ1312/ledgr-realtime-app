@@ -173,6 +173,19 @@
       "is_savings": false
     },
     {
+      "bank": "pnc",
+      "nickname": "pnc",
+      "name": "Spend",
+      "mask": "5961",
+      "type": "depository",
+      "subtype": "checking",
+      "balance": 707.58,
+      "available": 707.58,
+      "is_credit": false,
+      "is_checking": true,
+      "is_savings": false
+    },
+    {
       "bank": "TD Bank",
       "nickname": "td",
       "name": "CREDITCARD",
@@ -317,9 +330,9 @@
     }
   ],
   "net_worth": {
-    "total_checking": 57079.79,
+    "total_checking": 57787.37,
     "total_credit": 4673.32,
-    "net": 52406.47
+    "net": 53114.05
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -495,6 +508,18 @@
       "amount": 1500,
       "period": "2026-01",
       "period_label": "January 2026"
+    },
+    {
+      "from": "FROM AHMED MOHAMMED",
+      "amount": 483.9,
+      "period": "2026-04",
+      "period_label": "April 2026"
+    },
+    {
+      "from": "FROM VIMALRAJ LOGANATHAN",
+      "amount": 250,
+      "period": "2026-03",
+      "period_label": "March 2026"
     },
     {
       "from": "TD  RECEIVED 610700M061E8 Zelle RAKESH KUMAR GAL",
@@ -4087,7 +4112,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "statement_count": "7 live accounts",
-  "generated_at": "2026-04-27T01:59:57.454Z",
+  "statement_count": "8 live accounts",
+  "generated_at": "2026-04-27T03:10:42.744Z",
   "source": "plaid_realtime"
 }
