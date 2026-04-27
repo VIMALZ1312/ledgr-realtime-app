@@ -267,6 +267,9 @@ const CAT_MAP = {
 };
 
 function categorize(txn) {
+  // Negative amounts = refunds/credits — always include, categorize as 'Refund'
+  if (txn.amount < 0) return 'Refund';
+
   if (!txn.personal_finance_category) {
     const cat = (txn.category || []).join(' ');
     for (const [k, v] of Object.entries(CAT_MAP)) {
@@ -276,8 +279,10 @@ function categorize(txn) {
   }
   const primary = txn.personal_finance_category.primary || '';
   const detailed = txn.personal_finance_category.detailed || '';
-  if (['TRANSFER_IN','TRANSFER_OUT','LOAN_PAYMENTS','BANK_FEES'].includes(primary)) return null;
+  if (['TRANSFER_OUT','LOAN_PAYMENTS','BANK_FEES'].includes(primary)) return null;
   if (primary === 'INCOME') return null;
+  // TRANSFER_IN with negative amount = refund (already handled above)
+  if (primary === 'TRANSFER_IN') return null; // positive transfer-in = not a purchase
   const catMap2 = {
     'FOOD_AND_DRINK': 'Restaurants',
     'GENERAL_MERCHANDISE': 'Shopping',
@@ -434,8 +439,11 @@ function buildStructuredData(accounts, transactions) {
     if (!monthlySpending[period]) {
       monthlySpending[period] = { label: month, period: period, categories: {}, total: 0, transactions: [] };
     }
-    monthlySpending[period].categories[cat] = (monthlySpending[period].categories[cat] || 0) + t.amount;
-    monthlySpending[period].total += t.amount;
+    // Only count positive amounts in spending totals — refunds are shown but not counted
+    if (t.amount > 0) {
+      monthlySpending[period].categories[cat] = (monthlySpending[period].categories[cat] || 0) + t.amount;
+      monthlySpending[period].total += t.amount;
+    }
     monthlySpending[period].transactions.push({
       date: date.substring(5), // MM-DD
       desc: t.merchant_name || t.name,

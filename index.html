@@ -291,7 +291,7 @@ function txnLine(t, col, extraStyle) {
     bankLabel += '<span style="font-size:9px;font-family:IBM Plex Mono,monospace;color:var(--muted2);background:var(--s2);border-radius:3px;padding:1px 4px;flex-shrink:0;margin-right:2px">••' + t.mask + '</span>';
   }
   var manuallyRefunded = !!REFUNDED_TXNS[t.desc]; // desc-only
-  var refundBadge = isRefund ? '<span style="font-size:9px;color:var(--green);background:rgba(0,208,132,0.12);border-radius:3px;padding:1px 5px;margin-left:4px">REFUND</span>' : '';
+  var refundBadge = isRefund ? '<span style="font-size:9px;color:var(--green);background:rgba(0,208,132,0.15);border-radius:3px;padding:1px 5px;margin-left:4px;font-weight:600">+REFUND</span>' : '';
   var pendingBadge = t.pending ? '<span style="font-size:9px;color:var(--yellow);margin-left:3px">⏳</span>' : '';
   // Encode desc safely for inline onclick attribute
   var descEsc = t.desc.replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/"/g,'&quot;');
@@ -1091,25 +1091,23 @@ function deduplicateData(data) {
     if(CAT_RENAMES[t.category]) t.category = CAT_RENAMES[t.category];
   });
 
-  // Step 2: Nullify purchase+refund pairs
-    // For each refund (negative amount), find matching purchase (positive same desc)
+ // Step 2: Auto-match refund pairs (negative + same merchant, within 2 cents)
     var nullified = {};
-    deduped.forEach(function(t) {
-      if(t.amount < 0) {
-        // Find a matching positive transaction with same desc
-        var match = deduped.find(function(p2) {
-          return !nullified[p2.date+'|'+p2.desc+'|'+p2.amount]
-            && p2.amount === Math.abs(t.amount)
-            && p2.desc === t.desc
-            && p2.amount > 0;
-        });
-        if(match) {
-          // Mark both as nullified
-          nullified[match.date+'|'+match.desc+'|'+match.amount] = true;
-          nullified[t.date+'|'+t.desc+'|'+t.amount] = true;
-          match.refund_matched = true;
-          t.refund_matched = true;
-        }
+    deduped.filter(function(t){return t.amount<0;}).forEach(function(refund) {
+      var targetAmt = Math.abs(refund.amount);
+      var match = deduped.find(function(p) {
+        return p.amount > 0
+          && Math.abs(p.amount - targetAmt) < 0.02
+          && p.desc === refund.desc
+          && !nullified[p.date+'|'+p.desc+'|'+p.amount];
+      });
+      if(match) {
+        nullified[match.date+'|'+match.desc+'|'+match.amount] = true;
+        nullified[refund.date+'|'+refund.desc+'|'+refund.amount] = true;
+        match.refund_matched = true;
+        refund.refund_matched = true;
+      } else {
+        refund.unmatched_refund = true;
       }
     });
     // Step 3: Remove nullified pairs AND manually refunded transactions
