@@ -306,7 +306,8 @@ function txnLine(t, col, extraStyle) {
   var refundTitle = manuallyRefunded ? 'Undo refund mark' : 'Mark as refunded (hides from spending)';
   var refundIcon = manuallyRefunded ? '↩' : '⟳';
   var refundStyle = manuallyRefunded ? 'color:var(--green);' : 'color:var(--muted2);';
-  html += '<button class="edit-btn" style="' + refundStyle + 'margin-right:2px" title="' + refundTitle + '" onclick="toggleRefunded(\'' + dateEsc + '\',\'' + descEsc + '\',' + t.amount + ')">&#8635;</button>'; // key stored as desc-only
+  var refundLabel = manuallyRefunded ? '↩' : '⟳';
+  html += '<button class="edit-btn" style="' + refundStyle + 'margin-right:2px;font-size:13px" title="' + refundTitle + '" onclick="toggleRefunded(\'' + dateEsc + '\',\'' + descEsc + '\',' + t.amount + ')">' + refundLabel + '</button>'; // key stored as desc-only
   html += '<button class="edit-btn" onclick="editCat(\'' + descEsc + '\',' + t.amount + ',\'' + catEsc + '\')">&#9998;</button>';
   html += '</div>';
   return html;
@@ -481,31 +482,41 @@ function renderOverview() {
     html += '<th style="text-align:right;padding:6px 8px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border);white-space:nowrap;font-weight:500">' + short(ms[p].label) + '</th>';
   });
   html += '</tr></thead><tbody>';
+  // Store txns globally for modal access - avoids JSON.stringify in onclick
+  window._msTxns = window._msTxns || {};
   catList.forEach(function(cat, ci) {
     var col = CAT_COLORS[cat] || '#6b6b80';
     var rowTotal = periods.reduce(function(s,p){return s+(ms[p].categories[cat]||0);},0);
     if (!rowTotal) return;
-    var rid = 'msc_' + ci;
+    // Store all txns for this cat
+    var allCatTxns = [];
+    periods.forEach(function(p){
+      (ms[p].transactions||[]).filter(function(t){return t.category===cat;}).forEach(function(t){
+        allCatTxns.push(t);
+      });
+    });
+    allCatTxns.sort(function(a,b){return b.date.localeCompare(a.date);});
+    window._msTxns[cat] = allCatTxns;
+    var catEsc = cat.replace(/'/g,"\'");
+    var colEsc = col.replace(/'/g,"\'");
     html += '<tr>';
-    html += '<td style="padding:6px 8px;border-bottom:1px solid var(--border2);font-weight:500;color:' + col + ';cursor:pointer" onclick="expand(\'' + rid + '\')">' + cat + '</td>';
+    html += '<td style="padding:6px 8px;border-bottom:1px solid var(--border2);font-weight:500;color:' + col + ';cursor:pointer" onclick="showStoredTxns(\'' + catEsc + '\',\'' + colEsc + '\')">' + cat + ' <span style="font-size:9px;color:var(--muted)">›</span></td>';
     recentPeriods.forEach(function(p) {
       var a = ms[p].categories[cat] || 0;
       if (a) {
-        var txns = (ms[p].transactions||[]).filter(function(t){return t.category===cat;});
-        var eid = uid();
-        html += '<td style="padding:6px 8px;border-bottom:1px solid var(--border2);text-align:right;font-family:IBM Plex Mono,monospace;color:' + col + ';cursor:pointer" onclick="showTxns(\'' + cat + ' · ' + short(ms[p].label) + '\',' + JSON.stringify(txns) + ',\'' + col + '\')">'+fmt(a)+'</td>';
+        // Store per-month txns too
+        var ptxns = (ms[p].transactions||[]).filter(function(t){return t.category===cat;});
+        var key = cat+'|'+p;
+        window._msTxns[key] = ptxns;
+        var keyEsc = key.replace(/'/g,"\'");
+        var title = cat + ' · ' + short(ms[p].label);
+        var titleEsc = title.replace(/'/g,"\'");
+        html += '<td style="padding:6px 8px;border-bottom:1px solid var(--border2);text-align:right;font-family:IBM Plex Mono,monospace;color:' + col + ';cursor:pointer" onclick="showStoredTxns(\'' + keyEsc + '\',\'' + colEsc + '\',\'' + titleEsc + '\')">' + fmt(a) + '</td>';
       } else {
         html += '<td style="padding:6px 8px;border-bottom:1px solid var(--border2);text-align:right;color:var(--muted2)">—</td>';
       }
     });
     html += '</tr>';
-    // Expanded transactions row (all months combined for this category)
-    var allCatTxns = [];
-    periods.forEach(function(p){(ms[p].transactions||[]).filter(function(t){return t.category===cat;}).forEach(function(t){allCatTxns.push(t);});});
-    allCatTxns.sort(function(a,b){return b.date.localeCompare(a.date);});
-    html += '<tr id="' + rid + '" style="display:none"><td colspan="' + (recentPeriods.length+1) + '" style="padding:0 8px 8px">';
-    allCatTxns.forEach(function(t){ html += txnLine(t, col, ''); });
-    html += '</td></tr>';
   });
   // Total row
   html += '<tr style="background:var(--s2)"><td style="padding:6px 8px;font-weight:600;font-size:11px">Total</td>';
@@ -573,6 +584,12 @@ function acctLine(a) {
   var name = a.name.replace(/\s*\.\.\.\d{4}/g, '').trim();
   return '<div style="display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--border2);font-size:13px"><div><div>' + name + ' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted)">xx' + a.mask + '</span></div><div style="font-size:11px;color:var(--muted)">' + a.bank + ' ' + a.subtype + '</div></div><div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:' + col + '">' + sign + fmt2(Math.abs(a.balance)) + '</div></div>';
 }
+function showStoredTxns(key, col, title) {
+  var txns = (window._msTxns && window._msTxns[key]) || [];
+  var t = title || key.split('|')[0];
+  showTxns(t, txns, col);
+}
+
 function showTxns(title, txns, col) {
   if(!txns || !txns.length) { openModal(title, 'No transactions', '<div style="color:var(--muted);font-size:13px;padding:12px 0">No transactions found.</div>'); return; }
   var total = txns.reduce(function(s,t){return s+(t.amount||0);},0);
