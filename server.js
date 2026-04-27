@@ -267,9 +267,23 @@ const CAT_MAP = {
 };
 
 function categorize(txn) {
-  // Negative amounts = refunds/credits — always include, categorize as 'Refund'
+  const primary = txn.personal_finance_category?.primary || '';
+  const detailed = txn.personal_finance_category?.detailed || '';
+  const name = (txn.name || txn.merchant_name || '').toUpperCase();
+
+  // Skip income and transfers entirely (Zelle received, direct deposit, payroll)
+  if (primary === 'INCOME') return null;
+  if (primary === 'TRANSFER_IN') return null;
+  if (primary === 'TRANSFER_OUT') return null;
+  if (primary === 'LOAN_PAYMENTS') return null;
+  if (primary === 'BANK_FEES') return null;
+  if (name.includes('DIR DEP') || name.includes('DIRECT DEP')) return null;
+  if (name.includes('ZELLE') && txn.amount < 0) return null; // Zelle received = income
+
+  // Negative amounts from actual merchants = Refund
   if (txn.amount < 0) return 'Refund';
 
+  // Fallback for txns without personal_finance_category
   if (!txn.personal_finance_category) {
     const cat = (txn.category || []).join(' ');
     for (const [k, v] of Object.entries(CAT_MAP)) {
@@ -277,12 +291,7 @@ function categorize(txn) {
     }
     return categorizeName(txn.name || txn.merchant_name || '');
   }
-  const primary = txn.personal_finance_category.primary || '';
-  const detailed = txn.personal_finance_category.detailed || '';
-  if (['TRANSFER_OUT','LOAN_PAYMENTS','BANK_FEES'].includes(primary)) return null;
-  if (primary === 'INCOME') return null;
-  // TRANSFER_IN with negative amount = refund (already handled above)
-  if (primary === 'TRANSFER_IN') return null; // positive transfer-in = not a purchase
+
   const catMap2 = {
     'FOOD_AND_DRINK': 'Restaurants',
     'GENERAL_MERCHANDISE': 'Shopping',
