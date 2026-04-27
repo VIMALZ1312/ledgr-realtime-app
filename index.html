@@ -917,16 +917,16 @@ function cleanZelleName(raw){
   if(!raw) return '';
   // Pattern 1: "payment from NAME for..." or "payment from NAME Conf#..."
   var m=raw.match(/payment from ([A-Z][A-Za-z\s]+?)(?:\s+for\s+|\s+Conf#|;)/i);
-  if(m) return m[1].trim().replace(/\b\w/g,function(c){return c.toUpperCase();});
+  if(m) return m[1].trim().toLowerCase().replace(/\b\w/g,function(c){return c.toUpperCase();});
   // Pattern 2: "FROM NAME Conf#..." (newer format)
   m=raw.match(/^FROM ([A-Z][A-Z\s]+?)(?:\s+Conf#|\s*$)/i);
-  if(m) return m[1].trim().replace(/\b\w/g,function(c){return c.toUpperCase();});
+  if(m) return m[1].trim().toLowerCase().replace(/\b\w/g,function(c){return c.toUpperCase();});
   // Pattern 3: TD received with name "Zelle NAME ..."
   m=raw.match(/Zelle ([A-Z][A-Z\s]{3,30})/i);
-  if(m) return m[1].trim().replace(/\b\w/g,function(c){return c.toUpperCase();});
+  if(m) return m[1].trim().toLowerCase().replace(/\b\w/g,function(c){return c.toUpperCase();});
   // Pattern 4: plain "payment from NAME"
   m=raw.match(/payment from ([A-Z][A-Za-z\s]{3,40})/i);
-  if(m) return m[1].trim().replace(/\b\w/g,function(c){return c.toUpperCase();});
+  if(m) return m[1].trim().toLowerCase().replace(/\b\w/g,function(c){return c.toUpperCase();});
   return raw.substring(0,30);
 }
 
