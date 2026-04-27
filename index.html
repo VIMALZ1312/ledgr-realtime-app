@@ -461,34 +461,27 @@ function renderOverview() {
 
   html += '<div class="two-col">';
 
-  // Monthly Spend — months as columns, categories as rows
+  // Monthly Spend — categories as rows, expand to show transactions inline
   var allCats = {};
   periods.forEach(function(p) {
-    Object.keys(ms[p].categories || {}).forEach(function(c) { allCats[c] = true; });
+    Object.keys(ms[p].categories||{}).forEach(function(cat){ allCats[cat]=true; });
   });
-  var catList = Object.keys(allCats).sort(function(a,b) {
-    var ta = periods.reduce(function(s,p){return s+(ms[p].categories[a]||0);},0);
-    var tb = periods.reduce(function(s,p){return s+(ms[p].categories[b]||0);},0);
-    return tb - ta;
+  var catList = Object.keys(allCats).sort(function(a,b){
+    var ta=periods.reduce(function(s,p){return s+(ms[p].categories[a]||0);},0);
+    var tb=periods.reduce(function(s,p){return s+(ms[p].categories[b]||0);},0);
+    return tb-ta;
   });
-  var recentPeriods = periods.slice().reverse(); // newest first
-  html += '<div class="panel" style="overflow-x:auto">';
-  html += '<div class="panel-head"><div class="panel-title">Monthly Spend</div>';
+  var recentPeriods = periods.slice().reverse();
   var grandTotal = periods.reduce(function(s,p){return s+(ms[p].total||0);},0);
-  html += '<div class="panel-action">' + fmt(grandTotal) + ' total</div></div>';
-  html += '<table style="width:100%;border-collapse:collapse;font-size:12px">';
-  html += '<thead><tr><th style="text-align:left;padding:6px 8px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border);font-weight:500">Category</th>';
-  recentPeriods.forEach(function(p) {
-    html += '<th style="text-align:right;padding:6px 8px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border);white-space:nowrap;font-weight:500">' + short(ms[p].label) + '</th>';
-  });
-  html += '</tr></thead><tbody>';
-  // Store txns globally for modal access - avoids JSON.stringify in onclick
-  window._msTxns = window._msTxns || {};
-  catList.forEach(function(cat, ci) {
+
+  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Monthly Spend</div><div class="panel-action">'+fmt(grandTotal)+' total</div></div>';
+
+  catList.forEach(function(cat) {
     var col = CAT_COLORS[cat] || '#6b6b80';
     var rowTotal = periods.reduce(function(s,p){return s+(ms[p].categories[cat]||0);},0);
-    if (!rowTotal) return;
-    // Store all txns for this cat
+    if(!rowTotal) return;
+    var cid = uid();
+    // Collect all txns across all months for this category
     var allCatTxns = [];
     periods.forEach(function(p){
       (ms[p].transactions||[]).filter(function(t){return t.category===cat;}).forEach(function(t){
@@ -496,34 +489,29 @@ function renderOverview() {
       });
     });
     allCatTxns.sort(function(a,b){return b.date.localeCompare(a.date);});
-    window._msTxns[cat] = allCatTxns;
-    var catEsc = cat.replace(/'/g,"\'");
-    var colEsc = col.replace(/'/g,"\'");
-    html += '<tr>';
-    html += '<td style="padding:6px 8px;border-bottom:1px solid var(--border2);font-weight:500;color:' + col + ';cursor:pointer" onclick="showStoredTxns(\'' + catEsc + '\',\'' + colEsc + '\')">' + cat + ' <span style="font-size:9px;color:var(--muted)">›</span></td>';
-    recentPeriods.forEach(function(p) {
-      var a = ms[p].categories[cat] || 0;
-      if (a) {
-        // Store per-month txns too
-        var ptxns = (ms[p].transactions||[]).filter(function(t){return t.category===cat;});
-        var key = cat+'|'+p;
-        window._msTxns[key] = ptxns;
-        var keyEsc = key.replace(/'/g,"\'");
-        var title = cat + ' · ' + short(ms[p].label);
-        var titleEsc = title.replace(/'/g,"\'");
-        html += '<td style="padding:6px 8px;border-bottom:1px solid var(--border2);text-align:right;font-family:IBM Plex Mono,monospace;color:' + col + ';cursor:pointer" onclick="showStoredTxns(\'' + keyEsc + '\',\'' + colEsc + '\',\'' + titleEsc + '\')">' + fmt(a) + '</td>';
-      } else {
-        html += '<td style="padding:6px 8px;border-bottom:1px solid var(--border2);text-align:right;color:var(--muted2)">—</td>';
-      }
+
+    // Row header - tap to expand
+    html += '<div>';
+    html += '<div style="display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border2);cursor:pointer" onclick="expand(\'' + cid + '\')">';
+    html += '<div style="display:flex;align-items:center;gap:8px">';
+    html += '<div style="width:8px;height:8px;border-radius:50%;background:'+col+';flex-shrink:0"></div>';
+    html += '<span style="font-weight:500;color:'+col+'">'+cat+'</span></div>';
+    html += '<div style="display:flex;align-items:center;gap:12px">';
+    // Show per-month amounts
+    recentPeriods.forEach(function(p){
+      var a=ms[p].categories[cat]||0;
+      if(a) html += '<span style="font-family:IBM Plex Mono,monospace;font-size:11px;color:var(--muted)">'+short(ms[p].label)+' '+fmt(a)+'</span>';
     });
-    html += '</tr>';
+    html += '<span style="font-family:IBM Plex Mono,monospace;font-weight:600;color:'+col+'">'+fmt(rowTotal)+'</span>';
+    html += '<span style="color:var(--muted);font-size:13px">›</span>';
+    html += '</div></div>';
+    // Expandable transactions
+    html += '<div id="'+cid+'" class="expand-body">';
+    allCatTxns.forEach(function(t){ html += txnLine(t, col, ''); });
+    html += '</div>';
+    html += '</div>';
   });
-  // Total row
-  html += '<tr style="background:var(--s2)"><td style="padding:6px 8px;font-weight:600;font-size:11px">Total</td>';
-  recentPeriods.forEach(function(p) {
-    html += '<td style="padding:6px 8px;text-align:right;font-family:IBM Plex Mono,monospace;font-weight:600">' + fmt(ms[p].total||0) + '</td>';
-  });
-  html += '</tr></tbody></table></div>';
+  html += '</div>';
 
   // Recent transactions
   var allTxns = [];
@@ -843,6 +831,31 @@ function renderTravel() {
     }
     html += '</div></div>';
   });
+  // ── REFUNDED TRANSACTIONS (restore panel) ──
+  var refundedKeys = Object.keys(REFUNDED_TXNS);
+  if(refundedKeys.length) {
+    html += '<div class="panel" style="border-color:rgba(245,197,24,0.25)">';
+    html += '<div class="panel-head"><div class="panel-title" style="color:var(--yellow)">&#8629; Refunded / Hidden</div>';
+    html += '<div class="panel-action" style="color:var(--muted)">tap &#8629; to restore</div></div>';
+    // Find these txns in raw data
+    var allRaw = [];
+    Object.values((_rawD||D).monthly_spending||{}).forEach(function(v){
+      (v.transactions||[]).forEach(function(t){ allRaw.push(t); });
+    });
+    var found = 0;
+    refundedKeys.forEach(function(key) {
+      var matches = allRaw.filter(function(t){ return t.desc===key; });
+      matches.forEach(function(t){
+        html += txnLine(t, 'var(--yellow)', 'opacity:0.7;');
+        found++;
+      });
+    });
+    if(!found) {
+      html += '<div style="font-size:12px;color:var(--muted);padding:8px 0">No matching transactions found in current data.</div>';
+    }
+    html += '</div>';
+  }
+
   set('main-content', html);
 }
 
