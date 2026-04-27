@@ -167,7 +167,8 @@ var PAGES = [
   {id:'overview',  label:'Overview',  icon:'&#9672;'},
   {id:'accounts',  label:'Accounts',  icon:'&#127974;'},
   {id:'travel',    label:'Travel',    icon:'&#9992;'},
-  {id:'recurring', label:'Recurring', icon:'&#128260;'}
+  {id:'recurring', label:'Recurring', icon:'&#128260;'},
+  {id:'search',    label:'Search',    icon:'&#128269;'}
 ];
 var _tid = 0;
 function uid() { return 'el' + (++_tid); }
@@ -239,7 +240,7 @@ function setCat(desc, cat) {
 
 function editCat(desc, amount, currentCat) {
   // Key is desc only — change applies to ALL transactions with same name globally
-  var descEsc = desc.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+  var descEsc = desc.replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/"/g,'&quot;');
   var curCat = CAT_OVERRIDES[desc] || currentCat;
   var b = '<div style="font-size:13px;color:var(--muted);margin-bottom:6px;word-break:break-word">' + desc + '</div>';
   b += '<div style="font-size:11px;color:var(--yellow);margin-bottom:12px">Applies globally to all \'' + desc + '\' transactions</div>';
@@ -402,6 +403,7 @@ function render() {
   else if(TAB === 'accounts') renderAccounts();
   else if(TAB === 'travel') renderTravel();
   else if(TAB === 'recurring') renderRecurring();
+  else if(TAB === 'search') renderSearch();
 }
 
 var _chartInst = null;
@@ -1130,6 +1132,112 @@ function migrateOldOverrides() {
   if(migrated) saveOverrides();
 }
 migrateOldOverrides();
+
+function renderSearch() {
+  var html = '<div class="panel">';
+  html += '<div class="panel-head"><div class="panel-title">Transaction Search</div></div>';
+  html += '<div style="display:flex;gap:8px;margin-bottom:6px">';
+  html += '<input id="srch-input" type="text" placeholder="restaurant, amazon, kavi, airbnb..." autocomplete="off" ';
+  html += 'style="flex:1;padding:10px 14px;background:var(--s2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:IBM Plex Mono,monospace;font-size:13px" ';
+  html += 'oninput="runSearch()" onkeydown="if(event.key===\'Enter\')runSearch()">';
+  html += '<button onclick="runSearch()" style="padding:10px 16px;background:var(--green);color:#000;border:none;border-radius:8px;font-family:IBM Plex Mono,monospace;font-size:13px;font-weight:600;cursor:pointer">Go</button>';
+  html += '</div>';
+  html += '<div style="font-size:11px;color:var(--muted);margin-bottom:14px">Searches descriptions, categories, amounts, banks — across all months</div>';
+  html += '</div>';
+  html += '<div id="srch-results"></div>';
+  set('main-content', html);
+  // Focus input
+  setTimeout(function(){ var el=document.getElementById('srch-input'); if(el) el.focus(); }, 100);
+}
+
+function runSearch() {
+  var q = (document.getElementById('srch-input') || {}).value || '';
+  q = q.trim().toLowerCase();
+  var el = document.getElementById('srch-results');
+  if(!el) return;
+  if(q.length < 1) { el.innerHTML = ''; return; }
+
+  var ms = D.monthly_spending || {};
+  var words = q.split(/\s+/).filter(Boolean);
+
+  // Category synonyms for smart matching
+  var SYNONYMS = {
+    'restaurant':'Restaurants','restaurants':'Restaurants','food':'Restaurants','dining':'Restaurants','eat':'Restaurants',
+    'grocery':'Groceries','groceries':'Groceries','supermarket':'Groceries',
+    'subscription':'Subscription','subscriptions':'Subscription','sub':'Subscription','subs':'Subscription',
+    'entertainment':'Entertainment','streaming':'Entertainment',
+    'shopping':'Shopping','shop':'Shopping','amazon':'Amazon',
+    'gas':'Gas/Travel','travel':'Gas/Travel','uber':'Gas/Travel',
+    'health':'Healthcare','healthcare':'Healthcare','medical':'Healthcare','pharmacy':'Pharmacy',
+    'insurance':'Insurance','tax':'Tax/Professional',
+  };
+
+  var results = [];
+  Object.keys(ms).sort().reverse().forEach(function(p) {
+    var v = ms[p];
+    (v.transactions||[]).forEach(function(t) {
+      var score = 0;
+      var tDesc = (t.desc||'').toLowerCase();
+      var tCat = (t.category||'').toLowerCase();
+      var tAmt = String(t.amount||'');
+      var tBank = (t.bank||'').toLowerCase();
+
+      words.forEach(function(w) {
+        var syn = SYNONYMS[w];
+        // Exact category match via synonym
+        if(syn && t.category === syn) score += 10;
+        // Description contains word
+        if(tDesc.indexOf(w) >= 0) score += (tDesc.indexOf(w) === 0 ? 8 : 5);
+        // Category contains word
+        if(tCat.indexOf(w) >= 0) score += 4;
+        // Amount matches
+        if(tAmt.indexOf(w) >= 0) score += 3;
+        // Bank matches
+        if(tBank.indexOf(w) >= 0) score += 2;
+      });
+
+      if(score > 0) {
+        results.push({t:t, period:p, label:v.label, score:score});
+      }
+    });
+  });
+
+  // Sort by score desc, then date desc
+  results.sort(function(a,b){ return b.score-a.score || ((b.period+b.t.date).localeCompare(a.period+a.t.date)); });
+
+  if(!results.length) {
+    el.innerHTML = '<div class="panel" style="color:var(--muted);font-size:13px;padding:12px">No transactions found for "'+q+'"</div>';
+    return;
+  }
+
+  var total = results.reduce(function(s,r){return s+(r.t.amount||0);},0);
+  var html = '<div class="panel">';
+  html += '<div class="panel-head"><div class="panel-title">'+results.length+' results</div>';
+  html += '<div class="panel-action">'+fmt2(total)+' total</div></div>';
+
+  // Group by month
+  var byMonth = {};
+  results.forEach(function(r){
+    if(!byMonth[r.period]) byMonth[r.period] = {label:r.label, items:[]};
+    byMonth[r.period].items.push(r);
+  });
+
+  Object.keys(byMonth).sort().reverse().forEach(function(p) {
+    var mv = byMonth[p];
+    var mid = uid();
+    var mTotal = mv.items.reduce(function(s,r){return s+(r.t.amount||0);},0);
+    html += '<div>';
+    html += '<div class="row expandable" onclick="expand(\''+mid+'\')" style="background:var(--s2);padding:8px 12px;border-radius:6px;margin-bottom:4px">';
+    html += '<div class="row-label" style="font-weight:500">'+mv.label+'</div>';
+    html += '<div style="display:flex;align-items:center;gap:8px"><span style="font-size:12px;color:var(--muted)">'+mv.items.length+' txns</span><div class="row-amt" style="color:var(--red)">'+fmt2(mTotal)+'</div><span style="color:var(--muted)">›</span></div>';
+    html += '</div>';
+    html += '<div id="'+mid+'" class="expand-body">';
+    mv.items.forEach(function(r){ html += txnLine(r.t, CAT_COLORS[r.t.category]||'#6b6b80', ''); });
+    html += '</div></div>';
+  });
+  html += '</div>';
+  el.innerHTML = html;
+}
 
 function loadData() {
   fetch('https://raw.githubusercontent.com/VIMALZ1312/ledgr-realtime-app/main/data.json?t=' + Date.now())
