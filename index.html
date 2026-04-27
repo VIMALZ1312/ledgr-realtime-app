@@ -154,6 +154,9 @@ try {
   if(Object.keys(CAT_OVERRIDES).length) console.log('[LEDGR] Loaded', Object.keys(CAT_OVERRIDES).length, 'category overrides:', Object.keys(CAT_OVERRIDES));
 } catch(e) { console.warn('[LEDGR] Failed to load overrides:', e); }
 var ALL_CATS = ['Restaurants','Groceries','Amazon','Shopping','Gas/Travel','Kids','Entertainment','Tech/Subs','Pharmacy','Healthcare','Insurance','Tax/Professional','Home Security','Religious','Other'];
+var HOME_ST = ['NJ','NY','CT','PA','MA','MD','DE'];
+var BILLING = ['APPLE','AMAZON','AMZN','VZWRLSS','VERIZON','SIMPLISAFE','PAYPAL','NETFLIX','SPOTIFY','HULU','ZEE5','ANTHROPIC','CLAUDE','NORD','TURBOTAX','GOOGLE','COMCAST'];
+var BANK_SHORT = {'BofA':'BOA','Wells Fargo':'WF','TD Bank':'TD','Discover':'DISC','Robinhood':'RH','wifebofa':'BOA','myrobin':'RH'};
 var CAT_COLORS = {
   'Restaurants':'#ff8c42','Groceries':'#c8f060','Amazon':'#4da8ff','Shopping':'#a78bfa',
   'Gas/Travel':'#67e8f9','Kids':'#60d0ff','Entertainment':'#c084fc','Tech/Subs':'#818cf8',
@@ -280,7 +283,7 @@ function txnLine(t, col, extraStyle) {
   var style = 'display:flex;align-items:baseline;gap:8px;padding:6px 0;border-bottom:1px solid var(--border2);font-size:12px;' + (extraStyle || '');
   var bankLabel = '';
   if (t.bank) {
-    var bankShort = {'BofA':'BOA','Wells Fargo':'WF','TD Bank':'TD','Discover':'DISC','Robinhood':'RH'}[t.bank] || t.bank.substring(0,4).toUpperCase();
+    var bankShort = BANK_SHORT[t.bank] || t.bank.substring(0,4).toUpperCase();
     bankLabel = '<span style="font-size:9px;font-family:IBM Plex Mono,monospace;color:var(--muted2);background:var(--s2);border-radius:3px;padding:1px 4px;flex-shrink:0;margin-right:2px">' + bankShort + '</span>';
   }
   if (t.mask) {
@@ -411,9 +414,10 @@ function renderOverview() {
   var latestV = ms[latest] || {transactions:[], categories:{}, total:0, label:''};
   var nw = D.net_worth || {};
   var allAccts = D.all_accounts || [];
-  var checkingBal = nw.total_checking || allAccts.filter(function(a){return !a.is_credit;}).reduce(function(s,a){return s+a.balance;},0);
-  var creditBal = nw.total_credit || allAccts.filter(function(a){return a.is_credit&&a.balance>0;}).reduce(function(s,a){return s+a.balance;},0);
-  var netWorth = nw.net || (checkingBal - creditBal);
+  // Always compute from all_accounts — server value excludes wifebofa/myrobin
+  var checkingBal = allAccts.filter(function(a){return !a.is_credit;}).reduce(function(s,a){return s+a.balance;},0);
+  var creditBal = allAccts.filter(function(a){return a.is_credit&&a.balance>0;}).reduce(function(s,a){return s+a.balance;},0);
+  var netWorth = checkingBal - creditBal;
 
   var html = '<div class="kpi-row">';
   html += mkKpi('NET WORTH', fmt(netWorth), netWorth >= 0 ? 'var(--green)' : 'var(--red)', 'tap for breakdown', 'showNetWorth()');
@@ -486,7 +490,8 @@ function renderOverview() {
       var a = ms[p].categories[cat] || 0;
       if (a) {
         var txns = (ms[p].transactions||[]).filter(function(t){return t.category===cat;});
-        html += '<td style="padding:6px 8px;border-bottom:1px solid var(--border2);text-align:right;font-family:IBM Plex Mono,monospace;color:' + col + ';cursor:pointer" onclick="showTxns(\'' + cat + ' · ' + short(ms[p].label) + '\',' + JSON.stringify(txns) + ',\'' + col + '\')">' + fmt(a) + '</td>';
+        var eid = uid();
+        html += '<td style="padding:6px 8px;border-bottom:1px solid var(--border2);text-align:right;font-family:IBM Plex Mono,monospace;color:' + col + ';cursor:pointer" onclick="showTxns(\'' + cat + ' · ' + short(ms[p].label) + '\',' + JSON.stringify(txns) + ',\'' + col + '\')">'+fmt(a)+'</td>';
       } else {
         html += '<td style="padding:6px 8px;border-bottom:1px solid var(--border2);text-align:right;color:var(--muted2)">—</td>';
       }
@@ -566,6 +571,15 @@ function acctLine(a) {
   var name = a.name.replace(/\s*\.\.\.\d{4}/g, '').trim();
   return '<div style="display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--border2);font-size:13px"><div><div>' + name + ' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted)">xx' + a.mask + '</span></div><div style="font-size:11px;color:var(--muted)">' + a.bank + ' ' + a.subtype + '</div></div><div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:' + col + '">' + sign + fmt2(Math.abs(a.balance)) + '</div></div>';
 }
+function showTxns(title, txns, col) {
+  if(!txns || !txns.length) { openModal(title, 'No transactions', '<div style="color:var(--muted);font-size:13px;padding:12px 0">No transactions found.</div>'); return; }
+  var total = txns.reduce(function(s,t){return s+(t.amount||0);},0);
+  var sorted = txns.slice().sort(function(a,b){return ((b.period||'')+(b.date||'')).localeCompare((a.period||'')+(a.date||''));});
+  var b = '<div style="font-family:IBM Plex Mono,monospace;font-size:18px;color:'+col+';margin-bottom:12px">'+fmt2(total)+'</div>';
+  sorted.forEach(function(t){ b += txnLine(t, col, ''); });
+  openModal(title, sorted.length+' transactions', b);
+}
+
 function showNetWorth() {
   var a = D.all_accounts || [];
   var b = '<div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px">ASSETS</div>';
@@ -591,135 +605,138 @@ function renderAccounts() {
   var allAccts = D.all_accounts || [];
   var ms = D.monthly_spending || {};
   var periods = Object.keys(ms).sort().reverse();
-  var last2 = periods.slice(0, 2); // last 2 months
+  var last2 = periods.slice(0,2);
   var html = '';
 
-  // Helper: get transactions for a bank in last 2 months
-  function bankTxns(bank) {
+  function acctTxnsByBank(bank) {
+    // Match bank OR its aliases (wifebofa=BofA, myrobin=RH)
+    var aliases = {'wifebofa':'BofA','myrobin':'Robinhood','bofa':'BofA','bofa_2':'BofA'};
+    var matchBanks = [bank];
+    Object.keys(aliases).forEach(function(k){ if(aliases[k]===bank) matchBanks.push(k); });
     var txns = [];
     last2.forEach(function(p) {
-      (ms[p].transactions || []).forEach(function(t) {
-        if(t.bank === bank) txns.push({period_label: ms[p].label, t: t});
+      (ms[p].transactions||[]).forEach(function(t) {
+        if(matchBanks.indexOf(t.bank||'') >= 0) txns.push(t);
       });
     });
     return txns;
   }
 
-  // ── CHECKING & SAVINGS ──────────────────────────────────────
+  // ── CHECKING & SAVINGS ──
   var deposits = allAccts.filter(function(a){return !a.is_credit;});
-  var banks = [];
-  deposits.forEach(function(a){ if(banks.indexOf(a.bank)<0) banks.push(a.bank); });
+  var bankOrder = []; deposits.forEach(function(a){if(bankOrder.indexOf(a.bank)<0)bankOrder.push(a.bank);});
   var depTotal = deposits.reduce(function(s,a){return s+a.balance;},0);
-  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Checking & Savings</div><div class="panel-action">' + fmt2(depTotal) + '</div></div>';
+  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Checking & Savings</div><div class="panel-action">'+fmt2(depTotal)+'</div></div>';
 
-  banks.forEach(function(bank) {
+  bankOrder.forEach(function(bank) {
     var ba = deposits.filter(function(a){return a.bank===bank;});
     var bankTotal = ba.reduce(function(s,a){return s+a.balance;},0);
     var bid = uid();
-    html += '<div class="row expandable" onclick="expand(\'' + bid + '\')">';
-    html += '<div><div class="row-label" style="font-weight:500">' + bank + '</div><div class="row-sub">' + ba.length + ' account(s)</div></div>';
-    html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:var(--green)">' + fmt2(bankTotal) + '</div><span style="color:var(--muted)">›</span></div></div>';
-    html += '<div id="' + bid + '" class="expand-body">';
-    // Each account with balance
-    ba.forEach(function(a) {
+    var displayBank = BANK_SHORT[bank] ? (bank+' ('+BANK_SHORT[bank]+')') : bank;
+    html += '<div class="row expandable" onclick="expand(\''+bid+'\')">';
+    html += '<div><div class="row-label" style="font-weight:500">'+bank+'</div><div class="row-sub">'+ba.length+' acct(s)</div></div>';
+    html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:var(--green)">'+fmt2(bankTotal)+'</div><span style="color:var(--muted)">›</span></div></div>';
+    html += '<div id="'+bid+'" class="expand-body">';
+    ba.forEach(function(a,ai) {
       var name = a.name.replace(/\s*\.\.\.\d{4}/g,'').trim();
-      var aid = uid();
+      var cid = uid();
       html += '<div>';
-      html += '<div style="padding:7px 0 7px 12px;border-bottom:1px solid var(--border2);display:flex;justify-content:space-between;font-size:13px;cursor:pointer" onclick="expand(\'' + aid + '\')">';
-      html += '<div><div>' + name + ' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted);font-size:12px">••' + a.mask + '</span></div>';
-      html += '<div style="font-size:11px;color:var(--muted)">' + a.subtype + ' · tap for transactions</div></div>';
-      html += '<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:var(--green)">' + fmt2(a.balance) + '</div><span style="color:var(--muted)">›</span></div>';
-      html += '</div>';
-      // Last 2 months transactions for this account
-      html += '<div id="' + aid + '" class="expand-body">';
-      var acctTxns = [];
-      last2.forEach(function(p) {
-        (ms[p].transactions||[]).forEach(function(t) {
-          if(t.mask === a.mask || t.bank === bank) acctTxns.push({label:ms[p].label, t:t});
-        });
-      });
-      if(acctTxns.length) {
+      html += '<div style="padding:7px 0 7px 12px;border-bottom:1px solid var(--border2);display:flex;justify-content:space-between;font-size:13px;cursor:pointer" onclick="expand(\''+cid+'\')">';
+      html += '<div><div>'+name+' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted);font-size:11px">••'+a.mask+'</span></div>';
+      html += '<div style="font-size:11px;color:var(--muted)">'+a.subtype+' · tap for recent txns</div></div>';
+      html += '<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:var(--green)">'+fmt2(a.balance)+'</div><span style="color:var(--muted)">›</span></div></div>';
+      // Transactions for this bank (last 2 months)
+      html += '<div id="'+cid+'" class="expand-body">';
+      var btxns = acctTxnsByBank(bank);
+      if(btxns.length) {
         last2.forEach(function(p) {
-          var pTxns = (ms[p].transactions||[]).filter(function(t){return t.bank===bank;});
-          if(!pTxns.length) return;
-          html += '<div style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted2);padding:6px 12px 3px;background:var(--s2)">' + ms[p].label + '</div>';
-          pTxns.sort(function(a,b){return b.t?b.t.date.localeCompare(a.t?a.t.date:''):0;});
-          pTxns.forEach(function(t){ html += txnLine(t, CAT_COLORS[t.category]||'#6b6b80', 'padding-left:12px;'); });
+          var ptxns = (ms[p].transactions||[]).filter(function(t){
+            var aliases = {'wifebofa':'BofA','myrobin':'Robinhood','bofa':'BofA','bofa_2':'BofA'};
+            var tb = aliases[t.bank||''] || t.bank || '';
+            var ab = aliases[bank] || bank;
+            return tb === ab || t.bank === bank;
+          });
+          if(!ptxns.length) return;
+          html += '<div style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted2);padding:5px 12px 2px;background:var(--s2)">'+ms[p].label+'</div>';
+          ptxns.sort(function(a,b){return b.date.localeCompare(a.date);});
+          ptxns.forEach(function(t){ html += txnLine(t, CAT_COLORS[t.category]||'#6b6b80', 'padding-left:12px;'); });
         });
       } else {
         html += '<div style="padding:8px 12px;font-size:12px;color:var(--muted)">No transactions in last 2 months</div>';
       }
       html += '</div></div>';
     });
-    html += '</div><div style="height:1px;background:var(--border);margin:4px 0"></div>';
+    html += '</div><div class="divider"></div>';
   });
   html += '</div>';
 
-  // ── SPENDING BY MONTH ────────────────────────────────────────
-  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Spending by Month</div><div class="panel-action">tap › categories › transactions</div></div>';
+  // ── SPENDING BY MONTH ──
+  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Spending by Month</div></div>';
   periods.forEach(function(p) {
     var v = ms[p];
     var sid = uid();
-    html += '<div class="row expandable" onclick="expand(\'' + sid + '\')">';
-    html += '<div class="row-label" style="font-weight:500">' + v.label + '</div>';
-    html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:var(--red)">' + fmt2(v.total) + '</div><span style="color:var(--muted)">›</span></div></div>';
-    html += '<div id="' + sid + '" class="expand-body">';
+    html += '<div class="row expandable" onclick="expand(\''+sid+'\')">';
+    html += '<div class="row-label" style="font-weight:500">'+v.label+'</div>';
+    html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:var(--red)">'+fmt2(v.total)+'</div><span style="color:var(--muted)">›</span></div></div>';
+    html += '<div id="'+sid+'" class="expand-body">';
     Object.entries(v.categories||{}).sort(function(a,b){return b[1]-a[1];}).forEach(function(ce,ci) {
       var col = CAT_COLORS[ce[0]]||'#6b6b80';
-      var catTxns = (v.transactions||[]).filter(function(t){return t.category===ce[0];});
       var cid = uid();
       html += '<div style="padding:5px 0 5px 12px;border-bottom:1px solid var(--border2)">';
-      html += '<div style="display:flex;justify-content:space-between;cursor:pointer;font-size:13px;padding:3px 0" onclick="expand(\'' + cid + '\')">';
-      html += '<span style="color:' + col + '">' + ce[0] + '</span>';
-      html += '<div style="display:flex;align-items:center;gap:6px"><span style="font-family:IBM Plex Mono,monospace;color:' + col + '">' + fmt2(ce[1]) + '</span><span style="color:var(--muted)">›</span></div>';
-      html += '</div>';
-      html += '<div id="' + cid + '" class="expand-body">';
-      catTxns.sort(function(a,b){return b.date.localeCompare(a.date);}).forEach(function(t){ html += txnLine(t, col, 'padding-left:12px;'); });
+      html += '<div style="display:flex;justify-content:space-between;cursor:pointer;font-size:13px;padding:3px 0" onclick="expand(\''+cid+'\')">';
+      html += '<span style="color:'+col+'">'+ce[0]+'</span>';
+      html += '<div style="display:flex;align-items:center;gap:6px"><span style="font-family:IBM Plex Mono,monospace;color:'+col+'">'+fmt2(ce[1])+'</span><span style="color:var(--muted)">›</span></div></div>';
+      html += '<div id="'+cid+'" class="expand-body">';
+      (v.transactions||[]).filter(function(t){return t.category===ce[0];}).sort(function(a,b){return b.date.localeCompare(a.date);}).forEach(function(t){ html += txnLine(t, col, 'padding-left:12px;'); });
       html += '</div></div>';
     });
-    html += '</div><div style="height:1px;background:var(--border);margin:4px 0"></div>';
+    html += '</div><div class="divider"></div>';
   });
   html += '</div>';
 
-  // ── CREDIT CARDS ─────────────────────────────────────────────
+  // ── CREDIT CARDS ──
   var credits = allAccts.filter(function(a){return a.is_credit;});
-  var creditBanks = [];
-  credits.forEach(function(a){ if(creditBanks.indexOf(a.bank)<0) creditBanks.push(a.bank); });
+  var creditBanks = []; credits.forEach(function(a){if(creditBanks.indexOf(a.bank)<0)creditBanks.push(a.bank);});
   var creditTotal = credits.filter(function(a){return a.balance>0;}).reduce(function(s,a){return s+a.balance;},0);
-  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Credit Cards</div><div class="panel-action" style="color:var(--red)">' + fmt2(creditTotal) + ' owed</div></div>';
+  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Credit Cards</div><div class="panel-action" style="color:var(--red)">'+fmt2(creditTotal)+' owed</div></div>';
   creditBanks.forEach(function(bank) {
     var ba = credits.filter(function(a){return a.bank===bank;});
     var owed = ba.filter(function(a){return a.balance>0;}).reduce(function(s,a){return s+a.balance;},0);
     var crid = uid();
-    html += '<div class="row expandable" onclick="expand(\'' + crid + '\')">';
-    html += '<div><div class="row-label" style="font-weight:500">' + bank + '</div><div class="row-sub">' + ba.length + ' card(s)</div></div>';
-    html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:' + (owed>0?'var(--red)':'var(--green)') + '">' + fmt2(owed) + '</div><span style="color:var(--muted)">›</span></div></div>';
-    html += '<div id="' + crid + '" class="expand-body">';
+    html += '<div class="row expandable" onclick="expand(\''+crid+'\')">';
+    html += '<div><div class="row-label" style="font-weight:500">'+bank+'</div><div class="row-sub">'+ba.length+' card(s)</div></div>';
+    html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:'+(owed>0?'var(--red)':'var(--green)')+'">'+fmt2(owed)+'</div><span style="color:var(--muted)">›</span></div></div>';
+    html += '<div id="'+crid+'" class="expand-body">';
     ba.forEach(function(a) {
       var name = a.name.replace(/\s*\.\.\.\d{4}/g,'').trim();
       var col = a.balance>0?'var(--red)':'var(--green)';
       var sign = a.balance>0?'-':'';
       var caid = uid();
       html += '<div>';
-      html += '<div style="padding:7px 0 7px 12px;border-bottom:1px solid var(--border2);display:flex;justify-content:space-between;font-size:13px;cursor:pointer" onclick="expand(\'' + caid + '\')">';
-      html += '<div><div>' + name + ' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted);font-size:12px">••' + a.mask + '</span></div>';
-      html += '<div style="font-size:11px;color:var(--muted)">' + a.subtype + ' · tap for transactions</div></div>';
-      html += '<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:' + col + '">' + sign + fmt2(Math.abs(a.balance)) + '</div><span style="color:var(--muted)">›</span></div>';
-      html += '</div>';
-      // Last 2 months transactions for this card
-      html += '<div id="' + caid + '" class="expand-body">';
+      html += '<div style="padding:7px 0 7px 12px;border-bottom:1px solid var(--border2);display:flex;justify-content:space-between;font-size:13px;cursor:pointer" onclick="expand(\''+caid+'\')">';
+      html += '<div><div>'+name+' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted);font-size:11px">••'+a.mask+'</span></div>';
+      html += '<div style="font-size:11px;color:var(--muted)">'+a.subtype+' · tap for recent txns</div></div>';
+      html += '<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:'+col+'">'+sign+fmt2(Math.abs(a.balance))+'</div><span style="color:var(--muted)">›</span></div></div>';
+      // Card transactions last 2 months
+      html += '<div id="'+caid+'" class="expand-body">';
       var hasAny = false;
       last2.forEach(function(p) {
-        var pTxns = (ms[p].transactions||[]).filter(function(t){return t.mask===a.mask||t.bank===bank;});
-        if(!pTxns.length) return;
+        var ptxns = (ms[p].transactions||[]).filter(function(t){
+          var aliases = {'wifebofa':'BofA','myrobin':'Robinhood','bofa':'BofA','bofa_2':'BofA'};
+          var tb = aliases[t.bank||''] || t.bank || '';
+          var ab = aliases[bank] || bank;
+          return tb === ab || t.bank === bank;
+        });
+        if(!ptxns.length) return;
         hasAny = true;
-        html += '<div style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted2);padding:6px 12px 3px;background:var(--s2)">' + ms[p].label + '</div>';
-        pTxns.sort(function(a,b){return b.date.localeCompare(a.date);}).forEach(function(t){ html += txnLine(t, CAT_COLORS[t.category]||'#6b6b80', 'padding-left:12px;'); });
+        html += '<div style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted2);padding:5px 12px 2px;background:var(--s2)">'+ms[p].label+'</div>';
+        ptxns.sort(function(a,b){return b.date.localeCompare(a.date);});
+        ptxns.forEach(function(t){ html += txnLine(t, CAT_COLORS[t.category]||'#6b6b80','padding-left:12px;'); });
       });
       if(!hasAny) html += '<div style="padding:8px 12px;font-size:12px;color:var(--muted)">No transactions in last 2 months</div>';
       html += '</div></div>';
     });
-    html += '</div><div style="height:1px;background:var(--border);margin:4px 0"></div>';
+    html += '</div><div class="divider"></div>';
   });
   html += '</div>';
   set('main-content', html);
@@ -812,6 +829,82 @@ function cleanZelleName(raw) {
   m = raw.match(/payment from ([A-Z][A-Za-z ]{3,40})/i);
   if(m) return m[1].trim().replace(/\b\w/g, function(c){return c.toUpperCase();});
   return raw.substring(0, 30);
+}
+
+function renderTravel() {
+  var raw = (D.travel||[]).filter(function(t) {
+    return t.state && HOME_ST.indexOf(t.state)<0 && !BILLING.some(function(b){return (t.desc||'').toUpperCase().indexOf(b)>=0;});
+  });
+  if(!raw.length){set('main-content','<div class="panel" style="color:var(--muted);font-size:13px;padding:20px;text-align:center">No travel transactions found.</div>');return;}
+  raw.sort(function(a,b){return ((b.period||'')+(b.date||'')).localeCompare((a.period||'')+(a.date||''));});
+  var byState={};
+  raw.forEach(function(t){
+    var st=t.state;
+    if(!byState[st])byState[st]={total:0,months:{},online:[]};
+    byState[st].total+=t.amount;
+    if(t.city){
+      var ml=t.period_label||t.period||'';
+      if(!byState[st].months[ml])byState[st].months[ml]={cities:{},total:0};
+      if(!byState[st].months[ml].cities[t.city])byState[st].months[ml].cities[t.city]={txns:[],total:0};
+      byState[st].months[ml].cities[t.city].txns.push(t);
+      byState[st].months[ml].cities[t.city].total+=t.amount;
+      byState[st].months[ml].total+=t.amount;
+    } else {byState[st].online.push(t);}
+  });
+  var states=Object.keys(byState).sort(function(a,b){return byState[b].total-byState[a].total;});
+  var grand=raw.reduce(function(s,t){return s+t.amount;},0);
+  var STATE_NAMES={'CA':'California','NC':'North Carolina','VA':'Virginia','DC':'Washington D.C.','TX':'Texas','FL':'Florida','TN':'Tennessee','MD':'Maryland','GA':'Georgia','CO':'Colorado','NV':'Nevada','AZ':'Arizona','MA':'Massachusetts','RI':'Rhode Island','MO':'Missouri','MI':'Michigan','IL':'Illinois','AR':'Arkansas'};
+  var html='<div class="panel"><div class="panel-head"><div class="panel-title">Travel & Vacation</div><div class="panel-action">'+states.length+' states · '+fmt(grand)+'</div></div>';
+  html+='<div style="margin-bottom:12px">';
+  states.forEach(function(st){html+='<span class="chip">'+st+' <span style="font-family:IBM Plex Mono,monospace;font-size:11px">'+fmt(byState[st].total)+'</span></span>';});
+  html+='</div></div>';
+  states.forEach(function(st){
+    var sv=byState[st];
+    var sid=uid();
+    html+='<div class="state-block">';
+    html+='<div class="state-head" onclick="expand(\''+sid+'\')">';
+    html+='<div style="font-family:IBM Plex Mono,monospace;font-size:22px;font-weight:600;color:var(--yellow);width:42px">'+st+'</div>';
+    html+='<div style="flex:1"><div style="font-size:15px;font-weight:600">'+(STATE_NAMES[st]||st)+'</div>';
+    html+='<div style="font-size:11px;color:var(--muted)">'+Object.keys(sv.months).join(', ')+'</div></div>';
+    html+='<div style="font-family:IBM Plex Mono,monospace;font-size:18px;color:var(--yellow)">'+fmt(sv.total)+'</div>';
+    html+='<span style="color:var(--muted);margin-left:8px">›</span></div>';
+    html+='<div id="'+sid+'" class="expand-body">';
+    Object.keys(sv.months).sort().reverse().forEach(function(monthLabel){
+      var mv=sv.months[monthLabel];
+      var mid=uid();
+      html+='<div style="padding:6px 0;border-top:1px solid var(--border2)">';
+      html+='<div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:4px 0" onclick="expand(\''+mid+'\')">';
+      html+='<div style="font-size:13px;font-weight:500">'+monthLabel+'</div>';
+      html+='<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-size:13px;color:var(--yellow)">'+fmt(mv.total)+'</div><span style="color:var(--muted)">›</span></div></div>';
+      html+='<div id="'+mid+'" class="expand-body">';
+      Object.keys(mv.cities).sort(function(a,b){return mv.cities[b].total-mv.cities[a].total;}).forEach(function(city){
+        var cv=mv.cities[city];
+        var cvid=uid();
+        cv.txns.sort(function(a,b){return b.date.localeCompare(a.date);});
+        html+='<div style="padding:5px 0 5px 12px;border-top:1px solid var(--border2)">';
+        html+='<div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer" onclick="expand(\''+cvid+'\')">';
+        html+='<div style="font-size:13px">📍 '+city+'</div>';
+        html+='<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-size:13px;color:var(--yellow)">'+fmt(cv.total)+'</div><span style="color:var(--muted)">›</span></div></div>';
+        html+='<div id="'+cvid+'" class="expand-body">';
+        cv.txns.forEach(function(t){ html += txnLine(t,'var(--yellow)','padding-left:12px;'); });
+        html+='</div></div>';
+      });
+      html+='</div></div>';
+    });
+    if(sv.online.length){
+      var oid=uid();
+      var ot=sv.online.reduce(function(s,t){return s+t.amount;},0);
+      html+='<div style="padding:6px 0;border-top:1px solid var(--border2)">';
+      html+='<div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:4px 0" onclick="expand(\''+oid+'\')">';
+      html+='<div style="font-size:13px;color:var(--muted)">🌐 Online / '+st+'</div>';
+      html+='<div style="display:flex;align-items:center;gap:8px"><span style="font-family:IBM Plex Mono,monospace;font-size:13px;color:var(--muted)">'+fmt(ot)+'</span><span style="color:var(--muted)">›</span></div></div>';
+      html+='<div id="'+oid+'" class="expand-body">';
+      sv.online.forEach(function(t){ html += txnLine(t,'var(--muted)','padding-left:12px;'); });
+      html+='</div></div>';
+    }
+    html+='</div></div>';
+  });
+  set('main-content',html);
 }
 
 function renderRecurring() {
