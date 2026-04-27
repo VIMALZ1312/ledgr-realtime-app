@@ -143,11 +143,8 @@ var D = null, TAB = 'overview';
 var BACKEND = 'https://realtimefin.replit.app';
 var _rawD = null;
 var CAT_OVERRIDES = {};
-var REFUNDED_TXNS = {}; // key = "date|desc|amount", value = true
-try {
-  var savedR = localStorage.getItem('lgr_refunded');
-  REFUNDED_TXNS = JSON.parse(savedR || '{}');
-} catch(e) {}
+var REFUNDED_TXNS = {}; // kept for backward compat but no longer written
+try { localStorage.removeItem('lgr_refunded'); } catch(e) {} // clear old marks
 try { 
   var saved = localStorage.getItem('lgr_cat_overrides');
   CAT_OVERRIDES = JSON.parse(saved || '{}');
@@ -185,23 +182,8 @@ function saveOverrides() {
     console.log('[LEDGR] Saved overrides:', CAT_OVERRIDES);
   } catch(e) { console.warn('[LEDGR] Failed to save overrides:', e); }
 }
-function saveRefunded() {
-  try { localStorage.setItem('lgr_refunded', JSON.stringify(REFUNDED_TXNS)); } catch(e) {}
-}
-function toggleRefunded(date, desc, amount) {
-  var key = desc; // desc-only key - survives date/amount changes across syncs
-  if(REFUNDED_TXNS[key]) {
-    delete REFUNDED_TXNS[key];
-  } else {
-    REFUNDED_TXNS[key] = true;
-  }
-  saveRefunded();
-  // Re-apply dedup+overrides and re-render
-  D = applyOverrides(deduplicateData(JSON.parse(JSON.stringify(_rawD))));
-  render();
-}
 function isRefunded(date, desc, amount) {
-  return !!REFUNDED_TXNS[desc]; // desc-only key matches toggleRefunded
+  return !!REFUNDED_TXNS[desc]; // desc-only key (kept for backward compat)
 }
 
 function applyOverrides(data) {
@@ -290,7 +272,6 @@ function txnLine(t, col, extraStyle) {
   if (t.mask) {
     bankLabel += '<span style="font-size:9px;font-family:IBM Plex Mono,monospace;color:var(--muted2);background:var(--s2);border-radius:3px;padding:1px 4px;flex-shrink:0;margin-right:2px">••' + t.mask + '</span>';
   }
-  var manuallyRefunded = !!REFUNDED_TXNS[t.desc]; // desc-only
   var refundBadge = isRefund ? '<span style="font-size:9px;color:var(--green);background:rgba(0,208,132,0.15);border-radius:3px;padding:1px 5px;margin-left:4px;font-weight:600">+REFUND</span>' : '';
   var pendingBadge = t.pending ? '<span style="font-size:9px;color:var(--yellow);margin-left:3px">⏳</span>' : '';
   // Encode desc safely for inline onclick attribute
@@ -303,11 +284,7 @@ function txnLine(t, col, extraStyle) {
   html += '<span style="font-family:IBM Plex Mono,monospace;color:' + effectiveCol + ';white-space:nowrap;margin-right:6px">' + (isRefund ? '+' : '') + fmt2(Math.abs(t.amount)) + '</span>';
   // Refund toggle button
   var dateEsc = (t.date||'').replace(/'/g,"\'");
-  var refundTitle = manuallyRefunded ? 'Undo refund mark' : 'Mark as refunded (hides from spending)';
-  var refundIcon = manuallyRefunded ? '↩' : '⟳';
-  var refundStyle = manuallyRefunded ? 'color:var(--green);' : 'color:var(--muted2);';
-  var refundLabel = manuallyRefunded ? '↩' : '⟳';
-  html += '<button class="edit-btn" style="' + refundStyle + 'margin-right:2px;font-size:13px" title="' + refundTitle + '" onclick="toggleRefunded(\'' + dateEsc + '\',\'' + descEsc + '\',' + t.amount + ')">' + refundLabel + '</button>'; // key stored as desc-only
+  // refund button removed — server now provides negative transactions for auto-matching
   html += '<button class="edit-btn" onclick="editCat(\'' + descEsc + '\',' + t.amount + ',\'' + catEsc + '\')">&#9998;</button>';
   html += '</div>';
   return html;
@@ -831,31 +808,6 @@ function renderTravel() {
     }
     html += '</div></div>';
   });
-  // ── REFUNDED TRANSACTIONS (restore panel) ──
-  var refundedKeys = Object.keys(REFUNDED_TXNS);
-  if(refundedKeys.length) {
-    html += '<div class="panel" style="border-color:rgba(245,197,24,0.25)">';
-    html += '<div class="panel-head"><div class="panel-title" style="color:var(--yellow)">&#8629; Refunded / Hidden</div>';
-    html += '<div class="panel-action" style="color:var(--muted)">tap &#8629; to restore</div></div>';
-    // Find these txns in raw data
-    var allRaw = [];
-    Object.values((_rawD||D).monthly_spending||{}).forEach(function(v){
-      (v.transactions||[]).forEach(function(t){ allRaw.push(t); });
-    });
-    var found = 0;
-    refundedKeys.forEach(function(key) {
-      var matches = allRaw.filter(function(t){ return t.desc===key; });
-      matches.forEach(function(t){
-        html += txnLine(t, 'var(--yellow)', 'opacity:0.7;');
-        found++;
-      });
-    });
-    if(!found) {
-      html += '<div style="font-size:12px;color:var(--muted);padding:8px 0">No matching transactions found in current data.</div>';
-    }
-    html += '</div>';
-  }
-
   set('main-content', html);
 }
 
@@ -1126,7 +1078,6 @@ function deduplicateData(data) {
     // Step 3: Remove nullified pairs AND manually refunded transactions
     var final = deduped.filter(function(t) {
       if(t.refund_matched) return false;
-      if(isRefunded(t.date, t.desc, t.amount)) return false; // key is desc-only
       return true;
     });
     // Step 4: Recalculate
