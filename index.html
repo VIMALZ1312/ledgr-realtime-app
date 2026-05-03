@@ -122,6 +122,7 @@ body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-ser
     <div class="sidebar-foot">
       <button class="btn-sync" id="sync-btn" onclick="triggerSync()">Sync</button>
       <button class="btn-sec theme-btn-text" onclick="toggleTheme()" id="theme-sidebar">&#9790; Night</button>
+      <button class="btn-sec" onclick="exportOverrides()" style="font-size:11px">&#128190; Export edits</button>
       <div class="synced-at" id="synced-at">--</div>
     </div>
   </div>
@@ -145,10 +146,16 @@ var _rawD = null;
 var CAT_OVERRIDES = {};
 var REFUNDED_TXNS = {}; // kept for backward compat but no longer written
 try { localStorage.removeItem('lgr_refunded'); } catch(e) {} // clear old marks
-try { 
-  var saved = localStorage.getItem('lgr_cat_overrides');
+try {
+  // Try localStorage first, fall back to sessionStorage if localStorage was wiped
+  var saved = localStorage.getItem('lgr_cat_overrides') 
+    || sessionStorage.getItem('lgr_cat_overrides_session');
   CAT_OVERRIDES = JSON.parse(saved || '{}');
-  if(Object.keys(CAT_OVERRIDES).length) console.log('[LEDGR] Loaded', Object.keys(CAT_OVERRIDES).length, 'category overrides:', Object.keys(CAT_OVERRIDES));
+  if(Object.keys(CAT_OVERRIDES).length) {
+    console.log('[LEDGR] Loaded', Object.keys(CAT_OVERRIDES).length, 'category overrides');
+    // Restore to localStorage if it was missing
+    if(!localStorage.getItem('lgr_cat_overrides')) localStorage.setItem('lgr_cat_overrides', saved);
+  }
 } catch(e) { console.warn('[LEDGR] Failed to load overrides:', e); }
 var ALL_CATS = ['Restaurants','Groceries','Amazon','Shopping','Gas/Travel','Kids','Entertainment','Subscription','Pharmacy','Healthcare','Insurance','Tax/Professional','Home Security','Religious','Other'];
 var HOME_ST = ['NJ','NY','CT','PA','MA','MD','DE'];
@@ -173,13 +180,22 @@ function $(id) { return document.getElementById(id); }
 function set(id, html) { var e = $(id); if(e) e.innerHTML = html; }
 function fmt(n) { return '$' + Number(n||0).toLocaleString('en-US', {maximumFractionDigits:0}); }
 function fmt2(n) { return '$' + Number(n||0).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2}); }
-function short(s) { return (s||'').replace(' 2026',' 26').replace(' 2025',' 25'); }
+function short(s) {
+  if(!s) return '';
+  return s.replace(/January /,'Jan ').replace(/February /,'Feb ').replace(/March /,'Mar ')
+    .replace(/April /,'Apr ').replace(/May /,'May ').replace(/June /,'Jun ')
+    .replace(/July /,'Jul ').replace(/August /,'Aug ').replace(/September /,'Sep ')
+    .replace(/October /,'Oct ').replace(/November /,'Nov ').replace(/December /,'Dec ')
+    .replace(' 2026'," '26").replace(' 2025'," '25");
+}
 function expand(id) { var e = $(id); if(e) e.classList.toggle('open'); }
 
 function saveOverrides() {
-  try { 
-    localStorage.setItem('lgr_cat_overrides', JSON.stringify(CAT_OVERRIDES));
-    console.log('[LEDGR] Saved overrides:', CAT_OVERRIDES);
+  try {
+    const val = JSON.stringify(CAT_OVERRIDES);
+    localStorage.setItem('lgr_cat_overrides', val);
+    sessionStorage.setItem('lgr_cat_overrides_session', val); // session backup
+    console.log('[LEDGR] Saved overrides:', Object.keys(CAT_OVERRIDES).length, 'edits');
   } catch(e) { console.warn('[LEDGR] Failed to save overrides:', e); }
 }
 function isRefunded(date, desc, amount) {
@@ -467,22 +483,23 @@ function renderOverview() {
     });
     allCatTxns.sort(function(a,b){return b.date.localeCompare(a.date);});
 
-    // Row header - tap to expand
+        // Row: two-line layout - name+total on top, month amounts below
     html += '<div>';
-    html += '<div style="display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border2);cursor:pointer" onclick="expand(\'' + cid + '\')">';
-    html += '<div style="display:flex;align-items:center;gap:8px">';
+    html += '<div style="padding:10px 0;border-bottom:1px solid var(--border2);cursor:pointer" onclick="expand(\'' + cid + '\')">';
+    html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">';
     html += '<div style="width:8px;height:8px;border-radius:50%;background:'+col+';flex-shrink:0"></div>';
-    html += '<span style="font-weight:500;color:'+col+'">'+cat+'</span></div>';
-    html += '<div style="display:flex;align-items:center;gap:12px">';
-    // Show per-month amounts - stacked cleanly
-    recentPeriods.forEach(function(p){
-      var a=ms[p].categories[cat]||0;
-      if(a) html += '<div style="text-align:right;line-height:1.3"><div style="font-size:10px;color:var(--muted2)">'+short(ms[p].label)+'</div><div style="font-family:IBM Plex Mono,monospace;font-size:12px;color:var(--muted)">'+fmt(a)+'</div></div>';
-    });
+    html += '<span style="font-weight:500;color:'+col+';flex:1;font-size:14px">'+cat+'</span>';
     html += '<span style="font-family:IBM Plex Mono,monospace;font-weight:600;color:'+col+'">'+fmt(rowTotal)+'</span>';
-    html += '<span style="color:var(--muted);font-size:13px">›</span>';
-    html += '</div></div>';
-    // Expandable transactions
+    html += '<span style="color:var(--muted);font-size:12px;margin-left:6px">›</span>';
+    html += '</div>';
+    html += '<div style="display:flex;gap:12px;padding-left:16px">';
+    recentPeriods.forEach(function(p){
+      var a = ms[p].categories[cat]||0;
+      if(a) html += '<span style="font-size:11px;color:var(--muted2)">'+short(ms[p].label)+' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted)">'+fmt(a)+'</span></span>';
+    });
+    html += '</div>';
+    html += '</div>';
+        // Expandable transactions
     html += '<div id="'+cid+'" class="expand-body">';
     allCatTxns.forEach(function(t){ html += txnLine(t, col, ''); });
     html += '</div>';
@@ -1245,6 +1262,33 @@ function runSearch() {
 
   el.innerHTML = html;
 }
+
+function exportOverrides() {
+  var keys = Object.keys(CAT_OVERRIDES);
+  if(!keys.length) { alert('No category edits to export.'); return; }
+  var data = JSON.stringify(CAT_OVERRIDES, null, 2);
+  // Copy to clipboard
+  navigator.clipboard.writeText(data).then(function() {
+    alert('✅ ' + keys.length + ' category edits copied to clipboard!\n\nPaste this somewhere safe. To restore, use Settings → Import edits.');
+  }).catch(function() {
+    // Fallback: show in prompt
+    prompt('Copy these category edits (Ctrl+A, Ctrl+C):', data);
+  });
+}
+
+function importOverrides(json) {
+  try {
+    var parsed = JSON.parse(json || '{}');
+    var count = Object.keys(parsed).length;
+    if(!count) { alert('No edits found in that data.'); return; }
+    Object.assign(CAT_OVERRIDES, parsed);
+    saveOverrides();
+    D = applyOverrides(JSON.parse(JSON.stringify(_rawD)));
+    render();
+    alert('✅ Imported ' + count + ' category edits!');
+  } catch(e) { alert('Invalid format: ' + e.message); }
+}
+
 
 function loadData() {
   fetch('https://raw.githubusercontent.com/VIMALZ1312/ledgr-realtime-app/main/data.json?t=' + Date.now())
