@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<link rel="apple-touch-icon" href="./icon-180.png">
+<link rel="icon" type="image/svg+xml" href="./icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="LEDGR">
+<meta name="theme-color" content="#060608">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>LEDGR</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+[data-theme="dark"]{--bg:#060608;--surface:#0e0e14;--card:#13131c;--s2:#1a1a26;--s3:#202030;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.04);--text:#e8e8f0;--muted:#60607a;--muted2:#38384a;--modal-bg:rgba(0,0,0,0.8);--modal-card:#13131c;--green:#00d084;--red:#ff4060;--yellow:#f5c518;--blue:#4da8ff;--orange:#ff8c42;--purple:#a78bfa;--accent:#c8f060;}
+[data-theme="light"]{--bg:#f5f5f0;--surface:#fff;--card:#fff;--s2:#f0f0ec;--s3:#e8e8e4;--border:rgba(0,0,0,0.09);--border2:rgba(0,0,0,0.05);--text:#111118;--muted:#6b6b80;--muted2:#c0c0cc;--modal-bg:rgba(0,0,0,0.45);--modal-card:#fff;--green:#007a40;--red:#cc1033;--yellow:#b8860b;--blue:#1a6bc4;--orange:#c05a10;--purple:#6d28d9;--accent:#2d7a00;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;font-size:15px;line-height:1.5;min-height:100vh;}
+.shell{display:flex;min-height:100vh;}
+.sidebar{width:200px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto;}
+.logo{padding:20px 18px 16px;border-bottom:1px solid var(--border);}
+.logo-mark{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:18px;letter-spacing:2px;}
+.logo-mark span{color:var(--green);}
+.logo-sub{font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-top:3px;}
+.dot{display:inline-block;width:6px;height:6px;background:var(--green);border-radius:50%;margin-right:5px;animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.2;}}
+.nav{padding:10px 0;flex:1;}
+.nav-item{display:flex;align-items:center;gap:10px;padding:10px 18px;font-size:13px;color:var(--muted);cursor:pointer;border-left:2px solid transparent;transition:all .12s;}
+.nav-item:hover{color:var(--text);background:var(--s2);}
+.nav-item.active{color:var(--text);border-left-color:var(--green);background:var(--s2);font-weight:500;}
+.sidebar-foot{padding:14px 18px;border-top:1px solid var(--border);}
+.btn-sync{width:100%;padding:9px;background:var(--green);color:#000;border:none;border-radius:5px;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:600;cursor:pointer;margin-bottom:6px;}
+.btn-sync:disabled{opacity:.5;}
+.btn-sec{width:100%;padding:8px;background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:5px;font-family:'IBM Plex Mono',monospace;font-size:11px;cursor:pointer;margin-bottom:4px;}
+.synced-at{font-size:10px;color:var(--muted2);margin-top:4px;font-family:'IBM Plex Mono',monospace;}
+.topbar{display:none;position:sticky;top:0;z-index:200;height:52px;background:var(--surface);border-bottom:1px solid var(--border);align-items:center;padding:0 14px;gap:10px;}
+.t-logo{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:17px;letter-spacing:2px;flex:1;}
+.t-logo span{color:var(--green);}
+.t-btn{background:var(--s2);border:1px solid var(--border);border-radius:18px;padding:5px 11px;font-size:14px;cursor:pointer;color:var(--text);}
+.hamburger{background:none;border:none;color:var(--text);font-size:22px;cursor:pointer;}
+.bottom-tabs{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:var(--surface);border-top:1px solid var(--border);padding:6px 0;}
+.btabs{display:flex;}
+.btab{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 4px;font-size:10px;color:var(--muted);cursor:pointer;border:none;background:none;}
+.btab.active{color:var(--green);}
+.btab-icon{font-size:18px;}
+.overlay{display:none;position:fixed;inset:0;z-index:300;background:rgba(0,0,0,0.6);}
+.overlay.open{display:block;}
+.drawer{position:fixed;top:0;left:-100%;bottom:0;z-index:400;width:220px;background:var(--surface);border-right:1px solid var(--border);transition:left .2s;overflow-y:auto;display:flex;flex-direction:column;}
+.drawer.open{left:0;}
+.drawer-x{background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;padding:14px 16px;text-align:right;display:block;width:100%;}
+.main{flex:1;min-width:0;padding:20px 24px 80px;}
+.modal-bg{display:none;position:fixed;inset:0;z-index:500;background:var(--modal-bg);backdrop-filter:blur(4px);}
+.modal-bg.open{display:flex;align-items:flex-end;justify-content:center;}
+.modal-card{background:var(--modal-card);border-radius:18px 18px 0 0;width:100%;max-width:540px;padding:20px;max-height:82vh;overflow-y:auto;position:relative;}
+.modal-x{position:absolute;top:16px;right:18px;background:none;border:none;color:var(--muted);font-size:22px;cursor:pointer;}
+.modal-title{font-size:17px;font-weight:600;margin-bottom:3px;}
+.modal-sub{font-size:12px;color:var(--muted);margin-bottom:14px;font-family:'IBM Plex Mono',monospace;}
+.panel{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:14px;}
+.panel-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:14px;}
+.panel-title{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
+.panel-action{font-size:11px;color:var(--muted);font-family:'IBM Plex Mono',monospace;}
+.kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px;}
+.kpi{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;cursor:pointer;}
+.kpi:hover{background:var(--s2);}
+.kpi-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.kpi-val{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:500;line-height:1;}
+.kpi-sub{font-size:11px;color:var(--muted);margin-top:5px;}
+.row{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border2);}
+.row:last-child{border-bottom:none;}
+.row-label{font-size:13px;}
+.row-sub{font-size:11px;color:var(--muted);margin-top:1px;}
+.row-amt{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:500;}
+.expandable{cursor:pointer;}
+.expandable:hover{background:var(--s2);margin:0 -4px;padding-left:4px;padding-right:4px;border-radius:6px;}
+.expand-body{display:none;border-top:1px solid var(--border2);margin-top:4px;padding-top:4px;}
+.expand-body.open{display:block;}
+.cat-bar-row{display:flex;align-items:center;gap:10px;padding:6px 0;}
+.cat-bar-label{font-size:13px;width:110px;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.cat-bar-track{flex:1;height:6px;background:var(--s3);border-radius:3px;overflow:hidden;}
+.cat-bar-fill{height:100%;border-radius:3px;}
+.cat-bar-amt{font-family:'IBM Plex Mono',monospace;font-size:12px;width:66px;text-align:right;flex-shrink:0;}
+.chart-wrap{position:relative;height:200px;margin-bottom:4px;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.chip{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:20px;font-size:12px;background:var(--s2);border:1px solid var(--border);margin:3px;}
+.edit-btn{font-size:11px;color:var(--muted2);cursor:pointer;flex-shrink:0;padding:0 2px;background:none;border:none;}
+.edit-btn:hover{color:var(--muted);}
+.edited-badge{font-size:10px;color:var(--yellow);margin-left:4px;}
+@media(max-width:700px){
+  .sidebar{display:none;}
+  .topbar{display:flex;}
+  .bottom-tabs{display:block;}
+  .main{padding:14px 14px 80px;}
+  .two-col{grid-template-columns:1fr;}
+  .kpi-row{grid-template-columns:1fr 1fr;}
+  .kpi-val{font-size:18px;}
+}
+</style>
+</head>
+<body>
+<div class="overlay" id="overlay" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <button class="drawer-x" onclick="closeDrawer()">x</button>
+  <div class="logo" style="padding:14px 18px 12px"><div class="logo-mark">LED<span>GR</span></div></div>
+  <div class="nav" id="drawer-nav"></div>
+</div>
+<div class="modal-bg" id="modal" onclick="closeModal(event)">
+  <div class="modal-card">
+    <button class="modal-x" onclick="document.getElementById('modal').classList.remove('open')">x</button>
+    <div class="modal-title" id="modal-title"></div>
+    <div class="modal-sub" id="modal-sub"></div>
+    <div id="modal-body"></div>
+  </div>
+</div>
+<div class="shell">
+  <div class="sidebar">
+    <div class="logo">
+      <div class="logo-mark">LED<span>GR</span></div>
+      <div class="logo-sub"><span class="dot"></span>Live via Plaid</div>
+    </div>
+    <div class="nav" id="sidebar-nav"></div>
+    <div class="sidebar-foot">
+      <button class="btn-sync" id="sync-btn" onclick="triggerSync()">Sync</button>
+      <button class="btn-sec theme-btn-text" onclick="toggleTheme()" id="theme-sidebar">&#9790; Night</button>
+      <button class="btn-sec" onclick="exportOverrides()" style="font-size:11px">&#128190; Export edits</button>
+      <div class="synced-at" id="synced-at">--</div>
+    </div>
+  </div>
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column;">
+    <div class="topbar">
+      <button class="hamburger" onclick="openDrawer()">&#9776;</button>
+      <div class="t-logo">LED<span>GR</span></div>
+      <button class="t-btn theme-btn-icon" onclick="toggleTheme()" id="theme-topbar">&#9790;</button>
+      <button class="t-btn" onclick="triggerSync()" id="sync-btn-top">&#9889;</button>
+    </div>
+    <div class="main" id="main-content">
+      <div style="display:flex;align-items:center;justify-content:center;height:200px;font-size:13px;color:var(--muted);font-family:'IBM Plex Mono',monospace">Loading...</div>
+    </div>
+  </div>
+</div>
+<div class="bottom-tabs"><div class="btabs" id="bottom-tabs"></div></div>
+<script>
+var D = null, TAB = 'overview';
+var BACKEND = 'https://realtimefin.replit.app';
+var _rawD = null;
+var CAT_OVERRIDES = {};
+var REFUNDED_TXNS = {}; // kept for backward compat but no longer written
+try { localStorage.removeItem('lgr_refunded'); } catch(e) {} // clear old marks
+try {
+  // Try localStorage first, fall back to sessionStorage if localStorage was wiped
+  var saved = localStorage.getItem('lgr_cat_overrides') 
+    || sessionStorage.getItem('lgr_cat_overrides_session');
+  CAT_OVERRIDES = JSON.parse(saved || '{}');
+  if(Object.keys(CAT_OVERRIDES).length) {
+    console.log('[LEDGR] Loaded', Object.keys(CAT_OVERRIDES).length, 'category overrides');
+    // Restore to localStorage if it was missing
+    if(!localStorage.getItem('lgr_cat_overrides')) localStorage.setItem('lgr_cat_overrides', saved);
+  }
+} catch(e) { console.warn('[LEDGR] Failed to load overrides:', e); }
+var ALL_CATS = ['Restaurants','Groceries','Amazon','Shopping','Gas/Travel','Kids','Entertainment','Subscription','Pharmacy','Healthcare','Insurance','Tax/Professional','Home Security','Religious','Other'];
+var HOME_ST = ['NJ','NY','CT','PA','MA','MD','DE'];
+var BILLING = ['APPLE','AMAZON','AMZN','VZWRLSS','VERIZON','SIMPLISAFE','PAYPAL','NETFLIX','SPOTIFY','HULU','ZEE5','ANTHROPIC','CLAUDE','NORD','TURBOTAX','GOOGLE','COMCAST'];
+var BANK_SHORT = {'BofA':'BOA','Wells Fargo':'WF','TD Bank':'TD','Discover':'DISC','Robinhood':'RH','wifebofa':'BOA','myrobin':'RH'};
+var CAT_COLORS = {
+  'Restaurants':'#ff8c42','Groceries':'#c8f060','Amazon':'#4da8ff','Shopping':'#a78bfa',
+  'Gas/Travel':'#67e8f9','Kids':'#60d0ff','Entertainment':'#c084fc','Subscription':'#818cf8','Subscription':'#818cf8',
+  'Pharmacy':'#34d399','Healthcare':'#10b981','Insurance':'#f5c518','Tax/Professional':'#f87171',
+  'Home Security':'#fb923c','Religious':'#e879f9','Other':'#6b6b80'
+};
+var PAGES = [
+  {id:'overview',  label:'Overview',  icon:'&#9672;'},
+  {id:'accounts',  label:'Accounts',  icon:'&#127974;'},
+  {id:'travel',    label:'Travel',    icon:'&#9992;'},
+  {id:'recurring', label:'Recurring', icon:'&#128260;'},
+  {id:'search',    label:'Search',    icon:'&#128269;'}
+];
+var _tid = 0;
+function uid() { return 'el' + (++_tid); }
+function $(id) { return document.getElementById(id); }
+function set(id, html) { var e = $(id); if(e) e.innerHTML = html; }
+function fmt(n) { return '$' + Number(n||0).toLocaleString('en-US', {maximumFractionDigits:0}); }
+function fmt2(n) { return '$' + Number(n||0).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2}); }
+function short(s) {
+  if(!s) return '';
+  return s.replace(/January /,'Jan ').replace(/February /,'Feb ').replace(/March /,'Mar ')
+    .replace(/April /,'Apr ').replace(/May /,'May ').replace(/June /,'Jun ')
+    .replace(/July /,'Jul ').replace(/August /,'Aug ').replace(/September /,'Sep ')
+    .replace(/October /,'Oct ').replace(/November /,'Nov ').replace(/December /,'Dec ')
+    .replace(' 2026',' 26').replace(' 2025',' 25');
+}
+function expand(id) { var e = $(id); if(e) e.classList.toggle('open'); }
+
+function saveOverrides() {
+  try {
+    const val = JSON.stringify(CAT_OVERRIDES);
+    localStorage.setItem('lgr_cat_overrides', val);
+    sessionStorage.setItem('lgr_cat_overrides_session', val); // session backup
+    console.log('[LEDGR] Saved overrides:', Object.keys(CAT_OVERRIDES).length, 'edits');
+  } catch(e) { console.warn('[LEDGR] Failed to save overrides:', e); }
+}
+function isRefunded(date, desc, amount) {
+  return !!REFUNDED_TXNS[desc]; // desc-only key (kept for backward compat)
+}
+
+function applyOverrides(data) {
+  if(!data || !data.monthly_spending) return data;
+  var msp = data.monthly_spending;
+  Object.keys(msp).forEach(function(p) {
+    var v = msp[p];
+    (v.transactions || []).forEach(function(t) {
+      // Key is desc only — applies GLOBALLY across all months and amounts
+      var override = CAT_OVERRIDES[t.desc];
+      if(override && override !== t.category) {
+        v.categories[t.category] = (v.categories[t.category] || 0) - t.amount;
+        if(v.categories[t.category] <= 0) delete v.categories[t.category];
+        v.categories[override] = (v.categories[override] || 0) + t.amount;
+        t.category = override;
+      }
+    });
+  });
+  return data;
+}
+
+function setCat(desc, cat) {
+  if(cat === null) { delete CAT_OVERRIDES[desc]; }
+  else { CAT_OVERRIDES[desc] = cat; }
+  saveOverrides();
+  // Verify it was actually saved
+  try {
+    var check = JSON.parse(localStorage.getItem('lgr_cat_overrides') || '{}');
+    if(cat && !check[desc]) console.error('[LEDGR] Override NOT saved for:', desc);
+    else console.log('[LEDGR] Override confirmed saved. Total:', Object.keys(check).length);
+  } catch(e) {}
+  D = applyOverrides(JSON.parse(JSON.stringify(_rawD)));
+  $('modal').classList.remove('open');
+  render();
+}
+
+function editCat(desc, amount, currentCat) {
+  // Key is desc only — change applies to ALL transactions with same name globally
+  var descEsc = desc.replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/"/g,'&quot;');
+  var curCat = CAT_OVERRIDES[desc] || currentCat;
+  var b = '<div style="font-size:13px;color:var(--muted);margin-bottom:6px;word-break:break-word">' + desc + '</div>';
+  b += '<div style="font-size:11px;color:var(--yellow);margin-bottom:12px">Applies globally to all \'' + desc + '\' transactions</div>';
+  b += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px">';
+  var allCatsNow = ALL_CATS.slice();
+  // Add any custom categories from overrides
+  Object.values(CAT_OVERRIDES).forEach(function(cat) {
+    if(allCatsNow.indexOf(cat) < 0) allCatsNow.push(cat);
+  });
+  allCatsNow.forEach(function(cat) {
+    var col = CAT_COLORS[cat] || '#a78bfa';
+    var active = cat === curCat;
+    var catEsc = cat.replace(/'/g,"\\'");
+    b += '<div onclick="setCat(\'' + descEsc + '\',\'' + catEsc + '\')" style="padding:9px 12px;border-radius:8px;border:1px solid ' + (active ? col : 'var(--border)') + ';background:' + (active ? col + '22' : 'var(--s2)') + ';cursor:pointer;font-size:13px;color:' + (active ? col : 'var(--muted)') + ';font-weight:' + (active ? '600' : '400') + '">' + cat + '</div>';
+  });
+  b += '</div>';
+  // Custom category input
+  b += '<div style="display:flex;gap:8px;margin-bottom:10px">';
+  b += '<input id="custom-cat-input" placeholder="New category name..." style="flex:1;padding:8px 10px;background:var(--s2);border:1px solid var(--border);border-radius:6px;color:var(--text);font-family:IBM Plex Mono,monospace;font-size:12px">';
+  b += '<button onclick="addCustomCat(\'' + descEsc + '\')" style="padding:8px 14px;background:var(--green);color:#000;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer">Add</button>';
+  b += '</div>';
+  if(CAT_OVERRIDES[desc]) {
+    b += '<button onclick="setCat(\'' + descEsc + '\',null)" style="font-size:12px;padding:6px 14px;border-radius:6px;border:1px solid var(--border);background:var(--s2);color:var(--muted);cursor:pointer">Reset to original</button>';
+  }
+  openModal('Recategorize', 'Global — affects all months', b);
+}
+
+function addCustomCat(desc) {
+  var input = document.getElementById('custom-cat-input');
+  var val = input ? input.value.trim() : '';
+  if(!val) return;
+  // Capitalize first letter of each word
+  val = val.replace(/\b\w/g, function(c){return c.toUpperCase();});
+  setCat(desc, val);
+}
+
+function txnLine(t, col, extraStyle) {
+  var isEdited = !!CAT_OVERRIDES[t.desc];
+  var isRefund = t.amount < 0;
+  var effectiveCol = isRefund ? 'var(--green)' : col;
+  var style = 'display:flex;align-items:baseline;gap:8px;padding:6px 0;border-bottom:1px solid var(--border2);font-size:12px;' + (extraStyle || '');
+  var bankLabel = '';
+  if (t.bank) {
+    var bankShort = BANK_SHORT[t.bank] || t.bank.substring(0,4).toUpperCase();
+    bankLabel = '<span style="font-size:9px;font-family:IBM Plex Mono,monospace;color:var(--muted2);background:var(--s2);border-radius:3px;padding:1px 4px;flex-shrink:0;margin-right:2px">' + bankShort + '</span>';
+  }
+  if (t.mask) {
+    bankLabel += '<span style="font-size:9px;font-family:IBM Plex Mono,monospace;color:var(--muted2);background:var(--s2);border-radius:3px;padding:1px 4px;flex-shrink:0;margin-right:2px">••' + t.mask + '</span>';
+  }
+  var refundBadge = isRefund ? '<span style="font-size:9px;color:var(--green);background:rgba(0,208,132,0.15);border-radius:3px;padding:1px 5px;margin-left:4px;font-weight:600">+REFUND</span>' : '';
+  var pendingBadge = t.pending ? '<span style="font-size:9px;color:var(--yellow);margin-left:3px">⏳</span>' : '';
+  // Encode desc safely for inline onclick attribute
+  var descEsc = t.desc.replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/"/g,'&quot;');
+  var catEsc = (CAT_OVERRIDES[t.desc] || t.category || 'Other').replace(/'/g,"\\'");
+  var html = '<div style="' + style + (t.pending ? 'opacity:0.75;' : '') + '">';
+  html += '<span style="font-family:IBM Plex Mono,monospace;color:var(--muted);width:40px;flex-shrink:0">' + (t.date || '') + '</span>';
+  html += bankLabel;
+  html += '<span style="flex:1;word-break:break-word;line-height:1.4;color:var(--muted)">' + t.desc + refundBadge + pendingBadge + (isEdited ? '<span class="edited-badge">*</span>' : '') + '</span>';
+  html += '<span style="font-family:IBM Plex Mono,monospace;color:' + effectiveCol + ';white-space:nowrap;margin-right:6px">' + (isRefund ? '+' : '') + fmt2(Math.abs(t.amount)) + '</span>';
+  // Refund toggle button
+  var dateEsc = (t.date||'').replace(/'/g,"\'");
+  // refund button removed — server now provides negative transactions for auto-matching
+  html += '<button class="edit-btn" onclick="editCat(\'' + descEsc + '\',' + t.amount + ',\'' + catEsc + '\')">&#9998;</button>';
+  html += '</div>';
+  return html;
+}
+
+function buildMonthlyCats(ms, period) {
+  var v = ms[period];
+  if (!v) return '<div style="color:var(--muted);font-size:13px;padding:8px 0">No data.</div>';
+  var cats = Object.entries(v.categories || {}).sort(function(a,b){return b[1]-a[1];});
+  var maxCat = cats.length ? cats[0][1] : 1;
+  var html = '';
+  cats.forEach(function(e, ci) {
+    var col = CAT_COLORS[e[0]] || '#6b6b80';
+    var pct = Math.round(e[1] / maxCat * 100);
+    var txns = (v.transactions || []).filter(function(t){ return t.category === e[0]; }).sort(function(a,b){return b.date.localeCompare(a.date);});
+    var cid = 'mc_' + period + '_' + ci;
+    html += '<div>';
+    html += '<div class="cat-bar-row expandable" onclick="expand(\'' + cid + '\')">';
+    html += '<div class="cat-bar-label" style="color:' + col + '">' + e[0] + '</div>';
+    html += '<div class="cat-bar-track"><div class="cat-bar-fill" style="width:' + pct + '%;background:' + col + '"></div></div>';
+    html += '<div class="cat-bar-amt" style="color:' + col + '">' + fmt(e[1]) + '</div>';
+    html += '</div>';
+    html += '<div id="' + cid + '" class="expand-body">';
+    txns.forEach(function(t){ html += txnLine(t, col, ''); });
+    html += '</div></div>';
+  });
+  return html;
+}
+
+function selectMonth(period) {
+  var ms = D.monthly_spending || {};
+  var periods = Object.keys(ms).sort().reverse();
+  // Update tab styles
+  periods.forEach(function(p) {
+    var tab = $('mtab_' + p);
+    if (!tab) return;
+    var isActive = p === period;
+    tab.style.borderColor = isActive ? 'var(--green)' : 'var(--border)';
+    tab.style.background = isActive ? 'rgba(0,208,132,0.12)' : 'var(--s2)';
+    tab.style.color = isActive ? 'var(--green)' : 'var(--muted)';
+  });
+  // Update category bars
+  var el = $('monthly-cats');
+  if (el) el.innerHTML = buildMonthlyCats(ms, period);
+  // Update total in panel head
+  var v = ms[period];
+  var actionEl = el ? el.closest('.panel') : null;
+  if (actionEl) {
+    var action = actionEl.querySelector('.panel-action');
+    if (action) action.textContent = fmt(v ? v.total : 0);
+  }
+}
+
+function buildNav() {
+  var html = '';
+  PAGES.forEach(function(p) {
+    html += '<div class="nav-item' + (p.id === TAB ? ' active' : '') + '" onclick="switchTab(\'' + p.id + '\')">';
+    html += '<span class="nav-icon">' + p.icon + '</span>' + p.label + '</div>';
+  });
+  set('sidebar-nav', html);
+  set('drawer-nav', html);
+  set('bottom-tabs', PAGES.map(function(p) {
+    return '<button class="btab' + (p.id === TAB ? ' active' : '') + '" onclick="switchTab(\'' + p.id + '\')">'
+      + '<span class="btab-icon">' + p.icon + '</span>' + p.label + '</button>';
+  }).join(''));
+}
+
+function switchTab(id) { TAB = id; buildNav(); render(); }
+function openDrawer() { $('drawer').classList.add('open'); $('overlay').classList.add('open'); }
+function closeDrawer() { $('drawer').classList.remove('open'); $('overlay').classList.remove('open'); }
+function openModal(title, sub, body) { set('modal-title', title); set('modal-sub', sub); set('modal-body', body); $('modal').classList.add('open'); }
+function closeModal(e) { if(e.target === $('modal')) $('modal').classList.remove('open'); }
+function toggleTheme() {
+  var t = document.documentElement.getAttribute('data-theme');
+  var next = t === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('lgr-theme', next);
+  var sb = document.getElementById('theme-sidebar');
+  var tb = document.getElementById('theme-topbar');
+  if(sb) sb.innerHTML = next === 'dark' ? '&#9728; Day' : '&#9790; Night';
+  if(tb) tb.innerHTML = next === 'dark' ? '&#9728;' : '&#9790;';
+  if(_chartInst) { _chartInst.destroy(); _chartInst = null; }
+  render();
+}
+(function() {
+  var t = localStorage.getItem('lgr-theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-theme', t);
+})();
+
+function render() {
+  if(!D) { set('main-content', '<div style="display:flex;align-items:center;justify-content:center;height:200px;font-size:13px;color:var(--muted);font-family:IBM Plex Mono,monospace">No data. Tap Sync.</div>'); return; }
+  _tid = 0;
+  if(TAB === 'overview') renderOverview();
+  else if(TAB === 'accounts') renderAccounts();
+  else if(TAB === 'travel') renderTravel();
+  else if(TAB === 'recurring') renderRecurring();
+  else if(TAB === 'search') renderSearch();
+}
+
+var _chartInst = null;
+
+function renderOverview() {
+  var ms = D.monthly_spending || {};
+  var mh = D.monthly_history || [];
+  var periods = Object.keys(ms).sort();
+  var latest = periods[periods.length - 1] || '';
+  var latestV = ms[latest] || {transactions:[], categories:{}, total:0, label:''};
+  var nw = D.net_worth || {};
+  var allAccts = D.all_accounts || [];
+  // Always compute from all_accounts — server value excludes wifebofa/myrobin
+  var checkingBal = allAccts.filter(function(a){return !a.is_credit;}).reduce(function(s,a){return s+a.balance;},0);
+  var creditBal = allAccts.filter(function(a){return a.is_credit&&a.balance>0;}).reduce(function(s,a){return s+a.balance;},0);
+  var netWorth = checkingBal - creditBal;
+
+  var html = '<div class="kpi-row">';
+  html += mkKpi('NET WORTH', fmt(netWorth), netWorth >= 0 ? 'var(--green)' : 'var(--red)', 'tap for breakdown', 'showNetWorth()');
+  html += mkKpi('CHECKING', fmt(checkingBal), 'var(--blue)', 'savings + brokerage', 'showChecking()');
+  html += mkKpi('CREDIT OWED', fmt(creditBal), 'var(--red)', 'cards balance', 'showCredit()');
+  html += '</div>';
+
+  // Chart data embedded in data attributes
+  var chartLabels = JSON.stringify(periods.map(function(p){ return short(ms[p].label); }));
+  var chartSpends = JSON.stringify(periods.map(function(p){ return ms[p].total || 0; }));
+  var chartIncomes = JSON.stringify(periods.map(function(p){
+    var entry = mh.find(function(m){ return m.period === p; });
+    return entry ? Number(entry.income) || 0 : 0;
+  }));
+  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Monthly Cash Flow</div><div class="panel-action">' + short(latestV.label) + '</div></div>';
+  html += '<div class="chart-wrap"><canvas id="cfChart" data-l=\'' + chartLabels + '\' data-s=\'' + chartSpends + '\' data-i=\'' + chartIncomes + '\'></canvas></div></div>';
+
+  // Pending transactions panel
+  var pending = D.pending_transactions || [];
+  if (pending.length) {
+    html += '<div class="panel" style="border-color:rgba(245,197,24,0.3);background:rgba(245,197,24,0.04)">';
+    html += '<div class="panel-head"><div class="panel-title" style="color:var(--yellow)">⏳ Pending · Not Yet Settled</div>';
+    html += '<div class="panel-action" style="color:var(--yellow)">' + pending.length + ' transactions</div></div>';
+    pending.forEach(function(t) {
+      var col = CAT_COLORS[t.category] || '#6b6b80';
+      var bankShort = {'BofA':'BOA','Wells Fargo':'WF','TD Bank':'TD','Discover':'DISC','Robinhood':'RH'}[t.bank] || (t.bank||'').substring(0,4).toUpperCase();
+      html += '<div style="display:flex;align-items:baseline;gap:8px;padding:6px 0;border-bottom:1px solid var(--border2);font-size:12px;opacity:0.8">';
+      html += '<span style="font-family:IBM Plex Mono,monospace;color:var(--yellow);font-size:10px;width:40px;flex-shrink:0">PEND</span>';
+      if(bankShort) html += '<span style="font-size:9px;font-family:IBM Plex Mono,monospace;color:var(--muted2);background:var(--s2);border-radius:3px;padding:1px 4px;flex-shrink:0">' + bankShort + '</span>';
+      html += '<span style="flex:1;word-break:break-word;line-height:1.4;color:var(--muted)">' + t.desc + '</span>';
+      html += '<span style="font-size:10px;color:'+col+';margin-right:6px">' + t.category + '</span>';
+      html += '<span style="font-family:IBM Plex Mono,monospace;color:var(--yellow);white-space:nowrap">' + fmt2(t.amount) + '</span>';
+      html += '</div>';
+    });
+    html += '<div style="font-size:10px;color:var(--muted);padding:6px 0 2px">These will appear in spending once settled (1-2 days)</div>';
+    html += '</div>';
+  }
+
+  html += '<div class="two-col">';
+
+  // Monthly Spend — compact table: categories as rows, months as columns
+  var allCats2 = {};
+  periods.forEach(function(p) {
+    Object.keys(ms[p].categories||{}).forEach(function(cat){ allCats2[cat]=true; });
+  });
+  var catList = Object.keys(allCats2).sort(function(a,b){
+    var ta=periods.reduce(function(s,p){return s+(ms[p].categories[a]||0);},0);
+    var tb=periods.reduce(function(s,p){return s+(ms[p].categories[b]||0);},0);
+    return tb-ta;
+  });
+  var colPeriods = periods.slice().reverse(); // newest first as columns
+  var grandTotal = periods.reduce(function(s,p){return s+(ms[p].total||0);},0);
+
+  html += '<div class="panel" style="overflow-x:auto">';
+  html += '<div class="panel-head"><div class="panel-title">Monthly Spend</div><div class="panel-action">'+fmt(grandTotal)+' total</div></div>';
+  html += '<table style="width:100%;border-collapse:collapse;font-size:12px">';
+
+  // Header row
+  html += '<thead><tr>';
+  html += '<th style="text-align:left;padding:5px 6px;font-size:10px;letter-spacing:1px;color:var(--muted);border-bottom:1px solid var(--border);font-weight:500;white-space:nowrap">Category</th>';
+  colPeriods.forEach(function(p){
+    html += '<th style="text-align:right;padding:5px 6px;font-size:10px;letter-spacing:1px;color:var(--muted);border-bottom:1px solid var(--border);font-weight:500;white-space:nowrap">'+short(ms[p].label)+'</th>';
+  });
+  html += '<th style="text-align:right;padding:5px 6px;font-size:10px;letter-spacing:1px;color:var(--muted);border-bottom:1px solid var(--border);font-weight:500">Total</th>';
+  html += '</tr></thead><tbody>';
+
+  // Store txns for modal access
+  window._msTxns = window._msTxns || {};
+
+  catList.forEach(function(cat) {
+    var col = CAT_COLORS[cat] || '#6b6b80';
+    var rowTotal = periods.reduce(function(s,p){return s+(ms[p].categories[cat]||0);},0);
+    if(!rowTotal) return;
+
+    // Store all txns for this category
+    var allCatTxns = [];
+    periods.forEach(function(p){
+      (ms[p].transactions||[]).filter(function(t){return t.category===cat;}).forEach(function(t){ allCatTxns.push(t); });
+    });
+    allCatTxns.sort(function(a,b){return b.date.localeCompare(a.date);});
+    window._msTxns[cat] = allCatTxns;
+
+    var catEsc = cat.replace(/'/g,"\'").replace(/"/g,'&quot;');
+    var colEsc = col.replace(/'/g,"\'");
+
+    html += '<tr style="border-bottom:1px solid var(--border2)">';
+    // Category name cell - tap to see all months combined
+    html += '<td style="padding:6px 6px;font-weight:500;color:'+col+';cursor:pointer;white-space:nowrap" onclick="showStoredTxns(\'' + catEsc + '\',\'' + colEsc + '\')">';
+    html += '<span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:'+col+';margin-right:5px;vertical-align:middle"></span>'+cat;
+    html += '</td>';
+
+    // Month cells
+    colPeriods.forEach(function(p) {
+      var a = ms[p].categories[cat] || 0;
+      var key = cat + '|' + p;
+      if(a) {
+        var ptxns = (ms[p].transactions||[]).filter(function(t){return t.category===cat;});
+        window._msTxns[key] = ptxns;
+        var keyEsc = key.replace(/'/g,"\'").replace(/"/g,'&quot;');
+        var titleEsc = (cat + ' ' + short(ms[p].label)).replace(/'/g,"\'");
+        html += '<td style="padding:6px 6px;text-align:right;font-family:IBM Plex Mono,monospace;color:'+col+';cursor:pointer;white-space:nowrap" onclick="showStoredTxns(\'' + keyEsc + '\',\'' + colEsc + '\',\'' + titleEsc + '\')">' + fmt(a) + '</td>';
+      } else {
+        html += '<td style="padding:6px 6px;text-align:right;color:var(--muted2)">—</td>';
+      }
+    });
+
+    // Total cell
+    html += '<td style="padding:6px 6px;text-align:right;font-family:IBM Plex Mono,monospace;font-weight:600;color:'+col+';white-space:nowrap">'+fmt(rowTotal)+'</td>';
+    html += '</tr>';
+  });
+
+  // Totals row
+  html += '<tr style="background:var(--s2)">';
+  html += '<td style="padding:6px 6px;font-weight:600;font-size:11px;color:var(--muted)">Total</td>';
+  colPeriods.forEach(function(p){
+    html += '<td style="padding:6px 6px;text-align:right;font-family:IBM Plex Mono,monospace;font-weight:600;white-space:nowrap">'+fmt(ms[p].total||0)+'</td>';
+  });
+  html += '<td style="padding:6px 6px;text-align:right;font-family:IBM Plex Mono,monospace;font-weight:700">'+fmt(grandTotal)+'</td>';
+  html += '</tr></tbody></table></div>';
+
+  html += '</div>';
+
+  // Recent transactions
+  var allTxns = [];
+  periods.slice().reverse().forEach(function(p){ (ms[p].transactions||[]).forEach(function(t){ allTxns.push({period:p,t:t}); }); });
+  allTxns.sort(function(a,b){ return (b.period+b.t.date).localeCompare(a.period+a.t.date); });
+  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Recent Transactions</div></div>';
+  allTxns.slice(0,10).forEach(function(item) {
+    var t = item.t;
+    var col = CAT_COLORS[t.category] || '#6b6b80';
+    html += txnLine(t, col, '');
+  });
+  html += '</div>';
+  html += '</div>';
+
+  set('main-content', html);
+
+  setTimeout(function() {
+    var ctx = $('cfChart');
+    if(!ctx) return;
+    if(_chartInst) { _chartInst.destroy(); _chartInst = null; }
+    var labels = JSON.parse(ctx.getAttribute('data-l') || '[]');
+    var spends = JSON.parse(ctx.getAttribute('data-s') || '[]');
+    var incomes = JSON.parse(ctx.getAttribute('data-i') || '[]');
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    var gridCol = isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.06)';
+    var textCol = isDark ? '#60607a' : '#9ca3af';
+    var datasets = [
+      {label:'Spending', data:spends, borderColor:'#ff4060', backgroundColor:'rgba(255,64,96,0.08)', tension:.35, pointRadius:5, fill:true, borderWidth:2}
+    ];
+    var hasIncome = incomes.some(function(v){ return v > 0; });
+    if(hasIncome) {
+      datasets.push({label:'Income', data:incomes, borderColor:'#00d084', backgroundColor:'rgba(0,208,132,0.08)', tension:.35, pointRadius:5, fill:true, borderWidth:2});
+    }
+    _chartInst = new Chart(ctx, {
+      type: 'line',
+      data: {labels: labels, datasets: datasets},
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: {position:'top', labels:{font:{family:'IBM Plex Mono',size:11}, color:textCol, boxWidth:12, padding:16}},
+          tooltip: {callbacks:{label:function(c){return ' '+c.dataset.label+': '+fmt2(c.raw);}}}
+        },
+        scales: {
+          x: {grid:{color:gridCol}, ticks:{font:{family:'IBM Plex Mono',size:11}, color:textCol}},
+          y: {grid:{color:gridCol}, ticks:{font:{family:'IBM Plex Mono',size:11}, color:textCol, callback:function(v){return '$'+Number(v/1000).toFixed(0)+'k';}}}
+        }
+      }
+    });
+  }, 80);
+}
+
+function mkKpi(lbl, val, col, sub, fn) {
+  return '<div class="kpi" onclick="' + fn + '"><div class="kpi-label">' + lbl + '</div><div class="kpi-val" style="color:' + col + '">' + val + '</div><div class="kpi-sub">' + sub + ' &rsaquo;</div></div>';
+}
+function acctLine(a) {
+  var col = a.is_credit && a.balance > 0 ? 'var(--red)' : 'var(--green)';
+  var sign = a.is_credit && a.balance > 0 ? '-' : '';
+  var name = a.name.replace(/\s*\.\.\.\d{4}/g, '').trim();
+  return '<div style="display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--border2);font-size:13px"><div><div>' + name + ' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted)">xx' + a.mask + '</span></div><div style="font-size:11px;color:var(--muted)">' + a.bank + ' ' + a.subtype + '</div></div><div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:' + col + '">' + sign + fmt2(Math.abs(a.balance)) + '</div></div>';
+}
+function showStoredTxns(key, col, title) {
+  var txns = (window._msTxns && window._msTxns[key]) || [];
+  var t = title || key.split('|')[0];
+  showTxns(t, txns, col);
+}
+
+function showTxns(title, txns, col) {
+  if(!txns || !txns.length) { openModal(title, 'No transactions', '<div style="color:var(--muted);font-size:13px;padding:12px 0">No transactions found.</div>'); return; }
+  var total = txns.reduce(function(s,t){return s+(t.amount||0);},0);
+  var sorted = txns.slice().sort(function(a,b){return ((b.period||'')+(b.date||'')).localeCompare((a.period||'')+(a.date||''));});
+  var b = '<div style="font-family:IBM Plex Mono,monospace;font-size:18px;color:'+col+';margin-bottom:12px">'+fmt2(total)+'</div>';
+  sorted.forEach(function(t){ b += txnLine(t, col, ''); });
+  openModal(title, sorted.length+' transactions', b);
+}
+
+function showNetWorth() {
+  var a = D.all_accounts || [];
+  var b = '<div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px">ASSETS</div>';
+  a.filter(function(x){return !x.is_credit;}).forEach(function(x){b += acctLine(x);});
+  b += '<div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin:12px 0 8px">CREDIT CARDS OWED</div>';
+  a.filter(function(x){return x.is_credit && x.balance > 0;}).forEach(function(x){b += acctLine(x);});
+  openModal('Net Worth', 'All accounts', b);
+}
+function showChecking() {
+  var a = (D.all_accounts||[]).filter(function(x){return !x.is_credit;});
+  var b = '';
+  a.forEach(function(x){b += acctLine(x);});
+  openModal('Checking & Savings', 'Deposit and investment accounts', b);
+}
+function showCredit() {
+  var a = (D.all_accounts||[]).filter(function(x){return x.is_credit;});
+  var b = '';
+  a.forEach(function(x){b += acctLine(x);});
+  openModal('Credit Cards', 'Amount owed', b);
+}
+
+function renderAccounts() {
+  var allAccts = D.all_accounts || [];
+  var ms = D.monthly_spending || {};
+  var periods = Object.keys(ms).sort().reverse();
+  var last2 = periods.slice(0,2);
+  var html = '';
+  var ALIAS = {'wifebofa':'BofA','myrobin':'Robinhood','bofa':'BofA','bofa_2':'BofA'};
+
+  function normBank(b){ return ALIAS[b||''] || b || ''; }
+
+  function monthTxnsForBank(p, bank) {
+    var nb = normBank(bank);
+    var all = ms[p] ? ms[p].transactions||[] : [];
+    var hasBankField = all.some(function(t){return t.bank!=null;});
+    if(!hasBankField) return all; // fallback - show all when bank missing
+    return all.filter(function(t){ return normBank(t.bank)===nb || t.bank===bank; });
+  }
+
+  // ── CHECKING & SAVINGS ──
+  var deposits = allAccts.filter(function(a){return !a.is_credit;});
+  var bankOrder = []; deposits.forEach(function(a){if(bankOrder.indexOf(a.bank)<0)bankOrder.push(a.bank);});
+  var depTotal = deposits.reduce(function(s,a){return s+a.balance;},0);
+
+  html += '<div class="panel">';
+  html += '<div class="panel-head"><div class="panel-title">Checking & Savings</div><div class="panel-action">'+fmt2(depTotal)+'</div></div>';
+
+  bankOrder.forEach(function(bank) {
+    var ba = deposits.filter(function(a){return a.bank===bank;});
+    var bankTotal = ba.reduce(function(s,a){return s+a.balance;},0);
+    var bid = uid();
+    html += '<div>';
+      html += '<div class="row expandable" onclick="expand(\''+bid+'\')">';
+        html += '<div><div class="row-label" style="font-weight:500">'+bank+'</div><div class="row-sub">'+ba.length+' account(s)</div></div>';
+        html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:var(--green)">'+fmt2(bankTotal)+'</div><span style="color:var(--muted)">›</span></div>';
+      html += '</div>';
+      html += '<div id="'+bid+'" class="expand-body">';
+        ba.forEach(function(a) {
+          var name = a.name.replace(/\s*\.\.\.\d{4}/g,'').trim();
+          var cid = uid();
+          html += '<div>';
+            html += '<div style="padding:7px 0 7px 14px;border-bottom:1px solid var(--border2);display:flex;justify-content:space-between;align-items:baseline;font-size:13px;cursor:pointer" onclick="expand(\''+cid+'\')">';
+              html += '<div><div>'+name+' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted);font-size:11px">••'+a.mask+'</span></div>';
+              html += '<div style="font-size:11px;color:var(--muted)">'+a.subtype+'</div></div>';
+              html += '<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:var(--green)">'+fmt2(a.balance)+'</div><span style="color:var(--muted);font-size:11px">› txns</span></div>';
+            html += '</div>';
+            html += '<div id="'+cid+'" class="expand-body">';
+              var hadData = false;
+              last2.forEach(function(p) {
+                var ptxns = monthTxnsForBank(p, bank);
+                if(!ptxns.length) return;
+                hadData = true;
+                html += '<div style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted2);padding:5px 14px 2px;background:var(--s2)">'+ms[p].label+'</div>';
+                ptxns.sort(function(a,b){return b.date.localeCompare(a.date);});
+                ptxns.forEach(function(t){ html += txnLine(t, CAT_COLORS[t.category]||'#6b6b80', 'padding-left:14px;'); });
+              });
+              if(!hadData) html += '<div style="padding:8px 14px;font-size:12px;color:var(--muted)">No transactions in last 2 months</div>';
+            html += '</div>';
+          html += '</div>';
+        });
+      html += '</div>';
+    html += '</div>';
+    html += '<div class="divider"></div>';
+  });
+  html += '</div>';
+
+  // ── SPENDING BY MONTH ──
+  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Spending by Month</div></div>';
+  periods.forEach(function(p) {
+    var v = ms[p]; var sid = uid();
+    html += '<div>';
+      html += '<div class="row expandable" onclick="expand(\''+sid+'\')">';
+        html += '<div class="row-label" style="font-weight:500">'+v.label+'</div>';
+        html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:var(--red)">'+fmt2(v.total)+'</div><span style="color:var(--muted)">›</span></div>';
+      html += '</div>';
+      html += '<div id="'+sid+'" class="expand-body">';
+        Object.entries(v.categories||{}).sort(function(a,b){return b[1]-a[1];}).forEach(function(ce) {
+          var col = CAT_COLORS[ce[0]]||'#6b6b80'; var cid = uid();
+          html += '<div style="padding:4px 0 4px 14px;border-bottom:1px solid var(--border2)">';
+            html += '<div style="display:flex;justify-content:space-between;cursor:pointer;font-size:13px;padding:3px 0" onclick="expand(\''+cid+'\')">';
+              html += '<span style="color:'+col+'">'+ce[0]+'</span>';
+              html += '<div style="display:flex;align-items:center;gap:6px"><span style="font-family:IBM Plex Mono,monospace;color:'+col+'">'+fmt2(ce[1])+'</span><span style="color:var(--muted)">›</span></div>';
+            html += '</div>';
+            html += '<div id="'+cid+'" class="expand-body">';
+              (v.transactions||[]).filter(function(t){return t.category===ce[0];}).sort(function(a,b){return b.date.localeCompare(a.date);}).forEach(function(t){ html += txnLine(t, col, 'padding-left:14px;'); });
+            html += '</div>';
+          html += '</div>';
+        });
+      html += '</div>';
+    html += '</div>';
+    html += '<div class="divider"></div>';
+  });
+  html += '</div>';
+
+  // ── CREDIT CARDS ──
+  var credits = allAccts.filter(function(a){return a.is_credit;});
+  var creditBanks = []; credits.forEach(function(a){if(creditBanks.indexOf(a.bank)<0)creditBanks.push(a.bank);});
+  var creditTotal = credits.filter(function(a){return a.balance>0;}).reduce(function(s,a){return s+a.balance;},0);
+
+  html += '<div class="panel">';
+  html += '<div class="panel-head"><div class="panel-title">Credit Cards</div><div class="panel-action" style="color:var(--red)">'+fmt2(creditTotal)+' owed</div></div>';
+
+  creditBanks.forEach(function(bank) {
+    var ba = credits.filter(function(a){return a.bank===bank;});
+    var owed = ba.filter(function(a){return a.balance>0;}).reduce(function(s,a){return s+a.balance;},0);
+    var crid = uid();
+    html += '<div>';
+      html += '<div class="row expandable" onclick="expand(\''+crid+'\')">';
+        html += '<div><div class="row-label" style="font-weight:500">'+bank+'</div><div class="row-sub">'+ba.length+' card(s)</div></div>';
+        html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:'+(owed>0?'var(--red)':'var(--green)')+'">'+fmt2(owed)+'</div><span style="color:var(--muted)">›</span></div>';
+      html += '</div>';
+      html += '<div id="'+crid+'" class="expand-body">';
+        ba.forEach(function(a) {
+          var name = a.name.replace(/\s*\.\.\.\d{4}/g,'').trim();
+          var col = a.balance>0?'var(--red)':'var(--green)';
+          var sign = a.balance>0?'-':'';
+          var caid = uid();
+          html += '<div>';
+            html += '<div style="padding:7px 0 7px 14px;border-bottom:1px solid var(--border2);display:flex;justify-content:space-between;align-items:baseline;font-size:13px;cursor:pointer" onclick="expand(\''+caid+'\')">';
+              html += '<div><div>'+name+' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted);font-size:11px">••'+a.mask+'</span></div>';
+              html += '<div style="font-size:11px;color:var(--muted)">'+a.subtype+'</div></div>';
+              html += '<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:'+col+'">'+sign+fmt2(Math.abs(a.balance))+'</div><span style="color:var(--muted);font-size:11px">› txns</span></div>';
+            html += '</div>';
+            html += '<div id="'+caid+'" class="expand-body">';
+              var hadCC = false;
+              last2.forEach(function(p) {
+                var ptxns = monthTxnsForBank(p, bank);
+                if(!ptxns.length) return;
+                hadCC = true;
+                html += '<div style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted2);padding:5px 14px 2px;background:var(--s2)">'+ms[p].label+'</div>';
+                ptxns.sort(function(a,b){return b.date.localeCompare(a.date);});
+                ptxns.forEach(function(t){ html += txnLine(t, CAT_COLORS[t.category]||'#6b6b80', 'padding-left:14px;'); });
+              });
+              if(!hadCC) html += '<div style="padding:8px 14px;font-size:12px;color:var(--muted)">No transactions in last 2 months</div>';
+            html += '</div>';
+          html += '</div>';
+        });
+      html += '</div>';
+    html += '</div>';
+    html += '<div class="divider"></div>';
+  });
+  html += '</div>';
+
+  set('main-content', html);
+}
+
+function renderTravel() {
+  var raw = (D.travel || []).filter(function(t) {
+    return t.state && HOME_ST.indexOf(t.state) < 0 && !BILLING.some(function(b){ return (t.desc||'').toUpperCase().indexOf(b) >= 0; });
+  });
+  if(!raw.length) { set('main-content', '<div class="panel" style="color:var(--muted);font-size:13px;padding:20px">No travel transactions found.</div>'); return; }
+  raw.sort(function(a,b){ return ((b.period||'')+(b.date||'')).localeCompare((a.period||'')+(a.date||'')); });
+
+  var byState = {};
+  raw.forEach(function(t) {
+    var st = t.state;
+    if(!byState[st]) byState[st] = {total:0, months:{}, online:[]};
+    byState[st].total += t.amount;
+    if(t.city) {
+      if(!byState[st].months[t.period_label]) byState[st].months[t.period_label] = {cities:{}, total:0};
+      if(!byState[st].months[t.period_label].cities[t.city]) byState[st].months[t.period_label].cities[t.city] = {txns:[], total:0};
+      byState[st].months[t.period_label].cities[t.city].txns.push(t);
+      byState[st].months[t.period_label].cities[t.city].total += t.amount;
+      byState[st].months[t.period_label].total += t.amount;
+    } else {
+      byState[st].online.push(t);
+    }
+  });
+
+  var states = Object.keys(byState).sort(function(a,b){ return byState[b].total-byState[a].total; });
+  var grand = raw.reduce(function(s,t){ return s+t.amount; }, 0);
+
+  var html = '<div class="panel"><div class="panel-head"><div class="panel-title">Travel & Vacation</div><div class="panel-action">' + states.length + ' states ' + fmt(grand) + '</div></div>';
+  html += '<div style="margin-bottom:12px">';
+  states.forEach(function(st) {
+    html += '<span class="chip">' + st + ' <span style="font-family:IBM Plex Mono,monospace;font-size:11px">' + fmt(byState[st].total) + '</span></span>';
+  });
+  html += '</div></div>';
+
+  states.forEach(function(st) {
+    var sv = byState[st];
+    var months = Object.keys(sv.months).join(', ');
+    var sid = uid();
+    html += '<div style="background:var(--s2);border-radius:10px;padding:14px;margin-bottom:10px">';
+    html += '<div style="display:flex;align-items:center;gap:10px;cursor:pointer" onclick="expand(\'' + sid + '\')">';
+    html += '<div style="font-family:IBM Plex Mono,monospace;font-size:22px;font-weight:600;color:var(--yellow);width:42px">' + st + '</div>';
+    html += '<div style="flex:1"><div style="font-size:15px;font-weight:600">' + (ST_NAMES[st]||st) + '</div><div style="font-size:11px;color:var(--muted)">' + months + '</div></div>';
+    html += '<div style="font-family:IBM Plex Mono,monospace;font-size:18px;color:var(--yellow)">' + fmt(sv.total) + '</div><span style="color:var(--muted)">&rsaquo;</span></div>';
+    html += '<div id="' + sid + '" class="expand-body">';
+    Object.keys(sv.months).sort().reverse().forEach(function(mo) {
+      var mv = sv.months[mo];
+      var mid = uid();
+      html += '<div style="padding:6px 0;border-top:1px solid var(--border2)">';
+      html += '<div style="display:flex;justify-content:space-between;cursor:pointer;padding:4px 0" onclick="expand(\'' + mid + '\')">';
+      html += '<div style="font-size:13px;font-weight:500">' + mo + '</div>';
+      html += '<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-size:13px;color:var(--yellow)">' + fmt(mv.total) + '</div><span style="color:var(--muted)">&rsaquo;</span></div></div>';
+      html += '<div id="' + mid + '" class="expand-body">';
+      Object.keys(mv.cities).sort(function(a,b){ return mv.cities[b].total-mv.cities[a].total; }).forEach(function(city) {
+        var cv = mv.cities[city];
+        var cvid = uid();
+        cv.txns.sort(function(a,b){ return b.date.localeCompare(a.date); });
+        html += '<div style="padding:5px 0 5px 12px;border-top:1px solid var(--border2)">';
+        html += '<div style="display:flex;justify-content:space-between;cursor:pointer" onclick="expand(\'' + cvid + '\')">';
+        html += '<div style="font-size:13px">@ ' + city + '</div>';
+        html += '<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-size:13px;color:var(--yellow)">' + fmt(cv.total) + '</div><span style="color:var(--muted)">&rsaquo;</span></div></div>';
+        html += '<div id="' + cvid + '" class="expand-body">';
+        cv.txns.forEach(function(t){ html += txnLine(t, 'var(--yellow)', 'padding-left:12px;'); });
+        html += '</div></div>';
+      });
+      html += '</div></div>';
+    });
+    if(sv.online.length) {
+      var onTotal = sv.online.reduce(function(s,t){return s+t.amount;},0);
+      var oid = uid();
+      html += '<div style="padding:6px 0;border-top:1px solid var(--border2)">';
+      html += '<div style="display:flex;justify-content:space-between;cursor:pointer;padding:4px 0" onclick="expand(\'' + oid + '\')">';
+      html += '<div style="font-size:13px;color:var(--muted)">Online / ' + st + '</div>';
+      html += '<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-size:13px;color:var(--muted)">' + fmt(onTotal) + '</div><span style="color:var(--muted)">&rsaquo;</span></div></div>';
+      html += '<div id="' + oid + '" class="expand-body">';
+      sv.online.forEach(function(t){ html += txnLine(t, 'var(--muted)', 'padding-left:12px;'); });
+      html += '</div></div>';
+    }
+    html += '</div></div>';
+  });
+  set('main-content', html);
+}
+
+function cleanZelleName(raw) {
+  var m = raw.match(/payment from ([A-Z][A-Za-z ]+?)(?:\s+for\s+|\s+Conf#|;)/i);
+  if(m) return m[1].trim().replace(/\b\w/g, function(c){return c.toUpperCase();});
+  m = raw.match(/payment from ([A-Z][A-Za-z ]{3,40})/i);
+  if(m) return m[1].trim().replace(/\b\w/g, function(c){return c.toUpperCase();});
+  return raw.substring(0, 30);
+}
+
+function renderTravel() {
+  var raw = (D.travel||[]).filter(function(t) {
+    return t.state && HOME_ST.indexOf(t.state)<0 && !BILLING.some(function(b){return (t.desc||'').toUpperCase().indexOf(b)>=0;});
+  });
+  if(!raw.length){set('main-content','<div class="panel" style="color:var(--muted);font-size:13px;padding:20px;text-align:center">No travel transactions found.</div>');return;}
+  raw.sort(function(a,b){return ((b.period||'')+(b.date||'')).localeCompare((a.period||'')+(a.date||''));});
+  var byState={};
+  raw.forEach(function(t){
+    var st=t.state;
+    if(!byState[st])byState[st]={total:0,months:{},online:[]};
+    byState[st].total+=t.amount;
+    if(t.city){
+      var ml=t.period_label||t.period||'';
+      if(!byState[st].months[ml])byState[st].months[ml]={cities:{},total:0};
+      if(!byState[st].months[ml].cities[t.city])byState[st].months[ml].cities[t.city]={txns:[],total:0};
+      byState[st].months[ml].cities[t.city].txns.push(t);
+      byState[st].months[ml].cities[t.city].total+=t.amount;
+      byState[st].months[ml].total+=t.amount;
+    } else {byState[st].online.push(t);}
+  });
+  var states=Object.keys(byState).sort(function(a,b){return byState[b].total-byState[a].total;});
+  var grand=raw.reduce(function(s,t){return s+t.amount;},0);
+  var STATE_NAMES={'CA':'California','NC':'North Carolina','VA':'Virginia','DC':'Washington D.C.','TX':'Texas','FL':'Florida','TN':'Tennessee','MD':'Maryland','GA':'Georgia','CO':'Colorado','NV':'Nevada','AZ':'Arizona','MA':'Massachusetts','RI':'Rhode Island','MO':'Missouri','MI':'Michigan','IL':'Illinois','AR':'Arkansas'};
+  var html='<div class="panel"><div class="panel-head"><div class="panel-title">Travel & Vacation</div><div class="panel-action">'+states.length+' states · '+fmt(grand)+'</div></div>';
+  html+='<div style="margin-bottom:12px">';
+  states.forEach(function(st){html+='<span class="chip">'+st+' <span style="font-family:IBM Plex Mono,monospace;font-size:11px">'+fmt(byState[st].total)+'</span></span>';});
+  html+='</div></div>';
+  states.forEach(function(st){
+    var sv=byState[st];
+    var sid=uid();
+    html+='<div class="state-block">';
+    html+='<div class="state-head" onclick="expand(\''+sid+'\')">';
+    html+='<div style="font-family:IBM Plex Mono,monospace;font-size:22px;font-weight:600;color:var(--yellow);width:42px">'+st+'</div>';
+    html+='<div style="flex:1"><div style="font-size:15px;font-weight:600">'+(STATE_NAMES[st]||st)+'</div>';
+    html+='<div style="font-size:11px;color:var(--muted)">'+Object.keys(sv.months).join(', ')+'</div></div>';
+    html+='<div style="font-family:IBM Plex Mono,monospace;font-size:18px;color:var(--yellow)">'+fmt(sv.total)+'</div>';
+    html+='<span style="color:var(--muted);margin-left:8px">›</span></div>';
+    html+='<div id="'+sid+'" class="expand-body">';
+    Object.keys(sv.months).sort().reverse().forEach(function(monthLabel){
+      var mv=sv.months[monthLabel];
+      var mid=uid();
+      html+='<div style="padding:6px 0;border-top:1px solid var(--border2)">';
+      html+='<div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:4px 0" onclick="expand(\''+mid+'\')">';
+      html+='<div style="font-size:13px;font-weight:500">'+monthLabel+'</div>';
+      html+='<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-size:13px;color:var(--yellow)">'+fmt(mv.total)+'</div><span style="color:var(--muted)">›</span></div></div>';
+      html+='<div id="'+mid+'" class="expand-body">';
+      Object.keys(mv.cities).sort(function(a,b){return mv.cities[b].total-mv.cities[a].total;}).forEach(function(city){
+        var cv=mv.cities[city];
+        var cvid=uid();
+        cv.txns.sort(function(a,b){return b.date.localeCompare(a.date);});
+        html+='<div style="padding:5px 0 5px 12px;border-top:1px solid var(--border2)">';
+        html+='<div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer" onclick="expand(\''+cvid+'\')">';
+        html+='<div style="font-size:13px">📍 '+city+'</div>';
+        html+='<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-size:13px;color:var(--yellow)">'+fmt(cv.total)+'</div><span style="color:var(--muted)">›</span></div></div>';
+        html+='<div id="'+cvid+'" class="expand-body">';
+        cv.txns.forEach(function(t){ html += txnLine(t,'var(--yellow)','padding-left:12px;'); });
+        html+='</div></div>';
+      });
+      html+='</div></div>';
+    });
+    if(sv.online.length){
+      var oid=uid();
+      var ot=sv.online.reduce(function(s,t){return s+t.amount;},0);
+      html+='<div style="padding:6px 0;border-top:1px solid var(--border2)">';
+      html+='<div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:4px 0" onclick="expand(\''+oid+'\')">';
+      html+='<div style="font-size:13px;color:var(--muted)">🌐 Online / '+st+'</div>';
+      html+='<div style="display:flex;align-items:center;gap:8px"><span style="font-family:IBM Plex Mono,monospace;font-size:13px;color:var(--muted)">'+fmt(ot)+'</span><span style="color:var(--muted)">›</span></div></div>';
+      html+='<div id="'+oid+'" class="expand-body">';
+      sv.online.forEach(function(t){ html += txnLine(t,'var(--muted)','padding-left:12px;'); });
+      html+='</div></div>';
+    }
+    html+='</div></div>';
+  });
+  set('main-content',html);
+}
+
+function cleanZelleName(raw){
+  if(!raw) return '';
+  // Pattern 1: "payment from NAME for..." or "payment from NAME Conf#..."
+  var m=raw.match(/payment from ([A-Z][A-Za-z\s]+?)(?:\s+for\s+|\s+Conf#|;)/i);
+  if(m) return m[1].trim().toLowerCase().replace(/\b\w/g,function(c){return c.toUpperCase();});
+  // Pattern 2: "FROM NAME Conf#..." (newer format)
+  m=raw.match(/^FROM ([A-Z][A-Z\s]+?)(?:\s+Conf#|\s*$)/i);
+  if(m) return m[1].trim().toLowerCase().replace(/\b\w/g,function(c){return c.toUpperCase();});
+  // Pattern 3: TD received with name "Zelle NAME ..."
+  m=raw.match(/Zelle ([A-Z][A-Z\s]{3,30})/i);
+  if(m) return m[1].trim().toLowerCase().replace(/\b\w/g,function(c){return c.toUpperCase();});
+  // Pattern 4: plain "payment from NAME"
+  m=raw.match(/payment from ([A-Z][A-Za-z\s]{3,40})/i);
+  if(m) return m[1].trim().toLowerCase().replace(/\b\w/g,function(c){return c.toUpperCase();});
+  return raw.substring(0,30);
+}
+
+function renderRecurring() {
+  var ms = D.monthly_spending || {};
+  var periods = Object.keys(ms).sort();
+  var html = '';
+
+  // Build same-amount recurring
+  var merchantMap = {};
+  periods.forEach(function(p) {
+    (ms[p].transactions || []).forEach(function(t) {
+      var key = (t.desc || '').trim().toUpperCase().substring(0, 40);
+      if(!merchantMap[key]) merchantMap[key] = {desc:t.desc, cat:t.category, entries:[]};
+      merchantMap[key].entries.push({period:p, label:ms[p].label, date:t.date, amount:t.amount, desc:t.desc, category:t.category});
+    });
+  });
+
+  var sameAmt = [];
+  Object.values(merchantMap).forEach(function(m) {
+    if(m.entries.length < 2) return;
+    var mo = {};
+    m.entries.forEach(function(e){ mo[e.period] = true; });
+    if(Object.keys(mo).length < 2) return;
+    var first = m.entries[0].amount;
+    var allSame = m.entries.every(function(e){ return Math.abs(e.amount - first) < 0.01; });
+    if(!allSame) return;
+    sameAmt.push({desc:m.desc, cat:m.cat, amount:first, months:Object.keys(mo).length, entries:m.entries.sort(function(a,b){return b.period.localeCompare(a.period);})});
+  });
+  sameAmt.sort(function(a,b){ return b.amount-a.amount; });
+
+  var totalFixed = sameAmt.reduce(function(s,r){ return s+r.amount; }, 0);
+
+  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Fixed Recurring</div><div class="panel-action" style="color:var(--red)">' + fmt2(totalFixed) + '/mo est.</div></div>';
+  if(!sameAmt.length) {
+    html += '<div style="color:var(--muted);font-size:13px;padding:8px 0">No fixed recurring detected yet - needs more months of data.</div>';
+  } else {
+    sameAmt.forEach(function(r) {
+      var col = CAT_COLORS[r.cat] || '#6b6b80';
+      var rid = uid();
+      html += '<div class="row expandable" onclick="expand(\'' + rid + '\')">';
+      html += '<div><div class="row-label" style="font-weight:500">' + r.desc + '</div><div class="row-sub" style="color:' + col + '">' + r.cat + ' - ' + r.months + 'x months</div></div>';
+      html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:var(--red)">' + fmt2(r.amount) + '</div><span style="color:var(--muted)">&rsaquo;</span></div></div>';
+      html += '<div id="' + rid + '" class="expand-body">';
+      r.entries.forEach(function(e) {
+        var t = {desc:e.desc, date:e.date, amount:e.amount, category:e.category};
+        html += '<div style="display:flex;align-items:baseline;gap:8px;padding:5px 0;border-bottom:1px solid var(--border2);font-size:12px">';
+        html += '<span style="font-family:IBM Plex Mono,monospace;color:var(--muted);width:40px;flex-shrink:0">' + e.date + '</span>';
+        html += '<span style="flex:1;color:var(--muted)">' + e.label + '</span>';
+        html += '<span style="font-family:IBM Plex Mono,monospace;color:var(--red)">' + fmt2(e.amount) + '</span>';
+        html += '</div>';
+      });
+      html += '</div><div style="height:1px;background:var(--border);margin:4px 0"></div>';
+    });
+  }
+  html += '</div>';
+
+  // Zelle by name by month
+  var rawZ = D.zelle_received || [];
+  var byName = {};
+  rawZ.forEach(function(z) {
+    var name = cleanZelleName(z.from);
+    if(name.toLowerCase().indexOf('vimal') >= 0) return;
+    if(/^TD\s+RECEIVED/i.test(name)) return;
+    if(!byName[name]) byName[name] = {total:0, months:{}};
+    byName[name].total += z.amount;
+    var p = z.period || '';
+    if(!byName[name].months[p]) byName[name].months[p] = {label:z.period_label||p, total:0};
+    byName[name].months[p].total += z.amount;
+  });
+
+  var zelleNames = Object.keys(byName).sort(function(a,b){ return byName[b].total-byName[a].total; });
+  var zelleTotal = zelleNames.reduce(function(s,n){ return s+byName[n].total; }, 0);
+  var allP = [];
+  rawZ.forEach(function(z){
+    var n = cleanZelleName(z.from);
+    if(n.toLowerCase().indexOf('vimal') < 0 && !/^TD\s+RECEIVED/i.test(n) && z.period && allP.indexOf(z.period) < 0) allP.push(z.period);
+  });
+  allP.sort();
+
+  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Zelle Received</div><div class="panel-action" style="color:var(--green)">' + fmt2(zelleTotal) + ' total</div></div>';
+  if(!zelleNames.length) {
+    html += '<div style="color:var(--muted);font-size:13px;padding:8px 0">No Zelle payments found.</div>';
+  } else {
+    html += '<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:13px">';
+    html += '<thead><tr><th style="text-align:left;padding:6px 8px;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border);font-weight:500">From</th>';
+    allP.forEach(function(p) {
+      html += '<th style="text-align:right;padding:6px 8px;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border);white-space:nowrap;font-weight:500">' + short((ms[p]||{}).label||p) + '</th>';
+    });
+    html += '<th style="text-align:right;padding:6px 8px;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border);font-weight:500">Total</th></tr></thead><tbody>';
+    zelleNames.forEach(function(name) {
+      var nv = byName[name];
+      html += '<tr><td style="padding:8px;border-bottom:1px solid var(--border2);font-weight:500">' + name + '</td>';
+      allP.forEach(function(p) {
+        var mv = nv.months[p];
+        html += '<td style="padding:8px;border-bottom:1px solid var(--border2);text-align:right;font-family:IBM Plex Mono,monospace">';
+        html += mv ? '<span style="color:var(--green)">' + fmt2(mv.total) + '</span>' : '<span style="color:var(--muted2)">-</span>';
+        html += '</td>';
+      });
+      html += '<td style="padding:8px;border-bottom:1px solid var(--border2);text-align:right;font-family:IBM Plex Mono,monospace;font-weight:600;color:var(--green)">' + fmt2(nv.total) + '</td></tr>';
+    });
+    var totRow = '<tr style="background:var(--s2)"><td style="padding:8px;font-weight:600;font-size:12px">Total</td>';
+    allP.forEach(function(p) {
+      var pt = zelleNames.reduce(function(s,n){ return s + (byName[n].months[p] ? byName[n].months[p].total : 0); }, 0);
+      totRow += '<td style="padding:8px;text-align:right;font-family:IBM Plex Mono,monospace;font-weight:600;color:var(--green)">' + (pt ? fmt2(pt) : '-') + '</td>';
+    });
+    totRow += '<td style="padding:8px;text-align:right;font-family:IBM Plex Mono,monospace;font-weight:600;color:var(--green)">' + fmt2(zelleTotal) + '</td></tr>';
+    html += totRow + '</tbody></table></div>';
+  }
+  html += '</div>';
+  set('main-content', html);
+}
+
+function triggerSync() {
+  var b = $('sync-btn'), bt = $('sync-btn-top');
+  if(b) { b.textContent = 'Syncing...'; b.disabled = true; }
+  if(bt) { bt.innerHTML = '&#8987;'; bt.disabled = true; }
+  fetch(BACKEND + '/api/sync', {method:'POST'})
+    .then(function(r){ return r.json(); })
+    .then(function(d) {
+      if(d.success) { setTimeout(loadData, 2500); }
+      else { alert('Sync error: ' + d.error); }
+    })
+    .catch(function(e){ alert('Cannot reach backend: ' + e.message); })
+    .finally(function() {
+      if(b) { b.textContent = 'Sync'; b.disabled = false; }
+      if(bt) { bt.innerHTML = '&#9889;'; bt.disabled = false; }
+    });
+}
+
+function deduplicateData(data) {
+  if(!data || !data.monthly_spending) return data;
+  Object.keys(data.monthly_spending).forEach(function(p) {
+    var v = data.monthly_spending[p];
+    // Step 1: Deduplicate by date+desc+amount
+    var seen = {};
+    var deduped = [];
+    (v.transactions || []).forEach(function(t) {
+      var key = t.date + '|' + t.desc + '|' + t.amount;
+      if(!seen[key]) { seen[key] = true; deduped.push(t); }
+    });
+    // Step 1b: Rename legacy categories
+  var CAT_RENAMES = {'Tech/Subs':'Subscription'};
+  deduped.forEach(function(t) {
+    if(CAT_RENAMES[t.category]) t.category = CAT_RENAMES[t.category];
+  });
+
+ // Step 2: Auto-match refund pairs (negative + same merchant, within 2 cents)
+    var nullified = {};
+    deduped.filter(function(t){return t.amount<0;}).forEach(function(refund) {
+      var targetAmt = Math.abs(refund.amount);
+      var match = deduped.find(function(p) {
+        return p.amount > 0
+          && Math.abs(p.amount - targetAmt) < 0.02
+          && p.desc === refund.desc
+          && !nullified[p.date+'|'+p.desc+'|'+p.amount];
+      });
+      if(match) {
+        nullified[match.date+'|'+match.desc+'|'+match.amount] = true;
+        nullified[refund.date+'|'+refund.desc+'|'+refund.amount] = true;
+        match.refund_matched = true;
+        refund.refund_matched = true;
+      } else {
+        refund.unmatched_refund = true;
+      }
+    });
+    // Step 3: Remove nullified pairs AND manually refunded transactions
+    var final = deduped.filter(function(t) {
+      if(t.refund_matched) return false;
+      return true;
+    });
+    // Step 4: Recalculate
+    v.transactions = final;
+    v.categories = {};
+    v.total = 0;
+    final.forEach(function(t) {
+      if(t.amount > 0) { // only count purchases in totals
+        v.categories[t.category] = (v.categories[t.category] || 0) + t.amount;
+        v.total += t.amount;
+      }
+    });
+  });
+  return data;
+}
+
+function migrateOldOverrides() {
+  // Migrate old keys that were "desc|amount" format to just "desc"
+  var migrated = false;
+  Object.keys(CAT_OVERRIDES).forEach(function(key) {
+    if(key.indexOf('|') >= 0) {
+      var desc = key.substring(0, key.lastIndexOf('|'));
+      if(!CAT_OVERRIDES[desc]) {
+        CAT_OVERRIDES[desc] = CAT_OVERRIDES[key];
+        migrated = true;
+      }
+      delete CAT_OVERRIDES[key];
+      migrated = true;
+    }
+  });
+  if(migrated) saveOverrides();
+}
+migrateOldOverrides();
+
+function renderSearch() {
+  var html = '<div class="panel">';
+  html += '<div class="panel-head"><div class="panel-title">Transaction Search</div></div>';
+  html += '<div style="display:flex;gap:8px;margin-bottom:6px">';
+  html += '<input id="srch-input" type="text" placeholder="restaurant, amazon, kavi, airbnb..." autocomplete="off" ';
+  html += 'style="flex:1;padding:10px 14px;background:var(--s2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:IBM Plex Mono,monospace;font-size:13px" ';
+  html += 'oninput="runSearch()" onkeydown="if(event.key===\'Enter\')runSearch()">';
+  html += '<button onclick="runSearch()" style="padding:10px 16px;background:var(--green);color:#000;border:none;border-radius:8px;font-family:IBM Plex Mono,monospace;font-size:13px;font-weight:600;cursor:pointer">Go</button>';
+  html += '</div>';
+  html += '<div style="font-size:11px;color:var(--muted);margin-bottom:14px">Searches descriptions, categories, amounts, banks — across all months</div>';
+  html += '</div>';
+  html += '<div id="srch-results"></div>';
+  set('main-content', html);
+  // Focus input
+  setTimeout(function(){ var el=document.getElementById('srch-input'); if(el) el.focus(); }, 100);
+}
+
+function runSearch() {
+  var q = (document.getElementById('srch-input') || {}).value || '';
+  q = q.trim().toLowerCase();
+  var el = document.getElementById('srch-results');
+  if(!el) return;
+  if(q.length < 1) { el.innerHTML = ''; return; }
+
+  var ms = (_rawD || D).monthly_spending || {}; // use raw so refunded txns still searchable
+  var words = q.split(/\s+/).filter(Boolean);
+
+  // Category synonyms for smart matching
+  var SYNONYMS = {
+    'restaurant':'Restaurants','restaurants':'Restaurants','food':'Restaurants','dining':'Restaurants','eat':'Restaurants',
+    'grocery':'Groceries','groceries':'Groceries','supermarket':'Groceries',
+    'subscription':'Subscription','subscriptions':'Subscription','sub':'Subscription','subs':'Subscription',
+    'entertainment':'Entertainment','streaming':'Entertainment',
+    'shopping':'Shopping','shop':'Shopping','amazon':'Amazon',
+    'gas':'Gas/Travel','travel':'Gas/Travel','uber':'Gas/Travel',
+    'health':'Healthcare','healthcare':'Healthcare','medical':'Healthcare','pharmacy':'Pharmacy',
+    'insurance':'Insurance','tax':'Tax/Professional',
+  };
+
+  var results = [];
+  Object.keys(ms).sort().reverse().forEach(function(p) {
+    var v = ms[p];
+    (v.transactions||[]).forEach(function(t) {
+      var score = 0;
+      var tDesc = (t.desc||'').toLowerCase();
+      var tCat = (t.category||'').toLowerCase();
+      var tAmt = String(t.amount||'');
+      var tBank = (t.bank||'').toLowerCase();
+
+      words.forEach(function(w) {
+        var syn = SYNONYMS[w];
+        // Exact category match via synonym
+        if(syn && t.category === syn) score += 10;
+        // Description contains word
+        if(tDesc.indexOf(w) >= 0) score += (tDesc.indexOf(w) === 0 ? 8 : 5);
+        // Category contains word
+        if(tCat.indexOf(w) >= 0) score += 4;
+        // Amount matches
+        if(tAmt.indexOf(w) >= 0) score += 3;
+        // Bank matches
+        if(tBank.indexOf(w) >= 0) score += 2;
+      });
+
+      if(score > 0) {
+        results.push({t:t, period:p, label:v.label, score:score});
+      }
+    });
+  });
+
+  // Sort by score desc, then date desc
+  results.sort(function(a,b){ return b.score-a.score || ((b.period+b.t.date).localeCompare(a.period+a.t.date)); });
+
+  // Also find refunded txns matching query
+  var refundedMatches = [];
+  var allRawTxns = [];
+  Object.keys((_rawD||D).monthly_spending||{}).forEach(function(p) {
+    ((_rawD||D).monthly_spending[p].transactions||[]).forEach(function(t) {
+      if(REFUNDED_TXNS[t.desc]) allRawTxns.push({t:t,period:p});
+    });
+  });
+  allRawTxns.forEach(function(item) {
+    var t=item.t, score=0;
+    var tDesc=(t.desc||'').toLowerCase();
+    words.forEach(function(w){ if(tDesc.indexOf(w)>=0) score+=5; });
+    if(score>0) refundedMatches.push(item);
+  });
+
+  if(!results.length && !refundedMatches.length) {
+    el.innerHTML = '<div class="panel" style="color:var(--muted);font-size:13px;padding:12px">No transactions found for "'+q+'"</div>';
+    return;
+  }
+
+  var total = results.reduce(function(s,r){return s+(r.t.amount||0);},0);
+  var html = '<div class="panel">';
+  html += '<div class="panel-head"><div class="panel-title">'+results.length+' results</div>';
+  html += '<div class="panel-action">'+fmt2(total)+' total</div></div>';
+
+  // Group by month
+  var byMonth = {};
+  results.forEach(function(r){
+    if(!byMonth[r.period]) byMonth[r.period] = {label:r.label, items:[]};
+    byMonth[r.period].items.push(r);
+  });
+
+  Object.keys(byMonth).sort().reverse().forEach(function(p) {
+    var mv = byMonth[p];
+    var mid = uid();
+    var mTotal = mv.items.reduce(function(s,r){return s+(r.t.amount||0);},0);
+    html += '<div>';
+    html += '<div class="row expandable" onclick="expand(\''+mid+'\')" style="background:var(--s2);padding:8px 12px;border-radius:6px;margin-bottom:4px">';
+    html += '<div class="row-label" style="font-weight:500">'+mv.label+'</div>';
+    html += '<div style="display:flex;align-items:center;gap:8px"><span style="font-size:12px;color:var(--muted)">'+mv.items.length+' txns</span><div class="row-amt" style="color:var(--red)">'+fmt2(mTotal)+'</div><span style="color:var(--muted)">›</span></div>';
+    html += '</div>';
+    html += '<div id="'+mid+'" class="expand-body">';
+    mv.items.forEach(function(r){ html += txnLine(r.t, CAT_COLORS[r.t.category]||'#6b6b80', ''); });
+    html += '</div></div>';
+  });
+  html += '</div>';
+
+  // Show refunded matches with restore option
+  if(refundedMatches && refundedMatches.length) {
+    html += '<div class="panel" style="border-color:rgba(245,197,24,0.3);margin-top:10px">';
+    html += '<div class="panel-head"><div class="panel-title" style="color:var(--yellow)">&#8629; Hidden (Refunded)</div>';
+    html += '<div class="panel-action" style="color:var(--muted)">tap &#8629; to restore</div></div>';
+    refundedMatches.forEach(function(item) {
+      var t=item.t; var col=CAT_COLORS[t.category]||'#6b6b80';
+      html += txnLine(t, col, 'opacity:0.6;');
+    });
+    html += '</div>';
+  }
+
+  el.innerHTML = html;
+}
+
+function exportOverrides() {
+  var keys = Object.keys(CAT_OVERRIDES);
+  if(!keys.length) { alert('No category edits to export.'); return; }
+  var data = JSON.stringify(CAT_OVERRIDES, null, 2);
+  // Copy to clipboard
+  navigator.clipboard.writeText(data).then(function() {
+    alert('✅ ' + keys.length + ' category edits copied to clipboard!\n\nPaste this somewhere safe. To restore, use Settings → Import edits.');
+  }).catch(function() {
+    // Fallback: show in prompt
+    prompt('Copy these category edits (Ctrl+A, Ctrl+C):', data);
+  });
+}
+
+function importOverrides(json) {
+  try {
+    var parsed = JSON.parse(json || '{}');
+    var count = Object.keys(parsed).length;
+    if(!count) { alert('No edits found in that data.'); return; }
+    Object.assign(CAT_OVERRIDES, parsed);
+    saveOverrides();
+    D = applyOverrides(JSON.parse(JSON.stringify(_rawD)));
+    render();
+    alert('✅ Imported ' + count + ' category edits!');
+  } catch(e) { alert('Invalid format: ' + e.message); }
+}
+
+
+function loadData() {
+  fetch('https://raw.githubusercontent.com/VIMALZ1312/ledgr-realtime-app/main/data.json?t=' + Date.now())
+    .then(function(r){ return r.json(); })
+    .then(function(data) {
+      // 1. Deduplicate first (fixes server-side duplication regardless of Replit version)
+      data = deduplicateData(data);
+      // 2. Store clean raw copy
+      _rawD = JSON.parse(JSON.stringify(data));
+      // 3. Apply category overrides on top
+      D = applyOverrides(JSON.parse(JSON.stringify(_rawD)));
+      buildNav();
+      render();
+      if(data.generated_at) {
+        var dt = new Date(data.generated_at);
+        var el = $('synced-at');
+        if(el) el.textContent = dt.toLocaleString('en-US', {month:'short', day:'numeric', hour:'2-digit', minute:'2-digit'});
+      }
+    })
+    .catch(function(e){ set('main-content', '<div style="padding:20px;color:var(--red);font-size:13px">Failed to load data: ' + e + '</div>'); });
+}
+
+buildNav();
+loadData();
+</script>
+</body>
+</html>
