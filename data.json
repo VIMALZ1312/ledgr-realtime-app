@@ -2,14 +2,14 @@
   "kpis": {
     "income": 0,
     "income_period": "",
-    "true_outflows": 280,
+    "true_outflows": 936.16,
     "outflows_period": "May 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 8379.5,
+      "balance": 6509.48,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -28,7 +28,7 @@
       "payroll": 0
     },
     "discover": {
-      "balance": 2024.96,
+      "balance": 2028.15,
       "is_credit": true,
       "period_label": "Live"
     },
@@ -49,7 +49,7 @@
       "mask": "5772",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 30253.604908920002,
+      "balance": 29991.57625823,
       "available": 348.07,
       "is_credit": false,
       "is_checking": false,
@@ -101,8 +101,8 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 5739.74,
-      "available": 5739.74,
+      "balance": 3869.72,
+      "available": 3869.72,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -231,8 +231,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 438.76,
-      "available": 261.24,
+      "balance": 528.11,
+      "available": 171.89,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -257,7 +257,7 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 9059.19,
+      "balance": 8779.19,
       "available": 8779.19,
       "is_credit": false,
       "is_checking": true,
@@ -270,7 +270,7 @@
       "mask": "0494",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 2024.96,
+      "balance": 2028.15,
       "available": 10972,
       "is_credit": true,
       "is_checking": false,
@@ -323,16 +323,16 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": -97.37,
-      "available": 3097,
+      "available": 2897,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
     }
   ],
   "net_worth": {
-    "total_checking": 56370.85,
-    "total_credit": 6966.05,
-    "net": 49404.8
+    "total_checking": 54220.83,
+    "total_credit": 7058.59,
+    "net": 47162.24
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -343,12 +343,12 @@
     "by_month": []
   },
   "spending": {
-    "Healthcare": 1367.5900000000001,
-    "Tech/Subs": 9066.359999999999,
+    "Healthcare": 1425.93,
+    "Tech/Subs": 9530.97,
     "Shopping": 10540.44,
     "Entertainment": 2198.53,
     "Other": 37188.549999999996,
-    "Groceries": 2025.5099999999995,
+    "Groceries": 2226.49,
     "Restaurants": 1749.59,
     "Gas/Travel": 6651.230000000001
   },
@@ -608,16 +608,16 @@
     "2026-04": {
       "label": "April 2026",
       "categories": {
-        "Healthcare": 526.79,
-        "Tech/Subs": 4253.34,
+        "Healthcare": 585.13,
+        "Tech/Subs": 4353.71,
         "Shopping": 1240.96,
-        "Entertainment": 838.9000000000001,
+        "Entertainment": 837.3100000000001,
         "Other": 1436.73,
-        "Groceries": 694.7899999999998,
+        "Groceries": 625.5299999999999,
         "Restaurants": 457.85,
-        "Gas/Travel": 675.7900000000001
+        "Gas/Travel": 655.7
       },
-      "total": 10125.149999999996,
+      "total": 10192.919999999996,
       "transactions": [
         {
           "date": "04-17",
@@ -1269,30 +1269,6 @@
         },
         {
           "date": "04-30",
-          "desc": "ShopRite",
-          "amount": 58.97,
-          "category": "Groceries",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "04-30",
-          "desc": "BP",
-          "amount": 20.09,
-          "category": "Gas/Travel",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "04-30",
-          "desc": "Shaan Halal Zabiha Mea",
-          "amount": 10.29,
-          "category": "Groceries",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "04-30",
           "desc": "FedEx",
           "amount": 31.55,
           "category": "Tech/Subs",
@@ -1492,10 +1468,18 @@
           "state": null
         },
         {
-          "date": "04-30",
-          "desc": "Regal Cinemas",
-          "amount": 1.59,
-          "category": "Entertainment",
+          "date": "04-29",
+          "desc": "Replit Inc.",
+          "amount": 100.37,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "CA"
+        },
+        {
+          "date": "04-29",
+          "desc": "CVS",
+          "amount": 58.34,
+          "category": "Healthcare",
           "city": null,
           "state": null
         },
@@ -1504,8 +1488,8 @@
           "desc": "365 Retail Markets",
           "amount": 1.6,
           "category": "Restaurants",
-          "city": null,
-          "state": null
+          "city": "Troy",
+          "state": "MI"
         },
         {
           "date": "04-27",
@@ -3544,15 +3528,98 @@
     "2026-05": {
       "label": "May 2026",
       "categories": {
-        "Tech/Subs": 280
+        "Tech/Subs": 644.24,
+        "Groceries": 270.23999999999995,
+        "Gas/Travel": 20.09,
+        "Entertainment": 1.59
       },
-      "total": 280,
+      "total": 936.1600000000001,
       "transactions": [
+        {
+          "date": "05-01",
+          "desc": "Optimum",
+          "amount": 50.66,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-01",
+          "desc": "Renaissance Gree",
+          "amount": 115,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-01",
+          "desc": "Republic Services",
+          "amount": 198.58,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
         {
           "date": "05-01",
           "desc": "Kumon Of North",
           "amount": 280,
           "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-01",
+          "desc": "ShopRite",
+          "amount": 58.97,
+          "category": "Groceries",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-01",
+          "desc": "BP",
+          "amount": 20.09,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-01",
+          "desc": "Shaan Halal Zabiha Meat",
+          "amount": 10.29,
+          "category": "Groceries",
+          "city": "Dayton",
+          "state": "NJ"
+        },
+        {
+          "date": "05-01",
+          "desc": "Regal Cinemas",
+          "amount": 1.59,
+          "category": "Entertainment",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-02",
+          "desc": "Grocery Outlet",
+          "amount": 175.39,
+          "category": "Groceries",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-02",
+          "desc": "Mila Foods",
+          "amount": 18.13,
+          "category": "Groceries",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-02",
+          "desc": "Mila Foods",
+          "amount": 7.46,
+          "category": "Groceries",
           "city": null,
           "state": null
         }
@@ -4369,6 +4436,26 @@
       "state": "MI",
       "period": "2026-04",
       "period_label": "April 2026"
+    },
+    {
+      "date": "04-29",
+      "desc": "Replit Inc.",
+      "amount": 100.37,
+      "category": "Tech/Subs",
+      "city": null,
+      "state": "CA",
+      "period": "2026-04",
+      "period_label": "April 2026"
+    },
+    {
+      "date": "04-30",
+      "desc": "365 Retail Markets",
+      "amount": 1.6,
+      "category": "Restaurants",
+      "city": "Troy",
+      "state": "MI",
+      "period": "2026-04",
+      "period_label": "April 2026"
     }
   ],
   "fixed_obligations": {
@@ -4380,6 +4467,6 @@
     "cable": 50.66
   },
   "statement_count": "8 live accounts",
-  "generated_at": "2026-05-01T13:00:39.975Z",
+  "generated_at": "2026-05-03T02:50:29.425Z",
   "source": "plaid_realtime"
 }
