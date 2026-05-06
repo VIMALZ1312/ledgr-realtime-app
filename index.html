@@ -429,7 +429,7 @@ function renderOverview() {
     return entry ? Number(entry.income) || 0 : 0;
   }));
   html += '<div class="panel"><div class="panel-head"><div class="panel-title">Monthly Cash Flow</div><div class="panel-action">' + short(latestV.label) + '</div></div>';
-  html += '<div class="chart-wrap"><canvas id="cfChart" data-l=\'' + chartLabels + '\' data-s=\'' + chartSpends + '\' data-i=\'' + chartIncomes + '\'></canvas></div></div>';
+  html += '<div class="chart-wrap"><canvas id="cfChart" data-l=\"' + encodeURIComponent(chartLabels) + '\" data-s=\"' + encodeURIComponent(chartSpends) + '\" data-i=\"' + encodeURIComponent(chartIncomes) + '\"></canvas></div></div>';
 
   // Pending transactions panel
   var pending = D.pending_transactions || [];
@@ -454,58 +454,71 @@ function renderOverview() {
 
   html += '<div class="two-col">';
 
-  // Monthly Spend — categories as rows, expand to show transactions inline
-  var allCats = {};
+  // Monthly Spend — table: categories=rows, months=cols, tap cell=modal
+  var allCats2 = {};
   periods.forEach(function(p) {
-    Object.keys(ms[p].categories||{}).forEach(function(cat){ allCats[cat]=true; });
+    Object.keys(ms[p].categories||{}).forEach(function(cat){ allCats2[cat]=true; });
   });
-  var catList = Object.keys(allCats).sort(function(a,b){
-    var ta=periods.reduce(function(s,p){return s+(ms[p].categories[a]||0);},0);
-    var tb=periods.reduce(function(s,p){return s+(ms[p].categories[b]||0);},0);
-    return tb-ta;
+  var catList = Object.keys(allCats2).sort(function(a,b){
+    return periods.reduce(function(s,p){return s+(ms[p].categories[b]||0);},0)
+         - periods.reduce(function(s,p){return s+(ms[p].categories[a]||0);},0);
   });
-  var recentPeriods = periods.slice().reverse();
+  var colPeriods = periods.slice().reverse();
   var grandTotal = periods.reduce(function(s,p){return s+(ms[p].total||0);},0);
 
-  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Monthly Spend</div><div class="panel-action">'+fmt(grandTotal)+' total</div></div>';
+  // Store txns for modal - keyed by index to avoid quote issues in onclick
+  window._msTxns = {};
+  var _txnStore = window._msTxns;
 
-  catList.forEach(function(cat) {
+  html += '<div class="panel" style="overflow-x:auto">';
+  html += '<div class="panel-head"><div class="panel-title">Monthly Spend</div>';
+  html += '<div class="panel-action">'+fmt(grandTotal)+' total</div></div>';
+  html += '<table style="width:100%;border-collapse:collapse;font-size:12px">';
+  html += '<thead><tr>';
+  html += '<th style="text-align:left;padding:6px 8px;font-size:10px;color:var(--muted);border-bottom:2px solid var(--border);font-weight:500;min-width:90px">Category</th>';
+  colPeriods.forEach(function(p){
+    html += '<th style="text-align:right;padding:6px 8px;font-size:10px;color:var(--muted);border-bottom:2px solid var(--border);font-weight:500;white-space:nowrap">'+short(ms[p].label)+'</th>';
+  });
+  html += '<th style="text-align:right;padding:6px 8px;font-size:10px;color:var(--muted);border-bottom:2px solid var(--border);font-weight:500">Total</th>';
+  html += '</tr></thead><tbody>';
+
+  catList.forEach(function(cat, ci) {
     var col = CAT_COLORS[cat] || '#6b6b80';
     var rowTotal = periods.reduce(function(s,p){return s+(ms[p].categories[cat]||0);},0);
     if(!rowTotal) return;
-    var cid = uid();
-    // Collect all txns across all months for this category
     var allCatTxns = [];
     periods.forEach(function(p){
-      (ms[p].transactions||[]).filter(function(t){return t.category===cat;}).forEach(function(t){
-        allCatTxns.push(t);
-      });
+      (ms[p].transactions||[]).filter(function(t){return t.category===cat;}).forEach(function(t){ allCatTxns.push(t); });
     });
     allCatTxns.sort(function(a,b){return b.date.localeCompare(a.date);});
+    _txnStore['r'+ci] = allCatTxns;
 
-        // Row: two-line layout - name+total on top, month amounts below
-    html += '<div>';
-    html += '<div style="padding:10px 0;border-bottom:1px solid var(--border2);cursor:pointer" onclick="expand(\'' + cid + '\')">';
-    html += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">';
-    html += '<div style="width:8px;height:8px;border-radius:50%;background:'+col+';flex-shrink:0"></div>';
-    html += '<span style="font-weight:500;color:'+col+';flex:1;font-size:14px">'+cat+'</span>';
-    html += '<span style="font-family:IBM Plex Mono,monospace;font-weight:600;color:'+col+'">'+fmt(rowTotal)+'</span>';
-    html += '<span style="color:var(--muted);font-size:12px;margin-left:6px">›</span>';
-    html += '</div>';
-    html += '<div style="display:flex;gap:12px;padding-left:16px">';
-    recentPeriods.forEach(function(p){
-      var a = ms[p].categories[cat]||0;
-      if(a) html += '<span style="font-size:11px;color:var(--muted2)">'+short(ms[p].label)+' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted)">'+fmt(a)+'</span></span>';
+    html += '<tr style="border-bottom:1px solid var(--border2)">';
+    html += '<td style="padding:7px 8px;font-weight:500;color:'+col+';cursor:pointer;white-space:nowrap" onclick="_showMs(\'r'+ci+'\',\''+col+'\',\''+cat+'\')">';
+    html += '<span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:'+col+';margin-right:6px;vertical-align:middle"></span>'+cat+'</td>';
+
+    colPeriods.forEach(function(p, pi) {
+      var a = ms[p].categories[cat] || 0;
+      if(a) {
+        var key = 'r'+ci+'_'+pi;
+        _txnStore[key] = (ms[p].transactions||[]).filter(function(t){return t.category===cat;});
+        var lbl = cat+' '+short(ms[p].label);
+        html += '<td style="padding:7px 8px;text-align:right;font-family:IBM Plex Mono,monospace;color:'+col+';cursor:pointer;white-space:nowrap" onclick="_showMs(\''+key+'\',\''+col+'\',\''+lbl+'\')">' + fmt(a) + '</td>';
+      } else {
+        html += '<td style="padding:7px 8px;text-align:right;color:var(--muted2)">—</td>';
+      }
     });
-    html += '</div>';
-    html += '</div>';
-        // Expandable transactions
-    html += '<div id="'+cid+'" class="expand-body">';
-    allCatTxns.forEach(function(t){ html += txnLine(t, col, ''); });
-    html += '</div>';
-    html += '</div>';
+    html += '<td style="padding:7px 8px;text-align:right;font-family:IBM Plex Mono,monospace;font-weight:600;color:'+col+'">'+fmt(rowTotal)+'</td>';
+    html += '</tr>';
   });
-  html += '</div>';
+
+  html += '<tr style="background:var(--s2);border-top:2px solid var(--border)">';
+  html += '<td style="padding:7px 8px;font-weight:600;font-size:11px;color:var(--muted)">Total</td>';
+  colPeriods.forEach(function(p){
+    html += '<td style="padding:7px 8px;text-align:right;font-family:IBM Plex Mono,monospace;font-weight:600">'+fmt(ms[p].total||0)+'</td>';
+  });
+  html += '<td style="padding:7px 8px;text-align:right;font-family:IBM Plex Mono,monospace;font-weight:700">'+fmt(grandTotal)+'</td>';
+  html += '</tr></tbody></table></div>';
 
   // Recent transactions
   var allTxns = [];
@@ -526,9 +539,9 @@ function renderOverview() {
     var ctx = $('cfChart');
     if(!ctx) return;
     if(_chartInst) { _chartInst.destroy(); _chartInst = null; }
-    var labels = JSON.parse(ctx.getAttribute('data-l') || '[]');
-    var spends = JSON.parse(ctx.getAttribute('data-s') || '[]');
-    var incomes = JSON.parse(ctx.getAttribute('data-i') || '[]');
+    var labels = JSON.parse(decodeURIComponent(ctx.getAttribute('data-l') || '%5B%5D'));
+    var spends = JSON.parse(decodeURIComponent(ctx.getAttribute('data-s') || '%5B%5D'));
+    var incomes = JSON.parse(decodeURIComponent(ctx.getAttribute('data-i') || '%5B%5D'));
     var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     var gridCol = isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.06)';
     var textCol = isDark ? '#60607a' : '#9ca3af';
@@ -566,6 +579,12 @@ function acctLine(a) {
   var name = a.name.replace(/\s*\.\.\.\d{4}/g, '').trim();
   return '<div style="display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--border2);font-size:13px"><div><div>' + name + ' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted)">xx' + a.mask + '</span></div><div style="font-size:11px;color:var(--muted)">' + a.bank + ' ' + a.subtype + '</div></div><div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:' + col + '">' + sign + fmt2(Math.abs(a.balance)) + '</div></div>';
 }
+function _showMs(key, col, title) {
+  var txns = (window._msTxns && window._msTxns[key]) || [];
+  showTxns(title || key, txns, col);
+}
+
+
 function showStoredTxns(key, col, title) {
   var txns = (window._msTxns && window._msTxns[key]) || [];
   var t = title || key.split('|')[0];
