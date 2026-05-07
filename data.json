@@ -9,7 +9,7 @@
   },
   "accounts": {
     "bofa": {
-      "balance": 17940.41,
+      "balance": 3533.07,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -43,14 +43,14 @@
   },
   "all_accounts": [
     {
-      "bank": "Robinhood",
-      "nickname": "robin",
+      "bank": "myrobin",
+      "nickname": "myrobin",
       "name": "Robinhood individual",
       "mask": "5772",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 29697.64534795,
-      "available": 348.07,
+      "balance": 32185.9908232905,
+      "available": null,
       "is_credit": false,
       "is_checking": false,
       "is_savings": false
@@ -212,72 +212,7 @@
       "is_savings": false
     },
     {
-      "bank": "BofA",
-      "nickname": "bofa_2",
-      "name": "Premium Rewards Visa Signature",
-      "mask": "0910",
-      "type": "credit",
-      "subtype": "credit card",
-      "balance": 0,
-      "available": 21000,
-      "is_credit": true,
-      "is_checking": false,
-      "is_savings": false
-    },
-    {
-      "bank": "BofA",
-      "nickname": "bofa_2",
-      "name": "Adv Plus Banking",
-      "mask": "1739",
-      "type": "depository",
-      "subtype": "checking",
-      "balance": 68.13,
-      "available": 68.13,
-      "is_credit": false,
-      "is_checking": true,
-      "is_savings": false
-    },
-    {
-      "bank": "BofA",
-      "nickname": "bofa_2",
-      "name": "Advantage Savings",
-      "mask": "5677",
-      "type": "depository",
-      "subtype": "savings",
-      "balance": 2056.95,
-      "available": 2056.95,
-      "is_credit": false,
-      "is_checking": false,
-      "is_savings": true
-    },
-    {
-      "bank": "BofA",
-      "nickname": "bofa_2",
-      "name": "Adv Plus Banking",
-      "mask": "7309",
-      "type": "depository",
-      "subtype": "checking",
-      "balance": 893.31,
-      "available": 893.31,
-      "is_credit": false,
-      "is_checking": true,
-      "is_savings": false
-    },
-    {
-      "bank": "BofA",
-      "nickname": "bofa_2",
-      "name": "Advantage Savings",
-      "mask": "8206",
-      "type": "depository",
-      "subtype": "savings",
-      "balance": 514.68,
-      "available": 514.68,
-      "is_credit": false,
-      "is_checking": false,
-      "is_savings": true
-    },
-    {
-      "bank": "BofA",
+      "bank": "wifebofa",
       "nickname": "wifebofa",
       "name": "Adv Plus Banking",
       "mask": "1739",
@@ -290,7 +225,7 @@
       "is_savings": false
     },
     {
-      "bank": "BofA",
+      "bank": "wifebofa",
       "nickname": "wifebofa",
       "name": "Customized Cash Rewards Visa Signature",
       "mask": "2776",
@@ -303,7 +238,7 @@
       "is_savings": false
     },
     {
-      "bank": "BofA",
+      "bank": "wifebofa",
       "nickname": "wifebofa",
       "name": "Advantage Savings",
       "mask": "5677",
@@ -316,7 +251,7 @@
       "is_savings": true
     },
     {
-      "bank": "BofA",
+      "bank": "wifebofa",
       "nickname": "wifebofa",
       "name": "Adv Plus Banking",
       "mask": "9715",
@@ -336,14 +271,14 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 2034.14,
-      "available": 10959,
+      "available": 10958,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
     },
     {
-      "bank": "robin_2",
-      "nickname": "robin_2",
+      "bank": "Robinhood",
+      "nickname": "robin",
       "name": "Robinhood Checking",
       "mask": "6390",
       "type": "depository",
@@ -355,8 +290,8 @@
       "is_savings": false
     },
     {
-      "bank": "robin_2",
-      "nickname": "robin_2",
+      "bank": "Robinhood",
+      "nickname": "robin",
       "name": "Robinhood Savings",
       "mask": "6644",
       "type": "depository",
@@ -368,21 +303,21 @@
       "is_savings": true
     },
     {
-      "bank": "robin_2",
-      "nickname": "robin_2",
+      "bank": "Robinhood",
+      "nickname": "robin",
       "name": "Robinhood individual",
       "mask": "7119",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 1195.69,
-      "available": 1195.69,
+      "balance": 1257.15,
+      "available": 1257.15,
       "is_credit": false,
       "is_checking": false,
       "is_savings": false
     },
     {
-      "bank": "robin_2",
-      "nickname": "robin_2",
+      "bank": "Robinhood",
+      "nickname": "robin",
       "name": "Robinhood Credit Card",
       "mask": "8479",
       "type": "credit",
@@ -395,9 +330,9 @@
     }
   ],
   "net_worth": {
-    "total_checking": 85203.82534795,
+    "total_checking": 50777.42,
     "total_credit": 6572.75,
-    "net": 78631.07534795
+    "net": 44204.67
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -408,15 +343,14 @@
     "by_month": []
   },
   "spending": {
-    "Healthcare": 1423.43,
-    "Tech/Subs": 7959.25,
-    "Shopping": 10957.23,
+    "Healthcare": 1425.93,
+    "Tech/Subs": 9802.96,
+    "Shopping": 10974.670000000002,
     "Entertainment": 2198.53,
-    "Tax/Professional": 18171.319999999996,
-    "Groceries": 2234.6699999999996,
-    "Restaurants": 1772.4299999999998,
-    "Gas/Travel": 5538.540000000001,
-    "Insurance": 3637.0299999999997
+    "Other": 37188.549999999996,
+    "Groceries": 2226.49,
+    "Restaurants": 1762.37,
+    "Gas/Travel": 6720.890000000001
   },
   "zelle_received": [
     {
@@ -618,674 +552,50 @@
       "period_label": "May 2026"
     },
     {
-      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 0K50JXGHN",
-      "amount": 1700,
-      "period": "2026-04",
-      "period_label": "April 2026"
-    },
-    {
-      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 0K50JY5CB",
-      "amount": 1000,
-      "period": "2026-04",
-      "period_label": "April 2026"
-    },
-    {
-      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 022XHHHP4",
-      "amount": 1500,
-      "period": "2026-04",
-      "period_label": "April 2026"
-    },
-    {
-      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 022XHGNF0",
-      "amount": 1000,
-      "period": "2026-04",
-      "period_label": "April 2026"
-    },
-    {
-      "from": "payment from VIMAL RAJ LOGANATHAN for \"Loan\"; Conf# 022FYOQ4A",
-      "amount": 1500,
-      "period": "2026-03",
-      "period_label": "March 2026"
-    },
-    {
-      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 022FYOQ28",
-      "amount": 1000,
-      "period": "2026-03",
-      "period_label": "March 2026"
-    },
-    {
-      "from": "payment from RAJIREDDY KOMATREDDY Conf# bk2ahcmi2",
-      "amount": 30,
-      "period": "2026-03",
-      "period_label": "March 2026"
-    },
-    {
-      "from": "payment from PRADEEP CHELLUR for \"game-30morecomingfromRaji\"; Conf# 99c7bkmeo",
-      "amount": 36,
-      "period": "2026-03",
-      "period_label": "March 2026"
-    },
-    {
-      "from": "payment from NAGA BONALA Conf# surfuawrc",
-      "amount": 40,
-      "period": "2026-03",
-      "period_label": "March 2026"
-    },
-    {
-      "from": "payment from DEEPAK REDDY DEVULAPALLY for \"Monthly Phone Bill\"; Conf# 99c7bc80n",
-      "amount": 40.71,
-      "period": "2026-03",
-      "period_label": "March 2026"
-    },
-    {
-      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 021UDQBEH",
-      "amount": 1500,
-      "period": "2026-03",
-      "period_label": "March 2026"
-    },
-    {
-      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 021UDQ4JM",
-      "amount": 1000,
-      "period": "2026-02",
-      "period_label": "February 2026"
-    },
-    {
-      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 021P9GDHK",
-      "amount": 1000,
-      "period": "2026-02",
-      "period_label": "February 2026"
-    },
-    {
-      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 021P9GDLJ",
-      "amount": 1500,
-      "period": "2026-02",
-      "period_label": "February 2026"
-    },
-    {
-      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 021EMNC23",
-      "amount": 264.07,
-      "period": "2026-02",
-      "period_label": "February 2026"
-    },
-    {
-      "from": "payment from NAGA BONALA Conf# svdxsk38e",
-      "amount": 6,
-      "period": "2026-02",
-      "period_label": "February 2026"
-    },
-    {
-      "from": "payment from PRUDHVI ANANTHULA for \"HARI AMOUNT\"; Conf# T0ZS9CGX6",
-      "amount": 27,
-      "period": "2026-02",
-      "period_label": "February 2026"
-    },
-    {
-      "from": "payment from DURGA TUBATI Conf# bdfmnkd9p",
-      "amount": 40,
-      "period": "2026-02",
-      "period_label": "February 2026"
-    },
-    {
-      "from": "payment from PRUDHVI ANANTHULA for \"FOOD AMOUNT\"; Conf# T0ZS93LZ8",
-      "amount": 111,
-      "period": "2026-02",
-      "period_label": "February 2026"
-    },
-    {
-      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 0214D4WDW",
-      "amount": 1000,
-      "period": "2026-02",
-      "period_label": "February 2026"
-    },
-    {
-      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 0214D5KZF",
-      "amount": 1500,
-      "period": "2026-02",
-      "period_label": "February 2026"
-    },
-    {
-      "from": "payment from AHMED MOHAMMED Conf# fs7pmboku",
-      "amount": 279.4,
-      "period": "2026-01",
-      "period_label": "January 2026"
-    },
-    {
-      "from": "payment from VENKATESH KASANAGOTTU Conf# 04B91TKQN",
-      "amount": 414,
-      "period": "2026-01",
-      "period_label": "January 2026"
-    },
-    {
-      "from": "payment from DEEPAK REDDY DEVULAPALLY for \"Monthly Phone Bill\"; Conf# 99c3ht75r",
-      "amount": 40.71,
-      "period": "2026-01",
-      "period_label": "January 2026"
-    },
-    {
-      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 020Q0GI6B",
-      "amount": 1000,
-      "period": "2026-01",
-      "period_label": "January 2026"
-    },
-    {
-      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 020Q0G9MH",
-      "amount": 1500,
-      "period": "2026-01",
-      "period_label": "January 2026"
-    },
-    {
       "from": "payment from RAKESH VISTARAKULA for \"Enjoy\"; Conf# txd9tvy96",
       "amount": 2500,
       "period": "2026-01",
       "period_label": "January 2026"
     }
   ],
-  "pending_transactions": [
-    {
-      "date": "05-05",
-      "desc": "Walmart",
-      "amount": 60.46,
-      "category": "Shopping",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "05-05",
-      "desc": "The Home Depot",
-      "amount": 7.76,
-      "category": "Shopping",
-      "bank": "Discover",
-      "pending": true
-    }
-  ],
-  "detected_recurring": [
-    {
-      "desc": "Best Buy",
-      "category": "Shopping",
-      "count": 5,
-      "months": 5,
-      "avg_amount": 199.97,
-      "last_amount": 319.86
-    },
-    {
-      "desc": "Walmart",
-      "category": "Refund",
-      "count": 10,
-      "months": 5,
-      "avg_amount": 55.29,
-      "last_amount": 60.46
-    },
-    {
-      "desc": "ShopRite",
-      "category": "Groceries",
-      "count": 11,
-      "months": 5,
-      "avg_amount": 32.42,
-      "last_amount": 58.97
-    },
-    {
-      "desc": "Regal Cinemas",
-      "category": "Entertainment",
-      "count": 7,
-      "months": 5,
-      "avg_amount": 16.82,
-      "last_amount": 1.59
-    },
-    {
-      "desc": "Amazon",
-      "category": "Shopping",
-      "count": 29,
-      "months": 5,
-      "avg_amount": 16.53,
-      "last_amount": -7.45
-    },
-    {
-      "desc": "Mercury",
-      "category": "Insurance",
-      "count": 4,
-      "months": 4,
-      "avg_amount": 597.77,
-      "last_amount": 597.78
-    },
-    {
-      "desc": "Republic Services",
-      "category": "Tech/Subs",
-      "count": 4,
-      "months": 4,
-      "avg_amount": 283.84,
-      "last_amount": 198.58
-    },
-    {
-      "desc": "Big Blue Swim School",
-      "category": "Tech/Subs",
-      "count": 4,
-      "months": 4,
-      "avg_amount": 282.63,
-      "last_amount": 266
-    },
-    {
-      "desc": "Kumon Of North",
-      "category": "Tech/Subs",
-      "count": 4,
-      "months": 4,
-      "avg_amount": 280,
-      "last_amount": 280
-    },
-    {
-      "desc": "Garden Farm",
-      "category": "Shopping",
-      "count": 6,
-      "months": 4,
-      "avg_amount": 64.16,
-      "last_amount": 38.76
-    },
-    {
-      "desc": "Delight Big Bazar",
-      "category": "Groceries",
-      "count": 5,
-      "months": 4,
-      "avg_amount": 59.03,
-      "last_amount": 27.72
-    },
-    {
-      "desc": "BP",
-      "category": "Gas/Travel",
-      "count": 10,
-      "months": 4,
-      "avg_amount": 50.97,
-      "last_amount": 20.09
-    },
-    {
-      "desc": "Walgreens",
-      "category": "Healthcare",
-      "count": 11,
-      "months": 4,
-      "avg_amount": 45.82,
-      "last_amount": 303.5
-    },
-    {
-      "desc": "Shaan Halal Zabiha Meat",
-      "category": "Groceries",
-      "count": 7,
-      "months": 4,
-      "avg_amount": 18.52,
-      "last_amount": 10.29
-    },
-    {
-      "desc": "Aitubo.ai Hunghom",
-      "category": "Tech/Subs",
-      "count": 4,
-      "months": 4,
-      "avg_amount": 15,
-      "last_amount": 15
-    },
-    {
-      "desc": "Planet Fitness",
-      "category": "Healthcare",
-      "count": 4,
-      "months": 4,
-      "avg_amount": 10.66,
-      "last_amount": 10.66
-    },
-    {
-      "desc": "Vzn Br Cafe Basking Ridgenj",
-      "category": "Restaurants",
-      "count": 11,
-      "months": 4,
-      "avg_amount": 5.75,
-      "last_amount": 6.25
-    },
-    {
-      "desc": "CVS ExtraCare",
-      "category": "Healthcare",
-      "count": 4,
-      "months": 4,
-      "avg_amount": 5.33,
-      "last_amount": 5.33
-    },
-    {
-      "desc": "Verizon",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 454.42,
-      "last_amount": 520.84
-    },
-    {
-      "desc": "Fanbasis",
-      "category": "Entertainment",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 250,
-      "last_amount": 250
-    },
-    {
-      "desc": "Zelle payment to KAVI MUSIC LLC for \"Aryan Mar and Apr\"; Conf# taivjlhgp",
-      "category": "Entertainment",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 160,
-      "last_amount": 120
-    },
-    {
-      "desc": "Patel Brothers",
-      "category": "Groceries",
-      "count": 4,
-      "months": 3,
-      "avg_amount": 109.44,
-      "last_amount": 82.65
-    },
-    {
-      "desc": "Renaissance Gree",
-      "category": "Tech/Subs",
-      "count": 4,
-      "months": 3,
-      "avg_amount": 108.21,
-      "last_amount": 115
-    },
-    {
-      "desc": "Houseofbi",
-      "category": "Restaurants",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 59.06,
-      "last_amount": 76.41
-    },
-    {
-      "desc": "Optimum",
-      "category": "Tech/Subs",
-      "count": 4,
-      "months": 3,
-      "avg_amount": 50.66,
-      "last_amount": 50.66
-    },
-    {
-      "desc": "Simplisafe",
-      "category": "Shopping",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 35.18,
-      "last_amount": 35.18
-    },
-    {
-      "desc": "Trader Joe's",
-      "category": "Groceries",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 33.49,
-      "last_amount": 13.14
-    },
-    {
-      "desc": "Netflix",
-      "category": "Entertainment",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 19.18,
-      "last_amount": 19.18
-    },
-    {
-      "desc": "Apple",
-      "category": "Shopping",
-      "count": 9,
-      "months": 3,
-      "avg_amount": 12.78,
-      "last_amount": 13.84
-    },
-    {
-      "desc": "Google One",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 1.99,
-      "last_amount": 1.99
-    },
-    {
-      "desc": "North Brunswick",
-      "category": "Entertainment",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 340.16,
-      "last_amount": 448.32
-    },
-    {
-      "desc": "Spirit Airlines",
-      "category": "Gas/Travel",
-      "count": 4,
-      "months": 2,
-      "avg_amount": 336.72,
-      "last_amount": 1188.4
-    },
-    {
-      "desc": "Shvasa",
-      "category": "Tech/Subs",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 299.5,
-      "last_amount": 199
-    },
-    {
-      "desc": "Costco",
-      "category": "Shopping",
-      "count": 3,
-      "months": 2,
-      "avg_amount": 217.47,
-      "last_amount": 322.99
-    },
-    {
-      "desc": "North Brunswick Family De",
-      "category": "Healthcare",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 170.23,
-      "last_amount": 50
-    },
-    {
-      "desc": "NJ E-ZPass",
-      "category": "Gas/Travel",
-      "count": 4,
-      "months": 2,
-      "avg_amount": 129.21,
-      "last_amount": 25
-    },
-    {
-      "desc": "Grocery Outlet",
-      "category": "Groceries",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 103.43,
-      "last_amount": 175.39
-    },
-    {
-      "desc": "United Airlines",
-      "category": "Gas/Travel",
-      "count": 4,
-      "months": 2,
-      "avg_amount": 102.16,
-      "last_amount": 301.4
-    },
-    {
-      "desc": "Uber",
-      "category": "Tax/Professional",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 90.55,
-      "last_amount": 100.98
-    },
-    {
-      "desc": "Replit Inc.",
-      "category": "Tech/Subs",
-      "count": 4,
-      "months": 2,
-      "avg_amount": 75.2,
-      "last_amount": 50.17
-    },
-    {
-      "desc": "Shell",
-      "category": "Gas/Travel",
-      "count": 4,
-      "months": 2,
-      "avg_amount": 73.31,
-      "last_amount": 138.42
-    },
-    {
-      "desc": "Samudhra",
-      "category": "Restaurants",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 72.51,
-      "last_amount": 59.71
-    },
-    {
-      "desc": "Claude.ai",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 2,
-      "avg_amount": 69.01,
-      "last_amount": 20
-    },
-    {
-      "desc": "Patidar Supermarket Nort",
-      "category": "Groceries",
-      "count": 5,
-      "months": 2,
-      "avg_amount": 63.3,
-      "last_amount": 99.27
-    },
-    {
-      "desc": "Desi Halal Meat",
-      "category": "Groceries",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 56.97,
-      "last_amount": 35.26
-    },
-    {
-      "desc": "H&M",
-      "category": "Shopping",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 54.52,
-      "last_amount": 32.95
-    },
-    {
-      "desc": "Renaissance Buy Rite",
-      "category": "Restaurants",
-      "count": 3,
-      "months": 2,
-      "avg_amount": 49.83,
-      "last_amount": 12.78
-    },
-    {
-      "desc": "The Home Depot",
-      "category": "Shopping",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 41.65,
-      "last_amount": 7.76
-    },
-    {
-      "desc": "Shaan Halal Meat Market",
-      "category": "Groceries",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 40.33,
-      "last_amount": 48.78
-    },
-    {
-      "desc": "CVS",
-      "category": "Healthcare",
-      "count": 5,
-      "months": 2,
-      "avg_amount": 31.74,
-      "last_amount": 55.22
-    },
-    {
-      "desc": "Dollar Tree",
-      "category": "Shopping",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 21.19,
-      "last_amount": 19.19
-    },
-    {
-      "desc": "Hulu",
-      "category": "Entertainment",
-      "count": 3,
-      "months": 2,
-      "avg_amount": 12.78,
-      "last_amount": 12.78
-    },
-    {
-      "desc": "Cricketdata",
-      "category": "Tech/Subs",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 5.99,
-      "last_amount": 5.99
-    },
-    {
-      "desc": "Dunkin'",
-      "category": "Restaurants",
-      "count": 3,
-      "months": 2,
-      "avg_amount": 5.68,
-      "last_amount": 10.36
-    },
-    {
-      "desc": "365 Retail Markets",
-      "category": "Restaurants",
-      "count": 3,
-      "months": 2,
-      "avg_amount": 3.45,
-      "last_amount": 5.77
-    },
-    {
-      "desc": "CASHBACK BONUS REDEMPTION PYMT/STMT CRDT",
-      "category": "Refund",
-      "count": 2,
-      "months": 2,
-      "avg_amount": -134.12,
-      "last_amount": -33.25
-    }
-  ],
   "monthly_history": [
     {
       "period": "2026-01",
       "period_label": "January 2026",
-      "income": 5415,
-      "bofa_income": 5415,
+      "income": 5416.34,
+      "bofa_income": 5416.34,
       "td_income": 0,
-      "outflows": 4128.54,
+      "outflows": 0,
       "xoom": 0,
       "investments": 0
     },
     {
       "period": "2026-02",
       "period_label": "February 2026",
-      "income": 37913.46,
-      "bofa_income": 32913.46,
+      "income": 37914.84,
+      "bofa_income": 32914.84,
       "td_income": 5000,
-      "outflows": 14118.12,
+      "outflows": 0,
       "xoom": 0,
       "investments": 0
     },
     {
       "period": "2026-03",
       "period_label": "March 2026",
-      "income": 15892.31,
-      "bofa_income": 10892.3,
+      "income": 15893,
+      "bofa_income": 10892.99,
       "td_income": 5000.01,
-      "outflows": 24483.35,
+      "outflows": 0,
       "xoom": 0,
       "investments": 0
     },
     {
       "period": "2026-04",
       "period_label": "April 2026",
-      "income": 15986.430000000002,
-      "bofa_income": 13486.41,
+      "income": 15986.590000000002,
+      "bofa_income": 13486.57,
       "td_income": 2500.02,
-      "outflows": 9420.95,
+      "outflows": 0,
       "xoom": 0,
       "investments": 0
     },
@@ -1295,7 +605,7 @@
       "income": 0,
       "bofa_income": 0,
       "td_income": 0,
-      "outflows": 1741.47,
+      "outflows": 0,
       "xoom": 0,
       "investments": 0
     }
@@ -1303,19 +613,17 @@
   "monthly_spending": {
     "2026-04": {
       "label": "April 2026",
-      "period": "2026-04",
       "categories": {
         "Healthcare": 585.13,
-        "Tech/Subs": 2664.3899999999994,
-        "Shopping": 1238.42,
+        "Tech/Subs": 4322.159999999999,
+        "Shopping": 1255.8600000000001,
         "Entertainment": 837.3100000000001,
-        "Tax/Professional": 803.85,
+        "Other": 1436.73,
         "Groceries": 625.5299999999999,
         "Restaurants": 457.85,
-        "Gas/Travel": 550.7,
-        "Insurance": 1657.77
+        "Gas/Travel": 655.7
       },
-      "total": 9420.949999999995,
+      "total": 10176.269999999995,
       "transactions": [
         {
           "date": "04-17",
@@ -1323,12 +631,7 @@
           "amount": 10.66,
           "category": "Healthcare",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-16",
@@ -1336,12 +639,7 @@
           "amount": 395.66,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-13",
@@ -1349,12 +647,7 @@
           "amount": 160,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-13",
@@ -1362,12 +655,7 @@
           "amount": 232,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-09",
@@ -1375,12 +663,7 @@
           "amount": 19.18,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-08",
@@ -1388,12 +671,7 @@
           "amount": 240,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-01",
@@ -1401,25 +679,15 @@
           "amount": 266.82,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-01",
           "desc": "New Jersey Tgi",
           "amount": 713,
-          "category": "Tax/Professional",
+          "category": "Other",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "LQarPBJ9E5Up0ADR4OjPSkkBxao9e1iJb90ey",
-          "mask": "5677",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-27",
@@ -1427,12 +695,7 @@
           "amount": 59.71,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-28",
@@ -1440,12 +703,7 @@
           "amount": 374.1,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-16",
@@ -1453,12 +711,7 @@
           "amount": 10.65,
           "category": "Shopping",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "dM5Ed30xEot9Ap000VOXuYRQY0X87ASg8Zep8",
-          "mask": "8036",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "04-13",
@@ -1466,12 +719,7 @@
           "amount": 1.99,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "dM5Ed30xEot9Ap000VOXuYRQY0X87ASg8Zep8",
-          "mask": "8036",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-09",
@@ -1479,12 +727,7 @@
           "amount": 13.84,
           "category": "Shopping",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "dM5Ed30xEot9Ap000VOXuYRQY0X87ASg8Zep8",
-          "mask": "8036",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "04-13",
@@ -1492,12 +735,7 @@
           "amount": 9.99,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-12",
@@ -1505,12 +743,7 @@
           "amount": 117.26,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-11",
@@ -1518,12 +751,7 @@
           "amount": 116.65,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-11",
@@ -1531,12 +759,7 @@
           "amount": 55.45,
           "category": "Tech/Subs",
           "city": null,
-          "state": "PA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "PA"
         },
         {
           "date": "04-10",
@@ -1544,12 +767,7 @@
           "amount": 9.7,
           "category": "Groceries",
           "city": "Dayton",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "04-04",
@@ -1557,12 +775,7 @@
           "amount": 270.79,
           "category": "Shopping",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "04-04",
@@ -1570,12 +783,7 @@
           "amount": 332.5,
           "category": "Tech/Subs",
           "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "04-04",
@@ -1583,12 +791,7 @@
           "amount": 34.09,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-04",
@@ -1596,12 +799,7 @@
           "amount": 31.87,
           "category": "Groceries",
           "city": "Franklin Park",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "04-04",
@@ -1609,12 +807,7 @@
           "amount": 112.49,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-04",
@@ -1622,12 +815,7 @@
           "amount": 18.31,
           "category": "Restaurants",
           "city": "Sacramento",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "04-03",
@@ -1635,12 +823,7 @@
           "amount": 7,
           "category": "Gas/Travel",
           "city": "Sacramento",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "04-03",
@@ -1648,12 +831,7 @@
           "amount": 76.08,
           "category": "Shopping",
           "city": "Sacramento",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "04-03",
@@ -1661,12 +839,7 @@
           "amount": 24.75,
           "category": "Restaurants",
           "city": "Sacramento",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "04-03",
@@ -1674,12 +847,7 @@
           "amount": 52.77,
           "category": "Restaurants",
           "city": "Sacramento",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "04-03",
@@ -1687,12 +855,7 @@
           "amount": 48.43,
           "category": "Restaurants",
           "city": "Kings Beach",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "04-03",
@@ -1700,12 +863,7 @@
           "amount": 6.28,
           "category": "Gas/Travel",
           "city": "Truckee",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "04-03",
@@ -1713,12 +871,7 @@
           "amount": 17.83,
           "category": "Gas/Travel",
           "city": "Truckee",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "04-03",
@@ -1726,12 +879,7 @@
           "amount": 130.69,
           "category": "Gas/Travel",
           "city": "Truckee",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "04-03",
@@ -1739,12 +887,23 @@
           "amount": 12.44,
           "category": "Gas/Travel",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
+        },
+        {
+          "date": "04-03",
+          "desc": "Yosemite View Lodge",
+          "amount": 12.44,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": "CA"
+        },
+        {
+          "date": "04-03",
+          "desc": "Yosemite View Lodge",
+          "amount": 12.44,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": "CA"
         },
         {
           "date": "04-01",
@@ -1752,12 +911,7 @@
           "amount": 31.48,
           "category": "Groceries",
           "city": "Lodi",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "04-01",
@@ -1765,12 +919,7 @@
           "amount": 4.35,
           "category": "Gas/Travel",
           "city": "Stockton",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "04-18",
@@ -1778,12 +927,7 @@
           "amount": 35.18,
           "category": "Shopping",
           "city": null,
-          "state": "MA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "MA"
         },
         {
           "date": "04-18",
@@ -1791,12 +935,7 @@
           "amount": 56.25,
           "category": "Gas/Travel",
           "city": "Dayton",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "04-17",
@@ -1804,12 +943,7 @@
           "amount": 50,
           "category": "Healthcare",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-17",
@@ -1817,12 +951,7 @@
           "amount": 25.99,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-20",
@@ -1830,12 +959,7 @@
           "amount": 5,
           "category": "Tech/Subs",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "04-19",
@@ -1843,12 +967,7 @@
           "amount": 67.85,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-19",
@@ -1856,12 +975,7 @@
           "amount": 9,
           "category": "Tech/Subs",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "04-19",
@@ -1869,12 +983,7 @@
           "amount": 23.19,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-18",
@@ -1882,38 +991,7 @@
           "amount": 29.32,
           "category": "Shopping",
           "city": "Piscataway",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-22",
-          "desc": "Amazon",
-          "amount": -70.93,
-          "category": "Refund",
-          "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": true
-        },
-        {
-          "date": "04-22",
-          "desc": "Amazon",
-          "amount": -27.62,
-          "category": "Refund",
-          "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": true
+          "state": "NJ"
         },
         {
           "date": "04-22",
@@ -1921,12 +999,7 @@
           "amount": 10.65,
           "category": "Healthcare",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "04-22",
@@ -1934,12 +1007,7 @@
           "amount": 290.46,
           "category": "Healthcare",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-22",
@@ -1947,12 +1015,7 @@
           "amount": 68.09,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-21",
@@ -1960,12 +1023,7 @@
           "amount": 9.99,
           "category": "Shopping",
           "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "04-21",
@@ -1973,12 +1031,7 @@
           "amount": 15,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-21",
@@ -1986,12 +1039,7 @@
           "amount": 5.33,
           "category": "Healthcare",
           "city": null,
-          "state": "RI",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "RI"
         },
         {
           "date": "04-23",
@@ -1999,12 +1047,7 @@
           "amount": 10.65,
           "category": "Shopping",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "dM5Ed30xEot9Ap000VOXuYRQY0X87ASg8Zep8",
-          "mask": "8036",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "04-23",
@@ -2012,12 +1055,7 @@
           "amount": 100,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-25",
@@ -2025,12 +1063,7 @@
           "amount": 5,
           "category": "Tech/Subs",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "04-25",
@@ -2038,12 +1071,7 @@
           "amount": 103.57,
           "category": "Groceries",
           "city": "Edison",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "04-25",
@@ -2051,12 +1079,7 @@
           "amount": 28.24,
           "category": "Entertainment",
           "city": null,
-          "state": "TN",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "TN"
         },
         {
           "date": "04-24",
@@ -2064,12 +1087,7 @@
           "amount": 58.63,
           "category": "Shopping",
           "city": null,
-          "state": "WA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "WA"
         },
         {
           "date": "04-26",
@@ -2077,12 +1095,7 @@
           "amount": 149,
           "category": "Gas/Travel",
           "city": null,
-          "state": "MD",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "MD"
         },
         {
           "date": "04-26",
@@ -2090,12 +1103,7 @@
           "amount": 4.46,
           "category": "Restaurants",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "04-26",
@@ -2103,12 +1111,7 @@
           "amount": 2.23,
           "category": "Restaurants",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "04-26",
@@ -2116,12 +1119,7 @@
           "amount": 5,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-26",
@@ -2129,12 +1127,7 @@
           "amount": 23.2,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-26",
@@ -2142,12 +1135,7 @@
           "amount": 2.01,
           "category": "Healthcare",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-26",
@@ -2155,25 +1143,15 @@
           "amount": 90.55,
           "category": "Healthcare",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-28",
           "desc": "Nj Motor Vehicle",
           "amount": 10.73,
-          "category": "Tax/Professional",
+          "category": "Other",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-28",
@@ -2181,12 +1159,7 @@
           "amount": 1.52,
           "category": "Healthcare",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "04-30",
@@ -2194,12 +1167,15 @@
           "amount": 7.45,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
+        },
+        {
+          "date": "04-30",
+          "desc": "Amazon",
+          "amount": 7.45,
+          "category": "Shopping",
+          "city": null,
+          "state": null
         },
         {
           "date": "04-06",
@@ -2207,12 +1183,7 @@
           "amount": 40,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
-          "mask": "9715",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-01",
@@ -2220,12 +1191,15 @@
           "amount": 280,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
-          "mask": "9715",
-          "pending": false,
-          "refund": false
+          "state": null
+        },
+        {
+          "date": "04-01",
+          "desc": "New Jersey Tgi",
+          "amount": 713,
+          "category": "Other",
+          "city": null,
+          "state": null
         },
         {
           "date": "04-18",
@@ -2233,12 +1207,7 @@
           "amount": 12.57,
           "category": "Groceries",
           "city": "Dayton",
-          "state": "NJ",
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "04-18",
@@ -2246,12 +1215,7 @@
           "amount": 44.08,
           "category": "Shopping",
           "city": "Dayton",
-          "state": "NJ",
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "04-13",
@@ -2259,12 +1223,7 @@
           "amount": 23,
           "category": "Healthcare",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "04-13",
@@ -2272,12 +1231,7 @@
           "amount": 68.79,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-09",
@@ -2285,12 +1239,7 @@
           "amount": 53.77,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-09",
@@ -2298,12 +1247,7 @@
           "amount": 178.01,
           "category": "Shopping",
           "city": null,
-          "state": "IL",
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": "IL"
         },
         {
           "date": "04-08",
@@ -2311,12 +1255,7 @@
           "amount": 29.84,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-20",
@@ -2324,12 +1263,7 @@
           "amount": 81.11,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-22",
@@ -2337,12 +1271,7 @@
           "amount": 45.92,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-27",
@@ -2350,12 +1279,7 @@
           "amount": 400,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-30",
@@ -2363,12 +1287,7 @@
           "amount": 125,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
-          "mask": "9715",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-30",
@@ -2376,12 +1295,7 @@
           "amount": 38.76,
           "category": "Shopping",
           "city": null,
-          "state": "NJ",
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "04-04",
@@ -2389,12 +1303,7 @@
           "amount": 5.99,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-04",
@@ -2402,25 +1311,15 @@
           "amount": 1.59,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-04",
           "desc": "Uber",
           "amount": 80.12,
-          "category": "Tax/Professional",
+          "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-05",
@@ -2428,12 +1327,7 @@
           "amount": 50.12,
           "category": "Tech/Subs",
           "city": null,
-          "state": "CA",
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "04-05",
@@ -2441,12 +1335,7 @@
           "amount": 42.03,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-05",
@@ -2454,12 +1343,7 @@
           "amount": 28.33,
           "category": "Healthcare",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-07",
@@ -2467,12 +1351,7 @@
           "amount": 250,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-08",
@@ -2480,12 +1359,7 @@
           "amount": 2,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-09",
@@ -2493,12 +1367,7 @@
           "amount": 5,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-09",
@@ -2506,12 +1375,7 @@
           "amount": 2.87,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-10",
@@ -2519,12 +1383,7 @@
           "amount": 1.59,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-10",
@@ -2532,12 +1391,7 @@
           "amount": 14.28,
           "category": "Healthcare",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-11",
@@ -2545,25 +1399,7 @@
           "amount": 100.13,
           "category": "Tech/Subs",
           "city": null,
-          "state": "CA",
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-13",
-          "desc": "CASHBACK BONUS REDEMPTION PYMT/STMT CRDT",
-          "amount": -235,
-          "category": "Refund",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": true
+          "state": "CA"
         },
         {
           "date": "04-13",
@@ -2571,25 +1407,23 @@
           "amount": 69.94,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-20",
           "desc": "Mercury",
           "amount": 597.77,
-          "category": "Insurance",
+          "category": "Tech/Subs",
           "city": null,
-          "state": "CA",
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": "CA"
+        },
+        {
+          "date": "04-21",
+          "desc": "Nokia Of America Corpo",
+          "amount": 9.99,
+          "category": "Shopping",
+          "city": null,
+          "state": null
         },
         {
           "date": "04-23",
@@ -2597,12 +1431,7 @@
           "amount": 2.98,
           "category": "Restaurants",
           "city": "Troy",
-          "state": "MI",
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": "MI"
         },
         {
           "date": "04-23",
@@ -2610,12 +1439,7 @@
           "amount": 2.87,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-23",
@@ -2623,12 +1447,7 @@
           "amount": 12.39,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-23",
@@ -2636,12 +1455,7 @@
           "amount": 12.53,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-24",
@@ -2649,12 +1463,7 @@
           "amount": 12.48,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-25",
@@ -2662,25 +1471,15 @@
           "amount": 85.3,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-27",
           "desc": "Progressive Insurance",
           "amount": 1060,
-          "category": "Insurance",
+          "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-29",
@@ -2688,12 +1487,7 @@
           "amount": 100.37,
           "category": "Tech/Subs",
           "city": null,
-          "state": "CA",
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "04-29",
@@ -2701,12 +1495,7 @@
           "amount": 58.34,
           "category": "Healthcare",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-30",
@@ -2714,25 +1503,7 @@
           "amount": 1.6,
           "category": "Restaurants",
           "city": "Troy",
-          "state": "MI",
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-03",
-          "desc": "Walmart",
-          "amount": -174.5,
-          "category": "Refund",
-          "city": null,
-          "state": null,
-          "bank": "robin_2",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": true
+          "state": "MI"
         },
         {
           "date": "04-27",
@@ -2740,12 +1511,7 @@
           "amount": 50,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "robin_2",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "04-28",
@@ -2753,30 +1519,23 @@
           "amount": 27.13,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "robin_2",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
+          "state": null
         }
       ]
     },
     "2026-03": {
       "label": "March 2026",
-      "period": "2026-03",
       "categories": {
         "Tech/Subs": 2133.34,
         "Entertainment": 676.19,
-        "Tax/Professional": 16908.149999999998,
+        "Other": 34096.95,
         "Healthcare": 45.99,
         "Shopping": 1776.6399999999996,
-        "Restaurants": 804.8400000000001,
-        "Gas/Travel": 933.9300000000001,
-        "Groceries": 606.4999999999999,
-        "Insurance": 597.77
+        "Restaurants": 794.7800000000002,
+        "Gas/Travel": 1107.0800000000002,
+        "Groceries": 598.3199999999999
       },
-      "total": 24483.35,
+      "total": 41229.28999999998,
       "transactions": [
         {
           "date": "03-31",
@@ -2784,12 +1543,7 @@
           "amount": 50.66,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-31",
@@ -2797,12 +1551,7 @@
           "amount": 105.95,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-30",
@@ -2810,12 +1559,7 @@
           "amount": 12.78,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-23",
@@ -2823,25 +1567,15 @@
           "amount": 10,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-31",
           "desc": "Internal Revenue Service",
           "amount": 16735,
-          "category": "Tax/Professional",
+          "category": "Other",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "LQarPBJ9E5Up0ADR4OjPSkkBxao9e1iJb90ey",
-          "mask": "5677",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-17",
@@ -2849,12 +1583,7 @@
           "amount": 10.66,
           "category": "Healthcare",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-16",
@@ -2862,12 +1591,7 @@
           "amount": 446.77,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-13",
@@ -2875,12 +1599,7 @@
           "amount": 160,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-11",
@@ -2888,12 +1607,7 @@
           "amount": 120,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-09",
@@ -2901,12 +1615,7 @@
           "amount": 19.18,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-03",
@@ -2914,12 +1623,7 @@
           "amount": 50.66,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-02",
@@ -2927,12 +1631,7 @@
           "amount": 12.78,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-02",
@@ -2940,12 +1639,7 @@
           "amount": 105.95,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-02",
@@ -2953,12 +1647,7 @@
           "amount": 366.05,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-31",
@@ -2966,12 +1655,7 @@
           "amount": 20.24,
           "category": "Shopping",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "dM5Ed30xEot9Ap000VOXuYRQY0X87ASg8Zep8",
-          "mask": "8036",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "03-31",
@@ -2979,12 +1663,7 @@
           "amount": 8.66,
           "category": "Shopping",
           "city": "Fresno",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "03-31",
@@ -2992,12 +1671,7 @@
           "amount": 241.92,
           "category": "Restaurants",
           "city": "Mariposa",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "03-31",
@@ -3005,12 +1679,7 @@
           "amount": 9.73,
           "category": "Restaurants",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "03-30",
@@ -3018,12 +1687,7 @@
           "amount": 56.29,
           "category": "Restaurants",
           "city": "Mariposa",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "03-30",
@@ -3031,12 +1695,7 @@
           "amount": 31.57,
           "category": "Gas/Travel",
           "city": "Coarsegold",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "03-30",
@@ -3044,12 +1703,7 @@
           "amount": 44.02,
           "category": "Gas/Travel",
           "city": "Coarsegold",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "03-30",
@@ -3057,12 +1711,7 @@
           "amount": 81.33,
           "category": "Gas/Travel",
           "city": "Coarsegold",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "03-30",
@@ -3070,12 +1719,7 @@
           "amount": 138.42,
           "category": "Gas/Travel",
           "city": "Los Angeles",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "03-29",
@@ -3083,12 +1727,7 @@
           "amount": 33.23,
           "category": "Shopping",
           "city": "Santa Monica",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "03-29",
@@ -3096,25 +1735,15 @@
           "amount": 9.97,
           "category": "Restaurants",
           "city": "Culver City",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "03-29",
           "desc": "Esmeralda",
           "amount": 21,
-          "category": "Restaurants",
+          "category": "Other",
           "city": "Santa Monica",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "03-29",
@@ -3122,12 +1751,7 @@
           "amount": 15,
           "category": "Restaurants",
           "city": "Santa Monica",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "03-29",
@@ -3135,12 +1759,7 @@
           "amount": 18.25,
           "category": "Restaurants",
           "city": "Los Angeles",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "03-28",
@@ -3148,12 +1767,7 @@
           "amount": 32.38,
           "category": "Tech/Subs",
           "city": "Los Angeles",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "03-28",
@@ -3161,12 +1775,7 @@
           "amount": 4.49,
           "category": "Gas/Travel",
           "city": "Irving",
-          "state": "TX",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "TX"
         },
         {
           "date": "03-28",
@@ -3174,12 +1783,7 @@
           "amount": 46.2,
           "category": "Entertainment",
           "city": "Los Angeles",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "03-28",
@@ -3187,12 +1791,7 @@
           "amount": 83.89,
           "category": "Shopping",
           "city": "Rosemead",
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "03-28",
@@ -3200,12 +1799,7 @@
           "amount": 9.67,
           "category": "Restaurants",
           "city": "Newark",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "03-28",
@@ -3213,12 +1807,7 @@
           "amount": 10,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-27",
@@ -3226,12 +1815,7 @@
           "amount": 15.87,
           "category": "Restaurants",
           "city": "Newark",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "03-26",
@@ -3239,12 +1823,7 @@
           "amount": 79,
           "category": "Gas/Travel",
           "city": null,
-          "state": "FL",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "FL"
         },
         {
           "date": "03-26",
@@ -3252,12 +1831,7 @@
           "amount": 34.99,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-25",
@@ -3265,12 +1839,7 @@
           "amount": 73.07,
           "category": "Restaurants",
           "city": "Dayton",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "03-25",
@@ -3278,12 +1847,7 @@
           "amount": 71.01,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-25",
@@ -3291,12 +1855,7 @@
           "amount": 28.24,
           "category": "Entertainment",
           "city": null,
-          "state": "TN",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "TN"
         },
         {
           "date": "03-25",
@@ -3304,12 +1863,7 @@
           "amount": 5,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-24",
@@ -3317,12 +1871,7 @@
           "amount": 10.65,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-24",
@@ -3330,12 +1879,7 @@
           "amount": 126.66,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-24",
@@ -3343,12 +1887,7 @@
           "amount": 27.62,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-23",
@@ -3356,12 +1895,7 @@
           "amount": 25.57,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-23",
@@ -3369,12 +1903,7 @@
           "amount": 87.02,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-23",
@@ -3382,12 +1911,7 @@
           "amount": 10,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-22",
@@ -3395,12 +1919,7 @@
           "amount": 30,
           "category": "Shopping",
           "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "03-22",
@@ -3408,12 +1927,7 @@
           "amount": 15,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-22",
@@ -3421,12 +1935,7 @@
           "amount": 117.47,
           "category": "Shopping",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "03-21",
@@ -3434,12 +1943,7 @@
           "amount": 117.2,
           "category": "Restaurants",
           "city": "Princeton",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "03-21",
@@ -3447,12 +1951,7 @@
           "amount": 6.39,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-21",
@@ -3460,12 +1959,7 @@
           "amount": 5.33,
           "category": "Healthcare",
           "city": null,
-          "state": "RI",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "RI"
         },
         {
           "date": "03-20",
@@ -3473,12 +1967,7 @@
           "amount": 12.99,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-13",
@@ -3486,12 +1975,7 @@
           "amount": 1.99,
           "category": "Tech/Subs",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "dM5Ed30xEot9Ap000VOXuYRQY0X87ASg8Zep8",
-          "mask": "8036",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "03-05",
@@ -3499,12 +1983,7 @@
           "amount": 13.84,
           "category": "Shopping",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "dM5Ed30xEot9Ap000VOXuYRQY0X87ASg8Zep8",
-          "mask": "8036",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "03-19",
@@ -3512,12 +1991,7 @@
           "amount": 129.96,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-18",
@@ -3525,12 +1999,7 @@
           "amount": 35.18,
           "category": "Shopping",
           "city": null,
-          "state": "MA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "MA"
         },
         {
           "date": "03-17",
@@ -3538,12 +2007,7 @@
           "amount": 123.27,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-17",
@@ -3551,12 +2015,7 @@
           "amount": 39.44,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-17",
@@ -3564,12 +2023,7 @@
           "amount": 25,
           "category": "Gas/Travel",
           "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "03-16",
@@ -3577,12 +2031,7 @@
           "amount": 14.92,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-14",
@@ -3590,12 +2039,7 @@
           "amount": 87.01,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-14",
@@ -3603,12 +2047,7 @@
           "amount": 30,
           "category": "Healthcare",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "03-12",
@@ -3616,12 +2055,7 @@
           "amount": 20,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-07",
@@ -3629,12 +2063,7 @@
           "amount": 322.99,
           "category": "Shopping",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "03-07",
@@ -3642,25 +2071,7 @@
           "amount": 6.38,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "03-07",
-          "desc": "KENDALL PARK PRIMARY CARE973-9717120",
-          "amount": -20,
-          "category": "Refund",
-          "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": true
+          "state": null
         },
         {
           "date": "03-07",
@@ -3668,12 +2079,7 @@
           "amount": 48.78,
           "category": "Groceries",
           "city": "Franklin Park",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "03-05",
@@ -3681,12 +2087,7 @@
           "amount": 70.8,
           "category": "Gas/Travel",
           "city": null,
-          "state": "VA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "VA"
         },
         {
           "date": "03-05",
@@ -3694,12 +2095,7 @@
           "amount": 194.76,
           "category": "Gas/Travel",
           "city": null,
-          "state": "NY",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NY"
         },
         {
           "date": "03-05",
@@ -3707,12 +2103,7 @@
           "amount": 71.28,
           "category": "Gas/Travel",
           "city": null,
-          "state": "NY",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NY"
         },
         {
           "date": "03-05",
@@ -3720,12 +2111,7 @@
           "amount": 9.48,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-05",
@@ -3733,12 +2119,7 @@
           "amount": 89.4,
           "category": "Gas/Travel",
           "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "03-04",
@@ -3746,12 +2127,7 @@
           "amount": 11.27,
           "category": "Restaurants",
           "city": "New Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "03-01",
@@ -3759,12 +2135,7 @@
           "amount": 10.36,
           "category": "Restaurants",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "03-01",
@@ -3772,12 +2143,7 @@
           "amount": 266,
           "category": "Tech/Subs",
           "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "03-01",
@@ -3785,12 +2151,15 @@
           "amount": 50.06,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
+        },
+        {
+          "date": "03-31",
+          "desc": "Internal Revenue Service",
+          "amount": 16735,
+          "category": "Other",
+          "city": null,
+          "state": null
         },
         {
           "date": "03-30",
@@ -3798,12 +2167,7 @@
           "amount": 20.42,
           "category": "Tech/Subs",
           "city": "Los Angeles",
-          "state": "CA",
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "03-30",
@@ -3811,12 +2175,7 @@
           "amount": 10,
           "category": "Entertainment",
           "city": "Los Angeles",
-          "state": "CA",
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "03-21",
@@ -3824,12 +2183,7 @@
           "amount": 46.53,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-02",
@@ -3837,12 +2191,7 @@
           "amount": 280,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
-          "mask": "9715",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-19",
@@ -3850,12 +2199,7 @@
           "amount": 56.09,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-18",
@@ -3863,12 +2207,7 @@
           "amount": 99.27,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-18",
@@ -3876,12 +2215,7 @@
           "amount": 88.38,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-16",
@@ -3889,12 +2223,7 @@
           "amount": 36.89,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-16",
@@ -3902,12 +2231,15 @@
           "amount": 10.94,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": null
+        },
+        {
+          "date": "03-16",
+          "desc": "Singas Famous Pizza",
+          "amount": 10.94,
+          "category": "Restaurants",
+          "city": null,
+          "state": null
         },
         {
           "date": "03-13",
@@ -3915,12 +2247,7 @@
           "amount": 47.77,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-12",
@@ -3928,12 +2255,7 @@
           "amount": 32.95,
           "category": "Shopping",
           "city": null,
-          "state": "NY",
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": "NY"
         },
         {
           "date": "03-11",
@@ -3941,12 +2263,7 @@
           "amount": 42.77,
           "category": "Shopping",
           "city": null,
-          "state": "CA",
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "03-09",
@@ -3954,25 +2271,7 @@
           "amount": 102.99,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "03-06",
-          "desc": "Walmart",
-          "amount": -14.58,
-          "category": "Refund",
-          "city": null,
-          "state": "AR",
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": true
+          "state": null
         },
         {
           "date": "03-05",
@@ -3980,12 +2279,7 @@
           "amount": 53.7,
           "category": "Groceries",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "03-04",
@@ -3993,12 +2287,7 @@
           "amount": 9.82,
           "category": "Groceries",
           "city": "Dayton",
-          "state": "NJ",
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "03-04",
@@ -4006,25 +2295,15 @@
           "amount": 63.6,
           "category": "Shopping",
           "city": null,
-          "state": "AR",
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": "AR"
         },
         {
           "date": "03-20",
           "desc": "Mercury",
           "amount": 597.77,
-          "category": "Insurance",
+          "category": "Other",
           "city": null,
-          "state": "CA",
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "03-24",
@@ -4032,12 +2311,7 @@
           "amount": 3.08,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-26",
@@ -4045,25 +2319,15 @@
           "amount": 2.51,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-27",
           "desc": "Uber",
           "amount": 100.98,
-          "category": "Tax/Professional",
+          "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-28",
@@ -4071,12 +2335,7 @@
           "amount": 26,
           "category": "Entertainment",
           "city": "Los Angeles",
-          "state": "CA",
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "03-28",
@@ -4084,25 +2343,15 @@
           "amount": 64,
           "category": "Entertainment",
           "city": "Los Angeles",
-          "state": "CA",
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "03-28",
           "desc": "Lyft",
           "amount": 72.17,
-          "category": "Tax/Professional",
+          "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-30",
@@ -4110,12 +2359,7 @@
           "amount": 50.17,
           "category": "Tech/Subs",
           "city": null,
-          "state": "CA",
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "03-03",
@@ -4123,12 +2367,7 @@
           "amount": 2.87,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-08",
@@ -4136,12 +2375,7 @@
           "amount": 250,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-13",
@@ -4149,12 +2383,7 @@
           "amount": 68.34,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-13",
@@ -4162,12 +2391,7 @@
           "amount": 2.51,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-14",
@@ -4175,12 +2399,7 @@
           "amount": 69.36,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-15",
@@ -4188,12 +2407,7 @@
           "amount": 78.67,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-22",
@@ -4201,12 +2415,7 @@
           "amount": 76.4,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "robin_2",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-28",
@@ -4214,43 +2423,31 @@
           "amount": 314.27,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "robin_2",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "03-14",
           "desc": "Patidar",
           "amount": 8.18,
-          "category": "Groceries",
+          "category": "Other",
           "city": null,
-          "state": null,
-          "bank": "robin_2",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
+          "state": null
         }
       ]
     },
     "2026-02": {
       "label": "February 2026",
-      "period": "2026-02",
       "categories": {
         "Healthcare": 134.08,
-        "Tech/Subs": 1662.02,
+        "Tech/Subs": 1847.96,
         "Shopping": 6600.31,
         "Entertainment": 522.4200000000001,
-        "Gas/Travel": 3511.57,
+        "Gas/Travel": 4415.77,
         "Groceries": 541.6499999999999,
-        "Insurance": 783.71,
         "Restaurants": 351.35999999999996,
-        "Tax/Professional": 11
+        "Other": 608.77
       },
-      "total": 14118.12,
+      "total": 15022.32,
       "transactions": [
         {
           "date": "02-17",
@@ -4258,12 +2455,7 @@
           "amount": 10.66,
           "category": "Healthcare",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-17",
@@ -4271,12 +2463,7 @@
           "amount": 520.84,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-13",
@@ -4284,12 +2471,7 @@
           "amount": 160,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-09",
@@ -4297,12 +2479,7 @@
           "amount": 19.18,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-02",
@@ -4310,12 +2487,7 @@
           "amount": 50.66,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-02",
@@ -4323,12 +2495,7 @@
           "amount": 105.95,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-26",
@@ -4336,12 +2503,7 @@
           "amount": 10.65,
           "category": "Shopping",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "dM5Ed30xEot9Ap000VOXuYRQY0X87ASg8Zep8",
-          "mask": "8036",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "02-19",
@@ -4349,12 +2511,7 @@
           "amount": 10.65,
           "category": "Shopping",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "dM5Ed30xEot9Ap000VOXuYRQY0X87ASg8Zep8",
-          "mask": "8036",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "02-15",
@@ -4362,12 +2519,7 @@
           "amount": 75,
           "category": "Gas/Travel",
           "city": null,
-          "state": "FL",
-          "bank": "Wells Fargo",
-          "account_id": "dM5Ed30xEot9Ap000VOXuYRQY0X87ASg8Zep8",
-          "mask": "8036",
-          "pending": false,
-          "refund": false
+          "state": "FL"
         },
         {
           "date": "02-13",
@@ -4375,12 +2527,7 @@
           "amount": 1.99,
           "category": "Tech/Subs",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "dM5Ed30xEot9Ap000VOXuYRQY0X87ASg8Zep8",
-          "mask": "8036",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "02-12",
@@ -4388,12 +2535,7 @@
           "amount": 10.65,
           "category": "Shopping",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "dM5Ed30xEot9Ap000VOXuYRQY0X87ASg8Zep8",
-          "mask": "8036",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "02-05",
@@ -4401,12 +2543,7 @@
           "amount": 13.84,
           "category": "Shopping",
           "city": null,
-          "state": "CA",
-          "bank": "Wells Fargo",
-          "account_id": "dM5Ed30xEot9Ap000VOXuYRQY0X87ASg8Zep8",
-          "mask": "8036",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "02-28",
@@ -4414,64 +2551,39 @@
           "amount": 27,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-28",
           "desc": "Kidsempire East Eastbrunswick",
           "amount": 6.14,
-          "category": "Insurance",
+          "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-28",
           "desc": "Kidsempire East Eastbrunswick",
           "amount": 6,
-          "category": "Insurance",
+          "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-28",
           "desc": "Kidsempire East Eastbrunswick",
           "amount": 4.26,
-          "category": "Insurance",
+          "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-28",
           "desc": "Kidsempire East Eastbrunswick",
           "amount": 169.54,
-          "category": "Insurance",
+          "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-28",
@@ -4479,12 +2591,7 @@
           "amount": 40.13,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-27",
@@ -4492,12 +2599,7 @@
           "amount": 128.73,
           "category": "Restaurants",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "02-26",
@@ -4505,12 +2607,7 @@
           "amount": 45.93,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-26",
@@ -4518,12 +2615,7 @@
           "amount": 85.29,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-26",
@@ -4531,12 +2623,7 @@
           "amount": 5.32,
           "category": "Healthcare",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "02-26",
@@ -4544,12 +2631,7 @@
           "amount": 22.49,
           "category": "Groceries",
           "city": "Dayton",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "02-25",
@@ -4557,12 +2639,7 @@
           "amount": 225,
           "category": "Entertainment",
           "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "02-25",
@@ -4570,12 +2647,7 @@
           "amount": 28.24,
           "category": "Entertainment",
           "city": null,
-          "state": "TN",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "TN"
         },
         {
           "date": "02-23",
@@ -4583,12 +2655,7 @@
           "amount": 148.21,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-22",
@@ -4596,12 +2663,7 @@
           "amount": 15,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-21",
@@ -4609,12 +2671,7 @@
           "amount": 20.73,
           "category": "Healthcare",
           "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "02-21",
@@ -4622,12 +2679,7 @@
           "amount": 79,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-21",
@@ -4635,12 +2687,7 @@
           "amount": 5.33,
           "category": "Healthcare",
           "city": null,
-          "state": "RI",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "RI"
         },
         {
           "date": "02-18",
@@ -4648,12 +2695,7 @@
           "amount": 35.18,
           "category": "Shopping",
           "city": null,
-          "state": "MA",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "MA"
         },
         {
           "date": "02-17",
@@ -4661,12 +2703,7 @@
           "amount": 7.99,
           "category": "Restaurants",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "02-17",
@@ -4674,12 +2711,7 @@
           "amount": 54.38,
           "category": "Restaurants",
           "city": "Edison",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "02-17",
@@ -4687,12 +2719,7 @@
           "amount": 19.19,
           "category": "Restaurants",
           "city": "Edison",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "02-17",
@@ -4700,12 +2727,7 @@
           "amount": 58.01,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-16",
@@ -4713,12 +2735,7 @@
           "amount": 61.62,
           "category": "Shopping",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "02-14",
@@ -4726,12 +2743,7 @@
           "amount": 152.63,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-14",
@@ -4739,12 +2751,7 @@
           "amount": 0.37,
           "category": "Shopping",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "02-14",
@@ -4752,12 +2759,7 @@
           "amount": 47.98,
           "category": "Shopping",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "02-12",
@@ -4765,12 +2767,7 @@
           "amount": 6.39,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-12",
@@ -4778,12 +2775,7 @@
           "amount": 31.31,
           "category": "Shopping",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "02-09",
@@ -4791,12 +2783,7 @@
           "amount": 15.52,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-09",
@@ -4804,51 +2791,7 @@
           "amount": 48.19,
           "category": "Shopping",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "02-07",
-          "desc": "Amazon",
-          "amount": -22.38,
-          "category": "Refund",
-          "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": true
-        },
-        {
-          "date": "02-07",
-          "desc": "Amazon",
-          "amount": -42.99,
-          "category": "Refund",
-          "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": true
-        },
-        {
-          "date": "02-07",
-          "desc": "Amazon",
-          "amount": -30.46,
-          "category": "Refund",
-          "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": true
+          "state": "NJ"
         },
         {
           "date": "02-07",
@@ -4856,12 +2799,7 @@
           "amount": 52.02,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-07",
@@ -4869,12 +2807,7 @@
           "amount": 56.61,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-04",
@@ -4882,12 +2815,7 @@
           "amount": 27.63,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-04",
@@ -4895,12 +2823,7 @@
           "amount": 25.48,
           "category": "Healthcare",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "02-04",
@@ -4908,12 +2831,7 @@
           "amount": 18.12,
           "category": "Shopping",
           "city": null,
-          "state": "MO",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "MO"
         },
         {
           "date": "02-03",
@@ -4921,12 +2839,7 @@
           "amount": 266,
           "category": "Tech/Subs",
           "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "02-03",
@@ -4934,12 +2847,7 @@
           "amount": 43.88,
           "category": "Healthcare",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "02-03",
@@ -4947,25 +2855,7 @@
           "amount": 2.68,
           "category": "Healthcare",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "02-25",
-          "desc": "Airbnb",
-          "amount": -1410.04,
-          "category": "Refund",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
-          "mask": "9715",
-          "pending": false,
-          "refund": true
+          "state": "NJ"
         },
         {
           "date": "02-24",
@@ -4973,12 +2863,7 @@
           "amount": 1410.04,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
-          "mask": "9715",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-17",
@@ -4986,12 +2871,7 @@
           "amount": 5815,
           "category": "Shopping",
           "city": "Iselin",
-          "state": "NJ",
-          "bank": "BofA",
-          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
-          "mask": "9715",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "02-17",
@@ -4999,12 +2879,7 @@
           "amount": 45,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
-          "mask": "9715",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-11",
@@ -5012,12 +2887,7 @@
           "amount": 1188.4,
           "category": "Gas/Travel",
           "city": "Miramar",
-          "state": "FL",
-          "bank": "BofA",
-          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
-          "mask": "9715",
-          "pending": false,
-          "refund": false
+          "state": "FL"
         },
         {
           "date": "02-06",
@@ -5025,12 +2895,7 @@
           "amount": 35,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
-          "mask": "9715",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-06",
@@ -5038,12 +2903,7 @@
           "amount": 32.24,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
-          "mask": "9715",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-06",
@@ -5051,12 +2911,31 @@
           "amount": 301.4,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
-          "mask": "9715",
-          "pending": false,
-          "refund": false
+          "state": null
+        },
+        {
+          "date": "02-06",
+          "desc": "United Airlines",
+          "amount": 301.4,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "02-06",
+          "desc": "United Airlines",
+          "amount": 301.4,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "02-06",
+          "desc": "United Airlines",
+          "amount": 301.4,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
         },
         {
           "date": "02-02",
@@ -5064,12 +2943,7 @@
           "amount": 280,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
-          "mask": "9715",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-28",
@@ -5077,12 +2951,7 @@
           "amount": 33.5,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-21",
@@ -5090,12 +2959,7 @@
           "amount": 33.64,
           "category": "Groceries",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "02-20",
@@ -5103,25 +2967,15 @@
           "amount": 22.65,
           "category": "Groceries",
           "city": "Dayton",
-          "state": "NJ",
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "02-19",
           "desc": "Hindu Temple & Cultural Society Of USA Inc",
           "amount": 11,
-          "category": "Tax/Professional",
+          "category": "Other",
           "city": "Bridgewater",
-          "state": "NJ",
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "02-17",
@@ -5129,12 +2983,7 @@
           "amount": 42.14,
           "category": "Groceries",
           "city": "Dayton",
-          "state": "NJ",
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "02-14",
@@ -5142,12 +2991,7 @@
           "amount": 20,
           "category": "Healthcare",
           "city": "Kendall Park",
-          "state": "NJ",
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "02-12",
@@ -5155,12 +2999,7 @@
           "amount": 44.08,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-11",
@@ -5168,12 +3007,7 @@
           "amount": 69.26,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-09",
@@ -5181,12 +3015,7 @@
           "amount": 27.39,
           "category": "Shopping",
           "city": null,
-          "state": "AR",
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": "AR"
         },
         {
           "date": "02-06",
@@ -5194,12 +3023,7 @@
           "amount": 194.37,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-05",
@@ -5207,12 +3031,7 @@
           "amount": 11.45,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-05",
@@ -5220,12 +3039,7 @@
           "amount": 275.25,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-02",
@@ -5233,25 +3047,7 @@
           "amount": 46.44,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "02-01",
-          "desc": "CASHBACK BONUS REDEMPTION PYMT/STMT CRDT",
-          "amount": -33.25,
-          "category": "Refund",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": true
+          "state": null
         },
         {
           "date": "02-03",
@@ -5259,12 +3055,7 @@
           "amount": 5.77,
           "category": "Restaurants",
           "city": "Troy",
-          "state": "MI",
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": "MI"
         },
         {
           "date": "02-06",
@@ -5272,12 +3063,7 @@
           "amount": 250,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-07",
@@ -5285,12 +3071,7 @@
           "amount": 30.82,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-14",
@@ -5298,12 +3079,7 @@
           "amount": 59.71,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-19",
@@ -5311,25 +3087,15 @@
           "amount": 2.87,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-20",
           "desc": "Mercury",
           "amount": 597.77,
-          "category": "Insurance",
+          "category": "Other",
           "city": null,
-          "state": "CA",
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "02-21",
@@ -5337,12 +3103,7 @@
           "amount": 59.34,
           "category": "Shopping",
           "city": "Brunswick",
-          "state": null,
-          "bank": "robin_2",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "02-21",
@@ -5350,30 +3111,23 @@
           "amount": 90,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "robin_2",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
+          "state": null
         }
       ]
     },
     "2026-01": {
       "label": "January 2026",
-      "period": "2026-01",
       "categories": {
         "Tech/Subs": 551.72,
         "Entertainment": 161.02,
         "Shopping": 922.53,
-        "Healthcare": 658.23,
+        "Healthcare": 660.73,
         "Gas/Travel": 452.59,
         "Restaurants": 145.6,
         "Groceries": 190.75,
-        "Tax/Professional": 448.32,
-        "Insurance": 597.78
+        "Other": 1046.1
       },
-      "total": 4128.539999999999,
+      "total": 4131.039999999999,
       "transactions": [
         {
           "date": "01-30",
@@ -5381,12 +3135,7 @@
           "amount": 303.93,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-28",
@@ -5394,12 +3143,7 @@
           "amount": 12.78,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-22",
@@ -5407,12 +3151,7 @@
           "amount": 127.09,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-21",
@@ -5420,12 +3159,7 @@
           "amount": 14.99,
           "category": "Healthcare",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-21",
@@ -5433,12 +3167,7 @@
           "amount": 200,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-20",
@@ -5446,12 +3175,15 @@
           "amount": 2.5,
           "category": "Healthcare",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
+        },
+        {
+          "date": "01-20",
+          "desc": "Walgreens",
+          "amount": 2.5,
+          "category": "Healthcare",
+          "city": "North Brunswick",
+          "state": "NJ"
         },
         {
           "date": "01-20",
@@ -5459,12 +3191,7 @@
           "amount": 10.66,
           "category": "Healthcare",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-20",
@@ -5472,12 +3199,7 @@
           "amount": 120,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-20",
@@ -5485,12 +3207,7 @@
           "amount": 63.5,
           "category": "Healthcare",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "01-20",
@@ -5498,12 +3215,7 @@
           "amount": 303.5,
           "category": "Healthcare",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "01-24",
@@ -5511,12 +3223,7 @@
           "amount": 377.45,
           "category": "Gas/Travel",
           "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "dM5Ed30xEot9Ap000VOXuYRQY0X87ASg8Zep8",
-          "mask": "8036",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "01-24",
@@ -5524,12 +3231,7 @@
           "amount": 50,
           "category": "Healthcare",
           "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "dM5Ed30xEot9Ap000VOXuYRQY0X87ASg8Zep8",
-          "mask": "8036",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "01-31",
@@ -5537,12 +3239,7 @@
           "amount": 20.56,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-31",
@@ -5550,12 +3247,7 @@
           "amount": 42.99,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-31",
@@ -5563,12 +3255,7 @@
           "amount": 19.19,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-31",
@@ -5576,12 +3263,7 @@
           "amount": 77.3,
           "category": "Shopping",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "01-31",
@@ -5589,12 +3271,7 @@
           "amount": 4.26,
           "category": "Restaurants",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "01-30",
@@ -5602,12 +3279,7 @@
           "amount": 20,
           "category": "Healthcare",
           "city": "Kendall Park",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "01-30",
@@ -5615,12 +3287,7 @@
           "amount": 49.99,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-29",
@@ -5628,12 +3295,7 @@
           "amount": 10.12,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-29",
@@ -5641,12 +3303,7 @@
           "amount": 14.99,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-29",
@@ -5654,12 +3311,7 @@
           "amount": 22.38,
           "category": "Restaurants",
           "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "01-25",
@@ -5667,12 +3319,7 @@
           "amount": 28.24,
           "category": "Entertainment",
           "city": null,
-          "state": "TN",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "TN"
         },
         {
           "date": "01-24",
@@ -5680,12 +3327,7 @@
           "amount": 25,
           "category": "Gas/Travel",
           "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "01-24",
@@ -5693,12 +3335,7 @@
           "amount": 2.53,
           "category": "Healthcare",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "01-24",
@@ -5706,12 +3343,7 @@
           "amount": 13.14,
           "category": "Groceries",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "01-23",
@@ -5719,12 +3351,7 @@
           "amount": 21.53,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-23",
@@ -5732,12 +3359,7 @@
           "amount": 82.65,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-22",
@@ -5745,12 +3367,7 @@
           "amount": 15,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-22",
@@ -5758,12 +3375,7 @@
           "amount": 50.14,
           "category": "Gas/Travel",
           "city": "Somerset",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "01-21",
@@ -5771,12 +3383,7 @@
           "amount": 50,
           "category": "Healthcare",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-21",
@@ -5784,12 +3391,7 @@
           "amount": 5.33,
           "category": "Healthcare",
           "city": null,
-          "state": "RI",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "RI"
         },
         {
           "date": "01-20",
@@ -5797,25 +3399,15 @@
           "amount": 13.23,
           "category": "Tech/Subs",
           "city": null,
-          "state": "TN",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "TN"
         },
         {
           "date": "01-20",
           "desc": "North Brunswick",
           "amount": 448.32,
-          "category": "Tax/Professional",
+          "category": "Other",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "01-19",
@@ -5823,12 +3415,7 @@
           "amount": 75.54,
           "category": "Shopping",
           "city": "Milltown",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "01-19",
@@ -5836,12 +3423,7 @@
           "amount": 102.29,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-19",
@@ -5849,12 +3431,7 @@
           "amount": 31.98,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-24",
@@ -5862,12 +3439,7 @@
           "amount": 38.76,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-22",
@@ -5875,12 +3447,7 @@
           "amount": 27.72,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-22",
@@ -5888,12 +3455,7 @@
           "amount": 199,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-20",
@@ -5901,25 +3463,15 @@
           "amount": 36.3,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-20",
           "desc": "Mercury",
           "amount": 597.78,
-          "category": "Insurance",
+          "category": "Other",
           "city": null,
-          "state": "CA",
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": "CA"
         },
         {
           "date": "01-23",
@@ -5927,12 +3479,7 @@
           "amount": 6.25,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-24",
@@ -5940,12 +3487,7 @@
           "amount": 55.22,
           "category": "Healthcare",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "01-24",
@@ -5953,12 +3495,7 @@
           "amount": 76.41,
           "category": "Restaurants",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-25",
@@ -5966,12 +3503,7 @@
           "amount": 59,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-30",
@@ -5979,12 +3511,7 @@
           "amount": 20,
           "category": "Healthcare",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-30",
@@ -5992,12 +3519,7 @@
           "amount": 35.26,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-31",
@@ -6005,12 +3527,7 @@
           "amount": 83.74,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "robin_2",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "01-31",
@@ -6018,18 +3535,12 @@
           "amount": 60,
           "category": "Healthcare",
           "city": null,
-          "state": null,
-          "bank": "robin_2",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
+          "state": null
         }
       ]
     },
     "2026-05": {
       "label": "May 2026",
-      "period": "2026-05",
       "categories": {
         "Tech/Subs": 947.78,
         "Shopping": 419.33,
@@ -6046,12 +3557,7 @@
           "amount": 50.66,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "05-01",
@@ -6059,12 +3565,7 @@
           "amount": 115,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "05-01",
@@ -6072,12 +3573,7 @@
           "amount": 198.58,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "05-03",
@@ -6085,12 +3581,7 @@
           "amount": 7.45,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "05-02",
@@ -6098,12 +3589,7 @@
           "amount": 12.78,
           "category": "Restaurants",
           "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "05-05",
@@ -6111,12 +3597,7 @@
           "amount": 23.8,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "05-04",
@@ -6124,12 +3605,7 @@
           "amount": 266,
           "category": "Tech/Subs",
           "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "05-04",
@@ -6137,25 +3613,7 @@
           "amount": 69.66,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "05-04",
-          "desc": "Amazon",
-          "amount": -7.45,
-          "category": "Refund",
-          "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": true
+          "state": null
         },
         {
           "date": "05-03",
@@ -6163,12 +3621,7 @@
           "amount": 319.86,
           "category": "Shopping",
           "city": null,
-          "state": "MN",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
+          "state": "MN"
         },
         {
           "date": "05-01",
@@ -6176,12 +3629,7 @@
           "amount": 280,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
-          "mask": "9715",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "05-01",
@@ -6189,12 +3637,7 @@
           "amount": 58.97,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "05-01",
@@ -6202,12 +3645,7 @@
           "amount": 20.09,
           "category": "Gas/Travel",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "05-01",
@@ -6215,12 +3653,7 @@
           "amount": 10.29,
           "category": "Groceries",
           "city": "Dayton",
-          "state": "NJ",
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": "NJ"
         },
         {
           "date": "05-02",
@@ -6228,12 +3661,7 @@
           "amount": 31.55,
           "category": "Tech/Subs",
           "city": null,
-          "state": "TN",
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": "TN"
         },
         {
           "date": "05-05",
@@ -6241,12 +3669,7 @@
           "amount": 60.46,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "05-01",
@@ -6254,12 +3677,7 @@
           "amount": 1.59,
           "category": "Entertainment",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "05-04",
@@ -6267,12 +3685,7 @@
           "amount": 5.99,
           "category": "Tech/Subs",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "05-05",
@@ -6280,12 +3693,7 @@
           "amount": 7.76,
           "category": "Shopping",
           "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "Ke3rrNMaovcLDYgnXgRxILrPxKKr5VfNXqn3J",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "05-02",
@@ -6293,12 +3701,7 @@
           "amount": 18.13,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "robin_2",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "05-02",
@@ -6306,12 +3709,7 @@
           "amount": 7.46,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "robin_2",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
+          "state": null
         },
         {
           "date": "05-02",
@@ -6319,12 +3717,7 @@
           "amount": 175.39,
           "category": "Groceries",
           "city": null,
-          "state": null,
-          "bank": "robin_2",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
+          "state": null
         }
       ]
     }
@@ -6446,6 +3839,26 @@
       "amount": 130.69,
       "category": "Gas/Travel",
       "city": "Truckee",
+      "state": "CA",
+      "period": "2026-04",
+      "period_label": "April 2026"
+    },
+    {
+      "date": "04-03",
+      "desc": "Yosemite View Lodge",
+      "amount": 12.44,
+      "category": "Gas/Travel",
+      "city": null,
+      "state": "CA",
+      "period": "2026-04",
+      "period_label": "April 2026"
+    },
+    {
+      "date": "04-03",
+      "desc": "Yosemite View Lodge",
+      "amount": 12.44,
+      "category": "Gas/Travel",
+      "city": null,
       "state": "CA",
       "period": "2026-04",
       "period_label": "April 2026"
@@ -6584,7 +3997,7 @@
       "date": "03-29",
       "desc": "Esmeralda",
       "amount": 21,
-      "category": "Restaurants",
+      "category": "Other",
       "city": "Santa Monica",
       "state": "CA",
       "period": "2026-03",
@@ -7001,16 +4414,6 @@
       "period_label": "March 2026"
     },
     {
-      "date": "03-06",
-      "desc": "Walmart",
-      "amount": -14.58,
-      "category": "Refund",
-      "city": null,
-      "state": "AR",
-      "period": "2026-03",
-      "period_label": "March 2026"
-    },
-    {
       "date": "03-04",
       "desc": "Walmart",
       "amount": 63.6,
@@ -7044,7 +4447,7 @@
       "date": "03-20",
       "desc": "Mercury",
       "amount": 597.77,
-      "category": "Insurance",
+      "category": "Other",
       "city": null,
       "state": "CA",
       "period": "2026-03",
@@ -7104,7 +4507,7 @@
       "date": "01-20",
       "desc": "Mercury",
       "amount": 597.78,
-      "category": "Insurance",
+      "category": "Other",
       "city": null,
       "state": "CA",
       "period": "2026-01",
@@ -7124,7 +4527,7 @@
       "date": "02-20",
       "desc": "Mercury",
       "amount": 597.77,
-      "category": "Insurance",
+      "category": "Other",
       "city": null,
       "state": "CA",
       "period": "2026-02",
@@ -7134,7 +4537,7 @@
       "date": "04-20",
       "desc": "Mercury",
       "amount": 597.77,
-      "category": "Insurance",
+      "category": "Tech/Subs",
       "city": null,
       "state": "CA",
       "period": "2026-04",
@@ -7179,7 +4582,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "statement_count": "9 live accounts",
-  "generated_at": "2026-05-07T00:00:10.233Z",
+  "statement_count": "8 live accounts",
+  "generated_at": "2026-05-07T11:41:11.500Z",
   "source": "plaid_realtime"
 }
