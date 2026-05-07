@@ -2,7 +2,7 @@
   "kpis": {
     "income": 0,
     "income_period": "",
-    "true_outflows": 1741.47,
+    "true_outflows": 1864.22,
     "outflows_period": "May 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -88,8 +88,8 @@
       "mask": "5677",
       "type": "depository",
       "subtype": "savings",
-      "balance": 2056.95,
-      "available": 2056.95,
+      "balance": 756.95,
+      "available": 756.95,
       "is_credit": false,
       "is_checking": false,
       "is_savings": true
@@ -101,8 +101,8 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 893.31,
-      "available": 893.31,
+      "balance": 2193.31,
+      "available": 1156.34,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -231,8 +231,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 583.49,
-      "available": 116.51,
+      "balance": 643.95,
+      "available": 56.05,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -244,8 +244,8 @@
       "mask": "5677",
       "type": "depository",
       "subtype": "savings",
-      "balance": 2056.95,
-      "available": 2056.95,
+      "balance": 756.95,
+      "available": 756.95,
       "is_credit": false,
       "is_checking": false,
       "is_savings": true
@@ -257,8 +257,8 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 8749.19,
-      "available": 8626.44,
+      "balance": 8629.19,
+      "available": 8629.19,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -330,9 +330,9 @@
     }
   ],
   "net_worth": {
-    "total_checking": 50777.42,
-    "total_credit": 6572.75,
-    "net": 44204.67
+    "total_checking": 49357.42,
+    "total_credit": 6633.21,
+    "net": 42724.21
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -345,7 +345,7 @@
   "spending": {
     "Healthcare": 1425.93,
     "Tech/Subs": 9802.96,
-    "Shopping": 10974.670000000002,
+    "Shopping": 11097.420000000002,
     "Entertainment": 2198.53,
     "Other": 37188.549999999996,
     "Groceries": 2226.49,
@@ -3543,13 +3543,13 @@
       "label": "May 2026",
       "categories": {
         "Tech/Subs": 947.78,
-        "Shopping": 419.33,
+        "Shopping": 542.08,
         "Restaurants": 12.78,
         "Gas/Travel": 89.75,
         "Groceries": 270.23999999999995,
         "Entertainment": 1.59
       },
-      "total": 1741.4699999999998,
+      "total": 1864.2199999999998,
       "transactions": [
         {
           "date": "05-01",
@@ -3664,12 +3664,20 @@
           "state": "TN"
         },
         {
-          "date": "05-05",
+          "date": "05-06",
+          "desc": "Withdrwl Dey Farm At",
+          "amount": 122.75,
+          "category": "Shopping",
+          "city": "Cranbury",
+          "state": "NJ"
+        },
+        {
+          "date": "05-06",
           "desc": "Walmart",
           "amount": 60.46,
           "category": "Shopping",
           "city": null,
-          "state": null
+          "state": "AR"
         },
         {
           "date": "05-01",
@@ -4444,6 +4452,16 @@
       "period_label": "May 2026"
     },
     {
+      "date": "05-06",
+      "desc": "Walmart",
+      "amount": 60.46,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-05",
+      "period_label": "May 2026"
+    },
+    {
       "date": "03-20",
       "desc": "Mercury",
       "amount": 597.77,
@@ -4583,6 +4601,6 @@
     "cable": 50.66
   },
   "statement_count": "8 live accounts",
-  "generated_at": "2026-05-07T13:00:43.644Z",
+  "generated_at": "2026-05-07T21:41:50.764Z",
   "source": "plaid_realtime"
 }
