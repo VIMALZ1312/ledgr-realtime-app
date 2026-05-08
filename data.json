@@ -1,22 +1,22 @@
 {
   "kpis": {
-    "income": 0,
-    "income_period": "",
-    "true_outflows": 1864.22,
+    "income": 7954.02,
+    "income_period": "May 2026",
+    "true_outflows": 2120.17,
     "outflows_period": "May 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 3533.07,
+      "balance": 2496.1,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
       "outflows": 0
     },
     "wf": {
-      "balance": 3851.51,
+      "balance": 3407.4,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 200
@@ -49,7 +49,7 @@
       "mask": "5772",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 32185.9908232905,
+      "balance": 34750.704207275005,
       "available": null,
       "is_credit": false,
       "is_checking": false,
@@ -101,8 +101,8 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 2193.31,
-      "available": 1156.34,
+      "balance": 1156.34,
+      "available": 5034.78,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -127,8 +127,8 @@
       "mask": "1432",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 1556.09,
-      "available": 3543,
+      "balance": 1191.09,
+      "available": 3908,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -141,7 +141,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 200,
-      "available": 200,
+      "available": 614.94,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -153,8 +153,8 @@
       "mask": "8036",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 85.06,
-      "available": 914,
+      "balance": 0,
+      "available": 999,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -166,8 +166,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 2210.36,
-      "available": 789,
+      "balance": 2216.31,
+      "available": 683,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -258,7 +258,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 8629.19,
-      "available": 8629.19,
+      "available": 11739.77,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -271,7 +271,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 2034.14,
-      "available": 10958,
+      "available": 10708,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -330,9 +330,9 @@
     }
   ],
   "net_worth": {
-    "total_checking": 49357.42,
-    "total_credit": 6633.21,
-    "net": 42724.21
+    "total_checking": 48320.45,
+    "total_credit": 6189.1,
+    "net": 42131.35
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -344,12 +344,12 @@
   },
   "spending": {
     "Healthcare": 1425.93,
-    "Tech/Subs": 9802.96,
+    "Tech/Subs": 10052.96,
     "Shopping": 11097.420000000002,
     "Entertainment": 2198.53,
     "Other": 37188.549999999996,
     "Groceries": 2226.49,
-    "Restaurants": 1762.37,
+    "Restaurants": 1768.32,
     "Gas/Travel": 6720.890000000001
   },
   "zelle_received": [
@@ -602,8 +602,8 @@
     {
       "period": "2026-05",
       "period_label": "May 2026",
-      "income": 0,
-      "bofa_income": 0,
+      "income": 7954.02,
+      "bofa_income": 7954.02,
       "td_income": 0,
       "outflows": 0,
       "xoom": 0,
@@ -3542,14 +3542,14 @@
     "2026-05": {
       "label": "May 2026",
       "categories": {
-        "Tech/Subs": 947.78,
+        "Tech/Subs": 1197.78,
         "Shopping": 542.08,
-        "Restaurants": 12.78,
+        "Restaurants": 18.73,
         "Gas/Travel": 89.75,
         "Groceries": 270.23999999999995,
         "Entertainment": 1.59
       },
-      "total": 1864.2199999999998,
+      "total": 2120.17,
       "transactions": [
         {
           "date": "05-01",
@@ -3622,6 +3622,14 @@
           "category": "Shopping",
           "city": null,
           "state": "MN"
+        },
+        {
+          "date": "05-06",
+          "desc": "Wingstop",
+          "amount": 5.95,
+          "category": "Restaurants",
+          "city": "New Brunswick",
+          "state": "NJ"
         },
         {
           "date": "05-01",
@@ -3700,6 +3708,14 @@
           "desc": "The Home Depot",
           "amount": 7.76,
           "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-07",
+          "desc": "Fanbasis",
+          "amount": 250,
+          "category": "Tech/Subs",
           "city": null,
           "state": null
         },
@@ -4601,6 +4617,6 @@
     "cable": 50.66
   },
   "statement_count": "8 live accounts",
-  "generated_at": "2026-05-07T21:42:25.280Z",
+  "generated_at": "2026-05-08T21:57:56.967Z",
   "source": "plaid_realtime"
 }
