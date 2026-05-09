@@ -2,14 +2,14 @@
   "kpis": {
     "income": 7954.02,
     "income_period": "May 2026",
-    "true_outflows": 2120.17,
+    "true_outflows": 1862.41,
     "outflows_period": "May 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 2496.1,
+      "balance": 6374.54,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -28,7 +28,7 @@
       "payroll": 0
     },
     "discover": {
-      "balance": 2034.14,
+      "balance": 2291.9,
       "is_credit": true,
       "period_label": "Live"
     },
@@ -101,7 +101,7 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 1156.34,
+      "balance": 5034.78,
       "available": 5034.78,
       "is_credit": false,
       "is_checking": true,
@@ -257,7 +257,7 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 8629.19,
+      "balance": 11739.77,
       "available": 11739.77,
       "is_credit": false,
       "is_checking": true,
@@ -270,8 +270,8 @@
       "mask": "0494",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 2034.14,
-      "available": 10708,
+      "balance": 2291.9,
+      "available": 10678,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -309,8 +309,8 @@
       "mask": "7119",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 1257.15,
-      "available": 1257.15,
+      "balance": 1306.95,
+      "available": 1073.07,
       "is_credit": false,
       "is_checking": false,
       "is_savings": false
@@ -330,9 +330,9 @@
     }
   ],
   "net_worth": {
-    "total_checking": 48320.45,
-    "total_credit": 6189.1,
-    "net": 42131.35
+    "total_checking": 55309.47,
+    "total_credit": 6446.86,
+    "net": 48862.61
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -344,8 +344,8 @@
   },
   "spending": {
     "Healthcare": 1425.93,
-    "Tech/Subs": 10052.96,
-    "Shopping": 11097.420000000002,
+    "Tech/Subs": 9802.96,
+    "Shopping": 11089.660000000002,
     "Entertainment": 2198.53,
     "Other": 37188.549999999996,
     "Groceries": 2226.49,
@@ -3542,14 +3542,14 @@
     "2026-05": {
       "label": "May 2026",
       "categories": {
-        "Tech/Subs": 1197.78,
-        "Shopping": 542.08,
+        "Tech/Subs": 947.78,
+        "Shopping": 534.32,
         "Restaurants": 18.73,
         "Gas/Travel": 89.75,
         "Groceries": 270.23999999999995,
         "Entertainment": 1.59
       },
-      "total": 2120.17,
+      "total": 1862.4099999999999,
       "transactions": [
         {
           "date": "05-01",
@@ -3699,22 +3699,6 @@
           "date": "05-04",
           "desc": "Cricketdata",
           "amount": 5.99,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "05-05",
-          "desc": "The Home Depot",
-          "amount": 7.76,
-          "category": "Shopping",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "05-07",
-          "desc": "Fanbasis",
-          "amount": 250,
           "category": "Tech/Subs",
           "city": null,
           "state": null
@@ -4617,6 +4601,6 @@
     "cable": 50.66
   },
   "statement_count": "8 live accounts",
-  "generated_at": "2026-05-08T21:57:56.967Z",
+  "generated_at": "2026-05-09T22:00:30.716Z",
   "source": "plaid_realtime"
 }
