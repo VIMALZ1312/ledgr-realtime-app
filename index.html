@@ -86,6 +86,18 @@ body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-ser
 .edit-btn{font-size:11px;color:var(--muted2);cursor:pointer;flex-shrink:0;padding:0 2px;background:none;border:none;}
 .edit-btn:hover{color:var(--muted);}
 .edited-badge{font-size:10px;color:var(--yellow);margin-left:4px;}
+.state-block{background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:8px;overflow:hidden;}
+.state-head{display:flex;align-items:center;gap:12px;padding:12px 14px;cursor:pointer;}
+.state-head:hover{background:var(--s2);}
+.state-badge{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;color:var(--yellow);background:rgba(245,197,24,0.10);border:1px solid rgba(245,197,24,0.25);padding:5px 9px;border-radius:6px;flex-shrink:0;letter-spacing:0.5px;min-width:38px;text-align:center;}
+.state-name{flex:1;min-width:0;}
+.state-name-main{font-size:14px;font-weight:500;}
+.state-name-sub{font-size:11px;color:var(--muted);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.state-total{font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:500;color:var(--yellow);flex-shrink:0;}
+.state-chev{color:var(--muted);font-size:14px;flex-shrink:0;margin-left:2px;}
+.state-body{padding:0 14px 12px 14px;}
+.travel-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
+.travel-chips .chip{margin:0;}
 @media(max-width:700px){
   .sidebar{display:none;}
   .topbar{display:flex;}
@@ -226,7 +238,7 @@ function applyOverrides(data) {
   Object.keys(msp).forEach(function(p) {
     var v = msp[p];
     (v.transactions || []).forEach(function(t) {
-      // Key is desc only â€” applies GLOBALLY across all months and amounts
+      // Key is desc only — applies GLOBALLY across all months and amounts
       var override = CAT_OVERRIDES[t.desc];
       if(override && override !== t.category) {
         v.categories[t.category] = (v.categories[t.category] || 0) - t.amount;
@@ -255,7 +267,7 @@ function setCat(desc, cat) {
 }
 
 function editCat(desc, amount, currentCat) {
-  // Key is desc only â€” change applies to ALL transactions with same name globally
+  // Key is desc only — change applies to ALL transactions with same name globally
   var descEsc = desc.replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/"/g,'&quot;');
   var curCat = CAT_OVERRIDES[desc] || currentCat;
   var b = '<div style="font-size:13px;color:var(--muted);margin-bottom:6px;word-break:break-word">' + desc + '</div>';
@@ -281,7 +293,7 @@ function editCat(desc, amount, currentCat) {
   if(CAT_OVERRIDES[desc]) {
     b += '<button onclick="setCat(\'' + descEsc + '\',null)" style="font-size:12px;padding:6px 14px;border-radius:6px;border:1px solid var(--border);background:var(--s2);color:var(--muted);cursor:pointer">Reset to original</button>';
   }
-  openModal('Recategorize', 'Global â€” affects all months', b);
+  openModal('Recategorize', 'Global — affects all months', b);
 }
 
 function addCustomCat(desc) {
@@ -304,10 +316,10 @@ function txnLine(t, col, extraStyle) {
     bankLabel = '<span style="font-size:9px;font-family:IBM Plex Mono,monospace;color:var(--muted2);background:var(--s2);border-radius:3px;padding:1px 4px;flex-shrink:0;margin-right:2px">' + bankShort + '</span>';
   }
   if (t.mask) {
-    bankLabel += '<span style="font-size:9px;font-family:IBM Plex Mono,monospace;color:var(--muted2);background:var(--s2);border-radius:3px;padding:1px 4px;flex-shrink:0;margin-right:2px">â€¢â€¢' + t.mask + '</span>';
+    bankLabel += '<span style="font-size:9px;font-family:IBM Plex Mono,monospace;color:var(--muted2);background:var(--s2);border-radius:3px;padding:1px 4px;flex-shrink:0;margin-right:2px">••' + t.mask + '</span>';
   }
   var refundBadge = isRefund ? '<span style="font-size:9px;color:var(--green);background:rgba(0,208,132,0.15);border-radius:3px;padding:1px 5px;margin-left:4px;font-weight:600">+REFUND</span>' : '';
-  var pendingBadge = t.pending ? '<span style="font-size:9px;color:var(--yellow);margin-left:3px">â³</span>' : '';
+  var pendingBadge = t.pending ? '<span style="font-size:9px;color:var(--yellow);margin-left:3px">⏳</span>' : '';
   // Encode desc safely for inline onclick attribute
   var descEsc = t.desc.replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/"/g,'&quot;');
   var catEsc = (CAT_OVERRIDES[t.desc] || t.category || 'Other').replace(/'/g,"\\'");
@@ -318,7 +330,7 @@ function txnLine(t, col, extraStyle) {
   html += '<span style="font-family:IBM Plex Mono,monospace;color:' + effectiveCol + ';white-space:nowrap;margin-right:6px">' + (isRefund ? '+' : '') + fmt2(Math.abs(t.amount)) + '</span>';
   // Refund toggle button
   var dateEsc = (t.date||'').replace(/'/g,"\'");
-  // refund button removed â€” server now provides negative transactions for auto-matching
+  // refund button removed — server now provides negative transactions for auto-matching
   html += '<button class="edit-btn" onclick="editCat(\'' + descEsc + '\',' + t.amount + ',\'' + catEsc + '\')">&#9998;</button>';
   var exStyle = (EXCLUDED && EXCLUDED[t.desc]) ? 'color:var(--yellow);' : 'color:var(--muted2);';
   html += '<button class="edit-btn" style="' + exStyle + '" title="Exclude/restore" onclick="toggleExclude(\'' + descEsc + '\')">' + ((EXCLUDED && EXCLUDED[t.desc]) ? '↩' : '✕') + '</button>';
@@ -430,7 +442,7 @@ function renderOverview() {
   var latestV = ms[latest] || {transactions:[], categories:{}, total:0, label:''};
   var nw = D.net_worth || {};
   var allAccts = D.all_accounts || [];
-  // Always compute from all_accounts â€” server value excludes wifebofa/myrobin
+  // Always compute from all_accounts — server value excludes wifebofa/myrobin
   var checkingBal = allAccts.filter(function(a){return !a.is_credit;}).reduce(function(s,a){return s+a.balance;},0);
   var creditBal = allAccts.filter(function(a){return a.is_credit&&a.balance>0;}).reduce(function(s,a){return s+a.balance;},0);
   var netWorth = checkingBal - creditBal;
@@ -455,7 +467,7 @@ function renderOverview() {
   var pending = D.pending_transactions || [];
   if (pending.length) {
     html += '<div class="panel" style="border-color:rgba(245,197,24,0.3);background:rgba(245,197,24,0.04)">';
-    html += '<div class="panel-head"><div class="panel-title" style="color:var(--yellow)">â³ Pending Â· Not Yet Settled</div>';
+    html += '<div class="panel-head"><div class="panel-title" style="color:var(--yellow)">⏳ Pending · Not Yet Settled</div>';
     html += '<div class="panel-action" style="color:var(--yellow)">' + pending.length + ' transactions</div></div>';
     pending.forEach(function(t) {
       var col = CAT_COLORS[t.category] || '#6b6b80';
@@ -474,7 +486,7 @@ function renderOverview() {
 
   html += '<div class="two-col">';
 
-  // Monthly Spend â€” table: categories=rows, months=cols, tap cell=modal
+  // Monthly Spend — table: categories=rows, months=cols, tap cell=modal
   var allCats2 = {};
   periods.forEach(function(p) {
     Object.keys(ms[p].categories||{}).forEach(function(cat){ allCats2[cat]=true; });
@@ -525,7 +537,7 @@ function renderOverview() {
         var lbl = cat+' '+short(ms[p].label);
         html += '<td style="padding:7px 8px;text-align:right;font-family:IBM Plex Mono,monospace;color:'+col+';cursor:pointer;white-space:nowrap" onclick="_showMs(\''+key+'\',\''+col+'\',\''+lbl+'\')">' + fmt(a) + '</td>';
       } else {
-        html += '<td style="padding:7px 8px;text-align:right;color:var(--muted2)">â€”</td>';
+        html += '<td style="padding:7px 8px;text-align:right;color:var(--muted2)">—</td>';
       }
     });
     html += '<td style="padding:7px 8px;text-align:right;font-family:IBM Plex Mono,monospace;font-weight:600;color:'+col+'">'+fmt(rowTotal)+'</td>';
@@ -659,7 +671,7 @@ function renderAccounts() {
     return all.filter(function(t){ return normBank(t.bank)===nb || t.bank===bank; });
   }
 
-  // â”€â”€ CHECKING & SAVINGS â”€â”€
+  // ── CHECKING & SAVINGS ──
   var deposits = allAccts.filter(function(a){return !a.is_credit;});
   var bankOrder = []; deposits.forEach(function(a){if(bankOrder.indexOf(a.bank)<0)bankOrder.push(a.bank);});
   var depTotal = deposits.reduce(function(s,a){return s+a.balance;},0);
@@ -674,7 +686,7 @@ function renderAccounts() {
     html += '<div>';
       html += '<div class="row expandable" onclick="expand(\''+bid+'\')">';
         html += '<div><div class="row-label" style="font-weight:500">'+bank+'</div><div class="row-sub">'+ba.length+' account(s)</div></div>';
-        html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:var(--green)">'+fmt2(bankTotal)+'</div><span style="color:var(--muted)">â€º</span></div>';
+        html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:var(--green)">'+fmt2(bankTotal)+'</div><span style="color:var(--muted)">›</span></div>';
       html += '</div>';
       html += '<div id="'+bid+'" class="expand-body">';
         ba.forEach(function(a) {
@@ -682,9 +694,9 @@ function renderAccounts() {
           var cid = uid();
           html += '<div>';
             html += '<div style="padding:7px 0 7px 14px;border-bottom:1px solid var(--border2);display:flex;justify-content:space-between;align-items:baseline;font-size:13px;cursor:pointer" onclick="expand(\''+cid+'\')">';
-              html += '<div><div>'+name+' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted);font-size:11px">â€¢â€¢'+a.mask+'</span></div>';
+              html += '<div><div>'+name+' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted);font-size:11px">••'+a.mask+'</span></div>';
               html += '<div style="font-size:11px;color:var(--muted)">'+a.subtype+'</div></div>';
-              html += '<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:var(--green)">'+fmt2(a.balance)+'</div><span style="color:var(--muted);font-size:11px">â€º txns</span></div>';
+              html += '<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:var(--green)">'+fmt2(a.balance)+'</div><span style="color:var(--muted);font-size:11px">› txns</span></div>';
             html += '</div>';
             html += '<div id="'+cid+'" class="expand-body">';
               var hadData = false;
@@ -706,14 +718,14 @@ function renderAccounts() {
   });
   html += '</div>';
 
-  // â”€â”€ SPENDING BY MONTH â”€â”€
+  // ── SPENDING BY MONTH ──
   html += '<div class="panel"><div class="panel-head"><div class="panel-title">Spending by Month</div></div>';
   periods.forEach(function(p) {
     var v = ms[p]; var sid = uid();
     html += '<div>';
       html += '<div class="row expandable" onclick="expand(\''+sid+'\')">';
         html += '<div class="row-label" style="font-weight:500">'+v.label+'</div>';
-        html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:var(--red)">'+fmt2(v.total)+'</div><span style="color:var(--muted)">â€º</span></div>';
+        html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:var(--red)">'+fmt2(v.total)+'</div><span style="color:var(--muted)">›</span></div>';
       html += '</div>';
       html += '<div id="'+sid+'" class="expand-body">';
         Object.entries(v.categories||{}).sort(function(a,b){return b[1]-a[1];}).forEach(function(ce) {
@@ -721,7 +733,7 @@ function renderAccounts() {
           html += '<div style="padding:4px 0 4px 14px;border-bottom:1px solid var(--border2)">';
             html += '<div style="display:flex;justify-content:space-between;cursor:pointer;font-size:13px;padding:3px 0" onclick="expand(\''+cid+'\')">';
               html += '<span style="color:'+col+'">'+ce[0]+'</span>';
-              html += '<div style="display:flex;align-items:center;gap:6px"><span style="font-family:IBM Plex Mono,monospace;color:'+col+'">'+fmt2(ce[1])+'</span><span style="color:var(--muted)">â€º</span></div>';
+              html += '<div style="display:flex;align-items:center;gap:6px"><span style="font-family:IBM Plex Mono,monospace;color:'+col+'">'+fmt2(ce[1])+'</span><span style="color:var(--muted)">›</span></div>';
             html += '</div>';
             html += '<div id="'+cid+'" class="expand-body">';
               (v.transactions||[]).filter(function(t){return t.category===ce[0];}).sort(function(a,b){return b.date.localeCompare(a.date);}).forEach(function(t){ html += txnLine(t, col, 'padding-left:14px;'); });
@@ -734,7 +746,7 @@ function renderAccounts() {
   });
   html += '</div>';
 
-  // â”€â”€ CREDIT CARDS â”€â”€
+  // ── CREDIT CARDS ──
   var credits = allAccts.filter(function(a){return a.is_credit;});
   var creditBanks = []; credits.forEach(function(a){if(creditBanks.indexOf(a.bank)<0)creditBanks.push(a.bank);});
   var creditTotal = credits.filter(function(a){return a.balance>0;}).reduce(function(s,a){return s+a.balance;},0);
@@ -749,7 +761,7 @@ function renderAccounts() {
     html += '<div>';
       html += '<div class="row expandable" onclick="expand(\''+crid+'\')">';
         html += '<div><div class="row-label" style="font-weight:500">'+bank+'</div><div class="row-sub">'+ba.length+' card(s)</div></div>';
-        html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:'+(owed>0?'var(--red)':'var(--green)')+'">'+fmt2(owed)+'</div><span style="color:var(--muted)">â€º</span></div>';
+        html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:'+(owed>0?'var(--red)':'var(--green)')+'">'+fmt2(owed)+'</div><span style="color:var(--muted)">›</span></div>';
       html += '</div>';
       html += '<div id="'+crid+'" class="expand-body">';
         ba.forEach(function(a) {
@@ -759,9 +771,9 @@ function renderAccounts() {
           var caid = uid();
           html += '<div>';
             html += '<div style="padding:7px 0 7px 14px;border-bottom:1px solid var(--border2);display:flex;justify-content:space-between;align-items:baseline;font-size:13px;cursor:pointer" onclick="expand(\''+caid+'\')">';
-              html += '<div><div>'+name+' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted);font-size:11px">â€¢â€¢'+a.mask+'</span></div>';
+              html += '<div><div>'+name+' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted);font-size:11px">••'+a.mask+'</span></div>';
               html += '<div style="font-size:11px;color:var(--muted)">'+a.subtype+'</div></div>';
-              html += '<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:'+col+'">'+sign+fmt2(Math.abs(a.balance))+'</div><span style="color:var(--muted);font-size:11px">â€º txns</span></div>';
+              html += '<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:'+col+'">'+sign+fmt2(Math.abs(a.balance))+'</div><span style="color:var(--muted);font-size:11px">› txns</span></div>';
             html += '</div>';
             html += '<div id="'+caid+'" class="expand-body">';
               var hadCC = false;
@@ -898,28 +910,34 @@ function renderTravel() {
   var states=Object.keys(byState).sort(function(a,b){return byState[b].total-byState[a].total;});
   var grand=raw.reduce(function(s,t){return s+t.amount;},0);
   var STATE_NAMES={'CA':'California','NC':'North Carolina','VA':'Virginia','DC':'Washington D.C.','TX':'Texas','FL':'Florida','TN':'Tennessee','MD':'Maryland','GA':'Georgia','CO':'Colorado','NV':'Nevada','AZ':'Arizona','MA':'Massachusetts','RI':'Rhode Island','MO':'Missouri','MI':'Michigan','IL':'Illinois','AR':'Arkansas'};
-  var html='<div class="panel"><div class="panel-head"><div class="panel-title">Travel & Vacation</div><div class="panel-action">'+states.length+' states Â· '+fmt(grand)+'</div></div>';
-  html+='<div style="margin-bottom:12px">';
-  states.forEach(function(st){html+='<span class="chip">'+st+' <span style="font-family:IBM Plex Mono,monospace;font-size:11px">'+fmt(byState[st].total)+'</span></span>';});
-  html+='</div></div>';
+  var html='<div class="panel"><div class="panel-head"><div class="panel-title">Travel & Vacation</div><div class="panel-action">'+states.length+' states · '+fmt(grand)+'</div></div>';
+  html+='<div class="travel-chips">';
+  states.forEach(function(st){html+='<span class="chip">'+st+' <span style="font-family:IBM Plex Mono,monospace;font-size:11px;color:var(--muted)">'+fmt(byState[st].total)+'</span></span>';});
+  html+='</div>';
   states.forEach(function(st){
     var sv=byState[st];
     var sid=uid();
+    var monthCount=Object.keys(sv.months).length;
+    var cityCount=Object.keys(sv.months).reduce(function(n,m){return n+Object.keys(sv.months[m].cities).length;},0);
+    var subParts=[];
+    if(monthCount) subParts.push(monthCount+(monthCount===1?' month':' months'));
+    if(cityCount) subParts.push(cityCount+(cityCount===1?' city':' cities'));
+    if(sv.online.length) subParts.push(sv.online.length+' online');
     html+='<div class="state-block">';
     html+='<div class="state-head" onclick="expand(\''+sid+'\')">';
-    html+='<div style="font-family:IBM Plex Mono,monospace;font-size:22px;font-weight:600;color:var(--yellow);width:42px">'+st+'</div>';
-    html+='<div style="flex:1"><div style="font-size:15px;font-weight:600">'+(STATE_NAMES[st]||st)+'</div>';
-    html+='<div style="font-size:11px;color:var(--muted)">'+Object.keys(sv.months).join(', ')+'</div></div>';
-    html+='<div style="font-family:IBM Plex Mono,monospace;font-size:18px;color:var(--yellow)">'+fmt(sv.total)+'</div>';
-    html+='<span style="color:var(--muted);margin-left:8px">â€º</span></div>';
-    html+='<div id="'+sid+'" class="expand-body">';
+    html+='<div class="state-badge">'+st+'</div>';
+    html+='<div class="state-name"><div class="state-name-main">'+(STATE_NAMES[st]||st)+'</div>';
+    html+='<div class="state-name-sub">'+subParts.join(' · ')+'</div></div>';
+    html+='<div class="state-total">'+fmt(sv.total)+'</div>';
+    html+='<span class="state-chev">›</span></div>';
+    html+='<div id="'+sid+'" class="expand-body state-body">';
     Object.keys(sv.months).sort().reverse().forEach(function(monthLabel){
       var mv=sv.months[monthLabel];
       var mid=uid();
       html+='<div style="padding:6px 0;border-top:1px solid var(--border2)">';
       html+='<div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:4px 0" onclick="expand(\''+mid+'\')">';
       html+='<div style="font-size:13px;font-weight:500">'+monthLabel+'</div>';
-      html+='<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-size:13px;color:var(--yellow)">'+fmt(mv.total)+'</div><span style="color:var(--muted)">â€º</span></div></div>';
+      html+='<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-size:13px;color:var(--yellow)">'+fmt(mv.total)+'</div><span style="color:var(--muted)">›</span></div></div>';
       html+='<div id="'+mid+'" class="expand-body">';
       Object.keys(mv.cities).sort(function(a,b){return mv.cities[b].total-mv.cities[a].total;}).forEach(function(city){
         var cv=mv.cities[city];
@@ -927,8 +945,8 @@ function renderTravel() {
         cv.txns.sort(function(a,b){return b.date.localeCompare(a.date);});
         html+='<div style="padding:5px 0 5px 12px;border-top:1px solid var(--border2)">';
         html+='<div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer" onclick="expand(\''+cvid+'\')">';
-        html+='<div style="font-size:13px">ðŸ“ '+city+'</div>';
-        html+='<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-size:13px;color:var(--yellow)">'+fmt(cv.total)+'</div><span style="color:var(--muted)">â€º</span></div></div>';
+        html+='<div style="font-size:13px">📍 '+city+'</div>';
+        html+='<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-size:13px;color:var(--yellow)">'+fmt(cv.total)+'</div><span style="color:var(--muted)">›</span></div></div>';
         html+='<div id="'+cvid+'" class="expand-body">';
         cv.txns.forEach(function(t){ html += txnLine(t,'var(--yellow)','padding-left:12px;'); });
         html+='</div></div>';
@@ -940,14 +958,15 @@ function renderTravel() {
       var ot=sv.online.reduce(function(s,t){return s+t.amount;},0);
       html+='<div style="padding:6px 0;border-top:1px solid var(--border2)">';
       html+='<div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:4px 0" onclick="expand(\''+oid+'\')">';
-      html+='<div style="font-size:13px;color:var(--muted)">ðŸŒ Online / '+st+'</div>';
-      html+='<div style="display:flex;align-items:center;gap:8px"><span style="font-family:IBM Plex Mono,monospace;font-size:13px;color:var(--muted)">'+fmt(ot)+'</span><span style="color:var(--muted)">â€º</span></div></div>';
+      html+='<div style="font-size:13px;color:var(--muted)">🌐 Online / '+st+'</div>';
+      html+='<div style="display:flex;align-items:center;gap:8px"><span style="font-family:IBM Plex Mono,monospace;font-size:13px;color:var(--muted)">'+fmt(ot)+'</span><span style="color:var(--muted)">›</span></div></div>';
       html+='<div id="'+oid+'" class="expand-body">';
       sv.online.forEach(function(t){ html += txnLine(t,'var(--muted)','padding-left:12px;'); });
       html+='</div></div>';
     }
     html+='</div></div>';
   });
+  html+='</div>';
   set('main-content',html);
 }
 
@@ -1177,7 +1196,7 @@ function renderSearch() {
   html += 'oninput="runSearch()" onkeydown="if(event.key===\'Enter\')runSearch()">';
   html += '<button onclick="runSearch()" style="padding:10px 16px;background:var(--green);color:#000;border:none;border-radius:8px;font-family:IBM Plex Mono,monospace;font-size:13px;font-weight:600;cursor:pointer">Go</button>';
   html += '</div>';
-  html += '<div style="font-size:11px;color:var(--muted);margin-bottom:14px">Searches descriptions, categories, amounts, banks â€” across all months</div>';
+  html += '<div style="font-size:11px;color:var(--muted);margin-bottom:14px">Searches descriptions, categories, amounts, banks — across all months</div>';
   html += '</div>';
   html += '<div id="srch-results"></div>';
   set('main-content', html);
@@ -1279,7 +1298,7 @@ function runSearch() {
     html += '<div>';
     html += '<div class="row expandable" onclick="expand(\''+mid+'\')" style="background:var(--s2);padding:8px 12px;border-radius:6px;margin-bottom:4px">';
     html += '<div class="row-label" style="font-weight:500">'+mv.label+'</div>';
-    html += '<div style="display:flex;align-items:center;gap:8px"><span style="font-size:12px;color:var(--muted)">'+mv.items.length+' txns</span><div class="row-amt" style="color:var(--red)">'+fmt2(mTotal)+'</div><span style="color:var(--muted)">â€º</span></div>';
+    html += '<div style="display:flex;align-items:center;gap:8px"><span style="font-size:12px;color:var(--muted)">'+mv.items.length+' txns</span><div class="row-amt" style="color:var(--red)">'+fmt2(mTotal)+'</div><span style="color:var(--muted)">›</span></div>';
     html += '</div>';
     html += '<div id="'+mid+'" class="expand-body">';
     mv.items.forEach(function(r){ html += txnLine(r.t, CAT_COLORS[r.t.category]||'#6b6b80', ''); });
@@ -1308,7 +1327,7 @@ function exportOverrides() {
   var data = JSON.stringify(CAT_OVERRIDES, null, 2);
   // Copy to clipboard
   navigator.clipboard.writeText(data).then(function() {
-    alert('âœ… ' + keys.length + ' category edits copied to clipboard!\n\nPaste this somewhere safe. To restore, use Settings â†’ Import edits.');
+    alert('✅ ' + keys.length + ' category edits copied to clipboard!\n\nPaste this somewhere safe. To restore, use Settings → Import edits.');
   }).catch(function() {
     // Fallback: show in prompt
     prompt('Copy these category edits (Ctrl+A, Ctrl+C):', data);
@@ -1324,7 +1343,7 @@ function importOverrides(json) {
     saveOverrides();
     D = applyOverrides(JSON.parse(JSON.stringify(_rawD)));
     render();
-    alert('âœ… Imported ' + count + ' category edits!');
+    alert('✅ Imported ' + count + ' category edits!');
   } catch(e) { alert('Invalid format: ' + e.message); }
 }
 
