@@ -146,6 +146,23 @@ var _rawD = null;
 var CAT_OVERRIDES = {};
 var REFUNDED_TXNS = {}; // kept for backward compat but no longer written
 try { localStorage.removeItem('lgr_refunded'); } catch(e) {} // clear old marks
+
+// EXCLUDED — permanent hide list, triple-stored
+var EXCLUDED = {};
+function loadExcluded() {
+  try {
+    var v = localStorage.getItem('lgr_excluded') || sessionStorage.getItem('lgr_excluded');
+    if(v) EXCLUDED = JSON.parse(v);
+  } catch(e) {}
+}
+function saveExcluded() {
+  try {
+    var v = JSON.stringify(EXCLUDED);
+    localStorage.setItem('lgr_excluded', v);
+    sessionStorage.setItem('lgr_excluded', v);
+  } catch(e) {}
+}
+loadExcluded();
 try {
   // Try localStorage first, fall back to sessionStorage if localStorage was wiped
   var saved = localStorage.getItem('lgr_cat_overrides') 
@@ -162,6 +179,7 @@ var HOME_ST = ['NJ','NY','CT','PA','MA','MD','DE'];
 var BILLING = ['APPLE','AMAZON','AMZN','VZWRLSS','VERIZON','SIMPLISAFE','PAYPAL','NETFLIX','SPOTIFY','HULU','ZEE5','ANTHROPIC','CLAUDE','NORD','TURBOTAX','GOOGLE','COMCAST'];
 var BANK_SHORT = {'BofA':'BOA','Wells Fargo':'WF','TD Bank':'TD','Discover':'DISC','Robinhood':'RH','wifebofa':'BOA','myrobin':'RH'};
 var CAT_COLORS = {
+  'Refund':'#00d084',
   'Restaurants':'#ff8c42','Groceries':'#c8f060','Amazon':'#4da8ff','Shopping':'#a78bfa',
   'Gas/Travel':'#67e8f9','Kids':'#60d0ff','Entertainment':'#c084fc','Subscription':'#818cf8','Subscription':'#818cf8',
   'Pharmacy':'#34d399','Healthcare':'#10b981','Insurance':'#f5c518','Tax/Professional':'#f87171',
@@ -302,6 +320,8 @@ function txnLine(t, col, extraStyle) {
   var dateEsc = (t.date||'').replace(/'/g,"\'");
   // refund button removed â€” server now provides negative transactions for auto-matching
   html += '<button class="edit-btn" onclick="editCat(\'' + descEsc + '\',' + t.amount + ',\'' + catEsc + '\')">&#9998;</button>';
+  var exStyle = (EXCLUDED && EXCLUDED[t.desc]) ? 'color:var(--yellow);' : 'color:var(--muted2);';
+  html += '<button class="edit-btn" style="' + exStyle + '" title="Exclude/restore" onclick="toggleExclude(\'' + descEsc + '\')">' + ((EXCLUDED && EXCLUDED[t.desc]) ? '↩' : '✕') + '</button>';
   html += '</div>';
   return html;
 }
@@ -1111,9 +1131,9 @@ function deduplicateData(data) {
         refund.unmatched_refund = true;
       }
     });
-    // Step 3: Remove nullified pairs AND manually refunded transactions
+    // Step 3: Filter EXCLUDED; keep refund pairs visible
     var final = deduped.filter(function(t) {
-      if(t.refund_matched) return false;
+      if(EXCLUDED && EXCLUDED[t.desc]) return false;
       return true;
     });
     // Step 4: Recalculate
@@ -1306,6 +1326,28 @@ function importOverrides(json) {
     render();
     alert('âœ… Imported ' + count + ' category edits!');
   } catch(e) { alert('Invalid format: ' + e.message); }
+}
+
+
+function showMs(idx) {
+  var entry = window._ms && window._ms[idx];
+  if(!entry || !entry.txns.length) {
+    openModal('No transactions', '', '<div style="color:var(--muted);font-size:13px;padding:12px">Nothing here.</div>');
+    return;
+  }
+  var total = entry.txns.reduce(function(s,t){return s+(t.amount||0);},0);
+  var b = '<div style="font-family:IBM Plex Mono,monospace;font-size:18px;color:'+entry.col+';margin-bottom:12px">'+fmt2(total)+'</div>';
+  entry.txns.forEach(function(t){ b += txnLine(t, entry.col, ''); });
+  openModal(entry.title, entry.txns.length+' transactions', b);
+}
+
+function toggleExclude(desc) {
+  var realDesc = desc.replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&amp;/g,'&');
+  if(EXCLUDED[realDesc]) delete EXCLUDED[realDesc];
+  else EXCLUDED[realDesc] = true;
+  saveExcluded();
+  D = applyOverrides(deduplicateData(JSON.parse(JSON.stringify(_rawD))));
+  render();
 }
 
 
