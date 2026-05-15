@@ -448,11 +448,11 @@ function buildStructuredData(accounts, transactions) {
     if (!monthlySpending[period]) {
       monthlySpending[period] = { label: month, period: period, categories: {}, total: 0, transactions: [] };
     }
-    // Only count positive amounts in spending totals — refunds are shown but not counted
-    if (t.amount > 0) {
-      monthlySpending[period].categories[cat] = (monthlySpending[period].categories[cat] || 0) + t.amount;
-      monthlySpending[period].total += t.amount;
-    }
+    // Charges (positive) accumulate into their merchant category; refunds (negative,
+    // bucketed as 'Refund' by categorize()) accumulate into Refund as a negative value
+    // so monthly totals net out and the Refund row is visible in the drilldown.
+    monthlySpending[period].categories[cat] = (monthlySpending[period].categories[cat] || 0) + t.amount;
+    monthlySpending[period].total += t.amount;
     monthlySpending[period].transactions.push({
       date: date.substring(5), // MM-DD
       desc: t.merchant_name || t.name,
