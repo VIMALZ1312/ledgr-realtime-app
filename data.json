@@ -1,22 +1,22 @@
 {
   "kpis": {
-    "income": 7954.02,
+    "income": 8354.02,
     "income_period": "May 2026",
-    "true_outflows": 2548.14,
+    "true_outflows": 3519.4,
     "outflows_period": "May 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 6374.54,
+      "balance": 1793.09,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
       "outflows": 0
     },
     "wf": {
-      "balance": 3697.05,
+      "balance": 3488.25,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 614.94
@@ -28,7 +28,7 @@
       "payroll": 0
     },
     "discover": {
-      "balance": 2291.9,
+      "balance": 2469.05,
       "is_credit": true,
       "period_label": "Live"
     },
@@ -49,8 +49,8 @@
       "mask": "5772",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 34750.694207274995,
-      "available": null,
+      "balance": 36745.779542092496,
+      "available": 5542.69,
       "is_credit": false,
       "is_checking": false,
       "is_savings": false
@@ -101,8 +101,8 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 5034.78,
-      "available": 5013.47,
+      "balance": 453.33,
+      "available": 203.33,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -141,7 +141,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 614.94,
-      "available": 614.94,
+      "available": 1014.94,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -154,7 +154,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 3.19,
-      "available": 996,
+      "available": 995,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -166,8 +166,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 2502.77,
-      "available": 163,
+      "balance": 2293.97,
+      "available": 547,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -257,7 +257,7 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 11739.77,
+      "balance": 11783.77,
       "available": 11783.77,
       "is_credit": false,
       "is_checking": true,
@@ -270,8 +270,8 @@
       "mask": "0494",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 2291.9,
-      "available": 10598,
+      "balance": 2469.05,
+      "available": 10242,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -322,17 +322,17 @@
       "mask": "8479",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 103.61,
-      "available": 2760,
+      "balance": 240.34,
+      "available": 2759,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
     }
   ],
   "net_worth": {
-    "total_checking": 55724.41,
-    "total_credit": 6736.51,
-    "net": 48987.9
+    "total_checking": 51186.96,
+    "total_credit": 6841.59,
+    "net": 44345.37
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -344,12 +344,12 @@
   },
   "spending": {
     "Healthcare": 1525.93,
-    "Tech/Subs": 10076.96,
-    "Shopping": 11137.850000000002,
-    "Entertainment": 2211.84,
+    "Tech/Subs": 10162.409999999998,
+    "Shopping": 11901.570000000002,
+    "Entertainment": 2233.15,
     "Other": 37188.549999999996,
-    "Groceries": 2316.95,
-    "Restaurants": 1928.09,
+    "Groceries": 2357.4199999999996,
+    "Restaurants": 1988.3999999999999,
     "Gas/Travel": 6720.890000000001
   },
   "zelle_received": [
@@ -558,13 +558,13 @@
       "period_label": "January 2026"
     },
     {
-      "from": "Transfer Conf# QLDRDDJGX; POOJA SHARMA",
+      "from": "payment from POOJA SHARMA for \"Country chicken\"; Conf# qldrddjgx",
       "amount": 18,
       "period": "2026-05",
       "period_label": "May 2026"
     },
     {
-      "from": "Transfer Conf# J49UANNY7; POOJA SHARMA",
+      "from": "payment from POOJA SHARMA for \"Chicken and choclate\"; Conf# j49uanny7",
       "amount": 26,
       "period": "2026-05",
       "period_label": "May 2026"
@@ -614,8 +614,8 @@
     {
       "period": "2026-05",
       "period_label": "May 2026",
-      "income": 7954.02,
-      "bofa_income": 7954.02,
+      "income": 8354.02,
+      "bofa_income": 8354.02,
       "td_income": 0,
       "outflows": 0,
       "xoom": 0,
@@ -3554,15 +3554,15 @@
     "2026-05": {
       "label": "May 2026",
       "categories": {
-        "Tech/Subs": 1221.78,
-        "Shopping": 582.51,
-        "Restaurants": 178.5,
+        "Tech/Subs": 1307.23,
+        "Entertainment": 36.21000000000001,
+        "Shopping": 1346.23,
+        "Restaurants": 238.81,
         "Gas/Travel": 89.75,
-        "Entertainment": 14.9,
         "Healthcare": 100,
-        "Groceries": 360.69999999999993
+        "Groceries": 401.16999999999996
       },
-      "total": 2548.14,
+      "total": 3519.4,
       "transactions": [
         {
           "date": "05-01",
@@ -3585,6 +3585,22 @@
           "desc": "Republic Services",
           "amount": 198.58,
           "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-11",
+          "desc": "Netflix",
+          "amount": 21.31,
+          "category": "Entertainment",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-13",
+          "desc": "Best Buy",
+          "amount": 160,
+          "category": "Shopping",
           "city": null,
           "state": null
         },
@@ -3693,6 +3709,54 @@
           "state": "NJ"
         },
         {
+          "date": "05-12",
+          "desc": "Amazon",
+          "amount": 102.03,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-11",
+          "desc": "Amazon",
+          "amount": 46.99,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-11",
+          "desc": "Everwash",
+          "amount": 55.45,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "PA"
+        },
+        {
+          "date": "05-10",
+          "desc": "The Children's Place",
+          "amount": 165.7,
+          "category": "Shopping",
+          "city": "Edison",
+          "state": "MN"
+        },
+        {
+          "date": "05-10",
+          "desc": "Chipotle Mexican Grill",
+          "amount": 13.59,
+          "category": "Restaurants",
+          "city": "Edison",
+          "state": "NJ"
+        },
+        {
+          "date": "05-10",
+          "desc": "Charleys Philly Steaks",
+          "amount": 7.44,
+          "category": "Restaurants",
+          "city": "Edison",
+          "state": "NJ"
+        },
+        {
           "date": "05-01",
           "desc": "Kumon Of North",
           "amount": 280,
@@ -3781,10 +3845,50 @@
           "state": null
         },
         {
+          "date": "05-08",
+          "desc": "Grok Xai",
+          "amount": 30,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "CA"
+        },
+        {
           "date": "05-09",
           "desc": "Regal Cinemas",
           "amount": 1.59,
           "category": "Entertainment",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-10",
+          "desc": "Realfruitbubbletea",
+          "amount": 22.09,
+          "category": "Restaurants",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-11",
+          "desc": "Desi Halal Meat",
+          "amount": 40.47,
+          "category": "Groceries",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-11",
+          "desc": "Singasfam",
+          "amount": 17.19,
+          "category": "Restaurants",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-12",
+          "desc": "Nike",
+          "amount": 289,
+          "category": "Shopping",
           "city": null,
           "state": null
         },
@@ -3813,7 +3917,7 @@
           "state": null
         },
         {
-          "date": "05-10",
+          "date": "05-11",
           "desc": "Ruby Thai Kitchen",
           "amount": 19.68,
           "category": "Restaurants",
@@ -4499,6 +4603,16 @@
       "period_label": "May 2026"
     },
     {
+      "date": "05-10",
+      "desc": "The Children's Place",
+      "amount": 165.7,
+      "category": "Shopping",
+      "city": "Edison",
+      "state": "MN",
+      "period": "2026-05",
+      "period_label": "May 2026"
+    },
+    {
       "date": "04-09",
       "desc": "Trendia Trendia.co",
       "amount": 178.01,
@@ -4717,6 +4831,16 @@
       "state": "MI",
       "period": "2026-04",
       "period_label": "April 2026"
+    },
+    {
+      "date": "05-08",
+      "desc": "Grok Xai",
+      "amount": 30,
+      "category": "Tech/Subs",
+      "city": null,
+      "state": "CA",
+      "period": "2026-05",
+      "period_label": "May 2026"
     }
   ],
   "fixed_obligations": {
@@ -4728,6 +4852,6 @@
     "cable": 50.66
   },
   "statement_count": "8 live accounts",
-  "generated_at": "2026-05-11T22:49:45.694Z",
+  "generated_at": "2026-05-15T00:38:17.092Z",
   "source": "plaid_realtime"
 }
