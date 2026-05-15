@@ -2,7 +2,7 @@
   "kpis": {
     "income": 8354.02,
     "income_period": "May 2026",
-    "true_outflows": 3519.4,
+    "true_outflows": 3604.38,
     "outflows_period": "May 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,10 +16,10 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 3488.25,
+      "balance": 3670.3,
       "is_credit": true,
       "period_label": "Live",
-      "wf_checking": 614.94
+      "wf_checking": 1014.94
     },
     "td": {
       "balance": 185.03,
@@ -140,7 +140,7 @@
       "mask": "3068",
       "type": "depository",
       "subtype": "checking",
-      "balance": 614.94,
+      "balance": 1014.94,
       "available": 1014.94,
       "is_credit": false,
       "is_checking": true,
@@ -153,8 +153,8 @@
       "mask": "8036",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 3.19,
-      "available": 995,
+      "balance": 5.18,
+      "available": 994,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -166,8 +166,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 2293.97,
-      "available": 547,
+      "balance": 2474.03,
+      "available": 481,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -330,9 +330,9 @@
     }
   ],
   "net_worth": {
-    "total_checking": 51186.96,
-    "total_credit": 6841.59,
-    "net": 44345.37
+    "total_checking": 51586.96,
+    "total_credit": 7023.64,
+    "net": 44563.32
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -344,8 +344,8 @@
   },
   "spending": {
     "Healthcare": 1525.93,
-    "Tech/Subs": 10162.409999999998,
-    "Shopping": 11901.570000000002,
+    "Tech/Subs": 10228.219999999998,
+    "Shopping": 11920.740000000002,
     "Entertainment": 2233.15,
     "Other": 37188.549999999996,
     "Groceries": 2357.4199999999996,
@@ -3554,15 +3554,15 @@
     "2026-05": {
       "label": "May 2026",
       "categories": {
-        "Tech/Subs": 1307.23,
+        "Tech/Subs": 1373.04,
         "Entertainment": 36.21000000000001,
-        "Shopping": 1346.23,
+        "Shopping": 1365.3999999999999,
         "Restaurants": 238.81,
         "Gas/Travel": 89.75,
         "Healthcare": 100,
         "Groceries": 401.16999999999996
       },
-      "total": 3519.4,
+      "total": 3604.38,
       "transactions": [
         {
           "date": "05-01",
@@ -3757,6 +3757,22 @@
           "state": "NJ"
         },
         {
+          "date": "05-12",
+          "desc": "Amazon",
+          "amount": 8.52,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-12",
+          "desc": "Amazon",
+          "amount": 10.65,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
           "date": "05-01",
           "desc": "Kumon Of North",
           "amount": 280,
@@ -3891,6 +3907,14 @@
           "category": "Shopping",
           "city": null,
           "state": null
+        },
+        {
+          "date": "05-12",
+          "desc": "Replit Inc.",
+          "amount": 65.81,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "CA"
         },
         {
           "date": "05-02",
@@ -4841,6 +4865,16 @@
       "state": "CA",
       "period": "2026-05",
       "period_label": "May 2026"
+    },
+    {
+      "date": "05-12",
+      "desc": "Replit Inc.",
+      "amount": 65.81,
+      "category": "Tech/Subs",
+      "city": null,
+      "state": "CA",
+      "period": "2026-05",
+      "period_label": "May 2026"
     }
   ],
   "fixed_obligations": {
@@ -4852,6 +4886,6 @@
     "cable": 50.66
   },
   "statement_count": "8 live accounts",
-  "generated_at": "2026-05-15T01:57:52.127Z",
+  "generated_at": "2026-05-15T13:00:09.140Z",
   "source": "plaid_realtime"
 }
