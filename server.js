@@ -648,15 +648,20 @@ async function fetchCurrentData() {
 }
 
 // ── CRON: sync every 6 hours ──────────────────────────────────
-cron.schedule('0 */6 * * *', async () => {
-  console.log('⏰ 6-hour cron sync starting...');
-  try {
-    const result = await buildDataJson();
-    console.log('✓ Cron sync complete:', result);
-  } catch (err) {
-    console.error('✗ Cron sync failed:', err.message);
-  }
-});
+if (process.env.REPLIT_DEPLOYMENT === '1') {
+  cron.schedule('0 */6 * * *', async () => {
+    console.log('⏰ 6-hour cron sync starting...');
+    try {
+      const result = await buildDataJson();
+      console.log('✓ Cron sync complete:', result);
+    } catch (err) {
+      console.error('✗ Cron sync failed:', err.message);
+    }
+  });
+  console.log('✓ Cron scheduled (production mode)');
+} else {
+  console.log('⚠ Cron disabled (dev mode) — use POST /api/sync to sync manually');
+}
 
 // ── AUTO-UPDATE: check GitHub for new server.js every 30 min ──
 let _currentHash = null;
