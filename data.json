@@ -1,34 +1,34 @@
 {
   "kpis": {
-    "income": 8354.02,
-    "income_period": "May 2026",
-    "true_outflows": 3604.38,
-    "outflows_period": "May 2026",
+    "income": 3975.58,
+    "income_period": "June 2026",
+    "true_outflows": 2358.47,
+    "outflows_period": "June 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 1793.09,
+      "balance": 2006.8,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
       "outflows": 0
     },
     "wf": {
-      "balance": 3670.3,
+      "balance": 4217.51,
       "is_credit": true,
       "period_label": "Live",
-      "wf_checking": 1014.94
+      "wf_checking": 500.94
     },
     "td": {
-      "balance": 185.03,
+      "balance": 273.03,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0
     },
     "discover": {
-      "balance": 2469.05,
+      "balance": 0,
       "is_credit": true,
       "period_label": "Live"
     },
@@ -49,8 +49,8 @@
       "mask": "5772",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 36745.779542092496,
-      "available": 5542.69,
+      "balance": 38602.9430836377,
+      "available": null,
       "is_credit": false,
       "is_checking": false,
       "is_savings": false
@@ -76,7 +76,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 68.13,
-      "available": 68.13,
+      "available": 5080.63,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -88,8 +88,8 @@
       "mask": "5677",
       "type": "depository",
       "subtype": "savings",
-      "balance": 756.95,
-      "available": 756.95,
+      "balance": 56.98,
+      "available": 56.98,
       "is_credit": false,
       "is_checking": false,
       "is_savings": true
@@ -101,8 +101,8 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 453.33,
-      "available": 203.33,
+      "balance": 1367.01,
+      "available": 1267.01,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -140,8 +140,8 @@
       "mask": "3068",
       "type": "depository",
       "subtype": "checking",
-      "balance": 1014.94,
-      "available": 1014.94,
+      "balance": 500.94,
+      "available": 1000.94,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -153,8 +153,8 @@
       "mask": "8036",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 5.18,
-      "available": 994,
+      "balance": 138.44,
+      "available": 861,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -166,8 +166,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 2474.03,
-      "available": 481,
+      "balance": 2887.98,
+      "available": 66,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -179,8 +179,8 @@
       "mask": "5961",
       "type": "depository",
       "subtype": "checking",
-      "balance": 748.29,
-      "available": 748.29,
+      "balance": 789,
+      "available": 789,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -205,8 +205,8 @@
       "mask": "9222",
       "type": "depository",
       "subtype": "checking",
-      "balance": 185.03,
-      "available": 185.03,
+      "balance": 273.03,
+      "available": 273.03,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -218,8 +218,8 @@
       "mask": "1739",
       "type": "depository",
       "subtype": "checking",
-      "balance": 68.13,
-      "available": 68.13,
+      "balance": 5080.63,
+      "available": 80.63,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -231,8 +231,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 643.95,
-      "available": 56.05,
+      "balance": 557.9,
+      "available": 142.1,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -244,8 +244,8 @@
       "mask": "5677",
       "type": "depository",
       "subtype": "savings",
-      "balance": 756.95,
-      "available": 756.95,
+      "balance": 56.98,
+      "available": 56.98,
       "is_credit": false,
       "is_checking": false,
       "is_savings": true
@@ -257,23 +257,10 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 11783.77,
-      "available": 11783.77,
+      "balance": 18573.32,
+      "available": 21006.9,
       "is_credit": false,
       "is_checking": true,
-      "is_savings": false
-    },
-    {
-      "bank": "Discover",
-      "nickname": "discover",
-      "name": "Discover it Card",
-      "mask": "0494",
-      "type": "credit",
-      "subtype": "credit card",
-      "balance": 2469.05,
-      "available": 10242,
-      "is_credit": true,
-      "is_checking": false,
       "is_savings": false
     },
     {
@@ -296,8 +283,8 @@
       "mask": "6644",
       "type": "depository",
       "subtype": "savings",
-      "balance": 35236.76,
-      "available": 35236.76,
+      "balance": 30236.76,
+      "available": 30236.76,
       "is_credit": false,
       "is_checking": false,
       "is_savings": true
@@ -309,8 +296,8 @@
       "mask": "7119",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 1306.95,
-      "available": 1306.95,
+      "balance": 1739.31,
+      "available": 1739.31,
       "is_credit": false,
       "is_checking": false,
       "is_savings": false
@@ -322,17 +309,17 @@
       "mask": "8479",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 240.34,
-      "available": 2759,
+      "balance": 0,
+      "available": 2982,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
     }
   ],
   "net_worth": {
-    "total_checking": 51586.96,
-    "total_credit": 7023.64,
-    "net": 44563.32
+    "total_checking": 57517.46,
+    "total_credit": 4775.41,
+    "net": 52742.05
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -343,14 +330,14 @@
     "by_month": []
   },
   "spending": {
-    "Healthcare": 1525.93,
-    "Tech/Subs": 10228.219999999998,
-    "Shopping": 11920.740000000002,
-    "Entertainment": 2233.15,
-    "Other": 37188.549999999996,
-    "Groceries": 2357.4199999999996,
-    "Restaurants": 1988.3999999999999,
-    "Gas/Travel": 6720.890000000001
+    "Healthcare": 2450,
+    "Tech/Subs": 9914.660000000002,
+    "Shopping": 12966.320000000002,
+    "Entertainment": 1593.42,
+    "Other": 35395.23,
+    "Groceries": 2577.0499999999997,
+    "Restaurants": 2130.9800000000005,
+    "Gas/Travel": 6671.8200000000015
   },
   "zelle_received": [
     {
@@ -552,6 +539,12 @@
       "period_label": "May 2026"
     },
     {
+      "from": "TD  RECEIVED 615400B0BXTY Zelle RAKESH KUMAR GAL",
+      "amount": 88,
+      "period": "2026-06",
+      "period_label": "June 2026"
+    },
+    {
       "from": "payment from RAKESH VISTARAKULA for \"Enjoy\"; Conf# txd9tvy96",
       "amount": 2500,
       "period": "2026-01",
@@ -566,6 +559,18 @@
     {
       "from": "payment from POOJA SHARMA for \"Chicken and choclate\"; Conf# j49uanny7",
       "amount": 26,
+      "period": "2026-05",
+      "period_label": "May 2026"
+    },
+    {
+      "from": "payment from SOWMYA KONDURI Conf# irdnyzxiq",
+      "amount": 2000,
+      "period": "2026-05",
+      "period_label": "May 2026"
+    },
+    {
+      "from": "payment from SOWMYA KONDURI Conf# hmlrofa6g",
+      "amount": 2000,
       "period": "2026-05",
       "period_label": "May 2026"
     }
@@ -614,8 +619,18 @@
     {
       "period": "2026-05",
       "period_label": "May 2026",
-      "income": 8354.02,
-      "bofa_income": 8354.02,
+      "income": 16857.31,
+      "bofa_income": 16857.31,
+      "td_income": 0,
+      "outflows": 0,
+      "xoom": 0,
+      "investments": 0
+    },
+    {
+      "period": "2026-06",
+      "period_label": "June 2026",
+      "income": 3975.58,
+      "bofa_income": 3975.58,
       "td_income": 0,
       "outflows": 0,
       "xoom": 0,
@@ -626,16 +641,16 @@
     "2026-04": {
       "label": "April 2026",
       "categories": {
-        "Healthcare": 585.13,
-        "Tech/Subs": 4322.159999999999,
-        "Shopping": 1255.8600000000001,
-        "Entertainment": 837.3100000000001,
+        "Healthcare": 484.17999999999995,
+        "Tech/Subs": 2407.7799999999997,
+        "Shopping": 1203.8400000000001,
+        "Entertainment": 579.13,
         "Other": 1436.73,
         "Groceries": 625.5299999999999,
-        "Restaurants": 457.85,
-        "Gas/Travel": 655.7
+        "Restaurants": 252.89000000000001,
+        "Gas/Travel": 575.58
       },
-      "total": 10176.269999999995,
+      "total": 7565.659999999997,
       "transactions": [
         {
           "date": "04-17",
@@ -1310,214 +1325,6 @@
           "state": "NJ"
         },
         {
-          "date": "04-04",
-          "desc": "Cricketdata",
-          "amount": 5.99,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "04-04",
-          "desc": "Regal Cinemas",
-          "amount": 1.59,
-          "category": "Entertainment",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "04-04",
-          "desc": "Uber",
-          "amount": 80.12,
-          "category": "Gas/Travel",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "04-05",
-          "desc": "Replit Inc.",
-          "amount": 50.12,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": "CA"
-        },
-        {
-          "date": "04-05",
-          "desc": "Temu",
-          "amount": 42.03,
-          "category": "Shopping",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "04-05",
-          "desc": "CVS",
-          "amount": 28.33,
-          "category": "Healthcare",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "04-07",
-          "desc": "Fanbasis",
-          "amount": 250,
-          "category": "Entertainment",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "04-08",
-          "desc": "ABC*P 06002 PF NORTH B NORTH BRUNSWINJ APPLE PAY ENDING IN 0913",
-          "amount": 2,
-          "category": "Restaurants",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "04-09",
-          "desc": "Grok Xai",
-          "amount": 5,
-          "category": "Entertainment",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "04-09",
-          "desc": "Vzn Br Cafe Basking Ridgenj",
-          "amount": 2.87,
-          "category": "Restaurants",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "04-10",
-          "desc": "Regal Cinemas",
-          "amount": 1.59,
-          "category": "Entertainment",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "04-10",
-          "desc": "CVS",
-          "amount": 14.28,
-          "category": "Healthcare",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "04-11",
-          "desc": "Replit Inc.",
-          "amount": 100.13,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": "CA"
-        },
-        {
-          "date": "04-13",
-          "desc": "Houseofbi",
-          "amount": 69.94,
-          "category": "Restaurants",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "04-20",
-          "desc": "Mercury",
-          "amount": 597.77,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": "CA"
-        },
-        {
-          "date": "04-21",
-          "desc": "Nokia Of America Corpo",
-          "amount": 9.99,
-          "category": "Shopping",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "04-23",
-          "desc": "365 Retail Markets",
-          "amount": 2.98,
-          "category": "Restaurants",
-          "city": "Troy",
-          "state": "MI"
-        },
-        {
-          "date": "04-23",
-          "desc": "Vzn Br Cafe Basking Ridgenj",
-          "amount": 2.87,
-          "category": "Restaurants",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "04-23",
-          "desc": "Vzn Br Cafe Basking Ridgenj",
-          "amount": 12.39,
-          "category": "Restaurants",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "04-23",
-          "desc": "Vzn Br Cafe Basking Ridgenj",
-          "amount": 12.53,
-          "category": "Restaurants",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "04-24",
-          "desc": "Vzn Br Cafe Basking Ridgenj",
-          "amount": 12.48,
-          "category": "Restaurants",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "04-25",
-          "desc": "Samudhra",
-          "amount": 85.3,
-          "category": "Restaurants",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "04-27",
-          "desc": "Progressive Insurance",
-          "amount": 1060,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "04-29",
-          "desc": "Replit Inc.",
-          "amount": 100.37,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": "CA"
-        },
-        {
-          "date": "04-29",
-          "desc": "CVS",
-          "amount": 58.34,
-          "category": "Healthcare",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "04-30",
-          "desc": "365 Retail Markets",
-          "amount": 1.6,
-          "category": "Restaurants",
-          "city": "Troy",
-          "state": "MI"
-        },
-        {
           "date": "04-27",
           "desc": "Gold Annual",
           "amount": 50,
@@ -1538,16 +1345,16 @@
     "2026-03": {
       "label": "March 2026",
       "categories": {
-        "Tech/Subs": 2133.34,
-        "Entertainment": 676.19,
-        "Other": 34096.95,
+        "Tech/Subs": 2013.8100000000002,
+        "Entertainment": 336.19,
+        "Other": 33499.18,
         "Healthcare": 45.99,
         "Shopping": 1776.6399999999996,
-        "Restaurants": 794.7800000000002,
-        "Gas/Travel": 1107.0800000000002,
-        "Groceries": 598.3199999999999
+        "Restaurants": 783.8100000000002,
+        "Gas/Travel": 933.9300000000001,
+        "Groceries": 451.30999999999995
       },
-      "total": 41229.28999999998,
+      "total": 39840.85999999998,
       "transactions": [
         {
           "date": "03-31",
@@ -2310,118 +2117,6 @@
           "state": "AR"
         },
         {
-          "date": "03-20",
-          "desc": "Mercury",
-          "amount": 597.77,
-          "category": "Other",
-          "city": null,
-          "state": "CA"
-        },
-        {
-          "date": "03-24",
-          "desc": "Vzn Br Cafe Basking Ridgenj",
-          "amount": 3.08,
-          "category": "Restaurants",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "03-26",
-          "desc": "Vzn Br Cafe Basking Ridgenj",
-          "amount": 2.51,
-          "category": "Restaurants",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "03-27",
-          "desc": "Uber",
-          "amount": 100.98,
-          "category": "Gas/Travel",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "03-28",
-          "desc": "Griffith Observatory",
-          "amount": 26,
-          "category": "Entertainment",
-          "city": "Los Angeles",
-          "state": "CA"
-        },
-        {
-          "date": "03-28",
-          "desc": "Griffith Observatory",
-          "amount": 64,
-          "category": "Entertainment",
-          "city": "Los Angeles",
-          "state": "CA"
-        },
-        {
-          "date": "03-28",
-          "desc": "Lyft",
-          "amount": 72.17,
-          "category": "Gas/Travel",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "03-30",
-          "desc": "Replit Inc.",
-          "amount": 50.17,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": "CA"
-        },
-        {
-          "date": "03-03",
-          "desc": "Vzn Br Cafe Basking Ridgenj",
-          "amount": 2.87,
-          "category": "Restaurants",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "03-08",
-          "desc": "Fanbasis",
-          "amount": 250,
-          "category": "Entertainment",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "03-13",
-          "desc": "ShopRite",
-          "amount": 68.34,
-          "category": "Groceries",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "03-13",
-          "desc": "Vzn Br Cafe Basking Ridgenj",
-          "amount": 2.51,
-          "category": "Restaurants",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "03-14",
-          "desc": "Sl.nord",
-          "amount": 69.36,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "03-15",
-          "desc": "Desi Halal Meat",
-          "amount": 78.67,
-          "category": "Groceries",
-          "city": null,
-          "state": null
-        },
-        {
           "date": "03-22",
           "desc": "Burlington",
           "amount": 76.4,
@@ -2453,13 +2148,13 @@
         "Healthcare": 134.08,
         "Tech/Subs": 1847.96,
         "Shopping": 6600.31,
-        "Entertainment": 522.4200000000001,
+        "Entertainment": 272.42,
         "Gas/Travel": 4415.77,
-        "Groceries": 541.6499999999999,
-        "Restaurants": 351.35999999999996,
-        "Other": 608.77
+        "Groceries": 481.93999999999994,
+        "Restaurants": 311.9,
+        "Other": 11
       },
-      "total": 15022.32,
+      "total": 14075.38,
       "transactions": [
         {
           "date": "02-17",
@@ -3062,54 +2757,6 @@
           "state": null
         },
         {
-          "date": "02-03",
-          "desc": "365 Retail Markets",
-          "amount": 5.77,
-          "category": "Restaurants",
-          "city": "Troy",
-          "state": "MI"
-        },
-        {
-          "date": "02-06",
-          "desc": "Fanbasis",
-          "amount": 250,
-          "category": "Entertainment",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "02-07",
-          "desc": "Houseofbi",
-          "amount": 30.82,
-          "category": "Restaurants",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "02-14",
-          "desc": "Samudhra",
-          "amount": 59.71,
-          "category": "Groceries",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "02-19",
-          "desc": "Vzn Br Cafe Basking Ridgenj",
-          "amount": 2.87,
-          "category": "Restaurants",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "02-20",
-          "desc": "Mercury",
-          "amount": 597.77,
-          "category": "Other",
-          "city": null,
-          "state": "CA"
-        },
-        {
           "date": "02-21",
           "desc": "Garden Farm",
           "amount": 59.34,
@@ -3132,14 +2779,14 @@
       "categories": {
         "Tech/Subs": 551.72,
         "Entertainment": 161.02,
-        "Shopping": 922.53,
-        "Healthcare": 660.73,
+        "Shopping": 863.53,
+        "Healthcare": 585.51,
         "Gas/Travel": 452.59,
-        "Restaurants": 145.6,
-        "Groceries": 190.75,
-        "Other": 1046.1
+        "Restaurants": 26.64,
+        "Groceries": 155.49,
+        "Other": 448.32
       },
-      "total": 4131.039999999999,
+      "total": 3244.8199999999997,
       "transactions": [
         {
           "date": "01-30",
@@ -3470,70 +3117,6 @@
           "state": null
         },
         {
-          "date": "01-20",
-          "desc": "Thanjaime",
-          "amount": 36.3,
-          "category": "Restaurants",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "01-20",
-          "desc": "Mercury",
-          "amount": 597.78,
-          "category": "Other",
-          "city": null,
-          "state": "CA"
-        },
-        {
-          "date": "01-23",
-          "desc": "Vzn Br Cafe Basking Ridgenj",
-          "amount": 6.25,
-          "category": "Restaurants",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "01-24",
-          "desc": "CVS",
-          "amount": 55.22,
-          "category": "Healthcare",
-          "city": "North Brunswick",
-          "state": "NJ"
-        },
-        {
-          "date": "01-24",
-          "desc": "Houseofbi",
-          "amount": 76.41,
-          "category": "Restaurants",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "01-25",
-          "desc": "Mystribe",
-          "amount": 59,
-          "category": "Shopping",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "01-30",
-          "desc": "Laboratory Corporation",
-          "amount": 20,
-          "category": "Healthcare",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "01-30",
-          "desc": "Desi Halal Meat",
-          "amount": 35.26,
-          "category": "Groceries",
-          "city": null,
-          "state": null
-        },
-        {
           "date": "01-31",
           "desc": "Walmart",
           "amount": 83.74,
@@ -3554,15 +3137,15 @@
     "2026-05": {
       "label": "May 2026",
       "categories": {
-        "Tech/Subs": 1373.04,
-        "Entertainment": 36.21000000000001,
-        "Shopping": 1365.3999999999999,
-        "Restaurants": 238.81,
-        "Gas/Travel": 89.75,
-        "Healthcare": 100,
-        "Groceries": 401.16999999999996
+        "Tech/Subs": 2191.11,
+        "Entertainment": 74.05,
+        "Shopping": 2505.709999999999,
+        "Healthcare": 139.25,
+        "Restaurants": 690.4099999999999,
+        "Gas/Travel": 236.31000000000003,
+        "Groceries": 777.45
       },
-      "total": 3604.38,
+      "total": 6614.289999999999,
       "transactions": [
         {
           "date": "05-01",
@@ -3601,6 +3184,46 @@
           "desc": "Best Buy",
           "amount": 160,
           "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-14",
+          "desc": "Zelle payment to Kids Event Planner for \"May 23rd birthday Advance\"; Conf# tn983a7q8",
+          "amount": 250,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-18",
+          "desc": "Planet Fitness",
+          "amount": 10.66,
+          "category": "Healthcare",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-18",
+          "desc": "Verizon",
+          "amount": 392,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-26",
+          "desc": "Zelle payment to Kids Event Planner for \"Remaining payment\"; Conf# wj56cku85",
+          "amount": 250,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-29",
+          "desc": "Twp Of North Bru",
+          "amount": 141.88,
+          "category": "Tech/Subs",
           "city": null,
           "state": null
         },
@@ -3773,6 +3396,310 @@
           "state": null
         },
         {
+          "date": "05-13",
+          "desc": "Google One",
+          "amount": 1.99,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "CA"
+        },
+        {
+          "date": "05-15",
+          "desc": "Netlify Fy",
+          "amount": 5,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "CA"
+        },
+        {
+          "date": "05-13",
+          "desc": "Amazon",
+          "amount": 20.19,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-13",
+          "desc": "Amazon",
+          "amount": 140.7,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-16",
+          "desc": "Amazon",
+          "amount": 13.53,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-15",
+          "desc": "Amazon",
+          "amount": 39.99,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-18",
+          "desc": "Simplisafe",
+          "amount": 35.18,
+          "category": "Shopping",
+          "city": null,
+          "state": "MA"
+        },
+        {
+          "date": "05-17",
+          "desc": "Costco",
+          "amount": 290.11,
+          "category": "Shopping",
+          "city": "North Brunswick",
+          "state": "NJ"
+        },
+        {
+          "date": "05-17",
+          "desc": "Amazon",
+          "amount": 26.29,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-17",
+          "desc": "ShopRite",
+          "amount": 44.83,
+          "category": "Groceries",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-17",
+          "desc": "Anthropic Anthropic.comca",
+          "amount": 5,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-17",
+          "desc": "Anthropic Anthropic.comca",
+          "amount": 15,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-20",
+          "desc": "Netlify Fy",
+          "amount": 9,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "CA"
+        },
+        {
+          "date": "05-19",
+          "desc": "Amazon",
+          "amount": 26.08,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-21",
+          "desc": "CVS ExtraCare",
+          "amount": 5.33,
+          "category": "Healthcare",
+          "city": null,
+          "state": "RI"
+        },
+        {
+          "date": "05-20",
+          "desc": "BP",
+          "amount": 68.95,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-20",
+          "desc": "Hotbreads",
+          "amount": 167.48,
+          "category": "Restaurants",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-24",
+          "desc": "Apple",
+          "amount": 127.94,
+          "category": "Shopping",
+          "city": null,
+          "state": "CA"
+        },
+        {
+          "date": "05-25",
+          "desc": "Amazon",
+          "amount": 15.91,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-24",
+          "desc": "Amazon",
+          "amount": 29.99,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-24",
+          "desc": "Commerce Center Stm",
+          "amount": 12.78,
+          "category": "Entertainment",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-23",
+          "desc": "Domino's",
+          "amount": 143,
+          "category": "Restaurants",
+          "city": null,
+          "state": "NJ"
+        },
+        {
+          "date": "05-23",
+          "desc": "Claude.ai",
+          "amount": 100,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-22",
+          "desc": "Arusuvai",
+          "amount": 111.28,
+          "category": "Restaurants",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-25",
+          "desc": "The Home Depot",
+          "amount": 233.34,
+          "category": "Shopping",
+          "city": "Monmouth Junction",
+          "state": "NJ"
+        },
+        {
+          "date": "05-25",
+          "desc": "Thanjai Mess Fsr",
+          "amount": 46.88,
+          "category": "Restaurants",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-25",
+          "desc": "Bereket Marketplace",
+          "amount": 12.94,
+          "category": "Groceries",
+          "city": "Monmouth Junction",
+          "state": "NJ"
+        },
+        {
+          "date": "05-25",
+          "desc": "Regal Cinemas",
+          "amount": 28.24,
+          "category": "Entertainment",
+          "city": null,
+          "state": "TN"
+        },
+        {
+          "date": "05-28",
+          "desc": "Patidar Supermarket",
+          "amount": 1.68,
+          "category": "Groceries",
+          "city": "North Brunswick",
+          "state": "NJ"
+        },
+        {
+          "date": "05-28",
+          "desc": "Kendall Park Primary Care - Primary Care Partners Affiliate",
+          "amount": 20,
+          "category": "Healthcare",
+          "city": "Kendall Park",
+          "state": "NJ"
+        },
+        {
+          "date": "05-28",
+          "desc": "Walgreens",
+          "amount": 3.26,
+          "category": "Healthcare",
+          "city": "North Brunswick",
+          "state": "NJ"
+        },
+        {
+          "date": "05-27",
+          "desc": "Amazon",
+          "amount": 28.95,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-26",
+          "desc": "Rita's",
+          "amount": 22.24,
+          "category": "Restaurants",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-31",
+          "desc": "Apple",
+          "amount": 5.32,
+          "category": "Shopping",
+          "city": null,
+          "state": "CA"
+        },
+        {
+          "date": "05-30",
+          "desc": "Shaan Halal Meat Market",
+          "amount": 47.44,
+          "category": "Groceries",
+          "city": "Franklin Park",
+          "state": "NJ"
+        },
+        {
+          "date": "05-30",
+          "desc": "Sunoco",
+          "amount": 77.61,
+          "category": "Gas/Travel",
+          "city": "Jackson",
+          "state": "NJ"
+        },
+        {
+          "date": "05-29",
+          "desc": "Patidar Supermarket Nort",
+          "amount": 91.3,
+          "category": "Groceries",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-29",
+          "desc": "ShopRite",
+          "amount": 32.18,
+          "category": "Groceries",
+          "city": null,
+          "state": null
+        },
+        {
           "date": "05-01",
           "desc": "Kumon Of North",
           "amount": 280,
@@ -3829,92 +3756,92 @@
           "state": "AR"
         },
         {
-          "date": "05-01",
-          "desc": "Regal Cinemas",
-          "amount": 1.59,
-          "category": "Entertainment",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "05-04",
-          "desc": "Cricketdata",
-          "amount": 5.99,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "05-06",
-          "desc": "The Home Depot",
-          "amount": 7.76,
+          "date": "05-15",
+          "desc": "Garden Farm",
+          "amount": 79.37,
           "category": "Shopping",
           "city": null,
           "state": null
         },
         {
-          "date": "05-07",
-          "desc": "Fanbasis",
-          "amount": 250,
-          "category": "Tech/Subs",
+          "date": "05-16",
+          "desc": "Shaan Halal Zabiha Meat",
+          "amount": 9.96,
+          "category": "Groceries",
+          "city": "Dayton",
+          "state": "NJ"
+        },
+        {
+          "date": "05-16",
+          "desc": "Apna Bazaar Cash & Carry",
+          "amount": 42.97,
+          "category": "Shopping",
+          "city": "Dayton",
+          "state": "NJ"
+        },
+        {
+          "date": "05-18",
+          "desc": "Temu",
+          "amount": 38.59,
+          "category": "Shopping",
+          "city": null,
+          "state": "MA"
+        },
+        {
+          "date": "05-18",
+          "desc": "Temu",
+          "amount": 61.79,
+          "category": "Shopping",
           "city": null,
           "state": null
         },
         {
-          "date": "05-08",
-          "desc": "Grok Xai",
-          "amount": 30,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": "CA"
-        },
-        {
-          "date": "05-09",
-          "desc": "Regal Cinemas",
-          "amount": 1.59,
-          "category": "Entertainment",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "05-10",
-          "desc": "Realfruitbubbletea",
-          "amount": 22.09,
-          "category": "Restaurants",
-          "city": null,
-          "state": null
-        },
-        {
-          "date": "05-11",
-          "desc": "Desi Halal Meat",
-          "amount": 40.47,
+          "date": "05-19",
+          "desc": "Delight Big Bazar",
+          "amount": 42.93,
           "category": "Groceries",
           "city": null,
           "state": null
         },
         {
-          "date": "05-11",
-          "desc": "Singasfam",
-          "amount": 17.19,
-          "category": "Restaurants",
+          "date": "05-19",
+          "desc": "Walmart",
+          "amount": 19.81,
+          "category": "Shopping",
           "city": null,
-          "state": null
+          "state": "AR"
         },
         {
-          "date": "05-12",
-          "desc": "Nike",
-          "amount": 289,
+          "date": "05-19",
+          "desc": "Walmart",
+          "amount": 23.24,
+          "category": "Shopping",
+          "city": null,
+          "state": "AR"
+        },
+        {
+          "date": "05-22",
+          "desc": "Zelle payment to Tere Cleaning Lady for \"Maycleaning\"; Conf# xbkou86lz",
+          "amount": 125,
           "category": "Shopping",
           "city": null,
           "state": null
         },
         {
-          "date": "05-12",
-          "desc": "Replit Inc.",
-          "amount": 65.81,
-          "category": "Tech/Subs",
+          "date": "05-22",
+          "desc": "Patidar Supermarket Nort",
+          "amount": 121.51,
+          "category": "Groceries",
           "city": null,
-          "state": "CA"
+          "state": null
+        },
+        {
+          "date": "05-27",
+          "desc": "ShopRite",
+          "amount": 11.98,
+          "category": "Groceries",
+          "city": null,
+          "state": null
         },
         {
           "date": "05-02",
@@ -3969,6 +3896,149 @@
           "desc": "Patel Brothers",
           "amount": 90.46,
           "category": "Groceries",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "05-30",
+          "desc": "Reg Commerce Ctr",
+          "amount": 12.78,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        }
+      ]
+    },
+    "2026-06": {
+      "label": "June 2026",
+      "categories": {
+        "Tech/Subs": 902.28,
+        "Shopping": 16.29,
+        "Restaurants": 65.33,
+        "Entertainment": 170.61,
+        "Gas/Travel": 57.64,
+        "Groceries": 85.33,
+        "Healthcare": 1060.99
+      },
+      "total": 2358.4699999999993,
+      "transactions": [
+        {
+          "date": "06-01",
+          "desc": "Optimum",
+          "amount": 50.66,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-01",
+          "desc": "Renaissance Gree",
+          "amount": 115,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-01",
+          "desc": "Republic Services",
+          "amount": 190.62,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-03",
+          "desc": "Amazon",
+          "amount": 4.59,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-01",
+          "desc": "Big Blue Swim School",
+          "amount": 266,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "NJ"
+        },
+        {
+          "date": "06-01",
+          "desc": "Desi Chowrastha",
+          "amount": 65.33,
+          "category": "Restaurants",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-01",
+          "desc": "Kumon Of North",
+          "amount": 280,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-01",
+          "desc": "Great Adventure Admiss",
+          "amount": 170.61,
+          "category": "Entertainment",
+          "city": "Jackson",
+          "state": "NJ"
+        },
+        {
+          "date": "06-01",
+          "desc": "Great Adventure Merch",
+          "amount": 5.85,
+          "category": "Shopping",
+          "city": "Jackson",
+          "state": "NJ"
+        },
+        {
+          "date": "06-01",
+          "desc": "Great Adventure Merch",
+          "amount": 5.85,
+          "category": "Shopping",
+          "city": "Jackson",
+          "state": "NJ"
+        },
+        {
+          "date": "06-03",
+          "desc": "QuickChek",
+          "amount": 57.64,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-04",
+          "desc": "ShopRite",
+          "amount": 69.8,
+          "category": "Groceries",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-03",
+          "desc": "Delight Big Bazar",
+          "amount": 15.53,
+          "category": "Groceries",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-05",
+          "desc": "Kids Smile",
+          "amount": 1042,
+          "category": "Healthcare",
+          "city": "South Brunswick",
+          "state": "NJ"
+        },
+        {
+          "date": "06-04",
+          "desc": "Walgreens",
+          "amount": 18.99,
+          "category": "Healthcare",
           "city": null,
           "state": null
         }
@@ -4637,6 +4707,86 @@
       "period_label": "May 2026"
     },
     {
+      "date": "05-13",
+      "desc": "Google One",
+      "amount": 1.99,
+      "category": "Tech/Subs",
+      "city": null,
+      "state": "CA",
+      "period": "2026-05",
+      "period_label": "May 2026"
+    },
+    {
+      "date": "05-15",
+      "desc": "Netlify Fy",
+      "amount": 5,
+      "category": "Tech/Subs",
+      "city": null,
+      "state": "CA",
+      "period": "2026-05",
+      "period_label": "May 2026"
+    },
+    {
+      "date": "05-18",
+      "desc": "Simplisafe",
+      "amount": 35.18,
+      "category": "Shopping",
+      "city": null,
+      "state": "MA",
+      "period": "2026-05",
+      "period_label": "May 2026"
+    },
+    {
+      "date": "05-20",
+      "desc": "Netlify Fy",
+      "amount": 9,
+      "category": "Tech/Subs",
+      "city": null,
+      "state": "CA",
+      "period": "2026-05",
+      "period_label": "May 2026"
+    },
+    {
+      "date": "05-21",
+      "desc": "CVS ExtraCare",
+      "amount": 5.33,
+      "category": "Healthcare",
+      "city": null,
+      "state": "RI",
+      "period": "2026-05",
+      "period_label": "May 2026"
+    },
+    {
+      "date": "05-24",
+      "desc": "Apple",
+      "amount": 127.94,
+      "category": "Shopping",
+      "city": null,
+      "state": "CA",
+      "period": "2026-05",
+      "period_label": "May 2026"
+    },
+    {
+      "date": "05-25",
+      "desc": "Regal Cinemas",
+      "amount": 28.24,
+      "category": "Entertainment",
+      "city": null,
+      "state": "TN",
+      "period": "2026-05",
+      "period_label": "May 2026"
+    },
+    {
+      "date": "05-31",
+      "desc": "Apple",
+      "amount": 5.32,
+      "category": "Shopping",
+      "city": null,
+      "state": "CA",
+      "period": "2026-05",
+      "period_label": "May 2026"
+    },
+    {
       "date": "04-09",
       "desc": "Trendia Trendia.co",
       "amount": 178.01,
@@ -4727,152 +4877,32 @@
       "period_label": "May 2026"
     },
     {
-      "date": "03-20",
-      "desc": "Mercury",
-      "amount": 597.77,
-      "category": "Other",
+      "date": "05-18",
+      "desc": "Temu",
+      "amount": 38.59,
+      "category": "Shopping",
       "city": null,
-      "state": "CA",
-      "period": "2026-03",
-      "period_label": "March 2026"
-    },
-    {
-      "date": "03-28",
-      "desc": "Griffith Observatory",
-      "amount": 26,
-      "category": "Entertainment",
-      "city": "Los Angeles",
-      "state": "CA",
-      "period": "2026-03",
-      "period_label": "March 2026"
-    },
-    {
-      "date": "03-28",
-      "desc": "Griffith Observatory",
-      "amount": 64,
-      "category": "Entertainment",
-      "city": "Los Angeles",
-      "state": "CA",
-      "period": "2026-03",
-      "period_label": "March 2026"
-    },
-    {
-      "date": "03-30",
-      "desc": "Replit Inc.",
-      "amount": 50.17,
-      "category": "Tech/Subs",
-      "city": null,
-      "state": "CA",
-      "period": "2026-03",
-      "period_label": "March 2026"
-    },
-    {
-      "date": "04-05",
-      "desc": "Replit Inc.",
-      "amount": 50.12,
-      "category": "Tech/Subs",
-      "city": null,
-      "state": "CA",
-      "period": "2026-04",
-      "period_label": "April 2026"
-    },
-    {
-      "date": "04-11",
-      "desc": "Replit Inc.",
-      "amount": 100.13,
-      "category": "Tech/Subs",
-      "city": null,
-      "state": "CA",
-      "period": "2026-04",
-      "period_label": "April 2026"
-    },
-    {
-      "date": "01-20",
-      "desc": "Mercury",
-      "amount": 597.78,
-      "category": "Other",
-      "city": null,
-      "state": "CA",
-      "period": "2026-01",
-      "period_label": "January 2026"
-    },
-    {
-      "date": "02-03",
-      "desc": "365 Retail Markets",
-      "amount": 5.77,
-      "category": "Restaurants",
-      "city": "Troy",
-      "state": "MI",
-      "period": "2026-02",
-      "period_label": "February 2026"
-    },
-    {
-      "date": "02-20",
-      "desc": "Mercury",
-      "amount": 597.77,
-      "category": "Other",
-      "city": null,
-      "state": "CA",
-      "period": "2026-02",
-      "period_label": "February 2026"
-    },
-    {
-      "date": "04-20",
-      "desc": "Mercury",
-      "amount": 597.77,
-      "category": "Tech/Subs",
-      "city": null,
-      "state": "CA",
-      "period": "2026-04",
-      "period_label": "April 2026"
-    },
-    {
-      "date": "04-23",
-      "desc": "365 Retail Markets",
-      "amount": 2.98,
-      "category": "Restaurants",
-      "city": "Troy",
-      "state": "MI",
-      "period": "2026-04",
-      "period_label": "April 2026"
-    },
-    {
-      "date": "04-29",
-      "desc": "Replit Inc.",
-      "amount": 100.37,
-      "category": "Tech/Subs",
-      "city": null,
-      "state": "CA",
-      "period": "2026-04",
-      "period_label": "April 2026"
-    },
-    {
-      "date": "04-30",
-      "desc": "365 Retail Markets",
-      "amount": 1.6,
-      "category": "Restaurants",
-      "city": "Troy",
-      "state": "MI",
-      "period": "2026-04",
-      "period_label": "April 2026"
-    },
-    {
-      "date": "05-08",
-      "desc": "Grok Xai",
-      "amount": 30,
-      "category": "Tech/Subs",
-      "city": null,
-      "state": "CA",
+      "state": "MA",
       "period": "2026-05",
       "period_label": "May 2026"
     },
     {
-      "date": "05-12",
-      "desc": "Replit Inc.",
-      "amount": 65.81,
-      "category": "Tech/Subs",
+      "date": "05-19",
+      "desc": "Walmart",
+      "amount": 19.81,
+      "category": "Shopping",
       "city": null,
-      "state": "CA",
+      "state": "AR",
+      "period": "2026-05",
+      "period_label": "May 2026"
+    },
+    {
+      "date": "05-19",
+      "desc": "Walmart",
+      "amount": 23.24,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
       "period": "2026-05",
       "period_label": "May 2026"
     }
@@ -4886,6 +4916,6 @@
     "cable": 50.66
   },
   "statement_count": "8 live accounts",
-  "generated_at": "2026-05-15T13:00:09.140Z",
+  "generated_at": "2026-06-06T00:04:23.448Z",
   "source": "plaid_realtime"
 }
