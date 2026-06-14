@@ -2,21 +2,21 @@
   "kpis": {
     "income": 7954.01,
     "income_period": "June 2026",
-    "true_outflows": 2794.79,
+    "true_outflows": 3985.26,
     "outflows_period": "June 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 5797.73,
+      "balance": 1766.18,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
       "outflows": 0
     },
     "wf": {
-      "balance": 3265.47,
+      "balance": 3787.71,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 0.94
@@ -49,7 +49,7 @@
       "mask": "5772",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 38461.035365815,
+      "balance": 53346.46216007,
       "available": null,
       "is_credit": false,
       "is_checking": false,
@@ -75,8 +75,8 @@
       "mask": "1739",
       "type": "depository",
       "subtype": "checking",
-      "balance": 80.63,
-      "available": 80.63,
+      "balance": 30.63,
+      "available": 30.63,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -101,8 +101,8 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 5145.44,
-      "available": 5145.44,
+      "balance": 1163.89,
+      "available": 1163.89,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -127,8 +127,8 @@
       "mask": "1432",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 1191.09,
-      "available": 3908,
+      "balance": 826.09,
+      "available": 4273,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -153,8 +153,8 @@
       "mask": "8036",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 138.44,
-      "available": 853,
+      "balance": 150.15,
+      "available": 848,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -166,8 +166,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 1935.94,
-      "available": 924,
+      "balance": 2811.47,
+      "available": null,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -218,8 +218,8 @@
       "mask": "1739",
       "type": "depository",
       "subtype": "checking",
-      "balance": 80.63,
-      "available": 80.63,
+      "balance": 30.63,
+      "available": 30.63,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -231,8 +231,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 685.34,
-      "available": 14.66,
+      "balance": 16.73,
+      "available": 683.27,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -257,8 +257,8 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 22048.9,
-      "available": 21006.9,
+      "balance": 10956.56,
+      "available": 10956.56,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -283,8 +283,8 @@
       "mask": "6644",
       "type": "depository",
       "subtype": "savings",
-      "balance": 30236.76,
-      "available": 30236.76,
+      "balance": 15236.76,
+      "available": 15236.76,
       "is_credit": false,
       "is_checking": false,
       "is_savings": true
@@ -296,8 +296,8 @@
       "mask": "7119",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 1880.84,
-      "available": 1059.11,
+      "balance": 1878.31,
+      "available": 1878.31,
       "is_credit": false,
       "is_checking": false,
       "is_savings": false
@@ -309,17 +309,17 @@
       "mask": "8479",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 18.99,
-      "available": 2596,
+      "balance": 512.52,
+      "available": 2385,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
     }
   ],
   "net_worth": {
-    "total_checking": 59258.97,
-    "total_credit": 3969.8,
-    "net": 55289.17
+    "total_checking": 29085.08,
+    "total_credit": 4316.96,
+    "net": 24768.12
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -331,13 +331,13 @@
   },
   "spending": {
     "Healthcare": 2551.6800000000003,
-    "Tech/Subs": 9914.660000000002,
-    "Shopping": 13255.960000000001,
-    "Entertainment": 1593.42,
-    "Other": 35406.23,
-    "Groceries": 2598.7999999999997,
-    "Restaurants": 2143.2300000000005,
-    "Gas/Travel": 6671.8200000000015
+    "Tech/Subs": 10022.61,
+    "Shopping": 13374.58,
+    "Entertainment": 1614.73,
+    "Other": 35984.68,
+    "Groceries": 2603.0499999999997,
+    "Restaurants": 2228.1800000000007,
+    "Gas/Travel": 6946.760000000001
   },
   "zelle_received": [
     {
@@ -3912,16 +3912,16 @@
     "2026-06": {
       "label": "June 2026",
       "categories": {
-        "Tech/Subs": 902.28,
-        "Shopping": 305.93,
-        "Restaurants": 77.58,
-        "Entertainment": 170.61,
-        "Groceries": 107.08,
-        "Gas/Travel": 57.64,
-        "Healthcare": 1162.67,
-        "Other": 11
+        "Tech/Subs": 1010.23,
+        "Entertainment": 191.92000000000002,
+        "Shopping": 424.54999999999995,
+        "Restaurants": 162.53,
+        "Other": 589.45,
+        "Gas/Travel": 332.58000000000004,
+        "Groceries": 111.33,
+        "Healthcare": 1162.67
       },
-      "total": 2794.789999999999,
+      "total": 3985.2599999999998,
       "transactions": [
         {
           "date": "06-01",
@@ -3944,6 +3944,14 @@
           "desc": "Republic Services",
           "amount": 190.62,
           "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-09",
+          "desc": "Netflix",
+          "amount": 21.31,
+          "category": "Entertainment",
           "city": null,
           "state": null
         },
@@ -3986,6 +3994,94 @@
           "category": "Shopping",
           "city": null,
           "state": "MN"
+        },
+        {
+          "date": "06-05",
+          "desc": "Apple",
+          "amount": 8.52,
+          "category": "Shopping",
+          "city": null,
+          "state": "CA"
+        },
+        {
+          "date": "06-06",
+          "desc": "Hindu American Temple An",
+          "amount": 68,
+          "category": "Other",
+          "city": "Morganville",
+          "state": "NJ"
+        },
+        {
+          "date": "06-06",
+          "desc": "House of Biryani's and Kebabs",
+          "amount": 72.47,
+          "category": "Restaurants",
+          "city": "Dayton",
+          "state": "NJ"
+        },
+        {
+          "date": "06-09",
+          "desc": "Apple",
+          "amount": 3.19,
+          "category": "Shopping",
+          "city": null,
+          "state": "CA"
+        },
+        {
+          "date": "06-09",
+          "desc": "Vfs Services Usa Inc.",
+          "amount": 229.29,
+          "category": "Other",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-09",
+          "desc": "Vfs Services Usa Inc.",
+          "amount": 281.16,
+          "category": "Other",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-08",
+          "desc": "Canva",
+          "amount": 1,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-08",
+          "desc": "Amazon",
+          "amount": 49.36,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-08",
+          "desc": "Simplytrawell",
+          "amount": 59.9,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-08",
+          "desc": "Simplytrawell",
+          "amount": 59.9,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-11",
+          "desc": "Everwash",
+          "amount": 55.45,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "PA"
         },
         {
           "date": "06-01",
@@ -4044,20 +4140,36 @@
           "state": "NJ"
         },
         {
-          "date": "06-07",
+          "date": "06-08",
           "desc": "Kids Smile",
           "amount": 1042,
           "category": "Healthcare",
-          "city": "South Brunswick",
-          "state": "NJ"
-        },
-        {
-          "date": "06-05",
-          "desc": "Renaissance Buy Rite",
-          "amount": 12.25,
-          "category": "Restaurants",
           "city": null,
           "state": null
+        },
+        {
+          "date": "06-11",
+          "desc": "Macy's",
+          "amount": 56.55,
+          "category": "Shopping",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-10",
+          "desc": "ShopRite",
+          "amount": 4.25,
+          "category": "Groceries",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-11",
+          "desc": "Atul Bakery - North Brunswick Township",
+          "amount": 12.48,
+          "category": "Restaurants",
+          "city": "North Brunswick",
+          "state": "NJ"
         },
         {
           "date": "06-04",
@@ -4068,10 +4180,10 @@
           "state": null
         },
         {
-          "date": "06-06",
-          "desc": "The Home Depot",
-          "amount": 39.36,
-          "category": "Shopping",
+          "date": "06-05",
+          "desc": "Renaissance Buy Rite",
+          "amount": 12.25,
+          "category": "Restaurants",
           "city": null,
           "state": null
         },
@@ -4093,17 +4205,25 @@
         },
         {
           "date": "06-06",
-          "desc": "Five Below",
-          "amount": 54.37,
+          "desc": "Hindu American Temple And Cultural Center",
+          "amount": 11,
+          "category": "Other",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-06",
+          "desc": "The Home Depot",
+          "amount": 39.36,
           "category": "Shopping",
           "city": null,
           "state": null
         },
         {
           "date": "06-06",
-          "desc": "Hindu American Temple And Cultural Center",
-          "amount": 11,
-          "category": "Other",
+          "desc": "Five Below",
+          "amount": 54.37,
+          "category": "Shopping",
           "city": null,
           "state": null
         },
@@ -4112,6 +4232,54 @@
           "desc": "Walgreens",
           "amount": 101.68,
           "category": "Healthcare",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-10",
+          "desc": "UPS",
+          "amount": 52.5,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-10",
+          "desc": "BP",
+          "amount": 52.67,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-12",
+          "desc": "Sunoco",
+          "amount": 52.8,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-12",
+          "desc": "Sunoco",
+          "amount": 8.47,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-12",
+          "desc": "Sunoco",
+          "amount": 3.99,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-13",
+          "desc": "BP",
+          "amount": 37.21,
+          "category": "Gas/Travel",
           "city": null,
           "state": null
         }
@@ -4870,6 +5038,26 @@
       "period_label": "June 2026"
     },
     {
+      "date": "06-05",
+      "desc": "Apple",
+      "amount": 8.52,
+      "category": "Shopping",
+      "city": null,
+      "state": "CA",
+      "period": "2026-06",
+      "period_label": "June 2026"
+    },
+    {
+      "date": "06-09",
+      "desc": "Apple",
+      "amount": 3.19,
+      "category": "Shopping",
+      "city": null,
+      "state": "CA",
+      "period": "2026-06",
+      "period_label": "June 2026"
+    },
+    {
       "date": "04-09",
       "desc": "Trendia Trendia.co",
       "amount": 178.01,
@@ -4999,6 +5187,6 @@
     "cable": 50.66
   },
   "statement_count": "8 live accounts",
-  "generated_at": "2026-06-08T01:27:55.562Z",
+  "generated_at": "2026-06-14T13:58:55.249Z",
   "source": "plaid_realtime"
 }
