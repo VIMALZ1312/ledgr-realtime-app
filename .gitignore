@@ -1,0 +1,14 @@
+# Secrets — never commit real credentials
+.env
+.env.local
+.env.*.local
+
+# Dependencies
+node_modules/
+
+# Netlify
+.netlify/
+
+# Logs / OS cruft
+*.log
+.DS_Store

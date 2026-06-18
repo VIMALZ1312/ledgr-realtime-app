@@ -434,6 +434,102 @@ function render() {
 
 var _chartInst = null;
 
+// ── Connected banks (Overview) ────────────────────────────────
+var BANK_NAMES = {
+  bofa:'Bank of America', wifebofa:'Bank of America · Wife', wf:'Wells Fargo',
+  td:'TD Bank', pnc:'PNC', discover:'Discover', amex:'Amex', chase:'Chase',
+  robin:'Robinhood', myrobin:'Robinhood · Brokerage'
+};
+function bankKeyOf(a){ return (a.nickname || a._nickname || a.bank || '?').toString().toLowerCase(); }
+function bankLabelOf(key, fallback){ return BANK_NAMES[key] || fallback || key; }
+function renderBanksStrip(accts) {
+  if(!accts || !accts.length) return '';
+  var groups = {};
+  accts.forEach(function(a){ var k = bankKeyOf(a); (groups[k] = groups[k] || []).push(a); });
+  window._bankGroups = groups;
+  var keys = Object.keys(groups).sort();
+  var chips = keys.map(function(k){
+    var g = groups[k];
+    var label = bankLabelOf(k, g[0].bank);
+    var hasCredit = g.some(function(x){ return x.is_credit; });
+    var dot = hasCredit ? 'var(--yellow)' : 'var(--green)';
+    return '<span onclick="_showBank(\''+k+'\')" style="display:inline-flex;align-items:center;gap:6px;padding:6px 11px;border:1px solid var(--border);border-radius:20px;background:var(--s2);cursor:pointer;font-size:12px;white-space:nowrap">'
+      + '<span style="width:7px;height:7px;border-radius:50%;background:'+dot+'"></span>'
+      + label + '<span style="color:var(--muted);font-size:11px">'+g.length+'</span></span>';
+  }).join('');
+  return '<div class="panel"><div class="panel-head"><div class="panel-title">Connected Banks</div>'
+    + '<div class="panel-action">'+keys.length+' institutions · '+accts.length+' accounts</div></div>'
+    + '<div style="display:flex;flex-wrap:wrap;gap:8px">'+chips+'</div>'
+    + '<div style="font-size:10px;color:var(--muted);margin-top:8px">Tap a bank to see its accounts. Missing one? Re-link it via the Plaid helper.</div></div>';
+}
+function _showBank(key) {
+  var g = (window._bankGroups && window._bankGroups[key]) || [];
+  var label = bankLabelOf(key, g[0] && g[0].bank);
+  var b = '';
+  g.forEach(function(x){ b += acctLine(x); });
+  openModal(label, g.length + ' accounts', b || '<div style="color:var(--muted)">No accounts</div>');
+}
+
+// ── Insights (Overview): what moved net worth, MoM + last 7 days ─
+function renderInsights(ms, mh) {
+  var periods = Object.keys(ms).sort();
+  if(periods.length < 2) return '';
+  var cur = periods[periods.length-1], prev = periods[periods.length-2];
+  var incomeOf = function(p){ var e=(mh||[]).find(function(m){ return m.period===p; }); return e ? Number(e.income)||0 : 0; };
+  var curSpend = ms[cur].total||0, prevSpend = ms[prev].total||0;
+  var curInc = incomeOf(cur), prevInc = incomeOf(prev);
+  var curNet = curInc - curSpend, prevNet = prevInc - prevSpend;
+  var curLbl = short(ms[cur].label), prevLbl = short(ms[prev].label);
+
+  // Category deltas (current vs previous month)
+  var cats = {};
+  Object.keys(ms[cur].categories||{}).forEach(function(c){ cats[c]=true; });
+  Object.keys(ms[prev].categories||{}).forEach(function(c){ cats[c]=true; });
+  var deltas = Object.keys(cats).map(function(c){
+    var cv=(ms[cur].categories||{})[c]||0, pv=(ms[prev].categories||{})[c]||0;
+    return { cat:c, d: cv-pv };
+  });
+  var ups = deltas.filter(function(x){ return x.d>1; }).sort(function(a,b){ return b.d-a.d; });
+  var downs = deltas.filter(function(x){ return x.d<-1; }).sort(function(a,b){ return a.d-b.d; });
+
+  // Week-over-week within the current month (txn dates are "MM-DD")
+  var today = new Date().getDate();
+  var curTxns = ms[cur].transactions||[];
+  var dayOf = function(t){ var p=(t.date||'').split('-'); return parseInt(p[1]||p[0],10)||0; };
+  var last7=0, prev7=0;
+  curTxns.forEach(function(t){ var dd=dayOf(t); if(dd>today-7 && dd<=today) last7+=(t.amount||0); else if(dd>today-14 && dd<=today-7) prev7+=(t.amount||0); });
+
+  var rows = [];
+  var netCol = curNet>=0 ? 'var(--green)' : 'var(--red)';
+  rows.push('<div style="display:flex;gap:8px"><span>'+(curNet>=0?'🟢':'🔴')+'</span><div><b style="color:'+netCol+'">'+curLbl+' net cash flow: '+fmt(curNet)+'</b> ('+(curNet>=0?'surplus':'deficit')+'). '
+    + prevLbl+' was '+fmt(prevNet)+'. '+(curNet>prevNet ? 'Improving — net worth trending up.' : 'Worsening — net worth under pressure.')+'</div></div>');
+
+  var spendDelta = curSpend - prevSpend;
+  var pct = prevSpend ? Math.round(Math.abs(spendDelta)/prevSpend*100) : 0;
+  rows.push('<div style="display:flex;gap:8px"><span>'+(spendDelta>0?'📈':'📉')+'</span><div>Spending '+(spendDelta>0?'up':'down')+' <b>'+fmt(Math.abs(spendDelta))+'</b> ('+pct+'%) vs '+prevLbl+' — '+fmt(curSpend)+' total this month.</div></div>');
+
+  if(curInc||prevInc){
+    var incDelta=curInc-prevInc;
+    rows.push('<div style="display:flex;gap:8px"><span>💵</span><div>Income '+(incDelta>=0?'up':'down')+' <b>'+fmt(Math.abs(incDelta))+'</b> vs '+prevLbl+' — '+fmt(curInc)+' in '+curLbl+'.</div></div>');
+  }
+  if(ups.length){
+    var topUp = ups.slice(0,3).map(function(x){ var col=CAT_COLORS[x.cat]||'#6b6b80'; return '<span style="color:'+col+'">'+x.cat+'</span> +'+fmt(x.d); }).join(', ');
+    rows.push('<div style="display:flex;gap:8px"><span>⚠️</span><div>Biggest jumps (watch for unwanted spend): '+topUp+'.</div></div>');
+  }
+  if(downs.length){
+    var topDown = downs.slice(0,2).map(function(x){ return x.cat+' '+fmt(x.d); }).join(', ');
+    rows.push('<div style="display:flex;gap:8px"><span>✅</span><div>Cut back on: '+topDown+'.</div></div>');
+  }
+  if(last7||prev7){
+    rows.push('<div style="display:flex;gap:8px"><span>🗓️</span><div>Last 7 days: <b>'+fmt(last7)+'</b> spent vs '+fmt(prev7)+' the prior week.</div></div>');
+  }
+  var big = curTxns.slice().sort(function(a,b){ return (b.amount||0)-(a.amount||0); })[0];
+  if(big){ rows.push('<div style="display:flex;gap:8px"><span>🔎</span><div>Largest '+curLbl+' charge: <b>'+fmt2(big.amount)+'</b> — '+big.desc+' ('+big.category+').</div></div>'); }
+
+  return '<div class="panel"><div class="panel-head"><div class="panel-title">Insights</div><div class="panel-action">'+prevLbl+' → '+curLbl+'</div></div>'
+    + '<div style="display:flex;flex-direction:column;gap:9px;font-size:12.5px;line-height:1.45">'+rows.join('')+'</div></div>';
+}
+
 function renderOverview() {
   var ms = D.monthly_spending || {};
   var mh = D.monthly_history || [];
@@ -447,11 +543,16 @@ function renderOverview() {
   var creditBal = allAccts.filter(function(a){return a.is_credit&&a.balance>0;}).reduce(function(s,a){return s+a.balance;},0);
   var netWorth = checkingBal - creditBal;
 
-  var html = '<div class="kpi-row">';
+  // Connected banks strip — on top so missing banks are obvious
+  var html = renderBanksStrip(allAccts);
+  html += '<div class="kpi-row">';
   html += mkKpi('NET WORTH', fmt(netWorth), netWorth >= 0 ? 'var(--green)' : 'var(--red)', 'tap for breakdown', 'showNetWorth()');
   html += mkKpi('CHECKING', fmt(checkingBal), 'var(--blue)', 'savings + brokerage', 'showChecking()');
   html += mkKpi('CREDIT OWED', fmt(creditBal), 'var(--red)', 'cards balance', 'showCredit()');
   html += '</div>';
+
+  // Text insights — what moved net worth, MoM + last 7 days
+  html += renderInsights(ms, mh);
 
   // Chart data embedded in data attributes
   var chartLabels = JSON.stringify(periods.map(function(p){ return short(ms[p].label); }));
@@ -505,6 +606,7 @@ function renderOverview() {
   html += '<div class="panel" style="overflow-x:auto">';
   html += '<div class="panel-head"><div class="panel-title">Monthly Spend</div>';
   html += '<div class="panel-action">'+fmt(grandTotal)+' total</div></div>';
+  html += '<div style="font-size:10px;color:var(--muted);padding:0 0 6px">Tap any amount to see its transactions ↓</div>';
   html += '<table style="width:100%;border-collapse:collapse;font-size:12px">';
   html += '<thead><tr>';
   html += '<th style="text-align:left;padding:6px 8px;font-size:10px;color:var(--muted);border-bottom:2px solid var(--border);font-weight:500;min-width:90px">Category</th>';
@@ -535,7 +637,7 @@ function renderOverview() {
         var key = 'r'+ci+'_'+pi;
         _txnStore[key] = (ms[p].transactions||[]).filter(function(t){return t.category===cat;});
         var lbl = cat+' '+short(ms[p].label);
-        html += '<td style="padding:7px 8px;text-align:right;font-family:IBM Plex Mono,monospace;color:'+col+';cursor:pointer;white-space:nowrap" onclick="_showMs(\''+key+'\',\''+col+'\',\''+lbl+'\')">' + fmt(a) + '</td>';
+        html += '<td style="padding:7px 8px;text-align:right;font-family:IBM Plex Mono,monospace;color:'+col+';cursor:pointer;white-space:nowrap;text-decoration:underline;text-decoration-style:dotted;text-decoration-color:'+col+'88;text-underline-offset:3px" onclick="_showMs(\''+key+'\',\''+col+'\',\''+lbl+'\')">' + fmt(a) + '</td>';
       } else {
         html += '<td style="padding:7px 8px;text-align:right;color:var(--muted2)">—</td>';
       }
