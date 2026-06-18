@@ -1,28 +1,28 @@
 {
   "kpis": {
-    "income": 7954.01,
+    "income": 8454.01,
     "income_period": "June 2026",
-    "true_outflows": 3985.26,
+    "true_outflows": 4818.89,
     "outflows_period": "June 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 1766.18,
+      "balance": 1734.43,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
       "outflows": 0
     },
     "wf": {
-      "balance": 3787.71,
+      "balance": 3832.42,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 0.94
     },
     "td": {
-      "balance": 248.03,
+      "balance": 18.03,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0
@@ -49,8 +49,8 @@
       "mask": "5772",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 53346.46216007,
-      "available": null,
+      "balance": 53204.0101615491,
+      "available": 14656.37,
       "is_credit": false,
       "is_checking": false,
       "is_savings": false
@@ -101,8 +101,8 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 1163.89,
-      "available": 1163.89,
+      "balance": 1132.14,
+      "available": 1121.48,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -141,7 +141,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 0.94,
-      "available": 0.94,
+      "available": 500.94,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -153,8 +153,8 @@
       "mask": "8036",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 150.15,
-      "available": 848,
+      "balance": 33.97,
+      "available": 966,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -166,7 +166,7 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 2811.47,
+      "balance": 2972.36,
       "available": null,
       "is_credit": true,
       "is_checking": false,
@@ -179,8 +179,8 @@
       "mask": "5961",
       "type": "depository",
       "subtype": "checking",
-      "balance": 789,
-      "available": 789,
+      "balance": 69,
+      "available": 69,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -205,8 +205,8 @@
       "mask": "9222",
       "type": "depository",
       "subtype": "checking",
-      "balance": 248.03,
-      "available": 248.03,
+      "balance": 18.03,
+      "available": 18.03,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -231,8 +231,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 16.73,
-      "available": 683.27,
+      "balance": 97.12,
+      "available": 602.88,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -296,8 +296,8 @@
       "mask": "7119",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 1878.31,
-      "available": 1878.31,
+      "balance": 1740.61,
+      "available": 1740.61,
       "is_credit": false,
       "is_checking": false,
       "is_savings": false
@@ -309,17 +309,17 @@
       "mask": "8479",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 512.52,
-      "available": 2385,
+      "balance": 614.99,
+      "available": 2329,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
     }
   ],
   "net_worth": {
-    "total_checking": 29085.08,
-    "total_credit": 4316.96,
-    "net": 24768.12
+    "total_checking": 28103.33,
+    "total_credit": 4544.53,
+    "net": 23558.8
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -330,14 +330,14 @@
     "by_month": []
   },
   "spending": {
-    "Healthcare": 2551.6800000000003,
-    "Tech/Subs": 10022.61,
-    "Shopping": 13374.58,
-    "Entertainment": 1614.73,
+    "Healthcare": 2562.34,
+    "Tech/Subs": 10414.210000000001,
+    "Shopping": 13406.560000000001,
+    "Entertainment": 1796.72,
     "Other": 35984.68,
     "Groceries": 2603.0499999999997,
     "Restaurants": 2228.1800000000007,
-    "Gas/Travel": 6946.760000000001
+    "Gas/Travel": 7164.160000000002
   },
   "zelle_received": [
     {
@@ -497,6 +497,12 @@
       "period_label": "January 2026"
     },
     {
+      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 0K6VIB4BN",
+      "amount": 950,
+      "period": "2026-06",
+      "period_label": "June 2026"
+    },
+    {
       "from": "FROM AHMED MOHAMMED",
       "amount": 483.9,
       "period": "2026-04",
@@ -541,6 +547,12 @@
     {
       "from": "TD  RECEIVED 615400B0BXTY Zelle RAKESH KUMAR GAL",
       "amount": 88,
+      "period": "2026-06",
+      "period_label": "June 2026"
+    },
+    {
+      "from": "TD  RECEIVED 616600M0IY7A Zelle VIMAL RAJ LOGAN",
+      "amount": 750,
       "period": "2026-06",
       "period_label": "June 2026"
     },
@@ -629,8 +641,8 @@
     {
       "period": "2026-06",
       "period_label": "June 2026",
-      "income": 7954.01,
-      "bofa_income": 7954.01,
+      "income": 8454.01,
+      "bofa_income": 8454.01,
       "td_income": 0,
       "outflows": 0,
       "xoom": 0,
@@ -3912,16 +3924,16 @@
     "2026-06": {
       "label": "June 2026",
       "categories": {
-        "Tech/Subs": 1010.23,
-        "Entertainment": 191.92000000000002,
-        "Shopping": 424.54999999999995,
+        "Tech/Subs": 1401.83,
+        "Entertainment": 373.91,
+        "Healthcare": 1173.3300000000002,
+        "Shopping": 456.53,
         "Restaurants": 162.53,
         "Other": 589.45,
-        "Gas/Travel": 332.58000000000004,
-        "Groceries": 111.33,
-        "Healthcare": 1162.67
+        "Gas/Travel": 549.98,
+        "Groceries": 111.33
       },
-      "total": 3985.2599999999998,
+      "total": 4818.89,
       "transactions": [
         {
           "date": "06-01",
@@ -3952,6 +3964,30 @@
           "desc": "Netflix",
           "amount": 21.31,
           "category": "Entertainment",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-15",
+          "desc": "Zelle payment to KAVI MUSIC LLC for \"Aryan fee invoice 1094\"; Conf# ut8t0vt1h",
+          "amount": 180,
+          "category": "Entertainment",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-18",
+          "desc": "Pf North Brunswi Iclub",
+          "amount": 10.66,
+          "category": "Healthcare",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-16",
+          "desc": "Verizon",
+          "amount": 391.6,
+          "category": "Tech/Subs",
           "city": null,
           "state": null
         },
@@ -4084,6 +4120,30 @@
           "state": "PA"
         },
         {
+          "date": "06-14",
+          "desc": "Apple",
+          "amount": 31.98,
+          "category": "Shopping",
+          "city": null,
+          "state": "CA"
+        },
+        {
+          "date": "06-13",
+          "desc": "Google One",
+          "amount": 1.99,
+          "category": "Entertainment",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-13",
+          "desc": "Avis",
+          "amount": 160.89,
+          "category": "Gas/Travel",
+          "city": "Princeton",
+          "state": "NJ"
+        },
+        {
           "date": "06-01",
           "desc": "Kumon Of North",
           "amount": 280,
@@ -4148,14 +4208,6 @@
           "state": null
         },
         {
-          "date": "06-11",
-          "desc": "Macy's",
-          "amount": 56.55,
-          "category": "Shopping",
-          "city": null,
-          "state": null
-        },
-        {
           "date": "06-10",
           "desc": "ShopRite",
           "amount": 4.25,
@@ -4170,6 +4222,22 @@
           "category": "Restaurants",
           "city": "North Brunswick",
           "state": "NJ"
+        },
+        {
+          "date": "06-13",
+          "desc": "Macy's",
+          "amount": 19.24,
+          "category": "Shopping",
+          "city": null,
+          "state": "OH"
+        },
+        {
+          "date": "06-13",
+          "desc": "Macy's",
+          "amount": 37.31,
+          "category": "Shopping",
+          "city": null,
+          "state": "OH"
         },
         {
           "date": "06-04",
@@ -4279,6 +4347,14 @@
           "date": "06-13",
           "desc": "BP",
           "amount": 37.21,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null
+        },
+        {
+          "date": "06-17",
+          "desc": "Shell",
+          "amount": 56.51,
           "category": "Gas/Travel",
           "city": null,
           "state": null
@@ -5058,6 +5134,16 @@
       "period_label": "June 2026"
     },
     {
+      "date": "06-14",
+      "desc": "Apple",
+      "amount": 31.98,
+      "category": "Shopping",
+      "city": null,
+      "state": "CA",
+      "period": "2026-06",
+      "period_label": "June 2026"
+    },
+    {
       "date": "04-09",
       "desc": "Trendia Trendia.co",
       "amount": 178.01,
@@ -5176,6 +5262,26 @@
       "state": "AR",
       "period": "2026-05",
       "period_label": "May 2026"
+    },
+    {
+      "date": "06-13",
+      "desc": "Macy's",
+      "amount": 19.24,
+      "category": "Shopping",
+      "city": null,
+      "state": "OH",
+      "period": "2026-06",
+      "period_label": "June 2026"
+    },
+    {
+      "date": "06-13",
+      "desc": "Macy's",
+      "amount": 37.31,
+      "category": "Shopping",
+      "city": null,
+      "state": "OH",
+      "period": "2026-06",
+      "period_label": "June 2026"
     }
   ],
   "fixed_obligations": {
@@ -5187,6 +5293,6 @@
     "cable": 50.66
   },
   "statement_count": "8 live accounts",
-  "generated_at": "2026-06-14T13:59:35.183Z",
+  "generated_at": "2026-06-18T17:14:08.675Z",
   "source": "plaid_realtime"
 }
