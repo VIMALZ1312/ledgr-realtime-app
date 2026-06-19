@@ -618,6 +618,7 @@ function renderOverview() {
 
   catList.forEach(function(cat, ci) {
     var col = CAT_COLORS[cat] || '#6b6b80';
+    var catEsc = String(cat).replace(/\\/g,'\\\\').replace(/'/g,"\\'");
     var rowTotal = periods.reduce(function(s,p){return s+(ms[p].categories[cat]||0);},0);
     if(!rowTotal) return;
     var allCatTxns = [];
@@ -628,7 +629,7 @@ function renderOverview() {
     _txnStore['r'+ci] = allCatTxns;
 
     html += '<tr style="border-bottom:1px solid var(--border2)">';
-    html += '<td style="padding:7px 8px;font-weight:500;color:'+col+';cursor:pointer;white-space:nowrap" onclick="_showMs(\'r'+ci+'\',\''+col+'\',\''+cat+'\')">';
+    html += '<td style="padding:7px 8px;font-weight:500;color:'+col+';cursor:pointer;white-space:nowrap" onclick="_showMs(\'r'+ci+'\',\''+col+'\',\''+catEsc+'\')">';
     html += '<span style="display:inline-block;width:7px;height:7px;border-radius:50%;background:'+col+';margin-right:6px;vertical-align:middle"></span>'+cat+'</td>';
 
     colPeriods.forEach(function(p, pi) {
@@ -637,7 +638,8 @@ function renderOverview() {
         var key = 'r'+ci+'_'+pi;
         _txnStore[key] = (ms[p].transactions||[]).filter(function(t){return t.category===cat;});
         var lbl = cat+' '+short(ms[p].label);
-        html += '<td style="padding:7px 8px;text-align:right;font-family:IBM Plex Mono,monospace;color:'+col+';cursor:pointer;white-space:nowrap;text-decoration:underline;text-decoration-style:dotted;text-decoration-color:'+col+'88;text-underline-offset:3px" onclick="_showMs(\''+key+'\',\''+col+'\',\''+lbl+'\')">' + fmt(a) + '</td>';
+        var lblEsc = lbl.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+        html += '<td style="padding:7px 8px;text-align:right;font-family:IBM Plex Mono,monospace;color:'+col+';cursor:pointer;white-space:nowrap;text-decoration:underline;text-decoration-style:dotted;text-decoration-color:'+col+'88;text-underline-offset:3px" onclick="_showMs(\''+key+'\',\''+col+'\',\''+lblEsc+'\')">' + fmt(a) + '</td>';
       } else {
         html += '<td style="padding:7px 8px;text-align:right;color:var(--muted2)">—</td>';
       }
