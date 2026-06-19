@@ -476,57 +476,92 @@ function renderInsights(ms, mh) {
   if(periods.length < 2) return '';
   var cur = periods[periods.length-1], prev = periods[periods.length-2];
   var incomeOf = function(p){ var e=(mh||[]).find(function(m){ return m.period===p; }); return e ? Number(e.income)||0 : 0; };
-  var curSpend = ms[cur].total||0, prevSpend = ms[prev].total||0;
-  var curInc = incomeOf(cur), prevInc = incomeOf(prev);
-  var curNet = curInc - curSpend, prevNet = prevInc - prevSpend;
   var curLbl = short(ms[cur].label), prevLbl = short(ms[prev].label);
 
-  // Category deltas (current vs previous month)
+  // Detect a partial (in-progress) current month so comparisons stay fair
+  var now = new Date();
+  var curKey = now.getFullYear()+'-'+('0'+(now.getMonth()+1)).slice(-2);
+  var isPartial = (cur === curKey);
+  var dayCutoff = now.getDate();
+  var daysInCur = new Date(now.getFullYear(), now.getMonth()+1, 0).getDate();
+  var factor = (isPartial && dayCutoff>0) ? daysInCur/dayCutoff : 1;
+
+  var dayOf = function(t){ var p=(t.date||'').split('-'); return parseInt(p[1]||p[0],10)||0; };
+  var sumTxns = function(txns, maxDay){ return (txns||[]).reduce(function(s,t){ return (maxDay==null || dayOf(t)<=maxDay) ? s+(t.amount||0) : s; }, 0); };
+  var catsOf = function(txns, maxDay){ var o={}; (txns||[]).forEach(function(t){ if(maxDay==null || dayOf(t)<=maxDay) o[t.category]=(o[t.category]||0)+(t.amount||0); }); return o; };
+
+  var curSpend = ms[cur].total||0;
+  var prevSpendFull = ms[prev].total||0;
+  // When current month is partial, compare against the prior month's SAME elapsed days
+  var prevSpendCmp = isPartial ? sumTxns(ms[prev].transactions, dayCutoff) : prevSpendFull;
+  var curCats = ms[cur].categories||{};
+  var prevCatsCmp = isPartial ? catsOf(ms[prev].transactions, dayCutoff) : (ms[prev].categories||{});
+  var curInc = incomeOf(cur), prevInc = incomeOf(prev);
+  var projSpend = curSpend*factor, projInc = curInc*factor;
+  var curNetMTD = curInc - curSpend, projNet = projInc - projSpend, prevNetFull = prevInc - prevSpendFull;
+
+  // Category deltas on a like-for-like basis
   var cats = {};
-  Object.keys(ms[cur].categories||{}).forEach(function(c){ cats[c]=true; });
-  Object.keys(ms[prev].categories||{}).forEach(function(c){ cats[c]=true; });
-  var deltas = Object.keys(cats).map(function(c){
-    var cv=(ms[cur].categories||{})[c]||0, pv=(ms[prev].categories||{})[c]||0;
-    return { cat:c, d: cv-pv };
-  });
+  Object.keys(curCats).forEach(function(c){ cats[c]=true; });
+  Object.keys(prevCatsCmp).forEach(function(c){ cats[c]=true; });
+  var deltas = Object.keys(cats).map(function(c){ return { cat:c, d:(curCats[c]||0)-(prevCatsCmp[c]||0) }; });
   var ups = deltas.filter(function(x){ return x.d>1; }).sort(function(a,b){ return b.d-a.d; });
   var downs = deltas.filter(function(x){ return x.d<-1; }).sort(function(a,b){ return a.d-b.d; });
 
-  // Week-over-week within the current month (txn dates are "MM-DD")
-  var today = new Date().getDate();
+  // Week-over-week within the current month
   var curTxns = ms[cur].transactions||[];
-  var dayOf = function(t){ var p=(t.date||'').split('-'); return parseInt(p[1]||p[0],10)||0; };
   var last7=0, prev7=0;
-  curTxns.forEach(function(t){ var dd=dayOf(t); if(dd>today-7 && dd<=today) last7+=(t.amount||0); else if(dd>today-14 && dd<=today-7) prev7+=(t.amount||0); });
+  curTxns.forEach(function(t){ var dd=dayOf(t); if(dd>dayCutoff-7 && dd<=dayCutoff) last7+=(t.amount||0); else if(dd>dayCutoff-14 && dd<=dayCutoff-7) prev7+=(t.amount||0); });
 
   var rows = [];
-  var netCol = curNet>=0 ? 'var(--green)' : 'var(--red)';
-  rows.push('<div style="display:flex;gap:8px"><span>'+(curNet>=0?'🟢':'🔴')+'</span><div><b style="color:'+netCol+'">'+curLbl+' net cash flow: '+fmt(curNet)+'</b> ('+(curNet>=0?'surplus':'deficit')+'). '
-    + prevLbl+' was '+fmt(prevNet)+'. '+(curNet>prevNet ? 'Improving — net worth trending up.' : 'Worsening — net worth under pressure.')+'</div></div>');
 
-  var spendDelta = curSpend - prevSpend;
-  var pct = prevSpend ? Math.round(Math.abs(spendDelta)/prevSpend*100) : 0;
-  rows.push('<div style="display:flex;gap:8px"><span>'+(spendDelta>0?'📈':'📉')+'</span><div>Spending '+(spendDelta>0?'up':'down')+' <b>'+fmt(Math.abs(spendDelta))+'</b> ('+pct+'%) vs '+prevLbl+' — '+fmt(curSpend)+' total this month.</div></div>');
-
-  if(curInc||prevInc){
-    var incDelta=curInc-prevInc;
-    rows.push('<div style="display:flex;gap:8px"><span>💵</span><div>Income '+(incDelta>=0?'up':'down')+' <b>'+fmt(Math.abs(incDelta))+'</b> vs '+prevLbl+' — '+fmt(curInc)+' in '+curLbl+'.</div></div>');
+  // Partial-month context banner
+  if(isPartial){
+    rows.push('<div style="display:flex;gap:8px"><span>🗓️</span><div><b>'+curLbl+' is partial</b> — day '+dayCutoff+' of '+daysInCur+'. Compared vs '+prevLbl+'’s first '+dayCutoff+' days; full-month projections in (parentheses).</div></div>');
   }
+
+  // Net cash flow headline (projected vs prior full month when partial)
+  var netCol = curNetMTD>=0 ? 'var(--green)' : 'var(--red)';
+  if(isPartial){
+    var trend = projNet>prevNetFull ? 'on pace to beat '+prevLbl : 'tracking below '+prevLbl;
+    rows.push('<div style="display:flex;gap:8px"><span>'+(curNetMTD>=0?'🟢':'🔴')+'</span><div><b style="color:'+netCol+'">'+curLbl+' net cash flow: '+fmt(curNetMTD)+' so far</b> ('+(curNetMTD>=0?'surplus':'deficit')+'). Projected ~'+fmt(projNet)+' for the full month vs '+prevLbl+' '+fmt(prevNetFull)+' — '+trend+'.</div></div>');
+  } else {
+    rows.push('<div style="display:flex;gap:8px"><span>'+(curNetMTD>=0?'🟢':'🔴')+'</span><div><b style="color:'+netCol+'">'+curLbl+' net cash flow: '+fmt(curNetMTD)+'</b> ('+(curNetMTD>=0?'surplus':'deficit')+'). '+prevLbl+' was '+fmt(prevNetFull)+'. '+(curNetMTD>prevNetFull?'Improving — net worth trending up.':'Worsening — net worth under pressure.')+'</div></div>');
+  }
+
+  // Spending vs same-elapsed-days
+  var spendDelta = curSpend - prevSpendCmp;
+  var pct = prevSpendCmp ? Math.round(Math.abs(spendDelta)/prevSpendCmp*100) : 0;
+  var spendLine = 'Spending '+(spendDelta>0?'up':'down')+' <b>'+fmt(Math.abs(spendDelta))+'</b> ('+pct+'%) vs '+prevLbl+(isPartial?' (same '+dayCutoff+' days)':'')+' — '+fmt(curSpend)+(isPartial?' so far, ~'+fmt(projSpend)+' projected':' total')+'.';
+  rows.push('<div style="display:flex;gap:8px"><span>'+(spendDelta>0?'📈':'📉')+'</span><div>'+spendLine+'</div></div>');
+
+  // Income
+  if(curInc||prevInc){
+    if(isPartial){
+      rows.push('<div style="display:flex;gap:8px"><span>💵</span><div>Income <b>'+fmt(curInc)+'</b> so far, ~'+fmt(projInc)+' projected; '+prevLbl+' was '+fmt(prevInc)+'.</div></div>');
+    } else {
+      var incDelta=curInc-prevInc;
+      rows.push('<div style="display:flex;gap:8px"><span>💵</span><div>Income '+(incDelta>=0?'up':'down')+' <b>'+fmt(Math.abs(incDelta))+'</b> vs '+prevLbl+' — '+fmt(curInc)+' in '+curLbl+'.</div></div>');
+    }
+  }
+
+  // Category movers (like-for-like)
   if(ups.length){
     var topUp = ups.slice(0,3).map(function(x){ var col=CAT_COLORS[x.cat]||'#6b6b80'; return '<span style="color:'+col+'">'+x.cat+'</span> +'+fmt(x.d); }).join(', ');
-    rows.push('<div style="display:flex;gap:8px"><span>⚠️</span><div>Biggest jumps (watch for unwanted spend): '+topUp+'.</div></div>');
+    rows.push('<div style="display:flex;gap:8px"><span>⚠️</span><div>Running higher than '+prevLbl+(isPartial?' (same days)':'')+' — watch for unwanted spend: '+topUp+'.</div></div>');
   }
   if(downs.length){
     var topDown = downs.slice(0,2).map(function(x){ return x.cat+' '+fmt(x.d); }).join(', ');
-    rows.push('<div style="display:flex;gap:8px"><span>✅</span><div>Cut back on: '+topDown+'.</div></div>');
+    rows.push('<div style="display:flex;gap:8px"><span>✅</span><div>Running lower: '+topDown+'.</div></div>');
   }
   if(last7||prev7){
-    rows.push('<div style="display:flex;gap:8px"><span>🗓️</span><div>Last 7 days: <b>'+fmt(last7)+'</b> spent vs '+fmt(prev7)+' the prior week.</div></div>');
+    rows.push('<div style="display:flex;gap:8px"><span>📅</span><div>Last 7 days: <b>'+fmt(last7)+'</b> spent vs '+fmt(prev7)+' the prior week.</div></div>');
   }
   var big = curTxns.slice().sort(function(a,b){ return (b.amount||0)-(a.amount||0); })[0];
   if(big){ rows.push('<div style="display:flex;gap:8px"><span>🔎</span><div>Largest '+curLbl+' charge: <b>'+fmt2(big.amount)+'</b> — '+big.desc+' ('+big.category+').</div></div>'); }
 
-  return '<div class="panel"><div class="panel-head"><div class="panel-title">Insights</div><div class="panel-action">'+prevLbl+' → '+curLbl+'</div></div>'
+  var headNote = isPartial ? (prevLbl+' → '+curLbl+' · partial') : (prevLbl+' → '+curLbl);
+  return '<div class="panel"><div class="panel-head"><div class="panel-title">Insights</div><div class="panel-action">'+headNote+'</div></div>'
     + '<div style="display:flex;flex-direction:column;gap:9px;font-size:12.5px;line-height:1.45">'+rows.join('')+'</div></div>';
 }
 
