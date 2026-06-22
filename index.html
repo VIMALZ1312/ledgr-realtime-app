@@ -201,6 +201,7 @@ var PAGES = [
   {id:'overview',  label:'Overview',  icon:'&#9672;'},
   {id:'accounts',  label:'Accounts',  icon:'&#127974;'},
   {id:'travel',    label:'Travel',    icon:'&#9992;'},
+  {id:'subs',      label:'Subscriptions', icon:'&#128179;'},
   {id:'recurring', label:'Recurring', icon:'&#128260;'},
   {id:'search',    label:'Search',    icon:'&#128269;'}
 ];
@@ -428,6 +429,7 @@ function render() {
   if(TAB === 'overview') renderOverview();
   else if(TAB === 'accounts') renderAccounts();
   else if(TAB === 'travel') renderTravel();
+  else if(TAB === 'subs') renderSubscriptions();
   else if(TAB === 'recurring') renderRecurring();
   else if(TAB === 'search') renderSearch();
 }
@@ -1124,6 +1126,159 @@ function cleanZelleName(raw){
   m=raw.match(/payment from ([A-Z][A-Za-z\s]{3,40})/i);
   if(m) return m[1].trim().toLowerCase().replace(/\b\w/g,function(c){return c.toUpperCase();});
   return raw.substring(0,30);
+}
+
+// ── Subscriptions — auto-detect recurring digital services, memberships & classes ──
+// Curated classifier: [match regex, display name, type label, group ('sub' | 'bill')]
+var SUB_RULES = [
+  // Streaming & entertainment
+  [/netflix/i,                          'Netflix',              'Streaming',       'sub'],
+  [/hulu/i,                             'Hulu',                 'Streaming',       'sub'],
+  [/disney|hotstar|zee5|prime video/i,  'Disney+ / Streaming',  'Streaming',       'sub'],
+  [/spotify|apple music|pandora|tidal/i,'Music',                'Streaming',       'sub'],
+  [/youtube/i,                          'YouTube Premium',      'Streaming',       'sub'],
+  [/regal/i,                            'Regal Unlimited',      'Movies',          'sub'],
+  // Software & AI
+  [/claude|anthropic/i,                 'Claude · Anthropic',   'AI / Software',   'sub'],
+  [/openai|chatgpt/i,                   'OpenAI',               'AI / Software',   'sub'],
+  [/aitubo/i,                           'Aitubo.ai',            'AI / Software',   'sub'],
+  [/google one/i,                       'Google One',           'Cloud Storage',   'sub'],
+  [/dropbox/i,                          'Dropbox',              'Cloud Storage',   'sub'],
+  [/netlify/i,                          'Netlify',              'Hosting / Dev',   'sub'],
+  [/adobe/i,                            'Adobe',                'Software',        'sub'],
+  [/microsoft|office 365|microsoft 365/i,'Microsoft 365',      'Software',        'sub'],
+  [/^apple$|^apple |icloud/i,           'Apple · iCloud',       'Software',        'sub'],
+  // Memberships & services
+  [/simplisafe/i,                       'SimpliSafe',           'Home Security',   'sub'],
+  [/everwash/i,                         'EverWash',             'Car Wash',        'sub'],
+  [/planet fitness/i,                   'Planet Fitness',       'Gym / Fitness',   'sub'],
+  [/cvs extracare/i,                    'CVS ExtraCare Plus',   'Pharmacy',        'sub'],
+  [/amazon prime|prime membership/i,    'Amazon Prime',         'Membership',      'sub'],
+  // Recurring classes / lessons
+  [/shvasa/i,                           'Shvasa Yoga',          'Wellness',        'sub'],
+  [/kumon/i,                            'Kumon',                'Kids · Tutoring', 'sub'],
+  [/big blue swim/i,                    'Big Blue Swim School', 'Kids · Classes',  'sub'],
+  // Recurring bills & utilities (shown separately)
+  [/verizon|vzwrlss/i,                  'Verizon',              'Phone / Internet','bill'],
+  [/optimum/i,                          'Optimum',              'Internet / Cable','bill'],
+  [/comcast|xfinity/i,                  'Comcast / Xfinity',    'Internet / Cable','bill'],
+  [/republic services/i,               'Republic Services',    'Trash / Waste',   'bill'],
+  [/pseg|pse&g/i,                       'PSE&G',                'Electric / Gas',  'bill']
+];
+
+function classifySub(desc) {
+  var d = (desc || '').trim();
+  for (var i = 0; i < SUB_RULES.length; i++) {
+    if (SUB_RULES[i][0].test(d)) return {name:SUB_RULES[i][1], type:SUB_RULES[i][2], group:SUB_RULES[i][3]};
+  }
+  return null;
+}
+
+function median(arr) {
+  if (!arr.length) return 0;
+  var s = arr.slice().sort(function(a,b){ return a-b; });
+  var m = Math.floor(s.length/2);
+  return s.length % 2 ? s[m] : (s[m-1]+s[m])/2;
+}
+
+function renderSubscriptions() {
+  var ms = D.monthly_spending || {};
+  var periods = Object.keys(ms).sort();
+  var totalMonths = periods.length;
+
+  // Bucket matching transactions (positive charges only) by canonical name → per-period totals
+  var buckets = {};
+  periods.forEach(function(p) {
+    (ms[p].transactions || []).forEach(function(t) {
+      if (!t || t.amount <= 0) return;                 // skip refunds / credits
+      if (EXCLUDED && EXCLUDED[t.desc]) return;        // respect hide list
+      var c = classifySub(t.desc);
+      if (!c) return;
+      var b = buckets[c.name] || (buckets[c.name] = {name:c.name, type:c.type, group:c.group, byPeriod:{}, cat:t.category, lastDate:'', lastPeriod:''});
+      b.byPeriod[p] = (b.byPeriod[p] || 0) + t.amount;
+      if (p > b.lastPeriod || (p === b.lastPeriod && (t.date||'') > b.lastDate)) { b.lastPeriod = p; b.lastDate = t.date || ''; }
+    });
+  });
+
+  // Summarise each bucket; require it to recur across >=2 distinct months
+  var subs = [], bills = [];
+  Object.values(buckets).forEach(function(b) {
+    var pers = Object.keys(b.byPeriod).sort();
+    if (pers.length < 2) return;                       // not yet recurring
+    var totals = pers.map(function(p){ return b.byPeriod[p]; });
+    var med = median(totals);
+    var mn = Math.min.apply(null, totals), mx = Math.max.apply(null, totals);
+    b.monthly = med;
+    b.variable = med > 0 && (mx - mn) / med > 0.15;
+    b.monthsSeen = pers.length;
+    b.periods = pers;
+    (b.group === 'bill' ? bills : subs).push(b);
+  });
+  subs.sort(function(a,b){ return b.monthly - a.monthly; });
+  bills.sort(function(a,b){ return b.monthly - a.monthly; });
+
+  var subMonthly = subs.reduce(function(s,b){ return s + b.monthly; }, 0);
+  var billMonthly = bills.reduce(function(s,b){ return s + b.monthly; }, 0);
+
+  var html = '';
+  html += '<div class="kpi-row">';
+  html += mkKpi('SUBSCRIPTIONS', fmt2(subMonthly), 'var(--purple)', 'per month', "switchTab('subs')");
+  html += mkKpi('ANNUAL', fmt(subMonthly * 12), 'var(--red)', 'projected /yr', "switchTab('subs')");
+  html += mkKpi('ACTIVE', String(subs.length), 'var(--blue)', 'recurring services', "switchTab('subs')");
+  html += '</div>';
+
+  function bucketRows(list, accent) {
+    var out = '';
+    list.forEach(function(b) {
+      var col = CAT_COLORS[b.cat] || accent;
+      var rid = uid();
+      var last = b.lastDate ? (ms[b.lastPeriod] ? short(ms[b.lastPeriod].label).replace(/ .*/, '') : '') + ' ' + b.lastDate : '';
+      out += '<div class="row expandable" onclick="expand(\'' + rid + '\')">';
+      out += '<div><div class="row-label" style="font-weight:500">' + b.name + '</div>';
+      out += '<div class="row-sub" style="color:' + col + '">' + b.type + ' · ' + b.monthsSeen + '/' + totalMonths + ' mo'
+           + (b.lastDate ? ' · last ' + b.lastDate : '') + '</div></div>';
+      out += '<div style="display:flex;align-items:center;gap:8px"><div style="text-align:right">'
+           + '<div class="row-amt" style="color:' + accent + '">' + (b.variable ? '~' : '') + fmt2(b.monthly)
+           + '<span style="font-size:10px;color:var(--muted)">/mo</span></div>'
+           + '<div style="font-size:10px;color:var(--muted)">' + fmt(b.monthly * 12) + '/yr</div></div>'
+           + '<span style="color:var(--muted)">&rsaquo;</span></div></div>';
+      out += '<div id="' + rid + '" class="expand-body">';
+      b.periods.slice().reverse().forEach(function(p) {
+        out += '<div style="display:flex;align-items:baseline;gap:8px;padding:5px 0;border-bottom:1px solid var(--border2);font-size:12px">';
+        out += '<span style="flex:1;color:var(--muted)">' + short((ms[p]||{}).label || p) + '</span>';
+        out += '<span style="font-family:IBM Plex Mono,monospace;color:' + accent + '">' + fmt2(b.byPeriod[p]) + '</span></div>';
+      });
+      out += '<div style="font-size:10px;color:var(--muted);padding:6px 0 2px">'
+           + (b.variable ? 'Amount varies month to month — median shown. ' : '')
+           + '~' + fmt2(b.monthly) + '/mo · ~' + fmt(b.monthly * 12) + '/yr</div>';
+      out += '</div><div style="height:1px;background:var(--border);margin:4px 0"></div>';
+    });
+    return out;
+  }
+
+  // Subscriptions panel
+  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Subscriptions</div>';
+  html += '<div class="panel-action" style="color:var(--purple)">' + fmt2(subMonthly) + '/mo · ' + fmt(subMonthly * 12) + '/yr</div></div>';
+  if (!subs.length) {
+    html += '<div style="color:var(--muted);font-size:13px;padding:8px 0">No subscriptions detected yet — needs at least two months of data.</div>';
+  } else {
+    html += '<div style="font-size:10px;color:var(--muted);padding:0 0 6px">Auto-detected recurring services seen in 2+ months. Tap any row for its charge history.</div>';
+    html += bucketRows(subs, 'var(--purple)');
+  }
+  html += '</div>';
+
+  // Bills & utilities panel
+  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Bills &amp; Utilities</div>';
+  html += '<div class="panel-action" style="color:var(--orange)">' + fmt2(billMonthly) + '/mo est.</div></div>';
+  if (!bills.length) {
+    html += '<div style="color:var(--muted);font-size:13px;padding:8px 0">No recurring utility bills detected.</div>';
+  } else {
+    html += '<div style="font-size:10px;color:var(--muted);padding:0 0 6px">Recurring household bills — usually variable. Median monthly shown.</div>';
+    html += bucketRows(bills, 'var(--orange)');
+  }
+  html += '</div>';
+
+  set('main-content', html);
 }
 
 function renderRecurring() {
