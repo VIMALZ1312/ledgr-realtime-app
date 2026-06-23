@@ -202,7 +202,7 @@ var PAGES = [
   {id:'accounts',  label:'Accounts',  icon:'&#127974;'},
   {id:'travel',    label:'Travel',    icon:'&#9992;'},
   {id:'subs',      label:'Subscriptions', icon:'&#128179;'},
-  {id:'recurring', label:'Recurring', icon:'&#128260;'},
+  {id:'zelle',     label:'Zelle',     icon:'&#128184;'},
   {id:'search',    label:'Search',    icon:'&#128269;'}
 ];
 var _tid = 0;
@@ -430,7 +430,7 @@ function render() {
   else if(TAB === 'accounts') renderAccounts();
   else if(TAB === 'travel') renderTravel();
   else if(TAB === 'subs') renderSubscriptions();
-  else if(TAB === 'recurring') renderRecurring();
+  else if(TAB === 'zelle') renderZelle();
   else if(TAB === 'search') renderSearch();
 }
 
@@ -1217,14 +1217,51 @@ function renderSubscriptions() {
   subs.sort(function(a,b){ return b.monthly - a.monthly; });
   bills.sort(function(a,b){ return b.monthly - a.monthly; });
 
-  var subMonthly = subs.reduce(function(s,b){ return s + b.monthly; }, 0);
-  var billMonthly = bills.reduce(function(s,b){ return s + b.monthly; }, 0);
+  // ── Other recurring — auto-detect fixed-amount charges NOT in the curated rules
+  // (e.g. HOA, tolls auto-reload, installment plans) so nothing recurring is missed.
+  var otherBuckets = {};
+  periods.forEach(function(p) {
+    (ms[p].transactions || []).forEach(function(t) {
+      if (!t || t.amount <= 0) return;
+      if (EXCLUDED && EXCLUDED[t.desc]) return;
+      if (classifySub(t.desc)) return;                              // already curated above
+      if (/zelle|payment to|transfer|refund/i.test(t.desc || '')) return; // not a subscription
+      var b = otherBuckets[t.desc] || (otherBuckets[t.desc] = {name:t.desc, byPeriod:{}, ch:[], cat:t.category, lastDate:'', lastPeriod:''});
+      var amt = Math.round(t.amount * 100) / 100;
+      b.byPeriod[p] = (b.byPeriod[p] || 0) + t.amount;
+      b.ch.push({p:p, a:amt});
+      if (p > b.lastPeriod || (p === b.lastPeriod && (t.date||'') > b.lastDate)) { b.lastPeriod = p; b.lastDate = t.date || ''; }
+    });
+  });
+  var other = [];
+  Object.values(otherBuckets).forEach(function(b) {
+    var cnt = {};
+    b.ch.forEach(function(c){ cnt[c.a] = (cnt[c.a] || 0) + 1; });
+    var modal = null, mc = 0;
+    Object.keys(cnt).forEach(function(a){ if (cnt[a] > mc) { mc = cnt[a]; modal = parseFloat(a); } });
+    var modalMonths = new Set(b.ch.filter(function(c){ return c.a === modal; }).map(function(c){ return c.p; })).size;
+    if (modalMonths < 2 || mc / b.ch.length < 0.5) return;          // must recur, and mostly at one price
+    b.monthly = modal;
+    b.type = b.cat || 'Recurring';
+    b.group = 'other';
+    b.periods = Object.keys(b.byPeriod).sort();
+    b.monthsSeen = b.periods.length;
+    b.variable = b.periods.some(function(p){ return Math.abs(b.byPeriod[p] - modal) > 0.01; });
+    other.push(b);
+  });
+  other.sort(function(a,b){ return b.monthly - a.monthly; });
+
+  var subMonthly   = subs.reduce(function(s,b){ return s + b.monthly; }, 0);
+  var billMonthly  = bills.reduce(function(s,b){ return s + b.monthly; }, 0);
+  var otherMonthly = other.reduce(function(s,b){ return s + b.monthly; }, 0);
+  var recurMonthly = subMonthly + otherMonthly;          // everything except utility bills
+  var recurCount   = subs.length + other.length;
 
   var html = '';
   html += '<div class="kpi-row">';
-  html += mkKpi('SUBSCRIPTIONS', fmt2(subMonthly), 'var(--purple)', 'per month', "switchTab('subs')");
-  html += mkKpi('ANNUAL', fmt(subMonthly * 12), 'var(--red)', 'projected /yr', "switchTab('subs')");
-  html += mkKpi('ACTIVE', String(subs.length), 'var(--blue)', 'recurring services', "switchTab('subs')");
+  html += mkKpi('SUBSCRIPTIONS', fmt2(recurMonthly), 'var(--purple)', 'per month', "switchTab('subs')");
+  html += mkKpi('ANNUAL', fmt(recurMonthly * 12), 'var(--red)', 'projected /yr', "switchTab('subs')");
+  html += mkKpi('ACTIVE', String(recurCount), 'var(--blue)', 'recurring services', "switchTab('subs')");
   html += '</div>';
 
   function bucketRows(list, accent) {
@@ -1278,62 +1315,22 @@ function renderSubscriptions() {
   }
   html += '</div>';
 
+  // Other recurring panel — only show when something was detected
+  if (other.length) {
+    html += '<div class="panel"><div class="panel-head"><div class="panel-title">Other Recurring</div>';
+    html += '<div class="panel-action" style="color:var(--yellow)">' + fmt2(otherMonthly) + '/mo est.</div></div>';
+    html += '<div style="font-size:10px;color:var(--muted);padding:0 0 6px">Fixed-amount charges that repeat monthly but aren’t in the known-service list — e.g. HOA, tolls, installment plans. Tap ✕ on a charge to dismiss a false match.</div>';
+    html += bucketRows(other, 'var(--yellow)');
+    html += '</div>';
+  }
+
   set('main-content', html);
 }
 
-function renderRecurring() {
+function renderZelle() {
   var ms = D.monthly_spending || {};
   var periods = Object.keys(ms).sort();
   var html = '';
-
-  // Build same-amount recurring
-  var merchantMap = {};
-  periods.forEach(function(p) {
-    (ms[p].transactions || []).forEach(function(t) {
-      var key = (t.desc || '').trim().toUpperCase().substring(0, 40);
-      if(!merchantMap[key]) merchantMap[key] = {desc:t.desc, cat:t.category, entries:[]};
-      merchantMap[key].entries.push({period:p, label:ms[p].label, date:t.date, amount:t.amount, desc:t.desc, category:t.category});
-    });
-  });
-
-  var sameAmt = [];
-  Object.values(merchantMap).forEach(function(m) {
-    if(m.entries.length < 2) return;
-    var mo = {};
-    m.entries.forEach(function(e){ mo[e.period] = true; });
-    if(Object.keys(mo).length < 2) return;
-    var first = m.entries[0].amount;
-    var allSame = m.entries.every(function(e){ return Math.abs(e.amount - first) < 0.01; });
-    if(!allSame) return;
-    sameAmt.push({desc:m.desc, cat:m.cat, amount:first, months:Object.keys(mo).length, entries:m.entries.sort(function(a,b){return b.period.localeCompare(a.period);})});
-  });
-  sameAmt.sort(function(a,b){ return b.amount-a.amount; });
-
-  var totalFixed = sameAmt.reduce(function(s,r){ return s+r.amount; }, 0);
-
-  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Fixed Recurring</div><div class="panel-action" style="color:var(--red)">' + fmt2(totalFixed) + '/mo est.</div></div>';
-  if(!sameAmt.length) {
-    html += '<div style="color:var(--muted);font-size:13px;padding:8px 0">No fixed recurring detected yet - needs more months of data.</div>';
-  } else {
-    sameAmt.forEach(function(r) {
-      var col = CAT_COLORS[r.cat] || '#6b6b80';
-      var rid = uid();
-      html += '<div class="row expandable" onclick="expand(\'' + rid + '\')">';
-      html += '<div><div class="row-label" style="font-weight:500">' + r.desc + '</div><div class="row-sub" style="color:' + col + '">' + r.cat + ' - ' + r.months + 'x months</div></div>';
-      html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:var(--red)">' + fmt2(r.amount) + '</div><span style="color:var(--muted)">&rsaquo;</span></div></div>';
-      html += '<div id="' + rid + '" class="expand-body">';
-      r.entries.forEach(function(e) {
-        var t = {desc:e.desc, date:e.date, amount:e.amount, category:e.category};
-        html += '<div style="display:flex;align-items:baseline;gap:8px;padding:5px 0;border-bottom:1px solid var(--border2);font-size:12px">';
-        html += '<span style="font-family:IBM Plex Mono,monospace;color:var(--muted);width:40px;flex-shrink:0">' + e.date + '</span>';
-        html += '<span style="flex:1;color:var(--muted)">' + e.label + '</span>';
-        html += '<span style="font-family:IBM Plex Mono,monospace;color:var(--red)">' + fmt2(e.amount) + '</span>';
-        html += '</div>';
-      });
-      html += '</div><div style="height:1px;background:var(--border);margin:4px 0"></div>';
-    });
-  }
-  html += '</div>';
 
   // Zelle by name by month
   var rawZ = D.zelle_received || [];
