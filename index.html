@@ -153,7 +153,7 @@ body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-ser
 <div class="bottom-tabs"><div class="btabs" id="bottom-tabs"></div></div>
 <script>
 var D = null, TAB = 'overview';
-var BACKEND = 'https://realtimefin.replit.app';
+var BACKEND = ''; // same-origin: /api/* proxies to Netlify Functions (see netlify.toml)
 var _rawD = null;
 var CAT_OVERRIDES = {};
 var REFUNDED_TXNS = {}; // kept for backward compat but no longer written
@@ -1390,19 +1390,39 @@ function renderZelle() {
 
 function triggerSync() {
   var b = $('sync-btn'), bt = $('sync-btn-top');
-  if(b) { b.textContent = 'Syncing...'; b.disabled = true; }
-  if(bt) { bt.innerHTML = '&#8987;'; bt.disabled = true; }
-  fetch(BACKEND + '/api/sync', {method:'POST'})
-    .then(function(r){ return r.json(); })
-    .then(function(d) {
-      if(d.success) { setTimeout(loadData, 2500); }
-      else { alert('Sync error: ' + d.error); }
+  var before = (D && D.generated_at) || '';
+  function setBusy(on, label) {
+    if(b) { b.textContent = on ? (label || 'Syncing…') : 'Sync'; b.disabled = on; }
+    if(bt) { bt.innerHTML = on ? '&#8987;' : '&#9889;'; bt.disabled = on; }
+  }
+  setBusy(true);
+  // /api/sync proxies to the Netlify background function — it returns 202 and
+  // runs async (Plaid paging takes ~1–3 min), then pushes a fresh data.json to
+  // GitHub. Poll until generated_at changes, then reload.
+  fetch(BACKEND + '/api/sync', { method: 'POST' })
+    .then(function(r) {
+      if(r.status !== 202 && !r.ok) throw new Error('HTTP ' + r.status);
+      var tries = 0, max = 15; // ~5 min budget at 20s intervals
+      var iv = setInterval(function() {
+        tries++;
+        setBusy(true, 'Syncing… ' + (tries * 20) + 's');
+        fetch('https://raw.githubusercontent.com/VIMALZ1312/ledgr-realtime-app/main/data.json?t=' + Date.now())
+          .then(function(x){ return x.json(); })
+          .then(function(nd) {
+            if(nd.generated_at && nd.generated_at !== before) {
+              clearInterval(iv);
+              setBusy(false);
+              loadData();
+            } else if(tries >= max) {
+              clearInterval(iv);
+              setBusy(false);
+              alert('Sync is still running in the background — your data will refresh shortly. Reload in a minute if needed.');
+            }
+          })
+          .catch(function(){ if(tries >= max) { clearInterval(iv); setBusy(false); } });
+      }, 20000);
     })
-    .catch(function(e){ alert('Cannot reach backend: ' + e.message); })
-    .finally(function() {
-      if(b) { b.textContent = 'Sync'; b.disabled = false; }
-      if(bt) { bt.innerHTML = '&#9889;'; bt.disabled = false; }
-    });
+    .catch(function(e){ setBusy(false); alert('Cannot reach sync function: ' + e.message); });
 }
 
 function deduplicateData(data) {

@@ -28,7 +28,7 @@ button.sec{background:#191926;color:#c8f060;border:1px solid rgba(200,240,96,0.3
   <div class="step">
     1. Enter nickname (bofa / wf / td / discover)<br>
     2. Tap Connect → complete bank login<br>
-    3. Copy the token → add to Netlify env vars<br>
+    3. Token auto-saves (or is shown to paste into Netlify)<br>
     4. Repeat for each bank<br>
     5. Tap Sync when all banks connected
   </div>
@@ -61,8 +61,10 @@ async function startLink() {
           body: JSON.stringify({ public_token, nickname })
         });
         const data = await resp.json();
-        if (data.success) {
-          setStatus('✓ Connected! Now add this to Netlify:\n\nSite settings → Environment variables → Add:\n\nKey:   PLAID_TOKEN_' + nickname.toUpperCase() + '\nValue: ' + data.access_token + '\n\nThen redeploy the site.', 'ok');
+        if (data.success && data.saved) {
+          setStatus('✓ Connected & saved to Blobs!\n' + (data.message || '') + '\n\nTap "Sync All Banks Now" to pull its data.', 'ok');
+        } else if (data.success) {
+          setStatus('✓ Connected! Blobs is off, so add this to Netlify:\n\nSite settings → Environment variables → Add:\n\nKey:   PLAID_TOKEN_' + nickname.toUpperCase() + '\nValue: ' + data.access_token + '\n\nThen redeploy the site.', 'ok');
         } else {
           setStatus('Error: ' + JSON.stringify(data.error), 'err');
         }
@@ -74,22 +76,15 @@ async function startLink() {
 }
 
 async function triggerSync() {
-  setStatus('Syncing all banks...', 'warn');
+  setStatus('Starting background sync...', 'warn');
   try {
-    const r = await fetch('/.netlify/functions/sync', { method: 'POST' });
-    const d = await r.json();
-    if (d.success) {
-      setStatus('✓ Synced!\n' + d.accounts_synced + ' accounts\n' + d.transactions_synced + ' transactions\ndata.json pushed to GitHub ✓', 'ok');
-      loadAccounts();
+    const r = await fetch('/.netlify/functions/sync-background', { method: 'POST' });
+    if (r.status === 202 || r.ok) {
+      setStatus('✓ Sync started in the background.\nPulling every bank from Plaid and pushing data.json to GitHub.\nThis takes ~1–3 min — refresh the dashboard shortly.', 'ok');
     } else {
-      setStatus('Error: ' + d.error, 'err');
+      setStatus('Error: sync returned HTTP ' + r.status, 'err');
     }
   } catch (err) { setStatus('Error: ' + err.message, 'err'); }
-}
-
-async function loadAccounts() {
-  // Show which tokens are configured via env
-  const r = await fetch('/.netlify/functions/sync', { method: 'POST' }).catch(() => null);
 }
 
 function setStatus(msg, cls) {
