@@ -145,6 +145,7 @@ function buildStructuredData(accounts, transactions) {
     'mybofa': 'BofA', 'bofa': 'BofA', 'bofa_2': 'BofA', 'wifebofa': 'BofA',
     'wf': 'Wells Fargo', 'td': 'TD Bank', 'mydisc': 'Discover', 'discover': 'Discover',
     'robin': 'Robinhood', 'robin_2': 'Robinhood', 'myrobin': 'Robinhood', 'robinhood': 'Robinhood',
+    'pnc': 'PNC',
   };
   const allAccountsList = accounts.map(a => ({
     bank: NICK_TO_BANK[a._nickname] || a._nickname, nickname: a._nickname, name: a.name, mask: a.mask,
