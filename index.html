@@ -1396,30 +1396,25 @@ function triggerSync() {
     if(bt) { bt.innerHTML = on ? '&#8987;' : '&#9889;'; bt.disabled = on; }
   }
   setBusy(true);
-  // /api/sync proxies to the Netlify background function — it returns 202 and
-  // runs async (Plaid paging takes ~1–3 min), then pushes a fresh data.json to
-  // GitHub. Poll until generated_at changes, then reload.
+  // /api/sync proxies to the Netlify background function — returns 202 and runs
+  // async (~1–3 min), then pushes a fresh data.json to GitHub. Reset the button
+  // quickly (snappy, like before) and quietly auto-refresh when new data lands.
+  var syncedEl = $('synced-at');
   fetch(BACKEND + '/api/sync', { method: 'POST' })
     .then(function(r) {
       if(r.status !== 202 && !r.ok) throw new Error('HTTP ' + r.status);
-      var tries = 0, max = 15; // ~5 min budget at 20s intervals
+      setTimeout(function(){ setBusy(false); }, 2000); // free the button right away
+      if(syncedEl) syncedEl.textContent = 'Syncing… (~1–2 min)';
+      var tries = 0, max = 18; // ~6 min safety
       var iv = setInterval(function() {
         tries++;
-        setBusy(true, 'Syncing… ' + (tries * 20) + 's');
         fetch('https://raw.githubusercontent.com/VIMALZ1312/ledgr-realtime-app/main/data.json?t=' + Date.now())
           .then(function(x){ return x.json(); })
           .then(function(nd) {
-            if(nd.generated_at && nd.generated_at !== before) {
-              clearInterval(iv);
-              setBusy(false);
-              loadData();
-            } else if(tries >= max) {
-              clearInterval(iv);
-              setBusy(false);
-              alert('Sync is still running in the background — your data will refresh shortly. Reload in a minute if needed.');
-            }
+            if(nd.generated_at && nd.generated_at !== before) { clearInterval(iv); loadData(); }
+            else if(tries >= max) { clearInterval(iv); if(syncedEl) syncedEl.textContent = 'Sync still running — reload soon'; }
           })
-          .catch(function(){ if(tries >= max) { clearInterval(iv); setBusy(false); } });
+          .catch(function(){ if(tries >= max) clearInterval(iv); });
       }, 20000);
     })
     .catch(function(e){ setBusy(false); alert('Cannot reach sync function: ' + e.message); });

@@ -315,6 +315,7 @@ async function buildDataJson() {
   const startDate = new Date(now);
   startDate.setDate(startDate.getDate() - 90);
 
+  const tokenStatus = [];
   for (const [nickname, token] of Object.entries(tokens)) {
     try {
       const acctResp = await plaid.accountsGet({ access_token: token });
@@ -328,8 +329,11 @@ async function buildDataJson() {
         if (added.length > 500) break;
       }
       added.forEach(t => allTransactions.push({ ...t, _nickname: nickname }));
+      tokenStatus.push({ nickname, ok: true, accounts: acctResp.data.accounts.length });
     } catch (err) {
+      const code = err.response?.data?.error_code || err.message;
       console.error(`Error fetching ${nickname}:`, err.response?.data || err.message);
+      tokenStatus.push({ nickname, ok: false, accounts: 0, error: code });
     }
   }
 
@@ -337,6 +341,14 @@ async function buildDataJson() {
   data.generated_at = new Date().toISOString();
   data.source = 'plaid_realtime';
   data.statement_count = Object.keys(tokens).length + ' live accounts';
+  // Per-token diagnostics — surfaces missing/errored banks instead of silently
+  // dropping them (e.g. a token that needs re-auth, or one not configured).
+  data.sync_status = {
+    tokens: Object.keys(tokens).length,
+    nicknames: Object.keys(tokens),
+    detail: tokenStatus,
+    failed: tokenStatus.filter(t => !t.ok).map(t => t.nickname + ' (' + t.error + ')'),
+  };
 
   await pushToGitHub(data);
   try { await dataStore().set('data.json', JSON.stringify(data)); } catch (e) { console.warn('Blobs data cache skipped:', e.message); }
