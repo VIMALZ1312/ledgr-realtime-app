@@ -12,15 +12,26 @@ const plaid = new PlaidApi(new Configuration({
 
 const NICKNAME_ALIASES = { mybofa: 'bofa', mydisc: 'discover', mytd: 'td', mywf: 'wf', myrobin: 'robin' };
 
-function tokenStore() { return getStore('plaid-tokens'); }
-function dataStore() { return getStore('ledgr-data'); }
+// Netlify auto-configures Blobs on git/CLI deploys. This site deploys via API
+// zip-upload (continuous deploy is off), where that context isn't injected — so
+// support explicit config too: set NETLIFY_BLOBS_SITE_ID + NETLIFY_BLOBS_TOKEN
+// (a Netlify personal access token) to enable Blobs. Without them we fall back
+// to auto-config, and callers degrade gracefully if Blobs is unavailable.
+const BLOBS_SITE = process.env.NETLIFY_BLOBS_SITE_ID || process.env.SITE_ID;
+const BLOBS_TOKEN = process.env.NETLIFY_BLOBS_TOKEN;
+function storeArg(name) {
+  return (BLOBS_SITE && BLOBS_TOKEN) ? { name, siteID: BLOBS_SITE, token: BLOBS_TOKEN } : name;
+}
+function tokenStore() { return getStore(storeArg('plaid-tokens')); }
+function dataStore() { return getStore(storeArg('ledgr-data')); }
 
-// Save a freshly-exchanged access token (Blobs) — auto-persisted, no manual paste.
+// Save a freshly-exchanged access token to Blobs. Returns {saved} — never throws,
+// so the link flow can fall back to a manual env-var paste if Blobs is off.
 async function saveToken(nickname, accessToken) {
   const nick = String(nickname || '').toLowerCase();
   const canonical = NICKNAME_ALIASES[nick] || nick;
-  await tokenStore().set(canonical, accessToken);
-  return canonical;
+  try { await tokenStore().set(canonical, accessToken); return { canonical, saved: true }; }
+  catch (e) { console.warn('Blobs saveToken failed:', e.message); return { canonical, saved: false, error: e.message }; }
 }
 
 // Merge tokens from Blobs + PLAID_TOKEN_* env vars (env used during migration).
