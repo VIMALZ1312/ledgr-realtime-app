@@ -203,7 +203,8 @@ var PAGES = [
   {id:'travel',    label:'Travel',    icon:'&#9992;'},
   {id:'subs',      label:'Subscriptions', icon:'&#128179;'},
   {id:'zelle',     label:'Zelle',     icon:'&#128184;'},
-  {id:'search',    label:'Search',    icon:'&#128269;'}
+  {id:'search',    label:'Search',    icon:'&#128269;'},
+  {id:'mynw',      label:'My Net Worth', icon:'&#128274;'}
 ];
 var _tid = 0;
 function uid() { return 'el' + (++_tid); }
@@ -432,6 +433,7 @@ function render() {
   else if(TAB === 'subs') renderSubscriptions();
   else if(TAB === 'zelle') renderZelle();
   else if(TAB === 'search') renderSearch();
+  else if(TAB === 'mynw') renderMyNetworth();
 }
 
 var _chartInst = null;
@@ -578,7 +580,7 @@ function renderOverview() {
   // Always compute from all_accounts — server value excludes wifebofa/myrobin
   var checkingBal = allAccts.filter(function(a){return !a.is_credit;}).reduce(function(s,a){return s+a.balance;},0);
   var creditBal = allAccts.filter(function(a){return a.is_credit&&a.balance>0;}).reduce(function(s,a){return s+a.balance;},0);
-  var netWorth = checkingBal - creditBal;
+  var netWorth = checkingBal - creditBal + savingsTotal(); // includes private My Net Worth savings
 
   // Connected banks strip — on top so missing banks are obvious
   var html = renderBanksStrip(allAccts);
@@ -773,12 +775,97 @@ function showTxns(title, txns, col) {
   openModal(title, sorted.length+' transactions', b);
 }
 
+// ── My Net Worth — private, password-gated manual savings ─────────────────
+// Stored in localStorage (screen-level privacy, not cryptographic). Total feeds
+// the Overview NET WORTH KPI; entries are only viewable after unlocking.
+var MYNW_UNLOCKED = false;
+function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+function loadSavings(){ try { return JSON.parse(localStorage.getItem('lgr_savings')||'[]'); } catch(e){ return []; } }
+function saveSavings(arr){ try { localStorage.setItem('lgr_savings', JSON.stringify(arr)); } catch(e){} }
+function savingsTotal(){ return loadSavings().reduce(function(s,x){ return s + (Number(x.amount)||0); }, 0); }
+function mynwHash(){ return localStorage.getItem('lgr_mynw_hash') || ''; }
+function sha256(str){
+  if(window.crypto && crypto.subtle && crypto.subtle.digest){
+    return crypto.subtle.digest('SHA-256', new TextEncoder().encode(str)).then(function(buf){
+      return Array.prototype.map.call(new Uint8Array(buf), function(b){ return ('0'+b.toString(16)).slice(-2); }).join('');
+    });
+  }
+  var h=5381; for(var i=0;i<str.length;i++){ h=((h*33) ^ str.charCodeAt(i)) >>> 0; }
+  return Promise.resolve('f'+h.toString(16));
+}
+function mynwUnlock(){
+  var inp = $('mynw-pass'); if(!inp || !inp.value) return;
+  sha256(inp.value).then(function(h){
+    if(!mynwHash()){ localStorage.setItem('lgr_mynw_hash', h); MYNW_UNLOCKED = true; render(); }
+    else if(h === mynwHash()){ MYNW_UNLOCKED = true; render(); }
+    else { var e=$('mynw-err'); if(e) e.textContent = 'Wrong password.'; }
+  });
+}
+function mynwLock(){ MYNW_UNLOCKED = false; render(); }
+function mynwAdd(){
+  var d=$('mynw-desc'), a=$('mynw-amt');
+  var desc=(d && d.value || '').trim();
+  var amt=parseFloat(a && a.value);
+  if(!desc){ if(d) d.focus(); return; }
+  if(isNaN(amt)){ if(a) a.focus(); return; }
+  var arr = loadSavings();
+  arr.push({ id: (_savId++) + '_' + arr.length, desc: desc, amount: amt });
+  saveSavings(arr);
+  render();
+}
+var _savId = 1000;
+function mynwDelete(id){
+  saveSavings(loadSavings().filter(function(x){ return String(x.id) !== String(id); }));
+  render();
+}
+function renderMyNetworth(){
+  var html='';
+  if(!MYNW_UNLOCKED){
+    var firstTime = !mynwHash();
+    html += '<div class="panel" style="max-width:400px;margin:48px auto;text-align:center">';
+    html += '<div style="font-size:34px;margin-bottom:10px">&#128274;</div>';
+    html += '<div class="panel-title" style="margin-bottom:6px;text-align:center">' + (firstTime ? 'Set a Password' : 'My Net Worth · Locked') + '</div>';
+    html += '<div style="font-size:12px;color:var(--muted);margin-bottom:16px;line-height:1.5">' + (firstTime ? 'Create a password to protect your private savings.<br>Keep it safe — there is no recovery.' : 'Enter your password to view your private savings.') + '</div>';
+    html += '<input id="mynw-pass" type="password" placeholder="Password" autocomplete="off" onkeydown="if(event.key===\'Enter\')mynwUnlock()" style="width:100%;padding:11px;background:var(--s2);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:14px;margin-bottom:10px;box-sizing:border-box">';
+    html += '<button onclick="mynwUnlock()" style="width:100%;padding:11px;background:var(--green);color:#000;border:none;border-radius:6px;font-weight:600;font-size:13px;cursor:pointer">' + (firstTime ? 'Set Password &amp; Unlock' : 'Unlock') + '</button>';
+    html += '<div id="mynw-err" style="font-size:12px;color:var(--red);margin-top:10px"></div>';
+    html += '</div>';
+    set('main-content', html);
+    setTimeout(function(){ var p=$('mynw-pass'); if(p) p.focus(); }, 60);
+    return;
+  }
+  var arr = loadSavings(), total = savingsTotal();
+  html += '<div class="kpi-row"><div class="kpi" style="cursor:default"><div class="kpi-label">PRIVATE SAVINGS</div><div class="kpi-val" style="color:var(--green)">' + fmt2(total) + '</div><div class="kpi-sub">' + arr.length + (arr.length===1?' entry':' entries') + ' · in net worth</div></div></div>';
+  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Add Savings</div><button onclick="mynwLock()" style="background:none;border:none;color:var(--muted);font-size:11px;font-family:IBM Plex Mono,monospace;cursor:pointer">&#128274; Lock</button></div>';
+  html += '<div style="display:flex;gap:8px;flex-wrap:wrap">';
+  html += '<input id="mynw-desc" placeholder="Description (e.g. Gold, FD, Cash)" style="flex:2;min-width:150px;padding:10px;background:var(--s2);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:13px">';
+  html += '<input id="mynw-amt" type="number" step="0.01" placeholder="Amount" onkeydown="if(event.key===\'Enter\')mynwAdd()" style="flex:1;min-width:100px;padding:10px;background:var(--s2);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:13px">';
+  html += '<button onclick="mynwAdd()" style="padding:10px 18px;background:var(--green);color:#000;border:none;border-radius:6px;font-weight:600;font-size:13px;cursor:pointer">Add</button>';
+  html += '</div><div style="font-size:10px;color:var(--muted);margin-top:8px">Added amounts are included in your Overview net worth. Details stay hidden until unlocked.</div></div>';
+  html += '<div class="panel"><div class="panel-head"><div class="panel-title">My Savings</div><div class="panel-action" style="color:var(--green)">' + fmt2(total) + '</div></div>';
+  if(!arr.length){ html += '<div style="color:var(--muted);font-size:13px;padding:8px 0">No savings added yet. Add your first above.</div>'; }
+  else {
+    arr.slice().reverse().forEach(function(x){
+      html += '<div class="row"><div class="row-label">' + esc(x.desc) + '</div>';
+      html += '<div style="display:flex;align-items:center;gap:14px"><div class="row-amt" style="color:var(--green)">' + fmt2(x.amount) + '</div>';
+      html += '<button onclick="mynwDelete(\'' + esc(String(x.id)) + '\')" class="edit-btn" style="color:var(--red)" title="Delete">&#10005;</button></div></div>';
+    });
+  }
+  html += '</div>';
+  set('main-content', html);
+}
+
 function showNetWorth() {
   var a = D.all_accounts || [];
   var b = '<div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px">ASSETS</div>';
   a.filter(function(x){return !x.is_credit;}).forEach(function(x){b += acctLine(x);});
   b += '<div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin:12px 0 8px">CREDIT CARDS OWED</div>';
   a.filter(function(x){return x.is_credit && x.balance > 0;}).forEach(function(x){b += acctLine(x);});
+  var sv = savingsTotal();
+  if(sv !== 0) {
+    b += '<div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin:12px 0 8px">PRIVATE SAVINGS</div>';
+    b += '<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;font-size:13px"><span style="color:var(--muted)">&#128274; Included in net worth</span><span style="font-family:IBM Plex Mono,monospace;color:' + (MYNW_UNLOCKED ? 'var(--green)' : 'var(--muted2)') + '">' + (MYNW_UNLOCKED ? fmt2(sv) : '••••• unlock to view') + '</span></div>';
+  }
   openModal('Net Worth', 'All accounts', b);
 }
 function showChecking() {
