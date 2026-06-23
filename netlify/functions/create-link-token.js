@@ -1,9 +1,5 @@
-const { Configuration, PlaidApi, PlaidEnvironments, Products, CountryCode } = require('plaid');
-
-const plaid = new PlaidApi(new Configuration({
-  basePath: PlaidEnvironments[process.env.PLAID_ENV || 'sandbox'],
-  baseOptions: { headers: { 'PLAID-CLIENT-ID': process.env.PLAID_CLIENT_ID, 'PLAID-SECRET': process.env.PLAID_SECRET } },
-}));
+// Create a Plaid Link token so the frontend can open Plaid Link to add a bank.
+const { plaid, Products, CountryCode } = require('./_core');
 
 exports.handler = async (event) => {
   const headers = { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Content-Type', 'Access-Control-Allow-Methods': 'POST, OPTIONS', 'Content-Type': 'application/json' };

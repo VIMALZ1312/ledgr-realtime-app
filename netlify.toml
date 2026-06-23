@@ -11,3 +11,34 @@
 
 [context.deploy-preview]
   command = "echo skip"
+
+# ── Serverless Plaid backend (replaces Replit) ───────────────────────────────
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# 6-hour auto-sync — replaces the Replit node-cron job
+[functions."scheduled-sync"]
+  schedule = "0 */6 * * *"
+
+# Friendly /api/* paths proxy to the functions so the frontend can use
+# same-origin relative URLs (no CORS, no Replit hostname).
+[[redirects]]
+  from = "/api/sync"
+  to = "/.netlify/functions/sync-background"
+  status = 200
+
+[[redirects]]
+  from = "/api/create-link-token"
+  to = "/.netlify/functions/create-link-token"
+  status = 200
+
+[[redirects]]
+  from = "/api/exchange-token"
+  to = "/.netlify/functions/exchange-token"
+  status = 200
+
+[[redirects]]
+  from = "/api/data"
+  to = "/.netlify/functions/data"
+  status = 200

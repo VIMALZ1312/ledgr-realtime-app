@@ -1,9 +1,6 @@
-const { Configuration, PlaidApi, PlaidEnvironments } = require('plaid');
-
-const plaid = new PlaidApi(new Configuration({
-  basePath: PlaidEnvironments[process.env.PLAID_ENV || 'sandbox'],
-  baseOptions: { headers: { 'PLAID-CLIENT-ID': process.env.PLAID_CLIENT_ID, 'PLAID-SECRET': process.env.PLAID_SECRET } },
-}));
+// Exchange a Plaid public_token for an access_token AND persist it to Netlify
+// Blobs automatically — no manual env-var paste (the key Option A improvement).
+const { plaid, saveToken } = require('./_core');
 
 exports.handler = async (event) => {
   const headers = { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Content-Type', 'Access-Control-Allow-Methods': 'POST, OPTIONS', 'Content-Type': 'application/json' };
@@ -12,11 +9,13 @@ exports.handler = async (event) => {
     const { public_token, nickname } = JSON.parse(event.body || '{}');
     if (!public_token || !nickname) return { statusCode: 400, headers, body: JSON.stringify({ error: 'public_token and nickname required' }) };
     const response = await plaid.itemPublicTokenExchange({ public_token });
+    const access_token = response.data.access_token;
+    const canonical = await saveToken(nickname, access_token);
     return { statusCode: 200, headers, body: JSON.stringify({
       success: true,
-      nickname: nickname.toUpperCase(),
-      access_token: response.data.access_token,
-      instruction: `Add to Netlify Environment Variables: PLAID_TOKEN_${nickname.toUpperCase()} = ${response.data.access_token}`
+      nickname: canonical,
+      saved: true,
+      message: `Bank "${canonical}" linked and saved. Run a sync to pull its data.`,
     })};
   } catch (err) {
     return { statusCode: 500, headers, body: JSON.stringify({ error: err.response?.data || err.message }) };
