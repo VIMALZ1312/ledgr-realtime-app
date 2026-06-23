@@ -440,7 +440,7 @@ var _chartInst = null;
 var BANK_NAMES = {
   bofa:'Bank of America', wifebofa:'Bank of America · Wife', wf:'Wells Fargo',
   td:'TD Bank', pnc:'PNC', discover:'Discover', amex:'Amex', chase:'Chase',
-  robin:'Robinhood', myrobin:'Robinhood · Brokerage'
+  robin:'Robinhood', robin_2:'Robinhood', myrobin:'Robinhood · Brokerage'
 };
 function bankKeyOf(a){ return (a.nickname || a._nickname || a.bank || '?').toString().toLowerCase(); }
 function bankLabelOf(key, fallback){ return BANK_NAMES[key] || fallback || key; }
