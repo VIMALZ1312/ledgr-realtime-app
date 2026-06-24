@@ -309,8 +309,8 @@
       "mask": "7119",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 1537.8,
-      "available": 1537.8,
+      "balance": 1475.5,
+      "available": 427.68,
       "is_credit": false,
       "is_checking": false,
       "is_savings": false
@@ -330,9 +330,9 @@
     }
   ],
   "net_worth": {
-    "total_checking": 90619.630765465,
+    "total_checking": 90557.330765465,
     "total_credit": 5109.78,
-    "net": 85509.850765465
+    "net": 85447.550765465
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -9357,7 +9357,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-06-23T19:32:43.437Z",
+  "generated_at": "2026-06-24T00:09:01.404Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
