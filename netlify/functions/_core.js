@@ -24,7 +24,6 @@ function storeArg(name) {
 }
 function tokenStore() { return getStore(storeArg('plaid-tokens')); }
 function dataStore() { return getStore(storeArg('ledgr-data')); }
-function savingsStore() { return getStore(storeArg('mynw-savings')); }
 
 // Save a freshly-exchanged access token to Blobs. Returns {saved} — never throws,
 // so the link flow can fall back to a manual env-var paste if Blobs is off.
@@ -358,4 +357,4 @@ async function buildDataJson() {
   return { accounts_synced: allAccounts.length, transactions_synced: allTransactions.length, generated_at: data.generated_at };
 }
 
-module.exports = { plaid, Products, CountryCode, getTokens, saveToken, buildDataJson, dataStore, savingsStore };
+module.exports = { plaid, Products, CountryCode, getTokens, saveToken, buildDataJson, dataStore };

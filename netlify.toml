@@ -42,8 +42,3 @@
   from = "/api/data"
   to = "/.netlify/functions/data"
   status = 200
-
-[[redirects]]
-  from = "/api/savings"
-  to = "/.netlify/functions/savings"
-  status = 200
