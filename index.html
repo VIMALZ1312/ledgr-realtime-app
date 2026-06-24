@@ -775,57 +775,80 @@ function showTxns(title, txns, col) {
   openModal(title, sorted.length+' transactions', b);
 }
 
-// ── My Net Worth — private, password-gated manual savings ─────────────────
-// Stored in localStorage (screen-level privacy, not cryptographic). Total feeds
-// the Overview NET WORTH KPI; entries are only viewable after unlocking.
-var MYNW_UNLOCKED = false;
+// ── My Net Worth — private, SHARED, password-gated savings ────────────────
+// Stored SERVER-SIDE in Netlify Blobs via /api/savings, so the same entries are
+// visible to anyone (e.g. spouse) who enters the shared password on any device.
+// The TOTAL feeds the Overview NET WORTH KPI (visible); entries/descriptions are
+// only returned by the server when the correct password is sent. Requires
+// NETLIFY_BLOBS_SITE_ID + NETLIFY_BLOBS_TOKEN env vars on the site.
+var MYNW_UNLOCKED = false, MYNW_PASS = null, MYNW_ENTRIES = [];
+var SAVINGS_TOTAL = 0, SAVINGS_CONFIGURED = false, SAVINGS_AVAILABLE = true;
 function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
-function loadSavings(){ try { return JSON.parse(localStorage.getItem('lgr_savings')||'[]'); } catch(e){ return []; } }
-function saveSavings(arr){ try { localStorage.setItem('lgr_savings', JSON.stringify(arr)); } catch(e){} }
-function savingsTotal(){ return loadSavings().reduce(function(s,x){ return s + (Number(x.amount)||0); }, 0); }
-function mynwHash(){ return localStorage.getItem('lgr_mynw_hash') || ''; }
-function sha256(str){
-  if(window.crypto && crypto.subtle && crypto.subtle.digest){
-    return crypto.subtle.digest('SHA-256', new TextEncoder().encode(str)).then(function(buf){
-      return Array.prototype.map.call(new Uint8Array(buf), function(b){ return ('0'+b.toString(16)).slice(-2); }).join('');
-    });
-  }
-  var h=5381; for(var i=0;i<str.length;i++){ h=((h*33) ^ str.charCodeAt(i)) >>> 0; }
-  return Promise.resolve('f'+h.toString(16));
+function savingsTotal(){ return SAVINGS_TOTAL; }
+function savingsApi(payload){
+  return fetch('/api/savings', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) }).then(function(r){ return r.json(); });
 }
+function refreshSavingsTotal(){
+  return savingsApi({action:'total'}).then(function(d){
+    if(d && d.error === 'blobs_unconfigured'){ SAVINGS_AVAILABLE = false; SAVINGS_TOTAL = 0; return; }
+    SAVINGS_AVAILABLE = true;
+    if(d && d.ok){ SAVINGS_TOTAL = d.total || 0; SAVINGS_CONFIGURED = !!d.configured; }
+  }).catch(function(){});
+}
+function _applySavings(d){ MYNW_ENTRIES = d.entries || []; SAVINGS_TOTAL = d.total || 0; SAVINGS_CONFIGURED = true; SAVINGS_AVAILABLE = true; }
 function mynwUnlock(){
   var inp = $('mynw-pass'); if(!inp || !inp.value) return;
-  sha256(inp.value).then(function(h){
-    if(!mynwHash()){ localStorage.setItem('lgr_mynw_hash', h); MYNW_UNLOCKED = true; render(); }
-    else if(h === mynwHash()){ MYNW_UNLOCKED = true; render(); }
-    else { var e=$('mynw-err'); if(e) e.textContent = 'Wrong password.'; }
-  });
+  var pass = inp.value, err = $('mynw-err'); if(err) err.textContent = 'Checking…';
+  savingsApi({action:'unlock', password:pass}).then(function(d){
+    if(d && d.error === 'blobs_unconfigured'){ SAVINGS_AVAILABLE = false; render(); return; }
+    if(d && d.ok){
+      MYNW_PASS = pass; MYNW_UNLOCKED = true; _applySavings(d);
+      migrateLocalSavings().then(function(){ render(); });
+    } else if(err){ err.textContent = (d && d.error === 'wrong_password') ? 'Wrong password.' : 'Could not unlock.'; }
+  }).catch(function(){ if(err) err.textContent = 'Network error.'; });
 }
-function mynwLock(){ MYNW_UNLOCKED = false; render(); }
+function migrateLocalSavings(){
+  var local = [];
+  try { local = JSON.parse(localStorage.getItem('lgr_savings')||'[]'); } catch(e){}
+  if(!local.length) return Promise.resolve();
+  return savingsApi({action:'import', password:MYNW_PASS, entries:local}).then(function(d){
+    if(d && d.ok){ _applySavings(d); try { localStorage.removeItem('lgr_savings'); localStorage.removeItem('lgr_mynw_hash'); } catch(e){} }
+  }).catch(function(){});
+}
+function mynwLock(){ MYNW_UNLOCKED = false; MYNW_PASS = null; MYNW_ENTRIES = []; render(); }
 function mynwAdd(){
   var d=$('mynw-desc'), a=$('mynw-amt');
-  var desc=(d && d.value || '').trim();
-  var amt=parseFloat(a && a.value);
+  var desc=(d && d.value || '').trim(), amt=parseFloat(a && a.value);
   if(!desc){ if(d) d.focus(); return; }
   if(isNaN(amt)){ if(a) a.focus(); return; }
-  var arr = loadSavings();
-  arr.push({ id: (_savId++) + '_' + arr.length, desc: desc, amount: amt });
-  saveSavings(arr);
-  render();
+  var btn = a && a.parentNode && a.parentNode.querySelector('button');
+  savingsApi({action:'add', password:MYNW_PASS, desc:desc, amount:amt}).then(function(r){
+    if(r && r.ok){ _applySavings(r); render(); }
+    else { alert('Could not save: ' + ((r&&r.error)||'error')); }
+  }).catch(function(){ alert('Network error saving entry.'); });
 }
-var _savId = 1000;
 function mynwDelete(id){
-  saveSavings(loadSavings().filter(function(x){ return String(x.id) !== String(id); }));
-  render();
+  savingsApi({action:'delete', password:MYNW_PASS, id:id}).then(function(r){
+    if(r && r.ok){ _applySavings(r); render(); }
+  }).catch(function(){});
 }
 function renderMyNetworth(){
   var html='';
+  if(!SAVINGS_AVAILABLE){
+    html += '<div class="panel" style="max-width:470px;margin:48px auto">';
+    html += '<div style="font-size:30px;text-align:center;margin-bottom:8px">&#9881;&#65039;</div>';
+    html += '<div class="panel-title" style="text-align:center;margin-bottom:10px">Shared savings — setup needed</div>';
+    html += '<div style="font-size:12.5px;color:var(--muted);line-height:1.7">To share savings across devices, enable Netlify Blobs. Add two environment variables in Netlify → Site settings → Environment variables, then redeploy:<br><br>';
+    html += '<span style="font-family:IBM Plex Mono,monospace;font-size:11px;color:var(--text)">NETLIFY_BLOBS_SITE_ID</span> = <span style="font-family:IBM Plex Mono,monospace;font-size:11px">c0a3121c-6802-4ade-9a62-6f911e2f0213</span><br>';
+    html += '<span style="font-family:IBM Plex Mono,monospace;font-size:11px;color:var(--text)">NETLIFY_BLOBS_TOKEN</span> = your Netlify personal access token<br><br>Then reopen this tab.</div></div>';
+    set('main-content', html); return;
+  }
   if(!MYNW_UNLOCKED){
-    var firstTime = !mynwHash();
+    var firstTime = !SAVINGS_CONFIGURED;
     html += '<div class="panel" style="max-width:400px;margin:48px auto;text-align:center">';
     html += '<div style="font-size:34px;margin-bottom:10px">&#128274;</div>';
-    html += '<div class="panel-title" style="margin-bottom:6px;text-align:center">' + (firstTime ? 'Set a Password' : 'My Net Worth · Locked') + '</div>';
-    html += '<div style="font-size:12px;color:var(--muted);margin-bottom:16px;line-height:1.5">' + (firstTime ? 'Create a password to protect your private savings.<br>Keep it safe — there is no recovery.' : 'Enter your password to view your private savings.') + '</div>';
+    html += '<div class="panel-title" style="margin-bottom:6px;text-align:center">' + (firstTime ? 'Set a Shared Password' : 'My Net Worth · Locked') + '</div>';
+    html += '<div style="font-size:12px;color:var(--muted);margin-bottom:16px;line-height:1.5">' + (firstTime ? 'Create a shared password for these savings.<br>Anyone with it (e.g. your spouse) can view &amp; edit on any device. No recovery.' : 'Enter the shared password to view your private savings.') + '</div>';
     html += '<input id="mynw-pass" type="password" placeholder="Password" autocomplete="off" onkeydown="if(event.key===\'Enter\')mynwUnlock()" style="width:100%;padding:11px;background:var(--s2);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:14px;margin-bottom:10px;box-sizing:border-box">';
     html += '<button onclick="mynwUnlock()" style="width:100%;padding:11px;background:var(--green);color:#000;border:none;border-radius:6px;font-weight:600;font-size:13px;cursor:pointer">' + (firstTime ? 'Set Password &amp; Unlock' : 'Unlock') + '</button>';
     html += '<div id="mynw-err" style="font-size:12px;color:var(--red);margin-top:10px"></div>';
@@ -834,14 +857,14 @@ function renderMyNetworth(){
     setTimeout(function(){ var p=$('mynw-pass'); if(p) p.focus(); }, 60);
     return;
   }
-  var arr = loadSavings(), total = savingsTotal();
-  html += '<div class="kpi-row"><div class="kpi" style="cursor:default"><div class="kpi-label">PRIVATE SAVINGS</div><div class="kpi-val" style="color:var(--green)">' + fmt2(total) + '</div><div class="kpi-sub">' + arr.length + (arr.length===1?' entry':' entries') + ' · in net worth</div></div></div>';
+  var arr = MYNW_ENTRIES || [], total = SAVINGS_TOTAL;
+  html += '<div class="kpi-row"><div class="kpi" style="cursor:default"><div class="kpi-label">PRIVATE SAVINGS</div><div class="kpi-val" style="color:var(--green)">' + fmt2(total) + '</div><div class="kpi-sub">' + arr.length + (arr.length===1?' entry':' entries') + ' · shared · in net worth</div></div></div>';
   html += '<div class="panel"><div class="panel-head"><div class="panel-title">Add Savings</div><button onclick="mynwLock()" style="background:none;border:none;color:var(--muted);font-size:11px;font-family:IBM Plex Mono,monospace;cursor:pointer">&#128274; Lock</button></div>';
   html += '<div style="display:flex;gap:8px;flex-wrap:wrap">';
   html += '<input id="mynw-desc" placeholder="Description (e.g. Gold, FD, Cash)" style="flex:2;min-width:150px;padding:10px;background:var(--s2);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:13px">';
   html += '<input id="mynw-amt" type="number" step="0.01" placeholder="Amount" onkeydown="if(event.key===\'Enter\')mynwAdd()" style="flex:1;min-width:100px;padding:10px;background:var(--s2);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:13px">';
   html += '<button onclick="mynwAdd()" style="padding:10px 18px;background:var(--green);color:#000;border:none;border-radius:6px;font-weight:600;font-size:13px;cursor:pointer">Add</button>';
-  html += '</div><div style="font-size:10px;color:var(--muted);margin-top:8px">Added amounts are included in your Overview net worth. Details stay hidden until unlocked.</div></div>';
+  html += '</div><div style="font-size:10px;color:var(--muted);margin-top:8px">Shared across devices via the password. Included in Overview net worth; details hidden until unlocked.</div></div>';
   html += '<div class="panel"><div class="panel-head"><div class="panel-title">My Savings</div><div class="panel-action" style="color:var(--green)">' + fmt2(total) + '</div></div>';
   if(!arr.length){ html += '<div style="color:var(--muted);font-size:13px;padding:8px 0">No savings added yet. Add your first above.</div>'; }
   else {
@@ -1775,6 +1798,8 @@ function loadData() {
       D = applyOverrides(JSON.parse(JSON.stringify(_rawD)));
       buildNav();
       render();
+      // Pull the shared private-savings total so the Net Worth KPI includes it.
+      refreshSavingsTotal().then(function(){ if(TAB === 'overview' || TAB === 'mynw') render(); });
       if(data.generated_at) {
         var dt = new Date(data.generated_at);
         var el = $('synced-at');
