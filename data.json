@@ -2,7 +2,7 @@
   "kpis": {
     "income": 15908.03,
     "income_period": "June 2026",
-    "true_outflows": 5229.15,
+    "true_outflows": 5735.42,
     "outflows_period": "June 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 1104.73,
+      "balance": 1611,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 500.94
@@ -166,8 +166,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 278.64,
-      "available": 2576,
+      "balance": 784.91,
+      "available": 2062,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -331,8 +331,8 @@
   ],
   "net_worth": {
     "total_checking": 83977.935615818,
-    "total_credit": 5200.48,
-    "net": 78777.455615818
+    "total_credit": 5706.75,
+    "net": 78271.185615818
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -343,14 +343,14 @@
     "by_month": []
   },
   "spending": {
-    "Healthcare": 2711.29,
-    "Tech/Subs": 12446.37,
-    "Shopping": 13916.019999999999,
-    "Entertainment": 1896.2600000000002,
+    "Healthcare": 2716.62,
+    "Tech/Subs": 12453.52,
+    "Shopping": 14031.429999999998,
+    "Entertainment": 2182.26,
     "Tax/Professional": 18792.709999999995,
     "Groceries": 2742.4,
     "Restaurants": 2702.9100000000003,
-    "Gas/Travel": 6423.710000000001,
+    "Gas/Travel": 6516.090000000001,
     "Refund": -3447.4100000000003,
     "Insurance": 1843.71
   },
@@ -680,10 +680,18 @@
     {
       "desc": "Amazon",
       "category": "Shopping",
-      "count": 48,
+      "count": 51,
       "months": 6,
-      "avg_amount": 21.12,
-      "last_amount": 49.36
+      "avg_amount": 22.14,
+      "last_amount": 41.58
+    },
+    {
+      "desc": "CVS ExtraCare",
+      "category": "Healthcare",
+      "count": 6,
+      "months": 6,
+      "avg_amount": 5.33,
+      "last_amount": 5.33
     },
     {
       "desc": "Verizon",
@@ -720,9 +728,9 @@
     {
       "desc": "BP",
       "category": "Gas/Travel",
-      "count": 13,
+      "count": 14,
       "months": 5,
-      "avg_amount": 51.43,
+      "avg_amount": 52.57,
       "last_amount": 37.21
     },
     {
@@ -764,14 +772,6 @@
       "months": 5,
       "avg_amount": 10.66,
       "last_amount": 10.66
-    },
-    {
-      "desc": "CVS ExtraCare",
-      "category": "Healthcare",
-      "count": 5,
-      "months": 5,
-      "avg_amount": 5.33,
-      "last_amount": 5.33
     },
     {
       "desc": "Google One",
@@ -844,6 +844,14 @@
       "months": 3,
       "avg_amount": 235.63,
       "last_amount": 290.11
+    },
+    {
+      "desc": "NJ E-ZPass",
+      "category": "Gas/Travel",
+      "count": 5,
+      "months": 3,
+      "avg_amount": 108.37,
+      "last_amount": 25
     },
     {
       "desc": "The Home Depot",
@@ -1028,14 +1036,6 @@
       "months": 2,
       "avg_amount": 170.23,
       "last_amount": 50
-    },
-    {
-      "desc": "NJ E-ZPass",
-      "category": "Gas/Travel",
-      "count": 4,
-      "months": 2,
-      "avg_amount": 129.21,
-      "last_amount": 25
     },
     {
       "desc": "Zelle payment to Tere Cleaning Lady for \"April cleaning\"; Conf# zhwnf5bbm",
@@ -1255,7 +1255,7 @@
       "income": 15908.029999999999,
       "bofa_income": 15908.029999999999,
       "td_income": 0,
-      "outflows": 5229.15,
+      "outflows": 5735.42,
       "xoom": 0,
       "investments": 0
     }
@@ -7244,17 +7244,17 @@
       "label": "June 2026",
       "period": "2026-06",
       "categories": {
-        "Tech/Subs": 1524.35,
-        "Entertainment": 373.91,
-        "Healthcare": 1221.8300000000002,
+        "Tech/Subs": 1531.5,
+        "Entertainment": 659.9100000000001,
+        "Healthcare": 1227.16,
         "Refund": -415.07000000000005,
-        "Shopping": 624.6600000000001,
+        "Shopping": 740.07,
         "Restaurants": 337.44,
         "Tax/Professional": 621.3900000000001,
-        "Gas/Travel": 738.61,
+        "Gas/Travel": 830.99,
         "Groceries": 202.03
       },
-      "total": 5229.149999999998,
+      "total": 5735.419999999997,
       "transactions": [
         {
           "date": "06-01",
@@ -7640,6 +7640,136 @@
           "category": "Tech/Subs",
           "city": null,
           "state": "CA",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-23",
+          "desc": "COMMUNITYPASS SERV FEE COMMUNITYPASSGA",
+          "amount": 2.75,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-23",
+          "desc": "COMMUNITYPASS SERV FEE COMMUNITYPASSGA",
+          "amount": 4.4,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-23",
+          "desc": "REC",
+          "amount": 110,
+          "category": "Entertainment",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-23",
+          "desc": "REC",
+          "amount": 176,
+          "category": "Entertainment",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-22",
+          "desc": "NJ E-ZPass",
+          "amount": 25,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-21",
+          "desc": "Amazon",
+          "amount": 50,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-21",
+          "desc": "Amazon",
+          "amount": 23.83,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-21",
+          "desc": "Amazon",
+          "amount": 41.58,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-21",
+          "desc": "CVS ExtraCare",
+          "amount": 5.33,
+          "category": "Healthcare",
+          "city": null,
+          "state": "RI",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-21",
+          "desc": "BP",
+          "amount": 67.38,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null,
           "bank": "Wells Fargo",
           "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
           "mask": "9762",
@@ -9062,6 +9192,16 @@
       "period_label": "June 2026"
     },
     {
+      "date": "06-21",
+      "desc": "CVS ExtraCare",
+      "amount": 5.33,
+      "category": "Healthcare",
+      "city": null,
+      "state": "RI",
+      "period": "2026-06",
+      "period_label": "June 2026"
+    },
+    {
       "date": "04-09",
       "desc": "Trendia Trendia.co",
       "amount": 178.01,
@@ -9370,7 +9510,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-06-24T12:10:05.904Z",
+  "generated_at": "2026-06-24T18:08:52.802Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
