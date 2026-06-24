@@ -2,14 +2,14 @@
   "kpis": {
     "income": 15908.03,
     "income_period": "June 2026",
-    "true_outflows": 5204.15,
+    "true_outflows": 5229.15,
     "outflows_period": "June 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 20435.760000000002,
+      "balance": 16202.45,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -101,8 +101,8 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 5019.93,
-      "available": 786.62,
+      "balance": 786.62,
+      "available": 54.97,
       "is_credit": false,
       "is_checking": true,
       "is_savings": false
@@ -231,8 +231,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 97.12,
-      "available": 602.88,
+      "balance": 187.82,
+      "available": 512.18,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -310,7 +310,7 @@
       "type": "investment",
       "subtype": "brokerage",
       "balance": 1475.5,
-      "available": 427.68,
+      "available": 1475.5,
       "is_credit": false,
       "is_checking": false,
       "is_savings": false
@@ -330,9 +330,9 @@
     }
   ],
   "net_worth": {
-    "total_checking": 90557.330765465,
-    "total_credit": 5109.78,
-    "net": 85447.550765465
+    "total_checking": 86324.020765465,
+    "total_credit": 5200.48,
+    "net": 81123.540765465
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -343,7 +343,7 @@
     "by_month": []
   },
   "spending": {
-    "Healthcare": 2686.29,
+    "Healthcare": 2711.29,
     "Tech/Subs": 12446.37,
     "Shopping": 13916.019999999999,
     "Entertainment": 1896.2600000000002,
@@ -605,14 +605,6 @@
   "pending_transactions": [
     {
       "date": "06-21",
-      "desc": "Delight Big Bazar",
-      "amount": 90.7,
-      "category": "Groceries",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "06-21",
       "desc": "Walmart",
       "amount": 68.31,
       "category": "Shopping",
@@ -624,6 +616,14 @@
       "desc": "Walmart",
       "amount": 56.18,
       "category": "Shopping",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "06-23",
+      "desc": "SR MEDICAL CENTER",
+      "amount": 25,
+      "category": "Healthcare",
       "bank": "BofA",
       "pending": true
     }
@@ -1255,7 +1255,7 @@
       "income": 15908.029999999999,
       "bofa_income": 15908.029999999999,
       "td_income": 0,
-      "outflows": 5204.15,
+      "outflows": 5229.15,
       "xoom": 0,
       "investments": 0
     }
@@ -7246,7 +7246,7 @@
       "categories": {
         "Tech/Subs": 1524.35,
         "Entertainment": 373.91,
-        "Healthcare": 1196.8300000000002,
+        "Healthcare": 1221.8300000000002,
         "Refund": -415.07000000000005,
         "Shopping": 624.6600000000001,
         "Restaurants": 337.44,
@@ -7254,7 +7254,7 @@
         "Gas/Travel": 738.61,
         "Groceries": 202.03
       },
-      "total": 5204.149999999999,
+      "total": 5229.149999999998,
       "transactions": [
         {
           "date": "06-01",
@@ -7817,19 +7817,6 @@
         },
         {
           "date": "06-21",
-          "desc": "Delight Big Bazar",
-          "amount": 90.7,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-21",
           "desc": "Walmart",
           "amount": 68.31,
           "category": "Shopping",
@@ -7859,6 +7846,32 @@
           "desc": "Walmart",
           "amount": 56.18,
           "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-23",
+          "desc": "SR MEDICAL CENTER",
+          "amount": 25,
+          "category": "Healthcare",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-22",
+          "desc": "Delight Big Bazar",
+          "amount": 90.7,
+          "category": "Groceries",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -9357,7 +9370,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-06-24T00:09:01.404Z",
+  "generated_at": "2026-06-24T06:09:54.829Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
