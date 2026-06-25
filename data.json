@@ -9,7 +9,7 @@
   },
   "accounts": {
     "bofa": {
-      "balance": 16202.45,
+      "balance": 15470.800000000001,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -101,7 +101,7 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 786.62,
+      "balance": 54.97,
       "available": 54.97,
       "is_credit": false,
       "is_checking": true,
@@ -231,8 +231,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 187.82,
-      "available": 512.18,
+      "balance": 244,
+      "available": 456,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -330,9 +330,9 @@
     }
   ],
   "net_worth": {
-    "total_checking": 83977.935615818,
-    "total_credit": 5706.75,
-    "net": 78271.185615818
+    "total_checking": 83246.285615818,
+    "total_credit": 5762.93,
+    "net": 77483.355615818
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -345,13 +345,13 @@
   "spending": {
     "Healthcare": 2716.62,
     "Tech/Subs": 12453.52,
-    "Shopping": 14031.429999999998,
+    "Shopping": 13963.119999999999,
     "Entertainment": 2182.26,
     "Tax/Professional": 18792.709999999995,
     "Groceries": 2742.4,
     "Restaurants": 2702.9100000000003,
     "Gas/Travel": 6516.090000000001,
-    "Refund": -3447.4100000000003,
+    "Refund": -3379.1000000000004,
     "Insurance": 1843.71
   },
   "zelle_received": [
@@ -604,22 +604,6 @@
   ],
   "pending_transactions": [
     {
-      "date": "06-21",
-      "desc": "Walmart",
-      "amount": 68.31,
-      "category": "Shopping",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "06-22",
-      "desc": "Walmart",
-      "amount": 56.18,
-      "category": "Shopping",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
       "date": "06-23",
       "desc": "SR MEDICAL CENTER",
       "amount": 25,
@@ -664,9 +648,9 @@
     {
       "desc": "Walmart",
       "category": "Refund",
-      "count": 17,
+      "count": 15,
       "months": 6,
-      "avg_amount": 37.63,
+      "avg_amount": 42.65,
       "last_amount": 56.18
     },
     {
@@ -7247,8 +7231,8 @@
         "Tech/Subs": 1531.5,
         "Entertainment": 659.9100000000001,
         "Healthcare": 1227.16,
-        "Refund": -415.07000000000005,
-        "Shopping": 740.07,
+        "Refund": -346.76000000000005,
+        "Shopping": 671.7600000000001,
         "Restaurants": 337.44,
         "Tax/Professional": 621.3900000000001,
         "Gas/Travel": 830.99,
@@ -7946,45 +7930,6 @@
           "refund": true
         },
         {
-          "date": "06-21",
-          "desc": "Walmart",
-          "amount": 68.31,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-22",
-          "desc": "Walmart",
-          "amount": -68.31,
-          "category": "Refund",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": true
-        },
-        {
-          "date": "06-22",
-          "desc": "Walmart",
-          "amount": 56.18,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
           "date": "06-23",
           "desc": "SR MEDICAL CENTER",
           "amount": 25,
@@ -8004,6 +7949,19 @@
           "category": "Groceries",
           "city": null,
           "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-23",
+          "desc": "Walmart",
+          "amount": 56.18,
+          "category": "Shopping",
+          "city": null,
+          "state": "AR",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -9362,6 +9320,16 @@
       "period_label": "June 2026"
     },
     {
+      "date": "06-23",
+      "desc": "Walmart",
+      "amount": 56.18,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-06",
+      "period_label": "June 2026"
+    },
+    {
       "date": "06-08",
       "desc": "Grok Xai",
       "amount": 30,
@@ -9510,7 +9478,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-06-25T00:04:48.986Z",
+  "generated_at": "2026-06-25T06:11:55.064Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
