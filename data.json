@@ -28,7 +28,7 @@
       "payroll": 0
     },
     "discover": {
-      "balance": 3706.78,
+      "balance": 3721.77,
       "is_credit": true,
       "period_label": "Live"
     },
@@ -231,8 +231,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 244,
-      "available": 456,
+      "balance": 264.03,
+      "available": 435.97,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -270,7 +270,7 @@
       "mask": "0494",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 3706.78,
+      "balance": 3721.77,
       "available": null,
       "is_credit": true,
       "is_checking": false,
@@ -331,8 +331,8 @@
   ],
   "net_worth": {
     "total_checking": 81996.5248929965,
-    "total_credit": 5762.93,
-    "net": 76233.59489299651
+    "total_credit": 5797.95,
+    "net": 76198.5748929965
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -602,16 +602,7 @@
       "period_label": "May 2026"
     }
   ],
-  "pending_transactions": [
-    {
-      "date": "06-23",
-      "desc": "SR MEDICAL CENTER",
-      "amount": 25,
-      "category": "Healthcare",
-      "bank": "BofA",
-      "pending": true
-    }
-  ],
+  "pending_transactions": [],
   "detected_recurring": [
     {
       "desc": "Best Buy",
@@ -651,7 +642,7 @@
       "count": 15,
       "months": 6,
       "avg_amount": 42.65,
-      "last_amount": 56.18
+      "last_amount": -4.97
     },
     {
       "desc": "ShopRite",
@@ -7917,32 +7908,6 @@
           "refund": true
         },
         {
-          "date": "06-21",
-          "desc": "Walmart",
-          "amount": -4.97,
-          "category": "Refund",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": true
-        },
-        {
-          "date": "06-23",
-          "desc": "SR MEDICAL CENTER",
-          "amount": 25,
-          "category": "Healthcare",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
           "date": "06-22",
           "desc": "Delight Big Bazar",
           "amount": 90.7,
@@ -7967,6 +7932,32 @@
           "mask": "2776",
           "pending": false,
           "refund": false
+        },
+        {
+          "date": "06-24",
+          "desc": "Sr Medical Center",
+          "amount": 25,
+          "category": "Healthcare",
+          "city": null,
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-24",
+          "desc": "Walmart",
+          "amount": -4.97,
+          "category": "Refund",
+          "city": "Bentonville",
+          "state": "AR",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": true
         },
         {
           "date": "06-04",
@@ -9330,6 +9321,16 @@
       "period_label": "June 2026"
     },
     {
+      "date": "06-24",
+      "desc": "Walmart",
+      "amount": -4.97,
+      "category": "Refund",
+      "city": "Bentonville",
+      "state": "AR",
+      "period": "2026-06",
+      "period_label": "June 2026"
+    },
+    {
       "date": "06-08",
       "desc": "Grok Xai",
       "amount": 30,
@@ -9478,7 +9479,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-06-26T00:12:09.831Z",
+  "generated_at": "2026-06-26T06:11:32.322Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
