@@ -2,7 +2,7 @@
   "kpis": {
     "income": 15908.03,
     "income_period": "June 2026",
-    "true_outflows": 5735.42,
+    "true_outflows": 5750.41,
     "outflows_period": "June 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -49,8 +49,8 @@
       "mask": "5772",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 49225.4948929965,
-      "available": 314.06,
+      "balance": 48487.4861055,
+      "available": 10511.59,
       "is_credit": false,
       "is_checking": false,
       "is_savings": false
@@ -330,9 +330,9 @@
     }
   ],
   "net_worth": {
-    "total_checking": 81996.5248929965,
+    "total_checking": 81258.5161055,
     "total_credit": 5797.95,
-    "net": 76198.5748929965
+    "net": 75460.56610550001
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -349,7 +349,7 @@
     "Entertainment": 2182.26,
     "Tax/Professional": 18792.709999999995,
     "Groceries": 2742.4,
-    "Restaurants": 2702.9100000000003,
+    "Restaurants": 2717.9,
     "Gas/Travel": 6516.090000000001,
     "Refund": -3379.1000000000004,
     "Insurance": 1843.71
@@ -1141,14 +1141,6 @@
       "last_amount": 12.78
     },
     {
-      "desc": "Vzn Br Cafe Basking Ridgenj",
-      "category": "Restaurants",
-      "count": 6,
-      "months": 2,
-      "avg_amount": 9.53,
-      "last_amount": 14.06
-    },
-    {
       "desc": "Anthropic Anthropic.comca",
       "category": "Tech/Subs",
       "count": 5,
@@ -1163,6 +1155,14 @@
       "months": 2,
       "avg_amount": 8.61,
       "last_amount": 5.95
+    },
+    {
+      "desc": "Vzn Br Cafe Basking Ridgenj",
+      "category": "Restaurants",
+      "count": 7,
+      "months": 2,
+      "avg_amount": 8.53,
+      "last_amount": 2.51
     },
     {
       "desc": "Cricketdata",
@@ -1230,7 +1230,7 @@
       "income": 15908.029999999999,
       "bofa_income": 15908.029999999999,
       "td_income": 0,
-      "outflows": 5735.42,
+      "outflows": 5750.41,
       "xoom": 0,
       "investments": 0
     }
@@ -7224,12 +7224,12 @@
         "Healthcare": 1227.16,
         "Refund": -346.76000000000005,
         "Shopping": 671.7600000000001,
-        "Restaurants": 337.44,
+        "Restaurants": 352.42999999999995,
         "Tax/Professional": 621.3900000000001,
         "Gas/Travel": 830.99,
         "Groceries": 202.03
       },
-      "total": 5735.419999999997,
+      "total": 5750.409999999997,
       "transactions": [
         {
           "date": "06-01",
@@ -8094,6 +8094,32 @@
           "desc": "Nokia Of America Corpo",
           "amount": 9.99,
           "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-24",
+          "desc": "Vzn Br Cafe Basking Ridgenj",
+          "amount": 2.51,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-24",
+          "desc": "Vrz Br Cafe",
+          "amount": 12.48,
+          "category": "Restaurants",
           "city": null,
           "state": null,
           "bank": "Discover",
@@ -9479,7 +9505,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-06-26T06:11:32.322Z",
+  "generated_at": "2026-06-26T12:10:44.685Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
