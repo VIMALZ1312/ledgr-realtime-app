@@ -1,8 +1,8 @@
 {
   "kpis": {
-    "income": 15908.03,
+    "income": 16362.03,
     "income_period": "June 2026",
-    "true_outflows": 5750.41,
+    "true_outflows": 5903.71,
     "outflows_period": "June 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 1611,
+      "balance": 1310.3,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 500.94
@@ -154,7 +154,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 0,
-      "available": 1000,
+      "available": 995,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -166,8 +166,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 784.91,
-      "available": 2062,
+      "balance": 484.21,
+      "available": 2487,
       "is_credit": true,
       "is_checking": false,
       "is_savings": false
@@ -309,8 +309,8 @@
       "mask": "7119",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 1475.5,
-      "available": 1475.5,
+      "balance": 1611.84,
+      "available": 169.22,
       "is_credit": false,
       "is_checking": false,
       "is_savings": false
@@ -330,9 +330,9 @@
     }
   ],
   "net_worth": {
-    "total_checking": 81258.5161055,
-    "total_credit": 5797.95,
-    "net": 75460.56610550001
+    "total_checking": 81394.8561055,
+    "total_credit": 5497.25,
+    "net": 75897.6061055
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -344,8 +344,8 @@
   },
   "spending": {
     "Healthcare": 2716.62,
-    "Tech/Subs": 12453.52,
-    "Shopping": 13963.119999999999,
+    "Tech/Subs": 12553.52,
+    "Shopping": 14016.419999999998,
     "Entertainment": 2182.26,
     "Tax/Professional": 18792.709999999995,
     "Groceries": 2742.4,
@@ -655,10 +655,10 @@
     {
       "desc": "Amazon",
       "category": "Shopping",
-      "count": 51,
+      "count": 52,
       "months": 6,
-      "avg_amount": 22.14,
-      "last_amount": 41.58
+      "avg_amount": 22.74,
+      "last_amount": 53.3
     },
     {
       "desc": "CVS ExtraCare",
@@ -1227,10 +1227,10 @@
     {
       "period": "2026-06",
       "period_label": "June 2026",
-      "income": 15908.029999999999,
-      "bofa_income": 15908.029999999999,
+      "income": 16362.029999999999,
+      "bofa_income": 16362.029999999999,
       "td_income": 0,
-      "outflows": 5750.41,
+      "outflows": 5903.71,
       "xoom": 0,
       "investments": 0
     }
@@ -7219,17 +7219,17 @@
       "label": "June 2026",
       "period": "2026-06",
       "categories": {
-        "Tech/Subs": 1531.5,
+        "Tech/Subs": 1631.5,
         "Entertainment": 659.9100000000001,
         "Healthcare": 1227.16,
         "Refund": -346.76000000000005,
-        "Shopping": 671.7600000000001,
+        "Shopping": 725.0600000000001,
         "Restaurants": 352.42999999999995,
         "Tax/Professional": 621.3900000000001,
         "Gas/Travel": 830.99,
         "Groceries": 202.03
       },
-      "total": 5750.409999999997,
+      "total": 5903.709999999998,
       "transactions": [
         {
           "date": "06-01",
@@ -7743,6 +7743,32 @@
           "desc": "BP",
           "amount": 67.38,
           "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-24",
+          "desc": "Amazon",
+          "amount": 53.3,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-23",
+          "desc": "Claude Sub Anthropic.comca",
+          "amount": 100,
+          "category": "Tech/Subs",
           "city": null,
           "state": null,
           "bank": "Wells Fargo",
@@ -9505,7 +9531,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-06-26T12:10:44.685Z",
+  "generated_at": "2026-06-26T18:03:07.783Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
