@@ -2,7 +2,7 @@
   "kpis": {
     "income": 16362.03,
     "income_period": "June 2026",
-    "true_outflows": 5956.64,
+    "true_outflows": 5970.7,
     "outflows_period": "June 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -349,7 +349,7 @@
     "Entertainment": 2182.26,
     "Tax/Professional": 18792.709999999995,
     "Groceries": 2795.33,
-    "Restaurants": 2717.9,
+    "Restaurants": 2731.96,
     "Gas/Travel": 6516.090000000001,
     "Refund": -3379.1000000000004,
     "Insurance": 1843.71
@@ -1239,7 +1239,7 @@
       "income": 16362.029999999999,
       "bofa_income": 16362.029999999999,
       "td_income": 0,
-      "outflows": 5956.64,
+      "outflows": 5970.7,
       "xoom": 0,
       "investments": 0
     }
@@ -7233,12 +7233,12 @@
         "Healthcare": 1227.16,
         "Refund": -346.76000000000005,
         "Shopping": 725.0600000000001,
-        "Restaurants": 352.42999999999995,
+        "Restaurants": 366.48999999999995,
         "Tax/Professional": 621.3900000000001,
         "Gas/Travel": 830.99,
         "Groceries": 254.96
       },
-      "total": 5956.6399999999985,
+      "total": 5970.699999999999,
       "transactions": [
         {
           "date": "06-01",
@@ -8167,6 +8167,19 @@
           "date": "06-24",
           "desc": "Vrz Br Cafe",
           "amount": 12.48,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-25",
+          "desc": "Vrz Br Cafe",
+          "amount": 14.06,
           "category": "Restaurants",
           "city": null,
           "state": null,
@@ -9553,7 +9566,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-06-27T12:03:28.816Z",
+  "generated_at": "2026-06-27T18:08:51.677Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
