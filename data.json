@@ -2,7 +2,7 @@
   "kpis": {
     "income": 16362.03,
     "income_period": "June 2026",
-    "true_outflows": 5903.71,
+    "true_outflows": 5956.64,
     "outflows_period": "June 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -28,7 +28,7 @@
       "payroll": 0
     },
     "discover": {
-      "balance": 3721.77,
+      "balance": 3735.83,
       "is_credit": true,
       "period_label": "Live"
     },
@@ -270,7 +270,7 @@
       "mask": "0494",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 3721.77,
+      "balance": 3735.83,
       "available": null,
       "is_credit": true,
       "is_checking": false,
@@ -279,7 +279,7 @@
     {
       "bank": "Robinhood",
       "nickname": "robin_2",
-      "name": "Robinhood Checking",
+      "name": "Checking",
       "mask": "6390",
       "type": "depository",
       "subtype": "checking",
@@ -292,7 +292,7 @@
     {
       "bank": "Robinhood",
       "nickname": "robin_2",
-      "name": "Robinhood Savings",
+      "name": "Savings",
       "mask": "6644",
       "type": "depository",
       "subtype": "savings",
@@ -318,7 +318,7 @@
     {
       "bank": "Robinhood",
       "nickname": "robin_2",
-      "name": "Robinhood Credit Card",
+      "name": "Robinhood Credit Card **8479",
       "mask": "8479",
       "type": "credit",
       "subtype": "credit card",
@@ -331,8 +331,8 @@
   ],
   "net_worth": {
     "total_checking": 81189.72638256,
-    "total_credit": 5497.25,
-    "net": 75692.47638256
+    "total_credit": 5511.3099999999995,
+    "net": 75678.41638256
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -348,7 +348,7 @@
     "Shopping": 14016.419999999998,
     "Entertainment": 2182.26,
     "Tax/Professional": 18792.709999999995,
-    "Groceries": 2742.4,
+    "Groceries": 2795.33,
     "Restaurants": 2717.9,
     "Gas/Travel": 6516.090000000001,
     "Refund": -3379.1000000000004,
@@ -602,7 +602,16 @@
       "period_label": "May 2026"
     }
   ],
-  "pending_transactions": [],
+  "pending_transactions": [
+    {
+      "date": "06-26",
+      "desc": "ShopRite",
+      "amount": 52.93,
+      "category": "Groceries",
+      "bank": "BofA",
+      "pending": true
+    }
+  ],
   "detected_recurring": [
     {
       "desc": "Best Buy",
@@ -647,9 +656,9 @@
     {
       "desc": "ShopRite",
       "category": "Groceries",
-      "count": 16,
+      "count": 17,
       "months": 6,
-      "avg_amount": 29.57,
+      "avg_amount": 30.94,
       "last_amount": 21.75
     },
     {
@@ -1230,7 +1239,7 @@
       "income": 16362.029999999999,
       "bofa_income": 16362.029999999999,
       "td_income": 0,
-      "outflows": 5903.71,
+      "outflows": 5956.64,
       "xoom": 0,
       "investments": 0
     }
@@ -7227,9 +7236,9 @@
         "Restaurants": 352.42999999999995,
         "Tax/Professional": 621.3900000000001,
         "Gas/Travel": 830.99,
-        "Groceries": 202.03
+        "Groceries": 254.96
       },
-      "total": 5903.709999999998,
+      "total": 5956.6399999999985,
       "transactions": [
         {
           "date": "06-01",
@@ -7984,6 +7993,19 @@
           "mask": "2776",
           "pending": false,
           "refund": true
+        },
+        {
+          "date": "06-26",
+          "desc": "ShopRite",
+          "amount": 52.93,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
         },
         {
           "date": "06-04",
@@ -9531,7 +9553,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-06-27T00:13:34.147Z",
+  "generated_at": "2026-06-27T12:03:28.816Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
