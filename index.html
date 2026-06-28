@@ -442,6 +442,7 @@ var _chartInst = null;
 var BANK_NAMES = {
   bofa:'Bank of America', wifebofa:'Bank of America · Wife', wf:'Wells Fargo',
   td:'TD Bank', pnc:'PNC', discover:'Discover', amex:'Amex', chase:'Chase',
+  zillow:'Rocket Mortgage', rocket:'Rocket Mortgage',
   robin:'Robinhood', robin_2:'Robinhood', myrobin:'Robinhood · Brokerage'
 };
 function bankKeyOf(a){ return (a.nickname || a._nickname || a.bank || '?').toString().toLowerCase(); }
@@ -588,7 +589,7 @@ function renderOverview() {
   html += '<div class="kpi-row">';
   html += mkKpi('NET WORTH', fmt(netWorth), netWorth >= 0 ? 'var(--green)' : 'var(--red)', 'tap for breakdown', 'showNetWorth()');
   html += mkKpi('CHECKING', fmt(checkingBal), 'var(--blue)', 'savings + brokerage', 'showChecking()');
-  html += mkKpi('CREDIT OWED', fmt(creditBal), 'var(--red)', 'cards balance', 'showCredit()');
+  html += mkKpi('CREDIT OWED', fmt(creditBal + loanBal), 'var(--red)', loanBal>0 ? 'cards + loans/mortgage' : 'cards balance', 'showCredit()');
   html += '</div>';
 
   // Text insights — what moved net worth, MoM + last 7 days
@@ -948,10 +949,10 @@ function showChecking() {
   openModal('Checking & Savings', 'Deposit and investment accounts', b);
 }
 function showCredit() {
-  var a = (D.all_accounts||[]).filter(function(x){return x.is_credit;});
+  var a = (D.all_accounts||[]).filter(function(x){return x.is_credit || x.type==='loan';});
   var b = '';
   a.forEach(function(x){b += acctLine(x);});
-  openModal('Credit Cards', 'Amount owed', b);
+  openModal('Owed · Cards & Loans', 'Credit cards + loans / mortgage', b);
 }
 
 function renderAccounts() {
