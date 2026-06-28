@@ -52,6 +52,7 @@
       "balance": 48282.35638256,
       "available": 782.34,
       "is_credit": false,
+      "is_loan": false,
       "is_checking": false,
       "is_savings": false
     },
@@ -65,6 +66,7 @@
       "balance": 0,
       "available": 21000,
       "is_credit": true,
+      "is_loan": false,
       "is_checking": false,
       "is_savings": false
     },
@@ -78,6 +80,7 @@
       "balance": 30.63,
       "available": 30.63,
       "is_credit": false,
+      "is_loan": false,
       "is_checking": true,
       "is_savings": false
     },
@@ -91,6 +94,7 @@
       "balance": 56.98,
       "available": 56.98,
       "is_credit": false,
+      "is_loan": false,
       "is_checking": false,
       "is_savings": true
     },
@@ -104,6 +108,7 @@
       "balance": 54.97,
       "available": 54.97,
       "is_credit": false,
+      "is_loan": false,
       "is_checking": true,
       "is_savings": false
     },
@@ -117,6 +122,7 @@
       "balance": 514.68,
       "available": 514.68,
       "is_credit": false,
+      "is_loan": false,
       "is_checking": false,
       "is_savings": true
     },
@@ -130,6 +136,7 @@
       "balance": 826.09,
       "available": 4273,
       "is_credit": true,
+      "is_loan": false,
       "is_checking": false,
       "is_savings": false
     },
@@ -143,6 +150,7 @@
       "balance": 500.94,
       "available": 500.94,
       "is_credit": false,
+      "is_loan": false,
       "is_checking": true,
       "is_savings": false
     },
@@ -156,6 +164,7 @@
       "balance": 0,
       "available": 995,
       "is_credit": true,
+      "is_loan": false,
       "is_checking": false,
       "is_savings": false
     },
@@ -169,6 +178,7 @@
       "balance": 484.21,
       "available": 2487,
       "is_credit": true,
+      "is_loan": false,
       "is_checking": false,
       "is_savings": false
     },
@@ -182,6 +192,7 @@
       "balance": 69,
       "available": 69,
       "is_credit": false,
+      "is_loan": false,
       "is_checking": true,
       "is_savings": false
     },
@@ -195,6 +206,7 @@
       "balance": 0,
       "available": 8500,
       "is_credit": true,
+      "is_loan": false,
       "is_checking": false,
       "is_savings": false
     },
@@ -208,6 +220,7 @@
       "balance": 18.03,
       "available": 18.03,
       "is_credit": false,
+      "is_loan": false,
       "is_checking": true,
       "is_savings": false
     },
@@ -221,6 +234,7 @@
       "balance": 30.63,
       "available": 30.63,
       "is_credit": false,
+      "is_loan": false,
       "is_checking": true,
       "is_savings": false
     },
@@ -234,6 +248,7 @@
       "balance": 264.03,
       "available": 435.97,
       "is_credit": true,
+      "is_loan": false,
       "is_checking": false,
       "is_savings": false
     },
@@ -247,6 +262,7 @@
       "balance": 56.98,
       "available": 56.98,
       "is_credit": false,
+      "is_loan": false,
       "is_checking": false,
       "is_savings": true
     },
@@ -260,6 +276,7 @@
       "balance": 14725.93,
       "available": 14725.93,
       "is_credit": false,
+      "is_loan": false,
       "is_checking": true,
       "is_savings": false
     },
@@ -273,6 +290,7 @@
       "balance": 387165.29,
       "available": null,
       "is_credit": false,
+      "is_loan": true,
       "is_checking": false,
       "is_savings": false
     },
@@ -286,6 +304,7 @@
       "balance": 3735.83,
       "available": null,
       "is_credit": true,
+      "is_loan": false,
       "is_checking": false,
       "is_savings": false
     },
@@ -299,6 +318,7 @@
       "balance": 0,
       "available": null,
       "is_credit": false,
+      "is_loan": false,
       "is_checking": true,
       "is_savings": false
     },
@@ -312,6 +332,7 @@
       "balance": 15236.76,
       "available": 15236.76,
       "is_credit": false,
+      "is_loan": false,
       "is_checking": false,
       "is_savings": true
     },
@@ -325,6 +346,7 @@
       "balance": 1611.84,
       "available": 169.22,
       "is_credit": false,
+      "is_loan": false,
       "is_checking": false,
       "is_savings": false
     },
@@ -338,6 +360,7 @@
       "balance": 201.15,
       "available": 2798,
       "is_credit": true,
+      "is_loan": false,
       "is_checking": false,
       "is_savings": false
     }
@@ -345,7 +368,8 @@
   "net_worth": {
     "total_checking": 81189.72638256,
     "total_credit": 5511.3099999999995,
-    "net": 75678.41638256
+    "total_loans": 387165.29,
+    "net": -311486.87361744
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -9600,7 +9624,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-06-28T02:27:38.987Z",
+  "generated_at": "2026-06-28T02:59:22.836Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
