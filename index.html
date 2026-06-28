@@ -775,14 +775,50 @@ function showTxns(title, txns, col) {
   openModal(title, sorted.length+' transactions', b);
 }
 
-// ── My Net Worth — private, password-gated manual savings ─────────────────
-// Stored in localStorage (screen-level privacy, not cryptographic). Total feeds
-// the Overview NET WORTH KPI; entries are only viewable after unlocking.
+// ── My Net Worth — private, password-gated, sourced LIVE from a Google Sheet ──
+// Reads a published CSV (Category, USD Amount) so edits in the sheet appear in
+// the app. Grand total feeds the Overview NET WORTH KPI; the table + pie chart
+// are shown only after the (per-browser) password is entered.
 var MYNW_UNLOCKED = false;
+var SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSV45yHGbG6isPhrJh8aJ8SKyMtj1t3O0XI0FKkoP7-4x4KQOVKfGyZ9ack2uP8aodk-a3SDkZ6Qnrb/pub?gid=769710320&single=true&output=csv';
+var SAVINGS_ROWS = [], SAVINGS_TOTAL = 0, SAVINGS_LOADED = false, SAVINGS_ERR = null, _savFetching = false, _savChart = null;
+var PIE_COLORS = ['#00d084','#4da8ff','#a78bfa','#ff8c42','#f5c518','#ff4060','#67e8f9','#c084fc','#34d399','#fb923c','#e879f9','#60d0ff','#c8f060','#f87171','#818cf8','#10b981'];
 function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
-function loadSavings(){ try { return JSON.parse(localStorage.getItem('lgr_savings')||'[]'); } catch(e){ return []; } }
-function saveSavings(arr){ try { localStorage.setItem('lgr_savings', JSON.stringify(arr)); } catch(e){} }
-function savingsTotal(){ return loadSavings().reduce(function(s,x){ return s + (Number(x.amount)||0); }, 0); }
+function savingsTotal(){ return SAVINGS_TOTAL; }
+function parseMoney(s){ var n=parseFloat(String(s==null?'':s).replace(/[^0-9.\-]/g,'')); return isNaN(n)?0:n; }
+function parseCSV(text){
+  var rows=[], row=[], cur='', q=false;
+  for(var i=0;i<text.length;i++){
+    var c=text[i];
+    if(q){ if(c==='"'){ if(text[i+1]==='"'){ cur+='"'; i++; } else q=false; } else cur+=c; }
+    else if(c==='"') q=true;
+    else if(c===','){ row.push(cur); cur=''; }
+    else if(c==='\n'){ row.push(cur); rows.push(row); row=[]; cur=''; }
+    else if(c!=='\r') cur+=c;
+  }
+  if(cur!=='' || row.length){ row.push(cur); rows.push(row); }
+  return rows;
+}
+function fetchSavings(){
+  if(_savFetching) return Promise.resolve();
+  _savFetching = true; SAVINGS_ERR = null;
+  return fetch(SHEET_CSV_URL + '&_=' + Date.now())
+    .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
+    .then(function(txt){
+      var out = [];
+      parseCSV(txt).forEach(function(r, idx){
+        var cat = (r[0]||'').trim();
+        if(!cat) return;
+        if(idx===0 && /category/i.test(cat)) return; // header row
+        out.push({ category: cat, amount: parseMoney(r[1]) });
+      });
+      SAVINGS_ROWS = out;
+      SAVINGS_TOTAL = out.reduce(function(s,x){ return s + x.amount; }, 0);
+      SAVINGS_LOADED = true;
+    })
+    .catch(function(e){ SAVINGS_ERR = e.message || 'Could not load sheet'; })
+    .then(function(){ _savFetching = false; if(TAB==='mynw' || TAB==='overview') render(); });
+}
 function mynwHash(){ return localStorage.getItem('lgr_mynw_hash') || ''; }
 function sha256(str){
   if(window.crypto && crypto.subtle && crypto.subtle.digest){
@@ -802,22 +838,7 @@ function mynwUnlock(){
   });
 }
 function mynwLock(){ MYNW_UNLOCKED = false; render(); }
-function mynwAdd(){
-  var d=$('mynw-desc'), a=$('mynw-amt');
-  var desc=(d && d.value || '').trim();
-  var amt=parseFloat(a && a.value);
-  if(!desc){ if(d) d.focus(); return; }
-  if(isNaN(amt)){ if(a) a.focus(); return; }
-  var arr = loadSavings();
-  arr.push({ id: (_savId++) + '_' + arr.length, desc: desc, amount: amt });
-  saveSavings(arr);
-  render();
-}
-var _savId = 1000;
-function mynwDelete(id){
-  saveSavings(loadSavings().filter(function(x){ return String(x.id) !== String(id); }));
-  render();
-}
+function mynwRefresh(){ SAVINGS_LOADED = false; if(_savChart){ _savChart.destroy(); _savChart=null; } fetchSavings(); render(); }
 function renderMyNetworth(){
   var html='';
   if(!MYNW_UNLOCKED){
@@ -825,7 +846,7 @@ function renderMyNetworth(){
     html += '<div class="panel" style="max-width:400px;margin:48px auto;text-align:center">';
     html += '<div style="font-size:34px;margin-bottom:10px">&#128274;</div>';
     html += '<div class="panel-title" style="margin-bottom:6px;text-align:center">' + (firstTime ? 'Set a Password' : 'My Net Worth · Locked') + '</div>';
-    html += '<div style="font-size:12px;color:var(--muted);margin-bottom:16px;line-height:1.5">' + (firstTime ? 'Create a password to protect your private savings.<br>Keep it safe — there is no recovery.' : 'Enter your password to view your private savings.') + '</div>';
+    html += '<div style="font-size:12px;color:var(--muted);margin-bottom:16px;line-height:1.5">' + (firstTime ? 'Create a password to protect this tab.<br>Keep it safe — there is no recovery.' : 'Enter your password to view your savings.') + '</div>';
     html += '<input id="mynw-pass" type="password" placeholder="Password" autocomplete="off" onkeydown="if(event.key===\'Enter\')mynwUnlock()" style="width:100%;padding:11px;background:var(--s2);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:14px;margin-bottom:10px;box-sizing:border-box">';
     html += '<button onclick="mynwUnlock()" style="width:100%;padding:11px;background:var(--green);color:#000;border:none;border-radius:6px;font-weight:600;font-size:13px;cursor:pointer">' + (firstTime ? 'Set Password &amp; Unlock' : 'Unlock') + '</button>';
     html += '<div id="mynw-err" style="font-size:12px;color:var(--red);margin-top:10px"></div>';
@@ -834,25 +855,70 @@ function renderMyNetworth(){
     setTimeout(function(){ var p=$('mynw-pass'); if(p) p.focus(); }, 60);
     return;
   }
-  var arr = loadSavings(), total = savingsTotal();
-  html += '<div class="kpi-row"><div class="kpi" style="cursor:default"><div class="kpi-label">PRIVATE SAVINGS</div><div class="kpi-val" style="color:var(--green)">' + fmt2(total) + '</div><div class="kpi-sub">' + arr.length + (arr.length===1?' entry':' entries') + ' · in net worth</div></div></div>';
-  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Add Savings</div><button onclick="mynwLock()" style="background:none;border:none;color:var(--muted);font-size:11px;font-family:IBM Plex Mono,monospace;cursor:pointer">&#128274; Lock</button></div>';
-  html += '<div style="display:flex;gap:8px;flex-wrap:wrap">';
-  html += '<input id="mynw-desc" placeholder="Description (e.g. Gold, FD, Cash)" style="flex:2;min-width:150px;padding:10px;background:var(--s2);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:13px">';
-  html += '<input id="mynw-amt" type="number" step="0.01" placeholder="Amount" onkeydown="if(event.key===\'Enter\')mynwAdd()" style="flex:1;min-width:100px;padding:10px;background:var(--s2);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:13px">';
-  html += '<button onclick="mynwAdd()" style="padding:10px 18px;background:var(--green);color:#000;border:none;border-radius:6px;font-weight:600;font-size:13px;cursor:pointer">Add</button>';
-  html += '</div><div style="font-size:10px;color:var(--muted);margin-top:8px">Added amounts are included in your Overview net worth. Details stay hidden until unlocked.</div></div>';
-  html += '<div class="panel"><div class="panel-head"><div class="panel-title">My Savings</div><div class="panel-action" style="color:var(--green)">' + fmt2(total) + '</div></div>';
-  if(!arr.length){ html += '<div style="color:var(--muted);font-size:13px;padding:8px 0">No savings added yet. Add your first above.</div>'; }
-  else {
-    arr.slice().reverse().forEach(function(x){
-      html += '<div class="row"><div class="row-label">' + esc(x.desc) + '</div>';
-      html += '<div style="display:flex;align-items:center;gap:14px"><div class="row-amt" style="color:var(--green)">' + fmt2(x.amount) + '</div>';
-      html += '<button onclick="mynwDelete(\'' + esc(String(x.id)) + '\')" class="edit-btn" style="color:var(--red)" title="Delete">&#10005;</button></div></div>';
-    });
+  if(!SAVINGS_LOADED && !SAVINGS_ERR){
+    fetchSavings();
+    set('main-content', '<div style="display:flex;align-items:center;justify-content:center;height:200px;font-size:13px;color:var(--muted);font-family:IBM Plex Mono,monospace">Loading from Google Sheet…</div>');
+    return;
   }
+  if(SAVINGS_ERR){
+    html += '<div class="panel" style="max-width:460px;margin:40px auto;text-align:center"><div class="panel-title" style="text-align:center;margin-bottom:8px;color:var(--red)">Couldn’t load the sheet</div>';
+    html += '<div style="font-size:12px;color:var(--muted);margin-bottom:14px">' + esc(SAVINGS_ERR) + '</div>';
+    html += '<button onclick="mynwRefresh()" style="padding:9px 18px;background:var(--green);color:#000;border:none;border-radius:6px;font-weight:600;cursor:pointer">Retry</button></div>';
+    set('main-content', html); return;
+  }
+  var rows = SAVINGS_ROWS.slice().sort(function(a,b){ return b.amount - a.amount; });
+  var total = SAVINGS_TOTAL;
+  var pieRows = rows.filter(function(x){ return x.amount > 0; });
+  var top = pieRows[0];
+  var topPct = (top && total) ? (top.amount/total*100) : 0;
+
+  // KPI
+  html += '<div class="kpi-row"><div class="kpi" style="cursor:default"><div class="kpi-label">TOTAL SAVINGS</div><div class="kpi-val" style="color:var(--green)">' + fmt2(total) + '</div><div class="kpi-sub">' + rows.length + ' categories · in net worth</div></div>';
+  if(top){ html += '<div class="kpi" style="cursor:default"><div class="kpi-label">LARGEST</div><div class="kpi-val" style="color:var(--green);font-size:18px">' + esc(top.category) + '</div><div class="kpi-sub">' + topPct.toFixed(1) + '% of savings</div></div>'; }
   html += '</div>';
+
+  // Pie chart
+  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Allocation</div><button onclick="mynwLock()" style="background:none;border:none;color:var(--muted);font-size:11px;font-family:IBM Plex Mono,monospace;cursor:pointer">&#128274; Lock</button></div>';
+  html += '<div style="position:relative;height:300px"><canvas id="savPie"></canvas></div></div>';
+
+  // Table
+  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Savings Breakdown</div>';
+  html += '<button onclick="mynwRefresh()" class="panel-action" style="background:none;border:none;color:var(--muted);cursor:pointer">&#8635; Refresh</button></div>';
+  html += '<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:13px">';
+  html += '<thead><tr><th style="text-align:left;padding:8px 10px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--border);font-weight:500">Category</th>';
+  html += '<th style="text-align:right;padding:8px 10px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--border);font-weight:500">USD Amount</th></tr></thead><tbody>';
+  rows.forEach(function(x, i){
+    var col = PIE_COLORS[pieRows.indexOf(x) % PIE_COLORS.length];
+    var dot = x.amount > 0 ? '<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:' + col + ';margin-right:8px;vertical-align:middle"></span>' : '<span style="display:inline-block;width:8px;margin-right:8px"></span>';
+    html += '<tr style="border-bottom:1px solid var(--border2)"><td style="padding:9px 10px">' + dot + esc(x.category) + '</td>';
+    html += '<td style="padding:9px 10px;text-align:right;font-family:IBM Plex Mono,monospace">' + fmt2(x.amount) + '</td></tr>';
+  });
+  html += '<tr style="background:var(--s2);border-top:2px solid var(--border)"><td style="padding:10px;font-weight:700">Grand Total</td>';
+  html += '<td style="padding:10px;text-align:right;font-family:IBM Plex Mono,monospace;font-weight:700;color:var(--green)">' + fmt2(total) + '</td></tr>';
+  html += '</tbody></table></div>';
+  html += '<div style="font-size:10px;color:var(--muted);margin-top:8px">&#128274; Synced live from your Google Sheet · included in Overview net worth</div></div>';
+
   set('main-content', html);
+
+  setTimeout(function(){
+    var ctx = $('savPie'); if(!ctx) return;
+    if(_savChart){ _savChart.destroy(); _savChart = null; }
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    var labels = pieRows.map(function(x){ return x.category; });
+    var data = pieRows.map(function(x){ return x.amount; });
+    var pieTotal = data.reduce(function(s,v){ return s+v; }, 0);
+    _savChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: { labels: labels, datasets: [{ data: data, backgroundColor: PIE_COLORS, borderColor: isDark ? '#13131c' : '#ffffff', borderWidth: 2 }] },
+      options: {
+        responsive: true, maintainAspectRatio: false, cutout: '58%',
+        plugins: {
+          legend: { position: 'right', labels: { color: isDark ? '#e8e8f0' : '#111118', font: { family: 'IBM Plex Sans', size: 11 }, boxWidth: 12, padding: 8 } },
+          tooltip: { callbacks: { label: function(c){ var v=c.raw, pct=pieTotal? (v/pieTotal*100):0; return ' ' + c.label + ': ' + fmt2(v) + ' (' + pct.toFixed(1) + '%)'; } } }
+        }
+      }
+    });
+  }, 80);
 }
 
 function showNetWorth() {
@@ -1786,6 +1852,7 @@ function loadData() {
 
 buildNav();
 loadData();
+fetchSavings(); // pull the Google-Sheet savings total so Net Worth includes it
 </script>
 </body>
 </html>
