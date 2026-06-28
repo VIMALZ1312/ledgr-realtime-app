@@ -150,11 +150,12 @@ function buildStructuredData(accounts, transactions) {
   const allAccountsList = accounts.map(a => ({
     bank: NICK_TO_BANK[a._nickname] || a._nickname, nickname: a._nickname, name: a.name, mask: a.mask,
     type: a.type, subtype: a.subtype, balance: a.balances?.current || 0, available: a.balances?.available || null,
-    is_credit: a.type === 'credit', is_checking: a.subtype === 'checking', is_savings: a.subtype === 'savings',
+    is_credit: a.type === 'credit', is_loan: a.type === 'loan', is_checking: a.subtype === 'checking', is_savings: a.subtype === 'savings',
   }));
   const totalChecking = allAccountsList.filter(a => ['checking', 'savings', 'brokerage'].includes(a.subtype)).reduce((s, a) => s + a.balance, 0);
   const totalCredit = allAccountsList.filter(a => a.is_credit && a.balance > 0).reduce((s, a) => s + a.balance, 0);
-  const netWorth = totalChecking - totalCredit;
+  const totalLoans = allAccountsList.filter(a => a.type === 'loan' && a.balance > 0).reduce((s, a) => s + a.balance, 0);
+  const netWorth = totalChecking - totalCredit - totalLoans;
   const bofaAccts = allAccountsList.filter(a => a.bank === 'BofA');
   const wfAccts = allAccountsList.filter(a => a.bank === 'Wells Fargo');
   const tdAccts = allAccountsList.filter(a => a.bank === 'TD Bank');
@@ -276,7 +277,7 @@ function buildStructuredData(accounts, transactions) {
       icici_savings: { balance_inr: 0, balance_usd: 0 }, icici_loan: { casagrand_emi_inr: 0, casagrand_emi_usd: 0 },
     },
     all_accounts: allAccountsList,
-    net_worth: { total_checking: totalChecking, total_credit: totalCredit, net: netWorth },
+    net_worth: { total_checking: totalChecking, total_credit: totalCredit, total_loans: totalLoans, net: netWorth },
     india: { hdfc_usd: 283.43, casagrand_usd: 755.0, pnb_usd: 35.66, yes_bank_usd: 9.58, total_usd: 1083.67, by_month: [] },
     spending: Object.values(monthlySpending).reduce((acc, ms) => { Object.entries(ms.categories).forEach(([c, v]) => acc[c] = (acc[c] || 0) + v); return acc; }, {}),
     zelle_received: zelle, pending_transactions: pendingTxns, detected_recurring: detectedRecurring,

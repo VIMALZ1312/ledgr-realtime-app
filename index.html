@@ -578,9 +578,10 @@ function renderOverview() {
   var nw = D.net_worth || {};
   var allAccts = D.all_accounts || [];
   // Always compute from all_accounts — server value excludes wifebofa/myrobin
-  var checkingBal = allAccts.filter(function(a){return !a.is_credit;}).reduce(function(s,a){return s+a.balance;},0);
+  var checkingBal = allAccts.filter(function(a){return !a.is_credit && a.type!=='loan';}).reduce(function(s,a){return s+a.balance;},0);
   var creditBal = allAccts.filter(function(a){return a.is_credit&&a.balance>0;}).reduce(function(s,a){return s+a.balance;},0);
-  var netWorth = checkingBal - creditBal + savingsTotal(); // includes private My Net Worth savings
+  var loanBal = allAccts.filter(function(a){return a.type==='loan';}).reduce(function(s,a){return s+a.balance;},0);
+  var netWorth = checkingBal - creditBal - loanBal + savingsTotal(); // assets − cards − loans + private savings
 
   // Connected banks strip — on top so missing banks are obvious
   var html = renderBanksStrip(allAccts);
@@ -749,8 +750,9 @@ function mkKpi(lbl, val, col, sub, fn) {
   return '<div class="kpi" onclick="' + fn + '"><div class="kpi-label">' + lbl + '</div><div class="kpi-val" style="color:' + col + '">' + val + '</div><div class="kpi-sub">' + sub + ' &rsaquo;</div></div>';
 }
 function acctLine(a) {
-  var col = a.is_credit && a.balance > 0 ? 'var(--red)' : 'var(--green)';
-  var sign = a.is_credit && a.balance > 0 ? '-' : '';
+  var owed = (a.is_credit || a.type === 'loan') && a.balance > 0;
+  var col = owed ? 'var(--red)' : 'var(--green)';
+  var sign = owed ? '-' : '';
   var name = a.name.replace(/\s*\.\.\.\d{4}/g, '').trim();
   return '<div style="display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:1px solid var(--border2);font-size:13px"><div><div>' + name + ' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted)">xx' + a.mask + '</span></div><div style="font-size:11px;color:var(--muted)">' + a.bank + ' ' + a.subtype + '</div></div><div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:' + col + '">' + sign + fmt2(Math.abs(a.balance)) + '</div></div>';
 }
@@ -924,9 +926,14 @@ function renderMyNetworth(){
 function showNetWorth() {
   var a = D.all_accounts || [];
   var b = '<div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px">ASSETS</div>';
-  a.filter(function(x){return !x.is_credit;}).forEach(function(x){b += acctLine(x);});
+  a.filter(function(x){return !x.is_credit && x.type!=='loan';}).forEach(function(x){b += acctLine(x);});
   b += '<div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin:12px 0 8px">CREDIT CARDS OWED</div>';
   a.filter(function(x){return x.is_credit && x.balance > 0;}).forEach(function(x){b += acctLine(x);});
+  var loans = a.filter(function(x){return x.type==='loan' && x.balance>0;});
+  if(loans.length){
+    b += '<div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin:12px 0 8px">LOANS / MORTGAGE (OWED)</div>';
+    loans.forEach(function(x){ b += acctLine(x); });
+  }
   var sv = savingsTotal();
   if(sv !== 0) {
     b += '<div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin:12px 0 8px">PRIVATE SAVINGS</div>';
@@ -935,7 +942,7 @@ function showNetWorth() {
   openModal('Net Worth', 'All accounts', b);
 }
 function showChecking() {
-  var a = (D.all_accounts||[]).filter(function(x){return !x.is_credit;});
+  var a = (D.all_accounts||[]).filter(function(x){return !x.is_credit && x.type!=='loan';});
   var b = '';
   a.forEach(function(x){b += acctLine(x);});
   openModal('Checking & Savings', 'Deposit and investment accounts', b);
