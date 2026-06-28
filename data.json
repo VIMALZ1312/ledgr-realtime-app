@@ -1,22 +1,22 @@
 {
   "kpis": {
-    "income": 16362.03,
+    "income": 16362.05,
     "income_period": "June 2026",
-    "true_outflows": 6045.48,
+    "true_outflows": 6079.04,
     "outflows_period": "June 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 15470.800000000001,
+      "balance": 15470.82,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
       "outflows": 0
     },
     "wf": {
-      "balance": 1310.3,
+      "balance": 1343.8600000000001,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 500.94
@@ -119,8 +119,8 @@
       "mask": "8206",
       "type": "depository",
       "subtype": "savings",
-      "balance": 514.68,
-      "available": 514.68,
+      "balance": 514.7,
+      "available": 514.7,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -161,8 +161,8 @@
       "mask": "8036",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 0,
-      "available": 995,
+      "balance": 5.32,
+      "available": 994,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -175,8 +175,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 484.21,
-      "available": 2487,
+      "balance": 512.45,
+      "available": 1626,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 81189.72638256,
-    "total_credit": 5511.3099999999995,
+    "total_checking": 81189.74638256,
+    "total_credit": 5544.87,
     "total_loans": 387165.29,
-    "net": -311486.87361744
+    "net": -311520.41361744
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -382,8 +382,8 @@
   "spending": {
     "Healthcare": 2716.62,
     "Tech/Subs": 12553.52,
-    "Shopping": 14091.199999999999,
-    "Entertainment": 2182.26,
+    "Shopping": 14096.519999999999,
+    "Entertainment": 2210.5,
     "Tax/Professional": 18792.709999999995,
     "Groceries": 2795.33,
     "Restaurants": 2731.96,
@@ -715,6 +715,14 @@
       "last_amount": 53.3
     },
     {
+      "desc": "Regal Cinemas",
+      "category": "Entertainment",
+      "count": 12,
+      "months": 6,
+      "avg_amount": 14.92,
+      "last_amount": 28.24
+    },
+    {
       "desc": "CVS ExtraCare",
       "category": "Healthcare",
       "count": 6,
@@ -781,18 +789,10 @@
     {
       "desc": "Apple",
       "category": "Shopping",
-      "count": 15,
+      "count": 16,
       "months": 5,
-      "avg_amount": 19.68,
-      "last_amount": 31.98
-    },
-    {
-      "desc": "Regal Cinemas",
-      "category": "Entertainment",
-      "count": 11,
-      "months": 5,
-      "avg_amount": 13.7,
-      "last_amount": 1.59
+      "avg_amount": 18.78,
+      "last_amount": 5.32
     },
     {
       "desc": "Planet Fitness",
@@ -1281,10 +1281,10 @@
     {
       "period": "2026-06",
       "period_label": "June 2026",
-      "income": 16362.029999999999,
-      "bofa_income": 16362.029999999999,
+      "income": 16362.05,
+      "bofa_income": 16362.05,
       "td_income": 0,
-      "outflows": 6045.48,
+      "outflows": 6079.04,
       "xoom": 0,
       "investments": 0
     }
@@ -7274,16 +7274,16 @@
       "period": "2026-06",
       "categories": {
         "Tech/Subs": 1631.5,
-        "Entertainment": 659.9100000000001,
+        "Entertainment": 688.15,
         "Healthcare": 1227.16,
         "Refund": -346.76000000000005,
-        "Shopping": 799.84,
+        "Shopping": 805.1600000000002,
         "Restaurants": 366.48999999999995,
         "Tax/Professional": 621.3900000000001,
         "Gas/Travel": 830.99,
         "Groceries": 254.96
       },
-      "total": 6045.479999999999,
+      "total": 6079.039999999998,
       "transactions": [
         {
           "date": "06-01",
@@ -7825,6 +7825,32 @@
           "category": "Tech/Subs",
           "city": null,
           "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-25",
+          "desc": "Apple",
+          "amount": 5.32,
+          "category": "Shopping",
+          "city": null,
+          "state": "CA",
+          "bank": "Wells Fargo",
+          "account_id": "dM5Ed30xEot9Ap000VOXuYRQY0X87ASg8Zep8",
+          "mask": "8036",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-25",
+          "desc": "Regal Cinemas",
+          "amount": 28.24,
+          "category": "Entertainment",
+          "city": null,
+          "state": "TN",
           "bank": "Wells Fargo",
           "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
           "mask": "9762",
@@ -9296,6 +9322,26 @@
       "period_label": "June 2026"
     },
     {
+      "date": "06-25",
+      "desc": "Apple",
+      "amount": 5.32,
+      "category": "Shopping",
+      "city": null,
+      "state": "CA",
+      "period": "2026-06",
+      "period_label": "June 2026"
+    },
+    {
+      "date": "06-25",
+      "desc": "Regal Cinemas",
+      "amount": 28.24,
+      "category": "Entertainment",
+      "city": null,
+      "state": "TN",
+      "period": "2026-06",
+      "period_label": "June 2026"
+    },
+    {
       "date": "04-09",
       "desc": "Trendia Trendia.co",
       "amount": 178.01,
@@ -9624,7 +9670,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-06-28T03:45:22.924Z",
+  "generated_at": "2026-06-28T06:07:34.552Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
