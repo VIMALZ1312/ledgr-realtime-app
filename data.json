@@ -50,7 +50,7 @@
       "type": "investment",
       "subtype": "brokerage",
       "balance": 48282.35638256,
-      "available": 782.34,
+      "available": 6622.76,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -9662,7 +9662,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-06-29T06:07:00.347Z",
+  "generated_at": "2026-06-29T12:10:41.489Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
