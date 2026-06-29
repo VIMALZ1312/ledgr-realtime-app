@@ -245,8 +245,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 264.03,
-      "available": 435.97,
+      "balance": 316.96,
+      "available": 383.04,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -367,9 +367,9 @@
   ],
   "net_worth": {
     "total_checking": 81189.74638256,
-    "total_credit": 5544.87,
+    "total_credit": 5597.799999999999,
     "total_loans": 387165.29,
-    "net": -311520.41361744
+    "net": -311573.34361743997
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -640,14 +640,6 @@
     }
   ],
   "pending_transactions": [
-    {
-      "date": "06-26",
-      "desc": "ShopRite",
-      "amount": 52.93,
-      "category": "Groceries",
-      "bank": "BofA",
-      "pending": true
-    },
     {
       "date": "06-27",
       "desc": "Garden Farm",
@@ -8066,11 +8058,11 @@
           "refund": true
         },
         {
-          "date": "06-26",
-          "desc": "ShopRite",
-          "amount": 52.93,
-          "category": "Groceries",
-          "city": null,
+          "date": "06-27",
+          "desc": "Garden Farm",
+          "amount": 74.78,
+          "category": "Shopping",
+          "city": "Brunswick",
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
@@ -8080,10 +8072,10 @@
         },
         {
           "date": "06-27",
-          "desc": "Garden Farm",
-          "amount": 74.78,
-          "category": "Shopping",
-          "city": "Brunswick",
+          "desc": "ShopRite",
+          "amount": 52.93,
+          "category": "Groceries",
+          "city": null,
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
@@ -9670,7 +9662,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-06-29T00:05:11.557Z",
+  "generated_at": "2026-06-29T06:07:00.347Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
