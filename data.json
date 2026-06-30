@@ -2,7 +2,7 @@
   "kpis": {
     "income": 16362.05,
     "income_period": "June 2026",
-    "true_outflows": 6883.24,
+    "true_outflows": 6919.68,
     "outflows_period": "June 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -49,8 +49,8 @@
       "mask": "5772",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 48282.35638256,
-      "available": 6622.76,
+      "balance": 49340.487210095,
+      "available": 247.2,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -274,7 +274,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 14725.93,
-      "available": 14725.93,
+      "available": 14360.97,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 81222.79638256,
+    "total_checking": 82280.927210095,
     "total_credit": 6461.9,
     "total_loans": 387165.29,
-    "net": -312404.39361743996
+    "net": -311346.26278990495
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -385,7 +385,7 @@
     "Shopping": 14158.73,
     "Entertainment": 2210.5,
     "Tax/Professional": 19277.229999999996,
-    "Groceries": 2795.33,
+    "Groceries": 2831.77,
     "Restaurants": 2822.55,
     "Gas/Travel": 6575.990000000002,
     "Refund": -3379.1000000000004,
@@ -647,6 +647,22 @@
       "category": "Shopping",
       "bank": "BofA",
       "pending": true
+    },
+    {
+      "date": "06-29",
+      "desc": "ShopRite",
+      "amount": 9,
+      "category": "Groceries",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "06-29",
+      "desc": "Delight Big Bazar",
+      "amount": 27.44,
+      "category": "Groceries",
+      "bank": "BofA",
+      "pending": true
     }
   ],
   "detected_recurring": [
@@ -669,10 +685,10 @@
     {
       "desc": "Delight Big Bazar",
       "category": "Groceries",
-      "count": 8,
+      "count": 9,
       "months": 6,
-      "avg_amount": 55.54,
-      "last_amount": 90.7
+      "avg_amount": 52.42,
+      "last_amount": 27.44
     },
     {
       "desc": "Walmart",
@@ -693,9 +709,9 @@
     {
       "desc": "ShopRite",
       "category": "Groceries",
-      "count": 17,
+      "count": 18,
       "months": 6,
-      "avg_amount": 30.94,
+      "avg_amount": 29.72,
       "last_amount": 21.75
     },
     {
@@ -1276,7 +1292,7 @@
       "income": 16362.05,
       "bofa_income": 16362.05,
       "td_income": 0,
-      "outflows": 6883.24,
+      "outflows": 6919.68,
       "xoom": 0,
       "investments": 0
     }
@@ -7273,9 +7289,9 @@
         "Restaurants": 457.08,
         "Tax/Professional": 1105.91,
         "Gas/Travel": 890.89,
-        "Groceries": 254.96
+        "Groceries": 291.40000000000003
       },
-      "total": 6883.239999999999,
+      "total": 6919.6799999999985,
       "transactions": [
         {
           "date": "06-01",
@@ -8217,6 +8233,32 @@
           "date": "06-27",
           "desc": "ShopRite",
           "amount": 52.93,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-29",
+          "desc": "ShopRite",
+          "amount": 9,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-29",
+          "desc": "Delight Big Bazar",
+          "amount": 27.44,
           "category": "Groceries",
           "city": null,
           "state": null,
@@ -9815,7 +9857,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-06-30T00:14:07.117Z",
+  "generated_at": "2026-06-30T06:05:18.655Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
