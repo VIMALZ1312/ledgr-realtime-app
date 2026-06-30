@@ -189,7 +189,7 @@
       "mask": "5961",
       "type": "depository",
       "subtype": "checking",
-      "balance": 69,
+      "balance": 109.71,
       "available": 109.71,
       "is_credit": false,
       "is_loan": false,
@@ -297,7 +297,7 @@
     {
       "bank": "Discover",
       "nickname": "discover",
-      "name": "Discover Card",
+      "name": "Discover it Card",
       "mask": "0494",
       "type": "credit",
       "subtype": "credit card",
@@ -343,8 +343,8 @@
       "mask": "7119",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 1644.89,
-      "available": 47.44,
+      "balance": 1645.04,
+      "available": 1645.04,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 82280.927210095,
+    "total_checking": 82321.78721009499,
     "total_credit": 6461.9,
     "total_loans": 387165.29,
-    "net": -311346.26278990495
+    "net": -311305.40278990497
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -9857,7 +9857,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-06-30T12:10:53.028Z",
+  "generated_at": "2026-06-30T18:11:06.533Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
