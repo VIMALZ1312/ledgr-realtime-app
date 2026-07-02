@@ -2,7 +2,7 @@
   "kpis": {
     "income": 500,
     "income_period": "July 2026",
-    "true_outflows": 483.48,
+    "true_outflows": 481.77,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -49,8 +49,8 @@
       "mask": "5772",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 49393.06141751,
-      "available": 3911.8,
+      "balance": 47867.05112917,
+      "available": 311.8,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 82013.86141751,
+    "total_checking": 80487.85112917,
     "total_credit": 6303.849999999999,
     "total_loans": 387165.29,
-    "net": -311455.27858249
+    "net": -312981.28887083
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -388,7 +388,7 @@
     "Groceries": 2831.77,
     "Restaurants": 2868.55,
     "Gas/Travel": 6641.880000000001,
-    "Refund": -3423.7700000000004,
+    "Refund": -3425.4800000000005,
     "Insurance": 1843.71
   },
   "zelle_received": [
@@ -1334,7 +1334,7 @@
       "income": 500,
       "bofa_income": 500,
       "td_income": 0,
-      "outflows": 483.48,
+      "outflows": 481.77,
       "xoom": 0,
       "investments": 0
     }
@@ -8799,9 +8799,9 @@
       "categories": {
         "Tech/Subs": 445.65999999999997,
         "Shopping": 82.49000000000001,
-        "Refund": -44.67
+        "Refund": -46.38
       },
-      "total": 483.47999999999996,
+      "total": 481.77,
       "transactions": [
         {
           "date": "07-02",
@@ -8880,6 +8880,19 @@
           "mask": "2776",
           "pending": false,
           "refund": false
+        },
+        {
+          "date": "07-01",
+          "desc": "MERCURY*MICIL-IL-NJPPA CA 0630001646091935",
+          "amount": -1.71,
+          "category": "Refund",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
+          "mask": "0494",
+          "pending": false,
+          "refund": true
         }
       ]
     }
@@ -10054,7 +10067,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-02T12:01:18.721Z",
+  "generated_at": "2026-07-02T18:08:39.470Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
