@@ -2,8 +2,8 @@
   "kpis": {
     "income": 500,
     "income_period": "July 2026",
-    "true_outflows": 0,
-    "outflows_period": "",
+    "true_outflows": 483.48,
+    "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
   },
@@ -28,7 +28,7 @@
       "payroll": 0
     },
     "discover": {
-      "balance": 3735.83,
+      "balance": 3734.12,
       "is_credit": true,
       "period_label": "Live"
     },
@@ -106,7 +106,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 54.97,
-      "available": 54.97,
+      "available": -110.69,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -245,8 +245,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 74.78,
-      "available": 625.22,
+      "balance": 111.22,
+      "available": 588.78,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -274,7 +274,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 14360.97,
-      "available": 14360.97,
+      "available": 14080.97,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -301,7 +301,7 @@
       "mask": "0494",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 3735.83,
+      "balance": 3734.12,
       "available": null,
       "is_credit": true,
       "is_loan": false,
@@ -367,9 +367,9 @@
   ],
   "net_worth": {
     "total_checking": 82013.86141751,
-    "total_credit": 6269.12,
+    "total_credit": 6303.849999999999,
     "total_loans": 387165.29,
-    "net": -311420.54858248995
+    "net": -311455.27858249
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -381,14 +381,14 @@
   },
   "spending": {
     "Healthcare": 2824.98,
-    "Tech/Subs": 12589.59,
-    "Shopping": 14158.73,
+    "Tech/Subs": 13035.25,
+    "Shopping": 14241.22,
     "Entertainment": 2210.5,
     "Tax/Professional": 19277.229999999996,
     "Groceries": 2831.77,
     "Restaurants": 2868.55,
     "Gas/Travel": 6641.880000000001,
-    "Refund": -3379.1000000000004,
+    "Refund": -3423.7700000000004,
     "Insurance": 1843.71
   },
   "zelle_received": [
@@ -641,18 +641,18 @@
   ],
   "pending_transactions": [
     {
-      "date": "06-29",
-      "desc": "ShopRite",
-      "amount": 9,
-      "category": "Groceries",
+      "date": "07-02",
+      "desc": "Optimum",
+      "amount": 50.66,
+      "category": "Tech/Subs",
       "bank": "BofA",
       "pending": true
     },
     {
-      "date": "06-29",
-      "desc": "Delight Big Bazar",
-      "amount": 27.44,
-      "category": "Groceries",
+      "date": "07-01",
+      "desc": "Renaissance Gree",
+      "amount": 115,
+      "category": "Tech/Subs",
       "bank": "BofA",
       "pending": true
     },
@@ -671,9 +671,49 @@
       "category": "Gas/Travel",
       "bank": "BofA",
       "pending": true
+    },
+    {
+      "date": "07-02",
+      "desc": "Kumon Of North",
+      "amount": 280,
+      "category": "Tech/Subs",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "07-01",
+      "desc": "Walmart",
+      "amount": 37.82,
+      "category": "Shopping",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "07-01",
+      "desc": "Walmart",
+      "amount": 44.67,
+      "category": "Shopping",
+      "bank": "BofA",
+      "pending": true
     }
   ],
   "detected_recurring": [
+    {
+      "desc": "Walmart",
+      "category": "Refund",
+      "count": 18,
+      "months": 7,
+      "avg_amount": 37.64,
+      "last_amount": 44.67
+    },
+    {
+      "desc": "Kumon Of North",
+      "category": "Tech/Subs",
+      "count": 6,
+      "months": 6,
+      "avg_amount": 280,
+      "last_amount": 280
+    },
     {
       "desc": "Best Buy",
       "category": "Shopping",
@@ -697,14 +737,6 @@
       "months": 6,
       "avg_amount": 52.42,
       "last_amount": 27.44
-    },
-    {
-      "desc": "Walmart",
-      "category": "Refund",
-      "count": 15,
-      "months": 6,
-      "avg_amount": 42.65,
-      "last_amount": -4.97
     },
     {
       "desc": "Walgreens",
@@ -755,14 +787,6 @@
       "last_amount": 391.6
     },
     {
-      "desc": "Kumon Of North",
-      "category": "Tech/Subs",
-      "count": 5,
-      "months": 5,
-      "avg_amount": 280,
-      "last_amount": 280
-    },
-    {
       "desc": "Big Blue Swim School",
       "category": "Tech/Subs",
       "count": 5,
@@ -779,12 +803,28 @@
       "last_amount": 190.62
     },
     {
+      "desc": "Renaissance Gree",
+      "category": "Tech/Subs",
+      "count": 6,
+      "months": 5,
+      "avg_amount": 110.48,
+      "last_amount": 115
+    },
+    {
       "desc": "BP",
       "category": "Gas/Travel",
       "count": 14,
       "months": 5,
       "avg_amount": 52.57,
       "last_amount": 37.21
+    },
+    {
+      "desc": "Optimum",
+      "category": "Tech/Subs",
+      "count": 6,
+      "months": 5,
+      "avg_amount": 50.66,
+      "last_amount": 50.66
     },
     {
       "desc": "Simplisafe",
@@ -835,14 +875,6 @@
       "last_amount": 180
     },
     {
-      "desc": "Renaissance Gree",
-      "category": "Tech/Subs",
-      "count": 5,
-      "months": 4,
-      "avg_amount": 109.57,
-      "last_amount": 115
-    },
-    {
       "desc": "Patel Brothers",
       "category": "Groceries",
       "count": 5,
@@ -857,14 +889,6 @@
       "months": 4,
       "avg_amount": 70.35,
       "last_amount": 55.52
-    },
-    {
-      "desc": "Optimum",
-      "category": "Tech/Subs",
-      "count": 5,
-      "months": 4,
-      "avg_amount": 50.66,
-      "last_amount": 50.66
     },
     {
       "desc": "Shaan Halal Zabiha Meat",
@@ -1310,7 +1334,7 @@
       "income": 500,
       "bofa_income": 500,
       "td_income": 0,
-      "outflows": 0,
+      "outflows": 483.48,
       "xoom": 0,
       "investments": 0
     }
@@ -8287,32 +8311,6 @@
           "refund": false
         },
         {
-          "date": "06-29",
-          "desc": "ShopRite",
-          "amount": 9,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-29",
-          "desc": "Delight Big Bazar",
-          "amount": 27.44,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
           "date": "06-30",
           "desc": "Shaan Halal Meat Grill",
           "amount": 46,
@@ -8343,6 +8341,32 @@
           "desc": "Garden Farm",
           "amount": 74.78,
           "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-30",
+          "desc": "ShopRite",
+          "amount": 9,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-30",
+          "desc": "Delight Big Bazar",
+          "amount": 27.44,
+          "category": "Groceries",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -8764,6 +8788,96 @@
           "bank": "Robinhood",
           "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
           "mask": "8479",
+          "pending": false,
+          "refund": false
+        }
+      ]
+    },
+    "2026-07": {
+      "label": "July 2026",
+      "period": "2026-07",
+      "categories": {
+        "Tech/Subs": 445.65999999999997,
+        "Shopping": 82.49000000000001,
+        "Refund": -44.67
+      },
+      "total": 483.47999999999996,
+      "transactions": [
+        {
+          "date": "07-02",
+          "desc": "Optimum",
+          "amount": 50.66,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
+          "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-01",
+          "desc": "Renaissance Gree",
+          "amount": 115,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
+          "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-02",
+          "desc": "Kumon Of North",
+          "amount": 280,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
+          "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-01",
+          "desc": "Walmart",
+          "amount": 37.82,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-01",
+          "desc": "Walmart",
+          "amount": -44.67,
+          "category": "Refund",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": true
+        },
+        {
+          "date": "07-01",
+          "desc": "Walmart",
+          "amount": 44.67,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
           "pending": false,
           "refund": false
         }
@@ -9940,7 +10054,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-02T00:09:15.682Z",
+  "generated_at": "2026-07-02T06:05:52.322Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
