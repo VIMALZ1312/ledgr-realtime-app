@@ -1,9 +1,9 @@
 {
   "kpis": {
-    "income": 16362.05,
-    "income_period": "June 2026",
-    "true_outflows": 7019.62,
-    "outflows_period": "June 2026",
+    "income": 500,
+    "income_period": "July 2026",
+    "true_outflows": 0,
+    "outflows_period": "",
     "investments": 0,
     "india_total": 1083.67
   },
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 2207.96,
+      "balance": 2257.36,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 500.94
@@ -49,7 +49,7 @@
       "mask": "5772",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 50321.552188175,
+      "balance": 49393.06141751,
       "available": 3911.8,
       "is_credit": false,
       "is_loan": false,
@@ -148,7 +148,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 500.94,
-      "available": 500.94,
+      "available": 1000.94,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -175,8 +175,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 1376.55,
-      "available": 1575,
+      "balance": 1425.95,
+      "available": 1189,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 82942.35218817499,
-    "total_credit": 6219.719999999999,
+    "total_checking": 82013.86141751,
+    "total_credit": 6269.12,
     "total_loans": 387165.29,
-    "net": -310442.657811825
+    "net": -311420.54858248995
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -380,14 +380,14 @@
     "by_month": []
   },
   "spending": {
-    "Healthcare": 2818.6000000000004,
-    "Tech/Subs": 12558.52,
+    "Healthcare": 2824.98,
+    "Tech/Subs": 12589.59,
     "Shopping": 14158.73,
     "Entertainment": 2210.5,
     "Tax/Professional": 19277.229999999996,
     "Groceries": 2831.77,
     "Restaurants": 2868.55,
-    "Gas/Travel": 6629.930000000001,
+    "Gas/Travel": 6641.880000000001,
     "Refund": -3379.1000000000004,
     "Insurance": 1843.71
   },
@@ -709,9 +709,9 @@
     {
       "desc": "Walgreens",
       "category": "Healthcare",
-      "count": 19,
+      "count": 20,
       "months": 6,
-      "avg_amount": 42,
+      "avg_amount": 40.22,
       "last_amount": 101.68
     },
     {
@@ -1300,7 +1300,17 @@
       "income": 16362.05,
       "bofa_income": 16362.05,
       "td_income": 0,
-      "outflows": 7019.62,
+      "outflows": 7069.02,
+      "xoom": 0,
+      "investments": 0
+    },
+    {
+      "period": "2026-07",
+      "period_label": "July 2026",
+      "income": 500,
+      "bofa_income": 500,
+      "td_income": 0,
+      "outflows": 0,
       "xoom": 0,
       "investments": 0
     }
@@ -7289,17 +7299,17 @@
       "label": "June 2026",
       "period": "2026-06",
       "categories": {
-        "Tech/Subs": 1636.5,
+        "Tech/Subs": 1667.57,
         "Entertainment": 688.15,
-        "Healthcare": 1329.14,
+        "Healthcare": 1335.52,
         "Refund": -346.76000000000005,
         "Shopping": 867.37,
         "Restaurants": 503.08000000000004,
         "Tax/Professional": 1105.91,
-        "Gas/Travel": 944.8299999999999,
+        "Gas/Travel": 956.78,
         "Groceries": 291.40000000000003
       },
-      "total": 7019.619999999998,
+      "total": 7069.019999999998,
       "transactions": [
         {
           "date": "06-01",
@@ -8010,6 +8020,45 @@
           "category": "Gas/Travel",
           "city": null,
           "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-29",
+          "desc": "Avis",
+          "amount": 11.95,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-28",
+          "desc": "Walgreens",
+          "amount": 6.38,
+          "category": "Healthcare",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-28",
+          "desc": "UPS",
+          "amount": 31.07,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "NJ",
           "bank": "Wells Fargo",
           "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
           "mask": "9762",
@@ -9891,7 +9940,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-01T18:07:12.939Z",
+  "generated_at": "2026-07-02T00:09:15.682Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
