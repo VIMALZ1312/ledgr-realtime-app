@@ -2,7 +2,7 @@
   "kpis": {
     "income": 7954.01,
     "income_period": "July 2026",
-    "true_outflows": 942.14,
+    "true_outflows": 976.23,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -46,11 +46,11 @@
       "bank": "Robinhood",
       "nickname": "robin",
       "name": "Robinhood individual",
-      "mask": "5772",
+      "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 47867.05112917,
-      "available": 311.8,
+      "balance": 47923.7112462546,
+      "available": null,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -218,7 +218,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 18.03,
-      "available": 18.03,
+      "available": 106.03,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -358,7 +358,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 201.15,
-      "available": 2798,
+      "available": 2764,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 80022.19112917,
+    "total_checking": 80078.85124625459,
     "total_credit": 6485.65,
     "total_loans": 387165.29,
-    "net": -313628.74887083
+    "net": -313572.08875374537
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -382,7 +382,7 @@
   "spending": {
     "Healthcare": 2824.98,
     "Tech/Subs": 13176.47,
-    "Shopping": 14196.55,
+    "Shopping": 14230.64,
     "Entertainment": 2210.5,
     "Tax/Professional": 19277.229999999996,
     "Groceries": 2831.77,
@@ -609,6 +609,12 @@
       "period_label": "June 2026"
     },
     {
+      "from": "TD  RECEIVED 618400D00EKH Zelle RAKESH KUMAR GAL",
+      "amount": 88,
+      "period": "2026-07",
+      "period_label": "July 2026"
+    },
+    {
       "from": "payment from RAKESH VISTARAKULA for \"Enjoy\"; Conf# txd9tvy96",
       "amount": 2500,
       "period": "2026-01",
@@ -662,6 +668,14 @@
       "amount": 37.82,
       "category": "Shopping",
       "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "07-02",
+      "desc": "REG_COMMERCE CTR_",
+      "amount": 34.09,
+      "category": "Shopping",
+      "bank": "Robinhood",
       "pending": true
     }
   ],
@@ -1302,7 +1316,7 @@
       "income": 7954.01,
       "bofa_income": 7954.01,
       "td_income": 0,
-      "outflows": 942.14,
+      "outflows": 976.23,
       "xoom": 0,
       "investments": 0
     }
@@ -8741,11 +8755,11 @@
       "categories": {
         "Tech/Subs": 586.88,
         "Gas/Travel": 273.15,
-        "Shopping": 37.82,
+        "Shopping": 71.91,
         "Restaurants": 46,
         "Refund": -1.71
       },
-      "total": 942.1400000000001,
+      "total": 976.2300000000001,
       "transactions": [
         {
           "date": "07-03",
@@ -8863,6 +8877,19 @@
           "mask": "0494",
           "pending": false,
           "refund": true
+        },
+        {
+          "date": "07-02",
+          "desc": "REG_COMMERCE CTR_",
+          "amount": 34.09,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
+          "mask": "8479",
+          "pending": false,
+          "refund": false
         }
       ]
     }
@@ -10037,7 +10064,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-03T06:08:55.789Z",
+  "generated_at": "2026-07-03T12:07:58.034Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
