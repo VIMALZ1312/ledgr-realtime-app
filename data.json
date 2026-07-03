@@ -2,7 +2,7 @@
   "kpis": {
     "income": 7954.01,
     "income_period": "July 2026",
-    "true_outflows": 976.23,
+    "true_outflows": 1058.09,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -383,10 +383,10 @@
     "Healthcare": 2824.98,
     "Tech/Subs": 13176.47,
     "Shopping": 14230.64,
-    "Entertainment": 2210.5,
+    "Entertainment": 2289.49,
     "Tax/Professional": 19277.229999999996,
     "Groceries": 2831.77,
-    "Restaurants": 2868.55,
+    "Restaurants": 2871.42,
     "Gas/Travel": 6861.090000000001,
     "Refund": -3380.8100000000004,
     "Insurance": 1843.71
@@ -1025,6 +1025,14 @@
       "last_amount": 17.86
     },
     {
+      "desc": "Vzn Br Cafe Basking Ridgenj",
+      "category": "Restaurants",
+      "count": 8,
+      "months": 3,
+      "avg_amount": 7.82,
+      "last_amount": 2.87
+    },
+    {
       "desc": "Netlify Fy",
       "category": "Tech/Subs",
       "count": 7,
@@ -1233,14 +1241,6 @@
       "last_amount": 5.95
     },
     {
-      "desc": "Vzn Br Cafe Basking Ridgenj",
-      "category": "Restaurants",
-      "count": 7,
-      "months": 2,
-      "avg_amount": 8.53,
-      "last_amount": 2.51
-    },
-    {
       "desc": "Cricketdata",
       "category": "Tech/Subs",
       "count": 2,
@@ -1316,7 +1316,7 @@
       "income": 7954.01,
       "bofa_income": 7954.01,
       "td_income": 0,
-      "outflows": 976.23,
+      "outflows": 1058.09,
       "xoom": 0,
       "investments": 0
     }
@@ -8756,10 +8756,11 @@
         "Tech/Subs": 586.88,
         "Gas/Travel": 273.15,
         "Shopping": 71.91,
-        "Restaurants": 46,
-        "Refund": -1.71
+        "Restaurants": 48.87,
+        "Refund": -1.71,
+        "Entertainment": 78.99
       },
-      "total": 976.2300000000001,
+      "total": 1058.09,
       "transactions": [
         {
           "date": "07-03",
@@ -8877,6 +8878,32 @@
           "mask": "0494",
           "pending": false,
           "refund": true
+        },
+        {
+          "date": "07-01",
+          "desc": "Vzn Br Cafe Basking Ridgenj",
+          "amount": 2.87,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-01",
+          "desc": "HBO Max",
+          "amount": 78.99,
+          "category": "Entertainment",
+          "city": "New York",
+          "state": "NY",
+          "bank": "Discover",
+          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
         },
         {
           "date": "07-02",
@@ -10064,7 +10091,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-03T12:07:58.034Z",
+  "generated_at": "2026-07-03T18:09:53.304Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
