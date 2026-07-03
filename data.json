@@ -1,15 +1,15 @@
 {
   "kpis": {
-    "income": 500,
+    "income": 7954.01,
     "income_period": "July 2026",
-    "true_outflows": 481.77,
+    "true_outflows": 942.14,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 15105.859999999999,
+      "balance": 14640.199999999999,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -28,7 +28,7 @@
       "payroll": 0
     },
     "discover": {
-      "balance": 3734.12,
+      "balance": 3815.98,
       "is_credit": true,
       "period_label": "Live"
     },
@@ -105,8 +105,8 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 54.97,
-      "available": -110.69,
+      "balance": -130.69,
+      "available": 2431.63,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -245,8 +245,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 111.22,
-      "available": 588.78,
+      "balance": 211.16,
+      "available": 488.84,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -273,8 +273,8 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 14360.97,
-      "available": 14080.97,
+      "balance": 14080.97,
+      "available": 17406.55,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -301,7 +301,7 @@
       "mask": "0494",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 3734.12,
+      "balance": 3815.98,
       "available": null,
       "is_credit": true,
       "is_loan": false,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 80487.85112917,
-    "total_credit": 6303.849999999999,
+    "total_checking": 80022.19112917,
+    "total_credit": 6485.65,
     "total_loans": 387165.29,
-    "net": -312981.28887083
+    "net": -313628.74887083
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -381,14 +381,14 @@
   },
   "spending": {
     "Healthcare": 2824.98,
-    "Tech/Subs": 13035.25,
-    "Shopping": 14241.22,
+    "Tech/Subs": 13176.47,
+    "Shopping": 14196.55,
     "Entertainment": 2210.5,
     "Tax/Professional": 19277.229999999996,
     "Groceries": 2831.77,
     "Restaurants": 2868.55,
-    "Gas/Travel": 6641.880000000001,
-    "Refund": -3425.4800000000005,
+    "Gas/Travel": 6861.090000000001,
+    "Refund": -3380.8100000000004,
     "Insurance": 1843.71
   },
   "zelle_received": [
@@ -641,42 +641,18 @@
   ],
   "pending_transactions": [
     {
+      "date": "07-03",
+      "desc": "ACH HOLD Twp of North Bru ON 07/02",
+      "amount": 141.22,
+      "category": "Tech/Subs",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
       "date": "07-02",
-      "desc": "Optimum",
-      "amount": 50.66,
-      "category": "Tech/Subs",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "07-01",
-      "desc": "Renaissance Gree",
-      "amount": 115,
-      "category": "Tech/Subs",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "06-30",
-      "desc": "Shaan Halal Meat Grill",
-      "amount": 46,
-      "category": "Restaurants",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "06-30",
-      "desc": "Vp Racing Fuels",
-      "amount": 53.94,
+      "desc": "Public Service",
+      "amount": 219.21,
       "category": "Gas/Travel",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "07-02",
-      "desc": "Kumon Of North",
-      "amount": 280,
-      "category": "Tech/Subs",
       "bank": "BofA",
       "pending": true
     },
@@ -687,24 +663,16 @@
       "category": "Shopping",
       "bank": "BofA",
       "pending": true
-    },
-    {
-      "date": "07-01",
-      "desc": "Walmart",
-      "amount": 44.67,
-      "category": "Shopping",
-      "bank": "BofA",
-      "pending": true
     }
   ],
   "detected_recurring": [
     {
       "desc": "Walmart",
       "category": "Refund",
-      "count": 18,
+      "count": 16,
       "months": 7,
-      "avg_amount": 37.64,
-      "last_amount": 44.67
+      "avg_amount": 42.34,
+      "last_amount": 37.82
     },
     {
       "desc": "Kumon Of North",
@@ -1324,17 +1292,17 @@
       "income": 16362.05,
       "bofa_income": 16362.05,
       "td_income": 0,
-      "outflows": 7069.02,
+      "outflows": 6969.08,
       "xoom": 0,
       "investments": 0
     },
     {
       "period": "2026-07",
       "period_label": "July 2026",
-      "income": 500,
-      "bofa_income": 500,
+      "income": 7954.01,
+      "bofa_income": 7954.01,
       "td_income": 0,
-      "outflows": 481.77,
+      "outflows": 942.14,
       "xoom": 0,
       "investments": 0
     }
@@ -7328,12 +7296,12 @@
         "Healthcare": 1335.52,
         "Refund": -346.76000000000005,
         "Shopping": 867.37,
-        "Restaurants": 503.08000000000004,
+        "Restaurants": 457.08,
         "Tax/Professional": 1105.91,
-        "Gas/Travel": 956.78,
+        "Gas/Travel": 902.84,
         "Groceries": 291.40000000000003
       },
-      "total": 7069.019999999998,
+      "total": 6969.079999999998,
       "transactions": [
         {
           "date": "06-01",
@@ -8311,32 +8279,6 @@
           "refund": false
         },
         {
-          "date": "06-30",
-          "desc": "Shaan Halal Meat Grill",
-          "amount": 46,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-30",
-          "desc": "Vp Racing Fuels",
-          "amount": 53.94,
-          "category": "Gas/Travel",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
           "date": "06-29",
           "desc": "Garden Farm",
           "amount": 74.78,
@@ -8797,14 +8739,42 @@
       "label": "July 2026",
       "period": "2026-07",
       "categories": {
-        "Tech/Subs": 445.65999999999997,
-        "Shopping": 82.49000000000001,
-        "Refund": -46.38
+        "Tech/Subs": 586.88,
+        "Gas/Travel": 273.15,
+        "Shopping": 37.82,
+        "Restaurants": 46,
+        "Refund": -1.71
       },
-      "total": 481.77,
+      "total": 942.1400000000001,
       "transactions": [
         {
+          "date": "07-03",
+          "desc": "ACH HOLD Twp of North Bru ON 07/02",
+          "amount": 141.22,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
+          "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
           "date": "07-02",
+          "desc": "Public Service",
+          "amount": 219.21,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
+          "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-01",
           "desc": "Optimum",
           "amount": 50.66,
           "category": "Tech/Subs",
@@ -8830,19 +8800,6 @@
           "refund": false
         },
         {
-          "date": "07-02",
-          "desc": "Kumon Of North",
-          "amount": 280,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
-          "mask": "9715",
-          "pending": false,
-          "refund": false
-        },
-        {
           "date": "07-01",
           "desc": "Walmart",
           "amount": 37.82,
@@ -8857,24 +8814,37 @@
         },
         {
           "date": "07-01",
-          "desc": "Walmart",
-          "amount": -44.67,
-          "category": "Refund",
+          "desc": "Kumon Of North",
+          "amount": 280,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
+          "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-01",
+          "desc": "Vp Racing Fuels",
+          "amount": 53.94,
+          "category": "Gas/Travel",
           "city": null,
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
           "pending": false,
-          "refund": true
+          "refund": false
         },
         {
           "date": "07-01",
-          "desc": "Walmart",
-          "amount": 44.67,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
+          "desc": "Shaan Halal Meats & Grill",
+          "amount": 46,
+          "category": "Restaurants",
+          "city": "Somerset",
+          "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -10067,7 +10037,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-03T00:12:13.046Z",
+  "generated_at": "2026-07-03T06:08:55.789Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
