@@ -22,7 +22,7 @@
       "wf_checking": 1000.94
     },
     "td": {
-      "balance": 18.03,
+      "balance": 81.03,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0
@@ -217,8 +217,8 @@
       "mask": "9222",
       "type": "depository",
       "subtype": "checking",
-      "balance": 18.03,
-      "available": 106.03,
+      "balance": 81.03,
+      "available": 81.03,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 86466.75124625459,
+    "total_checking": 86529.75124625459,
     "total_credit": 6928.33,
     "total_loans": 387165.29,
-    "net": -307626.8687537454
+    "net": -307563.8687537454
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -10174,7 +10174,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-04T06:08:22.089Z",
+  "generated_at": "2026-07-04T12:01:30.591Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
