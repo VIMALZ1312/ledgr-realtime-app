@@ -2,7 +2,7 @@
   "kpis": {
     "income": 7954.01,
     "income_period": "July 2026",
-    "true_outflows": 1621.62,
+    "true_outflows": 1640.27,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -357,7 +357,7 @@
       "mask": "8479",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 201.15,
+      "balance": 34.09,
       "available": 2928,
       "is_credit": true,
       "is_loan": false,
@@ -367,9 +367,9 @@
   ],
   "net_worth": {
     "total_checking": 86529.75124625459,
-    "total_credit": 6928.33,
+    "total_credit": 6761.27,
     "total_loans": 387165.29,
-    "net": -307563.8687537454
+    "net": -307396.8087537454
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -383,7 +383,7 @@
     "Healthcare": 2824.98,
     "Tech/Subs": 13513.97,
     "Shopping": 14417.96,
-    "Entertainment": 2333.2,
+    "Entertainment": 2351.85,
     "Tax/Professional": 19277.229999999996,
     "Groceries": 2831.77,
     "Restaurants": 2871.42,
@@ -653,14 +653,6 @@
   ],
   "pending_transactions": [
     {
-      "date": "07-02",
-      "desc": "REG_COMMERCE CTR_",
-      "amount": 34.09,
-      "category": "Shopping",
-      "bank": "Robinhood",
-      "pending": true
-    },
-    {
       "date": "07-04",
       "desc": "Vivek Flowers",
       "amount": 37.32,
@@ -677,6 +669,14 @@
       "months": 7,
       "avg_amount": 42.34,
       "last_amount": 37.82
+    },
+    {
+      "desc": "Regal Cinemas",
+      "category": "Entertainment",
+      "count": 13,
+      "months": 7,
+      "avg_amount": 15.2,
+      "last_amount": 18.65
     },
     {
       "desc": "Big Blue Swim School",
@@ -741,14 +741,6 @@
       "months": 6,
       "avg_amount": 23.02,
       "last_amount": 37.69
-    },
-    {
-      "desc": "Regal Cinemas",
-      "category": "Entertainment",
-      "count": 12,
-      "months": 6,
-      "avg_amount": 14.92,
-      "last_amount": 28.24
     },
     {
       "desc": "CVS ExtraCare",
@@ -1314,7 +1306,7 @@
       "income": 7954.01,
       "bofa_income": 7954.01,
       "td_income": 0,
-      "outflows": 1621.62,
+      "outflows": 1640.27,
       "xoom": 0,
       "investments": 0
     }
@@ -8766,12 +8758,12 @@
       "categories": {
         "Tech/Subs": 919.38,
         "Gas/Travel": 273.15,
-        "Entertainment": 122.69999999999999,
+        "Entertainment": 141.35,
         "Restaurants": 48.87,
         "Shopping": 259.23,
         "Refund": -1.71
       },
-      "total": 1621.62,
+      "total": 1640.27,
       "transactions": [
         {
           "date": "07-01",
@@ -8957,8 +8949,21 @@
         },
         {
           "date": "07-02",
-          "desc": "REG_COMMERCE CTR_",
-          "amount": 34.09,
+          "desc": "Regal Cinemas",
+          "amount": 18.65,
+          "category": "Entertainment",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-04",
+          "desc": "Vivek Flowers",
+          "amount": 37.32,
           "category": "Shopping",
           "city": null,
           "state": null,
@@ -8969,9 +8974,9 @@
           "refund": false
         },
         {
-          "date": "07-04",
-          "desc": "Vivek Flowers",
-          "amount": 37.32,
+          "date": "07-02",
+          "desc": "REG_COMMERCE CTR_",
+          "amount": 34.09,
           "category": "Shopping",
           "city": null,
           "state": null,
@@ -10174,7 +10179,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-04T12:01:30.591Z",
+  "generated_at": "2026-07-04T18:00:37.442Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
