@@ -2,14 +2,14 @@
   "kpis": {
     "income": 7954.01,
     "income_period": "July 2026",
-    "true_outflows": 1434.3,
+    "true_outflows": 1621.62,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 14640.199999999999,
+      "balance": 20528.1,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -28,7 +28,7 @@
       "payroll": 0
     },
     "discover": {
-      "balance": 3815.98,
+      "balance": 3834.63,
       "is_credit": true,
       "period_label": "Live"
     },
@@ -105,8 +105,8 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": -130.69,
-      "available": 2431.63,
+      "balance": 2431.63,
+      "available": 2130.48,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -245,8 +245,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 211.16,
-      "available": 488.84,
+      "balance": 248.98,
+      "available": 451.02,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -273,7 +273,7 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 14080.97,
+      "balance": 17406.55,
       "available": 17406.55,
       "is_credit": false,
       "is_loan": false,
@@ -301,7 +301,7 @@
       "mask": "0494",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 3815.98,
+      "balance": 3834.63,
       "available": null,
       "is_credit": true,
       "is_loan": false,
@@ -358,7 +358,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 201.15,
-      "available": 2764,
+      "available": 2928,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 80578.85124625459,
-    "total_credit": 6871.86,
+    "total_checking": 86466.75124625459,
+    "total_credit": 6928.33,
     "total_loans": 387165.29,
-    "net": -313458.2987537454
+    "net": -307626.8687537454
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -382,7 +382,7 @@
   "spending": {
     "Healthcare": 2824.98,
     "Tech/Subs": 13513.97,
-    "Shopping": 14230.64,
+    "Shopping": 14417.96,
     "Entertainment": 2333.2,
     "Tax/Professional": 19277.229999999996,
     "Groceries": 2831.77,
@@ -643,37 +643,27 @@
       "amount": 2000,
       "period": "2026-05",
       "period_label": "May 2026"
+    },
+    {
+      "from": "Transfer Conf# WLIQ8U6Q0; RAKESH VISTARAKULA",
+      "amount": 160,
+      "period": "2026-07",
+      "period_label": "July 2026"
     }
   ],
   "pending_transactions": [
     {
-      "date": "07-03",
-      "desc": "ACH HOLD Twp of North Bru ON 07/02",
-      "amount": 141.22,
-      "category": "Tech/Subs",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "07-02",
-      "desc": "Public Service",
-      "amount": 219.21,
-      "category": "Gas/Travel",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "07-01",
-      "desc": "Walmart",
-      "amount": 37.82,
-      "category": "Shopping",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
       "date": "07-02",
       "desc": "REG_COMMERCE CTR_",
       "amount": 34.09,
+      "category": "Shopping",
+      "bank": "Robinhood",
+      "pending": true
+    },
+    {
+      "date": "07-04",
+      "desc": "Vivek Flowers",
+      "amount": 37.32,
       "category": "Shopping",
       "bank": "Robinhood",
       "pending": true
@@ -897,6 +887,14 @@
       "last_amount": 290.11
     },
     {
+      "desc": "Zelle payment to Tere Cleaning Lady for \"April cleaning\"; Conf# zhwnf5bbm",
+      "category": "Shopping",
+      "count": 3,
+      "months": 3,
+      "avg_amount": 133.33,
+      "last_amount": 150
+    },
+    {
       "desc": "NJ E-ZPass",
       "category": "Gas/Travel",
       "count": 5,
@@ -1097,14 +1095,6 @@
       "last_amount": 50
     },
     {
-      "desc": "Zelle payment to Tere Cleaning Lady for \"April cleaning\"; Conf# zhwnf5bbm",
-      "category": "Shopping",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 125,
-      "last_amount": 125
-    },
-    {
       "desc": "Grocery Outlet",
       "category": "Groceries",
       "count": 2,
@@ -1217,6 +1207,14 @@
       "last_amount": 54.37
     },
     {
+      "desc": "Vivek Flowers",
+      "category": "Shopping",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 33.32,
+      "last_amount": 37.32
+    },
+    {
       "desc": "Hulu",
       "category": "Entertainment",
       "count": 3,
@@ -1316,7 +1314,7 @@
       "income": 7954.01,
       "bofa_income": 7954.01,
       "td_income": 0,
-      "outflows": 1434.3,
+      "outflows": 1621.62,
       "xoom": 0,
       "investments": 0
     }
@@ -8769,38 +8767,12 @@
         "Tech/Subs": 919.38,
         "Gas/Travel": 273.15,
         "Entertainment": 122.69999999999999,
-        "Shopping": 71.91,
         "Restaurants": 48.87,
+        "Shopping": 259.23,
         "Refund": -1.71
       },
-      "total": 1434.3,
+      "total": 1621.62,
       "transactions": [
-        {
-          "date": "07-03",
-          "desc": "ACH HOLD Twp of North Bru ON 07/02",
-          "amount": 141.22,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "07-02",
-          "desc": "Public Service",
-          "amount": 219.21,
-          "category": "Gas/Travel",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
-          "mask": "7309",
-          "pending": false,
-          "refund": false
-        },
         {
           "date": "07-01",
           "desc": "Optimum",
@@ -8819,6 +8791,32 @@
           "desc": "Renaissance Gree",
           "amount": 115,
           "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
+          "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-02",
+          "desc": "Twp of North Bru DES:XXXXX70922 ID:XXXXX22978 INDN:Vimal raj Loganathan CO ID:XXXXX79161 WEB",
+          "amount": 141.22,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
+          "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-02",
+          "desc": "Public Service",
+          "amount": 219.21,
+          "category": "Gas/Travel",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -8855,19 +8853,6 @@
         },
         {
           "date": "07-01",
-          "desc": "Walmart",
-          "amount": 37.82,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "07-01",
           "desc": "Kumon Of North",
           "amount": 280,
           "category": "Tech/Subs",
@@ -8899,6 +8884,32 @@
           "category": "Restaurants",
           "city": "Somerset",
           "state": "NJ",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-02",
+          "desc": "Zelle payment to Tere Cleaning Lady Conf# xjvqyie84",
+          "amount": 150,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
+          "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-02",
+          "desc": "Walmart",
+          "amount": 37.82,
+          "category": "Shopping",
+          "city": null,
+          "state": "AR",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -8948,6 +8959,19 @@
           "date": "07-02",
           "desc": "REG_COMMERCE CTR_",
           "amount": 34.09,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
+          "mask": "8479",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-04",
+          "desc": "Vivek Flowers",
+          "amount": 37.32,
           "category": "Shopping",
           "city": null,
           "state": null,
@@ -9992,6 +10016,16 @@
       "period_label": "June 2026"
     },
     {
+      "date": "07-02",
+      "desc": "Walmart",
+      "amount": 37.82,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-07",
+      "period_label": "July 2026"
+    },
+    {
       "date": "06-08",
       "desc": "Grok Xai",
       "amount": 30,
@@ -10140,7 +10174,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-04T00:07:09.673Z",
+  "generated_at": "2026-07-04T06:08:22.089Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
