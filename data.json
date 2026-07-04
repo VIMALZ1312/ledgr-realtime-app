@@ -2,7 +2,7 @@
   "kpis": {
     "income": 7954.01,
     "income_period": "July 2026",
-    "true_outflows": 1058.09,
+    "true_outflows": 1434.3,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,10 +16,10 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 2257.36,
+      "balance": 2643.57,
       "is_credit": true,
       "period_label": "Live",
-      "wf_checking": 500.94
+      "wf_checking": 1000.94
     },
     "td": {
       "balance": 18.03,
@@ -147,7 +147,7 @@
       "mask": "3068",
       "type": "depository",
       "subtype": "checking",
-      "balance": 500.94,
+      "balance": 1000.94,
       "available": 1000.94,
       "is_credit": false,
       "is_loan": false,
@@ -175,8 +175,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 1425.95,
-      "available": 1189,
+      "balance": 1812.16,
+      "available": 1187,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 80078.85124625459,
-    "total_credit": 6485.65,
+    "total_checking": 80578.85124625459,
+    "total_credit": 6871.86,
     "total_loans": 387165.29,
-    "net": -313572.08875374537
+    "net": -313458.2987537454
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -381,9 +381,9 @@
   },
   "spending": {
     "Healthcare": 2824.98,
-    "Tech/Subs": 13176.47,
+    "Tech/Subs": 13513.97,
     "Shopping": 14230.64,
-    "Entertainment": 2289.49,
+    "Entertainment": 2333.2,
     "Tax/Professional": 19277.229999999996,
     "Groceries": 2831.77,
     "Restaurants": 2871.42,
@@ -689,6 +689,14 @@
       "last_amount": 37.82
     },
     {
+      "desc": "Big Blue Swim School",
+      "category": "Tech/Subs",
+      "count": 6,
+      "months": 6,
+      "avg_amount": 288.17,
+      "last_amount": 332.5
+    },
+    {
       "desc": "Kumon Of North",
       "category": "Tech/Subs",
       "count": 6,
@@ -767,14 +775,6 @@
       "months": 5,
       "avg_amount": 429.37,
       "last_amount": 391.6
-    },
-    {
-      "desc": "Big Blue Swim School",
-      "category": "Tech/Subs",
-      "count": 5,
-      "months": 5,
-      "avg_amount": 279.3,
-      "last_amount": 266
     },
     {
       "desc": "Republic Services",
@@ -1035,9 +1035,9 @@
     {
       "desc": "Netlify Fy",
       "category": "Tech/Subs",
-      "count": 7,
+      "count": 8,
       "months": 3,
-      "avg_amount": 6.71,
+      "avg_amount": 6.5,
       "last_amount": 5
     },
     {
@@ -1306,7 +1306,7 @@
       "income": 16362.05,
       "bofa_income": 16362.05,
       "td_income": 0,
-      "outflows": 6969.08,
+      "outflows": 6974.08,
       "xoom": 0,
       "investments": 0
     },
@@ -1316,7 +1316,7 @@
       "income": 7954.01,
       "bofa_income": 7954.01,
       "td_income": 0,
-      "outflows": 1058.09,
+      "outflows": 1434.3,
       "xoom": 0,
       "investments": 0
     }
@@ -7305,7 +7305,7 @@
       "label": "June 2026",
       "period": "2026-06",
       "categories": {
-        "Tech/Subs": 1667.57,
+        "Tech/Subs": 1672.57,
         "Entertainment": 688.15,
         "Healthcare": 1335.52,
         "Refund": -346.76000000000005,
@@ -7315,7 +7315,7 @@
         "Gas/Travel": 902.84,
         "Groceries": 291.40000000000003
       },
-      "total": 6969.079999999998,
+      "total": 6974.079999999998,
       "transactions": [
         {
           "date": "06-01",
@@ -8072,6 +8072,19 @@
           "refund": false
         },
         {
+          "date": "06-30",
+          "desc": "Netlify Fy",
+          "amount": 5,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "CA",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
           "date": "06-01",
           "desc": "Kumon Of North",
           "amount": 280,
@@ -8753,14 +8766,14 @@
       "label": "July 2026",
       "period": "2026-07",
       "categories": {
-        "Tech/Subs": 586.88,
+        "Tech/Subs": 919.38,
         "Gas/Travel": 273.15,
+        "Entertainment": 122.69999999999999,
         "Shopping": 71.91,
         "Restaurants": 48.87,
-        "Refund": -1.71,
-        "Entertainment": 78.99
+        "Refund": -1.71
       },
-      "total": 1058.09,
+      "total": 1434.3,
       "transactions": [
         {
           "date": "07-03",
@@ -8811,6 +8824,32 @@
           "bank": "BofA",
           "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
           "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-01",
+          "desc": "Big Blue Swim School",
+          "amount": 332.5,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-01",
+          "desc": "The Music Shop",
+          "amount": 43.71,
+          "category": "Entertainment",
+          "city": null,
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
           "pending": false,
           "refund": false
         },
@@ -9763,6 +9802,16 @@
       "period_label": "June 2026"
     },
     {
+      "date": "06-30",
+      "desc": "Netlify Fy",
+      "amount": 5,
+      "category": "Tech/Subs",
+      "city": null,
+      "state": "CA",
+      "period": "2026-06",
+      "period_label": "June 2026"
+    },
+    {
       "date": "04-09",
       "desc": "Trendia Trendia.co",
       "amount": 178.01,
@@ -10091,7 +10140,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-03T18:09:53.304Z",
+  "generated_at": "2026-07-04T00:07:09.673Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
