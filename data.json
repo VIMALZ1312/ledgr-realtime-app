@@ -2,7 +2,7 @@
   "kpis": {
     "income": 7954.01,
     "income_period": "July 2026",
-    "true_outflows": 1640.27,
+    "true_outflows": 1651.48,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -358,7 +358,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 34.09,
-      "available": 2928,
+      "available": 2917,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -380,10 +380,10 @@
     "by_month": []
   },
   "spending": {
-    "Healthcare": 2824.98,
+    "Healthcare": 2831.19,
     "Tech/Subs": 13513.97,
     "Shopping": 14417.96,
-    "Entertainment": 2351.85,
+    "Entertainment": 2356.85,
     "Tax/Professional": 19277.229999999996,
     "Groceries": 2831.77,
     "Restaurants": 2871.42,
@@ -657,6 +657,22 @@
       "desc": "Vivek Flowers",
       "amount": 37.32,
       "category": "Shopping",
+      "bank": "Robinhood",
+      "pending": true
+    },
+    {
+      "date": "07-04",
+      "desc": "Goldie Lox",
+      "amount": 6.21,
+      "category": "Healthcare",
+      "bank": "Robinhood",
+      "pending": true
+    },
+    {
+      "date": "07-04",
+      "desc": "Feg LLC",
+      "amount": 5,
+      "category": "Entertainment",
       "bank": "Robinhood",
       "pending": true
     }
@@ -1306,7 +1322,7 @@
       "income": 7954.01,
       "bofa_income": 7954.01,
       "td_income": 0,
-      "outflows": 1640.27,
+      "outflows": 1651.48,
       "xoom": 0,
       "investments": 0
     }
@@ -8758,12 +8774,13 @@
       "categories": {
         "Tech/Subs": 919.38,
         "Gas/Travel": 273.15,
-        "Entertainment": 141.35,
+        "Entertainment": 146.35,
         "Restaurants": 48.87,
         "Shopping": 259.23,
-        "Refund": -1.71
+        "Refund": -1.71,
+        "Healthcare": 6.21
       },
-      "total": 1640.27,
+      "total": 1651.48,
       "transactions": [
         {
           "date": "07-01",
@@ -8978,6 +8995,32 @@
           "desc": "REG_COMMERCE CTR_",
           "amount": 34.09,
           "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
+          "mask": "8479",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-04",
+          "desc": "Goldie Lox",
+          "amount": 6.21,
+          "category": "Healthcare",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
+          "mask": "8479",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-04",
+          "desc": "Feg LLC",
+          "amount": 5,
+          "category": "Entertainment",
           "city": null,
           "state": null,
           "bank": "Robinhood",
@@ -10179,7 +10222,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-04T18:00:37.442Z",
+  "generated_at": "2026-07-05T00:10:12.621Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
