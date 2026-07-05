@@ -387,7 +387,7 @@
     "Tax/Professional": 19277.229999999996,
     "Groceries": 2831.77,
     "Restaurants": 2871.42,
-    "Gas/Travel": 6861.090000000001,
+    "Gas/Travel": 6847.02,
     "Refund": -3380.8100000000004,
     "Insurance": 1843.71
   },
@@ -1312,7 +1312,7 @@
       "income": 16362.05,
       "bofa_income": 16362.05,
       "td_income": 0,
-      "outflows": 6974.08,
+      "outflows": 6960.01,
       "xoom": 0,
       "investments": 0
     },
@@ -7318,10 +7318,10 @@
         "Shopping": 867.37,
         "Restaurants": 457.08,
         "Tax/Professional": 1105.91,
-        "Gas/Travel": 902.84,
+        "Gas/Travel": 888.77,
         "Groceries": 291.40000000000003
       },
-      "total": 6974.079999999998,
+      "total": 6960.009999999998,
       "transactions": [
         {
           "date": "06-01",
@@ -8461,19 +8461,6 @@
           "category": "Tax/Professional",
           "city": null,
           "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-21",
-          "desc": "Pilot Flying J",
-          "amount": 14.07,
-          "category": "Gas/Travel",
-          "city": "Girard",
-          "state": "OH",
           "bank": "Discover",
           "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
           "mask": "0494",
@@ -10104,16 +10091,6 @@
       "period_label": "June 2026"
     },
     {
-      "date": "06-21",
-      "desc": "Pilot Flying J",
-      "amount": 14.07,
-      "category": "Gas/Travel",
-      "city": "Girard",
-      "state": "OH",
-      "period": "2026-06",
-      "period_label": "June 2026"
-    },
-    {
       "date": "03-30",
       "desc": "Replit Inc.",
       "amount": 50.17,
@@ -10222,7 +10199,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-05T17:15:47.495Z",
+  "generated_at": "2026-07-05T18:09:57.243Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
