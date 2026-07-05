@@ -645,7 +645,7 @@
       "period_label": "May 2026"
     },
     {
-      "from": "Transfer Conf# WLIQ8U6Q0; RAKESH VISTARAKULA",
+      "from": "payment from RAKESH VISTARAKULA for \"Nagasri saree\"; Conf# wliq8u6q0",
       "amount": 160,
       "period": "2026-07",
       "period_label": "July 2026"
@@ -10222,7 +10222,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-05T00:10:12.621Z",
+  "generated_at": "2026-07-05T06:01:08.043Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
