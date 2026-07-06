@@ -2,7 +2,7 @@
   "kpis": {
     "income": 7954.01,
     "income_period": "July 2026",
-    "true_outflows": 1651.48,
+    "true_outflows": 1994.47,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -382,11 +382,11 @@
   "spending": {
     "Healthcare": 2831.19,
     "Tech/Subs": 13513.97,
-    "Shopping": 14417.96,
+    "Shopping": 14473.99,
     "Entertainment": 2356.85,
     "Tax/Professional": 19277.229999999996,
-    "Groceries": 2831.77,
-    "Restaurants": 2871.42,
+    "Groceries": 3091.02,
+    "Restaurants": 2899.13,
     "Gas/Travel": 6847.02,
     "Refund": -3380.8100000000004,
     "Insurance": 1843.71
@@ -653,6 +653,30 @@
   ],
   "pending_transactions": [
     {
+      "date": "07-05",
+      "desc": "Walmart",
+      "amount": 56.03,
+      "category": "Shopping",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "07-05",
+      "desc": "Atul Bakery",
+      "amount": 27.71,
+      "category": "Restaurants",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "07-05",
+      "desc": "Patidar Supermarket Nort",
+      "amount": 259.25,
+      "category": "Groceries",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
       "date": "07-04",
       "desc": "Vivek Flowers",
       "amount": 37.32,
@@ -681,10 +705,10 @@
     {
       "desc": "Walmart",
       "category": "Refund",
-      "count": 16,
+      "count": 17,
       "months": 7,
-      "avg_amount": 42.34,
-      "last_amount": 37.82
+      "avg_amount": 43.15,
+      "last_amount": 56.03
     },
     {
       "desc": "Regal Cinemas",
@@ -863,6 +887,14 @@
       "last_amount": 90.46
     },
     {
+      "desc": "Patidar Supermarket Nort",
+      "category": "Groceries",
+      "count": 8,
+      "months": 4,
+      "avg_amount": 98.57,
+      "last_amount": 259.25
+    },
+    {
       "desc": "Replit Inc.",
       "category": "Tech/Subs",
       "count": 6,
@@ -925,14 +957,6 @@
       "months": 3,
       "avg_amount": 76.76,
       "last_amount": 100
-    },
-    {
-      "desc": "Patidar Supermarket Nort",
-      "category": "Groceries",
-      "count": 7,
-      "months": 3,
-      "avg_amount": 75.62,
-      "last_amount": 121.51
     },
     {
       "desc": "Uber",
@@ -1322,7 +1346,7 @@
       "income": 7954.01,
       "bofa_income": 7954.01,
       "td_income": 0,
-      "outflows": 1651.48,
+      "outflows": 1994.47,
       "xoom": 0,
       "investments": 0
     }
@@ -8762,12 +8786,13 @@
         "Tech/Subs": 919.38,
         "Gas/Travel": 273.15,
         "Entertainment": 146.35,
-        "Restaurants": 48.87,
-        "Shopping": 259.23,
+        "Restaurants": 76.58000000000001,
+        "Shopping": 315.26,
+        "Groceries": 259.25,
         "Refund": -1.71,
         "Healthcare": 6.21
       },
-      "total": 1651.48,
+      "total": 1994.47,
       "transactions": [
         {
           "date": "07-01",
@@ -8906,6 +8931,45 @@
           "category": "Shopping",
           "city": null,
           "state": "AR",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-05",
+          "desc": "Walmart",
+          "amount": 56.03,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-05",
+          "desc": "Atul Bakery",
+          "amount": 27.71,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-05",
+          "desc": "Patidar Supermarket Nort",
+          "amount": 259.25,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -10199,7 +10263,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-06T00:06:34.161Z",
+  "generated_at": "2026-07-06T06:02:33.244Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
