@@ -2,7 +2,7 @@
   "kpis": {
     "income": 7954.01,
     "income_period": "July 2026",
-    "true_outflows": 1994.47,
+    "true_outflows": 2117.21,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -49,8 +49,8 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 47923.7112462546,
-      "available": null,
+      "balance": 48969.2945037505,
+      "available": 11.74,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -357,8 +357,8 @@
       "mask": "8479",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 34.09,
-      "available": 2917,
+      "balance": 76.41,
+      "available": 2795,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 86228.60124625459,
-    "total_credit": 6761.27,
+    "total_checking": 87274.1845037505,
+    "total_credit": 6803.59,
     "total_loans": 387165.29,
-    "net": -307697.9587537454
+    "net": -306694.6954962495
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -384,10 +384,10 @@
     "Tech/Subs": 13513.97,
     "Shopping": 14473.99,
     "Entertainment": 2356.85,
-    "Tax/Professional": 19277.229999999996,
+    "Tax/Professional": 19316.229999999996,
     "Groceries": 3091.02,
-    "Restaurants": 2899.13,
-    "Gas/Travel": 6847.02,
+    "Restaurants": 2982.8700000000003,
+    "Gas/Travel": 6861.090000000001,
     "Refund": -3380.8100000000004,
     "Insurance": 1843.71
   },
@@ -678,14 +678,6 @@
     },
     {
       "date": "07-04",
-      "desc": "Vivek Flowers",
-      "amount": 37.32,
-      "category": "Shopping",
-      "bank": "Robinhood",
-      "pending": true
-    },
-    {
-      "date": "07-04",
       "desc": "Goldie Lox",
       "amount": 6.21,
       "category": "Healthcare",
@@ -693,10 +685,18 @@
       "pending": true
     },
     {
-      "date": "07-04",
-      "desc": "Feg LLC",
-      "amount": 5,
-      "category": "Entertainment",
+      "date": "07-05",
+      "desc": "Om Sri Sai Balaji",
+      "amount": 39,
+      "category": "Tax/Professional",
+      "bank": "Robinhood",
+      "pending": true
+    },
+    {
+      "date": "07-06",
+      "desc": "House Of Biryani's And Kebabs",
+      "amount": 83.74,
+      "category": "Restaurants",
       "bank": "Robinhood",
       "pending": true
     }
@@ -951,6 +951,14 @@
       "last_amount": 39.36
     },
     {
+      "desc": "House of Biryani's and Kebabs",
+      "category": "Restaurants",
+      "count": 4,
+      "months": 3,
+      "avg_amount": 79.97,
+      "last_amount": 83.74
+    },
+    {
       "desc": "Claude.ai",
       "category": "Tech/Subs",
       "count": 4,
@@ -1159,14 +1167,6 @@
       "last_amount": 143
     },
     {
-      "desc": "House of Biryani's and Kebabs",
-      "category": "Restaurants",
-      "count": 3,
-      "months": 2,
-      "avg_amount": 78.71,
-      "last_amount": 90.59
-    },
-    {
       "desc": "Houseofbi",
       "category": "Restaurants",
       "count": 2,
@@ -1336,7 +1336,7 @@
       "income": 16362.05,
       "bofa_income": 16362.05,
       "td_income": 0,
-      "outflows": 6960.01,
+      "outflows": 6974.08,
       "xoom": 0,
       "investments": 0
     },
@@ -1346,7 +1346,7 @@
       "income": 7954.01,
       "bofa_income": 7954.01,
       "td_income": 0,
-      "outflows": 1994.47,
+      "outflows": 2117.21,
       "xoom": 0,
       "investments": 0
     }
@@ -7342,10 +7342,10 @@
         "Shopping": 867.37,
         "Restaurants": 457.08,
         "Tax/Professional": 1105.91,
-        "Gas/Travel": 888.77,
+        "Gas/Travel": 902.84,
         "Groceries": 291.40000000000003
       },
-      "total": 6960.009999999998,
+      "total": 6974.079999999998,
       "transactions": [
         {
           "date": "06-01",
@@ -8544,6 +8544,19 @@
           "refund": false
         },
         {
+          "date": "06-21",
+          "desc": "Pilot Flying J",
+          "amount": 14.07,
+          "category": "Gas/Travel",
+          "city": "Girard",
+          "state": "OH",
+          "bank": "Discover",
+          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
           "date": "06-04",
           "desc": "Walgreens",
           "amount": 18.99,
@@ -8786,13 +8799,14 @@
         "Tech/Subs": 919.38,
         "Gas/Travel": 273.15,
         "Entertainment": 146.35,
-        "Restaurants": 76.58000000000001,
+        "Restaurants": 160.32,
         "Shopping": 315.26,
         "Groceries": 259.25,
         "Refund": -1.71,
-        "Healthcare": 6.21
+        "Healthcare": 6.21,
+        "Tax/Professional": 39
       },
-      "total": 1994.47,
+      "total": 2117.21,
       "transactions": [
         {
           "date": "07-01",
@@ -9029,19 +9043,6 @@
           "refund": false
         },
         {
-          "date": "07-04",
-          "desc": "Vivek Flowers",
-          "amount": 37.32,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
           "date": "07-02",
           "desc": "REG_COMMERCE CTR_",
           "amount": 34.09,
@@ -9068,10 +9069,49 @@
           "refund": false
         },
         {
+          "date": "07-03",
+          "desc": "Vivek Flowers",
+          "amount": 37.32,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
+          "mask": "8479",
+          "pending": false,
+          "refund": false
+        },
+        {
           "date": "07-04",
           "desc": "Feg LLC",
           "amount": 5,
           "category": "Entertainment",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
+          "mask": "8479",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-05",
+          "desc": "Om Sri Sai Balaji",
+          "amount": 39,
+          "category": "Tax/Professional",
+          "city": "Temple",
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
+          "mask": "8479",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-06",
+          "desc": "House Of Biryani's And Kebabs",
+          "amount": 83.74,
+          "category": "Restaurants",
           "city": null,
           "state": null,
           "bank": "Robinhood",
@@ -10253,6 +10293,16 @@
       "state": "MI",
       "period": "2026-04",
       "period_label": "April 2026"
+    },
+    {
+      "date": "06-21",
+      "desc": "Pilot Flying J",
+      "amount": 14.07,
+      "category": "Gas/Travel",
+      "city": "Girard",
+      "state": "OH",
+      "period": "2026-06",
+      "period_label": "June 2026"
     }
   ],
   "fixed_obligations": {
@@ -10263,7 +10313,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-06T12:09:14.818Z",
+  "generated_at": "2026-07-06T18:08:25.341Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
