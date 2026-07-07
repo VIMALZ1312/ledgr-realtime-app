@@ -2,7 +2,7 @@
   "kpis": {
     "income": 7954.01,
     "income_period": "July 2026",
-    "true_outflows": 2117.21,
+    "true_outflows": 2458.58,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 2643.57,
+      "balance": 2974.2200000000003,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 1000.94
@@ -175,8 +175,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 1812.16,
-      "available": 883,
+      "balance": 2142.81,
+      "available": 517,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -274,7 +274,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 17406.55,
-      "available": 17406.55,
+      "available": 17362.02,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -367,9 +367,9 @@
   ],
   "net_worth": {
     "total_checking": 87148.2745037505,
-    "total_credit": 6803.59,
+    "total_credit": 7134.24,
     "total_loans": 387165.29,
-    "net": -306820.6054962495
+    "net": -307151.2554962495
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -382,13 +382,13 @@
   "spending": {
     "Healthcare": 2831.19,
     "Tech/Subs": 13513.97,
-    "Shopping": 14473.99,
+    "Shopping": 14738.94,
     "Entertainment": 2356.85,
     "Tax/Professional": 19316.229999999996,
-    "Groceries": 3091.02,
+    "Groceries": 3135.55,
     "Restaurants": 2982.8700000000003,
-    "Gas/Travel": 6861.090000000001,
-    "Refund": -3380.8100000000004,
+    "Gas/Travel": 6949.010000000001,
+    "Refund": -3436.84,
     "Insurance": 1843.71
   },
   "zelle_received": [
@@ -677,6 +677,22 @@
       "pending": true
     },
     {
+      "date": "07-07",
+      "desc": "Delight Big Bazar",
+      "amount": 44.53,
+      "category": "Groceries",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "07-06",
+      "desc": "Walmart",
+      "amount": 52.22,
+      "category": "Shopping",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
       "date": "07-04",
       "desc": "Goldie Lox",
       "amount": 6.21,
@@ -703,12 +719,20 @@
   ],
   "detected_recurring": [
     {
+      "desc": "Delight Big Bazar",
+      "category": "Groceries",
+      "count": 10,
+      "months": 7,
+      "avg_amount": 51.63,
+      "last_amount": 44.53
+    },
+    {
       "desc": "Walmart",
       "category": "Refund",
-      "count": 17,
+      "count": 19,
       "months": 7,
-      "avg_amount": 43.15,
-      "last_amount": 56.03
+      "avg_amount": 38.41,
+      "last_amount": 52.22
     },
     {
       "desc": "Regal Cinemas",
@@ -749,14 +773,6 @@
       "months": 6,
       "avg_amount": 76.34,
       "last_amount": 147.95
-    },
-    {
-      "desc": "Delight Big Bazar",
-      "category": "Groceries",
-      "count": 9,
-      "months": 6,
-      "avg_amount": 52.42,
-      "last_amount": 27.44
     },
     {
       "desc": "Walgreens",
@@ -1159,6 +1175,14 @@
       "last_amount": 301.4
     },
     {
+      "desc": "Avis",
+      "category": "Gas/Travel",
+      "count": 3,
+      "months": 2,
+      "avg_amount": 86.92,
+      "last_amount": 87.92
+    },
+    {
       "desc": "Domino's",
       "category": "Restaurants",
       "count": 2,
@@ -1346,7 +1370,7 @@
       "income": 7954.01,
       "bofa_income": 7954.01,
       "td_income": 0,
-      "outflows": 2117.21,
+      "outflows": 2458.58,
       "xoom": 0,
       "investments": 0
     }
@@ -8797,16 +8821,16 @@
       "period": "2026-07",
       "categories": {
         "Tech/Subs": 919.38,
-        "Gas/Travel": 273.15,
+        "Gas/Travel": 361.07,
         "Entertainment": 146.35,
+        "Shopping": 580.2100000000002,
         "Restaurants": 160.32,
-        "Shopping": 315.26,
-        "Groceries": 259.25,
-        "Refund": -1.71,
+        "Groceries": 303.78,
+        "Refund": -57.74,
         "Healthcare": 6.21,
         "Tax/Professional": 39
       },
-      "total": 2117.21,
+      "total": 2458.5799999999995,
       "transactions": [
         {
           "date": "07-01",
@@ -8880,6 +8904,45 @@
           "category": "Entertainment",
           "city": null,
           "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-04",
+          "desc": "Zara",
+          "amount": 212.73,
+          "category": "Shopping",
+          "city": "East Rutherford",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-04",
+          "desc": "Avis",
+          "amount": 87.92,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-04",
+          "desc": "Feg LLC",
+          "amount": 5,
+          "category": "Entertainment",
+          "city": "Itasca",
+          "state": "IL",
           "bank": "Wells Fargo",
           "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
           "mask": "9762",
@@ -8991,6 +9054,45 @@
           "refund": false
         },
         {
+          "date": "07-07",
+          "desc": "Delight Big Bazar",
+          "amount": 44.53,
+          "category": "Groceries",
+          "city": "Monmouth Junction",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
+          "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-06",
+          "desc": "Walmart",
+          "amount": -56.03,
+          "category": "Refund",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": true
+        },
+        {
+          "date": "07-06",
+          "desc": "Walmart",
+          "amount": 52.22,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
           "date": "07-01",
           "desc": "MERCURY*MICIL-IL-NJPPA CA 0630001646091935",
           "amount": -1.71,
@@ -9073,19 +9175,6 @@
           "desc": "Vivek Flowers",
           "amount": 37.32,
           "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "07-04",
-          "desc": "Feg LLC",
-          "amount": 5,
-          "category": "Entertainment",
           "city": null,
           "state": null,
           "bank": "Robinhood",
@@ -9975,6 +10064,16 @@
       "period_label": "June 2026"
     },
     {
+      "date": "07-04",
+      "desc": "Feg LLC",
+      "amount": 5,
+      "category": "Entertainment",
+      "city": "Itasca",
+      "state": "IL",
+      "period": "2026-07",
+      "period_label": "July 2026"
+    },
+    {
       "date": "04-09",
       "desc": "Trendia Trendia.co",
       "amount": 178.01,
@@ -10313,7 +10412,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-07T00:07:52.114Z",
+  "generated_at": "2026-07-07T06:07:36.716Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
