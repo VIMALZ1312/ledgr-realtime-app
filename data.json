@@ -49,7 +49,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 48969.2945037505,
+      "balance": 48369.75700753,
       "available": 11.74,
       "is_credit": false,
       "is_loan": false,
@@ -357,7 +357,7 @@
       "mask": "8479",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 76.41,
+      "balance": 121.62,
       "available": 2795,
       "is_credit": true,
       "is_loan": false,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 87148.2745037505,
-    "total_credit": 7134.24,
+    "total_checking": 86548.73700753,
+    "total_credit": 7179.45,
     "total_loans": 387165.29,
-    "net": -307151.2554962495
+    "net": -307796.00299247
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -690,22 +690,6 @@
       "amount": 52.22,
       "category": "Shopping",
       "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "07-04",
-      "desc": "Goldie Lox",
-      "amount": 6.21,
-      "category": "Healthcare",
-      "bank": "Robinhood",
-      "pending": true
-    },
-    {
-      "date": "07-05",
-      "desc": "Om Sri Sai Balaji",
-      "amount": 39,
-      "category": "Tax/Professional",
-      "bank": "Robinhood",
       "pending": true
     },
     {
@@ -9158,10 +9142,10 @@
           "refund": false
         },
         {
-          "date": "07-04",
-          "desc": "Goldie Lox",
-          "amount": 6.21,
-          "category": "Healthcare",
+          "date": "07-03",
+          "desc": "Vivek Flowers",
+          "amount": 37.32,
+          "category": "Shopping",
           "city": null,
           "state": null,
           "bank": "Robinhood",
@@ -9171,10 +9155,23 @@
           "refund": false
         },
         {
-          "date": "07-03",
-          "desc": "Vivek Flowers",
-          "amount": 37.32,
-          "category": "Shopping",
+          "date": "07-06",
+          "desc": "House Of Biryani's And Kebabs",
+          "amount": 83.74,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
+          "mask": "8479",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-04",
+          "desc": "Goldie Lox",
+          "amount": 6.21,
+          "category": "Healthcare",
           "city": null,
           "state": null,
           "bank": "Robinhood",
@@ -9189,19 +9186,6 @@
           "amount": 39,
           "category": "Tax/Professional",
           "city": "Temple",
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "07-06",
-          "desc": "House Of Biryani's And Kebabs",
-          "amount": 83.74,
-          "category": "Restaurants",
-          "city": null,
           "state": null,
           "bank": "Robinhood",
           "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
@@ -10412,7 +10396,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-07T12:04:32.629Z",
+  "generated_at": "2026-07-07T18:00:53.087Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
