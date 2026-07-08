@@ -49,7 +49,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 48369.75700753,
+      "balance": 47668.634939343,
       "available": 11.74,
       "is_credit": false,
       "is_loan": false,
@@ -357,8 +357,8 @@
       "mask": "8479",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 121.62,
-      "available": 2795,
+      "balance": 205.36,
+      "available": 2794,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 85449.37700753,
-    "total_credit": 7438.7,
+    "total_checking": 84748.254939343,
+    "total_credit": 7522.44,
     "total_loans": 387165.29,
-    "net": -309154.61299247
+    "net": -309939.475060657
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -690,14 +690,6 @@
       "amount": 40.75,
       "category": "Groceries",
       "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "07-06",
-      "desc": "House Of Biryani's And Kebabs",
-      "amount": 83.74,
-      "category": "Restaurants",
-      "bank": "Robinhood",
       "pending": true
     }
   ],
@@ -9168,19 +9160,6 @@
           "refund": false
         },
         {
-          "date": "07-06",
-          "desc": "House Of Biryani's And Kebabs",
-          "amount": 83.74,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
           "date": "07-04",
           "desc": "Goldie Lox",
           "amount": 6.21,
@@ -9199,6 +9178,19 @@
           "amount": 39,
           "category": "Tax/Professional",
           "city": "Temple",
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
+          "mask": "8479",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-06",
+          "desc": "House Of Biryani's And Kebabs",
+          "amount": 83.74,
+          "category": "Restaurants",
+          "city": null,
           "state": null,
           "bank": "Robinhood",
           "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
@@ -10409,7 +10401,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-08T12:11:00.268Z",
+  "generated_at": "2026-07-08T18:08:10.480Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
