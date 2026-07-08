@@ -2,7 +2,7 @@
   "kpis": {
     "income": 7954.01,
     "income_period": "July 2026",
-    "true_outflows": 2458.58,
+    "true_outflows": 2499.33,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -245,8 +245,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 248.98,
-      "available": 451.02,
+      "balance": 508.23,
+      "available": 191.77,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -274,7 +274,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 17406.55,
-      "available": 17362.02,
+      "available": 17321.27,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -367,9 +367,9 @@
   ],
   "net_worth": {
     "total_checking": 86548.73700753,
-    "total_credit": 7179.45,
+    "total_credit": 7438.7,
     "total_loans": 387165.29,
-    "net": -307796.00299247
+    "net": -308055.25299247
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -385,7 +385,7 @@
     "Shopping": 14738.94,
     "Entertainment": 2356.85,
     "Tax/Professional": 19316.229999999996,
-    "Groceries": 3135.55,
+    "Groceries": 3176.3,
     "Restaurants": 2982.8700000000003,
     "Gas/Travel": 6949.010000000001,
     "Refund": -3436.84,
@@ -669,15 +669,15 @@
       "pending": true
     },
     {
-      "date": "07-05",
-      "desc": "Patidar Supermarket Nort",
-      "amount": 259.25,
-      "category": "Groceries",
+      "date": "07-06",
+      "desc": "Walmart",
+      "amount": 52.22,
+      "category": "Shopping",
       "bank": "BofA",
       "pending": true
     },
     {
-      "date": "07-07",
+      "date": "07-06",
       "desc": "Delight Big Bazar",
       "amount": 44.53,
       "category": "Groceries",
@@ -685,10 +685,10 @@
       "pending": true
     },
     {
-      "date": "07-06",
-      "desc": "Walmart",
-      "amount": 52.22,
-      "category": "Shopping",
+      "date": "07-08",
+      "desc": "Deccan Halal Mart",
+      "amount": 40.75,
+      "category": "Groceries",
       "bank": "BofA",
       "pending": true
     },
@@ -1354,7 +1354,7 @@
       "income": 7954.01,
       "bofa_income": 7954.01,
       "td_income": 0,
-      "outflows": 2458.58,
+      "outflows": 2499.33,
       "xoom": 0,
       "investments": 0
     }
@@ -8809,12 +8809,12 @@
         "Entertainment": 146.35,
         "Shopping": 580.2100000000002,
         "Restaurants": 160.32,
-        "Groceries": 303.78,
         "Refund": -57.74,
+        "Groceries": 344.53,
         "Healthcare": 6.21,
         "Tax/Professional": 39
       },
-      "total": 2458.5799999999995,
+      "total": 2499.33,
       "transactions": [
         {
           "date": "07-01",
@@ -9025,32 +9025,6 @@
           "refund": false
         },
         {
-          "date": "07-05",
-          "desc": "Patidar Supermarket Nort",
-          "amount": 259.25,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "07-07",
-          "desc": "Delight Big Bazar",
-          "amount": 44.53,
-          "category": "Groceries",
-          "city": "Monmouth Junction",
-          "state": "NJ",
-          "bank": "BofA",
-          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
-          "mask": "9715",
-          "pending": false,
-          "refund": false
-        },
-        {
           "date": "07-06",
           "desc": "Walmart",
           "amount": -56.03,
@@ -9068,6 +9042,45 @@
           "desc": "Walmart",
           "amount": 52.22,
           "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-06",
+          "desc": "Delight Big Bazar",
+          "amount": 44.53,
+          "category": "Groceries",
+          "city": "Monmouth Junction",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
+          "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-08",
+          "desc": "Deccan Halal Mart",
+          "amount": 40.75,
+          "category": "Groceries",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
+          "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-06",
+          "desc": "Patidar Supermarket Nort",
+          "amount": 259.25,
+          "category": "Groceries",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -10396,7 +10409,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-08T00:11:43.825Z",
+  "generated_at": "2026-07-08T06:06:41.738Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
