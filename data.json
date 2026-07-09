@@ -9,7 +9,7 @@
   },
   "accounts": {
     "bofa": {
-      "balance": 19127.59,
+      "balance": 19083.06,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -245,8 +245,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 508.23,
-      "available": 191.77,
+      "balance": 535.94,
+      "available": 164.06,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -273,8 +273,8 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 17406.55,
-      "available": 17321.27,
+      "balance": 17362.02,
+      "available": 16956.27,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -343,8 +343,8 @@
       "mask": "7119",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 1523.59,
-      "available": 1523.59,
+      "balance": 1501.41,
+      "available": 1213.51,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 84748.254939343,
-    "total_credit": 7498.499999999999,
+    "total_checking": 84681.544939343,
+    "total_credit": 7526.21,
     "total_loans": 387165.29,
-    "net": -309915.53506065696
+    "net": -310009.955060657
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -382,13 +382,13 @@
   "spending": {
     "Healthcare": 2831.19,
     "Tech/Subs": 13513.97,
-    "Shopping": 14738.94,
+    "Shopping": 14682.91,
     "Entertainment": 2356.85,
     "Tax/Professional": 19597.389999999996,
     "Groceries": 3176.3,
     "Restaurants": 2982.8700000000003,
     "Gas/Travel": 7033.910000000002,
-    "Refund": -3436.84,
+    "Refund": -3380.8100000000004,
     "Insurance": 1843.71
   },
   "zelle_received": [
@@ -653,22 +653,6 @@
   ],
   "pending_transactions": [
     {
-      "date": "07-05",
-      "desc": "Walmart",
-      "amount": 56.03,
-      "category": "Shopping",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "07-05",
-      "desc": "Atul Bakery",
-      "amount": 27.71,
-      "category": "Restaurants",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
       "date": "07-06",
       "desc": "Walmart",
       "amount": 52.22,
@@ -677,15 +661,7 @@
       "pending": true
     },
     {
-      "date": "07-06",
-      "desc": "Delight Big Bazar",
-      "amount": 44.53,
-      "category": "Groceries",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "07-08",
+      "date": "07-07",
       "desc": "Deccan Halal Mart",
       "amount": 40.75,
       "category": "Groceries",
@@ -705,9 +681,9 @@
     {
       "desc": "Walmart",
       "category": "Refund",
-      "count": 19,
+      "count": 17,
       "months": 7,
-      "avg_amount": 38.41,
+      "avg_amount": 42.93,
       "last_amount": 52.22
     },
     {
@@ -1261,6 +1237,14 @@
       "months": 2,
       "avg_amount": 33.32,
       "last_amount": 37.32
+    },
+    {
+      "desc": "Atul Bakery - North Brunswick Township",
+      "category": "Restaurants",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 20.1,
+      "last_amount": 27.71
     },
     {
       "desc": "Hulu",
@@ -8815,11 +8799,11 @@
         "Tech/Subs": 919.38,
         "Gas/Travel": 445.96999999999997,
         "Entertainment": 146.35,
-        "Shopping": 580.2100000000002,
+        "Shopping": 524.1800000000001,
         "Tax/Professional": 320.16,
         "Restaurants": 160.32,
-        "Refund": -57.74,
         "Groceries": 344.53,
+        "Refund": -1.71,
         "Healthcare": 6.21
       },
       "total": 2865.3900000000003,
@@ -9046,45 +9030,6 @@
           "refund": false
         },
         {
-          "date": "07-05",
-          "desc": "Walmart",
-          "amount": 56.03,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "07-05",
-          "desc": "Atul Bakery",
-          "amount": 27.71,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "07-06",
-          "desc": "Walmart",
-          "amount": -56.03,
-          "category": "Refund",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": true
-        },
-        {
           "date": "07-06",
           "desc": "Walmart",
           "amount": 52.22,
@@ -9099,37 +9044,50 @@
         },
         {
           "date": "07-06",
-          "desc": "Delight Big Bazar",
-          "amount": 44.53,
-          "category": "Groceries",
-          "city": "Monmouth Junction",
-          "state": "NJ",
-          "bank": "BofA",
-          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
-          "mask": "9715",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "07-08",
-          "desc": "Deccan Halal Mart",
-          "amount": 40.75,
-          "category": "Groceries",
-          "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "BofA",
-          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
-          "mask": "9715",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "07-06",
           "desc": "Patidar Supermarket Nort",
           "amount": 259.25,
           "category": "Groceries",
           "city": null,
           "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-07",
+          "desc": "Deccan Halal Mart",
+          "amount": 40.75,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
+          "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-07",
+          "desc": "Delight Big Bazar",
+          "amount": 44.53,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
+          "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-07",
+          "desc": "Atul Bakery - North Brunswick Township",
+          "amount": 27.71,
+          "category": "Restaurants",
+          "city": "North Brunswick",
+          "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -10456,7 +10414,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-09T00:05:22.572Z",
+  "generated_at": "2026-07-09T06:03:04.108Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
