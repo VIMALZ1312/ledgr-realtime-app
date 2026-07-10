@@ -2,7 +2,7 @@
   "kpis": {
     "income": 7954.01,
     "income_period": "July 2026",
-    "true_outflows": 2865.39,
+    "true_outflows": 2895.39,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -189,8 +189,8 @@
       "mask": "5961",
       "type": "depository",
       "subtype": "checking",
-      "balance": 109.71,
-      "available": 109.71,
+      "balance": 102.71,
+      "available": 102.71,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 85385.2633329257,
+    "total_checking": 85378.2633329257,
     "total_credit": 7608.429999999999,
     "total_loans": 387165.29,
-    "net": -309388.4566670743
+    "net": -309395.4566670743
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -381,7 +381,7 @@
   },
   "spending": {
     "Healthcare": 2831.19,
-    "Tech/Subs": 13513.97,
+    "Tech/Subs": 13543.97,
     "Shopping": 14682.91,
     "Entertainment": 2356.85,
     "Tax/Professional": 19597.389999999996,
@@ -862,6 +862,14 @@
       "last_amount": 55.52
     },
     {
+      "desc": "Grok Xai",
+      "category": "Tech/Subs",
+      "count": 4,
+      "months": 4,
+      "avg_amount": 23.75,
+      "last_amount": 30
+    },
+    {
       "desc": "Shaan Halal Zabiha Meat",
       "category": "Groceries",
       "count": 8,
@@ -980,14 +988,6 @@
       "months": 3,
       "avg_amount": 21.77,
       "last_amount": 5.38
-    },
-    {
-      "desc": "Grok Xai",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 21.67,
-      "last_amount": 30
     },
     {
       "desc": "Dollar Tree",
@@ -1329,7 +1329,7 @@
       "income": 7954.01,
       "bofa_income": 7954.01,
       "td_income": 0,
-      "outflows": 2865.39,
+      "outflows": 2895.39,
       "xoom": 0,
       "investments": 0
     }
@@ -8779,7 +8779,7 @@
       "label": "July 2026",
       "period": "2026-07",
       "categories": {
-        "Tech/Subs": 919.38,
+        "Tech/Subs": 949.38,
         "Gas/Travel": 445.96999999999997,
         "Entertainment": 146.35,
         "Shopping": 524.1800000000001,
@@ -8789,7 +8789,7 @@
         "Refund": -1.71,
         "Healthcare": 6.21
       },
-      "total": 2865.3900000000003,
+      "total": 2895.3900000000003,
       "transactions": [
         {
           "date": "07-01",
@@ -9123,6 +9123,19 @@
           "category": "Entertainment",
           "city": null,
           "state": null,
+          "bank": "Discover",
+          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-08",
+          "desc": "Grok Xai",
+          "amount": 30,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "CA",
           "bank": "Discover",
           "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
           "mask": "0494",
@@ -10397,6 +10410,16 @@
       "state": "OH",
       "period": "2026-06",
       "period_label": "June 2026"
+    },
+    {
+      "date": "07-08",
+      "desc": "Grok Xai",
+      "amount": 30,
+      "category": "Tech/Subs",
+      "city": null,
+      "state": "CA",
+      "period": "2026-07",
+      "period_label": "July 2026"
     }
   ],
   "fixed_obligations": {
@@ -10407,7 +10430,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-10T12:03:50.694Z",
+  "generated_at": "2026-07-10T18:11:50.746Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
