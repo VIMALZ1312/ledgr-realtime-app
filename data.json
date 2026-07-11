@@ -1,8 +1,8 @@
 {
   "kpis": {
-    "income": 7954.01,
+    "income": 8156.01,
     "income_period": "July 2026",
-    "true_outflows": 2895.39,
+    "true_outflows": 3816.47,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 2950.2799999999997,
+      "balance": 3669.3599999999997,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 1000.94
@@ -162,7 +162,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 5.32,
-      "available": 994,
+      "available": 991,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -175,7 +175,7 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 2483.87,
+      "balance": 3202.95,
       "available": null,
       "is_credit": true,
       "is_loan": false,
@@ -367,9 +367,9 @@
   ],
   "net_worth": {
     "total_checking": 85378.2633329257,
-    "total_credit": 7608.429999999999,
+    "total_credit": 8327.51,
     "total_loans": 387165.29,
-    "net": -309395.4566670743
+    "net": -310114.5366670743
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -380,9 +380,9 @@
     "by_month": []
   },
   "spending": {
-    "Healthcare": 2831.19,
-    "Tech/Subs": 13543.97,
-    "Shopping": 14682.91,
+    "Healthcare": 3686.19,
+    "Tech/Subs": 13548.97,
+    "Shopping": 14743.99,
     "Entertainment": 2356.85,
     "Tax/Professional": 19597.389999999996,
     "Groceries": 3176.3,
@@ -670,6 +670,14 @@
       "last_amount": 52.22
     },
     {
+      "desc": "Amazon",
+      "category": "Shopping",
+      "count": 55,
+      "months": 7,
+      "avg_amount": 23.29,
+      "last_amount": 28.46
+    },
+    {
       "desc": "Regal Cinemas",
       "category": "Entertainment",
       "count": 13,
@@ -724,14 +732,6 @@
       "months": 6,
       "avg_amount": 29.72,
       "last_amount": 21.75
-    },
-    {
-      "desc": "Amazon",
-      "category": "Shopping",
-      "count": 53,
-      "months": 6,
-      "avg_amount": 23.02,
-      "last_amount": 37.69
     },
     {
       "desc": "CVS ExtraCare",
@@ -886,6 +886,14 @@
       "last_amount": 15
     },
     {
+      "desc": "Netlify Fy",
+      "category": "Tech/Subs",
+      "count": 9,
+      "months": 4,
+      "avg_amount": 6.33,
+      "last_amount": 5
+    },
+    {
       "desc": "Costco",
       "category": "Shopping",
       "count": 4,
@@ -1020,14 +1028,6 @@
       "months": 3,
       "avg_amount": 7.82,
       "last_amount": 2.87
-    },
-    {
-      "desc": "Netlify Fy",
-      "category": "Tech/Subs",
-      "count": 8,
-      "months": 3,
-      "avg_amount": 6.5,
-      "last_amount": 5
     },
     {
       "desc": "Kids Smile",
@@ -1326,10 +1326,10 @@
     {
       "period": "2026-07",
       "period_label": "July 2026",
-      "income": 7954.01,
-      "bofa_income": 7954.01,
+      "income": 8156.01,
+      "bofa_income": 8156.01,
       "td_income": 0,
-      "outflows": 2895.39,
+      "outflows": 3816.47,
       "xoom": 0,
       "investments": 0
     }
@@ -8779,17 +8779,17 @@
       "label": "July 2026",
       "period": "2026-07",
       "categories": {
-        "Tech/Subs": 949.38,
+        "Tech/Subs": 954.38,
         "Gas/Travel": 445.96999999999997,
         "Entertainment": 146.35,
-        "Shopping": 524.1800000000001,
+        "Shopping": 585.2600000000001,
         "Tax/Professional": 320.16,
+        "Healthcare": 861.21,
         "Restaurants": 160.32,
         "Groceries": 344.53,
-        "Refund": -1.71,
-        "Healthcare": 6.21
+        "Refund": -1.71
       },
-      "total": 2895.3900000000003,
+      "total": 3816.4700000000003,
       "transactions": [
         {
           "date": "07-01",
@@ -8939,6 +8939,58 @@
           "desc": "NJ E-ZPass",
           "amount": 25,
           "category": "Gas/Travel",
+          "city": null,
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-09",
+          "desc": "Amazon",
+          "amount": 32.62,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-09",
+          "desc": "Netlify Fy",
+          "amount": 5,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "CA",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-08",
+          "desc": "Amazon",
+          "amount": 28.46,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-08",
+          "desc": "Fragomen",
+          "amount": 855,
+          "category": "Healthcare",
           "city": null,
           "state": "NJ",
           "bank": "Wells Fargo",
@@ -10072,6 +10124,16 @@
       "period_label": "July 2026"
     },
     {
+      "date": "07-09",
+      "desc": "Netlify Fy",
+      "amount": 5,
+      "category": "Tech/Subs",
+      "city": null,
+      "state": "CA",
+      "period": "2026-07",
+      "period_label": "July 2026"
+    },
+    {
       "date": "04-09",
       "desc": "Trendia Trendia.co",
       "amount": 178.01,
@@ -10430,7 +10492,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-11T00:13:25.350Z",
+  "generated_at": "2026-07-11T01:21:24.500Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
