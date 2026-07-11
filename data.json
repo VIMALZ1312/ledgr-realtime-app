@@ -2,7 +2,7 @@
   "kpis": {
     "income": 8156.01,
     "income_period": "July 2026",
-    "true_outflows": 3837.78,
+    "true_outflows": 3851.84,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -386,7 +386,7 @@
     "Entertainment": 2378.16,
     "Tax/Professional": 19597.389999999996,
     "Groceries": 3176.3,
-    "Restaurants": 2982.8700000000003,
+    "Restaurants": 2996.9300000000003,
     "Gas/Travel": 7033.910000000002,
     "Refund": -3380.8100000000004,
     "Insurance": 1843.71
@@ -1024,10 +1024,10 @@
     {
       "desc": "Vzn Br Cafe Basking Ridgenj",
       "category": "Restaurants",
-      "count": 8,
+      "count": 9,
       "months": 3,
-      "avg_amount": 7.82,
-      "last_amount": 2.87
+      "avg_amount": 8.52,
+      "last_amount": 14.06
     },
     {
       "desc": "Kids Smile",
@@ -1329,7 +1329,7 @@
       "income": 8156.01,
       "bofa_income": 8156.01,
       "td_income": 0,
-      "outflows": 3837.78,
+      "outflows": 3851.84,
       "xoom": 0,
       "investments": 0
     }
@@ -8785,11 +8785,11 @@
         "Shopping": 585.2600000000001,
         "Tax/Professional": 320.16,
         "Healthcare": 861.21,
-        "Restaurants": 160.32,
+        "Restaurants": 174.38,
         "Groceries": 344.53,
         "Refund": -1.71
       },
-      "total": 3837.78,
+      "total": 3851.84,
       "transactions": [
         {
           "date": "07-01",
@@ -9201,6 +9201,19 @@
           "category": "Tech/Subs",
           "city": null,
           "state": "CA",
+          "bank": "Discover",
+          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-09",
+          "desc": "Vzn Br Cafe Basking Ridgenj",
+          "amount": 14.06,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
           "bank": "Discover",
           "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
           "mask": "0494",
@@ -10505,7 +10518,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-11T12:10:04.695Z",
+  "generated_at": "2026-07-11T18:10:00.054Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
