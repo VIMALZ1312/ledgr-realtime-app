@@ -2,14 +2,14 @@
   "kpis": {
     "income": 8156.01,
     "income_period": "July 2026",
-    "true_outflows": 3816.47,
+    "true_outflows": 3837.78,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 18677.31,
+      "balance": 18656,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -49,7 +49,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 48778.1033329257,
+      "balance": 49348.2111193602,
       "available": 28.59,
       "is_credit": false,
       "is_loan": false,
@@ -105,7 +105,7 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 1031.12,
+      "balance": 1009.81,
       "available": 1009.81,
       "is_credit": false,
       "is_loan": false,
@@ -287,7 +287,7 @@
       "mask": "4351",
       "type": "loan",
       "subtype": "mortgage",
-      "balance": 387165.29,
+      "balance": 386654.23,
       "available": null,
       "is_credit": false,
       "is_loan": true,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 85378.2633329257,
+    "total_checking": 85927.0611193602,
     "total_credit": 8341.57,
-    "total_loans": 387165.29,
-    "net": -310128.59666707425
+    "total_loans": 386654.23,
+    "net": -309068.7388806398
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -383,7 +383,7 @@
     "Healthcare": 3686.19,
     "Tech/Subs": 13548.97,
     "Shopping": 14743.99,
-    "Entertainment": 2356.85,
+    "Entertainment": 2378.16,
     "Tax/Professional": 19597.389999999996,
     "Groceries": 3176.3,
     "Restaurants": 2982.8700000000003,
@@ -734,6 +734,14 @@
       "last_amount": 21.75
     },
     {
+      "desc": "Netflix",
+      "category": "Entertainment",
+      "count": 6,
+      "months": 6,
+      "avg_amount": 20.25,
+      "last_amount": 21.31
+    },
+    {
       "desc": "CVS ExtraCare",
       "category": "Healthcare",
       "count": 6,
@@ -788,14 +796,6 @@
       "months": 5,
       "avg_amount": 35.18,
       "last_amount": 35.18
-    },
-    {
-      "desc": "Netflix",
-      "category": "Entertainment",
-      "count": 5,
-      "months": 5,
-      "avg_amount": 20.03,
-      "last_amount": 21.31
     },
     {
       "desc": "Apple",
@@ -1329,7 +1329,7 @@
       "income": 8156.01,
       "bofa_income": 8156.01,
       "td_income": 0,
-      "outflows": 3816.47,
+      "outflows": 3837.78,
       "xoom": 0,
       "investments": 0
     }
@@ -8781,7 +8781,7 @@
       "categories": {
         "Tech/Subs": 954.38,
         "Gas/Travel": 445.96999999999997,
-        "Entertainment": 146.35,
+        "Entertainment": 167.66,
         "Shopping": 585.2600000000001,
         "Tax/Professional": 320.16,
         "Healthcare": 861.21,
@@ -8789,7 +8789,7 @@
         "Groceries": 344.53,
         "Refund": -1.71
       },
-      "total": 3816.4700000000003,
+      "total": 3837.78,
       "transactions": [
         {
           "date": "07-01",
@@ -8835,6 +8835,19 @@
           "desc": "Public Service",
           "amount": 219.21,
           "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
+          "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-09",
+          "desc": "Netflix",
+          "amount": 21.31,
+          "category": "Entertainment",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -10492,7 +10505,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-11T06:12:58.866Z",
+  "generated_at": "2026-07-11T12:10:04.695Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
