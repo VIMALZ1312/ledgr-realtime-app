@@ -2,7 +2,7 @@
   "kpis": {
     "income": 8156.01,
     "income_period": "July 2026",
-    "true_outflows": 3865.05,
+    "true_outflows": 4130.24,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 3682.5699999999997,
+      "balance": 3947.7599999999998,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 1000.94
@@ -49,7 +49,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 49348.2111193602,
+      "balance": 46881.812426,
       "available": 28.59,
       "is_credit": false,
       "is_loan": false,
@@ -148,7 +148,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 1000.94,
-      "available": 1000.94,
+      "available": 0.94,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -162,7 +162,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 8.51,
-      "available": 991,
+      "available": 990,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -175,7 +175,7 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 3212.97,
+      "balance": 3478.16,
       "available": null,
       "is_credit": true,
       "is_loan": false,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 85927.0611193602,
-    "total_credit": 8354.78,
+    "total_checking": 83460.662426,
+    "total_credit": 8619.970000000001,
     "total_loans": 386654.23,
-    "net": -309081.9488806398
+    "net": -311813.53757399996
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -381,8 +381,8 @@
   },
   "spending": {
     "Healthcare": 3686.19,
-    "Tech/Subs": 13558.99,
-    "Shopping": 14747.18,
+    "Tech/Subs": 13614.44,
+    "Shopping": 14956.92,
     "Entertainment": 2378.16,
     "Tax/Professional": 19597.389999999996,
     "Groceries": 3176.3,
@@ -862,6 +862,14 @@
       "last_amount": 55.52
     },
     {
+      "desc": "Everwash",
+      "category": "Tech/Subs",
+      "count": 4,
+      "months": 4,
+      "avg_amount": 55.45,
+      "last_amount": 55.45
+    },
+    {
       "desc": "Grok Xai",
       "category": "Tech/Subs",
       "count": 4,
@@ -948,14 +956,6 @@
       "months": 3,
       "avg_amount": 69.95,
       "last_amount": 56.51
-    },
-    {
-      "desc": "Everwash",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 55.45,
-      "last_amount": 55.45
     },
     {
       "desc": "Macy's",
@@ -1329,7 +1329,7 @@
       "income": 8156.01,
       "bofa_income": 8156.01,
       "td_income": 0,
-      "outflows": 3865.05,
+      "outflows": 4130.24,
       "xoom": 0,
       "investments": 0
     }
@@ -8779,17 +8779,17 @@
       "label": "July 2026",
       "period": "2026-07",
       "categories": {
-        "Tech/Subs": 964.4,
+        "Tech/Subs": 1019.85,
         "Gas/Travel": 445.96999999999997,
         "Entertainment": 167.66,
-        "Shopping": 588.45,
+        "Shopping": 798.1900000000002,
         "Tax/Professional": 320.16,
         "Healthcare": 861.21,
         "Restaurants": 174.38,
         "Groceries": 344.53,
         "Refund": -1.71
       },
-      "total": 3865.05,
+      "total": 4130.240000000001,
       "transactions": [
         {
           "date": "07-01",
@@ -9032,6 +9032,32 @@
           "category": "Tech/Subs",
           "city": null,
           "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-11",
+          "desc": "PetSmart",
+          "amount": 209.74,
+          "category": "Shopping",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-11",
+          "desc": "Everwash",
+          "amount": 55.45,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "PA",
           "bank": "Wells Fargo",
           "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
           "mask": "9762",
@@ -10554,7 +10580,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-13T18:13:29.742Z",
+  "generated_at": "2026-07-14T00:06:19.027Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
