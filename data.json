@@ -2,7 +2,7 @@
   "kpis": {
     "income": 8156.01,
     "income_period": "July 2026",
-    "true_outflows": 4130.24,
+    "true_outflows": 4168.11,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -382,7 +382,7 @@
   "spending": {
     "Healthcare": 3686.19,
     "Tech/Subs": 13614.44,
-    "Shopping": 14956.92,
+    "Shopping": 14994.789999999999,
     "Entertainment": 2378.16,
     "Tax/Professional": 19597.389999999996,
     "Groceries": 3176.3,
@@ -1329,7 +1329,7 @@
       "income": 8156.01,
       "bofa_income": 8156.01,
       "td_income": 0,
-      "outflows": 4130.24,
+      "outflows": 4168.11,
       "xoom": 0,
       "investments": 0
     }
@@ -8782,14 +8782,14 @@
         "Tech/Subs": 1019.85,
         "Gas/Travel": 445.96999999999997,
         "Entertainment": 167.66,
-        "Shopping": 798.1900000000002,
+        "Shopping": 836.0600000000002,
         "Tax/Professional": 320.16,
         "Healthcare": 861.21,
         "Restaurants": 174.38,
         "Groceries": 344.53,
         "Refund": -1.71
       },
-      "total": 4130.240000000001,
+      "total": 4168.110000000001,
       "transactions": [
         {
           "date": "07-01",
@@ -9264,6 +9264,19 @@
           "desc": "Vzn Br Cafe Basking Ridgenj",
           "amount": 14.06,
           "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-10",
+          "desc": "Shein",
+          "amount": 37.87,
+          "category": "Shopping",
           "city": null,
           "state": null,
           "bank": "Discover",
@@ -10580,7 +10593,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-14T12:02:56.779Z",
+  "generated_at": "2026-07-14T18:09:39.149Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
