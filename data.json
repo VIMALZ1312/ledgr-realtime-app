@@ -28,7 +28,7 @@
       "payroll": 0
     },
     "discover": {
-      "balance": 3878.69,
+      "balance": 3916.56,
       "is_credit": true,
       "period_label": "Live"
     },
@@ -301,7 +301,7 @@
       "mask": "0494",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 3878.69,
+      "balance": 3916.56,
       "available": null,
       "is_credit": true,
       "is_loan": false,
@@ -367,9 +367,9 @@
   ],
   "net_worth": {
     "total_checking": 83460.662426,
-    "total_credit": 8619.970000000001,
+    "total_credit": 8657.84,
     "total_loans": 386654.23,
-    "net": -311813.53757399996
+    "net": -311851.40757399995
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -10580,7 +10580,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-14T00:06:19.027Z",
+  "generated_at": "2026-07-14T06:10:59.231Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
