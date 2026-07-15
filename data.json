@@ -2,7 +2,7 @@
   "kpis": {
     "income": 8156.01,
     "income_period": "July 2026",
-    "true_outflows": 4168.11,
+    "true_outflows": 4256.97,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -382,10 +382,10 @@
   "spending": {
     "Healthcare": 3686.19,
     "Tech/Subs": 13614.44,
-    "Shopping": 14994.789999999999,
+    "Shopping": 15011.83,
     "Entertainment": 2378.16,
     "Tax/Professional": 19597.389999999996,
-    "Groceries": 3176.3,
+    "Groceries": 3248.12,
     "Restaurants": 2996.9300000000003,
     "Gas/Travel": 7033.910000000002,
     "Refund": -3380.8100000000004,
@@ -651,7 +651,24 @@
       "period_label": "July 2026"
     }
   ],
-  "pending_transactions": [],
+  "pending_transactions": [
+    {
+      "date": "07-14",
+      "desc": "PetSmart",
+      "amount": 17.04,
+      "category": "Shopping",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "07-14",
+      "desc": "Trader Joe's",
+      "amount": 71.82,
+      "category": "Groceries",
+      "bank": "BofA",
+      "pending": true
+    }
+  ],
   "detected_recurring": [
     {
       "desc": "Delight Big Bazar",
@@ -870,6 +887,14 @@
       "last_amount": 55.45
     },
     {
+      "desc": "Trader Joe's",
+      "category": "Groceries",
+      "count": 4,
+      "months": 4,
+      "avg_amount": 43.08,
+      "last_amount": 71.82
+    },
+    {
       "desc": "Grok Xai",
       "category": "Tech/Subs",
       "count": 4,
@@ -980,14 +1005,6 @@
       "months": 3,
       "avg_amount": 40.44,
       "last_amount": 12.25
-    },
-    {
-      "desc": "Trader Joe's",
-      "category": "Groceries",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 33.49,
-      "last_amount": 13.14
     },
     {
       "desc": "CVS",
@@ -1329,7 +1346,7 @@
       "income": 8156.01,
       "bofa_income": 8156.01,
       "td_income": 0,
-      "outflows": 4168.11,
+      "outflows": 4256.97,
       "xoom": 0,
       "investments": 0
     }
@@ -8782,14 +8799,14 @@
         "Tech/Subs": 1019.85,
         "Gas/Travel": 445.96999999999997,
         "Entertainment": 167.66,
-        "Shopping": 836.0600000000002,
+        "Shopping": 853.1000000000001,
         "Tax/Professional": 320.16,
         "Healthcare": 861.21,
         "Restaurants": 174.38,
-        "Groceries": 344.53,
+        "Groceries": 416.34999999999997,
         "Refund": -1.71
       },
-      "total": 4168.110000000001,
+      "total": 4256.97,
       "transactions": [
         {
           "date": "07-01",
@@ -9188,6 +9205,32 @@
           "category": "Shopping",
           "city": null,
           "state": "AR",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-14",
+          "desc": "PetSmart",
+          "amount": 17.04,
+          "category": "Shopping",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-14",
+          "desc": "Trader Joe's",
+          "amount": 71.82,
+          "category": "Groceries",
+          "city": "North Brunswick",
+          "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -10593,7 +10636,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-15T00:14:00.575Z",
+  "generated_at": "2026-07-15T06:05:29.228Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
