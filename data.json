@@ -2,7 +2,7 @@
   "kpis": {
     "income": 8156.01,
     "income_period": "July 2026",
-    "true_outflows": 456.83,
+    "true_outflows": 787.19,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,10 +16,10 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 3947.7599999999998,
+      "balance": 4278.12,
       "is_credit": true,
       "period_label": "Live",
-      "wf_checking": 1000.94
+      "wf_checking": 0.94
     },
     "td": {
       "balance": 81.03,
@@ -147,7 +147,7 @@
       "mask": "3068",
       "type": "depository",
       "subtype": "checking",
-      "balance": 1000.94,
+      "balance": 0.94,
       "available": 0.94,
       "is_credit": false,
       "is_loan": false,
@@ -161,8 +161,8 @@
       "mask": "8036",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 8.51,
-      "available": 990,
+      "balance": 10.5,
+      "available": 989,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -175,7 +175,7 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 3478.16,
+      "balance": 3806.53,
       "available": null,
       "is_credit": true,
       "is_loan": false,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 85782.33626892499,
-    "total_credit": 8657.84,
+    "total_checking": 84782.33626892499,
+    "total_credit": 8988.2,
     "total_loans": 386654.23,
-    "net": -309529.73373107496
+    "net": -310860.093731075
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -380,13 +380,13 @@
     "by_month": []
   },
   "spending": {
-    "Healthcare": 3686.19,
+    "Healthcare": 3690.44,
     "Tech/Subs": 13614.44,
-    "Shopping": 15011.83,
-    "Entertainment": 2378.16,
+    "Shopping": 15065.13,
+    "Entertainment": 2485.71,
     "Tax/Professional": 19597.389999999996,
-    "Groceries": 3248.12,
-    "Restaurants": 2996.9300000000003,
+    "Groceries": 3390.41,
+    "Restaurants": 3019.9,
     "Gas/Travel": 7033.910000000002,
     "Refund": -7180.950000000001,
     "Insurance": 1843.71
@@ -687,12 +687,20 @@
       "last_amount": 52.22
     },
     {
+      "desc": "Walgreens",
+      "category": "Healthcare",
+      "count": 21,
+      "months": 7,
+      "avg_amount": 38.51,
+      "last_amount": 4.25
+    },
+    {
       "desc": "Amazon",
       "category": "Shopping",
-      "count": 55,
+      "count": 56,
       "months": 7,
-      "avg_amount": 23.29,
-      "last_amount": 28.46
+      "avg_amount": 23.83,
+      "last_amount": 53.3
     },
     {
       "desc": "Regal Cinemas",
@@ -735,20 +743,20 @@
       "last_amount": 147.95
     },
     {
-      "desc": "Walgreens",
-      "category": "Healthcare",
-      "count": 20,
-      "months": 6,
-      "avg_amount": 40.22,
-      "last_amount": 101.68
-    },
-    {
       "desc": "ShopRite",
       "category": "Groceries",
       "count": 18,
       "months": 6,
       "avg_amount": 29.72,
       "last_amount": 21.75
+    },
+    {
+      "desc": "Apple",
+      "category": "Shopping",
+      "count": 18,
+      "months": 6,
+      "avg_amount": 22.73,
+      "last_amount": 105.56
     },
     {
       "desc": "Netflix",
@@ -759,20 +767,20 @@
       "last_amount": 21.31
     },
     {
-      "desc": "Apple",
-      "category": "Shopping",
-      "count": 17,
-      "months": 6,
-      "avg_amount": 17.86,
-      "last_amount": 3.19
-    },
-    {
       "desc": "CVS ExtraCare",
       "category": "Healthcare",
       "count": 6,
       "months": 6,
       "avg_amount": 5.33,
       "last_amount": 5.33
+    },
+    {
+      "desc": "Google One",
+      "category": "Tech/Subs",
+      "count": 6,
+      "months": 6,
+      "avg_amount": 1.99,
+      "last_amount": 1.99
     },
     {
       "desc": "Verizon",
@@ -831,14 +839,6 @@
       "last_amount": 10.66
     },
     {
-      "desc": "Google One",
-      "category": "Tech/Subs",
-      "count": 5,
-      "months": 5,
-      "avg_amount": 1.99,
-      "last_amount": 1.99
-    },
-    {
       "desc": "Zelle payment to KAVI MUSIC LLC for \"Aryan Mar and Apr\"; Conf# taivjlhgp",
       "category": "Entertainment",
       "count": 4,
@@ -857,9 +857,9 @@
     {
       "desc": "Patidar Supermarket Nort",
       "category": "Groceries",
-      "count": 8,
+      "count": 9,
       "months": 4,
-      "avg_amount": 98.57,
+      "avg_amount": 103.43,
       "last_amount": 259.25
     },
     {
@@ -1255,6 +1255,14 @@
       "last_amount": 27.71
     },
     {
+      "desc": "Singas Famous Pizza",
+      "category": "Restaurants",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 16.95,
+      "last_amount": 22.97
+    },
+    {
       "desc": "Hulu",
       "category": "Entertainment",
       "count": 3,
@@ -1346,7 +1354,7 @@
       "income": 8156.01,
       "bofa_income": 8156.01,
       "td_income": 0,
-      "outflows": 456.83,
+      "outflows": 787.19,
       "xoom": 0,
       "investments": 0
     }
@@ -8798,15 +8806,15 @@
       "categories": {
         "Tech/Subs": 1019.85,
         "Gas/Travel": 445.96999999999997,
-        "Entertainment": 167.66,
+        "Entertainment": 275.21,
         "Refund": -3801.85,
-        "Shopping": 853.1000000000001,
+        "Shopping": 906.4000000000001,
         "Tax/Professional": 320.16,
-        "Healthcare": 861.21,
-        "Restaurants": 174.38,
-        "Groceries": 416.34999999999997
+        "Healthcare": 865.46,
+        "Groceries": 558.6399999999999,
+        "Restaurants": 197.35000000000002
       },
-      "total": 456.8300000000004,
+      "total": 787.1900000000004,
       "transactions": [
         {
           "date": "07-01",
@@ -9088,6 +9096,84 @@
           "category": "Tech/Subs",
           "city": null,
           "state": "PA",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-13",
+          "desc": "Google One",
+          "amount": 1.99,
+          "category": "Entertainment",
+          "city": null,
+          "state": "CA",
+          "bank": "Wells Fargo",
+          "account_id": "dM5Ed30xEot9Ap000VOXuYRQY0X87ASg8Zep8",
+          "mask": "8036",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-13",
+          "desc": "Apple",
+          "amount": 105.56,
+          "category": "Entertainment",
+          "city": null,
+          "state": "CA",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-12",
+          "desc": "Patidar Supermarket Nort",
+          "amount": 142.29,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-12",
+          "desc": "Amazon",
+          "amount": 53.3,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-12",
+          "desc": "Walgreens",
+          "amount": 4.25,
+          "category": "Healthcare",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-12",
+          "desc": "Singas Famous Pizza",
+          "amount": 22.97,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
           "bank": "Wells Fargo",
           "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
           "mask": "9762",
@@ -10291,6 +10377,26 @@
       "period_label": "July 2026"
     },
     {
+      "date": "07-13",
+      "desc": "Google One",
+      "amount": 1.99,
+      "category": "Entertainment",
+      "city": null,
+      "state": "CA",
+      "period": "2026-07",
+      "period_label": "July 2026"
+    },
+    {
+      "date": "07-13",
+      "desc": "Apple",
+      "amount": 105.56,
+      "category": "Entertainment",
+      "city": null,
+      "state": "CA",
+      "period": "2026-07",
+      "period_label": "July 2026"
+    },
+    {
       "date": "04-09",
       "desc": "Trendia Trendia.co",
       "amount": 178.01,
@@ -10649,7 +10755,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-15T12:09:46.920Z",
+  "generated_at": "2026-07-15T18:05:24.576Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
