@@ -2,14 +2,14 @@
   "kpis": {
     "income": 8156.01,
     "income_period": "July 2026",
-    "true_outflows": 4256.97,
+    "true_outflows": 456.83,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 18656,
+      "balance": 20971.14,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -105,8 +105,8 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 1009.81,
-      "available": -1475.19,
+      "balance": 3324.95,
+      "available": 3324.95,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 83467.19626892499,
+    "total_checking": 85782.33626892499,
     "total_credit": 8657.84,
     "total_loans": 386654.23,
-    "net": -311844.873731075
+    "net": -309529.73373107496
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -388,7 +388,7 @@
     "Groceries": 3248.12,
     "Restaurants": 2996.9300000000003,
     "Gas/Travel": 7033.910000000002,
-    "Refund": -3380.8100000000004,
+    "Refund": -7180.950000000001,
     "Insurance": 1843.71
   },
   "zelle_received": [
@@ -1346,7 +1346,7 @@
       "income": 8156.01,
       "bofa_income": 8156.01,
       "td_income": 0,
-      "outflows": 4256.97,
+      "outflows": 456.83,
       "xoom": 0,
       "investments": 0
     }
@@ -8799,14 +8799,14 @@
         "Tech/Subs": 1019.85,
         "Gas/Travel": 445.96999999999997,
         "Entertainment": 167.66,
+        "Refund": -3801.85,
         "Shopping": 853.1000000000001,
         "Tax/Professional": 320.16,
         "Healthcare": 861.21,
         "Restaurants": 174.38,
-        "Groceries": 416.34999999999997,
-        "Refund": -1.71
+        "Groceries": 416.34999999999997
       },
-      "total": 4256.97,
+      "total": 456.8300000000004,
       "transactions": [
         {
           "date": "07-01",
@@ -8872,6 +8872,19 @@
           "mask": "7309",
           "pending": false,
           "refund": false
+        },
+        {
+          "date": "07-14",
+          "desc": "RETURN OF POSTED CHECK / ITEM (RECEIVED ON 07-13) ELECTRONIC TRANSACTION",
+          "amount": -3800.14,
+          "category": "Refund",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
+          "mask": "7309",
+          "pending": false,
+          "refund": true
         },
         {
           "date": "07-01",
@@ -10636,7 +10649,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-15T06:05:29.228Z",
+  "generated_at": "2026-07-15T12:09:46.920Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
