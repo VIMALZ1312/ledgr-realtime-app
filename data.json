@@ -2,7 +2,7 @@
   "kpis": {
     "income": 8156.01,
     "income_period": "July 2026",
-    "true_outflows": 787.19,
+    "true_outflows": 788.9,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -49,8 +49,8 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 48389.756268925,
-      "available": 2.37,
+      "balance": 47980.0598859492,
+      "available": 3.46,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 84782.33626892499,
+    "total_checking": 84372.63988594919,
     "total_credit": 8988.2,
     "total_loans": 386654.23,
-    "net": -310860.093731075
+    "net": -311269.7901140508
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -388,7 +388,7 @@
     "Groceries": 3390.41,
     "Restaurants": 3019.9,
     "Gas/Travel": 7033.910000000002,
-    "Refund": -7180.950000000001,
+    "Refund": -7179.24,
     "Insurance": 1843.71
   },
   "zelle_received": [
@@ -1354,7 +1354,7 @@
       "income": 8156.01,
       "bofa_income": 8156.01,
       "td_income": 0,
-      "outflows": 787.19,
+      "outflows": 788.9,
       "xoom": 0,
       "investments": 0
     }
@@ -8807,14 +8807,14 @@
         "Tech/Subs": 1019.85,
         "Gas/Travel": 445.96999999999997,
         "Entertainment": 275.21,
-        "Refund": -3801.85,
+        "Refund": -3800.14,
         "Shopping": 906.4000000000001,
         "Tax/Professional": 320.16,
         "Healthcare": 865.46,
         "Groceries": 558.6399999999999,
         "Restaurants": 197.35000000000002
       },
-      "total": 787.1900000000004,
+      "total": 788.9000000000003,
       "transactions": [
         {
           "date": "07-01",
@@ -9335,19 +9335,6 @@
           "mask": "2776",
           "pending": false,
           "refund": false
-        },
-        {
-          "date": "07-01",
-          "desc": "MERCURY*MICIL-IL-NJPPA CA 0630001646091935",
-          "amount": -1.71,
-          "category": "Refund",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": true
         },
         {
           "date": "07-01",
@@ -10755,7 +10742,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-15T18:05:24.576Z",
+  "generated_at": "2026-07-16T00:14:14.211Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
