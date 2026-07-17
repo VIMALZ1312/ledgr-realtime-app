@@ -2,14 +2,14 @@
   "kpis": {
     "income": 8156.01,
     "income_period": "July 2026",
-    "true_outflows": 787.19,
+    "true_outflows": 789.68,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 20971.14,
+      "balance": 19971.14,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -245,8 +245,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 588.16,
-      "available": 111.84,
+      "balance": 605.2,
+      "available": 94.8,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -273,8 +273,8 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 16956.27,
-      "available": 15956.27,
+      "balance": 15956.27,
+      "available": 17052.52,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 82579.50262749799,
-    "total_credit": 8988.2,
+    "total_checking": 81579.50262749799,
+    "total_credit": 9005.24,
     "total_loans": 386654.23,
-    "net": -313062.927372502
+    "net": -314079.96737250197
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -385,7 +385,7 @@
     "Shopping": 15065.13,
     "Entertainment": 2485.71,
     "Tax/Professional": 19597.389999999996,
-    "Groceries": 3390.41,
+    "Groceries": 3392.8999999999996,
     "Restaurants": 3019.9,
     "Gas/Travel": 7033.910000000002,
     "Refund": -7180.950000000001,
@@ -649,21 +649,27 @@
       "amount": 160,
       "period": "2026-07",
       "period_label": "July 2026"
+    },
+    {
+      "from": "Transfer Conf# 0GB718W1N; VENKATESH KASANAGOTTU",
+      "amount": 1200,
+      "period": "2026-07",
+      "period_label": "July 2026"
     }
   ],
   "pending_transactions": [
     {
       "date": "07-14",
-      "desc": "PetSmart",
-      "amount": 17.04,
-      "category": "Shopping",
+      "desc": "Trader Joe's",
+      "amount": 71.82,
+      "category": "Groceries",
       "bank": "BofA",
       "pending": true
     },
     {
-      "date": "07-14",
-      "desc": "Trader Joe's",
-      "amount": 71.82,
+      "date": "07-16",
+      "desc": "ShopRite",
+      "amount": 2.49,
       "category": "Groceries",
       "bank": "BofA",
       "pending": true
@@ -693,6 +699,14 @@
       "months": 7,
       "avg_amount": 38.51,
       "last_amount": 4.25
+    },
+    {
+      "desc": "ShopRite",
+      "category": "Groceries",
+      "count": 19,
+      "months": 7,
+      "avg_amount": 28.29,
+      "last_amount": 2.49
     },
     {
       "desc": "Amazon",
@@ -741,14 +755,6 @@
       "months": 6,
       "avg_amount": 76.34,
       "last_amount": 147.95
-    },
-    {
-      "desc": "ShopRite",
-      "category": "Groceries",
-      "count": 18,
-      "months": 6,
-      "avg_amount": 29.72,
-      "last_amount": 21.75
     },
     {
       "desc": "Apple",
@@ -1354,7 +1360,7 @@
       "income": 8156.01,
       "bofa_income": 8156.01,
       "td_income": 0,
-      "outflows": 787.19,
+      "outflows": 789.68,
       "xoom": 0,
       "investments": 0
     }
@@ -8811,10 +8817,10 @@
         "Shopping": 906.4000000000001,
         "Tax/Professional": 320.16,
         "Healthcare": 865.46,
-        "Groceries": 558.6399999999999,
+        "Groceries": 561.1299999999999,
         "Restaurants": 197.35000000000002
       },
-      "total": 787.1900000000003,
+      "total": 789.6800000000003,
       "transactions": [
         {
           "date": "07-01",
@@ -9312,9 +9318,9 @@
         },
         {
           "date": "07-14",
-          "desc": "PetSmart",
-          "amount": 17.04,
-          "category": "Shopping",
+          "desc": "Trader Joe's",
+          "amount": 71.82,
+          "category": "Groceries",
           "city": "North Brunswick",
           "state": "NJ",
           "bank": "BofA",
@@ -9324,10 +9330,23 @@
           "refund": false
         },
         {
-          "date": "07-14",
-          "desc": "Trader Joe's",
-          "amount": 71.82,
+          "date": "07-16",
+          "desc": "ShopRite",
+          "amount": 2.49,
           "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-15",
+          "desc": "PetSmart",
+          "amount": 17.04,
+          "category": "Shopping",
           "city": "North Brunswick",
           "state": "NJ",
           "bank": "BofA",
@@ -10755,7 +10774,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-17T00:05:20.353Z",
+  "generated_at": "2026-07-17T06:03:20.240Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
