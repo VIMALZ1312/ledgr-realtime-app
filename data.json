@@ -1,8 +1,8 @@
 {
   "kpis": {
-    "income": 12134.45,
+    "income": 12634.45,
     "income_period": "July 2026",
-    "true_outflows": 1185.02,
+    "true_outflows": 1200.03,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,10 +16,10 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 4278.12,
+      "balance": 4293.13,
       "is_credit": true,
       "period_label": "Live",
-      "wf_checking": 0.94
+      "wf_checking": -499.06
     },
     "td": {
       "balance": 81.03,
@@ -147,7 +147,7 @@
       "mask": "3068",
       "type": "depository",
       "subtype": "checking",
-      "balance": 0.94,
+      "balance": -499.06,
       "available": 0.94,
       "is_credit": false,
       "is_loan": false,
@@ -175,7 +175,7 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 3806.53,
+      "balance": 3821.54,
       "available": null,
       "is_credit": true,
       "is_loan": false,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 82579.50262749799,
-    "total_credit": 9005.24,
+    "total_checking": 82079.50262749799,
+    "total_credit": 9020.25,
     "total_loans": 386654.23,
-    "net": -313079.96737250197
+    "net": -313594.977372502
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -381,8 +381,8 @@
   },
   "spending": {
     "Healthcare": 3690.44,
-    "Tech/Subs": 14009.78,
-    "Shopping": 15065.13,
+    "Tech/Subs": 14014.78,
+    "Shopping": 15075.14,
     "Entertainment": 2485.71,
     "Tax/Professional": 19597.389999999996,
     "Groceries": 3392.8999999999996,
@@ -711,10 +711,10 @@
     {
       "desc": "Amazon",
       "category": "Shopping",
-      "count": 56,
+      "count": 57,
       "months": 7,
-      "avg_amount": 23.83,
-      "last_amount": 53.3
+      "avg_amount": 23.58,
+      "last_amount": 10.01
     },
     {
       "desc": "Regal Cinemas",
@@ -927,9 +927,9 @@
     {
       "desc": "Netlify Fy",
       "category": "Tech/Subs",
-      "count": 9,
+      "count": 10,
       "months": 4,
-      "avg_amount": 6.33,
+      "avg_amount": 6.2,
       "last_amount": 5
     },
     {
@@ -1357,10 +1357,10 @@
     {
       "period": "2026-07",
       "period_label": "July 2026",
-      "income": 12134.449999999999,
-      "bofa_income": 12134.449999999999,
+      "income": 12634.449999999999,
+      "bofa_income": 12634.449999999999,
       "td_income": 0,
-      "outflows": 1185.02,
+      "outflows": 1200.03,
       "xoom": 0,
       "investments": 0
     }
@@ -8810,17 +8810,17 @@
       "label": "July 2026",
       "period": "2026-07",
       "categories": {
-        "Tech/Subs": 1415.19,
+        "Tech/Subs": 1420.19,
         "Gas/Travel": 445.96999999999997,
         "Entertainment": 275.21,
         "Refund": -3801.85,
-        "Shopping": 906.4000000000001,
+        "Shopping": 916.4100000000001,
         "Tax/Professional": 320.16,
         "Healthcare": 865.46,
         "Groceries": 561.1299999999999,
         "Restaurants": 197.35000000000002
       },
-      "total": 1185.0200000000007,
+      "total": 1200.0300000000007,
       "transactions": [
         {
           "date": "07-01",
@@ -9191,6 +9191,32 @@
           "desc": "Singas Famous Pizza",
           "amount": 22.97,
           "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-15",
+          "desc": "Netlify Fy",
+          "amount": 5,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "CA",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-15",
+          "desc": "Amazon",
+          "amount": 10.01,
+          "category": "Shopping",
           "city": null,
           "state": null,
           "bank": "Wells Fargo",
@@ -10429,6 +10455,16 @@
       "period_label": "July 2026"
     },
     {
+      "date": "07-15",
+      "desc": "Netlify Fy",
+      "amount": 5,
+      "category": "Tech/Subs",
+      "city": null,
+      "state": "CA",
+      "period": "2026-07",
+      "period_label": "July 2026"
+    },
+    {
       "date": "04-09",
       "desc": "Trendia Trendia.co",
       "amount": 178.01,
@@ -10787,7 +10823,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-17T12:08:22.540Z",
+  "generated_at": "2026-07-17T18:04:13.234Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
