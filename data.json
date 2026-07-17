@@ -1,15 +1,15 @@
 {
   "kpis": {
-    "income": 8156.01,
+    "income": 12134.45,
     "income_period": "July 2026",
-    "true_outflows": 789.68,
+    "true_outflows": 1185.02,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 19971.14,
+      "balance": 20971.14,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -105,8 +105,8 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 3324.95,
-      "available": 4324.95,
+      "balance": 4324.95,
+      "available": 4507.91,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -120,7 +120,7 @@
       "type": "depository",
       "subtype": "savings",
       "balance": 514.7,
-      "available": 514.7,
+      "available": 14.7,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 81579.50262749799,
+    "total_checking": 82579.50262749799,
     "total_credit": 9005.24,
     "total_loans": 386654.23,
-    "net": -314079.96737250197
+    "net": -313079.96737250197
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -381,7 +381,7 @@
   },
   "spending": {
     "Healthcare": 3690.44,
-    "Tech/Subs": 13614.44,
+    "Tech/Subs": 14009.78,
     "Shopping": 15065.13,
     "Entertainment": 2485.71,
     "Tax/Professional": 19597.389999999996,
@@ -725,6 +725,14 @@
       "last_amount": 18.65
     },
     {
+      "desc": "Verizon",
+      "category": "Tech/Subs",
+      "count": 6,
+      "months": 6,
+      "avg_amount": 423.7,
+      "last_amount": 395.34
+    },
+    {
       "desc": "Big Blue Swim School",
       "category": "Tech/Subs",
       "count": 6,
@@ -787,14 +795,6 @@
       "months": 6,
       "avg_amount": 1.99,
       "last_amount": 1.99
-    },
-    {
-      "desc": "Verizon",
-      "category": "Tech/Subs",
-      "count": 5,
-      "months": 5,
-      "avg_amount": 429.37,
-      "last_amount": 391.6
     },
     {
       "desc": "Republic Services",
@@ -1357,10 +1357,10 @@
     {
       "period": "2026-07",
       "period_label": "July 2026",
-      "income": 8156.01,
-      "bofa_income": 8156.01,
+      "income": 12134.449999999999,
+      "bofa_income": 12134.449999999999,
       "td_income": 0,
-      "outflows": 789.68,
+      "outflows": 1185.02,
       "xoom": 0,
       "investments": 0
     }
@@ -8810,7 +8810,7 @@
       "label": "July 2026",
       "period": "2026-07",
       "categories": {
-        "Tech/Subs": 1019.85,
+        "Tech/Subs": 1415.19,
         "Gas/Travel": 445.96999999999997,
         "Entertainment": 275.21,
         "Refund": -3801.85,
@@ -8820,7 +8820,7 @@
         "Groceries": 561.1299999999999,
         "Restaurants": 197.35000000000002
       },
-      "total": 789.6800000000003,
+      "total": 1185.0200000000007,
       "transactions": [
         {
           "date": "07-01",
@@ -8899,6 +8899,19 @@
           "mask": "7309",
           "pending": false,
           "refund": true
+        },
+        {
+          "date": "07-16",
+          "desc": "Verizon",
+          "amount": 395.34,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
+          "mask": "7309",
+          "pending": false,
+          "refund": false
         },
         {
           "date": "07-01",
@@ -10774,7 +10787,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-17T06:03:20.240Z",
+  "generated_at": "2026-07-17T12:08:22.540Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
