@@ -1,15 +1,15 @@
 {
   "kpis": {
-    "income": 12634.45,
+    "income": 19188.01,
     "income_period": "July 2026",
-    "true_outflows": 1200.03,
+    "true_outflows": 1303.78,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 20971.14,
+      "balance": 22071.14,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -245,8 +245,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 605.2,
-      "available": 94.8,
+      "balance": 677.02,
+      "available": 22.98,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -260,7 +260,7 @@
       "type": "depository",
       "subtype": "savings",
       "balance": 56.98,
-      "available": 56.98,
+      "available": 3134.95,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -273,8 +273,8 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 15956.27,
-      "available": 17052.52,
+      "balance": 17056.27,
+      "available": 20831.86,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 81345.25077794999,
-    "total_credit": 9020.25,
+    "total_checking": 82445.25077794999,
+    "total_credit": 9092.07,
     "total_loans": 386654.23,
-    "net": -314329.22922205
+    "net": -313301.04922205
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -380,7 +380,7 @@
     "by_month": []
   },
   "spending": {
-    "Healthcare": 3690.44,
+    "Healthcare": 3794.19,
     "Tech/Subs": 14014.78,
     "Shopping": 15075.14,
     "Entertainment": 2485.71,
@@ -651,21 +651,19 @@
       "period_label": "July 2026"
     },
     {
-      "from": "Transfer Conf# 0GB718W1N; VENKATESH KASANAGOTTU",
+      "from": "Transfer Conf# 0YBL1HWDV; VENKATESH KASANAGOTTU",
+      "amount": 300,
+      "period": "2026-07",
+      "period_label": "July 2026"
+    },
+    {
+      "from": "payment from VENKATESH KASANAGOTTU Conf# 0GB718W1N",
       "amount": 1200,
       "period": "2026-07",
       "period_label": "July 2026"
     }
   ],
   "pending_transactions": [
-    {
-      "date": "07-14",
-      "desc": "Trader Joe's",
-      "amount": 71.82,
-      "category": "Groceries",
-      "bank": "BofA",
-      "pending": true
-    },
     {
       "date": "07-16",
       "desc": "ShopRite",
@@ -695,10 +693,10 @@
     {
       "desc": "Walgreens",
       "category": "Healthcare",
-      "count": 21,
+      "count": 22,
       "months": 7,
-      "avg_amount": 38.51,
-      "last_amount": 4.25
+      "avg_amount": 41.47,
+      "last_amount": 103.75
     },
     {
       "desc": "ShopRite",
@@ -1357,10 +1355,10 @@
     {
       "period": "2026-07",
       "period_label": "July 2026",
-      "income": 12634.449999999999,
-      "bofa_income": 12634.449999999999,
+      "income": 19188.01,
+      "bofa_income": 19188.01,
       "td_income": 0,
-      "outflows": 1200.03,
+      "outflows": 1303.78,
       "xoom": 0,
       "investments": 0
     }
@@ -8816,11 +8814,11 @@
         "Refund": -3801.85,
         "Shopping": 916.4100000000001,
         "Tax/Professional": 320.16,
-        "Healthcare": 865.46,
+        "Healthcare": 969.21,
         "Groceries": 561.1299999999999,
         "Restaurants": 197.35000000000002
       },
-      "total": 1200.0300000000007,
+      "total": 1303.7800000000004,
       "transactions": [
         {
           "date": "07-01",
@@ -9356,19 +9354,6 @@
           "refund": false
         },
         {
-          "date": "07-14",
-          "desc": "Trader Joe's",
-          "amount": 71.82,
-          "category": "Groceries",
-          "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
           "date": "07-16",
           "desc": "ShopRite",
           "amount": 2.49,
@@ -9386,6 +9371,32 @@
           "desc": "PetSmart",
           "amount": 17.04,
           "category": "Shopping",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-16",
+          "desc": "Walgreens",
+          "amount": 103.75,
+          "category": "Healthcare",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
+          "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-16",
+          "desc": "Trader Joe's",
+          "amount": 71.82,
+          "category": "Groceries",
           "city": "North Brunswick",
           "state": "NJ",
           "bank": "BofA",
@@ -10823,7 +10834,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-18T00:01:48.186Z",
+  "generated_at": "2026-07-18T06:08:30.919Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
