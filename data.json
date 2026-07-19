@@ -1,25 +1,25 @@
 {
   "kpis": {
-    "income": 19188.01,
+    "income": 16110.04,
     "income_period": "July 2026",
-    "true_outflows": 1314.44,
+    "true_outflows": 1363.36,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 17775.66,
+      "balance": 24629.22,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
       "outflows": 0
     },
     "wf": {
-      "balance": 4293.13,
+      "balance": 4342.05,
       "is_credit": true,
       "period_label": "Live",
-      "wf_checking": -499.06
+      "wf_checking": 0.94
     },
     "td": {
       "balance": 81.03,
@@ -147,7 +147,7 @@
       "mask": "3068",
       "type": "depository",
       "subtype": "checking",
-      "balance": -499.06,
+      "balance": 0.94,
       "available": 0.94,
       "is_credit": false,
       "is_loan": false,
@@ -175,7 +175,7 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 3821.54,
+      "balance": 3870.46,
       "available": null,
       "is_credit": true,
       "is_loan": false,
@@ -245,8 +245,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 677.02,
-      "available": 22.98,
+      "balance": 679.51,
+      "available": 20.49,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -259,7 +259,7 @@
       "mask": "5677",
       "type": "depository",
       "subtype": "savings",
-      "balance": 56.98,
+      "balance": 3134.95,
       "available": 3134.95,
       "is_credit": false,
       "is_loan": false,
@@ -273,7 +273,7 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 17056.27,
+      "balance": 20831.86,
       "available": 20831.86,
       "is_credit": false,
       "is_loan": false,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 78355.23907379499,
-    "total_credit": 9018.07,
+    "total_checking": 85708.79907379499,
+    "total_credit": 9069.480000000001,
     "total_loans": 386654.23,
-    "net": -317317.060926205
+    "net": -310014.910926205
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -382,7 +382,7 @@
   "spending": {
     "Healthcare": 3804.85,
     "Tech/Subs": 14014.78,
-    "Shopping": 15075.14,
+    "Shopping": 15124.06,
     "Entertainment": 2485.71,
     "Tax/Professional": 19597.389999999996,
     "Groceries": 3392.8999999999996,
@@ -651,28 +651,19 @@
       "period_label": "July 2026"
     },
     {
-      "from": "Transfer Conf# 0YBL1HWDV; VENKATESH KASANAGOTTU",
-      "amount": 300,
-      "period": "2026-07",
-      "period_label": "July 2026"
-    },
-    {
       "from": "payment from VENKATESH KASANAGOTTU Conf# 0GB718W1N",
       "amount": 1200,
       "period": "2026-07",
       "period_label": "July 2026"
-    }
-  ],
-  "pending_transactions": [
+    },
     {
-      "date": "07-16",
-      "desc": "ShopRite",
-      "amount": 2.49,
-      "category": "Groceries",
-      "bank": "BofA",
-      "pending": true
+      "from": "payment from VENKATESH KASANAGOTTU Conf# 0YBL1HWDV",
+      "amount": 300,
+      "period": "2026-07",
+      "period_label": "July 2026"
     }
   ],
+  "pending_transactions": [],
   "detected_recurring": [
     {
       "desc": "Delight Big Bazar",
@@ -709,10 +700,10 @@
     {
       "desc": "Amazon",
       "category": "Shopping",
-      "count": 57,
+      "count": 59,
       "months": 7,
-      "avg_amount": 23.58,
-      "last_amount": 10.01
+      "avg_amount": 23.61,
+      "last_amount": 38.36
     },
     {
       "desc": "Regal Cinemas",
@@ -1355,10 +1346,10 @@
     {
       "period": "2026-07",
       "period_label": "July 2026",
-      "income": 19188.01,
-      "bofa_income": 19188.01,
+      "income": 16110.039999999999,
+      "bofa_income": 16110.039999999999,
       "td_income": 0,
-      "outflows": 1314.44,
+      "outflows": 1363.36,
       "xoom": 0,
       "investments": 0
     }
@@ -8813,12 +8804,12 @@
         "Entertainment": 275.21,
         "Refund": -3801.85,
         "Healthcare": 979.87,
-        "Shopping": 916.4100000000001,
+        "Shopping": 965.33,
         "Tax/Professional": 320.16,
         "Groceries": 561.1299999999999,
         "Restaurants": 197.35000000000002
       },
-      "total": 1314.4400000000003,
+      "total": 1363.3600000000001,
       "transactions": [
         {
           "date": "07-01",
@@ -9237,6 +9228,32 @@
           "refund": false
         },
         {
+          "date": "07-16",
+          "desc": "Amazon",
+          "amount": 10.56,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-16",
+          "desc": "Amazon",
+          "amount": 38.36,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
           "date": "07-01",
           "desc": "Kumon Of North",
           "amount": 280,
@@ -9367,19 +9384,6 @@
           "refund": false
         },
         {
-          "date": "07-16",
-          "desc": "ShopRite",
-          "amount": 2.49,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
           "date": "07-15",
           "desc": "PetSmart",
           "amount": 17.04,
@@ -9412,6 +9416,19 @@
           "category": "Groceries",
           "city": "North Brunswick",
           "state": "NJ",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-17",
+          "desc": "ShopRite",
+          "amount": 2.49,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -10847,7 +10864,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-19T00:06:19.251Z",
+  "generated_at": "2026-07-19T06:12:14.290Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
