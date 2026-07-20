@@ -2,7 +2,7 @@
   "kpis": {
     "income": 16110.04,
     "income_period": "July 2026",
-    "true_outflows": 1422.01,
+    "true_outflows": 1467.23,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 4342.05,
+      "balance": 4387.2699999999995,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 0.94
@@ -175,7 +175,7 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 3870.46,
+      "balance": 3915.68,
       "available": null,
       "is_credit": true,
       "is_loan": false,
@@ -367,9 +367,9 @@
   ],
   "net_worth": {
     "total_checking": 92654.54907379499,
-    "total_credit": 9069.480000000001,
+    "total_credit": 9114.7,
     "total_loans": 386654.23,
-    "net": -303069.160926205
+    "net": -303114.38092620496
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -381,8 +381,8 @@
   },
   "spending": {
     "Healthcare": 3804.85,
-    "Tech/Subs": 14014.78,
-    "Shopping": 15170.65,
+    "Tech/Subs": 14024.82,
+    "Shopping": 15205.83,
     "Entertainment": 2485.71,
     "Tax/Professional": 19597.389999999996,
     "Groceries": 3404.96,
@@ -771,6 +771,14 @@
       "last_amount": 147.95
     },
     {
+      "desc": "Simplisafe",
+      "category": "Shopping",
+      "count": 6,
+      "months": 6,
+      "avg_amount": 35.18,
+      "last_amount": 35.18
+    },
+    {
       "desc": "Apple",
       "category": "Shopping",
       "count": 18,
@@ -841,14 +849,6 @@
       "months": 5,
       "avg_amount": 50.66,
       "last_amount": 50.66
-    },
-    {
-      "desc": "Simplisafe",
-      "category": "Shopping",
-      "count": 5,
-      "months": 5,
-      "avg_amount": 35.18,
-      "last_amount": 35.18
     },
     {
       "desc": "Zelle payment to KAVI MUSIC LLC for \"Aryan Mar and Apr\"; Conf# taivjlhgp",
@@ -1045,10 +1045,10 @@
     {
       "desc": "Anthropic Anthropic.comca",
       "category": "Tech/Subs",
-      "count": 6,
+      "count": 7,
       "months": 3,
-      "avg_amount": 9.17,
-      "last_amount": 10.02
+      "avg_amount": 9.29,
+      "last_amount": 10.04
     },
     {
       "desc": "Dunkin'",
@@ -1366,7 +1366,7 @@
       "income": 16110.039999999999,
       "bofa_income": 16110.039999999999,
       "td_income": 0,
-      "outflows": 1422.01,
+      "outflows": 1467.23,
       "xoom": 0,
       "investments": 0
     }
@@ -8816,17 +8816,17 @@
       "label": "July 2026",
       "period": "2026-07",
       "categories": {
-        "Tech/Subs": 1420.19,
+        "Tech/Subs": 1430.23,
         "Gas/Travel": 445.96999999999997,
         "Entertainment": 275.21,
         "Refund": -3801.85,
         "Healthcare": 979.87,
-        "Shopping": 1011.9200000000001,
+        "Shopping": 1047.1,
         "Tax/Professional": 320.16,
         "Groceries": 573.1899999999998,
         "Restaurants": 197.35000000000002
       },
-      "total": 1422.01,
+      "total": 1467.23,
       "transactions": [
         {
           "date": "07-01",
@@ -9262,6 +9262,32 @@
           "desc": "Amazon",
           "amount": 38.36,
           "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-18",
+          "desc": "Simplisafe",
+          "amount": 35.18,
+          "category": "Shopping",
+          "city": null,
+          "state": "MA",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-17",
+          "desc": "Anthropic Anthropic.comca",
+          "amount": 10.04,
+          "category": "Tech/Subs",
           "city": null,
           "state": null,
           "bank": "Wells Fargo",
@@ -10549,6 +10575,16 @@
       "period_label": "July 2026"
     },
     {
+      "date": "07-18",
+      "desc": "Simplisafe",
+      "amount": 35.18,
+      "category": "Shopping",
+      "city": null,
+      "state": "MA",
+      "period": "2026-07",
+      "period_label": "July 2026"
+    },
+    {
       "date": "04-09",
       "desc": "Trendia Trendia.co",
       "amount": 178.01,
@@ -10907,7 +10943,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-20T06:13:59.496Z",
+  "generated_at": "2026-07-20T12:11:02.805Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
