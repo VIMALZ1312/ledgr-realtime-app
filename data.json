@@ -2,7 +2,7 @@
   "kpis": {
     "income": 16110.04,
     "income_period": "July 2026",
-    "true_outflows": 1363.36,
+    "true_outflows": 1422.01,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -382,10 +382,10 @@
   "spending": {
     "Healthcare": 3804.85,
     "Tech/Subs": 14014.78,
-    "Shopping": 15124.06,
+    "Shopping": 15170.65,
     "Entertainment": 2485.71,
     "Tax/Professional": 19597.389999999996,
-    "Groceries": 3392.8999999999996,
+    "Groceries": 3404.96,
     "Restaurants": 3019.9,
     "Gas/Travel": 7033.910000000002,
     "Refund": -7180.950000000001,
@@ -663,7 +663,24 @@
       "period_label": "July 2026"
     }
   ],
-  "pending_transactions": [],
+  "pending_transactions": [
+    {
+      "date": "07-19",
+      "desc": "Deccan Halal Mart",
+      "amount": 12.06,
+      "category": "Groceries",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "07-19",
+      "desc": "Shein",
+      "amount": 46.59,
+      "category": "Shopping",
+      "bank": "BofA",
+      "pending": true
+    }
+  ],
   "detected_recurring": [
     {
       "desc": "Delight Big Bazar",
@@ -1349,7 +1366,7 @@
       "income": 16110.039999999999,
       "bofa_income": 16110.039999999999,
       "td_income": 0,
-      "outflows": 1363.36,
+      "outflows": 1422.01,
       "xoom": 0,
       "investments": 0
     }
@@ -8804,12 +8821,12 @@
         "Entertainment": 275.21,
         "Refund": -3801.85,
         "Healthcare": 979.87,
-        "Shopping": 965.33,
+        "Shopping": 1011.9200000000001,
         "Tax/Professional": 320.16,
-        "Groceries": 561.1299999999999,
+        "Groceries": 573.1899999999998,
         "Restaurants": 197.35000000000002
       },
-      "total": 1363.3600000000001,
+      "total": 1422.01,
       "transactions": [
         {
           "date": "07-01",
@@ -9427,6 +9444,32 @@
           "desc": "ShopRite",
           "amount": 2.49,
           "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-19",
+          "desc": "Deccan Halal Mart",
+          "amount": 12.06,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-19",
+          "desc": "Shein",
+          "amount": 46.59,
+          "category": "Shopping",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -10864,7 +10907,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-20T00:03:19.527Z",
+  "generated_at": "2026-07-20T06:13:59.496Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
