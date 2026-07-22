@@ -49,7 +49,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 45534.2517771022,
+      "balance": 46968.2165232378,
       "available": 3.46,
       "is_credit": false,
       "is_loan": false,
@@ -245,8 +245,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 679.51,
-      "available": 20.49,
+      "balance": 738.16,
+      "available": null,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 92530.66177710218,
-    "total_credit": 6123.7,
+    "total_checking": 93964.62652323778,
+    "total_credit": 6182.349999999999,
     "total_loans": 386654.23,
-    "net": -300247.2682228978
+    "net": -298871.9534767622
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -663,24 +663,7 @@
       "period_label": "July 2026"
     }
   ],
-  "pending_transactions": [
-    {
-      "date": "07-19",
-      "desc": "Deccan Halal Mart",
-      "amount": 12.06,
-      "category": "Groceries",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "07-19",
-      "desc": "Shein",
-      "amount": 46.59,
-      "category": "Shopping",
-      "bank": "BofA",
-      "pending": true
-    }
-  ],
+  "pending_transactions": [],
   "detected_recurring": [
     {
       "desc": "Delight Big Bazar",
@@ -9492,7 +9475,7 @@
           "refund": false
         },
         {
-          "date": "07-19",
+          "date": "07-20",
           "desc": "Deccan Halal Mart",
           "amount": 12.06,
           "category": "Groceries",
@@ -9505,7 +9488,7 @@
           "refund": false
         },
         {
-          "date": "07-19",
+          "date": "07-20",
           "desc": "Shein",
           "amount": 46.59,
           "category": "Shopping",
@@ -10953,7 +10936,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-22T00:01:19.804Z",
+  "generated_at": "2026-07-22T06:09:00.603Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
