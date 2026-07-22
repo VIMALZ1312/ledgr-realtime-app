@@ -2,14 +2,14 @@
   "kpis": {
     "income": 16110.04,
     "income_period": "July 2026",
-    "true_outflows": 1392.49,
+    "true_outflows": 1400.41,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 31574.97,
+      "balance": 31500.97,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -105,8 +105,8 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 4397.25,
-      "available": 4323.25,
+      "balance": 4323.25,
+      "available": 1315.33,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 93964.62652323778,
+    "total_checking": 93890.62652323778,
     "total_credit": 6182.349999999999,
     "total_loans": 386654.23,
-    "net": -298871.9534767622
+    "net": -298945.9534767622
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -382,7 +382,7 @@
   "spending": {
     "Healthcare": 3804.85,
     "Tech/Subs": 14033.82,
-    "Shopping": 15205.83,
+    "Shopping": 15213.75,
     "Entertainment": 2485.71,
     "Tax/Professional": 19597.389999999996,
     "Groceries": 3404.96,
@@ -663,7 +663,16 @@
       "period_label": "July 2026"
     }
   ],
-  "pending_transactions": [],
+  "pending_transactions": [
+    {
+      "date": "07-22",
+      "desc": "CHECKCARD 07/21 BRILHANTECA BR XXXXX369001 000",
+      "amount": 7.92,
+      "category": "Shopping",
+      "bank": "BofA",
+      "pending": true
+    }
+  ],
   "detected_recurring": [
     {
       "desc": "Delight Big Bazar",
@@ -1349,7 +1358,7 @@
       "income": 16110.039999999999,
       "bofa_income": 16110.039999999999,
       "td_income": 0,
-      "outflows": 1392.49,
+      "outflows": 1400.41,
       "xoom": 0,
       "investments": 0
     }
@@ -8804,12 +8813,12 @@
         "Entertainment": 275.21,
         "Refund": -3801.85,
         "Healthcare": 979.87,
-        "Shopping": 1047.1,
+        "Shopping": 1055.02,
         "Tax/Professional": 320.16,
         "Groceries": 573.1899999999998,
         "Restaurants": 113.61000000000001
       },
-      "total": 1392.49,
+      "total": 1400.41,
       "transactions": [
         {
           "date": "07-01",
@@ -8907,6 +8916,19 @@
           "desc": "Planet Fitness",
           "amount": 10.66,
           "category": "Healthcare",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
+          "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-22",
+          "desc": "CHECKCARD 07/21 BRILHANTECA BR XXXXX369001 000",
+          "amount": 7.92,
+          "category": "Shopping",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -10936,7 +10958,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-22T06:09:14.740Z",
+  "generated_at": "2026-07-22T12:01:28.722Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
