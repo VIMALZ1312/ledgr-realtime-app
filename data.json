@@ -2,7 +2,7 @@
   "kpis": {
     "income": 16110.04,
     "income_period": "July 2026",
-    "true_outflows": 1467.23,
+    "true_outflows": 1392.49,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 4387.2699999999995,
+      "balance": 1396.27,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 0.94
@@ -175,8 +175,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 3915.68,
-      "available": null,
+      "balance": 924.68,
+      "available": 2063,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -367,9 +367,9 @@
   ],
   "net_worth": {
     "total_checking": 92530.66177710218,
-    "total_credit": 9114.7,
+    "total_credit": 6123.7,
     "total_loans": 386654.23,
-    "net": -303238.2682228978
+    "net": -300247.2682228978
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -381,12 +381,12 @@
   },
   "spending": {
     "Healthcare": 3804.85,
-    "Tech/Subs": 14024.82,
+    "Tech/Subs": 14033.82,
     "Shopping": 15205.83,
     "Entertainment": 2485.71,
     "Tax/Professional": 19597.389999999996,
     "Groceries": 3404.96,
-    "Restaurants": 3019.9,
+    "Restaurants": 2936.1600000000003,
     "Gas/Travel": 7033.910000000002,
     "Refund": -7180.950000000001,
     "Insurance": 1843.71
@@ -933,10 +933,10 @@
     {
       "desc": "Netlify Fy",
       "category": "Tech/Subs",
-      "count": 10,
+      "count": 11,
       "months": 4,
-      "avg_amount": 6.2,
-      "last_amount": 5
+      "avg_amount": 6.45,
+      "last_amount": 9
     },
     {
       "desc": "Costco",
@@ -961,14 +961,6 @@
       "months": 3,
       "avg_amount": 89,
       "last_amount": 39.36
-    },
-    {
-      "desc": "House of Biryani's and Kebabs",
-      "category": "Restaurants",
-      "count": 4,
-      "months": 3,
-      "avg_amount": 79.97,
-      "last_amount": 83.74
     },
     {
       "desc": "Claude.ai",
@@ -1171,6 +1163,14 @@
       "last_amount": 143
     },
     {
+      "desc": "House of Biryani's and Kebabs",
+      "category": "Restaurants",
+      "count": 3,
+      "months": 2,
+      "avg_amount": 78.71,
+      "last_amount": 90.59
+    },
+    {
       "desc": "Simplytrawell",
       "category": "Gas/Travel",
       "count": 3,
@@ -1366,7 +1366,7 @@
       "income": 16110.039999999999,
       "bofa_income": 16110.039999999999,
       "td_income": 0,
-      "outflows": 1467.23,
+      "outflows": 1392.49,
       "xoom": 0,
       "investments": 0
     }
@@ -8816,7 +8816,7 @@
       "label": "July 2026",
       "period": "2026-07",
       "categories": {
-        "Tech/Subs": 1430.23,
+        "Tech/Subs": 1439.23,
         "Gas/Travel": 445.96999999999997,
         "Entertainment": 275.21,
         "Refund": -3801.85,
@@ -8824,9 +8824,9 @@
         "Shopping": 1047.1,
         "Tax/Professional": 320.16,
         "Groceries": 573.1899999999998,
-        "Restaurants": 197.35000000000002
+        "Restaurants": 113.61000000000001
       },
-      "total": 1467.23,
+      "total": 1392.49,
       "transactions": [
         {
           "date": "07-01",
@@ -9297,6 +9297,19 @@
           "refund": false
         },
         {
+          "date": "07-20",
+          "desc": "Netlify Fy",
+          "amount": 9,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "CA",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
           "date": "07-01",
           "desc": "Kumon Of North",
           "amount": 280,
@@ -9640,19 +9653,6 @@
           "amount": 39,
           "category": "Tax/Professional",
           "city": "Temple",
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "07-06",
-          "desc": "House Of Biryani's And Kebabs",
-          "amount": 83.74,
-          "category": "Restaurants",
-          "city": null,
           "state": null,
           "bank": "Robinhood",
           "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
@@ -10585,6 +10585,16 @@
       "period_label": "July 2026"
     },
     {
+      "date": "07-20",
+      "desc": "Netlify Fy",
+      "amount": 9,
+      "category": "Tech/Subs",
+      "city": null,
+      "state": "CA",
+      "period": "2026-07",
+      "period_label": "July 2026"
+    },
+    {
       "date": "04-09",
       "desc": "Trendia Trendia.co",
       "amount": 178.01,
@@ -10943,7 +10953,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-21T18:04:02.468Z",
+  "generated_at": "2026-07-22T00:01:06.567Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
