@@ -274,7 +274,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 20831.86,
-      "available": 20831.86,
+      "available": 20093.7,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -10958,7 +10958,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-23T00:12:22.836Z",
+  "generated_at": "2026-07-23T06:05:12.524Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
