@@ -49,7 +49,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 46968.2165232378,
+      "balance": 48066.96345007,
       "available": 3.46,
       "is_credit": false,
       "is_loan": false,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 93890.62652323778,
+    "total_checking": 94989.37345006998,
     "total_credit": 6182.349999999999,
     "total_loans": 386654.23,
-    "net": -298945.9534767622
+    "net": -297847.20654993004
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -10958,7 +10958,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-22T18:07:24.303Z",
+  "generated_at": "2026-07-23T00:12:22.836Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
