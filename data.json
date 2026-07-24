@@ -2,14 +2,14 @@
   "kpis": {
     "income": 16110.04,
     "income_period": "July 2026",
-    "true_outflows": 1423.46,
+    "true_outflows": 1476.7,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 28500.97,
+      "balance": 27762.81,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -245,8 +245,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 738.16,
-      "available": null,
+      "balance": 0,
+      "available": 700,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -273,7 +273,7 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 20831.86,
+      "balance": 20093.7,
       "available": 20093.7,
       "is_credit": false,
       "is_loan": false,
@@ -366,8 +366,8 @@
     }
   ],
   "net_worth": {
-    "total_checking": 90724.13354604298,
-    "total_credit": 6205.4,
+    "total_checking": 89985.97354604298,
+    "total_credit": 5467.24,
     "total_loans": 386654.23,
     "net": -302135.496453957
   },
@@ -382,7 +382,7 @@
   "spending": {
     "Healthcare": 3810.1800000000003,
     "Tech/Subs": 14033.82,
-    "Shopping": 15231.47,
+    "Shopping": 15284.71,
     "Entertainment": 2485.71,
     "Tax/Professional": 19597.389999999996,
     "Groceries": 3404.96,
@@ -671,9 +671,25 @@
       "category": "Shopping",
       "bank": "BofA",
       "pending": true
+    },
+    {
+      "date": "07-23",
+      "desc": "Garden Farm",
+      "amount": 53.24,
+      "category": "Shopping",
+      "bank": "BofA",
+      "pending": true
     }
   ],
   "detected_recurring": [
+    {
+      "desc": "Garden Farm",
+      "category": "Shopping",
+      "count": 10,
+      "months": 7,
+      "avg_amount": 74.03,
+      "last_amount": 53.24
+    },
     {
       "desc": "Delight Big Bazar",
       "category": "Groceries",
@@ -753,14 +769,6 @@
       "months": 6,
       "avg_amount": 170.26,
       "last_amount": 31.98
-    },
-    {
-      "desc": "Garden Farm",
-      "category": "Shopping",
-      "count": 9,
-      "months": 6,
-      "avg_amount": 76.34,
-      "last_amount": 147.95
     },
     {
       "desc": "Simplisafe",
@@ -1358,7 +1366,7 @@
       "income": 16110.039999999999,
       "bofa_income": 16110.039999999999,
       "td_income": 0,
-      "outflows": 1423.46,
+      "outflows": 1476.7,
       "xoom": 0,
       "investments": 0
     }
@@ -8813,12 +8821,12 @@
         "Entertainment": 275.21,
         "Refund": -3801.85,
         "Healthcare": 985.2,
-        "Shopping": 1072.7399999999998,
+        "Shopping": 1125.9799999999998,
         "Tax/Professional": 320.16,
         "Groceries": 573.1899999999998,
         "Restaurants": 113.61000000000001
       },
-      "total": 1423.46,
+      "total": 1476.7,
       "transactions": [
         {
           "date": "07-01",
@@ -9541,6 +9549,19 @@
           "amount": 46.59,
           "category": "Shopping",
           "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-23",
+          "desc": "Garden Farm",
+          "amount": 53.24,
+          "category": "Shopping",
+          "city": "Brunswick",
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
@@ -11007,7 +11028,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-24T00:09:30.580Z",
+  "generated_at": "2026-07-24T06:04:18.816Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
