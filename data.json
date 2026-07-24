@@ -1,15 +1,15 @@
 {
   "kpis": {
-    "income": 16110.04,
+    "income": 16110.07,
     "income_period": "July 2026",
-    "true_outflows": 1476.7,
+    "true_outflows": 1487.35,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 27762.81,
+      "balance": 27762.84,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -91,8 +91,8 @@
       "mask": "5677",
       "type": "depository",
       "subtype": "savings",
-      "balance": 3134.95,
-      "available": 3134.95,
+      "balance": 3134.98,
+      "available": 3134.98,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 89985.97354604298,
+    "total_checking": 89986.003546043,
     "total_credit": 5467.24,
     "total_loans": 386654.23,
-    "net": -302135.496453957
+    "net": -302135.466453957
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -381,7 +381,7 @@
   },
   "spending": {
     "Healthcare": 3810.1800000000003,
-    "Tech/Subs": 14033.82,
+    "Tech/Subs": 14044.47,
     "Shopping": 15284.71,
     "Entertainment": 2485.71,
     "Tax/Professional": 19597.389999999996,
@@ -665,7 +665,7 @@
   ],
   "pending_transactions": [
     {
-      "date": "07-21",
+      "date": "07-24",
       "desc": "Brilhante",
       "amount": 7.92,
       "category": "Shopping",
@@ -1363,10 +1363,10 @@
     {
       "period": "2026-07",
       "period_label": "July 2026",
-      "income": 16110.039999999999,
-      "bofa_income": 16110.039999999999,
+      "income": 16110.07,
+      "bofa_income": 16110.07,
       "td_income": 0,
-      "outflows": 1476.7,
+      "outflows": 1487.35,
       "xoom": 0,
       "investments": 0
     }
@@ -8816,7 +8816,7 @@
       "label": "July 2026",
       "period": "2026-07",
       "categories": {
-        "Tech/Subs": 1439.23,
+        "Tech/Subs": 1449.8799999999999,
         "Gas/Travel": 445.96999999999997,
         "Entertainment": 275.21,
         "Refund": -3801.85,
@@ -8826,7 +8826,7 @@
         "Groceries": 573.1899999999998,
         "Restaurants": 113.61000000000001
       },
-      "total": 1476.7,
+      "total": 1487.3500000000001,
       "transactions": [
         {
           "date": "07-01",
@@ -8933,10 +8933,23 @@
           "refund": false
         },
         {
-          "date": "07-21",
+          "date": "07-24",
           "desc": "Brilhante",
           "amount": 7.92,
           "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
+          "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-23",
+          "desc": "PAYPAL DES:PURCHASE ID:FACEBOOKTEC INDN:VIMAL RAJ LOGANATHAN CO ID:PAYPALSI77 WEB",
+          "amount": 10.65,
+          "category": "Tech/Subs",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -11028,7 +11041,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-24T06:04:18.816Z",
+  "generated_at": "2026-07-24T12:13:22.502Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
