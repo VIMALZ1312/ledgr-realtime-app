@@ -2,7 +2,7 @@
   "kpis": {
     "income": 16110.04,
     "income_period": "July 2026",
-    "true_outflows": 1413.47,
+    "true_outflows": 1423.46,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -382,7 +382,7 @@
   "spending": {
     "Healthcare": 3810.1800000000003,
     "Tech/Subs": 14033.82,
-    "Shopping": 15221.48,
+    "Shopping": 15231.47,
     "Entertainment": 2485.71,
     "Tax/Professional": 19597.389999999996,
     "Groceries": 3404.96,
@@ -923,6 +923,14 @@
       "last_amount": 15
     },
     {
+      "desc": "Nokia Of America Corpo",
+      "category": "Shopping",
+      "count": 4,
+      "months": 4,
+      "avg_amount": 9.99,
+      "last_amount": 9.99
+    },
+    {
       "desc": "Netlify Fy",
       "category": "Tech/Subs",
       "count": 11,
@@ -1017,14 +1025,6 @@
       "months": 3,
       "avg_amount": 17.81,
       "last_amount": 4.32
-    },
-    {
-      "desc": "Nokia Of America Corpo",
-      "category": "Shopping",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 9.99,
-      "last_amount": 9.99
     },
     {
       "desc": "Anthropic Anthropic.comca",
@@ -1358,7 +1358,7 @@
       "income": 16110.039999999999,
       "bofa_income": 16110.039999999999,
       "td_income": 0,
-      "outflows": 1413.47,
+      "outflows": 1423.46,
       "xoom": 0,
       "investments": 0
     }
@@ -8813,12 +8813,12 @@
         "Entertainment": 275.21,
         "Refund": -3801.85,
         "Healthcare": 985.2,
-        "Shopping": 1062.7499999999998,
+        "Shopping": 1072.7399999999998,
         "Tax/Professional": 320.16,
         "Groceries": 573.1899999999998,
         "Restaurants": 113.61000000000001
       },
-      "total": 1413.47,
+      "total": 1423.46,
       "transactions": [
         {
           "date": "07-01",
@@ -9638,6 +9638,19 @@
           "mask": "0494",
           "pending": false,
           "refund": true
+        },
+        {
+          "date": "07-21",
+          "desc": "Nokia Of America Corpo",
+          "amount": 9.99,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
         },
         {
           "date": "07-02",
@@ -10994,7 +11007,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-23T18:09:08.717Z",
+  "generated_at": "2026-07-24T00:09:30.580Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
