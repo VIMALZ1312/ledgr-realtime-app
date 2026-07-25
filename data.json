@@ -2,21 +2,21 @@
   "kpis": {
     "income": 16386.8,
     "income_period": "July 2026",
-    "true_outflows": 1558.97,
+    "true_outflows": 1658.97,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 27762.870000000003,
+      "balance": 27020.57,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
       "outflows": 0
     },
     "wf": {
-      "balance": 1409.33,
+      "balance": 1509.33,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 0.94
@@ -49,7 +49,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 45527.37037111,
+      "balance": 45195.58309891,
       "available": 3.46,
       "is_credit": false,
       "is_loan": false,
@@ -105,7 +105,7 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 1323.25,
+      "balance": 580.95,
       "available": 573.03,
       "is_credit": false,
       "is_loan": false,
@@ -148,7 +148,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 0.94,
-      "available": 0.94,
+      "available": 275.9,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -175,8 +175,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 937.74,
-      "available": 2062,
+      "balance": 1037.74,
+      "available": 1962,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 88711.68037111,
-    "total_credit": 5467.24,
+    "total_checking": 87637.59309890999,
+    "total_credit": 5567.24,
     "total_loans": 386654.23,
-    "net": -303409.78962889
+    "net": -304583.87690109
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -381,7 +381,7 @@
   },
   "spending": {
     "Healthcare": 3810.1800000000003,
-    "Tech/Subs": 14044.47,
+    "Tech/Subs": 14144.47,
     "Shopping": 15297.439999999999,
     "Entertainment": 2485.71,
     "Tax/Professional": 19597.389999999996,
@@ -555,6 +555,12 @@
       "period_label": "June 2026"
     },
     {
+      "from": "FROM AHMED MOHAMMED ON 07/24 REF # BACAN9",
+      "amount": 274.96,
+      "period": "2026-07",
+      "period_label": "July 2026"
+    },
+    {
       "from": "FROM AHMED MOHAMMED",
       "amount": 483.9,
       "period": "2026-04",
@@ -664,14 +670,6 @@
     }
   ],
   "pending_transactions": [
-    {
-      "date": "07-24",
-      "desc": "Brilhante",
-      "amount": 7.92,
-      "category": "Shopping",
-      "bank": "BofA",
-      "pending": true
-    },
     {
       "date": "07-23",
       "desc": "Garden Farm",
@@ -1163,6 +1161,14 @@
       "last_amount": 301.4
     },
     {
+      "desc": "Claude Sub Anthropic.comca",
+      "category": "Tech/Subs",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 100,
+      "last_amount": 100
+    },
+    {
       "desc": "Avis",
       "category": "Gas/Travel",
       "count": 3,
@@ -1382,7 +1388,7 @@
       "income": 16386.8,
       "bofa_income": 16386.8,
       "td_income": 0,
-      "outflows": 1558.97,
+      "outflows": 1658.97,
       "xoom": 0,
       "investments": 0
     }
@@ -8832,7 +8838,7 @@
       "label": "July 2026",
       "period": "2026-07",
       "categories": {
-        "Tech/Subs": 1449.8799999999999,
+        "Tech/Subs": 1549.8799999999999,
         "Gas/Travel": 504.85999999999996,
         "Entertainment": 275.21,
         "Refund": -3801.85,
@@ -8842,7 +8848,7 @@
         "Groceries": 573.1899999999998,
         "Restaurants": 113.61000000000001
       },
-      "total": 1558.9700000000003,
+      "total": 1658.9700000000005,
       "transactions": [
         {
           "date": "07-01",
@@ -8949,10 +8955,10 @@
           "refund": false
         },
         {
-          "date": "07-24",
-          "desc": "Brilhante",
-          "amount": 7.92,
-          "category": "Shopping",
+          "date": "07-23",
+          "desc": "PAYPAL DES:PURCHASE ID:FACEBOOKTEC INDN:VIMAL RAJ LOGANATHAN CO ID:PAYPALSI77 WEB",
+          "amount": 10.65,
+          "category": "Tech/Subs",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -8962,10 +8968,10 @@
           "refund": false
         },
         {
-          "date": "07-23",
-          "desc": "PAYPAL DES:PURCHASE ID:FACEBOOKTEC INDN:VIMAL RAJ LOGANATHAN CO ID:PAYPALSI77 WEB",
-          "amount": 10.65,
-          "category": "Tech/Subs",
+          "date": "07-24",
+          "desc": "Brilhante",
+          "amount": 7.92,
+          "category": "Shopping",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -9371,6 +9377,19 @@
           "category": "Healthcare",
           "city": null,
           "state": "RI",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-23",
+          "desc": "Claude Sub Anthropic.comca",
+          "amount": 100,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
           "bank": "Wells Fargo",
           "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
           "mask": "9762",
@@ -11083,7 +11102,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-25T06:14:50.870Z",
+  "generated_at": "2026-07-25T12:13:13.268Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
