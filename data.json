@@ -1,15 +1,15 @@
 {
   "kpis": {
-    "income": 16110.07,
+    "income": 16386.8,
     "income_period": "July 2026",
-    "true_outflows": 1487.35,
+    "true_outflows": 1558.97,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 27762.84,
+      "balance": 27762.870000000003,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -245,8 +245,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 0,
-      "available": 700,
+      "balance": -276.73,
+      "available": 976.73,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -259,8 +259,8 @@
       "mask": "5677",
       "type": "depository",
       "subtype": "savings",
-      "balance": 3134.95,
-      "available": 3134.95,
+      "balance": 3134.98,
+      "available": 3134.98,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 88711.65037111,
+    "total_checking": 88711.68037111,
     "total_credit": 5467.24,
     "total_loans": 386654.23,
-    "net": -303409.81962889
+    "net": -303409.78962889
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -382,12 +382,12 @@
   "spending": {
     "Healthcare": 3810.1800000000003,
     "Tech/Subs": 14044.47,
-    "Shopping": 15284.71,
+    "Shopping": 15297.439999999999,
     "Entertainment": 2485.71,
     "Tax/Professional": 19597.389999999996,
     "Groceries": 3404.96,
     "Restaurants": 2936.1600000000003,
-    "Gas/Travel": 7033.910000000002,
+    "Gas/Travel": 7092.800000000001,
     "Refund": -7180.950000000001,
     "Insurance": 1843.71
   },
@@ -679,6 +679,22 @@
       "category": "Shopping",
       "bank": "BofA",
       "pending": true
+    },
+    {
+      "date": "07-24",
+      "desc": "Walmart",
+      "amount": 12.73,
+      "category": "Shopping",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "07-24",
+      "desc": "BP",
+      "amount": 58.89,
+      "category": "Gas/Travel",
+      "bank": "BofA",
+      "pending": true
     }
   ],
   "detected_recurring": [
@@ -699,20 +715,20 @@
       "last_amount": 44.53
     },
     {
-      "desc": "Walmart",
-      "category": "Refund",
-      "count": 17,
-      "months": 7,
-      "avg_amount": 42.93,
-      "last_amount": 52.22
-    },
-    {
       "desc": "Walgreens",
       "category": "Healthcare",
       "count": 22,
       "months": 7,
       "avg_amount": 41.47,
       "last_amount": 103.75
+    },
+    {
+      "desc": "Walmart",
+      "category": "Refund",
+      "count": 18,
+      "months": 7,
+      "avg_amount": 41.25,
+      "last_amount": 12.73
     },
     {
       "desc": "ShopRite",
@@ -769,6 +785,14 @@
       "months": 6,
       "avg_amount": 170.26,
       "last_amount": 31.98
+    },
+    {
+      "desc": "BP",
+      "category": "Gas/Travel",
+      "count": 15,
+      "months": 6,
+      "avg_amount": 52.99,
+      "last_amount": 58.89
     },
     {
       "desc": "Simplisafe",
@@ -833,14 +857,6 @@
       "months": 5,
       "avg_amount": 110.48,
       "last_amount": 115
-    },
-    {
-      "desc": "BP",
-      "category": "Gas/Travel",
-      "count": 14,
-      "months": 5,
-      "avg_amount": 52.57,
-      "last_amount": 37.21
     },
     {
       "desc": "Optimum",
@@ -1363,10 +1379,10 @@
     {
       "period": "2026-07",
       "period_label": "July 2026",
-      "income": 16110.07,
-      "bofa_income": 16110.07,
+      "income": 16386.8,
+      "bofa_income": 16386.8,
       "td_income": 0,
-      "outflows": 1487.35,
+      "outflows": 1558.97,
       "xoom": 0,
       "investments": 0
     }
@@ -8817,16 +8833,16 @@
       "period": "2026-07",
       "categories": {
         "Tech/Subs": 1449.8799999999999,
-        "Gas/Travel": 445.96999999999997,
+        "Gas/Travel": 504.85999999999996,
         "Entertainment": 275.21,
         "Refund": -3801.85,
         "Healthcare": 985.2,
-        "Shopping": 1125.9799999999998,
+        "Shopping": 1138.7099999999998,
         "Tax/Professional": 320.16,
         "Groceries": 573.1899999999998,
         "Restaurants": 113.61000000000001
       },
-      "total": 1487.3500000000001,
+      "total": 1558.9700000000003,
       "transactions": [
         {
           "date": "07-01",
@@ -9575,6 +9591,32 @@
           "amount": 53.24,
           "category": "Shopping",
           "city": "Brunswick",
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-24",
+          "desc": "Walmart",
+          "amount": 12.73,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-24",
+          "desc": "BP",
+          "amount": 58.89,
+          "category": "Gas/Travel",
+          "city": null,
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
@@ -11041,7 +11083,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-25T00:01:08.321Z",
+  "generated_at": "2026-07-25T06:14:50.870Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
