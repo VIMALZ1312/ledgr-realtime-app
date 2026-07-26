@@ -9,7 +9,7 @@
   },
   "accounts": {
     "bofa": {
-      "balance": 27020.57,
+      "balance": 27012.65,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -105,7 +105,7 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 580.95,
+      "balance": 573.03,
       "available": 573.03,
       "is_credit": false,
       "is_loan": false,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 87637.59309890999,
+    "total_checking": 87629.67309890999,
     "total_credit": 5567.24,
     "total_loans": 386654.23,
-    "net": -304583.87690109
+    "net": -304591.79690109
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -11123,7 +11123,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-26T06:01:59.528Z",
+  "generated_at": "2026-07-26T12:12:42.455Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
