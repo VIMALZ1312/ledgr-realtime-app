@@ -19,7 +19,7 @@
       "balance": 1509.33,
       "is_credit": true,
       "period_label": "Live",
-      "wf_checking": 0.94
+      "wf_checking": 275.9
     },
     "td": {
       "balance": 81.03,
@@ -147,7 +147,7 @@
       "mask": "3068",
       "type": "depository",
       "subtype": "checking",
-      "balance": 0.94,
+      "balance": 275.9,
       "available": 275.9,
       "is_credit": false,
       "is_loan": false,
@@ -176,7 +176,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 1037.74,
-      "available": 1962,
+      "available": 1924,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -366,10 +366,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 87629.67309890999,
+    "total_checking": 87904.63309891,
     "total_credit": 5567.24,
     "total_loans": 386654.23,
-    "net": -304591.79690109
+    "net": -304316.83690109
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -555,7 +555,7 @@
       "period_label": "June 2026"
     },
     {
-      "from": "FROM AHMED MOHAMMED ON 07/24 REF # BACAN9",
+      "from": "FROM AHMED MOHAMMED ON 07/24 REF # BACAN9A28MWZ PHONE BILL FOR APRILJUNE2026",
       "amount": 274.96,
       "period": "2026-07",
       "period_label": "July 2026"
@@ -11123,7 +11123,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-26T12:12:42.455Z",
+  "generated_at": "2026-07-26T18:06:25.108Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
