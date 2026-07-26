@@ -2,7 +2,7 @@
   "kpis": {
     "income": 16386.8,
     "income_period": "July 2026",
-    "true_outflows": 1658.97,
+    "true_outflows": 1738.97,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -245,8 +245,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": -276.73,
-      "available": 976.73,
+      "balance": -223.49,
+      "available": 923.49,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -274,7 +274,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 20093.7,
-      "available": 20093.7,
+      "available": 20013.7,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -382,7 +382,7 @@
   "spending": {
     "Healthcare": 3810.1800000000003,
     "Tech/Subs": 14144.47,
-    "Shopping": 15297.439999999999,
+    "Shopping": 15377.439999999999,
     "Entertainment": 2485.71,
     "Tax/Professional": 19597.389999999996,
     "Groceries": 3404.96,
@@ -671,14 +671,6 @@
   ],
   "pending_transactions": [
     {
-      "date": "07-23",
-      "desc": "Garden Farm",
-      "amount": 53.24,
-      "category": "Shopping",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
       "date": "07-24",
       "desc": "Walmart",
       "amount": 12.73,
@@ -691,6 +683,14 @@
       "desc": "BP",
       "amount": 58.89,
       "category": "Gas/Travel",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "07-26",
+      "desc": "R K Jewels",
+      "amount": 80,
+      "category": "Shopping",
       "bank": "BofA",
       "pending": true
     }
@@ -1073,6 +1073,14 @@
       "last_amount": 14.06
     },
     {
+      "desc": "R K Jewels",
+      "category": "Shopping",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 2947.5,
+      "last_amount": 80
+    },
+    {
       "desc": "Kids Smile",
       "category": "Healthcare",
       "count": 2,
@@ -1388,7 +1396,7 @@
       "income": 16386.8,
       "bofa_income": 16386.8,
       "td_income": 0,
-      "outflows": 1658.97,
+      "outflows": 1738.97,
       "xoom": 0,
       "investments": 0
     }
@@ -8843,12 +8851,12 @@
         "Entertainment": 275.21,
         "Refund": -3801.85,
         "Healthcare": 985.2,
-        "Shopping": 1138.7099999999998,
+        "Shopping": 1218.7099999999996,
         "Tax/Professional": 320.16,
         "Groceries": 573.1899999999998,
         "Restaurants": 113.61000000000001
       },
-      "total": 1658.9700000000005,
+      "total": 1738.9700000000005,
       "transactions": [
         {
           "date": "07-01",
@@ -9605,19 +9613,6 @@
           "refund": false
         },
         {
-          "date": "07-23",
-          "desc": "Garden Farm",
-          "amount": 53.24,
-          "category": "Shopping",
-          "city": "Brunswick",
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
           "date": "07-24",
           "desc": "Walmart",
           "amount": 12.73,
@@ -9635,6 +9630,32 @@
           "desc": "BP",
           "amount": 58.89,
           "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-26",
+          "desc": "R K Jewels",
+          "amount": 80,
+          "category": "Shopping",
+          "city": "Iselin",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
+          "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-24",
+          "desc": "Garden Farm",
+          "amount": 53.24,
+          "category": "Shopping",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -11102,7 +11123,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-26T00:16:34.306Z",
+  "generated_at": "2026-07-26T06:01:59.528Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
