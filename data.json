@@ -245,8 +245,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": -223.49,
-      "available": 923.49,
+      "balance": -164.6,
+      "available": 864.6,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -679,15 +679,7 @@
       "pending": true
     },
     {
-      "date": "07-24",
-      "desc": "BP",
-      "amount": 58.89,
-      "category": "Gas/Travel",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "07-26",
+      "date": "07-27",
       "desc": "R K Jewels",
       "amount": 80,
       "category": "Shopping",
@@ -8851,7 +8843,7 @@
         "Entertainment": 275.21,
         "Refund": -3801.85,
         "Healthcare": 985.2,
-        "Shopping": 1218.7099999999996,
+        "Shopping": 1218.7099999999998,
         "Tax/Professional": 320.16,
         "Groceries": 573.1899999999998,
         "Restaurants": 113.61000000000001
@@ -9627,9 +9619,9 @@
         },
         {
           "date": "07-24",
-          "desc": "BP",
-          "amount": 58.89,
-          "category": "Gas/Travel",
+          "desc": "Garden Farm",
+          "amount": 53.24,
+          "category": "Shopping",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -9639,7 +9631,7 @@
           "refund": false
         },
         {
-          "date": "07-26",
+          "date": "07-27",
           "desc": "R K Jewels",
           "amount": 80,
           "category": "Shopping",
@@ -9652,10 +9644,10 @@
           "refund": false
         },
         {
-          "date": "07-24",
-          "desc": "Garden Farm",
-          "amount": 53.24,
-          "category": "Shopping",
+          "date": "07-25",
+          "desc": "BP",
+          "amount": 58.89,
+          "category": "Gas/Travel",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -11123,7 +11115,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-27T00:07:06.086Z",
+  "generated_at": "2026-07-27T06:13:34.129Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
