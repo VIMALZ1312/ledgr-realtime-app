@@ -2,14 +2,14 @@
   "kpis": {
     "income": 16386.8,
     "income_period": "July 2026",
-    "true_outflows": 1586.51,
+    "true_outflows": 1606.74,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 27012.65,
+      "balance": 26992.42,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -105,7 +105,7 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 573.03,
+      "balance": 552.8,
       "available": 552.8,
       "is_credit": false,
       "is_loan": false,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 86895.30789416,
+    "total_checking": 86875.07789416,
     "total_credit": 1752.9499999999998,
     "total_loans": 386654.23,
-    "net": -301511.87210584
+    "net": -301532.10210584
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -367,9 +367,9 @@
   },
   "spending": {
     "Healthcare": 3683.7299999999996,
-    "Tech/Subs": 11915.39,
+    "Tech/Subs": 11922.84,
     "Shopping": 14970.81,
-    "Entertainment": 2316.77,
+    "Entertainment": 2329.55,
     "Tax/Professional": 19312.18,
     "Groceries": 3364.49,
     "Restaurants": 2565.83,
@@ -987,6 +987,14 @@
       "last_amount": 4.32
     },
     {
+      "desc": "Hulu",
+      "category": "Entertainment",
+      "count": 4,
+      "months": 3,
+      "avg_amount": 12.78,
+      "last_amount": 12.78
+    },
+    {
       "desc": "Anthropic Anthropic.comca",
       "category": "Tech/Subs",
       "count": 8,
@@ -1203,14 +1211,6 @@
       "last_amount": 22.97
     },
     {
-      "desc": "Hulu",
-      "category": "Entertainment",
-      "count": 3,
-      "months": 2,
-      "avg_amount": 12.78,
-      "last_amount": 12.78
-    },
-    {
       "desc": "Wingstop",
       "category": "Restaurants",
       "count": 2,
@@ -1294,7 +1294,7 @@
       "income": 16386.8,
       "bofa_income": 16386.8,
       "td_income": 0,
-      "outflows": 1586.51,
+      "outflows": 1606.74,
       "xoom": 0,
       "investments": 0
     }
@@ -7937,9 +7937,9 @@
       "label": "July 2026",
       "period": "2026-07",
       "categories": {
-        "Tech/Subs": 1529.8999999999999,
+        "Tech/Subs": 1537.3500000000001,
         "Gas/Travel": 504.85999999999996,
-        "Entertainment": 205.81,
+        "Entertainment": 218.59,
         "Refund": -3800.14,
         "Healthcare": 985.2,
         "Shopping": 1170.85,
@@ -7947,7 +7947,7 @@
         "Groceries": 573.1899999999998,
         "Restaurants": 96.68
       },
-      "total": 1586.5100000000007,
+      "total": 1606.7400000000005,
       "transactions": [
         {
           "date": "07-01",
@@ -8071,6 +8071,32 @@
           "desc": "Brilhante",
           "amount": 7.92,
           "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
+          "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-27",
+          "desc": "PAYPAL DES:PURCHASE ID:FACEBOOKTEC INDN:VIMAL RAJ LOGANATHAN CO ID:PAYPALSI77 WEB",
+          "amount": 7.45,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "6AmJvxyqr6f31vQAM4wRH77rpoVkDOIAgMaxg",
+          "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-27",
+          "desc": "Hulu",
+          "amount": 12.78,
+          "category": "Entertainment",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -9996,7 +10022,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-28T06:07:51.650Z",
+  "generated_at": "2026-07-28T12:10:18.991Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
