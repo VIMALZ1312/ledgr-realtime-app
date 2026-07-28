@@ -2,7 +2,7 @@
   "kpis": {
     "income": 16386.8,
     "income_period": "July 2026",
-    "true_outflows": 1738.97,
+    "true_outflows": 1548.25,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -28,7 +28,7 @@
       "payroll": 0
     },
     "discover": {
-      "balance": 3852.55,
+      "balance": 0,
       "is_credit": true,
       "period_label": "Live"
     },
@@ -295,20 +295,6 @@
       "is_savings": false
     },
     {
-      "bank": "Discover",
-      "nickname": "discover",
-      "name": "Discover it Card",
-      "mask": "0494",
-      "type": "credit",
-      "subtype": "credit card",
-      "balance": 3852.55,
-      "available": null,
-      "is_credit": true,
-      "is_loan": false,
-      "is_checking": false,
-      "is_savings": false
-    },
-    {
       "bank": "Robinhood",
       "nickname": "robin_2",
       "name": "Checking",
@@ -367,9 +353,9 @@
   ],
   "net_worth": {
     "total_checking": 87904.63309891,
-    "total_credit": 5567.24,
+    "total_credit": 1714.69,
     "total_loans": 386654.23,
-    "net": -304316.83690109
+    "net": -300464.28690109
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -380,16 +366,16 @@
     "by_month": []
   },
   "spending": {
-    "Healthcare": 3810.1800000000003,
-    "Tech/Subs": 14144.47,
-    "Shopping": 15377.439999999999,
-    "Entertainment": 2485.71,
-    "Tax/Professional": 19597.389999999996,
-    "Groceries": 3404.96,
-    "Restaurants": 2936.1600000000003,
-    "Gas/Travel": 7092.800000000001,
-    "Refund": -7180.950000000001,
-    "Insurance": 1843.71
+    "Healthcare": 3683.7299999999996,
+    "Tech/Subs": 11905.369999999999,
+    "Shopping": 14970.81,
+    "Entertainment": 2288.53,
+    "Tax/Professional": 19312.18,
+    "Groceries": 3364.49,
+    "Restaurants": 2565.83,
+    "Gas/Travel": 7078.7300000000005,
+    "Refund": -6757.67,
+    "Insurance": 185.94
   },
   "zelle_received": [
     {
@@ -707,9 +693,9 @@
     {
       "desc": "Walgreens",
       "category": "Healthcare",
-      "count": 22,
+      "count": 21,
       "months": 7,
-      "avg_amount": 41.47,
+      "avg_amount": 42.59,
       "last_amount": 103.75
     },
     {
@@ -735,14 +721,6 @@
       "months": 7,
       "avg_amount": 23.35,
       "last_amount": 7.73
-    },
-    {
-      "desc": "Regal Cinemas",
-      "category": "Entertainment",
-      "count": 13,
-      "months": 7,
-      "avg_amount": 15.2,
-      "last_amount": 18.65
     },
     {
       "desc": "Verizon",
@@ -791,6 +769,14 @@
       "months": 6,
       "avg_amount": 35.18,
       "last_amount": 35.18
+    },
+    {
+      "desc": "Regal Cinemas",
+      "category": "Entertainment",
+      "count": 6,
+      "months": 6,
+      "avg_amount": 28.24,
+      "last_amount": 28.24
     },
     {
       "desc": "Apple",
@@ -889,14 +875,6 @@
       "last_amount": 25
     },
     {
-      "desc": "Replit Inc.",
-      "category": "Tech/Subs",
-      "count": 6,
-      "months": 4,
-      "avg_amount": 70.35,
-      "last_amount": 55.52
-    },
-    {
       "desc": "Everwash",
       "category": "Tech/Subs",
       "count": 4,
@@ -913,14 +891,6 @@
       "last_amount": 71.82
     },
     {
-      "desc": "Grok Xai",
-      "category": "Tech/Subs",
-      "count": 4,
-      "months": 4,
-      "avg_amount": 23.75,
-      "last_amount": 30
-    },
-    {
       "desc": "Shaan Halal Zabiha Meat",
       "category": "Groceries",
       "count": 8,
@@ -935,14 +905,6 @@
       "months": 4,
       "avg_amount": 15,
       "last_amount": 15
-    },
-    {
-      "desc": "Nokia Of America Corpo",
-      "category": "Shopping",
-      "count": 4,
-      "months": 4,
-      "avg_amount": 9.99,
-      "last_amount": 9.99
     },
     {
       "desc": "Netlify Fy",
@@ -971,9 +933,9 @@
     {
       "desc": "The Home Depot",
       "category": "Shopping",
-      "count": 4,
+      "count": 3,
       "months": 3,
-      "avg_amount": 89,
+      "avg_amount": 116.08,
       "last_amount": 39.36
     },
     {
@@ -983,14 +945,6 @@
       "months": 3,
       "avg_amount": 76.76,
       "last_amount": 100
-    },
-    {
-      "desc": "Uber",
-      "category": "Tax/Professional",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 71.01,
-      "last_amount": 31.94
     },
     {
       "desc": "Shell",
@@ -1025,14 +979,6 @@
       "last_amount": 12.25
     },
     {
-      "desc": "CVS",
-      "category": "Healthcare",
-      "count": 5,
-      "months": 3,
-      "avg_amount": 21.77,
-      "last_amount": 5.38
-    },
-    {
       "desc": "Dollar Tree",
       "category": "Shopping",
       "count": 4,
@@ -1047,22 +993,6 @@
       "months": 3,
       "avg_amount": 9.29,
       "last_amount": 10.04
-    },
-    {
-      "desc": "Dunkin'",
-      "category": "Restaurants",
-      "count": 4,
-      "months": 3,
-      "avg_amount": 8.73,
-      "last_amount": 17.86
-    },
-    {
-      "desc": "Vzn Br Cafe Basking Ridgenj",
-      "category": "Restaurants",
-      "count": 9,
-      "months": 3,
-      "avg_amount": 8.52,
-      "last_amount": 14.06
     },
     {
       "desc": "R K Jewels",
@@ -1119,14 +1049,6 @@
       "months": 2,
       "avg_amount": 255.23,
       "last_amount": 281.16
-    },
-    {
-      "desc": "Fanbasis",
-      "category": "Tech/Subs",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 250,
-      "last_amount": 250
     },
     {
       "desc": "North Brunswick Family De",
@@ -1201,14 +1123,6 @@
       "last_amount": 59.9
     },
     {
-      "desc": "Houseofbi",
-      "category": "Restaurants",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 58.73,
-      "last_amount": 47.52
-    },
-    {
       "desc": "Desi Chowrastha",
       "category": "Restaurants",
       "count": 2,
@@ -1231,14 +1145,6 @@
       "months": 2,
       "avg_amount": 53.89,
       "last_amount": 57.64
-    },
-    {
-      "desc": "Temu",
-      "category": "Shopping",
-      "count": 3,
-      "months": 2,
-      "avg_amount": 47.47,
-      "last_amount": 61.79
     },
     {
       "desc": "Apna Bazaar Cash & Carry",
@@ -1313,12 +1219,12 @@
       "last_amount": 5.95
     },
     {
-      "desc": "Cricketdata",
-      "category": "Tech/Subs",
-      "count": 2,
+      "desc": "Dunkin'",
+      "category": "Restaurants",
+      "count": 3,
       "months": 2,
-      "avg_amount": 5.99,
-      "last_amount": 5.99
+      "avg_amount": 5.68,
+      "last_amount": 10.36
     }
   ],
   "monthly_history": [
@@ -1348,7 +1254,7 @@
       "income": 15892.31,
       "bofa_income": 10892.3,
       "td_income": 5000.01,
-      "outflows": 23373.66,
+      "outflows": 23060.34,
       "xoom": 0,
       "investments": 0
     },
@@ -1358,17 +1264,17 @@
       "income": 15986.430000000002,
       "bofa_income": 13486.41,
       "td_income": 2500.02,
-      "outflows": 8912.9,
+      "outflows": 6547.28,
       "xoom": 0,
       "investments": 0
     },
     {
       "period": "2026-05",
       "period_label": "May 2026",
-      "income": 17107.28,
-      "bofa_income": 17107.28,
+      "income": 16857.28,
+      "bofa_income": 16857.28,
       "td_income": 0,
-      "outflows": 7604.63,
+      "outflows": 5817.02,
       "xoom": 0,
       "investments": 0
     },
@@ -1378,7 +1284,7 @@
       "income": 16362.05,
       "bofa_income": 16362.05,
       "td_income": 0,
-      "outflows": 6974.08,
+      "outflows": 6717.42,
       "xoom": 0,
       "investments": 0
     },
@@ -1388,7 +1294,7 @@
       "income": 16386.8,
       "bofa_income": 16386.8,
       "td_income": 0,
-      "outflows": 1738.97,
+      "outflows": 1548.25,
       "xoom": 0,
       "investments": 0
     }
@@ -1398,18 +1304,17 @@
       "label": "April 2026",
       "period": "2026-04",
       "categories": {
-        "Healthcare": 587.13,
-        "Tech/Subs": 2919.3899999999994,
-        "Shopping": 1238.42,
-        "Entertainment": 582.3100000000001,
-        "Tax/Professional": 803.85,
+        "Healthcare": 484.17999999999995,
+        "Tech/Subs": 2407.7799999999997,
+        "Shopping": 1196.39,
+        "Entertainment": 579.13,
+        "Tax/Professional": 723.73,
         "Groceries": 625.5299999999999,
-        "Restaurants": 455.8500000000001,
+        "Restaurants": 252.89000000000001,
         "Gas/Travel": 550.7,
-        "Refund": -508.05,
-        "Insurance": 1657.77
+        "Refund": -273.05
       },
-      "total": 8912.899999999996,
+      "total": 6547.279999999997,
       "transactions": [
         {
           "date": "04-17",
@@ -2478,344 +2383,6 @@
           "refund": false
         },
         {
-          "date": "04-13",
-          "desc": "CASHBACK BONUS REDEMPTION PYMT/STMT CRDT",
-          "amount": -235,
-          "category": "Refund",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": true
-        },
-        {
-          "date": "04-13",
-          "desc": "Houseofbi",
-          "amount": 69.94,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-04",
-          "desc": "Cricketdata",
-          "amount": 5.99,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-04",
-          "desc": "Uber",
-          "amount": 80.12,
-          "category": "Tax/Professional",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-04",
-          "desc": "Regal Cinemas",
-          "amount": 1.59,
-          "category": "Entertainment",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-07",
-          "desc": "Fanbasis",
-          "amount": 250,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-10",
-          "desc": "CVS",
-          "amount": 14.28,
-          "category": "Healthcare",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-09",
-          "desc": "Vzn Br Cafe Basking Ridgenj",
-          "amount": 2.87,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-08",
-          "desc": "ABC*P 06002 PF NORTH B NORTH BRUNSWINJ APPLE PAY ENDING IN 0913",
-          "amount": 2,
-          "category": "Healthcare",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-05",
-          "desc": "Replit Inc.",
-          "amount": 50.12,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": "CA",
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-10",
-          "desc": "Regal Cinemas",
-          "amount": 1.59,
-          "category": "Entertainment",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-09",
-          "desc": "Grok Xai",
-          "amount": 5,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-11",
-          "desc": "Replit Inc.",
-          "amount": 100.13,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": "CA",
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-05",
-          "desc": "Temu",
-          "amount": 42.03,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-05",
-          "desc": "CVS",
-          "amount": 28.33,
-          "category": "Healthcare",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-29",
-          "desc": "CVS",
-          "amount": 58.34,
-          "category": "Healthcare",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-29",
-          "desc": "Replit Inc.",
-          "amount": 100.37,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": "CA",
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-24",
-          "desc": "Vzn Br Cafe Basking Ridgenj",
-          "amount": 12.48,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-23",
-          "desc": "Vzn Br Cafe Basking Ridgenj",
-          "amount": 12.39,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-25",
-          "desc": "Samudhra",
-          "amount": 85.3,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-30",
-          "desc": "365 Retail Markets",
-          "amount": 1.6,
-          "category": "Restaurants",
-          "city": "Troy",
-          "state": "MI",
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-23",
-          "desc": "Vzn Br Cafe Basking Ridgenj",
-          "amount": 12.53,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-23",
-          "desc": "365 Retail Markets",
-          "amount": 2.98,
-          "category": "Restaurants",
-          "city": "Troy",
-          "state": "MI",
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-23",
-          "desc": "Vzn Br Cafe Basking Ridgenj",
-          "amount": 2.87,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-27",
-          "desc": "Progressive Insurance",
-          "amount": 1060,
-          "category": "Insurance",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-21",
-          "desc": "Mercury",
-          "amount": 597.77,
-          "category": "Insurance",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
           "date": "04-03",
           "desc": "Walmart",
           "amount": -174.5,
@@ -2860,9 +2427,9 @@
       "label": "March 2026",
       "period": "2026-03",
       "categories": {
-        "Tech/Subs": 2063.98,
-        "Entertainment": 426.19,
-        "Tax/Professional": 16908.149999999998,
+        "Tech/Subs": 2013.8100000000002,
+        "Entertainment": 336.19,
+        "Tax/Professional": 16735,
         "Healthcare": 45.99,
         "Shopping": 1776.6399999999996,
         "Restaurants": 793.8700000000001,
@@ -2870,7 +2437,7 @@
         "Groceries": 459.48999999999995,
         "Refund": -34.58
       },
-      "total": 23373.66,
+      "total": 23060.340000000004,
       "transactions": [
         {
           "date": "03-31",
@@ -4104,71 +3671,6 @@
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "03-30",
-          "desc": "Replit Inc.",
-          "amount": 50.17,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": "CA",
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "03-28",
-          "desc": "Lyft",
-          "amount": 72.17,
-          "category": "Tax/Professional",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "03-27",
-          "desc": "Uber",
-          "amount": 100.98,
-          "category": "Tax/Professional",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "03-28",
-          "desc": "Griffith Observatory",
-          "amount": 26,
-          "category": "Entertainment",
-          "city": "Los Angeles",
-          "state": "CA",
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "03-28",
-          "desc": "Griffith Observatory",
-          "amount": 64,
-          "category": "Entertainment",
-          "city": "Los Angeles",
-          "state": "CA",
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
           "pending": false,
           "refund": false
         },
@@ -5813,16 +5315,16 @@
       "label": "May 2026",
       "period": "2026-05",
       "categories": {
-        "Tech/Subs": 3724.91,
-        "Entertainment": 80.41000000000001,
-        "Shopping": 2812.459999999999,
+        "Tech/Subs": 2191.11,
+        "Entertainment": 74.05,
+        "Shopping": 2505.709999999999,
         "Healthcare": 139.25,
-        "Refund": -983.8399999999999,
-        "Restaurants": 777.2099999999999,
+        "Refund": -797.27,
+        "Restaurants": 690.4099999999999,
         "Gas/Travel": 236.31000000000003,
-        "Groceries": 817.9200000000001
+        "Groceries": 777.45
       },
-      "total": 7604.630000000002,
+      "total": 5817.02,
       "transactions": [
         {
           "date": "05-01",
@@ -7047,227 +6549,6 @@
           "refund": true
         },
         {
-          "date": "05-31",
-          "desc": "Regal Cinemas",
-          "amount": 1.59,
-          "category": "Entertainment",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "05-24",
-          "desc": "Regal Cinemas",
-          "amount": 1.59,
-          "category": "Entertainment",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "05-27",
-          "desc": "Brightchamp",
-          "amount": 1182,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "05-10",
-          "desc": "Realfruitbubbletea",
-          "amount": 22.09,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "05-08",
-          "desc": "Grok Xai",
-          "amount": 30,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": "CA",
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "05-12",
-          "desc": "Replit Inc.",
-          "amount": 65.81,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": "CA",
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "05-14",
-          "desc": "Nike",
-          "amount": 289,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "05-07",
-          "desc": "Fanbasis",
-          "amount": 250,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "05-01",
-          "desc": "Regal Cinemas",
-          "amount": 1.59,
-          "category": "Entertainment",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "05-04",
-          "desc": "Cricketdata",
-          "amount": 5.99,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "05-09",
-          "desc": "Regal Cinemas",
-          "amount": 1.59,
-          "category": "Entertainment",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "05-11",
-          "desc": "Singasfam",
-          "amount": 17.19,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "05-11",
-          "desc": "Desi Halal Meat",
-          "amount": 40.47,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "05-06",
-          "desc": "The Home Depot",
-          "amount": 7.76,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "05-21",
-          "desc": "MERCURY*MICIL-IL-NJPPA CA 0519001545458957",
-          "amount": -186.57,
-          "category": "Refund",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": true
-        },
-        {
-          "date": "05-21",
-          "desc": "Houseofbi",
-          "amount": 47.52,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "05-21",
-          "desc": "Nokia Of America Corpo",
-          "amount": 9.99,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
           "date": "05-02",
           "desc": "Mila Foods",
           "amount": 18.13,
@@ -7377,17 +6658,17 @@
       "label": "June 2026",
       "period": "2026-06",
       "categories": {
-        "Tech/Subs": 1672.57,
+        "Tech/Subs": 1559.05,
         "Entertainment": 688.15,
-        "Healthcare": 1335.52,
+        "Healthcare": 1312.02,
         "Refund": -346.76000000000005,
-        "Shopping": 867.37,
-        "Restaurants": 457.08,
-        "Tax/Professional": 1105.91,
-        "Gas/Travel": 902.84,
+        "Shopping": 857.38,
+        "Restaurants": 393.44,
+        "Tax/Professional": 1073.97,
+        "Gas/Travel": 888.77,
         "Groceries": 291.40000000000003
       },
-      "total": 6974.079999999998,
+      "total": 6717.419999999998,
       "transactions": [
         {
           "date": "06-01",
@@ -8418,188 +7699,6 @@
         },
         {
           "date": "06-04",
-          "desc": "Vrz Br Cafe",
-          "amount": 2.67,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-08",
-          "desc": "Grok Xai",
-          "amount": 30,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": "CA",
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-11",
-          "desc": "Walgreens",
-          "amount": 18.12,
-          "category": "Healthcare",
-          "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-11",
-          "desc": "Vzn Br Cafe Basking Ridgenj",
-          "amount": 14.06,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-14",
-          "desc": "CVS",
-          "amount": 5.38,
-          "category": "Healthcare",
-          "city": "Lewis Center",
-          "state": "OH",
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-12",
-          "desc": "Dunkin'",
-          "amount": 17.86,
-          "category": "Restaurants",
-          "city": "Lawn",
-          "state": "PA",
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-08",
-          "desc": "Kd Consultancy LLC",
-          "amount": 28,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-12",
-          "desc": "Replit Inc.",
-          "amount": 55.52,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": "CA",
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-13",
-          "desc": "Uber",
-          "amount": 31.94,
-          "category": "Tax/Professional",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-21",
-          "desc": "Nokia Of America Corpo",
-          "amount": 9.99,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-24",
-          "desc": "Vzn Br Cafe Basking Ridgenj",
-          "amount": 2.51,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-24",
-          "desc": "Vrz Br Cafe",
-          "amount": 12.48,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-25",
-          "desc": "Vrz Br Cafe",
-          "amount": 14.06,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-21",
-          "desc": "Pilot Flying J",
-          "amount": 14.07,
-          "category": "Gas/Travel",
-          "city": "Girard",
-          "state": "OH",
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-04",
           "desc": "Walgreens",
           "amount": 18.99,
           "category": "Healthcare",
@@ -8838,17 +7937,17 @@
       "label": "July 2026",
       "period": "2026-07",
       "categories": {
-        "Tech/Subs": 1549.8799999999999,
+        "Tech/Subs": 1519.8799999999999,
         "Gas/Travel": 504.85999999999996,
-        "Entertainment": 275.21,
-        "Refund": -3801.85,
+        "Entertainment": 177.57,
+        "Refund": -3800.14,
         "Healthcare": 985.2,
-        "Shopping": 1218.7099999999998,
+        "Shopping": 1170.85,
         "Tax/Professional": 320.16,
         "Groceries": 573.1899999999998,
-        "Restaurants": 113.61000000000001
+        "Restaurants": 96.68
       },
-      "total": 1738.9700000000005,
+      "total": 1548.2500000000007,
       "transactions": [
         {
           "date": "07-01",
@@ -9653,110 +8752,6 @@
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "07-01",
-          "desc": "Vzn Br Cafe Basking Ridgenj",
-          "amount": 2.87,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "07-01",
-          "desc": "HBO Max",
-          "amount": 78.99,
-          "category": "Entertainment",
-          "city": "New York",
-          "state": "NY",
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "07-02",
-          "desc": "Regal Cinemas",
-          "amount": 18.65,
-          "category": "Entertainment",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "07-08",
-          "desc": "Grok Xai",
-          "amount": 30,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": "CA",
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "07-09",
-          "desc": "Vzn Br Cafe Basking Ridgenj",
-          "amount": 14.06,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "07-10",
-          "desc": "Shein",
-          "amount": 37.87,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "07-01",
-          "desc": "MERCURY*MICIL-IL-NJPPA CA 0630001646091935",
-          "amount": -1.71,
-          "category": "Refund",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
-          "pending": false,
-          "refund": true
-        },
-        {
-          "date": "07-21",
-          "desc": "Nokia Of America Corpo",
-          "amount": 9.99,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "Discover",
-          "account_id": "pzZXwYy0KntPj156Q0jzuAyoNwRy7qtjbL8Dz",
-          "mask": "0494",
           "pending": false,
           "refund": false
         },
@@ -10955,156 +9950,6 @@
       "state": "AR",
       "period": "2026-07",
       "period_label": "July 2026"
-    },
-    {
-      "date": "06-08",
-      "desc": "Grok Xai",
-      "amount": 30,
-      "category": "Tech/Subs",
-      "city": null,
-      "state": "CA",
-      "period": "2026-06",
-      "period_label": "June 2026"
-    },
-    {
-      "date": "06-14",
-      "desc": "CVS",
-      "amount": 5.38,
-      "category": "Healthcare",
-      "city": "Lewis Center",
-      "state": "OH",
-      "period": "2026-06",
-      "period_label": "June 2026"
-    },
-    {
-      "date": "06-12",
-      "desc": "Replit Inc.",
-      "amount": 55.52,
-      "category": "Tech/Subs",
-      "city": null,
-      "state": "CA",
-      "period": "2026-06",
-      "period_label": "June 2026"
-    },
-    {
-      "date": "03-30",
-      "desc": "Replit Inc.",
-      "amount": 50.17,
-      "category": "Tech/Subs",
-      "city": null,
-      "state": "CA",
-      "period": "2026-03",
-      "period_label": "March 2026"
-    },
-    {
-      "date": "03-28",
-      "desc": "Griffith Observatory",
-      "amount": 26,
-      "category": "Entertainment",
-      "city": "Los Angeles",
-      "state": "CA",
-      "period": "2026-03",
-      "period_label": "March 2026"
-    },
-    {
-      "date": "03-28",
-      "desc": "Griffith Observatory",
-      "amount": 64,
-      "category": "Entertainment",
-      "city": "Los Angeles",
-      "state": "CA",
-      "period": "2026-03",
-      "period_label": "March 2026"
-    },
-    {
-      "date": "04-05",
-      "desc": "Replit Inc.",
-      "amount": 50.12,
-      "category": "Tech/Subs",
-      "city": null,
-      "state": "CA",
-      "period": "2026-04",
-      "period_label": "April 2026"
-    },
-    {
-      "date": "04-11",
-      "desc": "Replit Inc.",
-      "amount": 100.13,
-      "category": "Tech/Subs",
-      "city": null,
-      "state": "CA",
-      "period": "2026-04",
-      "period_label": "April 2026"
-    },
-    {
-      "date": "05-08",
-      "desc": "Grok Xai",
-      "amount": 30,
-      "category": "Tech/Subs",
-      "city": null,
-      "state": "CA",
-      "period": "2026-05",
-      "period_label": "May 2026"
-    },
-    {
-      "date": "05-12",
-      "desc": "Replit Inc.",
-      "amount": 65.81,
-      "category": "Tech/Subs",
-      "city": null,
-      "state": "CA",
-      "period": "2026-05",
-      "period_label": "May 2026"
-    },
-    {
-      "date": "04-29",
-      "desc": "Replit Inc.",
-      "amount": 100.37,
-      "category": "Tech/Subs",
-      "city": null,
-      "state": "CA",
-      "period": "2026-04",
-      "period_label": "April 2026"
-    },
-    {
-      "date": "04-30",
-      "desc": "365 Retail Markets",
-      "amount": 1.6,
-      "category": "Restaurants",
-      "city": "Troy",
-      "state": "MI",
-      "period": "2026-04",
-      "period_label": "April 2026"
-    },
-    {
-      "date": "04-23",
-      "desc": "365 Retail Markets",
-      "amount": 2.98,
-      "category": "Restaurants",
-      "city": "Troy",
-      "state": "MI",
-      "period": "2026-04",
-      "period_label": "April 2026"
-    },
-    {
-      "date": "06-21",
-      "desc": "Pilot Flying J",
-      "amount": 14.07,
-      "category": "Gas/Travel",
-      "city": "Girard",
-      "state": "OH",
-      "period": "2026-06",
-      "period_label": "June 2026"
-    },
-    {
-      "date": "07-08",
-      "desc": "Grok Xai",
-      "amount": 30,
-      "category": "Tech/Subs",
-      "city": null,
-      "state": "CA",
-      "period": "2026-07",
-      "period_label": "July 2026"
     }
   ],
   "fixed_obligations": {
@@ -11115,7 +9960,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-27T18:06:03.907Z",
+  "generated_at": "2026-07-28T00:09:59.535Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
@@ -11169,8 +10014,9 @@
       },
       {
         "nickname": "discover",
-        "ok": true,
-        "accounts": 1
+        "ok": false,
+        "accounts": 0,
+        "error": "ITEM_LOGIN_REQUIRED"
       },
       {
         "nickname": "robin_2",
@@ -11178,6 +10024,8 @@
         "accounts": 4
       }
     ],
-    "failed": []
+    "failed": [
+      "discover (ITEM_LOGIN_REQUIRED)"
+    ]
   }
 }
