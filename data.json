@@ -2,7 +2,7 @@
   "kpis": {
     "income": 16386.8,
     "income_period": "July 2026",
-    "true_outflows": 1548.25,
+    "true_outflows": 1586.51,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 1509.33,
+      "balance": 1547.59,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 275.9
@@ -49,7 +49,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 45195.58309891,
+      "balance": 44186.25789416,
       "available": 3.46,
       "is_credit": false,
       "is_loan": false,
@@ -175,8 +175,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 1037.74,
-      "available": 1924,
+      "balance": 1076,
+      "available": 1904,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -274,7 +274,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 20093.7,
-      "available": 20013.7,
+      "available": 19943.7,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 87904.63309891,
-    "total_credit": 1714.69,
+    "total_checking": 86895.30789416,
+    "total_credit": 1752.9499999999998,
     "total_loans": 386654.23,
-    "net": -300464.28690109
+    "net": -301511.87210584
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -367,9 +367,9 @@
   },
   "spending": {
     "Healthcare": 3683.7299999999996,
-    "Tech/Subs": 11905.369999999999,
+    "Tech/Subs": 11915.39,
     "Shopping": 14970.81,
-    "Entertainment": 2288.53,
+    "Entertainment": 2316.77,
     "Tax/Professional": 19312.18,
     "Groceries": 3364.49,
     "Restaurants": 2565.83,
@@ -715,6 +715,14 @@
       "last_amount": 2.49
     },
     {
+      "desc": "Regal Cinemas",
+      "category": "Entertainment",
+      "count": 7,
+      "months": 7,
+      "avg_amount": 28.24,
+      "last_amount": 28.24
+    },
+    {
       "desc": "Amazon",
       "category": "Shopping",
       "count": 60,
@@ -769,14 +777,6 @@
       "months": 6,
       "avg_amount": 35.18,
       "last_amount": 35.18
-    },
-    {
-      "desc": "Regal Cinemas",
-      "category": "Entertainment",
-      "count": 6,
-      "months": 6,
-      "avg_amount": 28.24,
-      "last_amount": 28.24
     },
     {
       "desc": "Apple",
@@ -989,10 +989,10 @@
     {
       "desc": "Anthropic Anthropic.comca",
       "category": "Tech/Subs",
-      "count": 7,
+      "count": 8,
       "months": 3,
-      "avg_amount": 9.29,
-      "last_amount": 10.04
+      "avg_amount": 9.39,
+      "last_amount": 10.02
     },
     {
       "desc": "R K Jewels",
@@ -1294,7 +1294,7 @@
       "income": 16386.8,
       "bofa_income": 16386.8,
       "td_income": 0,
-      "outflows": 1548.25,
+      "outflows": 1586.51,
       "xoom": 0,
       "investments": 0
     }
@@ -7937,9 +7937,9 @@
       "label": "July 2026",
       "period": "2026-07",
       "categories": {
-        "Tech/Subs": 1519.8799999999999,
+        "Tech/Subs": 1529.8999999999999,
         "Gas/Travel": 504.85999999999996,
-        "Entertainment": 177.57,
+        "Entertainment": 205.81,
         "Refund": -3800.14,
         "Healthcare": 985.2,
         "Shopping": 1170.85,
@@ -7947,7 +7947,7 @@
         "Groceries": 573.1899999999998,
         "Restaurants": 96.68
       },
-      "total": 1548.2500000000007,
+      "total": 1586.5100000000007,
       "transactions": [
         {
           "date": "07-01",
@@ -8486,6 +8486,32 @@
           "date": "07-23",
           "desc": "Claude Sub Anthropic.comca",
           "amount": 100,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-25",
+          "desc": "Regal Cinemas",
+          "amount": 28.24,
+          "category": "Entertainment",
+          "city": null,
+          "state": "TN",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-25",
+          "desc": "Anthropic Anthropic.comca",
+          "amount": 10.02,
           "category": "Tech/Subs",
           "city": null,
           "state": null,
@@ -9752,6 +9778,16 @@
       "period_label": "July 2026"
     },
     {
+      "date": "07-25",
+      "desc": "Regal Cinemas",
+      "amount": 28.24,
+      "category": "Entertainment",
+      "city": null,
+      "state": "TN",
+      "period": "2026-07",
+      "period_label": "July 2026"
+    },
+    {
       "date": "04-09",
       "desc": "Trendia Trendia.co",
       "amount": 178.01,
@@ -9960,7 +9996,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-28T00:09:59.535Z",
+  "generated_at": "2026-07-28T06:07:51.650Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
