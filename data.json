@@ -2,7 +2,7 @@
   "kpis": {
     "income": 16386.8,
     "income_period": "July 2026",
-    "true_outflows": 1606.74,
+    "true_outflows": 1627,
     "outflows_period": "July 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,10 +16,10 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 1547.59,
+      "balance": 1568.85,
       "is_credit": true,
       "period_label": "Live",
-      "wf_checking": 275.9
+      "wf_checking": 316.61
     },
     "td": {
       "balance": 81.03,
@@ -147,8 +147,8 @@
       "mask": "3068",
       "type": "depository",
       "subtype": "checking",
-      "balance": 275.9,
-      "available": 275.9,
+      "balance": 316.61,
+      "available": 316.61,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -161,8 +161,8 @@
       "mask": "8036",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 10.5,
-      "available": 989,
+      "balance": 11.5,
+      "available": 988,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -175,8 +175,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 1076,
-      "available": 1904,
+      "balance": 1096.26,
+      "available": 1903,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 85976.8030594249,
-    "total_credit": 1752.9499999999998,
+    "total_checking": 86017.51305942489,
+    "total_credit": 1774.21,
     "total_loans": 386654.23,
-    "net": -302430.3769405751
+    "net": -302410.9269405751
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -367,7 +367,7 @@
   },
   "spending": {
     "Healthcare": 3683.7299999999996,
-    "Tech/Subs": 11922.84,
+    "Tech/Subs": 11943.1,
     "Shopping": 14970.81,
     "Entertainment": 2329.55,
     "Tax/Professional": 19312.18,
@@ -543,6 +543,12 @@
     {
       "from": "FROM AHMED MOHAMMED ON 07/24 REF # BACAN9A28MWZ PHONE BILL FOR APRILJUNE2026",
       "amount": 274.96,
+      "period": "2026-07",
+      "period_label": "July 2026"
+    },
+    {
+      "from": "FROM DEEPAK REDDY DEVULAPALLY ON 07/27 REF # JPM99CQTJR7S MONTHLY PHONE BILL",
+      "amount": 40.71,
       "period": "2026-07",
       "period_label": "July 2026"
     },
@@ -1277,7 +1283,7 @@
       "income": 16386.8,
       "bofa_income": 16386.8,
       "td_income": 0,
-      "outflows": 1606.74,
+      "outflows": 1627,
       "xoom": 0,
       "investments": 0
     }
@@ -7920,7 +7926,7 @@
       "label": "July 2026",
       "period": "2026-07",
       "categories": {
-        "Tech/Subs": 1537.3500000000001,
+        "Tech/Subs": 1557.6100000000001,
         "Gas/Travel": 504.85999999999996,
         "Entertainment": 218.59,
         "Refund": -3800.14,
@@ -7930,7 +7936,7 @@
         "Groceries": 573.1899999999998,
         "Restaurants": 96.68
       },
-      "total": 1606.7400000000005,
+      "total": 1627.0000000000005,
       "transactions": [
         {
           "date": "07-01",
@@ -8524,6 +8530,19 @@
           "category": "Tech/Subs",
           "city": null,
           "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-26",
+          "desc": "Polar",
+          "amount": 20.26,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "CA",
           "bank": "Wells Fargo",
           "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
           "mask": "9762",
@@ -9797,6 +9816,16 @@
       "period_label": "July 2026"
     },
     {
+      "date": "07-26",
+      "desc": "Polar",
+      "amount": 20.26,
+      "category": "Tech/Subs",
+      "city": null,
+      "state": "CA",
+      "period": "2026-07",
+      "period_label": "July 2026"
+    },
+    {
       "date": "04-09",
       "desc": "Trendia Trendia.co",
       "amount": 178.01,
@@ -10015,7 +10044,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-29T12:05:58.916Z",
+  "generated_at": "2026-07-29T18:08:11.188Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
