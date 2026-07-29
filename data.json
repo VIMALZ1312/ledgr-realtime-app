@@ -9,7 +9,7 @@
   },
   "accounts": {
     "bofa": {
-      "balance": 26992.42,
+      "balance": 26842.42,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -245,8 +245,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": -164.6,
-      "available": 864.6,
+      "balance": -151.87,
+      "available": 851.87,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -273,7 +273,7 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 20093.7,
+      "balance": 19943.7,
       "available": 19943.7,
       "is_credit": false,
       "is_loan": false,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 86126.8030594249,
+    "total_checking": 85976.8030594249,
     "total_credit": 1752.9499999999998,
     "total_loans": 386654.23,
-    "net": -302280.3769405751
+    "net": -302430.3769405751
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -655,24 +655,7 @@
       "period_label": "July 2026"
     }
   ],
-  "pending_transactions": [
-    {
-      "date": "07-24",
-      "desc": "Walmart",
-      "amount": 12.73,
-      "category": "Shopping",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "07-27",
-      "desc": "R K Jewels",
-      "amount": 80,
-      "category": "Shopping",
-      "bank": "BofA",
-      "pending": true
-    }
-  ],
+  "pending_transactions": [],
   "detected_recurring": [
     {
       "desc": "Garden Farm",
@@ -8757,8 +8740,8 @@
         },
         {
           "date": "07-24",
-          "desc": "Walmart",
-          "amount": 12.73,
+          "desc": "Garden Farm",
+          "amount": 53.24,
           "category": "Shopping",
           "city": null,
           "state": null,
@@ -8769,10 +8752,10 @@
           "refund": false
         },
         {
-          "date": "07-24",
-          "desc": "Garden Farm",
-          "amount": 53.24,
-          "category": "Shopping",
+          "date": "07-25",
+          "desc": "BP",
+          "amount": 58.89,
+          "category": "Gas/Travel",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -8795,12 +8778,12 @@
           "refund": false
         },
         {
-          "date": "07-25",
-          "desc": "BP",
-          "amount": 58.89,
-          "category": "Gas/Travel",
+          "date": "07-27",
+          "desc": "Walmart",
+          "amount": 12.73,
+          "category": "Shopping",
           "city": null,
-          "state": null,
+          "state": "AR",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -10012,6 +9995,16 @@
       "state": "AR",
       "period": "2026-07",
       "period_label": "July 2026"
+    },
+    {
+      "date": "07-27",
+      "desc": "Walmart",
+      "amount": 12.73,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-07",
+      "period_label": "July 2026"
     }
   ],
   "fixed_obligations": {
@@ -10022,7 +10015,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-29T00:18:33.234Z",
+  "generated_at": "2026-07-29T06:06:17.276Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
