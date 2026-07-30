@@ -1,6 +1,6 @@
 {
   "kpis": {
-    "income": 16386.8,
+    "income": 16386.81,
     "income_period": "July 2026",
     "true_outflows": 1627,
     "outflows_period": "July 2026",
@@ -9,7 +9,7 @@
   },
   "accounts": {
     "bofa": {
-      "balance": 26842.42,
+      "balance": 26842.43,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -119,8 +119,8 @@
       "mask": "8206",
       "type": "depository",
       "subtype": "savings",
-      "balance": 14.7,
-      "available": 14.7,
+      "balance": 14.71,
+      "available": 14.71,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 84603.41024211,
+    "total_checking": 84603.42024210999,
     "total_credit": 1774.21,
     "total_loans": 386654.23,
-    "net": -303825.02975789
+    "net": -303825.01975789
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -1280,8 +1280,8 @@
     {
       "period": "2026-07",
       "period_label": "July 2026",
-      "income": 16386.8,
-      "bofa_income": 16386.8,
+      "income": 16386.81,
+      "bofa_income": 16386.81,
       "td_income": 0,
       "outflows": 1627,
       "xoom": 0,
@@ -10044,7 +10044,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-30T06:04:19.897Z",
+  "generated_at": "2026-07-30T12:07:30.311Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
