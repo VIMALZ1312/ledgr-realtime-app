@@ -1,6 +1,6 @@
 {
   "kpis": {
-    "income": 16386.81,
+    "income": 20865.25,
     "income_period": "July 2026",
     "true_outflows": 1627,
     "outflows_period": "July 2026",
@@ -9,7 +9,7 @@
   },
   "accounts": {
     "bofa": {
-      "balance": 26842.43,
+      "balance": 27292.43,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -105,8 +105,8 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 552.8,
-      "available": 552.8,
+      "balance": 1010.8,
+      "available": 4989.24,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -119,8 +119,8 @@
       "mask": "8206",
       "type": "depository",
       "subtype": "savings",
-      "balance": 14.71,
-      "available": 14.71,
+      "balance": 6.71,
+      "available": 6.71,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -148,7 +148,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 316.61,
-      "available": 316.61,
+      "available": 816.61,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -274,7 +274,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 19943.7,
-      "available": 19943.7,
+      "available": 19818.7,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 86065.52259952339,
+    "total_checking": 86515.52259952339,
     "total_credit": 1774.21,
     "total_loans": 386654.23,
-    "net": -302362.9174004766
+    "net": -301912.9174004766
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -539,6 +539,12 @@
       "amount": 950,
       "period": "2026-06",
       "period_label": "June 2026"
+    },
+    {
+      "from": "payment from VIMALRAJ LOGANATHAN Conf# T22F7X645",
+      "amount": 500,
+      "period": "2026-07",
+      "period_label": "July 2026"
     },
     {
       "from": "FROM AHMED MOHAMMED ON 07/24 REF # BACAN9A28MWZ PHONE BILL FOR APRILJUNE2026",
@@ -1280,8 +1286,8 @@
     {
       "period": "2026-07",
       "period_label": "July 2026",
-      "income": 16386.81,
-      "bofa_income": 16386.81,
+      "income": 20865.25,
+      "bofa_income": 20865.25,
       "td_income": 0,
       "outflows": 1627,
       "xoom": 0,
@@ -10044,7 +10050,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-07-31T06:06:25.808Z",
+  "generated_at": "2026-07-31T12:09:05.009Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
