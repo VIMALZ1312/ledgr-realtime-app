@@ -1,15 +1,15 @@
 {
   "kpis": {
-    "income": 20869.63,
-    "income_period": "July 2026",
-    "true_outflows": 1627,
-    "outflows_period": "July 2026",
+    "income": 3475.57,
+    "income_period": "August 2026",
+    "true_outflows": 0,
+    "outflows_period": "",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 27292.43,
+      "balance": 27167.43,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -63,8 +63,8 @@
       "mask": "0910",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 0,
-      "available": 21000,
+      "balance": 95,
+      "available": 20905,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -273,8 +273,8 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 19943.7,
-      "available": 19818.7,
+      "balance": 19818.7,
+      "available": 23294.27,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 87474.028684749,
-    "total_credit": 1774.21,
+    "total_checking": 87349.028684749,
+    "total_credit": 1869.21,
     "total_loans": 386654.23,
-    "net": -300954.41131525097
+    "net": -301174.41131525097
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -368,10 +368,10 @@
   "spending": {
     "Healthcare": 3683.7299999999996,
     "Tech/Subs": 11943.1,
-    "Shopping": 14970.81,
+    "Shopping": 15095.81,
     "Entertainment": 2329.55,
     "Tax/Professional": 19312.18,
-    "Groceries": 3364.49,
+    "Groceries": 3380.5199999999995,
     "Restaurants": 2565.83,
     "Gas/Travel": 7078.7300000000005,
     "Refund": -6757.67,
@@ -667,7 +667,16 @@
       "period_label": "July 2026"
     }
   ],
-  "pending_transactions": [],
+  "pending_transactions": [
+    {
+      "date": "07-31",
+      "desc": "Deccan Halal Mart",
+      "amount": 16.03,
+      "category": "Groceries",
+      "bank": "BofA",
+      "pending": true
+    }
+  ],
   "detected_recurring": [
     {
       "desc": "Garden Farm",
@@ -920,10 +929,10 @@
     {
       "desc": "Zelle payment to Tere Cleaning Lady for \"April cleaning\"; Conf# zhwnf5bbm",
       "category": "Shopping",
-      "count": 3,
+      "count": 4,
       "months": 3,
-      "avg_amount": 133.33,
-      "last_amount": 150
+      "avg_amount": 131.25,
+      "last_amount": 125
     },
     {
       "desc": "The Home Depot",
@@ -1289,7 +1298,17 @@
       "income": 20869.63,
       "bofa_income": 20869.63,
       "td_income": 0,
-      "outflows": 1627,
+      "outflows": 1768.03,
+      "xoom": 0,
+      "investments": 0
+    },
+    {
+      "period": "2026-08",
+      "period_label": "August 2026",
+      "income": 3475.57,
+      "bofa_income": 3475.57,
+      "td_income": 0,
+      "outflows": 0,
       "xoom": 0,
       "investments": 0
     }
@@ -7937,12 +7956,12 @@
         "Entertainment": 218.59,
         "Refund": -3800.14,
         "Healthcare": 985.2,
-        "Shopping": 1170.85,
+        "Shopping": 1295.85,
         "Tax/Professional": 320.16,
-        "Groceries": 573.1899999999998,
+        "Groceries": 589.2199999999998,
         "Restaurants": 96.68
       },
-      "total": 1627.0000000000005,
+      "total": 1768.0300000000004,
       "transactions": [
         {
           "date": "07-01",
@@ -8809,6 +8828,32 @@
           "category": "Shopping",
           "city": null,
           "state": "AR",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-30",
+          "desc": "Zelle payment to Tere Cleaning Lady Conf# y8qn76269",
+          "amount": 125,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
+          "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-31",
+          "desc": "Deccan Halal Mart",
+          "amount": 16.03,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -10050,7 +10095,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-01T06:02:51.582Z",
+  "generated_at": "2026-08-01T12:03:26.535Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
