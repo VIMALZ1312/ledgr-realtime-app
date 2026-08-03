@@ -2,7 +2,7 @@
   "kpis": {
     "income": 0,
     "income_period": "",
-    "true_outflows": 11.3,
+    "true_outflows": 165.65,
     "outflows_period": "August 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 1568.85,
+      "balance": 1707.1699999999998,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 816.61
@@ -161,8 +161,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 1096.26,
-      "available": 1765,
+      "balance": 1234.58,
+      "available": 1635,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -231,8 +231,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": -151.87,
-      "available": 851.87,
+      "balance": -135.84,
+      "available": 835.84,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -260,7 +260,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 23294.27,
-      "available": 23294.27,
+      "available": 23369.27,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -339,9 +339,9 @@
   ],
   "net_worth": {
     "total_checking": 90446.59857728951,
-    "total_credit": 1869.21,
+    "total_credit": 2007.5299999999997,
     "total_loans": 386654.23,
-    "net": -298076.84142271045
+    "net": -298215.16142271046
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -353,14 +353,14 @@
   },
   "spending": {
     "Tax/Professional": 19323.48,
-    "Shopping": 14120.8,
+    "Shopping": 14126.119999999999,
     "Tech/Subs": 5922.780000000001,
-    "Groceries": 3380.5199999999995,
+    "Groceries": 3380.52,
     "Restaurants": 2565.83,
-    "Gas/Travel": 6859.52,
+    "Gas/Travel": 6884.52,
     "Healthcare": 3224.62,
     "Refund": -2846.9300000000003,
-    "Entertainment": 1205.25,
+    "Entertainment": 1313.25,
     "Insurance": 185.94
   },
   "zelle_received": [
@@ -483,17 +483,15 @@
       "amount": 300,
       "period": "2026-07",
       "period_label": "July 2026"
+    },
+    {
+      "from": "Transfer Conf# T22H7VM5P; PRUDHVI ANANTHULA",
+      "amount": 75,
+      "period": "2026-08",
+      "period_label": "August 2026"
     }
   ],
   "pending_transactions": [
-    {
-      "date": "07-31",
-      "desc": "Deccan Halal Mart",
-      "amount": 16.03,
-      "category": "Groceries",
-      "bank": "BofA",
-      "pending": true
-    },
     {
       "date": "08-01",
       "desc": "East Brunswick Public Li",
@@ -553,6 +551,14 @@
       "last_amount": 7.73
     },
     {
+      "desc": "Apple",
+      "category": "Shopping",
+      "count": 19,
+      "months": 7,
+      "avg_amount": 21.82,
+      "last_amount": 5.32
+    },
+    {
       "desc": "Big Blue Swim School",
       "category": "Tech/Subs",
       "count": 6,
@@ -593,14 +599,6 @@
       "last_amount": 103.75
     },
     {
-      "desc": "Apple",
-      "category": "Shopping",
-      "count": 18,
-      "months": 6,
-      "avg_amount": 22.73,
-      "last_amount": 105.56
-    },
-    {
       "desc": "CVS ExtraCare",
       "category": "Healthcare",
       "count": 6,
@@ -617,6 +615,14 @@
       "last_amount": 1.99
     },
     {
+      "desc": "NJ E-ZPass",
+      "category": "Gas/Travel",
+      "count": 7,
+      "months": 5,
+      "avg_amount": 84.55,
+      "last_amount": 25
+    },
+    {
       "desc": "Patel Brothers",
       "category": "Groceries",
       "count": 5,
@@ -631,14 +637,6 @@
       "months": 4,
       "avg_amount": 103.43,
       "last_amount": 259.25
-    },
-    {
-      "desc": "NJ E-ZPass",
-      "category": "Gas/Travel",
-      "count": 6,
-      "months": 4,
-      "avg_amount": 94.48,
-      "last_amount": 25
     },
     {
       "desc": "Everwash",
@@ -945,6 +943,14 @@
       "last_amount": 37.31
     },
     {
+      "desc": "Deccan Halal Mart",
+      "category": "Groceries",
+      "count": 3,
+      "months": 2,
+      "avg_amount": 22.95,
+      "last_amount": 16.03
+    },
+    {
       "desc": "Atul Bakery - North Brunswick Township",
       "category": "Restaurants",
       "count": 2,
@@ -1044,7 +1050,7 @@
       "income": 12409.889999999998,
       "bofa_income": 12409.889999999998,
       "td_income": 0,
-      "outflows": 4575.97,
+      "outflows": 4559.94,
       "xoom": 0,
       "investments": 0
     },
@@ -1054,7 +1060,7 @@
       "income": 0,
       "bofa_income": 0,
       "td_income": 0,
-      "outflows": 11.3,
+      "outflows": 165.65,
       "xoom": 0,
       "investments": 0
     }
@@ -6975,10 +6981,10 @@
         "Gas/Travel": 285.65,
         "Tax/Professional": 320.16,
         "Healthcare": 974.5400000000001,
-        "Groceries": 589.2199999999998,
+        "Groceries": 573.1899999999998,
         "Restaurants": 96.68
       },
-      "total": 4575.969999999998,
+      "total": 4559.939999999999,
       "transactions": [
         {
           "date": "07-01",
@@ -7709,19 +7715,6 @@
           "refund": false
         },
         {
-          "date": "07-31",
-          "desc": "Deccan Halal Mart",
-          "amount": 16.03,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
           "date": "07-02",
           "desc": "REG_COMMERCE CTR_",
           "amount": 34.09,
@@ -7779,15 +7772,71 @@
       "label": "August 2026",
       "period": "2026-08",
       "categories": {
-        "Tax/Professional": 11.3
+        "Entertainment": 108,
+        "Shopping": 5.32,
+        "Gas/Travel": 25,
+        "Tax/Professional": 11.3,
+        "Groceries": 16.03
       },
-      "total": 11.3,
+      "total": 165.65,
       "transactions": [
+        {
+          "date": "08-01",
+          "desc": "VSI",
+          "amount": 108,
+          "category": "Entertainment",
+          "city": null,
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-01",
+          "desc": "Apple",
+          "amount": 5.32,
+          "category": "Shopping",
+          "city": null,
+          "state": "CA",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-01",
+          "desc": "NJ E-ZPass",
+          "amount": 25,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
         {
           "date": "08-01",
           "desc": "East Brunswick Public Li",
           "amount": 11.3,
           "category": "Tax/Professional",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-01",
+          "desc": "Deccan Halal Mart",
+          "amount": 16.03,
+          "category": "Groceries",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -8761,6 +8810,16 @@
       "period_label": "July 2026"
     },
     {
+      "date": "08-01",
+      "desc": "Apple",
+      "amount": 5.32,
+      "category": "Shopping",
+      "city": null,
+      "state": "CA",
+      "period": "2026-08",
+      "period_label": "August 2026"
+    },
+    {
       "date": "04-09",
       "desc": "Trendia Trendia.co",
       "amount": 178.01,
@@ -8979,7 +9038,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-03T06:02:01.291Z",
+  "generated_at": "2026-08-03T12:01:37.483Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
