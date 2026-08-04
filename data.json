@@ -330,7 +330,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 205.36,
-      "available": 2794,
+      "available": 2999,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -9044,7 +9044,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-04T00:01:10.073Z",
+  "generated_at": "2026-08-04T06:00:50.079Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
