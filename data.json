@@ -329,8 +329,8 @@
       "mask": "8479",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 205.36,
-      "available": 2999,
+      "balance": 0,
+      "available": 3000,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -339,9 +339,9 @@
   ],
   "net_worth": {
     "total_checking": 91820.75289784001,
-    "total_credit": 2007.5299999999997,
+    "total_credit": 1802.1699999999998,
     "total_loans": 386654.23,
-    "net": -296841.00710215996
+    "net": -296635.64710216
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -9101,7 +9101,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-05T00:01:06.562Z",
+  "generated_at": "2026-08-05T06:01:01.330Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
