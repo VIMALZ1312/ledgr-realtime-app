@@ -2,24 +2,24 @@
   "kpis": {
     "income": 0,
     "income_period": "",
-    "true_outflows": 467.87,
+    "true_outflows": 598.81,
     "outflows_period": "August 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 29632.2,
+      "balance": 29427.2,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
       "outflows": 0
     },
     "wf": {
-      "balance": 1707.1699999999998,
+      "balance": 1849.4099999999999,
       "is_credit": true,
       "period_label": "Live",
-      "wf_checking": 816.61
+      "wf_checking": 563.61
     },
     "td": {
       "balance": 169.03,
@@ -133,8 +133,8 @@
       "mask": "3068",
       "type": "depository",
       "subtype": "checking",
-      "balance": 816.61,
-      "available": 566.61,
+      "balance": 563.61,
+      "available": 13.61,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -161,8 +161,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 1234.58,
-      "available": 1635,
+      "balance": 1376.82,
+      "available": 1623,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -231,8 +231,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": -135.84,
-      "available": 835.84,
+      "balance": -124.54,
+      "available": 824.54,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -259,7 +259,7 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 23294.27,
+      "balance": 23089.27,
       "available": 23089.27,
       "is_credit": false,
       "is_loan": false,
@@ -338,10 +338,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 91820.75289784001,
-    "total_credit": 1802.1699999999998,
+    "total_checking": 91362.75289784001,
+    "total_credit": 1944.4099999999999,
     "total_loans": 386654.23,
-    "net": -296635.64710216
+    "net": -297235.88710215996
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -352,15 +352,15 @@
     "by_month": []
   },
   "spending": {
-    "Tax/Professional": 19323.48,
-    "Shopping": 14126.119999999999,
-    "Tech/Subs": 6214.080000000001,
+    "Tax/Professional": 19312.18,
+    "Shopping": 14189.619999999999,
+    "Tech/Subs": 6224.110000000001,
     "Groceries": 3380.52,
     "Restaurants": 2576.75,
-    "Gas/Travel": 6884.52,
+    "Gas/Travel": 6909.52,
     "Healthcare": 3224.62,
     "Refund": -2846.9300000000003,
-    "Entertainment": 1313.25,
+    "Entertainment": 1356.96,
     "Insurance": 185.94
   },
   "zelle_received": [
@@ -491,29 +491,13 @@
       "period_label": "July 2026"
     },
     {
-      "from": "Transfer Conf# T22H7VM5P; PRUDHVI ANANTHULA",
+      "from": "payment from PRUDHVI ANANTHULA for \"POTLUCK AMOUNT\"; Conf# T22H7VM5P",
       "amount": 75,
       "period": "2026-08",
       "period_label": "August 2026"
     }
   ],
   "pending_transactions": [
-    {
-      "date": "08-01",
-      "desc": "East Brunswick Public Li",
-      "amount": 11.3,
-      "category": "Tax/Professional",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "08-04",
-      "desc": "Kumon Of North",
-      "amount": 280,
-      "category": "Tech/Subs",
-      "bank": "BofA",
-      "pending": true
-    },
     {
       "date": "08-03",
       "desc": "Zinger Halal Express",
@@ -525,20 +509,28 @@
   ],
   "detected_recurring": [
     {
+      "desc": "Garden Farm",
+      "category": "Shopping",
+      "count": 11,
+      "months": 8,
+      "avg_amount": 72.03,
+      "last_amount": 52.01
+    },
+    {
+      "desc": "Amazon",
+      "category": "Shopping",
+      "count": 61,
+      "months": 8,
+      "avg_amount": 23.16,
+      "last_amount": 11.49
+    },
+    {
       "desc": "Kumon Of North",
       "category": "Tech/Subs",
       "count": 7,
       "months": 7,
       "avg_amount": 280,
       "last_amount": 280
-    },
-    {
-      "desc": "Garden Farm",
-      "category": "Shopping",
-      "count": 10,
-      "months": 7,
-      "avg_amount": 74.03,
-      "last_amount": 53.24
     },
     {
       "desc": "Delight Big Bazar",
@@ -571,14 +563,6 @@
       "months": 7,
       "avg_amount": 28.24,
       "last_amount": 28.24
-    },
-    {
-      "desc": "Amazon",
-      "category": "Shopping",
-      "count": 60,
-      "months": 7,
-      "avg_amount": 23.35,
-      "last_amount": 7.73
     },
     {
       "desc": "Apple",
@@ -639,9 +623,9 @@
     {
       "desc": "NJ E-ZPass",
       "category": "Gas/Travel",
-      "count": 7,
+      "count": 8,
       "months": 5,
-      "avg_amount": 84.55,
+      "avg_amount": 77.11,
       "last_amount": 25
     },
     {
@@ -691,6 +675,14 @@
       "months": 4,
       "avg_amount": 15,
       "last_amount": 15
+    },
+    {
+      "desc": "Anthropic Anthropic.comca",
+      "category": "Tech/Subs",
+      "count": 9,
+      "months": 4,
+      "avg_amount": 9.46,
+      "last_amount": 10.03
     },
     {
       "desc": "Netlify Fy",
@@ -763,14 +755,6 @@
       "months": 3,
       "avg_amount": 17.81,
       "last_amount": 4.32
-    },
-    {
-      "desc": "Anthropic Anthropic.comca",
-      "category": "Tech/Subs",
-      "count": 8,
-      "months": 3,
-      "avg_amount": 9.39,
-      "last_amount": 10.02
     },
     {
       "desc": "R K Jewels",
@@ -915,6 +899,14 @@
       "months": 2,
       "avg_amount": 53.89,
       "last_amount": 57.64
+    },
+    {
+      "desc": "The Music Shop",
+      "category": "Entertainment",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 43.71,
+      "last_amount": 43.71
     },
     {
       "desc": "Apna Bazaar Cash & Carry",
@@ -1082,7 +1074,7 @@
       "income": 0,
       "bofa_income": 0,
       "td_income": 0,
-      "outflows": 467.87,
+      "outflows": 598.81,
       "xoom": 0,
       "investments": 0
     }
@@ -7794,15 +7786,14 @@
       "label": "August 2026",
       "period": "2026-08",
       "categories": {
-        "Entertainment": 108,
-        "Shopping": 5.32,
-        "Gas/Travel": 25,
-        "Tax/Professional": 11.3,
+        "Entertainment": 151.71,
+        "Shopping": 68.82,
+        "Gas/Travel": 50,
+        "Tech/Subs": 301.33,
         "Groceries": 16.03,
-        "Tech/Subs": 291.3,
         "Restaurants": 10.92
       },
-      "total": 467.87,
+      "total": 598.8100000000001,
       "transactions": [
         {
           "date": "08-01",
@@ -7844,15 +7835,67 @@
           "refund": false
         },
         {
-          "date": "08-01",
-          "desc": "East Brunswick Public Li",
-          "amount": 11.3,
-          "category": "Tax/Professional",
+          "date": "08-03",
+          "desc": "Amazon",
+          "amount": 11.49,
+          "category": "Shopping",
           "city": null,
           "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-03",
+          "desc": "NJ E-ZPass",
+          "amount": 25,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-03",
+          "desc": "The Music Shop",
+          "amount": 43.71,
+          "category": "Entertainment",
+          "city": null,
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-03",
+          "desc": "Garden Farm",
+          "amount": 52.01,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-03",
+          "desc": "Anthropic Anthropic.comca",
+          "amount": 10.03,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
           "pending": false,
           "refund": false
         },
@@ -7866,19 +7909,6 @@
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "08-04",
-          "desc": "Kumon Of North",
-          "amount": 280,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
-          "mask": "9715",
           "pending": false,
           "refund": false
         },
@@ -7905,6 +7935,19 @@
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-03",
+          "desc": "Kumon Of North",
+          "amount": 280,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
+          "mask": "9715",
           "pending": false,
           "refund": false
         }
@@ -9101,7 +9144,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-05T06:01:01.330Z",
+  "generated_at": "2026-08-05T12:01:04.551Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
