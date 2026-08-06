@@ -2,7 +2,7 @@
   "kpis": {
     "income": 0,
     "income_period": "",
-    "true_outflows": 598.81,
+    "true_outflows": 609.73,
     "outflows_period": "August 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -22,7 +22,7 @@
       "wf_checking": 563.61
     },
     "td": {
-      "balance": 169.03,
+      "balance": 144.03,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0
@@ -49,7 +49,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 48018.688685965,
+      "balance": 49167.14129279,
       "available": 3.46,
       "is_credit": false,
       "is_loan": false,
@@ -203,8 +203,8 @@
       "mask": "9222",
       "type": "depository",
       "subtype": "checking",
-      "balance": 169.03,
-      "available": 169.03,
+      "balance": 144.03,
+      "available": 144.03,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -338,10 +338,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 93524.088685965,
+    "total_checking": 94647.54129279,
     "total_credit": 1944.4099999999999,
     "total_loans": 386654.23,
-    "net": -295074.55131403496
+    "net": -293951.09870721
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -356,7 +356,7 @@
     "Shopping": 14189.619999999999,
     "Tech/Subs": 6224.110000000001,
     "Groceries": 3380.52,
-    "Restaurants": 2576.75,
+    "Restaurants": 2587.67,
     "Gas/Travel": 6909.52,
     "Healthcare": 3224.62,
     "Refund": -2846.9300000000003,
@@ -1074,7 +1074,7 @@
       "income": 0,
       "bofa_income": 0,
       "td_income": 0,
-      "outflows": 598.81,
+      "outflows": 609.73,
       "xoom": 0,
       "investments": 0
     }
@@ -7791,9 +7791,9 @@
         "Gas/Travel": 50,
         "Tech/Subs": 301.33,
         "Groceries": 16.03,
-        "Restaurants": 10.92
+        "Restaurants": 21.84
       },
-      "total": 598.8100000000001,
+      "total": 609.73,
       "transactions": [
         {
           "date": "08-01",
@@ -7948,6 +7948,19 @@
           "bank": "BofA",
           "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
           "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-05",
+          "desc": "Zinger Halal Express",
+          "amount": 10.92,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
           "pending": false,
           "refund": false
         }
@@ -9144,7 +9157,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-06T06:00:50.004Z",
+  "generated_at": "2026-08-06T12:01:10.005Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
