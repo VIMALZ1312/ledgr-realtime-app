@@ -2,7 +2,7 @@
   "kpis": {
     "income": 0,
     "income_period": "",
-    "true_outflows": 598.81,
+    "true_outflows": 650.37,
     "outflows_period": "August 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -355,8 +355,8 @@
     "Tax/Professional": 19312.18,
     "Shopping": 14189.619999999999,
     "Tech/Subs": 6224.110000000001,
-    "Groceries": 3380.52,
-    "Restaurants": 2576.75,
+    "Groceries": 3387.87,
+    "Restaurants": 2620.96,
     "Gas/Travel": 6909.52,
     "Healthcare": 3224.62,
     "Refund": -2846.9300000000003,
@@ -497,7 +497,32 @@
       "period_label": "August 2026"
     }
   ],
-  "pending_transactions": [],
+  "pending_transactions": [
+    {
+      "date": "08-07",
+      "desc": "Apna Bazar",
+      "amount": 1.58,
+      "category": "Groceries",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "08-07",
+      "desc": "Apna Bazar",
+      "amount": 5.77,
+      "category": "Groceries",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "08-07",
+      "desc": "Srishti",
+      "amount": 44.21,
+      "category": "Restaurants",
+      "bank": "BofA",
+      "pending": true
+    }
+  ],
   "detected_recurring": [
     {
       "desc": "Garden Farm",
@@ -1065,7 +1090,7 @@
       "income": 0,
       "bofa_income": 0,
       "td_income": 0,
-      "outflows": 598.81,
+      "outflows": 650.37,
       "xoom": 0,
       "investments": 0
     }
@@ -7781,10 +7806,10 @@
         "Shopping": 68.82,
         "Gas/Travel": 50,
         "Tech/Subs": 301.33,
-        "Groceries": 16.03,
-        "Restaurants": 10.92
+        "Groceries": 23.38,
+        "Restaurants": 55.13
       },
-      "total": 598.8100000000001,
+      "total": 650.3700000000001,
       "transactions": [
         {
           "date": "08-01",
@@ -7933,6 +7958,45 @@
           "date": "08-05",
           "desc": "Zinger Halal Express",
           "amount": 10.92,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-07",
+          "desc": "Apna Bazar",
+          "amount": 1.58,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-07",
+          "desc": "Apna Bazar",
+          "amount": 5.77,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-07",
+          "desc": "Srishti",
+          "amount": 44.21,
           "category": "Restaurants",
           "city": null,
           "state": null,
@@ -9135,7 +9199,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-08T06:00:54.702Z",
+  "generated_at": "2026-08-08T12:01:04.083Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
