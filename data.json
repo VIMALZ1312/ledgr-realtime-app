@@ -2,7 +2,7 @@
   "kpis": {
     "income": 0,
     "income_period": "",
-    "true_outflows": 650.37,
+    "true_outflows": 655.37,
     "outflows_period": "August 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 1849.4099999999999,
+      "balance": 1489.4099999999999,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 13.61
@@ -119,8 +119,8 @@
       "mask": "1432",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 461.09,
-      "available": 4638,
+      "balance": 96.09,
+      "available": 5003,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -161,8 +161,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 1376.82,
-      "available": 1618,
+      "balance": 1381.82,
+      "available": 1352,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -339,9 +339,9 @@
   ],
   "net_worth": {
     "total_checking": 95675.973144705,
-    "total_credit": 1944.4099999999999,
+    "total_credit": 1584.4099999999999,
     "total_loans": 386654.23,
-    "net": -292922.66685529496
+    "net": -292562.66685529496
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -354,7 +354,7 @@
   "spending": {
     "Tax/Professional": 19312.18,
     "Shopping": 14189.619999999999,
-    "Tech/Subs": 6224.110000000001,
+    "Tech/Subs": 6229.110000000001,
     "Groceries": 3387.87,
     "Restaurants": 2620.96,
     "Gas/Travel": 6909.52,
@@ -645,6 +645,14 @@
       "last_amount": 25
     },
     {
+      "desc": "Netlify Fy",
+      "category": "Tech/Subs",
+      "count": 12,
+      "months": 5,
+      "avg_amount": 6.33,
+      "last_amount": 5
+    },
+    {
       "desc": "Patel Brothers",
       "category": "Groceries",
       "count": 5,
@@ -699,14 +707,6 @@
       "months": 4,
       "avg_amount": 9.46,
       "last_amount": 10.03
-    },
-    {
-      "desc": "Netlify Fy",
-      "category": "Tech/Subs",
-      "count": 11,
-      "months": 4,
-      "avg_amount": 6.45,
-      "last_amount": 9
     },
     {
       "desc": "Costco",
@@ -1090,7 +1090,7 @@
       "income": 0,
       "bofa_income": 0,
       "td_income": 0,
-      "outflows": 650.37,
+      "outflows": 655.37,
       "xoom": 0,
       "investments": 0
     }
@@ -7805,11 +7805,11 @@
         "Entertainment": 151.71,
         "Shopping": 68.82,
         "Gas/Travel": 50,
-        "Tech/Subs": 301.33,
+        "Tech/Subs": 306.33,
         "Groceries": 23.38,
         "Restaurants": 55.13
       },
-      "total": 650.3700000000001,
+      "total": 655.3700000000001,
       "transactions": [
         {
           "date": "08-01",
@@ -7909,6 +7909,19 @@
           "category": "Tech/Subs",
           "city": null,
           "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-06",
+          "desc": "Netlify Fy",
+          "amount": 5,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "CA",
           "bank": "Wells Fargo",
           "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
           "mask": "9762",
@@ -8981,6 +8994,16 @@
       "period_label": "August 2026"
     },
     {
+      "date": "08-06",
+      "desc": "Netlify Fy",
+      "amount": 5,
+      "category": "Tech/Subs",
+      "city": null,
+      "state": "CA",
+      "period": "2026-08",
+      "period_label": "August 2026"
+    },
+    {
       "date": "04-09",
       "desc": "Trendia Trendia.co",
       "amount": 178.01,
@@ -9199,7 +9222,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-09T00:01:12.863Z",
+  "generated_at": "2026-08-09T06:00:55.288Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
