@@ -2,7 +2,7 @@
   "kpis": {
     "income": 0,
     "income_period": "",
-    "true_outflows": 655.37,
+    "true_outflows": 1034.39,
     "outflows_period": "August 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 1489.4099999999999,
+      "balance": 1832.62,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 13.61
@@ -78,7 +78,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 30.63,
-      "available": 30.63,
+      "available": 3030.63,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -161,8 +161,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 1381.82,
-      "available": 1352,
+      "balance": 1725.03,
+      "available": 1119,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -218,7 +218,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 30.63,
-      "available": 30.63,
+      "available": 3030.63,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -231,8 +231,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": -113.62,
-      "available": 813.62,
+      "balance": -62.06,
+      "available": 762.06,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -260,7 +260,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 23089.27,
-      "available": 23089.27,
+      "available": 20089.27,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -339,9 +339,9 @@
   ],
   "net_worth": {
     "total_checking": 95675.973144705,
-    "total_credit": 1584.4099999999999,
+    "total_credit": 1927.62,
     "total_loans": 386654.23,
-    "net": -292562.66685529496
+    "net": -292905.876855295
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -353,14 +353,14 @@
   },
   "spending": {
     "Tax/Professional": 19312.18,
-    "Shopping": 14189.619999999999,
+    "Shopping": 14307.34,
     "Tech/Subs": 6229.110000000001,
-    "Groceries": 3387.87,
-    "Restaurants": 2620.96,
+    "Groceries": 3542.2,
+    "Restaurants": 2706.62,
     "Gas/Travel": 6909.52,
     "Healthcare": 3224.62,
     "Refund": -2846.9300000000003,
-    "Entertainment": 1356.96,
+    "Entertainment": 1378.27,
     "Insurance": 185.94
   },
   "zelle_received": [
@@ -499,25 +499,25 @@
   ],
   "pending_transactions": [
     {
-      "date": "08-07",
-      "desc": "Apna Bazar",
-      "amount": 1.58,
-      "category": "Groceries",
+      "date": "08-09",
+      "desc": "Walmart",
+      "amount": 23.31,
+      "category": "Shopping",
       "bank": "BofA",
       "pending": true
     },
     {
-      "date": "08-07",
-      "desc": "Apna Bazar",
-      "amount": 5.77,
-      "category": "Groceries",
+      "date": "08-09",
+      "desc": "Taste",
+      "amount": 10,
+      "category": "Restaurants",
       "bank": "BofA",
       "pending": true
     },
     {
-      "date": "08-07",
-      "desc": "Srishti",
-      "amount": 44.21,
+      "date": "08-09",
+      "desc": "Taste",
+      "amount": 2.5,
       "category": "Restaurants",
       "bank": "BofA",
       "pending": true
@@ -533,12 +533,20 @@
       "last_amount": 52.01
     },
     {
+      "desc": "Walmart",
+      "category": "Refund",
+      "count": 19,
+      "months": 8,
+      "avg_amount": 40.3,
+      "last_amount": 23.31
+    },
+    {
       "desc": "Amazon",
       "category": "Shopping",
-      "count": 61,
+      "count": 64,
       "months": 8,
-      "avg_amount": 23.16,
-      "last_amount": 11.49
+      "avg_amount": 23.43,
+      "last_amount": 34.09
     },
     {
       "desc": "Kumon Of North",
@@ -555,14 +563,6 @@
       "months": 7,
       "avg_amount": 51.63,
       "last_amount": 44.53
-    },
-    {
-      "desc": "Walmart",
-      "category": "Refund",
-      "count": 18,
-      "months": 7,
-      "avg_amount": 41.25,
-      "last_amount": 12.73
     },
     {
       "desc": "ShopRite",
@@ -637,6 +637,14 @@
       "last_amount": 1.99
     },
     {
+      "desc": "Patidar Supermarket Nort",
+      "category": "Groceries",
+      "count": 10,
+      "months": 5,
+      "avg_amount": 105.69,
+      "last_amount": 126
+    },
+    {
       "desc": "NJ E-ZPass",
       "category": "Gas/Travel",
       "count": 8,
@@ -659,14 +667,6 @@
       "months": 4,
       "avg_amount": 105.65,
       "last_amount": 90.46
-    },
-    {
-      "desc": "Patidar Supermarket Nort",
-      "category": "Groceries",
-      "count": 9,
-      "months": 4,
-      "avg_amount": 103.43,
-      "last_amount": 259.25
     },
     {
       "desc": "Everwash",
@@ -763,6 +763,14 @@
       "months": 3,
       "avg_amount": 40.44,
       "last_amount": 12.25
+    },
+    {
+      "desc": "Apna Bazaar Cash & Carry",
+      "category": "Shopping",
+      "count": 4,
+      "months": 3,
+      "avg_amount": 23.6,
+      "last_amount": 5.77
     },
     {
       "desc": "Dollar Tree",
@@ -925,14 +933,6 @@
       "last_amount": 43.71
     },
     {
-      "desc": "Apna Bazaar Cash & Carry",
-      "category": "Shopping",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 43.53,
-      "last_amount": 42.97
-    },
-    {
       "desc": "Thanjai Mess Fsr",
       "category": "Restaurants",
       "count": 2,
@@ -975,9 +975,9 @@
     {
       "desc": "Deccan Halal Mart",
       "category": "Groceries",
-      "count": 3,
+      "count": 4,
       "months": 2,
-      "avg_amount": 22.95,
+      "avg_amount": 21.39,
       "last_amount": 16.03
     },
     {
@@ -995,6 +995,22 @@
       "months": 2,
       "avg_amount": 16.95,
       "last_amount": 22.97
+    },
+    {
+      "desc": "Commerce Center Stm",
+      "category": "Entertainment",
+      "count": 4,
+      "months": 2,
+      "avg_amount": 11.45,
+      "last_amount": 9.59
+    },
+    {
+      "desc": "Patidar Supermarket",
+      "category": "Groceries",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 10.33,
+      "last_amount": 18.98
     },
     {
       "desc": "Wingstop",
@@ -1090,7 +1106,7 @@
       "income": 0,
       "bofa_income": 0,
       "td_income": 0,
-      "outflows": 655.37,
+      "outflows": 1034.39,
       "xoom": 0,
       "investments": 0
     }
@@ -7802,14 +7818,14 @@
       "label": "August 2026",
       "period": "2026-08",
       "categories": {
-        "Entertainment": 151.71,
-        "Shopping": 68.82,
+        "Entertainment": 173.02,
+        "Shopping": 186.54000000000002,
         "Gas/Travel": 50,
         "Tech/Subs": 306.33,
-        "Groceries": 23.38,
-        "Restaurants": 55.13
+        "Groceries": 177.71,
+        "Restaurants": 140.79
       },
-      "total": 655.3700000000001,
+      "total": 1034.3899999999999,
       "transactions": [
         {
           "date": "08-01",
@@ -7929,6 +7945,123 @@
           "refund": false
         },
         {
+          "date": "08-08",
+          "desc": "Patidar Supermarket",
+          "amount": 18.98,
+          "category": "Groceries",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-08",
+          "desc": "Deccan Halal Mart",
+          "amount": 16.7,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-08",
+          "desc": "Patidar Supermarket Nort",
+          "amount": 126,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-08",
+          "desc": "Amazon",
+          "amount": 30.91,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-08",
+          "desc": "Amazon",
+          "amount": 22.06,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-08",
+          "desc": "Amazon",
+          "amount": 34.09,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-08",
+          "desc": "Thanjai Mess",
+          "amount": 73.16,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-07",
+          "desc": "Commerce Center Stm",
+          "amount": 11.72,
+          "category": "Entertainment",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-07",
+          "desc": "Commerce Center Stm",
+          "amount": 9.59,
+          "category": "Entertainment",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
           "date": "08-01",
           "desc": "Deccan Halal Mart",
           "amount": 16.03,
@@ -7981,10 +8114,10 @@
           "refund": false
         },
         {
-          "date": "08-07",
-          "desc": "Apna Bazar",
-          "amount": 1.58,
-          "category": "Groceries",
+          "date": "08-09",
+          "desc": "Walmart",
+          "amount": 23.31,
+          "category": "Shopping",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -7994,25 +8127,64 @@
           "refund": false
         },
         {
-          "date": "08-07",
-          "desc": "Apna Bazar",
-          "amount": 5.77,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "08-07",
-          "desc": "Srishti",
-          "amount": 44.21,
+          "date": "08-09",
+          "desc": "Taste",
+          "amount": 10,
           "category": "Restaurants",
           "city": null,
           "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-09",
+          "desc": "Taste",
+          "amount": 2.5,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-08",
+          "desc": "Apna Bazaar Cash & Carry",
+          "amount": 1.58,
+          "category": "Shopping",
+          "city": "Dayton",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-08",
+          "desc": "Apna Bazaar Cash & Carry",
+          "amount": 5.77,
+          "category": "Shopping",
+          "city": "Dayton",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-08",
+          "desc": "Srishti",
+          "amount": 44.21,
+          "category": "Restaurants",
+          "city": "Dayton",
+          "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -9222,7 +9394,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-10T06:00:56.441Z",
+  "generated_at": "2026-08-10T12:01:02.484Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
