@@ -2,14 +2,14 @@
   "kpis": {
     "income": 0,
     "income_period": "",
-    "true_outflows": 1034.39,
+    "true_outflows": 1046.89,
     "outflows_period": "August 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 29427.2,
+      "balance": 32427.2,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -77,7 +77,7 @@
       "mask": "1739",
       "type": "depository",
       "subtype": "checking",
-      "balance": 30.63,
+      "balance": 3030.63,
       "available": 3030.63,
       "is_credit": false,
       "is_loan": false,
@@ -260,7 +260,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 23089.27,
-      "available": 20089.27,
+      "available": 19724.27,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -338,10 +338,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 80433.263144705,
+    "total_checking": 83433.263144705,
     "total_credit": 1927.62,
     "total_loans": 386140.61,
-    "net": -307634.966855295
+    "net": -304634.966855295
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -356,7 +356,7 @@
     "Shopping": 14307.34,
     "Tech/Subs": 6229.110000000001,
     "Groceries": 3542.2,
-    "Restaurants": 2706.62,
+    "Restaurants": 2719.12,
     "Gas/Travel": 6909.52,
     "Healthcare": 3224.62,
     "Refund": -2846.9300000000003,
@@ -1106,7 +1106,7 @@
       "income": 0,
       "bofa_income": 0,
       "td_income": 0,
-      "outflows": 1034.39,
+      "outflows": 1046.89,
       "xoom": 0,
       "investments": 0
     }
@@ -7823,9 +7823,9 @@
         "Gas/Travel": 50,
         "Tech/Subs": 306.33,
         "Groceries": 177.71,
-        "Restaurants": 140.79
+        "Restaurants": 153.29
       },
-      "total": 1034.3899999999999,
+      "total": 1046.8899999999999,
       "transactions": [
         {
           "date": "08-01",
@@ -8185,6 +8185,32 @@
           "category": "Restaurants",
           "city": "Dayton",
           "state": "NJ",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-10",
+          "desc": "Taste Ny",
+          "amount": 10,
+          "category": "Restaurants",
+          "city": "Kirkwood",
+          "state": "NY",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-10",
+          "desc": "Taste Ny",
+          "amount": 2.5,
+          "category": "Restaurants",
+          "city": "Kirkwood",
+          "state": "NY",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -9394,7 +9420,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-11T06:01:02.847Z",
+  "generated_at": "2026-08-11T12:01:00.582Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
