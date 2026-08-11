@@ -273,7 +273,7 @@
       "mask": "4351",
       "type": "loan",
       "subtype": "mortgage",
-      "balance": 386654.23,
+      "balance": 386140.61,
       "available": null,
       "is_credit": false,
       "is_loan": true,
@@ -340,8 +340,8 @@
   "net_worth": {
     "total_checking": 80433.263144705,
     "total_credit": 1927.62,
-    "total_loans": 386654.23,
-    "net": -308148.586855295
+    "total_loans": 386140.61,
+    "net": -307634.966855295
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -9394,7 +9394,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-11T00:01:19.434Z",
+  "generated_at": "2026-08-11T06:01:02.847Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
