@@ -2,14 +2,14 @@
   "kpis": {
     "income": 0,
     "income_period": "",
-    "true_outflows": 1104.72,
+    "true_outflows": 1089.3,
     "outflows_period": "August 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 32427.2,
+      "balance": 32062.2,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -217,7 +217,7 @@
       "mask": "1739",
       "type": "depository",
       "subtype": "checking",
-      "balance": 30.63,
+      "balance": 3030.63,
       "available": 3030.63,
       "is_credit": false,
       "is_loan": false,
@@ -231,8 +231,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": -62.06,
-      "available": 762.06,
+      "balance": -49.56,
+      "available": 749.56,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -259,7 +259,7 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 23089.27,
+      "balance": 19724.27,
       "available": 19724.27,
       "is_credit": false,
       "is_loan": false,
@@ -338,10 +338,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 97370.83589934002,
+    "total_checking": 97005.83589934002,
     "total_credit": 2138.02,
     "total_loans": 386140.61,
-    "net": -290907.79410065996
+    "net": -291272.79410065996
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -353,10 +353,10 @@
   },
   "spending": {
     "Tax/Professional": 19312.18,
-    "Shopping": 14307.34,
+    "Shopping": 14304.42,
     "Tech/Subs": 6229.110000000001,
     "Groceries": 3542.2,
-    "Restaurants": 2757.56,
+    "Restaurants": 2745.06,
     "Gas/Travel": 6909.52,
     "Healthcare": 3240.8199999999997,
     "Refund": -2846.9300000000003,
@@ -499,26 +499,10 @@
   ],
   "pending_transactions": [
     {
-      "date": "08-09",
+      "date": "08-11",
       "desc": "Walmart",
-      "amount": 23.31,
+      "amount": 20.39,
       "category": "Shopping",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "08-09",
-      "desc": "Taste",
-      "amount": 10,
-      "category": "Restaurants",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "08-09",
-      "desc": "Taste",
-      "amount": 2.5,
-      "category": "Restaurants",
       "bank": "BofA",
       "pending": true
     }
@@ -537,8 +521,8 @@
       "category": "Refund",
       "count": 19,
       "months": 8,
-      "avg_amount": 40.3,
-      "last_amount": 23.31
+      "avg_amount": 40.15,
+      "last_amount": 20.39
     },
     {
       "desc": "Amazon",
@@ -1106,7 +1090,7 @@
       "income": 0,
       "bofa_income": 0,
       "td_income": 0,
-      "outflows": 1104.72,
+      "outflows": 1089.3,
       "xoom": 0,
       "investments": 0
     }
@@ -7819,14 +7803,14 @@
       "period": "2026-08",
       "categories": {
         "Entertainment": 176.21,
-        "Shopping": 186.54000000000002,
+        "Shopping": 183.62,
         "Gas/Travel": 50,
         "Tech/Subs": 306.33,
         "Groceries": 177.71,
-        "Restaurants": 191.73,
+        "Restaurants": 179.23,
         "Healthcare": 16.2
       },
-      "total": 1104.72,
+      "total": 1089.3000000000002,
       "transactions": [
         {
           "date": "08-01",
@@ -8180,45 +8164,6 @@
           "refund": false
         },
         {
-          "date": "08-09",
-          "desc": "Walmart",
-          "amount": 23.31,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "08-09",
-          "desc": "Taste",
-          "amount": 10,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "08-09",
-          "desc": "Taste",
-          "amount": 2.5,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
           "date": "08-08",
           "desc": "Apna Bazaar Cash & Carry",
           "amount": 1.58,
@@ -8277,6 +8222,19 @@
           "category": "Restaurants",
           "city": "Kirkwood",
           "state": "NY",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-11",
+          "desc": "Walmart",
+          "amount": 20.39,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -9496,7 +9454,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-12T06:02:38.937Z",
+  "generated_at": "2026-08-12T12:01:07.950Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
