@@ -9612,7 +9612,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-14T00:01:32.560Z",
+  "generated_at": "2026-08-14T00:03:07.070Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
