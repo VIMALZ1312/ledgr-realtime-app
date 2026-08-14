@@ -1,6 +1,6 @@
 {
   "kpis": {
-    "income": 500,
+    "income": 3975.58,
     "income_period": "August 2026",
     "true_outflows": 1419.79,
     "outflows_period": "August 2026",
@@ -9,7 +9,7 @@
   },
   "accounts": {
     "bofa": {
-      "balance": 32062.2,
+      "balance": 26062.2,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -77,8 +77,8 @@
       "mask": "1739",
       "type": "depository",
       "subtype": "checking",
-      "balance": 3030.63,
-      "available": 3030.63,
+      "balance": 30.63,
+      "available": 30.63,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -218,7 +218,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 3030.63,
-      "available": 3030.63,
+      "available": 30.63,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -231,8 +231,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": -49.56,
-      "available": 749.56,
+      "balance": -29.17,
+      "available": 729.17,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -259,8 +259,8 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 19724.27,
-      "available": 16724.27,
+      "balance": 16724.27,
+      "available": 20199.85,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -338,10 +338,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 98094.54593436002,
+    "total_checking": 92094.54593436002,
     "total_credit": 2233.91,
     "total_loans": 386140.61,
-    "net": -290279.97406563995
+    "net": -296279.97406563995
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -497,24 +497,7 @@
       "period_label": "August 2026"
     }
   ],
-  "pending_transactions": [
-    {
-      "date": "08-12",
-      "desc": "The Corning Museum Of Gla",
-      "amount": 82.08,
-      "category": "Entertainment",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "08-12",
-      "desc": "Mirabito",
-      "amount": 9.67,
-      "category": "Gas/Travel",
-      "bank": "BofA",
-      "pending": true
-    }
-  ],
+  "pending_transactions": [],
   "detected_recurring": [
     {
       "desc": "Garden Farm",
@@ -1095,8 +1078,8 @@
     {
       "period": "2026-08",
       "period_label": "August 2026",
-      "income": 500,
-      "bofa_income": 500,
+      "income": 3975.58,
+      "bofa_income": 3975.58,
       "td_income": 0,
       "outflows": 1419.79,
       "xoom": 0,
@@ -8342,11 +8325,11 @@
         },
         {
           "date": "08-12",
-          "desc": "The Corning Museum Of Gla",
-          "amount": 82.08,
-          "category": "Entertainment",
+          "desc": "Walmart",
+          "amount": 20.39,
+          "category": "Shopping",
           "city": null,
-          "state": null,
+          "state": "AR",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -8354,11 +8337,11 @@
           "refund": false
         },
         {
-          "date": "08-12",
-          "desc": "Mirabito",
-          "amount": 9.67,
-          "category": "Gas/Travel",
-          "city": "Freeville",
+          "date": "08-13",
+          "desc": "The Corning Museum Of Gla",
+          "amount": 82.08,
+          "category": "Entertainment",
+          "city": "Corning",
           "state": "NY",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
@@ -8367,12 +8350,12 @@
           "refund": false
         },
         {
-          "date": "08-12",
-          "desc": "Walmart",
-          "amount": 20.39,
-          "category": "Shopping",
-          "city": null,
-          "state": "AR",
+          "date": "08-13",
+          "desc": "Mirabito",
+          "amount": 9.67,
+          "category": "Gas/Travel",
+          "city": "Freeville",
+          "state": "NY",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -9612,7 +9595,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-14T06:01:00.946Z",
+  "generated_at": "2026-08-14T12:01:28.945Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
