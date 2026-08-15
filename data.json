@@ -2,7 +2,7 @@
   "kpis": {
     "income": 3975.58,
     "income_period": "August 2026",
-    "true_outflows": 1419.79,
+    "true_outflows": 1447.52,
     "outflows_period": "August 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -63,8 +63,8 @@
       "mask": "0910",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 95,
-      "available": 20905,
+      "balance": 0,
+      "available": 21000,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -339,9 +339,9 @@
   ],
   "net_worth": {
     "total_checking": 89289.06501103503,
-    "total_credit": 2296.49,
+    "total_credit": 2201.49,
     "total_loans": 386140.61,
-    "net": -299148.03498896497
+    "net": -299053.03498896497
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -355,7 +355,7 @@
     "Tax/Professional": 19312.18,
     "Shopping": 14323.32,
     "Tech/Subs": 6294.590000000001,
-    "Groceries": 3542.2,
+    "Groceries": 3569.93,
     "Restaurants": 2795.22,
     "Gas/Travel": 6919.1900000000005,
     "Healthcare": 3301.8199999999997,
@@ -497,7 +497,16 @@
       "period_label": "August 2026"
     }
   ],
-  "pending_transactions": [],
+  "pending_transactions": [
+    {
+      "date": "08-14",
+      "desc": "Deccan Halal Mart",
+      "amount": 27.73,
+      "category": "Groceries",
+      "bank": "BofA",
+      "pending": true
+    }
+  ],
   "detected_recurring": [
     {
       "desc": "Garden Farm",
@@ -950,10 +959,10 @@
     {
       "desc": "Deccan Halal Mart",
       "category": "Groceries",
-      "count": 4,
+      "count": 5,
       "months": 2,
-      "avg_amount": 21.39,
-      "last_amount": 16.03
+      "avg_amount": 22.65,
+      "last_amount": 27.73
     },
     {
       "desc": "Atul Bakery - North Brunswick Township",
@@ -1081,7 +1090,7 @@
       "income": 3975.58,
       "bofa_income": 3975.58,
       "td_income": 0,
-      "outflows": 1419.79,
+      "outflows": 1447.52,
       "xoom": 0,
       "investments": 0
     }
@@ -7797,11 +7806,11 @@
         "Shopping": 202.52000000000004,
         "Gas/Travel": 59.67,
         "Tech/Subs": 371.81,
-        "Groceries": 177.71,
+        "Groceries": 205.44,
         "Restaurants": 229.39,
         "Healthcare": 77.2
       },
-      "total": 1419.7900000000004,
+      "total": 1447.5200000000004,
       "transactions": [
         {
           "date": "08-01",
@@ -8356,6 +8365,19 @@
           "category": "Gas/Travel",
           "city": "Freeville",
           "state": "NY",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-14",
+          "desc": "Deccan Halal Mart",
+          "amount": 27.73,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -9595,7 +9617,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-15T06:00:52.416Z",
+  "generated_at": "2026-08-15T12:00:52.463Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
