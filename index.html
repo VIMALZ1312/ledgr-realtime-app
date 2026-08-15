@@ -208,6 +208,18 @@ var PAGES = [
 ];
 var _tid = 0;
 function uid() { return 'el' + (++_tid); }
+// Some accounts are pulled in under more than one login (e.g. BofA appears under
+// both the "bofa" and "wifebofa" items), producing identical duplicate rows and
+// double-counted balances. Collapse to one row per bank+mask+subtype.
+function dedupAccts(list) {
+  var seen = {};
+  return (list || []).filter(function(a) {
+    var key = a.bank + '|' + a.mask + '|' + a.subtype;
+    if(seen[key]) return false;
+    seen[key] = true;
+    return true;
+  });
+}
 function $(id) { return document.getElementById(id); }
 function set(id, html) { var e = $(id); if(e) e.innerHTML = html; }
 function fmt(n) { return '$' + Number(n||0).toLocaleString('en-US', {maximumFractionDigits:0}); }
@@ -577,7 +589,7 @@ function renderOverview() {
   var latest = periods[periods.length - 1] || '';
   var latestV = ms[latest] || {transactions:[], categories:{}, total:0, label:''};
   var nw = D.net_worth || {};
-  var allAccts = D.all_accounts || [];
+  var allAccts = dedupAccts(D.all_accounts);
   // Always compute from all_accounts — server value excludes wifebofa/myrobin
   var checkingBal = allAccts.filter(function(a){return !a.is_credit && a.type!=='loan';}).reduce(function(s,a){return s+a.balance;},0);
   var creditBal = allAccts.filter(function(a){return a.is_credit&&a.balance>0;}).reduce(function(s,a){return s+a.balance;},0);
@@ -925,7 +937,7 @@ function renderMyNetworth(){
 }
 
 function showNetWorth() {
-  var a = D.all_accounts || [];
+  var a = dedupAccts(D.all_accounts);
   var b = '<div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:8px">ASSETS</div>';
   a.filter(function(x){return !x.is_credit && x.type!=='loan';}).forEach(function(x){b += acctLine(x);});
   b += '<div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin:12px 0 8px">CREDIT CARDS OWED</div>';
@@ -943,20 +955,20 @@ function showNetWorth() {
   openModal('Net Worth', 'All accounts', b);
 }
 function showChecking() {
-  var a = (D.all_accounts||[]).filter(function(x){return !x.is_credit && x.type!=='loan';});
+  var a = dedupAccts(D.all_accounts).filter(function(x){return !x.is_credit && x.type!=='loan';});
   var b = '';
   a.forEach(function(x){b += acctLine(x);});
   openModal('Checking & Savings', 'Deposit and investment accounts', b);
 }
 function showCredit() {
-  var a = (D.all_accounts||[]).filter(function(x){return x.is_credit || x.type==='loan';});
+  var a = dedupAccts(D.all_accounts).filter(function(x){return x.is_credit || x.type==='loan';});
   var b = '';
   a.forEach(function(x){b += acctLine(x);});
   openModal('Owed · Cards & Loans', 'Credit cards + loans / mortgage', b);
 }
 
 function renderAccounts() {
-  var allAccts = D.all_accounts || [];
+  var allAccts = dedupAccts(D.all_accounts);
   var ms = D.monthly_spending || {};
   var periods = Object.keys(ms).sort().reverse();
   var last2 = periods.slice(0,2);
@@ -971,6 +983,19 @@ function renderAccounts() {
     var hasBankField = all.some(function(t){return t.bank!=null;});
     if(!hasBankField) return all; // fallback - show all when bank missing
     return all.filter(function(t){ return normBank(t.bank)===nb || t.bank===bank; });
+  }
+
+  // Transactions for ONE specific account. Join on mask (accounts only carry
+  // mask; transactions carry mask + account_id). Also require the bank to match
+  // so a coincidental same last-4 on another bank can't bleed in.
+  function monthTxnsForAccount(p, acct) {
+    var all = ms[p] ? ms[p].transactions||[] : [];
+    var hasMask = all.some(function(t){return t.mask!=null;});
+    if(!hasMask) return monthTxnsForBank(p, acct.bank); // fallback when txns lack mask
+    return all.filter(function(t){
+      return String(t.mask)===String(acct.mask)
+        && (t.bank==null || normBank(t.bank)===normBank(acct.bank));
+    });
   }
 
   // ── CHECKING & SAVINGS ──
@@ -1003,7 +1028,7 @@ function renderAccounts() {
             html += '<div id="'+cid+'" class="expand-body">';
               var hadData = false;
               last2.forEach(function(p) {
-                var ptxns = monthTxnsForBank(p, bank);
+                var ptxns = monthTxnsForAccount(p, a);
                 if(!ptxns.length) return;
                 hadData = true;
                 html += '<div style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted2);padding:5px 14px 2px;background:var(--s2)">'+ms[p].label+'</div>';
@@ -1080,7 +1105,7 @@ function renderAccounts() {
             html += '<div id="'+caid+'" class="expand-body">';
               var hadCC = false;
               last2.forEach(function(p) {
-                var ptxns = monthTxnsForBank(p, bank);
+                var ptxns = monthTxnsForAccount(p, a);
                 if(!ptxns.length) return;
                 hadCC = true;
                 html += '<div style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted2);padding:5px 14px 2px;background:var(--s2)">'+ms[p].label+'</div>';
