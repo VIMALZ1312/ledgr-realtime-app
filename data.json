@@ -2,7 +2,7 @@
   "kpis": {
     "income": 3975.58,
     "income_period": "August 2026",
-    "true_outflows": 1447.52,
+    "true_outflows": 1900.17,
     "outflows_period": "August 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 2138.91,
+      "balance": 167.37,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 13.61
@@ -119,8 +119,8 @@
       "mask": "1432",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 96.09,
-      "available": 5003,
+      "balance": 0,
+      "available": 5099,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -147,8 +147,8 @@
       "mask": "8036",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 11.5,
-      "available": 988,
+      "balance": 0,
+      "available": 998,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -161,8 +161,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 2031.32,
-      "available": 588,
+      "balance": 167.37,
+      "available": 2733,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -339,9 +339,9 @@
   ],
   "net_worth": {
     "total_checking": 88164.94282995102,
-    "total_credit": 2201.49,
+    "total_credit": 229.95,
     "total_loans": 386140.61,
-    "net": -300177.157170049
+    "net": -298205.617170049
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -353,14 +353,14 @@
   },
   "spending": {
     "Tax/Professional": 19312.18,
-    "Shopping": 14323.32,
-    "Tech/Subs": 6294.590000000001,
+    "Shopping": 14378.779999999999,
+    "Tech/Subs": 6340.470000000001,
     "Groceries": 3569.93,
-    "Restaurants": 2795.22,
-    "Gas/Travel": 6919.1900000000005,
-    "Healthcare": 3301.8199999999997,
+    "Restaurants": 2908.5299999999997,
+    "Gas/Travel": 6989.56,
+    "Healthcare": 3367.45,
     "Refund": -2846.9300000000003,
-    "Entertainment": 1506.74,
+    "Entertainment": 1608.74,
     "Insurance": 185.94
   },
   "zelle_received": [
@@ -511,10 +511,10 @@
     {
       "desc": "Garden Farm",
       "category": "Shopping",
-      "count": 11,
+      "count": 12,
       "months": 8,
-      "avg_amount": 72.03,
-      "last_amount": 52.01
+      "avg_amount": 70.12,
+      "last_amount": 49.07
     },
     {
       "desc": "Walmart",
@@ -547,6 +547,14 @@
       "months": 7,
       "avg_amount": 51.63,
       "last_amount": 44.53
+    },
+    {
+      "desc": "Walgreens",
+      "category": "Healthcare",
+      "count": 18,
+      "months": 7,
+      "avg_amount": 28.89,
+      "last_amount": 10.24
     },
     {
       "desc": "ShopRite",
@@ -597,14 +605,6 @@
       "last_amount": 35.18
     },
     {
-      "desc": "Walgreens",
-      "category": "Healthcare",
-      "count": 17,
-      "months": 6,
-      "avg_amount": 29.99,
-      "last_amount": 103.75
-    },
-    {
       "desc": "CVS ExtraCare",
       "category": "Healthcare",
       "count": 6,
@@ -647,9 +647,9 @@
     {
       "desc": "Netlify Fy",
       "category": "Tech/Subs",
-      "count": 12,
+      "count": 13,
       "months": 5,
-      "avg_amount": 6.33,
+      "avg_amount": 6.23,
       "last_amount": 5
     },
     {
@@ -765,6 +765,14 @@
       "last_amount": 4.32
     },
     {
+      "desc": "Dunkin'",
+      "category": "Restaurants",
+      "count": 6,
+      "months": 3,
+      "avg_amount": 6.52,
+      "last_amount": 3.98
+    },
+    {
       "desc": "R K Jewels",
       "category": "Shopping",
       "count": 2,
@@ -875,6 +883,14 @@
       "months": 2,
       "avg_amount": 78.71,
       "last_amount": 90.59
+    },
+    {
+      "desc": "PetSmart",
+      "category": "Shopping",
+      "count": 3,
+      "months": 2,
+      "avg_amount": 77.72,
+      "last_amount": 6.39
     },
     {
       "desc": "Simplytrawell",
@@ -1003,14 +1019,6 @@
       "months": 2,
       "avg_amount": 8.61,
       "last_amount": 5.95
-    },
-    {
-      "desc": "Dunkin'",
-      "category": "Restaurants",
-      "count": 3,
-      "months": 2,
-      "avg_amount": 5.68,
-      "last_amount": 10.36
     }
   ],
   "monthly_history": [
@@ -1090,7 +1098,7 @@
       "income": 3975.58,
       "bofa_income": 3975.58,
       "td_income": 0,
-      "outflows": 1447.52,
+      "outflows": 1900.17,
       "xoom": 0,
       "investments": 0
     }
@@ -7802,15 +7810,15 @@
       "label": "August 2026",
       "period": "2026-08",
       "categories": {
-        "Entertainment": 301.49,
-        "Shopping": 202.52000000000004,
-        "Gas/Travel": 59.67,
-        "Tech/Subs": 371.81,
+        "Entertainment": 403.49,
+        "Shopping": 257.98,
+        "Gas/Travel": 130.04,
+        "Tech/Subs": 417.69000000000005,
         "Groceries": 205.44,
-        "Restaurants": 229.39,
-        "Healthcare": 77.2
+        "Restaurants": 342.70000000000005,
+        "Healthcare": 142.82999999999998
       },
-      "total": 1447.5200000000004,
+      "total": 1900.170000000001,
       "transactions": [
         {
           "date": "08-01",
@@ -8209,6 +8217,201 @@
           "category": "Tech/Subs",
           "city": null,
           "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-13",
+          "desc": "Dunkin'",
+          "amount": 5.4,
+          "category": "Restaurants",
+          "city": "Dunmore",
+          "state": "PA",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-13",
+          "desc": "Sangam Restaurant",
+          "amount": 91.26,
+          "category": "Restaurants",
+          "city": "Ithaca",
+          "state": "NY",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-13",
+          "desc": "Garden Farm",
+          "amount": 49.07,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-13",
+          "desc": "Walgreens",
+          "amount": 10.24,
+          "category": "Healthcare",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-13",
+          "desc": "PetSmart",
+          "amount": 6.39,
+          "category": "Shopping",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-13",
+          "desc": "Netlify Fy",
+          "amount": 5,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "CA",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-13",
+          "desc": "Brunswick Urgent Care",
+          "amount": 50,
+          "category": "Healthcare",
+          "city": null,
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-12",
+          "desc": "Watkins Glen-main",
+          "amount": 40.88,
+          "category": "Tech/Subs",
+          "city": "Watkins Glen",
+          "state": "NY",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-12",
+          "desc": "Dunkin'",
+          "amount": 12.67,
+          "category": "Restaurants",
+          "city": "Freeville",
+          "state": "NY",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-12",
+          "desc": "Dunkin'",
+          "amount": 3.98,
+          "category": "Restaurants",
+          "city": "Freeville",
+          "state": "NY",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-12",
+          "desc": "Mirabito",
+          "amount": 70.37,
+          "category": "Gas/Travel",
+          "city": "Freeville",
+          "state": "NY",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-12",
+          "desc": "Watkins Glen Sp",
+          "amount": 10,
+          "category": "Entertainment",
+          "city": "Watkins Glen",
+          "state": "NY",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-12",
+          "desc": "The Corning Museum Of Gla",
+          "amount": 82,
+          "category": "Entertainment",
+          "city": "Corning",
+          "state": "NY",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-12",
+          "desc": "Kinney Drugs",
+          "amount": 5.39,
+          "category": "Healthcare",
+          "city": "Ithaca",
+          "state": "NY",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-11",
+          "desc": "Taughannock Falls State Park",
+          "amount": 10,
+          "category": "Entertainment",
+          "city": "Trumansburg",
+          "state": "NY",
           "bank": "Wells Fargo",
           "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
           "mask": "9762",
@@ -9389,6 +9592,16 @@
       "period_label": "August 2026"
     },
     {
+      "date": "08-13",
+      "desc": "Netlify Fy",
+      "amount": 5,
+      "category": "Tech/Subs",
+      "city": null,
+      "state": "CA",
+      "period": "2026-08",
+      "period_label": "August 2026"
+    },
+    {
       "date": "04-09",
       "desc": "Trendia Trendia.co",
       "amount": 178.01,
@@ -9617,7 +9830,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-15T18:00:53.991Z",
+  "generated_at": "2026-08-16T00:01:08.710Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
