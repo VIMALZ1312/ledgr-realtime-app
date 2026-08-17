@@ -231,8 +231,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 62.58,
-      "available": 637.42,
+      "balance": 90.31,
+      "available": 609.69,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -339,9 +339,9 @@
   ],
   "net_worth": {
     "total_checking": 91625.522829951,
-    "total_credit": 157.17,
+    "total_credit": 184.89999999999998,
     "total_loans": 386140.61,
-    "net": -294672.257170049
+    "net": -294699.987170049
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -497,16 +497,7 @@
       "period_label": "August 2026"
     }
   ],
-  "pending_transactions": [
-    {
-      "date": "08-14",
-      "desc": "Deccan Halal Mart",
-      "amount": 27.73,
-      "category": "Groceries",
-      "bank": "BofA",
-      "pending": true
-    }
-  ],
+  "pending_transactions": [],
   "detected_recurring": [
     {
       "desc": "Garden Farm",
@@ -8575,7 +8566,7 @@
           "refund": false
         },
         {
-          "date": "08-14",
+          "date": "08-15",
           "desc": "Deccan Halal Mart",
           "amount": 27.73,
           "category": "Groceries",
@@ -9830,7 +9821,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-17T06:00:56.894Z",
+  "generated_at": "2026-08-17T12:00:59.888Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
