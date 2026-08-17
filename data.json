@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 167.37,
+      "balance": 94.58999999999999,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 13.61
@@ -120,7 +120,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 0,
-      "available": 5099,
+      "available": 5100,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -147,7 +147,7 @@
       "mask": "8036",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 0,
+      "balance": 1.99,
       "available": 998,
       "is_credit": true,
       "is_loan": false,
@@ -161,8 +161,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 167.37,
-      "available": 2733,
+      "balance": 92.6,
+      "available": 2670,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -339,9 +339,9 @@
   ],
   "net_worth": {
     "total_checking": 91625.522829951,
-    "total_credit": 229.95,
+    "total_credit": 157.17,
     "total_loans": 386140.61,
-    "net": -294745.037170049
+    "net": -294672.257170049
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -9830,7 +9830,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-17T00:01:08.751Z",
+  "generated_at": "2026-08-17T06:00:56.894Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
