@@ -43,6 +43,20 @@
   },
   "all_accounts": [
     {
+      "bank": "Robinhood",
+      "nickname": "robin",
+      "name": "Robinhood individual",
+      "mask": "7724",
+      "type": "investment",
+      "subtype": "brokerage",
+      "balance": 63201.09968403,
+      "available": 15891.02,
+      "is_credit": false,
+      "is_loan": false,
+      "is_checking": false,
+      "is_savings": false
+    },
+    {
       "bank": "BofA",
       "nickname": "bofa",
       "name": "Premium Rewards Visa Signature",
@@ -324,10 +338,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 26618.239999999998,
+    "total_checking": 89819.33968403,
     "total_credit": 302.19,
     "total_loans": 386140.61,
-    "net": -359824.56
+    "net": -296623.46031597
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -9921,7 +9935,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-19T12:02:28.693Z",
+  "generated_at": "2026-08-19T18:01:12.423Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
@@ -9940,9 +9954,8 @@
     "detail": [
       {
         "nickname": "robin",
-        "ok": false,
-        "accounts": 0,
-        "error": "socket hang up"
+        "ok": true,
+        "accounts": 1
       },
       {
         "nickname": "bofa",
@@ -9987,7 +10000,6 @@
       }
     ],
     "failed": [
-      "robin (socket hang up)",
       "discover (ITEM_LOGIN_REQUIRED)"
     ]
   }
