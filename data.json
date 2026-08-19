@@ -2,14 +2,14 @@
   "kpis": {
     "income": 7357.01,
     "income_period": "August 2026",
-    "true_outflows": 1944.68,
+    "true_outflows": 2012.09,
     "outflows_period": "August 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 26522.78,
+      "balance": 26508.78,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -92,7 +92,7 @@
       "type": "depository",
       "subtype": "savings",
       "balance": 3134.98,
-      "available": 3134.98,
+      "available": 3911.76,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -259,7 +259,7 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 20184.85,
+      "balance": 20170.85,
       "available": 20170.85,
       "is_credit": false,
       "is_loan": false,
@@ -338,10 +338,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 91962.71110042841,
+    "total_checking": 91948.71110042841,
     "total_credit": 302.19,
     "total_loans": 386140.61,
-    "net": -294480.08889957156
+    "net": -294494.08889957156
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -355,7 +355,7 @@
     "Tax/Professional": 19312.18,
     "Shopping": 14414.429999999998,
     "Tech/Subs": 6429.6,
-    "Groceries": 3569.93,
+    "Groceries": 3637.3399999999997,
     "Restaurants": 2989.32,
     "Gas/Travel": 6989.56,
     "Healthcare": 3367.45,
@@ -497,7 +497,16 @@
       "period_label": "August 2026"
     }
   ],
-  "pending_transactions": [],
+  "pending_transactions": [
+    {
+      "date": "08-18",
+      "desc": "ShopRite",
+      "amount": 67.41,
+      "category": "Groceries",
+      "bank": "BofA",
+      "pending": true
+    }
+  ],
   "detected_recurring": [
     {
       "desc": "Garden Farm",
@@ -514,6 +523,14 @@
       "months": 8,
       "avg_amount": 39.09,
       "last_amount": 20.39
+    },
+    {
+      "desc": "ShopRite",
+      "category": "Groceries",
+      "count": 20,
+      "months": 8,
+      "avg_amount": 30.24,
+      "last_amount": 67.41
     },
     {
       "desc": "Amazon",
@@ -546,14 +563,6 @@
       "months": 7,
       "avg_amount": 28.89,
       "last_amount": 10.24
-    },
-    {
-      "desc": "ShopRite",
-      "category": "Groceries",
-      "count": 19,
-      "months": 7,
-      "avg_amount": 28.29,
-      "last_amount": 2.49
     },
     {
       "desc": "Regal Cinemas",
@@ -1089,7 +1098,7 @@
       "income": 7357.01,
       "bofa_income": 7357.01,
       "td_income": 0,
-      "outflows": 1944.68,
+      "outflows": 2012.09,
       "xoom": 0,
       "investments": 0
     }
@@ -7805,12 +7814,12 @@
         "Shopping": 293.62999999999994,
         "Gas/Travel": 130.04,
         "Tech/Subs": 506.82000000000005,
-        "Groceries": 205.44,
+        "Groceries": 272.85,
         "Restaurants": 423.49000000000007,
         "Healthcare": 142.82999999999998,
         "Refund": -174.55
       },
-      "total": 1944.680000000001,
+      "total": 2012.090000000001,
       "transactions": [
         {
           "date": "08-01",
@@ -8661,6 +8670,19 @@
           "date": "08-15",
           "desc": "Deccan Halal Mart",
           "amount": 27.73,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-18",
+          "desc": "ShopRite",
+          "amount": 67.41,
           "category": "Groceries",
           "city": null,
           "state": null,
@@ -9913,7 +9935,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-19T06:00:54.025Z",
+  "generated_at": "2026-08-19T12:01:14.802Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
