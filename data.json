@@ -2,14 +2,14 @@
   "kpis": {
     "income": 7357.01,
     "income_period": "August 2026",
-    "true_outflows": 2012.09,
+    "true_outflows": 2061.74,
     "outflows_period": "August 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 26508.78,
+      "balance": 27285.559999999998,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -78,7 +78,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 30.63,
-      "available": 30.63,
+      "available": 2030.63,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -91,7 +91,7 @@
       "mask": "5677",
       "type": "depository",
       "subtype": "savings",
-      "balance": 3134.98,
+      "balance": 3911.76,
       "available": 3911.76,
       "is_credit": false,
       "is_loan": false,
@@ -231,8 +231,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 90.31,
-      "available": 609.69,
+      "balance": 157.72,
+      "available": 542.28,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -246,7 +246,7 @@
       "type": "depository",
       "subtype": "savings",
       "balance": 3134.98,
-      "available": 3134.98,
+      "available": 3911.76,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -338,10 +338,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 89819.33968403,
-    "total_credit": 302.19,
+    "total_checking": 90596.11968403,
+    "total_credit": 369.6,
     "total_loans": 386140.61,
-    "net": -296623.46031597
+    "net": -295914.09031597
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -353,9 +353,9 @@
   },
   "spending": {
     "Tax/Professional": 19312.18,
-    "Shopping": 14414.429999999998,
+    "Shopping": 14452.14,
     "Tech/Subs": 6429.6,
-    "Groceries": 3637.3399999999997,
+    "Groceries": 3649.2799999999997,
     "Restaurants": 2989.32,
     "Gas/Travel": 6989.56,
     "Healthcare": 3367.45,
@@ -499,9 +499,17 @@
   ],
   "pending_transactions": [
     {
-      "date": "08-18",
-      "desc": "ShopRite",
-      "amount": 67.41,
+      "date": "08-19",
+      "desc": "Sellabroad",
+      "amount": 37.71,
+      "category": "Shopping",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "08-19",
+      "desc": "Deccan Halal Mart",
+      "amount": 11.94,
       "category": "Groceries",
       "bank": "BofA",
       "pending": true
@@ -975,10 +983,10 @@
     {
       "desc": "Deccan Halal Mart",
       "category": "Groceries",
-      "count": 5,
+      "count": 6,
       "months": 2,
-      "avg_amount": 22.65,
-      "last_amount": 27.73
+      "avg_amount": 20.87,
+      "last_amount": 11.94
     },
     {
       "desc": "Atul Bakery - North Brunswick Township",
@@ -1098,7 +1106,7 @@
       "income": 7357.01,
       "bofa_income": 7357.01,
       "td_income": 0,
-      "outflows": 2012.09,
+      "outflows": 2061.74,
       "xoom": 0,
       "investments": 0
     }
@@ -7811,15 +7819,15 @@
       "period": "2026-08",
       "categories": {
         "Entertainment": 416.98,
-        "Shopping": 293.62999999999994,
+        "Shopping": 331.3399999999999,
         "Gas/Travel": 130.04,
         "Tech/Subs": 506.82000000000005,
-        "Groceries": 272.85,
+        "Groceries": 284.78999999999996,
         "Restaurants": 423.49000000000007,
         "Healthcare": 142.82999999999998,
         "Refund": -174.55
       },
-      "total": 2012.090000000001,
+      "total": 2061.740000000001,
       "transactions": [
         {
           "date": "08-01",
@@ -8680,7 +8688,33 @@
           "refund": false
         },
         {
-          "date": "08-18",
+          "date": "08-19",
+          "desc": "Sellabroad",
+          "amount": 37.71,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-19",
+          "desc": "Deccan Halal Mart",
+          "amount": 11.94,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-19",
           "desc": "ShopRite",
           "amount": 67.41,
           "category": "Groceries",
@@ -9935,7 +9969,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-20T06:00:55.287Z",
+  "generated_at": "2026-08-20T12:02:09.422Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
