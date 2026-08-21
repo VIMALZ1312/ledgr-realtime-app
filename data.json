@@ -9,7 +9,7 @@
   },
   "accounts": {
     "bofa": {
-      "balance": 27285.559999999998,
+      "balance": 30062.34,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -77,7 +77,7 @@
       "mask": "1739",
       "type": "depository",
       "subtype": "checking",
-      "balance": 30.63,
+      "balance": 2030.63,
       "available": 2030.63,
       "is_credit": false,
       "is_loan": false,
@@ -218,7 +218,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 30.63,
-      "available": 30.63,
+      "available": 2030.63,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -231,8 +231,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 157.72,
-      "available": 542.28,
+      "balance": 207.37,
+      "available": 492.63,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -245,7 +245,7 @@
       "mask": "5677",
       "type": "depository",
       "subtype": "savings",
-      "balance": 3134.98,
+      "balance": 3911.76,
       "available": 3911.76,
       "is_credit": false,
       "is_loan": false,
@@ -260,7 +260,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 20170.85,
-      "available": 20170.85,
+      "available": 18170.85,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -338,10 +338,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 91799.101585095,
-    "total_credit": 620.97,
+    "total_checking": 94575.881585095,
+    "total_credit": 670.62,
     "total_loans": 385624.42,
-    "net": -294446.28841490496
+    "net": -291719.15841490496
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -353,9 +353,9 @@
   },
   "spending": {
     "Tax/Professional": 19312.18,
-    "Shopping": 14521.029999999999,
-    "Tech/Subs": 6429.6,
-    "Groceries": 3774.46,
+    "Shopping": 14483.32,
+    "Tech/Subs": 6467.31,
+    "Groceries": 3774.4599999999996,
     "Restaurants": 2989.32,
     "Gas/Travel": 6989.56,
     "Healthcare": 3367.45,
@@ -497,24 +497,7 @@
       "period_label": "August 2026"
     }
   ],
-  "pending_transactions": [
-    {
-      "date": "08-19",
-      "desc": "Sellabroad",
-      "amount": 37.71,
-      "category": "Shopping",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "08-19",
-      "desc": "Deccan Halal Mart",
-      "amount": 11.94,
-      "category": "Groceries",
-      "bank": "BofA",
-      "pending": true
-    }
-  ],
+  "pending_transactions": [],
   "detected_recurring": [
     {
       "desc": "Garden Farm",
@@ -7819,10 +7802,10 @@
       "period": "2026-08",
       "categories": {
         "Entertainment": 416.98,
-        "Shopping": 400.2299999999999,
+        "Shopping": 362.5199999999999,
         "Gas/Travel": 130.04,
-        "Tech/Subs": 506.82000000000005,
-        "Groceries": 409.97,
+        "Tech/Subs": 544.5300000000001,
+        "Groceries": 409.96999999999997,
         "Restaurants": 423.49000000000007,
         "Healthcare": 142.82999999999998,
         "Refund": -174.55
@@ -8728,9 +8711,9 @@
         },
         {
           "date": "08-19",
-          "desc": "Sellabroad",
-          "amount": 37.71,
-          "category": "Shopping",
+          "desc": "ShopRite",
+          "amount": 67.41,
+          "category": "Groceries",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -8740,7 +8723,7 @@
           "refund": false
         },
         {
-          "date": "08-19",
+          "date": "08-20",
           "desc": "Deccan Halal Mart",
           "amount": 11.94,
           "category": "Groceries",
@@ -8753,10 +8736,10 @@
           "refund": false
         },
         {
-          "date": "08-19",
-          "desc": "ShopRite",
-          "amount": 67.41,
-          "category": "Groceries",
+          "date": "08-20",
+          "desc": "Sellabroad Dubai",
+          "amount": 37.71,
+          "category": "Tech/Subs",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -10018,7 +10001,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-21T06:00:58.495Z",
+  "generated_at": "2026-08-21T12:01:12.704Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
