@@ -1,6 +1,6 @@
 {
   "kpis": {
-    "income": 7357.01,
+    "income": 7357.11,
     "income_period": "August 2026",
     "true_outflows": 2255.81,
     "outflows_period": "August 2026",
@@ -9,7 +9,7 @@
   },
   "accounts": {
     "bofa": {
-      "balance": 30062.34,
+      "balance": 30062.44,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -91,8 +91,8 @@
       "mask": "5677",
       "type": "depository",
       "subtype": "savings",
-      "balance": 3911.76,
-      "available": 3911.76,
+      "balance": 3911.86,
+      "available": 3911.86,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -217,7 +217,7 @@
       "mask": "1739",
       "type": "depository",
       "subtype": "checking",
-      "balance": 30.63,
+      "balance": 2030.63,
       "available": 2030.63,
       "is_credit": false,
       "is_loan": false,
@@ -246,7 +246,7 @@
       "type": "depository",
       "subtype": "savings",
       "balance": 3911.76,
-      "available": 3911.76,
+      "available": 3911.86,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -259,7 +259,7 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 20170.85,
+      "balance": 18170.85,
       "available": 18170.85,
       "is_credit": false,
       "is_loan": false,
@@ -338,10 +338,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 94696.96063855001,
+    "total_checking": 94697.06063855001,
     "total_credit": 670.62,
     "total_loans": 385624.42,
-    "net": -291598.07936145
+    "net": -291597.97936144995
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -1086,8 +1086,8 @@
     {
       "period": "2026-08",
       "period_label": "August 2026",
-      "income": 7357.01,
-      "bofa_income": 7357.01,
+      "income": 7357.11,
+      "bofa_income": 7357.11,
       "td_income": 0,
       "outflows": 2255.81,
       "xoom": 0,
@@ -10001,7 +10001,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-22T06:00:51.534Z",
+  "generated_at": "2026-08-22T12:00:56.162Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
