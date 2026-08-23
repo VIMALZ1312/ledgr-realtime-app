@@ -2,7 +2,7 @@
   "kpis": {
     "income": 7357.11,
     "income_period": "August 2026",
-    "true_outflows": 2255.81,
+    "true_outflows": 2388.23,
     "outflows_period": "August 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 463.25,
+      "balance": 538.37,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 13.61
@@ -134,7 +134,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 13.61,
-      "available": 13.61,
+      "available": 83.61,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -161,8 +161,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 461.26,
-      "available": 2463,
+      "balance": 536.38,
+      "available": 2101,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -339,9 +339,9 @@
   ],
   "net_worth": {
     "total_checking": 94903.21569328,
-    "total_credit": 670.62,
+    "total_credit": 745.74,
     "total_loans": 385624.42,
-    "net": -291391.82430672
+    "net": -291466.94430672
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -353,10 +353,10 @@
   },
   "spending": {
     "Tax/Professional": 19312.18,
-    "Shopping": 14483.32,
-    "Tech/Subs": 6467.31,
+    "Shopping": 14584.259999999998,
+    "Tech/Subs": 6486.31,
     "Groceries": 3774.4599999999996,
-    "Restaurants": 2989.32,
+    "Restaurants": 3001.8,
     "Gas/Travel": 6989.56,
     "Healthcare": 3367.45,
     "Refund": -3021.4800000000005,
@@ -375,6 +375,12 @@
       "amount": 40.71,
       "period": "2026-07",
       "period_label": "July 2026"
+    },
+    {
+      "from": "FROM PRADEEP CHELLUR ON 08/21 REF # JPM99",
+      "amount": 70,
+      "period": "2026-08",
+      "period_label": "August 2026"
     },
     {
       "from": "FROM AHMED MOHAMMED",
@@ -526,10 +532,10 @@
     {
       "desc": "Amazon",
       "category": "Shopping",
-      "count": 66,
+      "count": 71,
       "months": 8,
-      "avg_amount": 23.61,
-      "last_amount": 33.71
+      "avg_amount": 23.37,
+      "last_amount": 38.3
     },
     {
       "desc": "Kumon Of North",
@@ -646,10 +652,10 @@
     {
       "desc": "Netlify Fy",
       "category": "Tech/Subs",
-      "count": 13,
+      "count": 14,
       "months": 5,
-      "avg_amount": 6.23,
-      "last_amount": 5
+      "avg_amount": 6.43,
+      "last_amount": 9
     },
     {
       "desc": "Trader Joe's",
@@ -678,10 +684,10 @@
     {
       "desc": "Anthropic Anthropic.comca",
       "category": "Tech/Subs",
-      "count": 10,
+      "count": 11,
       "months": 4,
-      "avg_amount": 9.51,
-      "last_amount": 10.03
+      "avg_amount": 9.56,
+      "last_amount": 10
     },
     {
       "desc": "Costco",
@@ -1089,7 +1095,7 @@
       "income": 7357.11,
       "bofa_income": 7357.11,
       "td_income": 0,
-      "outflows": 2255.81,
+      "outflows": 2388.23,
       "xoom": 0,
       "investments": 0
     }
@@ -7802,15 +7808,15 @@
       "period": "2026-08",
       "categories": {
         "Entertainment": 416.98,
-        "Shopping": 362.5199999999999,
+        "Shopping": 463.46,
         "Gas/Travel": 130.04,
-        "Tech/Subs": 544.5300000000001,
+        "Tech/Subs": 563.5300000000001,
         "Groceries": 409.96999999999997,
-        "Restaurants": 423.49000000000007,
+        "Restaurants": 435.9700000000001,
         "Healthcare": 142.82999999999998,
         "Refund": -174.55
       },
-      "total": 2255.8100000000013,
+      "total": 2388.230000000001,
       "transactions": [
         {
           "date": "08-01",
@@ -8532,6 +8538,110 @@
           "desc": "Patel Brothers",
           "amount": 125.18,
           "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-20",
+          "desc": "Vzn Br Cafe Basking",
+          "amount": 12.48,
+          "category": "Restaurants",
+          "city": "Basking Ridge",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-20",
+          "desc": "Amazon",
+          "amount": 12.54,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-20",
+          "desc": "Amazon",
+          "amount": 11.72,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-20",
+          "desc": "Amazon",
+          "amount": 16.99,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-20",
+          "desc": "Amazon",
+          "amount": 21.39,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-20",
+          "desc": "Netlify Fy",
+          "amount": 9,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "CA",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-19",
+          "desc": "Amazon",
+          "amount": 38.3,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-19",
+          "desc": "Anthropic Anthropic.comca",
+          "amount": 10,
+          "category": "Tech/Subs",
           "city": null,
           "state": null,
           "bank": "Wells Fargo",
@@ -9773,6 +9883,16 @@
       "period_label": "August 2026"
     },
     {
+      "date": "08-20",
+      "desc": "Netlify Fy",
+      "amount": 9,
+      "category": "Tech/Subs",
+      "city": null,
+      "state": "CA",
+      "period": "2026-08",
+      "period_label": "August 2026"
+    },
+    {
       "date": "04-09",
       "desc": "Trendia Trendia.co",
       "amount": 178.01,
@@ -10001,7 +10121,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-23T00:01:05.053Z",
+  "generated_at": "2026-08-23T06:00:59.576Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
