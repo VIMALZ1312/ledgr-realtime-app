@@ -78,7 +78,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 2030.63,
-      "available": 2030.63,
+      "available": 30.63,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -505,7 +505,7 @@
   ],
   "pending_transactions": [
     {
-      "date": "08-23",
+      "date": "08-24",
       "desc": "R K Jewels",
       "amount": 3730,
       "category": "Shopping",
@@ -8868,7 +8868,7 @@
           "refund": false
         },
         {
-          "date": "08-23",
+          "date": "08-24",
           "desc": "R K Jewels",
           "amount": 3730,
           "category": "Shopping",
@@ -10143,7 +10143,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-24T06:00:52.111Z",
+  "generated_at": "2026-08-24T12:00:53.900Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
