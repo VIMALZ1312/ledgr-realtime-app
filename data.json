@@ -2,14 +2,14 @@
   "kpis": {
     "income": 7357.11,
     "income_period": "August 2026",
-    "true_outflows": 6568.57,
+    "true_outflows": 6614.76,
     "outflows_period": "August 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 28062.54,
+      "balance": 22316.54,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -217,7 +217,7 @@
       "mask": "1739",
       "type": "depository",
       "subtype": "checking",
-      "balance": 2030.63,
+      "balance": 30.63,
       "available": 30.63,
       "is_credit": false,
       "is_loan": false,
@@ -259,7 +259,7 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 18170.85,
+      "balance": 14424.85,
       "available": 14424.85,
       "is_credit": false,
       "is_loan": false,
@@ -338,10 +338,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 91530.96675113002,
+    "total_checking": 85784.96675113002,
     "total_credit": 1206.73,
     "total_loans": 385624.42,
-    "net": -295300.18324886996
+    "net": -301046.18324886996
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -353,7 +353,7 @@
   },
   "spending": {
     "Tax/Professional": 19390.94,
-    "Shopping": 18324.91,
+    "Shopping": 18371.1,
     "Tech/Subs": 6486.31,
     "Groceries": 3774.4599999999996,
     "Restaurants": 3255.0299999999997,
@@ -503,7 +503,16 @@
       "period_label": "August 2026"
     }
   ],
-  "pending_transactions": [],
+  "pending_transactions": [
+    {
+      "date": "08-25",
+      "desc": "Walmart",
+      "amount": 46.19,
+      "category": "Shopping",
+      "bank": "BofA",
+      "pending": true
+    }
+  ],
   "detected_recurring": [
     {
       "desc": "Garden Farm",
@@ -516,10 +525,10 @@
     {
       "desc": "Walmart",
       "category": "Refund",
-      "count": 20,
+      "count": 21,
       "months": 8,
-      "avg_amount": 39.09,
-      "last_amount": 20.39
+      "avg_amount": 39.43,
+      "last_amount": 46.19
     },
     {
       "desc": "ShopRite",
@@ -1111,7 +1120,7 @@
       "income": 7357.11,
       "bofa_income": 7357.11,
       "td_income": 0,
-      "outflows": 6568.57,
+      "outflows": 6614.76,
       "xoom": 0,
       "investments": 0
     }
@@ -7824,7 +7833,7 @@
       "period": "2026-08",
       "categories": {
         "Entertainment": 416.98,
-        "Shopping": 4204.11,
+        "Shopping": 4250.299999999999,
         "Gas/Travel": 187.60999999999999,
         "Tech/Subs": 563.5300000000001,
         "Groceries": 409.96999999999997,
@@ -7834,7 +7843,7 @@
         "Tax/Professional": 78.76,
         "Insurance": 44.8
       },
-      "total": 6568.5700000000015,
+      "total": 6614.760000000001,
       "transactions": [
         {
           "date": "08-01",
@@ -8977,6 +8986,19 @@
           "bank": "BofA",
           "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
           "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-25",
+          "desc": "Walmart",
+          "amount": 46.19,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
           "pending": false,
           "refund": false
         }
@@ -10263,7 +10285,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-26T06:00:56.758Z",
+  "generated_at": "2026-08-26T12:01:05.010Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
