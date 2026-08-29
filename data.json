@@ -9,7 +9,7 @@
   },
   "accounts": {
     "bofa": {
-      "balance": 22316.54,
+      "balance": 22191.54,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -231,8 +231,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 207.37,
-      "available": 492.63,
+      "balance": 285.59,
+      "available": 414.41,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -259,7 +259,7 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 14424.85,
+      "balance": 14299.85,
       "available": 18238.73,
       "is_credit": false,
       "is_loan": false,
@@ -338,10 +338,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 88925.43403375502,
-    "total_credit": 1641.35,
+    "total_checking": 88800.43403375502,
+    "total_credit": 1719.57,
     "total_loans": 385624.42,
-    "net": -298340.335966245
+    "net": -298543.55596624495
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -353,9 +353,9 @@
   },
   "spending": {
     "Tax/Professional": 19390.94,
-    "Shopping": 18673.75,
+    "Shopping": 18685.05,
     "Tech/Subs": 6606.570000000001,
-    "Groceries": 3839.99,
+    "Groceries": 3828.6899999999996,
     "Restaurants": 3281.6800000000003,
     "Gas/Travel": 7113.46,
     "Healthcare": 3372.7799999999997,
@@ -521,40 +521,7 @@
       "period_label": "August 2026"
     }
   ],
-  "pending_transactions": [
-    {
-      "date": "08-27",
-      "desc": "Srishti",
-      "amount": 23.45,
-      "category": "Restaurants",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "08-27",
-      "desc": "Apna Bazar",
-      "amount": 11.3,
-      "category": "Groceries",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "08-27",
-      "desc": "Srishti",
-      "amount": 3.2,
-      "category": "Restaurants",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "08-27",
-      "desc": "Walmart",
-      "amount": 40.27,
-      "category": "Shopping",
-      "bank": "BofA",
-      "pending": true
-    }
-  ],
+  "pending_transactions": [],
   "detected_recurring": [
     {
       "desc": "Garden Farm",
@@ -823,10 +790,10 @@
     {
       "desc": "Apna Bazaar Cash & Carry",
       "category": "Shopping",
-      "count": 4,
+      "count": 5,
       "months": 3,
-      "avg_amount": 23.6,
-      "last_amount": 5.77
+      "avg_amount": 21.14,
+      "last_amount": 11.3
     },
     {
       "desc": "Dollar Tree",
@@ -7891,10 +7858,10 @@
       "period": "2026-08",
       "categories": {
         "Entertainment": 477.21000000000004,
-        "Shopping": 4552.950000000001,
+        "Shopping": 4564.250000000001,
         "Gas/Travel": 253.93999999999997,
         "Tech/Subs": 683.79,
-        "Groceries": 475.5,
+        "Groceries": 464.2,
         "Restaurants": 715.8500000000001,
         "Healthcare": 148.16,
         "Refund": -224.55,
@@ -9230,12 +9197,12 @@
           "refund": false
         },
         {
-          "date": "08-27",
+          "date": "08-28",
           "desc": "Srishti",
           "amount": 23.45,
           "category": "Restaurants",
-          "city": null,
-          "state": null,
+          "city": "Dayton",
+          "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -9243,25 +9210,12 @@
           "refund": false
         },
         {
-          "date": "08-27",
-          "desc": "Apna Bazar",
-          "amount": 11.3,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "08-27",
+          "date": "08-28",
           "desc": "Srishti",
           "amount": 3.2,
           "category": "Restaurants",
-          "city": null,
-          "state": null,
+          "city": "Dayton",
+          "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -9269,12 +9223,25 @@
           "refund": false
         },
         {
-          "date": "08-27",
+          "date": "08-28",
+          "desc": "Apna Bazaar Cash & Carry",
+          "amount": 11.3,
+          "category": "Shopping",
+          "city": "Dayton",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-28",
           "desc": "Walmart",
           "amount": 40.27,
           "category": "Shopping",
           "city": null,
-          "state": null,
+          "state": "AR",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -10594,6 +10561,16 @@
       "state": "AR",
       "period": "2026-08",
       "period_label": "August 2026"
+    },
+    {
+      "date": "08-28",
+      "desc": "Walmart",
+      "amount": 40.27,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-08",
+      "period_label": "August 2026"
     }
   ],
   "fixed_obligations": {
@@ -10604,7 +10581,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-29T06:00:54.361Z",
+  "generated_at": "2026-08-29T12:00:57.867Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
