@@ -2,14 +2,14 @@
   "kpis": {
     "income": 19799.04,
     "income_period": "August 2026",
-    "true_outflows": 4011.31,
+    "true_outflows": 4021.3,
     "outflows_period": "August 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 31451.989999999998,
+      "balance": 27510.79,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -28,7 +28,7 @@
       "payroll": 0
     },
     "discover": {
-      "balance": 0,
+      "balance": 1862.54,
       "is_credit": true,
       "period_label": "Live"
     },
@@ -226,62 +226,6 @@
     },
     {
       "bank": "BofA",
-      "nickname": "bofa_2",
-      "name": "Premium Rewards Visa Signature",
-      "mask": "0910",
-      "type": "credit",
-      "subtype": "credit card",
-      "balance": 0,
-      "available": 21000,
-      "is_credit": true,
-      "is_loan": false,
-      "is_checking": false,
-      "is_savings": false
-    },
-    {
-      "bank": "BofA",
-      "nickname": "bofa_2",
-      "name": "Adv Plus Banking",
-      "mask": "1739",
-      "type": "depository",
-      "subtype": "checking",
-      "balance": 30.63,
-      "available": 30.63,
-      "is_credit": false,
-      "is_loan": false,
-      "is_checking": true,
-      "is_savings": false
-    },
-    {
-      "bank": "BofA",
-      "nickname": "bofa_2",
-      "name": "Advantage Savings",
-      "mask": "5677",
-      "type": "depository",
-      "subtype": "savings",
-      "balance": 3911.86,
-      "available": 3911.86,
-      "is_credit": false,
-      "is_loan": false,
-      "is_checking": false,
-      "is_savings": true
-    },
-    {
-      "bank": "BofA",
-      "nickname": "bofa_2",
-      "name": "Advantage Savings",
-      "mask": "8206",
-      "type": "depository",
-      "subtype": "savings",
-      "balance": -1.29,
-      "available": -1.29,
-      "is_credit": false,
-      "is_loan": false,
-      "is_checking": false,
-      "is_savings": true
-    },
-    {
-      "bank": "BofA",
       "nickname": "wifebofa",
       "name": "Adv Plus Banking",
       "mask": "1739",
@@ -351,6 +295,34 @@
       "is_savings": false
     },
     {
+      "bank": "Discover",
+      "nickname": "discover",
+      "name": "Discover it",
+      "mask": "0494",
+      "type": "credit",
+      "subtype": "credit card",
+      "balance": 1862.54,
+      "available": null,
+      "is_credit": true,
+      "is_loan": false,
+      "is_checking": false,
+      "is_savings": false
+    },
+    {
+      "bank": "Discover",
+      "nickname": "discover",
+      "name": "VentureOne",
+      "mask": "1922",
+      "type": "credit",
+      "subtype": "credit card",
+      "balance": 0,
+      "available": null,
+      "is_credit": true,
+      "is_loan": false,
+      "is_checking": false,
+      "is_savings": false
+    },
+    {
       "bank": "Robinhood",
       "nickname": "robin_2",
       "name": "Checking",
@@ -408,10 +380,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 94728.03341899502,
-    "total_credit": 1719.57,
+    "total_checking": 90786.83341899501,
+    "total_credit": 3582.1099999999997,
     "total_loans": 385624.42,
-    "net": -292615.95658100495
+    "net": -298419.696581005
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -422,15 +394,15 @@
     "by_month": []
   },
   "spending": {
-    "Entertainment": 1951.95,
-    "Healthcare": 3457.01,
-    "Tech/Subs": 8532.85,
-    "Refund": -10671.76,
+    "Entertainment": 2049.5899999999997,
+    "Healthcare": 3480.51,
+    "Tech/Subs": 8616.37,
+    "Refund": -10673.47,
     "Gas/Travel": 7820.700000000002,
-    "Shopping": 18692.97,
+    "Shopping": 18774.88,
     "Groceries": 3828.6899999999996,
-    "Restaurants": 3281.6800000000003,
-    "Tax/Professional": 19390.94,
+    "Restaurants": 3362.25,
+    "Tax/Professional": 19422.88,
     "Insurance": 230.74
   },
   "zelle_received": [
@@ -644,9 +616,9 @@
     {
       "desc": "Regal Cinemas",
       "category": "Entertainment",
-      "count": 8,
+      "count": 9,
       "months": 8,
-      "avg_amount": 28.24,
+      "avg_amount": 27.17,
       "last_amount": 28.24
     },
     {
@@ -692,9 +664,9 @@
     {
       "desc": "Walgreens",
       "category": "Healthcare",
-      "count": 18,
+      "count": 19,
       "months": 7,
-      "avg_amount": 28.89,
+      "avg_amount": 28.33,
       "last_amount": 3.26
     },
     {
@@ -810,12 +782,28 @@
       "last_amount": 15
     },
     {
+      "desc": "Nokia Of America Corpo",
+      "category": "Shopping",
+      "count": 4,
+      "months": 4,
+      "avg_amount": 9.99,
+      "last_amount": 9.99
+    },
+    {
       "desc": "Anthropic Anthropic.comca",
       "category": "Tech/Subs",
       "count": 11,
       "months": 4,
       "avg_amount": 9.56,
       "last_amount": 15
+    },
+    {
+      "desc": "Dunkin'",
+      "category": "Restaurants",
+      "count": 7,
+      "months": 4,
+      "avg_amount": 8.14,
+      "last_amount": 10.36
     },
     {
       "desc": "R K Jewels",
@@ -920,14 +908,6 @@
       "months": 3,
       "avg_amount": 17.81,
       "last_amount": 19.19
-    },
-    {
-      "desc": "Dunkin'",
-      "category": "Restaurants",
-      "count": 6,
-      "months": 3,
-      "avg_amount": 6.52,
-      "last_amount": 10.36
     },
     {
       "desc": "Kids Smile",
@@ -1218,12 +1198,28 @@
       "last_amount": 5.95
     },
     {
+      "desc": "Vzn Br Cafe",
+      "category": "Restaurants",
+      "count": 4,
+      "months": 2,
+      "avg_amount": 8.38,
+      "last_amount": 14.06
+    },
+    {
       "desc": "Cvsextracare",
       "category": "Healthcare",
       "count": 2,
       "months": 2,
       "avg_amount": 5.33,
       "last_amount": 5.33
+    },
+    {
+      "desc": "CVS",
+      "category": "Healthcare",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 3.96,
+      "last_amount": 2.53
     },
     {
       "desc": "RETURN OF POSTED CHECK / ITEM (RECEIVED ON 08-12) ELECTRONIC TRANSACTION",
@@ -1249,7 +1245,7 @@
       "period": "2026-02",
       "period_label": "February 2026",
       "income": 12779.789999999999,
-      "bofa_income": 7779.790000000001,
+      "bofa_income": 7779.79,
       "td_income": 5000,
       "outflows": 10798.02,
       "xoom": 0,
@@ -1291,7 +1287,7 @@
       "income": 16362.05,
       "bofa_income": 16362.05,
       "td_income": 0,
-      "outflows": 6717.42,
+      "outflows": 6944.08,
       "xoom": 0,
       "investments": 0
     },
@@ -1301,7 +1297,7 @@
       "income": 24345.2,
       "bofa_income": 24345.2,
       "td_income": 0,
-      "outflows": 2190.07,
+      "outflows": 2350.79,
       "xoom": 0,
       "investments": 0
     },
@@ -1311,7 +1307,7 @@
       "income": 19799.04,
       "bofa_income": 19799.04,
       "td_income": 0,
-      "outflows": 4011.31,
+      "outflows": 4021.3,
       "xoom": 0,
       "investments": 0
     }
@@ -1326,13 +1322,13 @@
         "Tech/Subs": 1166.83,
         "Refund": -4024.69,
         "Gas/Travel": 278.94,
-        "Shopping": 4564.250000000001,
+        "Shopping": 4574.240000000001,
         "Groceries": 464.2,
         "Restaurants": 715.8500000000001,
         "Tax/Professional": 78.76,
         "Insurance": 44.8
       },
-      "total": 4011.3099999999995,
+      "total": 4021.2999999999993,
       "transactions": [
         {
           "date": "08-26",
@@ -2815,6 +2811,19 @@
           "mask": "2776",
           "pending": false,
           "refund": false
+        },
+        {
+          "date": "08-22",
+          "desc": "Nokia Of America Corpo",
+          "amount": 9.99,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "Rvvr7Zy8qBh5ZxMV3QxrSOJdbV4dX7uqKkPXZ",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
         }
       ]
     },
@@ -2824,15 +2833,15 @@
       "categories": {
         "Tech/Subs": 1723.27,
         "Gas/Travel": 777.2699999999999,
-        "Entertainment": 218.59,
-        "Shopping": 1295.85,
+        "Entertainment": 316.23,
+        "Shopping": 1343.7099999999998,
         "Healthcare": 985.2,
-        "Refund": -3800.14,
+        "Refund": -3801.85,
         "Tax/Professional": 320.16,
         "Groceries": 573.1899999999998,
-        "Restaurants": 96.68
+        "Restaurants": 113.61000000000001
       },
-      "total": 2190.07,
+      "total": 2350.7899999999995,
       "transactions": [
         {
           "date": "07-31",
@@ -3758,6 +3767,97 @@
           "refund": false
         },
         {
+          "date": "07-22",
+          "desc": "Nokia Of America Corpo",
+          "amount": 9.99,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "Rvvr7Zy8qBh5ZxMV3QxrSOJdbV4dX7uqKkPXZ",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-13",
+          "desc": "Shein",
+          "amount": 37.87,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "Rvvr7Zy8qBh5ZxMV3QxrSOJdbV4dX7uqKkPXZ",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-10",
+          "desc": "Vzn Br Cafe",
+          "amount": 14.06,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "Rvvr7Zy8qBh5ZxMV3QxrSOJdbV4dX7uqKkPXZ",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-03",
+          "desc": "Regal Cinemas",
+          "amount": 18.65,
+          "category": "Entertainment",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "Rvvr7Zy8qBh5ZxMV3QxrSOJdbV4dX7uqKkPXZ",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-02",
+          "desc": "HBO Max",
+          "amount": 78.99,
+          "category": "Entertainment",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "Rvvr7Zy8qBh5ZxMV3QxrSOJdbV4dX7uqKkPXZ",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-02",
+          "desc": "Vzn Br Cafe",
+          "amount": 2.87,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "Rvvr7Zy8qBh5ZxMV3QxrSOJdbV4dX7uqKkPXZ",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-01",
+          "desc": "MERCURY*MICIL-IL-NJPPA",
+          "amount": -1.71,
+          "category": "Refund",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "Rvvr7Zy8qBh5ZxMV3QxrSOJdbV4dX7uqKkPXZ",
+          "mask": "0494",
+          "pending": false,
+          "refund": true
+        },
+        {
           "date": "07-02",
           "desc": "REG_COMMERCE CTR_",
           "amount": 34.09,
@@ -3815,17 +3915,17 @@
       "label": "June 2026",
       "period": "2026-06",
       "categories": {
-        "Healthcare": 1312.02,
-        "Tech/Subs": 1368.43,
+        "Healthcare": 1335.52,
+        "Tech/Subs": 1451.95,
         "Entertainment": 688.15,
         "Gas/Travel": 1079.39,
         "Refund": -346.76000000000005,
-        "Shopping": 857.38,
-        "Restaurants": 393.44,
-        "Tax/Professional": 1073.97,
+        "Shopping": 881.4400000000002,
+        "Restaurants": 457.08000000000004,
+        "Tax/Professional": 1105.91,
         "Groceries": 291.40000000000003
       },
-      "total": 6717.419999999998,
+      "total": 6944.079999999998,
       "transactions": [
         {
           "date": "06-17",
@@ -4855,6 +4955,175 @@
           "refund": false
         },
         {
+          "date": "06-26",
+          "desc": "Vrz Br Cafe",
+          "amount": 14.06,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "Rvvr7Zy8qBh5ZxMV3QxrSOJdbV4dX7uqKkPXZ",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-25",
+          "desc": "Vzn Br Cafe",
+          "amount": 2.51,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "Rvvr7Zy8qBh5ZxMV3QxrSOJdbV4dX7uqKkPXZ",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-25",
+          "desc": "Vrz Br Cafe",
+          "amount": 12.48,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "Rvvr7Zy8qBh5ZxMV3QxrSOJdbV4dX7uqKkPXZ",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-22",
+          "desc": "*****_*****",
+          "amount": 14.07,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "Rvvr7Zy8qBh5ZxMV3QxrSOJdbV4dX7uqKkPXZ",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-22",
+          "desc": "Nokia Of America Corpo",
+          "amount": 9.99,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "Rvvr7Zy8qBh5ZxMV3QxrSOJdbV4dX7uqKkPXZ",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-16",
+          "desc": "CVS",
+          "amount": 5.38,
+          "category": "Healthcare",
+          "city": "Lewis Center",
+          "state": "OH",
+          "bank": "Discover",
+          "account_id": "Rvvr7Zy8qBh5ZxMV3QxrSOJdbV4dX7uqKkPXZ",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-14",
+          "desc": "Uber",
+          "amount": 31.94,
+          "category": "Tax/Professional",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "Rvvr7Zy8qBh5ZxMV3QxrSOJdbV4dX7uqKkPXZ",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-14",
+          "desc": "Dunkin'",
+          "amount": 17.86,
+          "category": "Restaurants",
+          "city": "Lawn",
+          "state": "PA",
+          "bank": "Discover",
+          "account_id": "Rvvr7Zy8qBh5ZxMV3QxrSOJdbV4dX7uqKkPXZ",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-14",
+          "desc": "Replit Inc.",
+          "amount": 55.52,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "Rvvr7Zy8qBh5ZxMV3QxrSOJdbV4dX7uqKkPXZ",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-14",
+          "desc": "Walgreens",
+          "amount": 18.12,
+          "category": "Healthcare",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "Discover",
+          "account_id": "Rvvr7Zy8qBh5ZxMV3QxrSOJdbV4dX7uqKkPXZ",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-12",
+          "desc": "Vzn Br Cafe",
+          "amount": 14.06,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "Rvvr7Zy8qBh5ZxMV3QxrSOJdbV4dX7uqKkPXZ",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-09",
+          "desc": "Kd Consultancy LLC",
+          "amount": 28,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "Rvvr7Zy8qBh5ZxMV3QxrSOJdbV4dX7uqKkPXZ",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-05",
+          "desc": "Vrz Br Cafe",
+          "amount": 2.67,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "Rvvr7Zy8qBh5ZxMV3QxrSOJdbV4dX7uqKkPXZ",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
           "date": "06-04",
           "desc": "Walgreens",
           "amount": 18.99,
@@ -5861,19 +6130,6 @@
           "refund": false
         },
         {
-          "date": "04-01",
-          "desc": "New Jersey Tgi",
-          "amount": 713,
-          "category": "Tax/Professional",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "LQarPBJ9E5Up0ADR4OjPSkkBxao9e1iJb90ey",
-          "mask": "5677",
-          "pending": false,
-          "refund": false
-        },
-        {
           "date": "04-06",
           "desc": "United Airlines",
           "amount": 40,
@@ -5896,6 +6152,19 @@
           "bank": "BofA",
           "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
           "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "04-01",
+          "desc": "New Jersey Tgi",
+          "amount": 713,
+          "category": "Tax/Professional",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "ZYroVXRaZgTP54oKoJ4XhwzxPxgV9KFvvAXLk",
+          "mask": "5677",
           "pending": false,
           "refund": false
         },
@@ -6952,7 +7221,7 @@
           "city": null,
           "state": null,
           "bank": "BofA",
-          "account_id": "LQarPBJ9E5Up0ADR4OjPSkkBxao9e1iJb90ey",
+          "account_id": "ZYroVXRaZgTP54oKoJ4XhwzxPxgV9KFvvAXLk",
           "mask": "5677",
           "pending": false,
           "refund": false
@@ -11128,6 +11397,16 @@
       "state": "AR",
       "period": "2026-08",
       "period_label": "August 2026"
+    },
+    {
+      "date": "06-16",
+      "desc": "CVS",
+      "amount": 5.38,
+      "category": "Healthcare",
+      "city": "Lewis Center",
+      "state": "OH",
+      "period": "2026-06",
+      "period_label": "June 2026"
     }
   ],
   "fixed_obligations": {
@@ -11138,18 +11417,17 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-30T00:38:24.848Z",
+  "generated_at": "2026-08-30T00:59:23.280Z",
   "source": "plaid_realtime",
-  "statement_count": "10 live accounts",
+  "statement_count": "9 live accounts",
   "sync_status": {
-    "tokens": 10,
+    "tokens": 9,
     "nicknames": [
       "robin",
       "bofa",
       "wf",
       "pnc",
       "td",
-      "bofa_2",
       "wifebofa",
       "zillow",
       "discover",
@@ -11159,57 +11437,100 @@
       {
         "nickname": "robin",
         "ok": true,
-        "accounts": 1
+        "accounts": 1,
+        "source": "PLAID_TOKEN_MYROBIN",
+        "masks": [
+          "7724"
+        ]
       },
       {
         "nickname": "bofa",
         "ok": true,
-        "accounts": 5
+        "accounts": 5,
+        "source": "PLAID_TOKEN_BOFA",
+        "masks": [
+          "0910",
+          "1739",
+          "5677",
+          "7309",
+          "8206"
+        ]
       },
       {
         "nickname": "wf",
         "ok": true,
-        "accounts": 4
+        "accounts": 4,
+        "source": "PLAID_TOKEN_WF",
+        "masks": [
+          "1432",
+          "3068",
+          "8036",
+          "9762"
+        ]
       },
       {
         "nickname": "pnc",
         "ok": true,
-        "accounts": 1
+        "accounts": 1,
+        "source": "PLAID_TOKEN_PNC",
+        "masks": [
+          "5961"
+        ]
       },
       {
         "nickname": "td",
         "ok": true,
-        "accounts": 2
-      },
-      {
-        "nickname": "bofa_2",
-        "ok": true,
-        "accounts": 4
+        "accounts": 2,
+        "source": "PLAID_TOKEN_TD",
+        "masks": [
+          "5186",
+          "9222"
+        ]
       },
       {
         "nickname": "wifebofa",
         "ok": true,
-        "accounts": 4
+        "accounts": 4,
+        "source": "PLAID_TOKEN_WIFEBOFA",
+        "masks": [
+          "1739",
+          "2776",
+          "5677",
+          "9715"
+        ]
       },
       {
         "nickname": "zillow",
         "ok": true,
-        "accounts": 1
+        "accounts": 1,
+        "source": "PLAID_TOKEN_ZILLOW",
+        "masks": [
+          "4351"
+        ]
       },
       {
         "nickname": "discover",
-        "ok": false,
-        "accounts": 0,
-        "error": "ITEM_LOGIN_REQUIRED"
+        "ok": true,
+        "accounts": 2,
+        "source": "PLAID_TOKEN_DISCOVER",
+        "masks": [
+          "0494",
+          "1922"
+        ]
       },
       {
         "nickname": "robin_2",
         "ok": true,
-        "accounts": 4
+        "accounts": 4,
+        "source": "PLAID_TOKEN_ROBIN",
+        "masks": [
+          "6390",
+          "6644",
+          "7119",
+          "8479"
+        ]
       }
     ],
-    "failed": [
-      "discover (ITEM_LOGIN_REQUIRED)"
-    ]
+    "failed": []
   }
 }
