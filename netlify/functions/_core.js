@@ -315,6 +315,34 @@ async function pushToGitHub(data) {
   if (!resp.ok) throw new Error(`GitHub push failed: ${await resp.text()}`);
 }
 
+// Joint accounts (BofA ...1739 and ...5677 are visible to both the `bofa` and
+// `wifebofa` logins) arrive once per Item, each copy carrying a DIFFERENT
+// account_id — so nothing keyed on account_id can see the duplication, and the
+// same charge is counted twice in monthly spending. Collapse on the account
+// mask plus the transaction's own fields, but only across DIFFERENT nicknames:
+// two genuinely identical charges on one card (same day, same merchant, same
+// amount) come from a single Item and must both survive.
+function dedupeCrossItemTxns(accounts, transactions) {
+  const maskById = {};
+  accounts.forEach(a => { if (a.account_id) maskById[a.account_id] = a.mask || ''; });
+  const firstNickBy = new Map();
+  const kept = [];
+  const removed = [];
+  for (const t of transactions) {
+    const mask = maskById[t.account_id];
+    if (!mask) { kept.push(t); continue; }   // unknown account — never risk a collapse
+    const key = [mask, t.date, t.amount, (t.merchant_name || t.name || '').trim().toLowerCase(), t.pending ? 'p' : 'x'].join('|');
+    const firstNick = firstNickBy.get(key);
+    if (firstNick !== undefined && firstNick !== t._nickname) {
+      removed.push({ mask, date: t.date, amount: t.amount, kept_from: firstNick, dropped_from: t._nickname });
+      continue;
+    }
+    if (firstNick === undefined) firstNickBy.set(key, t._nickname);
+    kept.push(t);
+  }
+  return { transactions: kept, removed };
+}
+
 // ── CORE: fetch from Plaid and build data.json ───────────────────────────────
 async function buildDataJson() {
   const tokens = await getTokens();
@@ -351,7 +379,8 @@ async function buildDataJson() {
     }
   }
 
-  const data = buildStructuredData(allAccounts, allTransactions);
+  const deduped = dedupeCrossItemTxns(allAccounts, allTransactions);
+  const data = buildStructuredData(allAccounts, deduped.transactions);
   data.generated_at = new Date().toISOString();
   data.source = 'plaid_realtime';
   data.statement_count = Object.keys(tokens).length + ' live accounts';
@@ -362,6 +391,9 @@ async function buildDataJson() {
     nicknames: Object.keys(tokens),
     detail: tokenStatus,
     failed: tokenStatus.filter(t => !t.ok).map(t => t.nickname + ' (' + t.error + ')'),
+    txns_fetched: allTransactions.length,
+    duplicates_removed: deduped.removed.length,
+    duplicate_sample: deduped.removed.slice(0, 10),
   };
 
   await pushToGitHub(data);
@@ -370,4 +402,4 @@ async function buildDataJson() {
   return { accounts_synced: allAccounts.length, transactions_synced: allTransactions.length, generated_at: data.generated_at };
 }
 
-module.exports = { plaid, Products, CountryCode, getTokens, saveToken, buildDataJson, dataStore };
+module.exports = { plaid, Products, CountryCode, getTokens, saveToken, buildDataJson, dataStore, dedupeCrossItemTxns };
