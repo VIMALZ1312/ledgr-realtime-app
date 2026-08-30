@@ -34,18 +34,26 @@ async function saveToken(nickname, accessToken) {
   catch (e) { console.warn('Blobs saveToken failed:', e.message); return { canonical, saved: false, error: e.message }; }
 }
 
+// Records which env var / Blobs key each canonical nickname came from. Two vars
+// that alias to the same nickname (e.g. PLAID_TOKEN_ROBIN + PLAID_TOKEN_MYROBIN)
+// get collapsed or suffixed `_2`, and without this there is no way to tell which
+// var to edit when one of them needs re-linking. Populated by getTokens().
+const TOKEN_SOURCES = {};
+
 // Merge tokens from Blobs + PLAID_TOKEN_* env vars (env used during migration).
 async function getTokens() {
   const tokens = {};
-  const add = (rawNick, token) => {
+  Object.keys(TOKEN_SOURCES).forEach((k) => delete TOKEN_SOURCES[k]);
+  const add = (rawNick, token, source) => {
     const nick = String(rawNick).toLowerCase();
     const canonical = NICKNAME_ALIASES[nick] || nick;
-    if (tokens[canonical] && tokens[canonical] !== token) tokens[canonical + '_2'] = token;
-    else tokens[canonical] = token;
+    const key = (tokens[canonical] && tokens[canonical] !== token) ? canonical + '_2' : canonical;
+    tokens[key] = token;
+    TOKEN_SOURCES[key] = source;
   };
   // 1) Env vars (PLAID_TOKEN_<NICK>) — lets you migrate before fully moving to Blobs
   Object.keys(process.env).forEach((k) => {
-    if (k.startsWith('PLAID_TOKEN_')) add(k.replace('PLAID_TOKEN_', ''), process.env[k]);
+    if (k.startsWith('PLAID_TOKEN_')) add(k.replace('PLAID_TOKEN_', ''), process.env[k], k);
   });
   // 2) Netlify Blobs (new links saved here automatically)
   try {
@@ -53,7 +61,7 @@ async function getTokens() {
     const { blobs } = await store.list();
     for (const b of blobs) {
       const v = await store.get(b.key);
-      if (v) add(b.key, v);
+      if (v) add(b.key, v, 'blobs:' + b.key);
     }
   } catch (e) {
     console.warn('Blobs token read skipped:', e.message);
@@ -331,11 +339,15 @@ async function buildDataJson() {
         if (added.length > 500) break;
       }
       added.forEach(t => allTransactions.push({ ...t, _nickname: nickname }));
-      tokenStatus.push({ nickname, ok: true, accounts: acctResp.data.accounts.length });
+      tokenStatus.push({
+        nickname, ok: true, accounts: acctResp.data.accounts.length,
+        source: TOKEN_SOURCES[nickname] || null,
+        masks: acctResp.data.accounts.map(a => a.mask).filter(Boolean),
+      });
     } catch (err) {
       const code = err.response?.data?.error_code || err.message;
       console.error(`Error fetching ${nickname}:`, err.response?.data || err.message);
-      tokenStatus.push({ nickname, ok: false, accounts: 0, error: code });
+      tokenStatus.push({ nickname, ok: false, accounts: 0, error: code, source: TOKEN_SOURCES[nickname] || null });
     }
   }
 
