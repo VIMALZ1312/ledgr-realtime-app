@@ -43,20 +43,6 @@
   },
   "all_accounts": [
     {
-      "bank": "Robinhood",
-      "nickname": "robin",
-      "name": "Robinhood individual",
-      "mask": "7724",
-      "type": "investment",
-      "subtype": "brokerage",
-      "balance": 63080.383418995,
-      "available": 15891.02,
-      "is_credit": false,
-      "is_loan": false,
-      "is_checking": false,
-      "is_savings": false
-    },
-    {
       "bank": "BofA",
       "nickname": "bofa",
       "name": "Premium Rewards Visa Signature",
@@ -324,7 +310,7 @@
     },
     {
       "bank": "Robinhood",
-      "nickname": "robin_2",
+      "nickname": "robin",
       "name": "Robinhood Credit Card **1345",
       "mask": "1345",
       "type": "credit",
@@ -338,7 +324,7 @@
     },
     {
       "bank": "Robinhood",
-      "nickname": "robin_2",
+      "nickname": "robin",
       "name": "Crypto",
       "mask": "7397",
       "type": "investment",
@@ -352,7 +338,7 @@
     },
     {
       "bank": "Robinhood",
-      "nickname": "robin_2",
+      "nickname": "robin",
       "name": "Robinhood individual",
       "mask": "7724",
       "type": "investment",
@@ -366,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 153867.07683799003,
+    "total_checking": 90786.693418995,
     "total_credit": 6362.95,
     "total_loans": 385624.42,
-    "net": -238120.29316200997
+    "net": -301200.676581005
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -2811,7 +2797,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -2824,7 +2810,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -2837,7 +2823,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -2850,7 +2836,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -2863,7 +2849,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -2876,7 +2862,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -2889,7 +2875,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -2902,7 +2888,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -2915,7 +2901,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -2928,7 +2914,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -2941,7 +2927,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -2954,7 +2940,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -2967,7 +2953,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -2980,7 +2966,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -2993,7 +2979,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -3006,7 +2992,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -3019,7 +3005,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -3032,7 +3018,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -3045,7 +3031,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -3058,7 +3044,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -3071,7 +3057,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -3084,7 +3070,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -3097,7 +3083,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -4142,7 +4128,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -4155,7 +4141,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -4168,7 +4154,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -4181,7 +4167,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -4194,7 +4180,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -4207,7 +4193,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -4220,7 +4206,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -4233,7 +4219,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -4246,7 +4232,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -4259,7 +4245,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -4272,7 +4258,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -4285,7 +4271,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -4298,7 +4284,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -4311,7 +4297,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -4324,7 +4310,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -4337,7 +4323,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -4350,7 +4336,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -4363,7 +4349,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -4376,7 +4362,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -4389,7 +4375,7 @@
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
           "mask": "1345",
           "pending": false,
           "refund": false
@@ -11434,13 +11420,12 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-30T01:14:33.061Z",
+  "generated_at": "2026-08-30T03:01:43.977Z",
   "source": "plaid_realtime",
-  "statement_count": "9 live accounts",
+  "statement_count": "8 live accounts",
   "sync_status": {
-    "tokens": 9,
+    "tokens": 8,
     "nicknames": [
-      "robin",
       "bofa",
       "wf",
       "pnc",
@@ -11448,18 +11433,9 @@
       "wifebofa",
       "zillow",
       "discover",
-      "robin_2"
+      "robin"
     ],
     "detail": [
-      {
-        "nickname": "robin",
-        "ok": true,
-        "accounts": 1,
-        "source": "PLAID_TOKEN_MYROBIN",
-        "masks": [
-          "7724"
-        ]
-      },
       {
         "nickname": "bofa",
         "ok": true,
@@ -11536,7 +11512,7 @@
         ]
       },
       {
-        "nickname": "robin_2",
+        "nickname": "robin",
         "ok": true,
         "accounts": 3,
         "source": "PLAID_TOKEN_ROBIN",
