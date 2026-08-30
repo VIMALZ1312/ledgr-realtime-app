@@ -144,7 +144,7 @@ function buildStructuredData(accounts, transactions) {
   const NICK_TO_BANK = {
     'mybofa': 'BofA', 'bofa': 'BofA', 'bofa_2': 'BofA', 'wifebofa': 'BofA',
     'wf': 'Wells Fargo', 'td': 'TD Bank', 'mydisc': 'Discover', 'discover': 'Discover',
-    'robin': 'Robinhood', 'robin_2': 'Robinhood', 'myrobin': 'Robinhood', 'robinhood': 'Robinhood',
+    'robin': 'Robinhood', 'robin_2': 'Robinhood', 'robin_3': 'Robinhood', 'myrobin': 'Robinhood', 'robinhood': 'Robinhood',
     'pnc': 'PNC', 'zillow': 'Rocket Mortgage', 'rocket': 'Rocket Mortgage',
   };
   const allAccountsList = accounts.map(a => ({
