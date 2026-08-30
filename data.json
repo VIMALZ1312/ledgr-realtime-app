@@ -11420,7 +11420,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-30T03:01:43.977Z",
+  "generated_at": "2026-08-30T03:21:43.612Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -11523,6 +11523,80 @@
         ]
       }
     ],
-    "failed": []
+    "failed": [],
+    "txns_fetched": 1030,
+    "duplicates_removed": 15,
+    "duplicate_sample": [
+      {
+        "mask": "1739",
+        "date": "2026-06-04",
+        "amount": -100,
+        "kept_from": "bofa",
+        "dropped_from": "wifebofa"
+      },
+      {
+        "mask": "1739",
+        "date": "2026-06-04",
+        "amount": -4912.5,
+        "kept_from": "bofa",
+        "dropped_from": "wifebofa"
+      },
+      {
+        "mask": "1739",
+        "date": "2026-06-05",
+        "amount": 5000,
+        "kept_from": "bofa",
+        "dropped_from": "wifebofa"
+      },
+      {
+        "mask": "1739",
+        "date": "2026-06-10",
+        "amount": -14850,
+        "kept_from": "bofa",
+        "dropped_from": "wifebofa"
+      },
+      {
+        "mask": "1739",
+        "date": "2026-06-11",
+        "amount": 14900,
+        "kept_from": "bofa",
+        "dropped_from": "wifebofa"
+      },
+      {
+        "mask": "1739",
+        "date": "2026-07-15",
+        "amount": 1000,
+        "kept_from": "bofa",
+        "dropped_from": "wifebofa"
+      },
+      {
+        "mask": "1739",
+        "date": "2026-07-15",
+        "amount": -1000,
+        "kept_from": "bofa",
+        "dropped_from": "wifebofa"
+      },
+      {
+        "mask": "5677",
+        "date": "2026-07-17",
+        "amount": -3077.97,
+        "kept_from": "bofa",
+        "dropped_from": "wifebofa"
+      },
+      {
+        "mask": "5677",
+        "date": "2026-07-23",
+        "amount": -0.03,
+        "kept_from": "bofa",
+        "dropped_from": "wifebofa"
+      },
+      {
+        "mask": "1739",
+        "date": "2026-08-10",
+        "amount": -3000,
+        "kept_from": "bofa",
+        "dropped_from": "wifebofa"
+      }
+    ]
   }
 }
