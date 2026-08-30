@@ -2,7 +2,7 @@
   "kpis": {
     "income": 19799.04,
     "income_period": "August 2026",
-    "true_outflows": 4021.3,
+    "true_outflows": 5298.01,
     "outflows_period": "August 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -325,65 +325,51 @@
     {
       "bank": "Robinhood",
       "nickname": "robin_2",
-      "name": "Checking",
-      "mask": "6390",
-      "type": "depository",
-      "subtype": "checking",
-      "balance": 0,
-      "available": null,
-      "is_credit": false,
+      "name": "Robinhood Credit Card **1345",
+      "mask": "1345",
+      "type": "credit",
+      "subtype": "credit card",
+      "balance": 2780.84,
+      "available": 7219,
+      "is_credit": true,
       "is_loan": false,
-      "is_checking": true,
+      "is_checking": false,
       "is_savings": false
     },
     {
       "bank": "Robinhood",
       "nickname": "robin_2",
-      "name": "Savings",
-      "mask": "6644",
-      "type": "depository",
-      "subtype": "savings",
-      "balance": 0.14,
-      "available": 0.14,
+      "name": "Crypto",
+      "mask": "7397",
+      "type": "investment",
+      "subtype": "crypto exchange",
+      "balance": 19.74,
+      "available": null,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
-      "is_savings": true
+      "is_savings": false
     },
     {
       "bank": "Robinhood",
       "nickname": "robin_2",
       "name": "Robinhood individual",
-      "mask": "7119",
+      "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 0,
-      "available": null,
+      "balance": 63080.383418995,
+      "available": 15891.02,
       "is_credit": false,
-      "is_loan": false,
-      "is_checking": false,
-      "is_savings": false
-    },
-    {
-      "bank": "Robinhood",
-      "nickname": "robin_2",
-      "name": "Robinhood Credit Card **8479",
-      "mask": "8479",
-      "type": "credit",
-      "subtype": "credit card",
-      "balance": 0,
-      "available": 3000,
-      "is_credit": true,
       "is_loan": false,
       "is_checking": false,
       "is_savings": false
     }
   ],
   "net_worth": {
-    "total_checking": 90786.83341899501,
-    "total_credit": 3582.1099999999997,
+    "total_checking": 153867.07683799003,
+    "total_credit": 6362.95,
     "total_loans": 385624.42,
-    "net": -298419.696581005
+    "net": -238120.29316200997
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -394,15 +380,15 @@
     "by_month": []
   },
   "spending": {
-    "Entertainment": 2049.5899999999997,
-    "Healthcare": 3480.51,
-    "Tech/Subs": 8616.37,
-    "Refund": -10673.47,
-    "Gas/Travel": 7820.700000000002,
-    "Shopping": 18774.88,
-    "Groceries": 3828.6899999999996,
-    "Restaurants": 3362.25,
-    "Tax/Professional": 19422.88,
+    "Entertainment": 2271.0999999999995,
+    "Healthcare": 3323.63,
+    "Tech/Subs": 9097.01,
+    "Refund": -10498.97,
+    "Gas/Travel": 8656.18,
+    "Shopping": 18180.600000000002,
+    "Groceries": 3709.26,
+    "Restaurants": 3536.5299999999997,
+    "Tax/Professional": 19386.88,
     "Insurance": 230.74
   },
   "zelle_received": [
@@ -592,34 +578,18 @@
     {
       "desc": "Garden Farm",
       "category": "Shopping",
-      "count": 12,
+      "count": 10,
       "months": 8,
-      "avg_amount": 70.12,
+      "avg_amount": 63.41,
       "last_amount": 79.37
-    },
-    {
-      "desc": "Walmart",
-      "category": "Shopping",
-      "count": 21,
-      "months": 8,
-      "avg_amount": 39.14,
-      "last_amount": -7.45
     },
     {
       "desc": "ShopRite",
       "category": "Groceries",
-      "count": 21,
+      "count": 22,
       "months": 8,
-      "avg_amount": 29.46,
+      "avg_amount": 31.86,
       "last_amount": 11.98
-    },
-    {
-      "desc": "Regal Cinemas",
-      "category": "Entertainment",
-      "count": 9,
-      "months": 8,
-      "avg_amount": 27.17,
-      "last_amount": 28.24
     },
     {
       "desc": "Amazon",
@@ -628,6 +598,14 @@
       "months": 8,
       "avg_amount": 24.39,
       "last_amount": 28.95
+    },
+    {
+      "desc": "Regal Cinemas",
+      "category": "Entertainment",
+      "count": 15,
+      "months": 8,
+      "avg_amount": 17.75,
+      "last_amount": 28.24
     },
     {
       "desc": "Kumon Of North",
@@ -640,9 +618,9 @@
     {
       "desc": "BP",
       "category": "Gas/Travel",
-      "count": 17,
+      "count": 15,
       "months": 7,
-      "avg_amount": 54.04,
+      "avg_amount": 55.26,
       "last_amount": 20.09
     },
     {
@@ -662,11 +640,19 @@
       "last_amount": 35.18
     },
     {
+      "desc": "Walmart",
+      "category": "Shopping",
+      "count": 18,
+      "months": 7,
+      "avg_amount": 33.25,
+      "last_amount": -7.45
+    },
+    {
       "desc": "Walgreens",
       "category": "Healthcare",
-      "count": 19,
+      "count": 17,
       "months": 7,
-      "avg_amount": 28.33,
+      "avg_amount": 24.56,
       "last_amount": 3.26
     },
     {
@@ -714,8 +700,8 @@
       "category": "Groceries",
       "count": 7,
       "months": 5,
-      "avg_amount": 96.34,
-      "last_amount": 90.46
+      "avg_amount": 97.42,
+      "last_amount": 82.65
     },
     {
       "desc": "NJ E-ZPass",
@@ -732,6 +718,14 @@
       "months": 5,
       "avg_amount": 55.45,
       "last_amount": 55.45
+    },
+    {
+      "desc": "Dunkin'",
+      "category": "Restaurants",
+      "count": 8,
+      "months": 5,
+      "avg_amount": 7.93,
+      "last_amount": 10.36
     },
     {
       "desc": "Netlify Fy",
@@ -756,14 +750,6 @@
       "months": 4,
       "avg_amount": 43.08,
       "last_amount": 13.14
-    },
-    {
-      "desc": "Renaissance Buy Rite",
-      "category": "Restaurants",
-      "count": 5,
-      "months": 4,
-      "avg_amount": 36.72,
-      "last_amount": 12.78
     },
     {
       "desc": "Shaan Halal Zabiha Meat",
@@ -798,14 +784,6 @@
       "last_amount": 15
     },
     {
-      "desc": "Dunkin'",
-      "category": "Restaurants",
-      "count": 7,
-      "months": 4,
-      "avg_amount": 8.14,
-      "last_amount": 10.36
-    },
-    {
       "desc": "R K Jewels",
       "category": "Shopping",
       "count": 3,
@@ -838,14 +816,6 @@
       "last_amount": 73.07
     },
     {
-      "desc": "The Home Depot",
-      "category": "Shopping",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 116.08,
-      "last_amount": 233.34
-    },
-    {
       "desc": "Claude Sub Anthropic.comca",
       "category": "Tech/Subs",
       "count": 3,
@@ -862,12 +832,12 @@
       "last_amount": 100
     },
     {
-      "desc": "Shell",
-      "category": "Gas/Travel",
-      "count": 5,
+      "desc": "Renaissance Buy Rite",
+      "category": "Restaurants",
+      "count": 4,
       "months": 3,
-      "avg_amount": 69.95,
-      "last_amount": 138.42
+      "avg_amount": 42.84,
+      "last_amount": 12.78
     },
     {
       "desc": "Shaan Halal Meat Market",
@@ -876,6 +846,14 @@
       "months": 3,
       "avg_amount": 42.7,
       "last_amount": 47.44
+    },
+    {
+      "desc": "Dollar Tree",
+      "category": "Shopping",
+      "count": 3,
+      "months": 3,
+      "avg_amount": 22.3,
+      "last_amount": 19.19
     },
     {
       "desc": "Netflix",
@@ -900,14 +878,6 @@
       "months": 3,
       "avg_amount": 21.06,
       "last_amount": 10.66
-    },
-    {
-      "desc": "Dollar Tree",
-      "category": "Shopping",
-      "count": 4,
-      "months": 3,
-      "avg_amount": 17.81,
-      "last_amount": 19.19
     },
     {
       "desc": "Kids Smile",
@@ -966,6 +936,14 @@
       "last_amount": 50
     },
     {
+      "desc": "The Home Depot",
+      "category": "Shopping",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 154.44,
+      "last_amount": 233.34
+    },
+    {
       "desc": "Twp of North Bru DES:XXXXX70922 ID:XXXXX76786 INDN:Vimal raj Loganathan CO ID:XXXXX79161 WEB",
       "category": "Tech/Subs",
       "count": 2,
@@ -980,14 +958,6 @@
       "months": 2,
       "avg_amount": 115,
       "last_amount": 115
-    },
-    {
-      "desc": "Grocery Outlet",
-      "category": "Groceries",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 103.43,
-      "last_amount": 175.39
     },
     {
       "desc": "The Children's Place",
@@ -1022,12 +992,12 @@
       "last_amount": 143
     },
     {
-      "desc": "PetSmart",
-      "category": "Shopping",
+      "desc": "Shell",
+      "category": "Gas/Travel",
       "count": 4,
       "months": 2,
-      "avg_amount": 60.96,
-      "last_amount": 17.04
+      "avg_amount": 73.31,
+      "last_amount": 138.42
     },
     {
       "desc": "Simplytrawell",
@@ -1044,6 +1014,22 @@
       "months": 2,
       "avg_amount": 57.7,
       "last_amount": 50.06
+    },
+    {
+      "desc": "DoorDash",
+      "category": "Restaurants",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 55.96,
+      "last_amount": 76.7
+    },
+    {
+      "desc": "PetSmart",
+      "category": "Shopping",
+      "count": 7,
+      "months": 2,
+      "avg_amount": 54.92,
+      "last_amount": 17.04
     },
     {
       "desc": "H&M",
@@ -1102,36 +1088,12 @@
       "last_amount": 46.88
     },
     {
-      "desc": "Sunoco",
-      "category": "Gas/Travel",
-      "count": 4,
-      "months": 2,
-      "avg_amount": 35.72,
-      "last_amount": 77.61
-    },
-    {
-      "desc": "Five Below",
-      "category": "Shopping",
-      "count": 3,
-      "months": 2,
-      "avg_amount": 34.24,
-      "last_amount": 47.98
-    },
-    {
-      "desc": "Vivek Flowers",
-      "category": "Shopping",
+      "desc": "AMC Theatres",
+      "category": "Entertainment",
       "count": 2,
       "months": 2,
-      "avg_amount": 33.32,
-      "last_amount": 29.32
-    },
-    {
-      "desc": "Macy's",
-      "category": "Shopping",
-      "count": 3,
-      "months": 2,
-      "avg_amount": 24.16,
-      "last_amount": 15.93
+      "avg_amount": 29.89,
+      "last_amount": 49.01
     },
     {
       "desc": "Deccan Halal Mart",
@@ -1182,6 +1144,14 @@
       "last_amount": 12.78
     },
     {
+      "desc": "Chipotle Mexican Grill",
+      "category": "Restaurants",
+      "count": 4,
+      "months": 2,
+      "avg_amount": 10.64,
+      "last_amount": 13.59
+    },
+    {
       "desc": "Patidar Supermarket",
       "category": "Groceries",
       "count": 2,
@@ -1190,20 +1160,28 @@
       "last_amount": 1.68
     },
     {
+      "desc": "Vzn Br Cafe",
+      "category": "Restaurants",
+      "count": 5,
+      "months": 2,
+      "avg_amount": 9.51,
+      "last_amount": 14.06
+    },
+    {
+      "desc": "Vrz Br Cafe",
+      "category": "Restaurants",
+      "count": 4,
+      "months": 2,
+      "avg_amount": 8.86,
+      "last_amount": 2.67
+    },
+    {
       "desc": "Wingstop",
       "category": "Restaurants",
       "count": 2,
       "months": 2,
       "avg_amount": 8.61,
       "last_amount": 5.95
-    },
-    {
-      "desc": "Vzn Br Cafe",
-      "category": "Restaurants",
-      "count": 4,
-      "months": 2,
-      "avg_amount": 8.38,
-      "last_amount": 14.06
     },
     {
       "desc": "Cvsextracare",
@@ -1237,7 +1215,7 @@
       "income": 3581.26,
       "bofa_income": 3581.26,
       "td_income": 0,
-      "outflows": 2083.37,
+      "outflows": 1939.63,
       "xoom": 0,
       "investments": 0
     },
@@ -1247,27 +1225,27 @@
       "income": 12779.789999999999,
       "bofa_income": 7779.79,
       "td_income": 5000,
-      "outflows": 10798.02,
+      "outflows": 10648.68,
       "xoom": 0,
       "investments": 0
     },
     {
       "period": "2026-03",
       "period_label": "March 2026",
-      "income": 12167.59,
-      "bofa_income": 7167.58,
+      "income": 12049.41,
+      "bofa_income": 7049.4,
       "td_income": 5000.01,
-      "outflows": 21588.9,
+      "outflows": 21190.05,
       "xoom": 0,
       "investments": 0
     },
     {
       "period": "2026-04",
       "period_label": "April 2026",
-      "income": 10029.55,
-      "bofa_income": 7529.53,
+      "income": 9910.97,
+      "bofa_income": 7410.95,
       "td_income": 2500.02,
-      "outflows": 4789.15,
+      "outflows": 4886.52,
       "xoom": 0,
       "investments": 0
     },
@@ -1277,7 +1255,7 @@
       "income": 8900.41,
       "bofa_income": 8900.41,
       "td_income": 0,
-      "outflows": 4337.53,
+      "outflows": 3987.04,
       "xoom": 0,
       "investments": 0
     },
@@ -1287,17 +1265,17 @@
       "income": 16362.05,
       "bofa_income": 16362.05,
       "td_income": 0,
-      "outflows": 6944.08,
+      "outflows": 6127.94,
       "xoom": 0,
       "investments": 0
     },
     {
       "period": "2026-07",
       "period_label": "July 2026",
-      "income": 24345.2,
-      "bofa_income": 24345.2,
+      "income": 24340.82,
+      "bofa_income": 24340.82,
       "td_income": 0,
-      "outflows": 2350.79,
+      "outflows": 3815.09,
       "xoom": 0,
       "investments": 0
     },
@@ -1307,7 +1285,7 @@
       "income": 19799.04,
       "bofa_income": 19799.04,
       "td_income": 0,
-      "outflows": 4021.3,
+      "outflows": 5298.01,
       "xoom": 0,
       "investments": 0
     }
@@ -1317,18 +1295,18 @@
       "label": "August 2026",
       "period": "2026-08",
       "categories": {
-        "Entertainment": 511.3,
+        "Entertainment": 681.6800000000001,
         "Healthcare": 211.07000000000002,
-        "Tech/Subs": 1166.83,
+        "Tech/Subs": 1700.9699999999998,
         "Refund": -4024.69,
-        "Gas/Travel": 278.94,
-        "Shopping": 4574.240000000001,
-        "Groceries": 464.2,
-        "Restaurants": 715.8500000000001,
-        "Tax/Professional": 78.76,
+        "Gas/Travel": 359.15999999999997,
+        "Shopping": 4859.830000000001,
+        "Groceries": 571.63,
+        "Restaurants": 800.8000000000002,
+        "Tax/Professional": 92.76,
         "Insurance": 44.8
       },
-      "total": 4021.2999999999993,
+      "total": 5298.01,
       "transactions": [
         {
           "date": "08-26",
@@ -2824,6 +2802,305 @@
           "mask": "0494",
           "pending": false,
           "refund": false
+        },
+        {
+          "date": "08-01",
+          "desc": "Peregrineenterprises",
+          "amount": 30,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-01",
+          "desc": "Peregrineenterprises",
+          "amount": 35,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-01",
+          "desc": "AMC Theatres",
+          "amount": 10.76,
+          "category": "Entertainment",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-02",
+          "desc": "Patel Brothers",
+          "amount": 107.43,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-02",
+          "desc": "PetSmart",
+          "amount": 60.71,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-03",
+          "desc": "Skechers Warehouse Outlet",
+          "amount": 79.99,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-03",
+          "desc": "Habibi Motor Cafe",
+          "amount": 20.79,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-04",
+          "desc": "Wawa",
+          "amount": 68.22,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-04",
+          "desc": "PetSmart",
+          "amount": 41.55,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-05",
+          "desc": "Regal Cinemas",
+          "amount": 1.59,
+          "category": "Entertainment",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-05",
+          "desc": "Regal Cinemas",
+          "amount": 11.67,
+          "category": "Entertainment",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-07",
+          "desc": "PetSmart",
+          "amount": 38.34,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-10",
+          "desc": "Greekpeak",
+          "amount": 140,
+          "category": "Entertainment",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-12",
+          "desc": "Auburn Limousine",
+          "amount": 14,
+          "category": "Tax/Professional",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-14",
+          "desc": "DoorDash",
+          "amount": 35.21,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-14",
+          "desc": "Regal Cinemas",
+          "amount": 2.12,
+          "category": "Entertainment",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-14",
+          "desc": "Raj Auto Center",
+          "amount": 534.14,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-15",
+          "desc": "Long Branch Parking",
+          "amount": 12,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-15",
+          "desc": "Regal Cinemas",
+          "amount": 2.12,
+          "category": "Entertainment",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-15",
+          "desc": "Chipotle Mexican Grill",
+          "amount": 10.45,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-15",
+          "desc": "Chipotle Mexican Grill",
+          "amount": 3.41,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-15",
+          "desc": "Chipotle Mexican Grill",
+          "amount": 15.09,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-27",
+          "desc": "Regal Cinemas",
+          "amount": 2.12,
+          "category": "Entertainment",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
         }
       ]
     },
@@ -2831,17 +3108,17 @@
       "label": "July 2026",
       "period": "2026-07",
       "categories": {
-        "Tech/Subs": 1723.27,
-        "Gas/Travel": 777.2699999999999,
-        "Entertainment": 316.23,
-        "Shopping": 1343.7099999999998,
-        "Healthcare": 985.2,
+        "Tech/Subs": 1772.27,
+        "Gas/Travel": 1744.1799999999998,
+        "Entertainment": 367.36,
+        "Shopping": 1272.3,
+        "Healthcare": 1008.99,
         "Refund": -3801.85,
-        "Tax/Professional": 320.16,
-        "Groceries": 573.1899999999998,
-        "Restaurants": 113.61000000000001
+        "Tax/Professional": 281.16,
+        "Groceries": 784.8299999999998,
+        "Restaurants": 385.85
       },
-      "total": 2350.7899999999995,
+      "total": 3815.0899999999983,
       "transactions": [
         {
           "date": "07-31",
@@ -3858,54 +4135,262 @@
           "refund": true
         },
         {
-          "date": "07-02",
-          "desc": "REG_COMMERCE CTR_",
-          "amount": 34.09,
-          "category": "Shopping",
+          "date": "07-31",
+          "desc": "Vrz Br Cafe",
+          "amount": 6.24,
+          "category": "Restaurants",
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
           "pending": false,
           "refund": false
         },
         {
-          "date": "07-03",
-          "desc": "Vivek Flowers",
-          "amount": 37.32,
-          "category": "Shopping",
+          "date": "07-31",
+          "desc": "Village Brewing Company",
+          "amount": 77.7,
+          "category": "Restaurants",
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
           "pending": false,
           "refund": false
         },
         {
-          "date": "07-04",
-          "desc": "Goldie Lox",
-          "amount": 6.21,
+          "date": "07-12",
+          "desc": "Dunkin'",
+          "amount": 6.46,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-12",
+          "desc": "ShopRite",
+          "amount": 40.99,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-14",
+          "desc": "Vrz Sbx Cafe",
+          "amount": 12.48,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-14",
+          "desc": "Taco Bell",
+          "amount": 5,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-16",
+          "desc": "Gold Annual",
+          "amount": 49,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-17",
+          "desc": "Regal Cinemas",
+          "amount": 2.12,
+          "category": "Entertainment",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-19",
+          "desc": "Hair Time Salon",
+          "amount": 30,
           "category": "Healthcare",
           "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
           "pending": false,
           "refund": false
         },
         {
-          "date": "07-05",
-          "desc": "Om Sri Sai Balaji",
-          "amount": 39,
-          "category": "Tax/Professional",
-          "city": "Temple",
+          "date": "07-21",
+          "desc": "Patel Brothers",
+          "amount": 80.59,
+          "category": "Groceries",
+          "city": null,
           "state": null,
           "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-21",
+          "desc": "Vzn Br Cafe",
+          "amount": 14.06,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-21",
+          "desc": "Gulf Oil",
+          "amount": 73,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-24",
+          "desc": "DoorDash",
+          "amount": 76.7,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-24",
+          "desc": "Buy Rite Renaissance",
+          "amount": 21.85,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-25",
+          "desc": "ShopRite",
+          "amount": 18.43,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-25",
+          "desc": "Chowpatty Sweets And Snacks",
+          "amount": 51.75,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-26",
+          "desc": "AMC Theatres",
+          "amount": 49.01,
+          "category": "Entertainment",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-29",
+          "desc": "ShopRite",
+          "amount": 71.63,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-30",
+          "desc": "Expedia",
+          "amount": 642.18,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-30",
+          "desc": "Expedia",
+          "amount": 251.73,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "AkQ1EznZ6kf6Mx1D9oMosmZEjVBYD1TX0e8P0",
+          "mask": "1345",
           "pending": false,
           "refund": false
         }
@@ -3915,17 +4400,17 @@
       "label": "June 2026",
       "period": "2026-06",
       "categories": {
-        "Healthcare": 1335.52,
-        "Tech/Subs": 1451.95,
+        "Healthcare": 1214.85,
+        "Tech/Subs": 1399.45,
         "Entertainment": 688.15,
-        "Gas/Travel": 1079.39,
+        "Gas/Travel": 867.74,
         "Refund": -346.76000000000005,
-        "Shopping": 881.4400000000002,
-        "Restaurants": 457.08000000000004,
-        "Tax/Professional": 1105.91,
-        "Groceries": 291.40000000000003
+        "Shopping": 635.44,
+        "Restaurants": 304.51000000000005,
+        "Tax/Professional": 1094.91,
+        "Groceries": 269.65000000000003
       },
-      "total": 6944.079999999998,
+      "total": 6127.939999999999,
       "transactions": [
         {
           "date": "06-17",
@@ -5122,240 +5607,6 @@
           "mask": "0494",
           "pending": false,
           "refund": false
-        },
-        {
-          "date": "06-04",
-          "desc": "Walgreens",
-          "amount": 18.99,
-          "category": "Healthcare",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-05",
-          "desc": "Renaissance Buy Rite",
-          "amount": 12.25,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-06",
-          "desc": "ShopRite",
-          "amount": 21.75,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-06",
-          "desc": "Garden Farm",
-          "amount": 147.95,
-          "category": "Shopping",
-          "city": "Brunswick",
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-06",
-          "desc": "Hindu American Temple And Cultural Center",
-          "amount": 11,
-          "category": "Tax/Professional",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-06",
-          "desc": "The Home Depot",
-          "amount": 39.36,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-06",
-          "desc": "Five Below",
-          "amount": 54.37,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-07",
-          "desc": "Walgreens",
-          "amount": 101.68,
-          "category": "Healthcare",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-10",
-          "desc": "UPS",
-          "amount": 52.5,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-10",
-          "desc": "BP",
-          "amount": 52.67,
-          "category": "Gas/Travel",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-12",
-          "desc": "Sunoco",
-          "amount": 52.8,
-          "category": "Gas/Travel",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-12",
-          "desc": "Sunoco",
-          "amount": 8.47,
-          "category": "Gas/Travel",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-12",
-          "desc": "Sunoco",
-          "amount": 3.99,
-          "category": "Gas/Travel",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-13",
-          "desc": "BP",
-          "amount": 37.21,
-          "category": "Gas/Travel",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-17",
-          "desc": "Shell",
-          "amount": 56.51,
-          "category": "Gas/Travel",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-18",
-          "desc": "Dollar Tree",
-          "amount": 4.32,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-19",
-          "desc": "Filli Cafe",
-          "amount": 56.62,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "06-20",
-          "desc": "Nyc Indian Grill",
-          "amount": 83.7,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
         }
       ]
     },
@@ -5364,16 +5615,16 @@
       "period": "2026-04",
       "categories": {
         "Shopping": 1036.39,
-        "Tech/Subs": 1371.2,
-        "Groceries": 625.5299999999999,
+        "Tech/Subs": 1321.2,
+        "Groceries": 598.3999999999999,
         "Restaurants": 252.89000000000001,
         "Gas/Travel": 550.7,
         "Healthcare": 473.5199999999999,
-        "Refund": -273.05,
+        "Refund": -98.55000000000001,
         "Entertainment": 28.24,
         "Tax/Professional": 723.73
       },
-      "total": 4789.150000000001,
+      "total": 4886.52,
       "transactions": [
         {
           "date": "04-16",
@@ -6323,45 +6574,6 @@
           "mask": "2776",
           "pending": false,
           "refund": false
-        },
-        {
-          "date": "04-03",
-          "desc": "Walmart",
-          "amount": -174.5,
-          "category": "Refund",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": true
-        },
-        {
-          "date": "04-27",
-          "desc": "Gold Annual",
-          "amount": 50,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "04-28",
-          "desc": "ShopRite",
-          "amount": 27.13,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
         }
       ]
     },
@@ -6369,17 +6581,17 @@
       "label": "March 2026",
       "period": "2026-03",
       "categories": {
-        "Shopping": 1616.6399999999999,
+        "Shopping": 1225.9699999999998,
         "Restaurants": 793.8700000000001,
         "Gas/Travel": 933.9300000000001,
         "Tech/Subs": 877.77,
         "Entertainment": 171.45,
-        "Groceries": 459.48999999999995,
+        "Groceries": 451.30999999999995,
         "Healthcare": 35.33,
         "Refund": -34.58,
         "Tax/Professional": 16735
       },
-      "total": 21588.9,
+      "total": 21190.05,
       "transactions": [
         {
           "date": "03-31",
@@ -7446,45 +7658,6 @@
           "mask": "2776",
           "pending": false,
           "refund": false
-        },
-        {
-          "date": "03-22",
-          "desc": "Burlington",
-          "amount": 76.4,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "03-28",
-          "desc": "Walmart",
-          "amount": 314.27,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "03-14",
-          "desc": "Patidar",
-          "amount": 8.18,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
         }
       ]
     },
@@ -7492,10 +7665,10 @@
       "label": "February 2026",
       "period": "2026-02",
       "categories": {
-        "Shopping": 6440.31,
+        "Shopping": 6380.97,
         "Gas/Travel": 3511.57,
         "Tech/Subs": 984.57,
-        "Groceries": 481.93999999999994,
+        "Groceries": 391.93999999999994,
         "Insurance": 185.94,
         "Restaurants": 311.9,
         "Healthcare": 123.42000000000002,
@@ -7503,7 +7676,7 @@
         "Refund": -1505.87,
         "Tax/Professional": 11
       },
-      "total": 10798.019999999999,
+      "total": 10648.679999999998,
       "transactions": [
         {
           "date": "02-26",
@@ -8414,32 +8587,6 @@
           "mask": "2776",
           "pending": false,
           "refund": false
-        },
-        {
-          "date": "02-21",
-          "desc": "Garden Farm",
-          "amount": 59.34,
-          "category": "Shopping",
-          "city": "Brunswick",
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "02-21",
-          "desc": "Patel Brothers",
-          "amount": 90,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
         }
       ]
     },
@@ -8448,15 +8595,15 @@
       "period": "2026-01",
       "categories": {
         "Gas/Travel": 452.59,
-        "Healthcare": 187.86,
+        "Healthcare": 127.86,
         "Tech/Subs": 247.79000000000002,
-        "Shopping": 536.44,
+        "Shopping": 452.70000000000005,
         "Restaurants": 26.64,
         "Entertainment": 28.24,
         "Groceries": 155.49,
         "Tax/Professional": 448.32
       },
-      "total": 2083.37,
+      "total": 1939.6299999999999,
       "transactions": [
         {
           "date": "01-24",
@@ -8847,32 +8994,6 @@
           "mask": "2776",
           "pending": false,
           "refund": false
-        },
-        {
-          "date": "01-31",
-          "desc": "Walmart",
-          "amount": 83.74,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "01-31",
-          "desc": "Hair Time Salon",
-          "amount": 60,
-          "category": "Healthcare",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
         }
       ]
     },
@@ -8880,16 +9001,16 @@
       "label": "May 2026",
       "period": "2026-05",
       "categories": {
-        "Shopping": 2345.7099999999996,
-        "Restaurants": 690.4099999999999,
+        "Shopping": 2316.9999999999995,
+        "Restaurants": 660.0699999999999,
         "Tech/Subs": 792.99,
         "Gas/Travel": 236.31000000000003,
         "Refund": -686.6700000000001,
         "Entertainment": 52.739999999999995,
         "Healthcare": 128.59,
-        "Groceries": 777.45
+        "Groceries": 486.01000000000005
       },
-      "total": 4337.530000000001,
+      "total": 3987.04,
       "transactions": [
         {
           "date": "05-03",
@@ -9969,110 +10090,6 @@
           "mask": "2776",
           "pending": false,
           "refund": true
-        },
-        {
-          "date": "05-02",
-          "desc": "Mila Foods",
-          "amount": 18.13,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "05-02",
-          "desc": "Mila Foods",
-          "amount": 7.46,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "05-02",
-          "desc": "Grocery Outlet",
-          "amount": 175.39,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "05-11",
-          "desc": "Ruby Thai Kitchen",
-          "amount": 19.68,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "05-10",
-          "desc": "Macy's",
-          "amount": 15.93,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "05-10",
-          "desc": "Mr Tanghulu",
-          "amount": 10.66,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "05-10",
-          "desc": "Patel Brothers",
-          "amount": 90.46,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "05-30",
-          "desc": "Reg Commerce Ctr",
-          "amount": 12.78,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "q7ZXdn0RynTA3jea4E9nhpqaAOONwLHqmkkab",
-          "mask": "8479",
-          "pending": false,
-          "refund": false
         }
       ]
     }
@@ -11417,7 +11434,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-30T01:04:25.252Z",
+  "generated_at": "2026-08-30T01:14:33.061Z",
   "source": "plaid_realtime",
   "statement_count": "9 live accounts",
   "sync_status": {
@@ -11521,13 +11538,12 @@
       {
         "nickname": "robin_2",
         "ok": true,
-        "accounts": 4,
+        "accounts": 3,
         "source": "PLAID_TOKEN_ROBIN",
         "masks": [
-          "6390",
-          "6644",
-          "7119",
-          "8479"
+          "1345",
+          "7397",
+          "7724"
         ]
       }
     ],
