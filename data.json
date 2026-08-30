@@ -2,7 +2,7 @@
   "kpis": {
     "income": 19799.04,
     "income_period": "August 2026",
-    "true_outflows": 5298.01,
+    "true_outflows": 5341,
     "outflows_period": "August 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,10 +16,10 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 1433.98,
+      "balance": 1476.97,
       "is_credit": true,
       "period_label": "Live",
-      "wf_checking": 99.81
+      "wf_checking": 660.52
     },
     "td": {
       "balance": 0,
@@ -133,7 +133,7 @@
       "mask": "3068",
       "type": "depository",
       "subtype": "checking",
-      "balance": 99.81,
+      "balance": 660.52,
       "available": 660.52,
       "is_credit": false,
       "is_loan": false,
@@ -147,8 +147,8 @@
       "mask": "8036",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 1.99,
-      "available": 998,
+      "balance": 0,
+      "available": 1000,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -161,8 +161,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 1431.99,
-      "available": 1514,
+      "balance": 1476.97,
+      "available": 1360,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 94725.57341899499,
-    "total_credit": 6362.95,
+    "total_checking": 95286.283418995,
+    "total_credit": 6405.9400000000005,
     "total_loans": 385624.42,
-    "net": -297261.796581005
+    "net": -296744.076581005
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -369,11 +369,11 @@
     "Entertainment": 2271.0999999999995,
     "Healthcare": 3323.63,
     "Tech/Subs": 9097.01,
-    "Refund": -10498.97,
+    "Refund": -10500.960000000001,
     "Gas/Travel": 8656.18,
-    "Shopping": 18180.600000000002,
+    "Shopping": 18194.45,
     "Groceries": 3709.26,
-    "Restaurants": 3536.5299999999997,
+    "Restaurants": 3567.66,
     "Tax/Professional": 19386.88,
     "Insurance": 230.74
   },
@@ -421,20 +421,20 @@
       "period_label": "August 2026"
     },
     {
-      "from": "FROM PRADEEP CHELLUR ON 08/28 REF # JPM99",
+      "from": "FROM RAJASEKHAR SALA ON 08/26 REF # PNCAA0COR95A LONGBR EXPENSES",
+      "amount": 16.2,
+      "period": "2026-08",
+      "period_label": "August 2026"
+    },
+    {
+      "from": "FROM PRADEEP CHELLUR ON 08/28 REF # JPM99CUKCXXI GAME SOMA",
       "amount": 20,
       "period": "2026-08",
       "period_label": "August 2026"
     },
     {
-      "from": "FROM DEEPAK REDDY DEVULAPALLY ON 08/27 RE",
+      "from": "FROM DEEPAK REDDY DEVULAPALLY ON 08/27 REF # JPM99CUJPLDY MONTHLY PHONE BILL",
       "amount": 40.71,
-      "period": "2026-08",
-      "period_label": "August 2026"
-    },
-    {
-      "from": "FROM RAJASEKHAR SALA ON 08/26 REF # PNCAA0COR95A LONGBR EXPENSES",
-      "amount": 16.2,
       "period": "2026-08",
       "period_label": "August 2026"
     },
@@ -580,9 +580,9 @@
     {
       "desc": "Amazon",
       "category": "Shopping",
-      "count": 76,
+      "count": 77,
       "months": 8,
-      "avg_amount": 24.39,
+      "avg_amount": 24.25,
       "last_amount": 28.95
     },
     {
@@ -1271,7 +1271,7 @@
       "income": 19799.04,
       "bofa_income": 19799.04,
       "td_income": 0,
-      "outflows": 5298.01,
+      "outflows": 5341,
       "xoom": 0,
       "investments": 0
     }
@@ -1284,15 +1284,15 @@
         "Entertainment": 681.6800000000001,
         "Healthcare": 211.07000000000002,
         "Tech/Subs": 1700.9699999999998,
-        "Refund": -4024.69,
+        "Refund": -4026.68,
         "Gas/Travel": 359.15999999999997,
-        "Shopping": 4859.830000000001,
+        "Shopping": 4873.68,
         "Groceries": 571.63,
-        "Restaurants": 800.8000000000002,
+        "Restaurants": 831.9300000000002,
         "Tax/Professional": 92.76,
         "Insurance": 44.8
       },
-      "total": 5298.01,
+      "total": 5341,
       "transactions": [
         {
           "date": "08-26",
@@ -2484,6 +2484,45 @@
           "category": "Entertainment",
           "city": null,
           "state": "TN",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-28",
+          "desc": "ACCOUNT ADJUSTMENT",
+          "amount": -1.99,
+          "category": "Refund",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "dM5Ed30xEot9Ap000VOXuYRQY0X87ASg8Zep8",
+          "mask": "8036",
+          "pending": false,
+          "refund": true
+        },
+        {
+          "date": "08-27",
+          "desc": "Amazon",
+          "amount": 13.85,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-27",
+          "desc": "Bikanervala",
+          "amount": 31.13,
+          "category": "Restaurants",
+          "city": "Kendall Park",
+          "state": "NJ",
           "bank": "Wells Fargo",
           "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
           "mask": "9762",
@@ -11420,7 +11459,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-30T12:00:55.996Z",
+  "generated_at": "2026-08-30T18:00:59.323Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -11524,7 +11563,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1030,
+    "txns_fetched": 1033,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
