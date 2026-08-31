@@ -2,7 +2,7 @@
   "kpis": {
     "income": 19799.04,
     "income_period": "August 2026",
-    "true_outflows": 5341,
+    "true_outflows": 5387.43,
     "outflows_period": "August 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -316,7 +316,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 2780.84,
-      "available": 7219,
+      "available": 9954,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -372,7 +372,7 @@
     "Refund": -10500.960000000001,
     "Gas/Travel": 8656.18,
     "Shopping": 18194.45,
-    "Groceries": 3709.26,
+    "Groceries": 3755.6899999999996,
     "Restaurants": 3567.66,
     "Tax/Professional": 19386.88,
     "Insurance": 230.74
@@ -559,7 +559,16 @@
       "period_label": "August 2026"
     }
   ],
-  "pending_transactions": [],
+  "pending_transactions": [
+    {
+      "date": "08-30",
+      "desc": "Deccan Halal Mart",
+      "amount": 46.43,
+      "category": "Groceries",
+      "bank": "Robinhood",
+      "pending": true
+    }
+  ],
   "detected_recurring": [
     {
       "desc": "Garden Farm",
@@ -1084,9 +1093,9 @@
     {
       "desc": "Deccan Halal Mart",
       "category": "Groceries",
-      "count": 7,
+      "count": 8,
       "months": 2,
-      "avg_amount": 20.66,
+      "avg_amount": 23.88,
       "last_amount": 12.06
     },
     {
@@ -1271,7 +1280,7 @@
       "income": 19799.04,
       "bofa_income": 19799.04,
       "td_income": 0,
-      "outflows": 5341,
+      "outflows": 5387.43,
       "xoom": 0,
       "investments": 0
     }
@@ -1287,12 +1296,12 @@
         "Refund": -4026.68,
         "Gas/Travel": 359.15999999999997,
         "Shopping": 4873.68,
-        "Groceries": 571.63,
+        "Groceries": 618.06,
         "Restaurants": 831.9300000000002,
         "Tax/Professional": 92.76,
         "Insurance": 44.8
       },
-      "total": 5341,
+      "total": 5387.43,
       "transactions": [
         {
           "date": "08-26",
@@ -3119,6 +3128,19 @@
           "desc": "Regal Cinemas",
           "amount": 2.12,
           "category": "Entertainment",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-30",
+          "desc": "Deccan Halal Mart",
+          "amount": 46.43,
+          "category": "Groceries",
           "city": null,
           "state": null,
           "bank": "Robinhood",
@@ -11459,7 +11481,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-31T00:21:02.610Z",
+  "generated_at": "2026-08-31T06:01:05.703Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -11563,7 +11585,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1033,
+    "txns_fetched": 1035,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
