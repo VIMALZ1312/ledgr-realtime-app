@@ -260,7 +260,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 18238.73,
-      "available": 18238.73,
+      "available": 18246.73,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -555,6 +555,12 @@
     {
       "from": "payment from PRUDHVI ANANTHULA for \"POTLUCK AMOUNT\"; Conf# T22H7VM5P",
       "amount": 75,
+      "period": "2026-08",
+      "period_label": "August 2026"
+    },
+    {
+      "from": "Transfer Conf# 99CUTIEB5; LAKSHMI SOWJANYA CHINTA",
+      "amount": 8,
       "period": "2026-08",
       "period_label": "August 2026"
     }
@@ -11481,7 +11487,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-08-31T06:01:05.703Z",
+  "generated_at": "2026-08-31T12:01:02.131Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -11585,7 +11591,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1035,
+    "txns_fetched": 1036,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
