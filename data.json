@@ -2,7 +2,7 @@
   "kpis": {
     "income": 19799.04,
     "income_period": "August 2026",
-    "true_outflows": 5387.43,
+    "true_outflows": 6012.05,
     "outflows_period": "August 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -92,7 +92,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 5327.25,
-      "available": 5327.25,
+      "available": 4702.63,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -315,7 +315,7 @@
       "mask": "1345",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 2780.84,
+      "balance": 0,
       "available": 9954,
       "is_credit": true,
       "is_loan": false,
@@ -329,7 +329,7 @@
       "mask": "7397",
       "type": "investment",
       "subtype": "crypto exchange",
-      "balance": 19.74,
+      "balance": 19.88,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -343,7 +343,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 63080.383418995,
+      "balance": 63494.065477565,
       "available": 15891.02,
       "is_credit": false,
       "is_loan": false,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 95286.283418995,
-    "total_credit": 6405.9400000000005,
+    "total_checking": 95699.965477565,
+    "total_credit": 3625.1,
     "total_loans": 385624.42,
-    "net": -296744.076581005
+    "net": -293549.554522435
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -368,9 +368,9 @@
   "spending": {
     "Entertainment": 2271.0999999999995,
     "Healthcare": 3323.63,
-    "Tech/Subs": 9097.01,
+    "Tech/Subs": 9475.77,
     "Refund": -10500.960000000001,
-    "Gas/Travel": 8656.18,
+    "Gas/Travel": 8902.039999999999,
     "Shopping": 18194.45,
     "Groceries": 3755.6899999999996,
     "Restaurants": 3567.66,
@@ -566,6 +566,38 @@
     }
   ],
   "pending_transactions": [
+    {
+      "date": "08-31",
+      "desc": "Optimum",
+      "amount": 69.66,
+      "category": "Tech/Subs",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "08-31",
+      "desc": "Hold Renaissance Gree Renaissanc",
+      "amount": 115,
+      "category": "Tech/Subs",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "08-31",
+      "desc": "ACH HOLD Twp of North Bru ON 08/31",
+      "amount": 194.1,
+      "category": "Tech/Subs",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "08-31",
+      "desc": "Public Service",
+      "amount": 245.86,
+      "category": "Gas/Travel",
+      "bank": "BofA",
+      "pending": true
+    },
     {
       "date": "08-30",
       "desc": "Deccan Halal Mart",
@@ -809,6 +841,14 @@
       "last_amount": 290.11
     },
     {
+      "desc": "Public Service",
+      "category": "Gas/Travel",
+      "count": 4,
+      "months": 3,
+      "avg_amount": 232.03,
+      "last_amount": 190.62
+    },
+    {
       "desc": "House of Biryani's and Kebabs",
       "category": "Restaurants",
       "count": 4,
@@ -831,6 +871,14 @@
       "months": 3,
       "avg_amount": 76.76,
       "last_amount": 100
+    },
+    {
+      "desc": "Optimum",
+      "category": "Tech/Subs",
+      "count": 4,
+      "months": 3,
+      "avg_amount": 55.41,
+      "last_amount": 50.66
     },
     {
       "desc": "Renaissance Buy Rite",
@@ -911,14 +959,6 @@
       "months": 2,
       "avg_amount": 255.23,
       "last_amount": 229.29
-    },
-    {
-      "desc": "Public Service",
-      "category": "Gas/Travel",
-      "count": 3,
-      "months": 2,
-      "avg_amount": 227.41,
-      "last_amount": 190.62
     },
     {
       "desc": "Best Buy",
@@ -1047,14 +1087,6 @@
       "months": 2,
       "avg_amount": 53.89,
       "last_amount": 50.14
-    },
-    {
-      "desc": "Optimum",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 2,
-      "avg_amount": 50.66,
-      "last_amount": 50.66
     },
     {
       "desc": "DRIVEEZMD MPC",
@@ -1286,7 +1318,7 @@
       "income": 19799.04,
       "bofa_income": 19799.04,
       "td_income": 0,
-      "outflows": 5387.43,
+      "outflows": 6012.05,
       "xoom": 0,
       "investments": 0
     }
@@ -1298,16 +1330,16 @@
       "categories": {
         "Entertainment": 681.6800000000001,
         "Healthcare": 211.07000000000002,
-        "Tech/Subs": 1700.9699999999998,
+        "Tech/Subs": 2079.73,
         "Refund": -4026.68,
-        "Gas/Travel": 359.15999999999997,
+        "Gas/Travel": 605.02,
         "Shopping": 4873.68,
         "Groceries": 618.06,
         "Restaurants": 831.9300000000002,
         "Tax/Professional": 92.76,
         "Insurance": 44.8
       },
-      "total": 5387.43,
+      "total": 6012.050000000002,
       "transactions": [
         {
           "date": "08-26",
@@ -1405,6 +1437,58 @@
           "desc": "Twp of North Bru DES:XXXXX70922 ID:XXXXX76786 INDN:Vimal raj Loganathan CO ID:XXXXX79161 WEB",
           "amount": 91.34,
           "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "jJEy77qLQxHNznaqxjJAhmEBM05B06iRRwaZd",
+          "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-31",
+          "desc": "Optimum",
+          "amount": 69.66,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "jJEy77qLQxHNznaqxjJAhmEBM05B06iRRwaZd",
+          "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-31",
+          "desc": "Hold Renaissance Gree Renaissanc",
+          "amount": 115,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "jJEy77qLQxHNznaqxjJAhmEBM05B06iRRwaZd",
+          "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-31",
+          "desc": "ACH HOLD Twp of North Bru ON 08/31",
+          "amount": 194.1,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "jJEy77qLQxHNznaqxjJAhmEBM05B06iRRwaZd",
+          "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-31",
+          "desc": "Public Service",
+          "amount": 245.86,
+          "category": "Gas/Travel",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -11487,7 +11571,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-01T00:02:31.949Z",
+  "generated_at": "2026-09-01T06:00:56.115Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -11591,7 +11675,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1036,
+    "txns_fetched": 1040,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
