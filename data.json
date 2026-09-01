@@ -2,14 +2,14 @@
   "kpis": {
     "income": 19799.04,
     "income_period": "August 2026",
-    "true_outflows": 6012.05,
+    "true_outflows": 6158.8,
     "outflows_period": "August 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 31449.67,
+      "balance": 31457.67,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -259,7 +259,7 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 18238.73,
+      "balance": 18246.73,
       "available": 18246.73,
       "is_credit": false,
       "is_loan": false,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 95699.965477565,
+    "total_checking": 95707.965477565,
     "total_credit": 3625.1,
     "total_loans": 385624.42,
-    "net": -293549.554522435
+    "net": -293541.554522435
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -372,7 +372,7 @@
     "Refund": -10500.960000000001,
     "Gas/Travel": 8902.039999999999,
     "Shopping": 18194.45,
-    "Groceries": 3755.6899999999996,
+    "Groceries": 3902.4399999999996,
     "Restaurants": 3567.66,
     "Tax/Professional": 19386.88,
     "Insurance": 230.74
@@ -559,7 +559,7 @@
       "period_label": "August 2026"
     },
     {
-      "from": "Transfer Conf# 99CUTIEB5; LAKSHMI SOWJANYA CHINTA",
+      "from": "payment from LAKSHMI Sowjanya CHINTA for \"Bangles\"; Conf# 99cutieb5",
       "amount": 8,
       "period": "2026-08",
       "period_label": "August 2026"
@@ -599,6 +599,14 @@
       "pending": true
     },
     {
+      "date": "08-31",
+      "desc": "Delight Big Bazar",
+      "amount": 146.75,
+      "category": "Groceries",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
       "date": "08-30",
       "desc": "Deccan Halal Mart",
       "amount": 46.43,
@@ -615,6 +623,14 @@
       "months": 8,
       "avg_amount": 63.41,
       "last_amount": 79.37
+    },
+    {
+      "desc": "Delight Big Bazar",
+      "category": "Groceries",
+      "count": 11,
+      "months": 8,
+      "avg_amount": 60.28,
+      "last_amount": 42.93
     },
     {
       "desc": "ShopRite",
@@ -655,14 +671,6 @@
       "months": 7,
       "avg_amount": 55.26,
       "last_amount": 20.09
-    },
-    {
-      "desc": "Delight Big Bazar",
-      "category": "Groceries",
-      "count": 10,
-      "months": 7,
-      "avg_amount": 51.63,
-      "last_amount": 42.93
     },
     {
       "desc": "Simplisafe",
@@ -1318,7 +1326,7 @@
       "income": 19799.04,
       "bofa_income": 19799.04,
       "td_income": 0,
-      "outflows": 6012.05,
+      "outflows": 6158.8,
       "xoom": 0,
       "investments": 0
     }
@@ -1334,12 +1342,12 @@
         "Refund": -4026.68,
         "Gas/Travel": 605.02,
         "Shopping": 4873.68,
-        "Groceries": 618.06,
+        "Groceries": 764.8100000000001,
         "Restaurants": 831.9300000000002,
         "Tax/Professional": 92.76,
         "Insurance": 44.8
       },
-      "total": 6012.050000000002,
+      "total": 6158.800000000002,
       "transactions": [
         {
           "date": "08-26",
@@ -2908,6 +2916,19 @@
           "category": "Shopping",
           "city": null,
           "state": "AR",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-31",
+          "desc": "Delight Big Bazar",
+          "amount": 146.75,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -11571,7 +11592,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-01T06:00:56.115Z",
+  "generated_at": "2026-09-01T12:01:09.394Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -11675,7 +11696,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1040,
+    "txns_fetched": 1041,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
