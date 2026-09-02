@@ -1,15 +1,15 @@
 {
   "kpis": {
-    "income": 19799.04,
-    "income_period": "August 2026",
-    "true_outflows": 6449.24,
-    "outflows_period": "August 2026",
+    "income": 0,
+    "income_period": "",
+    "true_outflows": 426.75,
+    "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 30833.05,
+      "balance": 30553.05,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -231,8 +231,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 285.59,
-      "available": 414.41,
+      "balance": 432.34,
+      "available": 267.66,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -259,8 +259,8 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 18246.73,
-      "available": 18246.73,
+      "balance": 17966.73,
+      "available": 17966.73,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -329,7 +329,7 @@
       "mask": "7397",
       "type": "investment",
       "subtype": "crypto exchange",
-      "balance": 19.23,
+      "balance": 19.4,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -343,7 +343,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 61839.6695192,
+      "balance": 62078.83065691,
       "available": 15891.02,
       "is_credit": false,
       "is_loan": false,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 93428.94951919999,
-    "total_credit": 3961.97,
+    "total_checking": 93388.11065691,
+    "total_credit": 4108.72,
     "total_loans": 385624.42,
-    "net": -296157.4404808
+    "net": -296345.02934309
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -368,7 +368,7 @@
   "spending": {
     "Entertainment": 2276.42,
     "Healthcare": 3373.63,
-    "Tech/Subs": 9490.81,
+    "Tech/Subs": 9770.81,
     "Refund": -10500.960000000001,
     "Gas/Travel": 8902.039999999999,
     "Shopping": 18382.680000000004,
@@ -565,17 +565,16 @@
       "period_label": "August 2026"
     }
   ],
-  "pending_transactions": [
-    {
-      "date": "08-31",
-      "desc": "Delight Big Bazar",
-      "amount": 146.75,
-      "category": "Groceries",
-      "bank": "BofA",
-      "pending": true
-    }
-  ],
+  "pending_transactions": [],
   "detected_recurring": [
+    {
+      "desc": "Kumon Of North",
+      "category": "Tech/Subs",
+      "count": 8,
+      "months": 8,
+      "avg_amount": 280,
+      "last_amount": 280
+    },
     {
       "desc": "Garden Farm",
       "category": "Shopping",
@@ -590,7 +589,7 @@
       "count": 11,
       "months": 8,
       "avg_amount": 60.28,
-      "last_amount": 42.93
+      "last_amount": 146.75
     },
     {
       "desc": "ShopRite",
@@ -615,14 +614,6 @@
       "months": 8,
       "avg_amount": 17.75,
       "last_amount": 28.24
-    },
-    {
-      "desc": "Kumon Of North",
-      "category": "Tech/Subs",
-      "count": 7,
-      "months": 7,
-      "avg_amount": 280,
-      "last_amount": 280
     },
     {
       "desc": "BP",
@@ -1294,7 +1285,17 @@
       "income": 19799.04,
       "bofa_income": 19799.04,
       "td_income": 0,
-      "outflows": 6449.24,
+      "outflows": 6302.49,
+      "xoom": 0,
+      "investments": 0
+    },
+    {
+      "period": "2026-09",
+      "period_label": "September 2026",
+      "income": 0,
+      "bofa_income": 0,
+      "td_income": 0,
+      "outflows": 426.75,
       "xoom": 0,
       "investments": 0
     }
@@ -1310,12 +1311,12 @@
         "Refund": -4026.68,
         "Gas/Travel": 605.02,
         "Shopping": 5061.910000000001,
-        "Groceries": 796.66,
+        "Groceries": 649.91,
         "Restaurants": 831.9300000000002,
         "Tax/Professional": 92.76,
         "Insurance": 44.8
       },
-      "total": 6449.2400000000025,
+      "total": 6302.4900000000025,
       "transactions": [
         {
           "date": "08-26",
@@ -3014,19 +3015,6 @@
           "category": "Shopping",
           "city": null,
           "state": "AR",
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "08-31",
-          "desc": "Delight Big Bazar",
-          "amount": 146.75,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -10348,6 +10336,43 @@
           "refund": true
         }
       ]
+    },
+    "2026-09": {
+      "label": "September 2026",
+      "period": "2026-09",
+      "categories": {
+        "Tech/Subs": 280,
+        "Groceries": 146.75
+      },
+      "total": 426.75,
+      "transactions": [
+        {
+          "date": "09-01",
+          "desc": "Kumon Of North",
+          "amount": 280,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
+          "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-01",
+          "desc": "Delight Big Bazar",
+          "amount": 146.75,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        }
+      ]
     }
   },
   "travel": [
@@ -11720,7 +11745,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-02T06:00:56.406Z",
+  "generated_at": "2026-09-02T12:00:59.758Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -11824,7 +11849,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1053,
+    "txns_fetched": 1054,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
