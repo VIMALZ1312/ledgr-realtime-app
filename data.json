@@ -9,7 +9,7 @@
   },
   "accounts": {
     "bofa": {
-      "balance": 31457.67,
+      "balance": 30833.05,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -91,8 +91,8 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 5327.25,
-      "available": 4702.63,
+      "balance": 4702.63,
+      "available": 1699.67,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 94053.5695192,
+    "total_checking": 93428.94951919999,
     "total_credit": 3961.97,
     "total_loans": 385624.42,
-    "net": -295532.8204808
+    "net": -296157.4404808
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -566,38 +566,6 @@
     }
   ],
   "pending_transactions": [
-    {
-      "date": "08-31",
-      "desc": "Optimum",
-      "amount": 69.66,
-      "category": "Tech/Subs",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "08-31",
-      "desc": "Hold Renaissance Gree Renaissanc",
-      "amount": 115,
-      "category": "Tech/Subs",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "08-31",
-      "desc": "ACH HOLD Twp of North Bru ON 08/31",
-      "amount": 194.1,
-      "category": "Tech/Subs",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "08-31",
-      "desc": "Public Service",
-      "amount": 245.86,
-      "category": "Gas/Travel",
-      "bank": "BofA",
-      "pending": true
-    },
     {
       "date": "08-31",
       "desc": "Delight Big Bazar",
@@ -857,6 +825,14 @@
       "last_amount": 73.07
     },
     {
+      "desc": "Renaissance Gree",
+      "category": "Tech/Subs",
+      "count": 4,
+      "months": 3,
+      "avg_amount": 115,
+      "last_amount": 115
+    },
+    {
       "desc": "Claude Sub Anthropic.comca",
       "category": "Tech/Subs",
       "count": 3,
@@ -987,18 +963,10 @@
     {
       "desc": "Twp of North Bru DES:XXXXX70922 ID:XXXXX76786 INDN:Vimal raj Loganathan CO ID:XXXXX79161 WEB",
       "category": "Tech/Subs",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 116.28,
-      "last_amount": 141.22
-    },
-    {
-      "desc": "Renaissance Gree",
-      "category": "Tech/Subs",
       "count": 3,
       "months": 2,
-      "avg_amount": 115,
-      "last_amount": 115
+      "avg_amount": 142.22,
+      "last_amount": 141.22
     },
     {
       "desc": "The Children's Place",
@@ -1468,7 +1436,7 @@
         },
         {
           "date": "08-31",
-          "desc": "Hold Renaissance Gree Renaissanc",
+          "desc": "Renaissance Gree",
           "amount": 115,
           "category": "Tech/Subs",
           "city": null,
@@ -1481,7 +1449,7 @@
         },
         {
           "date": "08-31",
-          "desc": "ACH HOLD Twp of North Bru ON 08/31",
+          "desc": "Twp of North Bru DES:XXXXX70922 ID:XXXXX03137 INDN:Vimal raj Loganathan CO ID:XXXXX79161 WEB",
           "amount": 194.1,
           "category": "Tech/Subs",
           "city": null,
@@ -11752,7 +11720,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-02T00:02:19.640Z",
+  "generated_at": "2026-09-02T06:00:56.406Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -11856,7 +11824,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1051,
+    "txns_fetched": 1053,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
