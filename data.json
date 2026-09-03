@@ -204,7 +204,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 0,
-      "available": null,
+      "available": 88,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -503,6 +503,12 @@
       "amount": 88,
       "period": "2026-08",
       "period_label": "August 2026"
+    },
+    {
+      "from": "TD  RECEIVED 624600L0A5T1 Zelle RAKESH KUMAR GAL",
+      "amount": 88,
+      "period": "2026-09",
+      "period_label": "September 2026"
     },
     {
       "from": "payment from RAKESH VISTARAKULA for \"Enjoy\"; Conf# txd9tvy96",
@@ -11790,7 +11796,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-03T12:00:43.033Z",
+  "generated_at": "2026-09-03T18:00:48.465Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -11894,7 +11900,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1058,
+    "txns_fetched": 1059,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
