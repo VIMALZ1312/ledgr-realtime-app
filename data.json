@@ -2,14 +2,14 @@
   "kpis": {
     "income": 0,
     "income_period": "",
-    "true_outflows": 426.75,
+    "true_outflows": 738.86,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 30553.05,
+      "balance": 27550.09,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -91,8 +91,8 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 4702.63,
-      "available": 1699.67,
+      "balance": 1699.67,
+      "available": 593.59,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -329,7 +329,7 @@
       "mask": "7397",
       "type": "investment",
       "subtype": "crypto exchange",
-      "balance": 19.4,
+      "balance": 19.25,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -343,7 +343,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 62078.83065691,
+      "balance": 63170.1110441,
       "available": 15891.02,
       "is_credit": false,
       "is_loan": false,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 93388.11065691,
+    "total_checking": 91476.4310441,
     "total_credit": 4108.72,
     "total_loans": 385624.42,
-    "net": -296345.02934309
+    "net": -298256.7089559
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -367,10 +367,10 @@
   },
   "spending": {
     "Entertainment": 2276.42,
-    "Healthcare": 3373.63,
+    "Healthcare": 3623.63,
     "Tech/Subs": 9770.81,
     "Refund": -10500.960000000001,
-    "Gas/Travel": 8902.039999999999,
+    "Gas/Travel": 8964.15,
     "Shopping": 18382.680000000004,
     "Groceries": 3934.29,
     "Restaurants": 3567.66,
@@ -565,7 +565,24 @@
       "period_label": "August 2026"
     }
   ],
-  "pending_transactions": [],
+  "pending_transactions": [
+    {
+      "date": "09-02",
+      "desc": "BP",
+      "amount": 62.11,
+      "category": "Gas/Travel",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "09-02",
+      "desc": "Py Sgs Datta Yoga Center",
+      "amount": 250,
+      "category": "Healthcare",
+      "bank": "BofA",
+      "pending": true
+    }
+  ],
   "detected_recurring": [
     {
       "desc": "Kumon Of North",
@@ -592,6 +609,14 @@
       "last_amount": 146.75
     },
     {
+      "desc": "BP",
+      "category": "Gas/Travel",
+      "count": 16,
+      "months": 8,
+      "avg_amount": 55.68,
+      "last_amount": 62.11
+    },
+    {
       "desc": "ShopRite",
       "category": "Groceries",
       "count": 23,
@@ -614,14 +639,6 @@
       "months": 8,
       "avg_amount": 17.75,
       "last_amount": 28.24
-    },
-    {
-      "desc": "BP",
-      "category": "Gas/Travel",
-      "count": 15,
-      "months": 7,
-      "avg_amount": 55.26,
-      "last_amount": 20.09
     },
     {
       "desc": "Walmart",
@@ -1295,7 +1312,7 @@
       "income": 0,
       "bofa_income": 0,
       "td_income": 0,
-      "outflows": 426.75,
+      "outflows": 738.86,
       "xoom": 0,
       "investments": 0
     }
@@ -10342,9 +10359,11 @@
       "period": "2026-09",
       "categories": {
         "Tech/Subs": 280,
-        "Groceries": 146.75
+        "Groceries": 146.75,
+        "Gas/Travel": 62.11,
+        "Healthcare": 250
       },
-      "total": 426.75,
+      "total": 738.86,
       "transactions": [
         {
           "date": "09-01",
@@ -10364,6 +10383,32 @@
           "desc": "Delight Big Bazar",
           "amount": 146.75,
           "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-02",
+          "desc": "BP",
+          "amount": 62.11,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-02",
+          "desc": "Py Sgs Datta Yoga Center",
+          "amount": 250,
+          "category": "Healthcare",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -11745,7 +11790,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-02T12:00:59.758Z",
+  "generated_at": "2026-09-03T12:00:43.033Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -11849,7 +11894,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1054,
+    "txns_fetched": 1058,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
