@@ -22,7 +22,7 @@
       "wf_checking": 660.52
     },
     "td": {
-      "balance": 0,
+      "balance": 88,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0
@@ -203,7 +203,7 @@
       "mask": "9222",
       "type": "depository",
       "subtype": "checking",
-      "balance": 0,
+      "balance": 88,
       "available": 88,
       "is_credit": false,
       "is_loan": false,
@@ -329,7 +329,7 @@
       "mask": "7397",
       "type": "investment",
       "subtype": "crypto exchange",
-      "balance": 20.88,
+      "balance": 21.08,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -343,7 +343,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 65042.065421565,
+      "balance": 64662.515315915,
       "available": 15891.02,
       "is_credit": false,
       "is_loan": false,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 92242.30542156499,
+    "total_checking": 91950.755315915,
     "total_credit": 4775.51,
     "total_loans": 385624.42,
-    "net": -298157.624578435
+    "net": -298449.17468408495
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -11841,7 +11841,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-04T12:18:43.083Z",
+  "generated_at": "2026-09-04T18:00:48.029Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
