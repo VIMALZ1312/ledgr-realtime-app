@@ -2,7 +2,7 @@
   "kpis": {
     "income": 0,
     "income_period": "",
-    "true_outflows": 738.86,
+    "true_outflows": 1089.39,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 1767.41,
+      "balance": 2122.09,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 660.52
@@ -161,8 +161,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 1767.41,
-      "available": 879,
+      "balance": 2122.09,
+      "available": 663,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -353,9 +353,9 @@
   ],
   "net_worth": {
     "total_checking": 93348.385421565,
-    "total_credit": 4108.72,
+    "total_credit": 4463.400000000001,
     "total_loans": 385624.42,
-    "net": -296384.754578435
+    "net": -296739.434578435
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -366,14 +366,14 @@
     "by_month": []
   },
   "spending": {
-    "Entertainment": 2276.42,
+    "Entertainment": 2320.13,
     "Healthcare": 3623.63,
-    "Tech/Subs": 9770.81,
+    "Tech/Subs": 10036.81,
     "Refund": -10500.960000000001,
     "Gas/Travel": 8964.15,
-    "Shopping": 18382.680000000004,
+    "Shopping": 18423.500000000004,
     "Groceries": 3934.29,
-    "Restaurants": 3567.66,
+    "Restaurants": 3571.8100000000004,
     "Tax/Professional": 19386.88,
     "Insurance": 230.74
   },
@@ -591,6 +591,14 @@
   ],
   "detected_recurring": [
     {
+      "desc": "Amazon",
+      "category": "Shopping",
+      "count": 78,
+      "months": 9,
+      "avg_amount": 24.46,
+      "last_amount": 40.82
+    },
+    {
       "desc": "Kumon Of North",
       "category": "Tech/Subs",
       "count": 8,
@@ -631,20 +639,20 @@
       "last_amount": 11.98
     },
     {
-      "desc": "Amazon",
-      "category": "Shopping",
-      "count": 77,
-      "months": 8,
-      "avg_amount": 24.25,
-      "last_amount": 28.95
-    },
-    {
       "desc": "Regal Cinemas",
       "category": "Entertainment",
       "count": 15,
       "months": 8,
       "avg_amount": 17.75,
       "last_amount": 28.24
+    },
+    {
+      "desc": "Big Blue Swim School",
+      "category": "Tech/Subs",
+      "count": 7,
+      "months": 7,
+      "avg_amount": 285,
+      "last_amount": 266
     },
     {
       "desc": "Walmart",
@@ -685,14 +693,6 @@
       "months": 7,
       "avg_amount": 1.99,
       "last_amount": 1.99
-    },
-    {
-      "desc": "Big Blue Swim School",
-      "category": "Tech/Subs",
-      "count": 6,
-      "months": 6,
-      "avg_amount": 288.17,
-      "last_amount": 266
     },
     {
       "desc": "CVS ExtraCare",
@@ -869,6 +869,14 @@
       "months": 3,
       "avg_amount": 55.41,
       "last_amount": 50.66
+    },
+    {
+      "desc": "The Music Shop",
+      "category": "Entertainment",
+      "count": 3,
+      "months": 3,
+      "avg_amount": 43.71,
+      "last_amount": 43.71
     },
     {
       "desc": "Renaissance Buy Rite",
@@ -1087,14 +1095,6 @@
       "last_amount": 10.73
     },
     {
-      "desc": "The Music Shop",
-      "category": "Entertainment",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 43.71,
-      "last_amount": 43.71
-    },
-    {
       "desc": "Thanjai Mess Fsr",
       "category": "Restaurants",
       "count": 2,
@@ -1215,6 +1215,14 @@
       "last_amount": 5.33
     },
     {
+      "desc": "Taco Bell",
+      "category": "Restaurants",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 4.58,
+      "last_amount": 5
+    },
+    {
       "desc": "CVS",
       "category": "Healthcare",
       "count": 2,
@@ -1308,7 +1316,7 @@
       "income": 19799.04,
       "bofa_income": 19799.04,
       "td_income": 0,
-      "outflows": 6302.49,
+      "outflows": 6306.64,
       "xoom": 0,
       "investments": 0
     },
@@ -1318,7 +1326,7 @@
       "income": 0,
       "bofa_income": 0,
       "td_income": 0,
-      "outflows": 738.86,
+      "outflows": 1089.39,
       "xoom": 0,
       "investments": 0
     }
@@ -1335,11 +1343,11 @@
         "Gas/Travel": 605.02,
         "Shopping": 5061.910000000001,
         "Groceries": 649.91,
-        "Restaurants": 831.9300000000002,
+        "Restaurants": 836.0800000000002,
         "Tax/Professional": 92.76,
         "Insurance": 44.8
       },
-      "total": 6302.4900000000025,
+      "total": 6306.640000000002,
       "transactions": [
         {
           "date": "08-26",
@@ -2752,6 +2760,19 @@
           "category": "Tech/Subs",
           "city": null,
           "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-30",
+          "desc": "Taco Bell",
+          "amount": 4.15,
+          "category": "Restaurants",
+          "city": "North Brunswick",
+          "state": "NJ",
           "bank": "Wells Fargo",
           "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
           "mask": "9762",
@@ -10364,13 +10385,54 @@
       "label": "September 2026",
       "period": "2026-09",
       "categories": {
-        "Tech/Subs": 280,
+        "Tech/Subs": 546,
+        "Shopping": 40.82,
+        "Entertainment": 43.71,
         "Groceries": 146.75,
         "Gas/Travel": 62.11,
         "Healthcare": 250
       },
-      "total": 738.86,
+      "total": 1089.3899999999999,
       "transactions": [
+        {
+          "date": "09-01",
+          "desc": "Big Blue Swim School",
+          "amount": 266,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-01",
+          "desc": "Amazon",
+          "amount": 40.82,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-01",
+          "desc": "The Music Shop",
+          "amount": 43.71,
+          "category": "Entertainment",
+          "city": null,
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
         {
           "date": "09-01",
           "desc": "Kumon Of North",
@@ -11796,7 +11858,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-04T00:00:56.043Z",
+  "generated_at": "2026-09-04T06:00:53.011Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -11900,7 +11962,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1059,
+    "txns_fetched": 1063,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
