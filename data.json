@@ -9,7 +9,7 @@
   },
   "accounts": {
     "bofa": {
-      "balance": 27550.09,
+      "balance": 26444.010000000002,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -91,7 +91,7 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 1699.67,
+      "balance": 593.59,
       "available": 593.59,
       "is_credit": false,
       "is_loan": false,
@@ -231,8 +231,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 432.34,
-      "available": 267.66,
+      "balance": 744.45,
+      "available": null,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 93348.385421565,
-    "total_credit": 4463.400000000001,
+    "total_checking": 92242.30542156499,
+    "total_credit": 4775.51,
     "total_loans": 385624.42,
-    "net": -296739.434578435
+    "net": -298157.624578435
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -571,24 +571,7 @@
       "period_label": "August 2026"
     }
   ],
-  "pending_transactions": [
-    {
-      "date": "09-02",
-      "desc": "BP",
-      "amount": 62.11,
-      "category": "Gas/Travel",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "09-02",
-      "desc": "Py Sgs Datta Yoga Center",
-      "amount": 250,
-      "category": "Healthcare",
-      "bank": "BofA",
-      "pending": true
-    }
-  ],
+  "pending_transactions": [],
   "detected_recurring": [
     {
       "desc": "Amazon",
@@ -10389,8 +10372,8 @@
         "Shopping": 40.82,
         "Entertainment": 43.71,
         "Groceries": 146.75,
-        "Gas/Travel": 62.11,
-        "Healthcare": 250
+        "Healthcare": 250,
+        "Gas/Travel": 62.11
       },
       "total": 1089.3899999999999,
       "transactions": [
@@ -10460,12 +10443,12 @@
           "refund": false
         },
         {
-          "date": "09-02",
-          "desc": "BP",
-          "amount": 62.11,
-          "category": "Gas/Travel",
+          "date": "09-03",
+          "desc": "Sgs Datta Yoga Center",
+          "amount": 250,
+          "category": "Healthcare",
           "city": null,
-          "state": null,
+          "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -10473,10 +10456,10 @@
           "refund": false
         },
         {
-          "date": "09-02",
-          "desc": "Py Sgs Datta Yoga Center",
-          "amount": 250,
-          "category": "Healthcare",
+          "date": "09-03",
+          "desc": "BP",
+          "amount": 62.11,
+          "category": "Gas/Travel",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -11858,7 +11841,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-04T06:00:53.011Z",
+  "generated_at": "2026-09-04T12:00:49.719Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
