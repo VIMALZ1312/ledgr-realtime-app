@@ -2,7 +2,7 @@
   "kpis": {
     "income": 0,
     "income_period": "",
-    "true_outflows": 1089.39,
+    "true_outflows": 1276.96,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 2122.09,
+      "balance": 2337.52,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 660.52
@@ -161,8 +161,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 2122.09,
-      "available": 663,
+      "balance": 2337.52,
+      "available": 632,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -316,7 +316,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 46.43,
-      "available": 9953,
+      "available": 9913,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -329,7 +329,7 @@
       "mask": "7397",
       "type": "investment",
       "subtype": "crypto exchange",
-      "balance": 21.08,
+      "balance": 20.05,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -343,7 +343,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 64662.515315915,
+      "balance": 64900.8702308339,
       "available": 15891.02,
       "is_credit": false,
       "is_loan": false,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 91950.755315915,
-    "total_credit": 4775.51,
+    "total_checking": 92189.1102308339,
+    "total_credit": 4990.9400000000005,
     "total_loans": 385624.42,
-    "net": -298449.17468408495
+    "net": -298426.2497691661
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -371,7 +371,7 @@
     "Tech/Subs": 10036.81,
     "Refund": -10500.960000000001,
     "Gas/Travel": 8964.15,
-    "Shopping": 18423.500000000004,
+    "Shopping": 18611.070000000003,
     "Groceries": 3934.29,
     "Restaurants": 3571.8100000000004,
     "Tax/Professional": 19386.88,
@@ -571,7 +571,32 @@
       "period_label": "August 2026"
     }
   ],
-  "pending_transactions": [],
+  "pending_transactions": [
+    {
+      "date": "09-05",
+      "desc": "Walmart",
+      "amount": 69.38,
+      "category": "Shopping",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "09-04",
+      "desc": "Marshalls",
+      "amount": 77.79,
+      "category": "Shopping",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "09-05",
+      "desc": "Temu",
+      "amount": 40.4,
+      "category": "Shopping",
+      "bank": "Robinhood",
+      "pending": true
+    }
+  ],
   "detected_recurring": [
     {
       "desc": "Amazon",
@@ -614,6 +639,14 @@
       "last_amount": 62.11
     },
     {
+      "desc": "Walmart",
+      "category": "Shopping",
+      "count": 20,
+      "months": 8,
+      "avg_amount": 39.61,
+      "last_amount": 69.38
+    },
+    {
       "desc": "ShopRite",
       "category": "Groceries",
       "count": 23,
@@ -636,14 +669,6 @@
       "months": 7,
       "avg_amount": 285,
       "last_amount": 266
-    },
-    {
-      "desc": "Walmart",
-      "category": "Shopping",
-      "count": 19,
-      "months": 7,
-      "avg_amount": 38.04,
-      "last_amount": -7.45
     },
     {
       "desc": "Simplisafe",
@@ -1014,6 +1039,14 @@
       "last_amount": 138.42
     },
     {
+      "desc": "Marshalls",
+      "category": "Shopping",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 69.71,
+      "last_amount": 77.79
+    },
+    {
       "desc": "Simplytrawell",
       "category": "Gas/Travel",
       "count": 3,
@@ -1068,6 +1101,14 @@
       "months": 2,
       "avg_amount": 49.5,
       "last_amount": 149
+    },
+    {
+      "desc": "Temu",
+      "category": "Shopping",
+      "count": 3,
+      "months": 2,
+      "avg_amount": 46.93,
+      "last_amount": 40.4
     },
     {
       "desc": "Nj Motor Vehicle",
@@ -1309,7 +1350,7 @@
       "income": 0,
       "bofa_income": 0,
       "td_income": 0,
-      "outflows": 1089.39,
+      "outflows": 1276.96,
       "xoom": 0,
       "investments": 0
     }
@@ -10369,13 +10410,13 @@
       "period": "2026-09",
       "categories": {
         "Tech/Subs": 546,
-        "Shopping": 40.82,
+        "Shopping": 228.39000000000001,
         "Entertainment": 43.71,
         "Groceries": 146.75,
         "Healthcare": 250,
         "Gas/Travel": 62.11
       },
-      "total": 1089.3899999999999,
+      "total": 1276.96,
       "transactions": [
         {
           "date": "09-01",
@@ -10465,6 +10506,45 @@
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-05",
+          "desc": "Walmart",
+          "amount": 69.38,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-04",
+          "desc": "Marshalls",
+          "amount": 77.79,
+          "category": "Shopping",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-05",
+          "desc": "Temu",
+          "amount": 40.4,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
           "pending": false,
           "refund": false
         }
@@ -11841,7 +11921,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-05T06:00:50.739Z",
+  "generated_at": "2026-09-05T12:00:52.134Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -11945,7 +12025,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1063,
+    "txns_fetched": 1066,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
