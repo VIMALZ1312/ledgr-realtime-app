@@ -2,7 +2,7 @@
   "kpis": {
     "income": 0,
     "income_period": "",
-    "true_outflows": 1492.39,
+    "true_outflows": 3107.39,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -231,7 +231,7 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 744.45,
+      "balance": 822.24,
       "available": null,
       "is_credit": true,
       "is_loan": false,
@@ -260,7 +260,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 17966.73,
-      "available": 17966.73,
+      "available": 16351.73,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -353,9 +353,9 @@
   ],
   "net_worth": {
     "total_checking": 92164.1102308339,
-    "total_credit": 4990.9400000000005,
+    "total_credit": 5068.7300000000005,
     "total_loans": 385624.42,
-    "net": -298451.2497691661
+    "net": -298529.0397691661
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -371,7 +371,7 @@
     "Tech/Subs": 10193.609999999999,
     "Refund": -10500.960000000001,
     "Gas/Travel": 8964.15,
-    "Shopping": 18669.700000000004,
+    "Shopping": 20284.700000000004,
     "Groceries": 3934.29,
     "Restaurants": 3571.8100000000004,
     "Tax/Professional": 19386.88,
@@ -587,9 +587,9 @@
       "pending": true
     },
     {
-      "date": "09-04",
-      "desc": "Marshalls",
-      "amount": 77.79,
+      "date": "09-06",
+      "desc": "R K Jewels",
+      "amount": 1615,
       "category": "Shopping",
       "bank": "BofA",
       "pending": true
@@ -765,6 +765,14 @@
       "last_amount": 9
     },
     {
+      "desc": "R K Jewels",
+      "category": "Shopping",
+      "count": 4,
+      "months": 4,
+      "avg_amount": 2810,
+      "last_amount": 1615
+    },
+    {
       "desc": "Zelle payment to Tere Cleaning Lady Conf# z7k9t7gd4",
       "category": "Shopping",
       "count": 5,
@@ -811,14 +819,6 @@
       "months": 4,
       "avg_amount": 9.6,
       "last_amount": 15
-    },
-    {
-      "desc": "R K Jewels",
-      "category": "Shopping",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 3208.33,
-      "last_amount": 5815
     },
     {
       "desc": "Verizon",
@@ -1356,7 +1356,7 @@
       "income": 0,
       "bofa_income": 0,
       "td_income": 0,
-      "outflows": 1492.39,
+      "outflows": 3107.39,
       "xoom": 0,
       "investments": 0
     }
@@ -10416,13 +10416,13 @@
       "period": "2026-09",
       "categories": {
         "Tech/Subs": 702.8,
-        "Shopping": 287.02,
+        "Shopping": 1902.02,
         "Entertainment": 43.71,
         "Groceries": 146.75,
         "Healthcare": 250,
         "Gas/Travel": 62.11
       },
-      "total": 1492.3899999999999,
+      "total": 3107.39,
       "transactions": [
         {
           "date": "09-01",
@@ -10568,7 +10568,20 @@
           "refund": false
         },
         {
-          "date": "09-04",
+          "date": "09-06",
+          "desc": "R K Jewels",
+          "amount": 1615,
+          "category": "Shopping",
+          "city": "Iselin",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
+          "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-05",
           "desc": "Marshalls",
           "amount": 77.79,
           "category": "Shopping",
@@ -11966,7 +11979,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-06T06:00:49.767Z",
+  "generated_at": "2026-09-06T12:00:53.757Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12070,7 +12083,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1071,
+    "txns_fetched": 1072,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
