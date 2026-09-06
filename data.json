@@ -2,7 +2,7 @@
   "kpis": {
     "income": 0,
     "income_period": "",
-    "true_outflows": 1276.96,
+    "true_outflows": 1492.39,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -134,7 +134,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 660.52,
-      "available": 660.52,
+      "available": 673.52,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -162,7 +162,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 2337.52,
-      "available": 632,
+      "available": 530,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -368,10 +368,10 @@
   "spending": {
     "Entertainment": 2320.13,
     "Healthcare": 3623.63,
-    "Tech/Subs": 10036.81,
+    "Tech/Subs": 10193.609999999999,
     "Refund": -10500.960000000001,
     "Gas/Travel": 8964.15,
-    "Shopping": 18611.070000000003,
+    "Shopping": 18669.700000000004,
     "Groceries": 3934.29,
     "Restaurants": 3571.8100000000004,
     "Tax/Professional": 19386.88,
@@ -437,6 +437,12 @@
       "amount": 40.71,
       "period": "2026-08",
       "period_label": "August 2026"
+    },
+    {
+      "from": "FROM ANGU RAM ON 09/05 REF # WFCT22M88SG9",
+      "amount": 13,
+      "period": "2026-09",
+      "period_label": "September 2026"
     },
     {
       "from": "FROM AHMED MOHAMMED",
@@ -601,10 +607,10 @@
     {
       "desc": "Amazon",
       "category": "Shopping",
-      "count": 78,
+      "count": 79,
       "months": 9,
-      "avg_amount": 24.46,
-      "last_amount": 40.82
+      "avg_amount": 24.9,
+      "last_amount": 58.63
     },
     {
       "desc": "Kumon Of North",
@@ -665,10 +671,10 @@
     {
       "desc": "Big Blue Swim School",
       "category": "Tech/Subs",
-      "count": 7,
+      "count": 9,
       "months": 7,
-      "avg_amount": 285,
-      "last_amount": 266
+      "avg_amount": 239.09,
+      "last_amount": 100.8
     },
     {
       "desc": "Simplisafe",
@@ -1350,7 +1356,7 @@
       "income": 0,
       "bofa_income": 0,
       "td_income": 0,
-      "outflows": 1276.96,
+      "outflows": 1492.39,
       "xoom": 0,
       "investments": 0
     }
@@ -10409,14 +10415,14 @@
       "label": "September 2026",
       "period": "2026-09",
       "categories": {
-        "Tech/Subs": 546,
-        "Shopping": 228.39000000000001,
+        "Tech/Subs": 702.8,
+        "Shopping": 287.02,
         "Entertainment": 43.71,
         "Groceries": 146.75,
         "Healthcare": 250,
         "Gas/Travel": 62.11
       },
-      "total": 1276.96,
+      "total": 1492.3899999999999,
       "transactions": [
         {
           "date": "09-01",
@@ -10451,6 +10457,45 @@
           "category": "Entertainment",
           "city": null,
           "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-03",
+          "desc": "Big Blue Swim School",
+          "amount": 56,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-03",
+          "desc": "Big Blue Swim School",
+          "amount": 100.8,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-03",
+          "desc": "Amazon",
+          "amount": 58.63,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
           "bank": "Wells Fargo",
           "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
           "mask": "9762",
@@ -11921,7 +11966,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-06T00:00:59.875Z",
+  "generated_at": "2026-09-06T06:00:49.767Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12025,7 +12070,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1067,
+    "txns_fetched": 1071,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
