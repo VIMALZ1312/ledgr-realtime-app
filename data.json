@@ -2,7 +2,7 @@
   "kpis": {
     "income": 0,
     "income_period": "",
-    "true_outflows": 3107.39,
+    "true_outflows": 3198.25,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -92,7 +92,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 593.59,
-      "available": 593.59,
+      "available": 574.72,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -260,7 +260,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 17966.73,
-      "available": 16351.73,
+      "available": 17952.73,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -368,12 +368,12 @@
   "spending": {
     "Entertainment": 2320.13,
     "Healthcare": 3623.63,
-    "Tech/Subs": 10193.609999999999,
-    "Refund": -10500.960000000001,
+    "Tech/Subs": 10193.61,
+    "Refund": -10570.339999999998,
     "Gas/Travel": 8964.15,
-    "Shopping": 20284.700000000004,
+    "Shopping": 20426.07,
     "Groceries": 3934.29,
-    "Restaurants": 3571.8100000000004,
+    "Restaurants": 3590.6800000000003,
     "Tax/Professional": 19386.88,
     "Insurance": 230.74
   },
@@ -575,9 +575,35 @@
       "amount": 8,
       "period": "2026-08",
       "period_label": "August 2026"
+    },
+    {
+      "from": "Transfer Conf# 99CVP49CN; DIVYA GANGAVARAM",
+      "amount": 14,
+      "period": "2026-09",
+      "period_label": "September 2026"
+    },
+    {
+      "from": "Transfer Conf# 99CVOZIC6; DIVYA GANGAVARAM",
+      "amount": 28,
+      "period": "2026-09",
+      "period_label": "September 2026"
+    },
+    {
+      "from": "Transfer Conf# 99CVOV36B; DIVYA GANGAVARAM",
+      "amount": 1615,
+      "period": "2026-09",
+      "period_label": "September 2026"
     }
   ],
   "pending_transactions": [
+    {
+      "date": "09-07",
+      "desc": "Little Macs",
+      "amount": 18.87,
+      "category": "Restaurants",
+      "bank": "BofA",
+      "pending": true
+    },
     {
       "date": "09-05",
       "desc": "Walmart",
@@ -587,9 +613,25 @@
       "pending": true
     },
     {
-      "date": "09-06",
+      "date": "09-07",
       "desc": "R K Jewels",
       "amount": 1615,
+      "category": "Shopping",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "09-06",
+      "desc": "Walmart",
+      "amount": 72,
+      "category": "Shopping",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "09-06",
+      "desc": "Walmart",
+      "amount": 69.37,
       "category": "Shopping",
       "bank": "BofA",
       "pending": true
@@ -610,7 +652,7 @@
       "count": 79,
       "months": 9,
       "avg_amount": 24.9,
-      "last_amount": 58.63
+      "last_amount": 28.95
     },
     {
       "desc": "Kumon Of North",
@@ -634,7 +676,7 @@
       "count": 11,
       "months": 8,
       "avg_amount": 60.28,
-      "last_amount": 146.75
+      "last_amount": 42.93
     },
     {
       "desc": "BP",
@@ -642,15 +684,15 @@
       "count": 16,
       "months": 8,
       "avg_amount": 55.68,
-      "last_amount": 62.11
+      "last_amount": 20.09
     },
     {
       "desc": "Walmart",
       "category": "Shopping",
-      "count": 20,
+      "count": 23,
       "months": 8,
-      "avg_amount": 39.61,
-      "last_amount": 69.38
+      "avg_amount": 37.57,
+      "last_amount": -7.45
     },
     {
       "desc": "ShopRite",
@@ -674,7 +716,7 @@
       "count": 9,
       "months": 7,
       "avg_amount": 239.09,
-      "last_amount": 100.8
+      "last_amount": 266
     },
     {
       "desc": "Simplisafe",
@@ -770,7 +812,7 @@
       "count": 4,
       "months": 4,
       "avg_amount": 2810,
-      "last_amount": 1615
+      "last_amount": 5815
     },
     {
       "desc": "Zelle payment to Tere Cleaning Lady Conf# z7k9t7gd4",
@@ -1050,7 +1092,7 @@
       "count": 2,
       "months": 2,
       "avg_amount": 69.71,
-      "last_amount": 77.79
+      "last_amount": 61.62
     },
     {
       "desc": "Simplytrawell",
@@ -1114,7 +1156,7 @@
       "count": 3,
       "months": 2,
       "avg_amount": 46.93,
-      "last_amount": 40.4
+      "last_amount": 61.79
     },
     {
       "desc": "Nj Motor Vehicle",
@@ -1356,7 +1398,7 @@
       "income": 0,
       "bofa_income": 0,
       "td_income": 0,
-      "outflows": 3107.39,
+      "outflows": 3198.25,
       "xoom": 0,
       "investments": 0
     }
@@ -5928,6 +5970,257 @@
         }
       ]
     },
+    "2026-09": {
+      "label": "September 2026",
+      "period": "2026-09",
+      "categories": {
+        "Restaurants": 18.87,
+        "Tech/Subs": 702.8,
+        "Shopping": 2043.3899999999999,
+        "Entertainment": 43.71,
+        "Groceries": 146.75,
+        "Healthcare": 250,
+        "Gas/Travel": 62.11,
+        "Refund": -69.38
+      },
+      "total": 3198.2499999999995,
+      "transactions": [
+        {
+          "date": "09-07",
+          "desc": "Little Macs",
+          "amount": 18.87,
+          "category": "Restaurants",
+          "city": "Point Pleasant",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "jJEy77qLQxHNznaqxjJAhmEBM05B06iRRwaZd",
+          "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-01",
+          "desc": "Big Blue Swim School",
+          "amount": 266,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-01",
+          "desc": "Amazon",
+          "amount": 40.82,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-01",
+          "desc": "The Music Shop",
+          "amount": 43.71,
+          "category": "Entertainment",
+          "city": null,
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-03",
+          "desc": "Big Blue Swim School",
+          "amount": 56,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-03",
+          "desc": "Big Blue Swim School",
+          "amount": 100.8,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-03",
+          "desc": "Amazon",
+          "amount": 58.63,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-01",
+          "desc": "Kumon Of North",
+          "amount": 280,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
+          "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-01",
+          "desc": "Delight Big Bazar",
+          "amount": 146.75,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-03",
+          "desc": "Sgs Datta Yoga Center",
+          "amount": 250,
+          "category": "Healthcare",
+          "city": null,
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-03",
+          "desc": "BP",
+          "amount": 62.11,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-05",
+          "desc": "Walmart",
+          "amount": 69.38,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-05",
+          "desc": "Marshalls",
+          "amount": 77.79,
+          "category": "Shopping",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-07",
+          "desc": "R K Jewels",
+          "amount": 1615,
+          "category": "Shopping",
+          "city": "Iselin",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
+          "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-06",
+          "desc": "Walmart",
+          "amount": 72,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-06",
+          "desc": "Walmart",
+          "amount": -69.38,
+          "category": "Refund",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": true
+        },
+        {
+          "date": "09-06",
+          "desc": "Walmart",
+          "amount": 69.37,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-05",
+          "desc": "Temu",
+          "amount": 40.4,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        }
+      ]
+    },
     "2026-04": {
       "label": "April 2026",
       "period": "2026-04",
@@ -10410,203 +10703,6 @@
           "refund": true
         }
       ]
-    },
-    "2026-09": {
-      "label": "September 2026",
-      "period": "2026-09",
-      "categories": {
-        "Tech/Subs": 702.8,
-        "Shopping": 1902.02,
-        "Entertainment": 43.71,
-        "Groceries": 146.75,
-        "Healthcare": 250,
-        "Gas/Travel": 62.11
-      },
-      "total": 3107.39,
-      "transactions": [
-        {
-          "date": "09-01",
-          "desc": "Big Blue Swim School",
-          "amount": 266,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-01",
-          "desc": "Amazon",
-          "amount": 40.82,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-01",
-          "desc": "The Music Shop",
-          "amount": 43.71,
-          "category": "Entertainment",
-          "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-03",
-          "desc": "Big Blue Swim School",
-          "amount": 56,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-03",
-          "desc": "Big Blue Swim School",
-          "amount": 100.8,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": "NJ",
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-03",
-          "desc": "Amazon",
-          "amount": 58.63,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "Wells Fargo",
-          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
-          "mask": "9762",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-01",
-          "desc": "Kumon Of North",
-          "amount": 280,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
-          "mask": "9715",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-01",
-          "desc": "Delight Big Bazar",
-          "amount": 146.75,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-03",
-          "desc": "Sgs Datta Yoga Center",
-          "amount": 250,
-          "category": "Healthcare",
-          "city": null,
-          "state": "NJ",
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-03",
-          "desc": "BP",
-          "amount": 62.11,
-          "category": "Gas/Travel",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-05",
-          "desc": "Walmart",
-          "amount": 69.38,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-06",
-          "desc": "R K Jewels",
-          "amount": 1615,
-          "category": "Shopping",
-          "city": "Iselin",
-          "state": "NJ",
-          "bank": "BofA",
-          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
-          "mask": "9715",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-05",
-          "desc": "Marshalls",
-          "amount": 77.79,
-          "category": "Shopping",
-          "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-05",
-          "desc": "Temu",
-          "amount": 40.4,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
-          "mask": "1345",
-          "pending": false,
-          "refund": false
-        }
-      ]
     }
   },
   "travel": [
@@ -11979,7 +12075,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-07T06:00:52.466Z",
+  "generated_at": "2026-09-07T12:00:53.753Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12083,7 +12179,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1072,
+    "txns_fetched": 1080,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
