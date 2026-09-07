@@ -2,7 +2,7 @@
   "kpis": {
     "income": 0,
     "income_period": "",
-    "true_outflows": 3198.25,
+    "true_outflows": 3331.65,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 2337.52,
+      "balance": 2470.92,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 660.52
@@ -161,8 +161,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 2337.52,
-      "available": 530,
+      "balance": 2470.92,
+      "available": 327,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -315,7 +315,7 @@
       "mask": "1345",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 46.43,
+      "balance": 86.83,
       "available": 9913,
       "is_credit": true,
       "is_loan": false,
@@ -353,9 +353,9 @@
   ],
   "net_worth": {
     "total_checking": 92164.1102308339,
-    "total_credit": 5068.7300000000005,
+    "total_credit": 5242.53,
     "total_loans": 385624.42,
-    "net": -298529.0397691661
+    "net": -298702.8397691661
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -368,12 +368,12 @@
   "spending": {
     "Entertainment": 2320.13,
     "Healthcare": 3623.63,
-    "Tech/Subs": 10193.61,
+    "Tech/Subs": 10198.61,
     "Refund": -10570.339999999998,
-    "Gas/Travel": 8964.15,
-    "Shopping": 20426.07,
+    "Gas/Travel": 8989.15,
+    "Shopping": 20456.960000000003,
     "Groceries": 3934.29,
-    "Restaurants": 3590.6800000000003,
+    "Restaurants": 3663.1900000000005,
     "Tax/Professional": 19386.88,
     "Insurance": 230.74
   },
@@ -635,14 +635,6 @@
       "category": "Shopping",
       "bank": "BofA",
       "pending": true
-    },
-    {
-      "date": "09-05",
-      "desc": "Temu",
-      "amount": 40.4,
-      "category": "Shopping",
-      "bank": "Robinhood",
-      "pending": true
     }
   ],
   "detected_recurring": [
@@ -751,6 +743,22 @@
       "last_amount": 1.99
     },
     {
+      "desc": "NJ E-ZPass",
+      "category": "Gas/Travel",
+      "count": 9,
+      "months": 6,
+      "avg_amount": 71.32,
+      "last_amount": 25
+    },
+    {
+      "desc": "Netlify Fy",
+      "category": "Tech/Subs",
+      "count": 16,
+      "months": 6,
+      "avg_amount": 6.25,
+      "last_amount": 9
+    },
+    {
       "desc": "CVS ExtraCare",
       "category": "Healthcare",
       "count": 6,
@@ -775,14 +783,6 @@
       "last_amount": 82.65
     },
     {
-      "desc": "NJ E-ZPass",
-      "category": "Gas/Travel",
-      "count": 8,
-      "months": 5,
-      "avg_amount": 77.11,
-      "last_amount": 25
-    },
-    {
       "desc": "Everwash",
       "category": "Tech/Subs",
       "count": 5,
@@ -797,14 +797,6 @@
       "months": 5,
       "avg_amount": 7.93,
       "last_amount": 10.36
-    },
-    {
-      "desc": "Netlify Fy",
-      "category": "Tech/Subs",
-      "count": 15,
-      "months": 5,
-      "avg_amount": 6.33,
-      "last_amount": 9
     },
     {
       "desc": "R K Jewels",
@@ -925,6 +917,14 @@
       "months": 3,
       "avg_amount": 55.41,
       "last_amount": 50.66
+    },
+    {
+      "desc": "PetSmart",
+      "category": "Shopping",
+      "count": 8,
+      "months": 3,
+      "avg_amount": 51.91,
+      "last_amount": 30.89
     },
     {
       "desc": "The Music Shop",
@@ -1117,14 +1117,6 @@
       "months": 2,
       "avg_amount": 55.96,
       "last_amount": 76.7
-    },
-    {
-      "desc": "PetSmart",
-      "category": "Shopping",
-      "count": 7,
-      "months": 2,
-      "avg_amount": 54.92,
-      "last_amount": 17.04
     },
     {
       "desc": "H&M",
@@ -1398,7 +1390,7 @@
       "income": 0,
       "bofa_income": 0,
       "td_income": 0,
-      "outflows": 3198.25,
+      "outflows": 3331.65,
       "xoom": 0,
       "investments": 0
     }
@@ -5974,16 +5966,16 @@
       "label": "September 2026",
       "period": "2026-09",
       "categories": {
-        "Restaurants": 18.87,
-        "Tech/Subs": 702.8,
-        "Shopping": 2043.3899999999999,
+        "Restaurants": 91.38000000000001,
+        "Tech/Subs": 707.8,
+        "Shopping": 2074.28,
         "Entertainment": 43.71,
+        "Gas/Travel": 87.11,
         "Groceries": 146.75,
         "Healthcare": 250,
-        "Gas/Travel": 62.11,
         "Refund": -69.38
       },
-      "total": 3198.2499999999995,
+      "total": 3331.6499999999996,
       "transactions": [
         {
           "date": "09-07",
@@ -6070,6 +6062,58 @@
           "category": "Shopping",
           "city": null,
           "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-06",
+          "desc": "Chowpatty Restaurant",
+          "amount": 72.51,
+          "category": "Restaurants",
+          "city": "Iselin",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-05",
+          "desc": "NJ E-ZPass",
+          "amount": 25,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-05",
+          "desc": "Netlify Fy",
+          "amount": 5,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "CA",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-04",
+          "desc": "PetSmart",
+          "amount": 30.89,
+          "category": "Shopping",
+          "city": "North Brunswick",
+          "state": "NJ",
           "bank": "Wells Fargo",
           "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
           "mask": "9762",
@@ -6207,7 +6251,7 @@
           "refund": false
         },
         {
-          "date": "09-05",
+          "date": "09-04",
           "desc": "Temu",
           "amount": 40.4,
           "category": "Shopping",
@@ -11827,6 +11871,16 @@
       "period_label": "August 2026"
     },
     {
+      "date": "09-05",
+      "desc": "Netlify Fy",
+      "amount": 5,
+      "category": "Tech/Subs",
+      "city": null,
+      "state": "CA",
+      "period": "2026-09",
+      "period_label": "September 2026"
+    },
+    {
       "date": "04-09",
       "desc": "Trendia Trendia.co",
       "amount": 178.01,
@@ -12075,7 +12129,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-07T12:00:53.753Z",
+  "generated_at": "2026-09-07T18:00:49.494Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12179,7 +12233,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1080,
+    "txns_fetched": 1084,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
