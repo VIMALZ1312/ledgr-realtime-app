@@ -2,7 +2,7 @@
   "kpis": {
     "income": 0,
     "income_period": "",
-    "true_outflows": 3331.65,
+    "true_outflows": 3378.14,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -231,7 +231,7 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 822.24,
+      "balance": 891.61,
       "available": null,
       "is_credit": true,
       "is_loan": false,
@@ -260,7 +260,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 17966.73,
-      "available": 17952.73,
+      "available": 17932.73,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -353,9 +353,9 @@
   ],
   "net_worth": {
     "total_checking": 92164.1102308339,
-    "total_credit": 5242.53,
+    "total_credit": 5311.9,
     "total_loans": 385624.42,
-    "net": -298702.8397691661
+    "net": -298772.2097691661
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -369,9 +369,9 @@
     "Entertainment": 2320.13,
     "Healthcare": 3623.63,
     "Tech/Subs": 10198.61,
-    "Refund": -10570.339999999998,
+    "Refund": -10500.960000000001,
     "Gas/Travel": 8989.15,
-    "Shopping": 20456.960000000003,
+    "Shopping": 20434.07,
     "Groceries": 3934.29,
     "Restaurants": 3663.1900000000005,
     "Tax/Professional": 19386.88,
@@ -597,26 +597,10 @@
   ],
   "pending_transactions": [
     {
-      "date": "09-07",
+      "date": "09-08",
       "desc": "Little Macs",
       "amount": 18.87,
       "category": "Restaurants",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "09-05",
-      "desc": "Walmart",
-      "amount": 69.38,
-      "category": "Shopping",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "09-07",
-      "desc": "R K Jewels",
-      "amount": 1615,
-      "category": "Shopping",
       "bank": "BofA",
       "pending": true
     },
@@ -629,9 +613,33 @@
       "pending": true
     },
     {
-      "date": "09-06",
+      "date": "09-08",
+      "desc": "R K Jewels",
+      "amount": 1615,
+      "category": "Shopping",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "09-07",
+      "desc": "Marshalls",
+      "amount": 9.99,
+      "category": "Shopping",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "09-07",
       "desc": "Walmart",
-      "amount": 69.37,
+      "amount": 33.3,
+      "category": "Shopping",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "09-07",
+      "desc": "Walmart",
+      "amount": 3.2,
       "category": "Shopping",
       "bank": "BofA",
       "pending": true
@@ -683,7 +691,7 @@
       "category": "Shopping",
       "count": 23,
       "months": 8,
-      "avg_amount": 37.57,
+      "avg_amount": 39.16,
       "last_amount": -7.45
     },
     {
@@ -1087,14 +1095,6 @@
       "last_amount": 138.42
     },
     {
-      "desc": "Marshalls",
-      "category": "Shopping",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 69.71,
-      "last_amount": 61.62
-    },
-    {
       "desc": "Simplytrawell",
       "category": "Gas/Travel",
       "count": 3,
@@ -1133,6 +1133,14 @@
       "months": 2,
       "avg_amount": 53.89,
       "last_amount": 50.14
+    },
+    {
+      "desc": "Marshalls",
+      "category": "Shopping",
+      "count": 3,
+      "months": 2,
+      "avg_amount": 49.8,
+      "last_amount": 61.62
     },
     {
       "desc": "DRIVEEZMD MPC",
@@ -1390,7 +1398,7 @@
       "income": 0,
       "bofa_income": 0,
       "td_income": 0,
-      "outflows": 3331.65,
+      "outflows": 3378.14,
       "xoom": 0,
       "investments": 0
     }
@@ -5968,17 +5976,16 @@
       "categories": {
         "Restaurants": 91.38000000000001,
         "Tech/Subs": 707.8,
-        "Shopping": 2074.28,
+        "Shopping": 2051.3900000000003,
         "Entertainment": 43.71,
         "Gas/Travel": 87.11,
         "Groceries": 146.75,
-        "Healthcare": 250,
-        "Refund": -69.38
+        "Healthcare": 250
       },
-      "total": 3331.6499999999996,
+      "total": 3378.14,
       "transactions": [
         {
-          "date": "09-07",
+          "date": "09-08",
           "desc": "Little Macs",
           "amount": 18.87,
           "category": "Restaurants",
@@ -6174,19 +6181,6 @@
         },
         {
           "date": "09-05",
-          "desc": "Walmart",
-          "amount": 69.38,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-05",
           "desc": "Marshalls",
           "amount": 77.79,
           "category": "Shopping",
@@ -6195,19 +6189,6 @@
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-07",
-          "desc": "R K Jewels",
-          "amount": 1615,
-          "category": "Shopping",
-          "city": "Iselin",
-          "state": "NJ",
-          "bank": "BofA",
-          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
-          "mask": "9715",
           "pending": false,
           "refund": false
         },
@@ -6225,25 +6206,64 @@
           "refund": false
         },
         {
-          "date": "09-06",
+          "date": "09-08",
+          "desc": "R K Jewels",
+          "amount": 1615,
+          "category": "Shopping",
+          "city": "Iselin",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
+          "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-07",
+          "desc": "Marshalls",
+          "amount": 9.99,
+          "category": "Shopping",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-07",
           "desc": "Walmart",
-          "amount": -69.38,
-          "category": "Refund",
+          "amount": 33.3,
+          "category": "Shopping",
           "city": null,
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
           "pending": false,
-          "refund": true
+          "refund": false
         },
         {
-          "date": "09-06",
+          "date": "09-07",
+          "desc": "Walmart",
+          "amount": 3.2,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-07",
           "desc": "Walmart",
           "amount": 69.37,
           "category": "Shopping",
           "city": null,
-          "state": null,
+          "state": "AR",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -12111,6 +12131,16 @@
       "period_label": "August 2026"
     },
     {
+      "date": "09-07",
+      "desc": "Walmart",
+      "amount": 69.37,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-09",
+      "period_label": "September 2026"
+    },
+    {
       "date": "06-16",
       "desc": "CVS",
       "amount": 5.38,
@@ -12129,7 +12159,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-08T06:00:50.002Z",
+  "generated_at": "2026-09-08T12:00:54.889Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12233,7 +12263,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1084,
+    "txns_fetched": 1086,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
