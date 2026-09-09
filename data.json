@@ -2,14 +2,14 @@
   "kpis": {
     "income": 0,
     "income_period": "",
-    "true_outflows": 3378.14,
+    "true_outflows": 3442.64,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 26444.010000000002,
+      "balance": 26391.14,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -91,8 +91,8 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 593.59,
-      "available": 574.72,
+      "balance": 574.72,
+      "available": 553.41,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -231,7 +231,7 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 891.61,
+      "balance": 901.6,
       "available": null,
       "is_credit": true,
       "is_loan": false,
@@ -259,7 +259,7 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 17966.73,
+      "balance": 17932.73,
       "available": 17932.73,
       "is_credit": false,
       "is_loan": false,
@@ -316,7 +316,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 86.83,
-      "available": 9913,
+      "available": 9885,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -329,7 +329,7 @@
       "mask": "7397",
       "type": "investment",
       "subtype": "crypto exchange",
-      "balance": 20.05,
+      "balance": 20.39,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -343,7 +343,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 64900.8702308339,
+      "balance": 64285.6796862515,
       "available": 15891.02,
       "is_credit": false,
       "is_loan": false,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 92164.1102308339,
-    "total_credit": 5311.9,
+    "total_checking": 91496.0496862515,
+    "total_credit": 5321.889999999999,
     "total_loans": 385624.42,
-    "net": -298772.2097691661
+    "net": -299450.2603137485
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -368,10 +368,10 @@
   "spending": {
     "Entertainment": 2320.13,
     "Healthcare": 3623.63,
-    "Tech/Subs": 10198.61,
+    "Tech/Subs": 10226.61,
     "Refund": -10500.960000000001,
     "Gas/Travel": 8989.15,
-    "Shopping": 20434.07,
+    "Shopping": 20470.57,
     "Groceries": 3934.29,
     "Restaurants": 3663.1900000000005,
     "Tax/Professional": 19386.88,
@@ -577,57 +577,25 @@
       "period_label": "August 2026"
     },
     {
-      "from": "Transfer Conf# 99CVP49CN; DIVYA GANGAVARAM",
+      "from": "payment from DIVYA GANGAVARAM for \"grnd\"; Conf# 99cvp49cn",
       "amount": 14,
       "period": "2026-09",
       "period_label": "September 2026"
     },
     {
-      "from": "Transfer Conf# 99CVOZIC6; DIVYA GANGAVARAM",
+      "from": "payment from DIVYA GANGAVARAM for \"frnd\"; Conf# 99cvozic6",
       "amount": 28,
       "period": "2026-09",
       "period_label": "September 2026"
     },
     {
-      "from": "Transfer Conf# 99CVOV36B; DIVYA GANGAVARAM",
+      "from": "payment from DIVYA GANGAVARAM for \"frnd\"; Conf# 99cvov36b",
       "amount": 1615,
       "period": "2026-09",
       "period_label": "September 2026"
     }
   ],
   "pending_transactions": [
-    {
-      "date": "09-08",
-      "desc": "Little Macs",
-      "amount": 18.87,
-      "category": "Restaurants",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "09-06",
-      "desc": "Walmart",
-      "amount": 72,
-      "category": "Shopping",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "09-08",
-      "desc": "R K Jewels",
-      "amount": 1615,
-      "category": "Shopping",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "09-07",
-      "desc": "Marshalls",
-      "amount": 9.99,
-      "category": "Shopping",
-      "bank": "BofA",
-      "pending": true
-    },
     {
       "date": "09-07",
       "desc": "Walmart",
@@ -642,6 +610,22 @@
       "amount": 3.2,
       "category": "Shopping",
       "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "09-08",
+      "desc": "Walmart",
+      "amount": 52.5,
+      "category": "Shopping",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "09-08",
+      "desc": "Kd Consultancy LLC",
+      "amount": 28,
+      "category": "Tech/Subs",
+      "bank": "Robinhood",
       "pending": true
     }
   ],
@@ -691,7 +675,7 @@
       "category": "Shopping",
       "count": 23,
       "months": 8,
-      "avg_amount": 39.16,
+      "avg_amount": 38.31,
       "last_amount": -7.45
     },
     {
@@ -1183,6 +1167,14 @@
       "last_amount": 49.01
     },
     {
+      "desc": "Kd Consultancy LLC",
+      "category": "Tech/Subs",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 28,
+      "last_amount": 28
+    },
+    {
       "desc": "Deccan Halal Mart",
       "category": "Groceries",
       "count": 8,
@@ -1398,7 +1390,7 @@
       "income": 0,
       "bofa_income": 0,
       "td_income": 0,
-      "outflows": 3378.14,
+      "outflows": 3442.64,
       "xoom": 0,
       "investments": 0
     }
@@ -5975,14 +5967,14 @@
       "period": "2026-09",
       "categories": {
         "Restaurants": 91.38000000000001,
-        "Tech/Subs": 707.8,
-        "Shopping": 2051.3900000000003,
+        "Tech/Subs": 735.8,
+        "Shopping": 2087.89,
         "Entertainment": 43.71,
         "Gas/Travel": 87.11,
         "Groceries": 146.75,
         "Healthcare": 250
       },
-      "total": 3378.14,
+      "total": 3442.64,
       "transactions": [
         {
           "date": "09-08",
@@ -6193,45 +6185,6 @@
           "refund": false
         },
         {
-          "date": "09-06",
-          "desc": "Walmart",
-          "amount": 72,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-08",
-          "desc": "R K Jewels",
-          "amount": 1615,
-          "category": "Shopping",
-          "city": "Iselin",
-          "state": "NJ",
-          "bank": "BofA",
-          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
-          "mask": "9715",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-07",
-          "desc": "Marshalls",
-          "amount": 9.99,
-          "category": "Shopping",
-          "city": "North Brunswick",
-          "state": "NJ",
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
           "date": "09-07",
           "desc": "Walmart",
           "amount": 33.3,
@@ -6271,10 +6224,75 @@
           "refund": false
         },
         {
+          "date": "09-08",
+          "desc": "Zelle payment to Naypex for \"Bangles\"; Conf# sghn4gqyk",
+          "amount": 56,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
+          "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-08",
+          "desc": "R K Jewels",
+          "amount": 1615,
+          "category": "Shopping",
+          "city": "Iselin",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
+          "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-08",
+          "desc": "Walmart",
+          "amount": 52.5,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-08",
+          "desc": "Marshalls",
+          "amount": 9.99,
+          "category": "Shopping",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
           "date": "09-04",
           "desc": "Temu",
           "amount": 40.4,
           "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-08",
+          "desc": "Kd Consultancy LLC",
+          "amount": 28,
+          "category": "Tech/Subs",
           "city": null,
           "state": null,
           "bank": "Robinhood",
@@ -12159,7 +12177,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-09T06:00:55.300Z",
+  "generated_at": "2026-09-09T12:00:56.008Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12263,7 +12281,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1086,
+    "txns_fetched": 1088,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
