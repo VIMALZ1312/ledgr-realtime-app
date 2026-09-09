@@ -2,7 +2,7 @@
   "kpis": {
     "income": 0,
     "income_period": "",
-    "true_outflows": 3442.64,
+    "true_outflows": 3645.73,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,10 +16,10 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 2470.92,
+      "balance": 2674.01,
       "is_credit": true,
       "period_label": "Live",
-      "wf_checking": 660.52
+      "wf_checking": 673.52
     },
     "td": {
       "balance": 63,
@@ -133,7 +133,7 @@
       "mask": "3068",
       "type": "depository",
       "subtype": "checking",
-      "balance": 660.52,
+      "balance": 673.52,
       "available": 673.52,
       "is_credit": false,
       "is_loan": false,
@@ -161,8 +161,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 2470.92,
-      "available": 327,
+      "balance": 2674.01,
+      "available": 249,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 91496.0496862515,
-    "total_credit": 5321.889999999999,
+    "total_checking": 91509.0496862515,
+    "total_credit": 5524.98,
     "total_loans": 385624.42,
-    "net": -299450.2603137485
+    "net": -299640.35031374847
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -368,12 +368,12 @@
   "spending": {
     "Entertainment": 2320.13,
     "Healthcare": 3623.63,
-    "Tech/Subs": 10226.61,
+    "Tech/Subs": 10236.36,
     "Refund": -10500.960000000001,
     "Gas/Travel": 8989.15,
     "Shopping": 20470.57,
-    "Groceries": 3934.29,
-    "Restaurants": 3663.1900000000005,
+    "Groceries": 4015.6499999999996,
+    "Restaurants": 3775.17,
     "Tax/Professional": 19386.88,
     "Insurance": 230.74
   },
@@ -815,6 +815,14 @@
       "last_amount": 13.14
     },
     {
+      "desc": "Renaissance Buy Rite",
+      "category": "Restaurants",
+      "count": 5,
+      "months": 4,
+      "avg_amount": 41.3,
+      "last_amount": 12.78
+    },
+    {
       "desc": "Shaan Halal Zabiha Meat",
       "category": "Groceries",
       "count": 8,
@@ -927,20 +935,20 @@
       "last_amount": 43.71
     },
     {
-      "desc": "Renaissance Buy Rite",
-      "category": "Restaurants",
-      "count": 4,
-      "months": 3,
-      "avg_amount": 42.84,
-      "last_amount": 12.78
-    },
-    {
       "desc": "Shaan Halal Meat Market",
       "category": "Groceries",
       "count": 3,
       "months": 3,
       "avg_amount": 42.7,
       "last_amount": 47.44
+    },
+    {
+      "desc": "Deccan Halal Mart",
+      "category": "Groceries",
+      "count": 9,
+      "months": 3,
+      "avg_amount": 30.27,
+      "last_amount": 81.36
     },
     {
       "desc": "Dollar Tree",
@@ -1175,14 +1183,6 @@
       "last_amount": 28
     },
     {
-      "desc": "Deccan Halal Mart",
-      "category": "Groceries",
-      "count": 8,
-      "months": 2,
-      "avg_amount": 23.88,
-      "last_amount": 12.06
-    },
-    {
       "desc": "Vivek Flowers",
       "category": "Shopping",
       "count": 3,
@@ -1390,7 +1390,7 @@
       "income": 0,
       "bofa_income": 0,
       "td_income": 0,
-      "outflows": 3442.64,
+      "outflows": 3645.73,
       "xoom": 0,
       "investments": 0
     }
@@ -5966,15 +5966,15 @@
       "label": "September 2026",
       "period": "2026-09",
       "categories": {
-        "Restaurants": 91.38000000000001,
-        "Tech/Subs": 735.8,
+        "Restaurants": 203.36,
+        "Tech/Subs": 745.55,
         "Shopping": 2087.89,
         "Entertainment": 43.71,
         "Gas/Travel": 87.11,
-        "Groceries": 146.75,
+        "Groceries": 228.11,
         "Healthcare": 250
       },
-      "total": 3442.64,
+      "total": 3645.7299999999996,
       "transactions": [
         {
           "date": "09-08",
@@ -6112,6 +6112,58 @@
           "amount": 30.89,
           "category": "Shopping",
           "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-06",
+          "desc": "Renaissance Buy Rite",
+          "amount": 35.16,
+          "category": "Restaurants",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-06",
+          "desc": "Little Macs",
+          "amount": 76.82,
+          "category": "Restaurants",
+          "city": "Point Pleasant",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-06",
+          "desc": "Deccan Halal Mart",
+          "amount": 81.36,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-06",
+          "desc": "Borough Of",
+          "amount": 9.75,
+          "category": "Tech/Subs",
+          "city": "Point Pleasant",
           "state": "NJ",
           "bank": "Wells Fargo",
           "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
@@ -12177,7 +12229,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-09T12:00:56.008Z",
+  "generated_at": "2026-09-09T18:00:52.740Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12281,7 +12333,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1088,
+    "txns_fetched": 1092,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
