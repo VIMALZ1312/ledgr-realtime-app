@@ -2,14 +2,14 @@
   "kpis": {
     "income": 0,
     "income_period": "",
-    "true_outflows": 3645.73,
+    "true_outflows": 3687.3,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 26391.14,
+      "balance": 26369.83,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -91,7 +91,7 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 574.72,
+      "balance": 553.41,
       "available": 553.41,
       "is_credit": false,
       "is_loan": false,
@@ -231,7 +231,7 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 901.6,
+      "balance": 990.6,
       "available": null,
       "is_credit": true,
       "is_loan": false,
@@ -329,7 +329,7 @@
       "mask": "7397",
       "type": "investment",
       "subtype": "crypto exchange",
-      "balance": 20.39,
+      "balance": 20.08,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -343,7 +343,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 64285.6796862515,
+      "balance": 64206.2110044551,
       "available": 15891.02,
       "is_credit": false,
       "is_loan": false,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 91509.0496862515,
-    "total_credit": 5524.98,
+    "total_checking": 91408.2710044551,
+    "total_credit": 5613.98,
     "total_loans": 385624.42,
-    "net": -299640.35031374847
+    "net": -299830.12899554486
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -366,13 +366,13 @@
     "by_month": []
   },
   "spending": {
-    "Entertainment": 2320.13,
+    "Entertainment": 2341.4399999999996,
     "Healthcare": 3623.63,
     "Tech/Subs": 10236.36,
     "Refund": -10500.960000000001,
     "Gas/Travel": 8989.15,
     "Shopping": 20470.57,
-    "Groceries": 4015.6499999999996,
+    "Groceries": 4035.91,
     "Restaurants": 3775.17,
     "Tax/Professional": 19386.88,
     "Insurance": 230.74
@@ -597,26 +597,10 @@
   ],
   "pending_transactions": [
     {
-      "date": "09-07",
-      "desc": "Walmart",
-      "amount": 33.3,
-      "category": "Shopping",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "09-07",
-      "desc": "Walmart",
-      "amount": 3.2,
-      "category": "Shopping",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "09-08",
-      "desc": "Walmart",
-      "amount": 52.5,
-      "category": "Shopping",
+      "date": "09-09",
+      "desc": "ShopRite",
+      "amount": 20.26,
+      "category": "Groceries",
       "bank": "BofA",
       "pending": true
     },
@@ -630,6 +614,14 @@
     }
   ],
   "detected_recurring": [
+    {
+      "desc": "ShopRite",
+      "category": "Groceries",
+      "count": 24,
+      "months": 9,
+      "avg_amount": 30.63,
+      "last_amount": 11.98
+    },
     {
       "desc": "Amazon",
       "category": "Shopping",
@@ -677,14 +669,6 @@
       "months": 8,
       "avg_amount": 38.31,
       "last_amount": -7.45
-    },
-    {
-      "desc": "ShopRite",
-      "category": "Groceries",
-      "count": 23,
-      "months": 8,
-      "avg_amount": 31.08,
-      "last_amount": 11.98
     },
     {
       "desc": "Regal Cinemas",
@@ -823,6 +807,14 @@
       "last_amount": 12.78
     },
     {
+      "desc": "Netflix",
+      "category": "Entertainment",
+      "count": 4,
+      "months": 4,
+      "avg_amount": 21.31,
+      "last_amount": 21.31
+    },
+    {
       "desc": "Shaan Halal Zabiha Meat",
       "category": "Groceries",
       "count": 8,
@@ -957,14 +949,6 @@
       "months": 3,
       "avg_amount": 22.3,
       "last_amount": 19.19
-    },
-    {
-      "desc": "Netflix",
-      "category": "Entertainment",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 21.31,
-      "last_amount": 21.31
     },
     {
       "desc": "Apna Bazaar Cash & Carry",
@@ -1390,7 +1374,7 @@
       "income": 0,
       "bofa_income": 0,
       "td_income": 0,
-      "outflows": 3645.73,
+      "outflows": 3687.3,
       "xoom": 0,
       "investments": 0
     }
@@ -5967,14 +5951,14 @@
       "period": "2026-09",
       "categories": {
         "Restaurants": 203.36,
+        "Entertainment": 65.02,
         "Tech/Subs": 745.55,
         "Shopping": 2087.89,
-        "Entertainment": 43.71,
         "Gas/Travel": 87.11,
-        "Groceries": 228.11,
+        "Groceries": 248.37,
         "Healthcare": 250
       },
-      "total": 3645.7299999999996,
+      "total": 3687.3,
       "transactions": [
         {
           "date": "09-08",
@@ -5983,6 +5967,19 @@
           "category": "Restaurants",
           "city": "Point Pleasant",
           "state": "NJ",
+          "bank": "BofA",
+          "account_id": "jJEy77qLQxHNznaqxjJAhmEBM05B06iRRwaZd",
+          "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-09",
+          "desc": "Netflix",
+          "amount": 21.31,
+          "category": "Entertainment",
+          "city": null,
+          "state": null,
           "bank": "BofA",
           "account_id": "jJEy77qLQxHNznaqxjJAhmEBM05B06iRRwaZd",
           "mask": "7309",
@@ -6239,32 +6236,6 @@
         {
           "date": "09-07",
           "desc": "Walmart",
-          "amount": 33.3,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-07",
-          "desc": "Walmart",
-          "amount": 3.2,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-07",
-          "desc": "Walmart",
           "amount": 69.37,
           "category": "Shopping",
           "city": null,
@@ -6303,9 +6274,22 @@
         },
         {
           "date": "09-08",
-          "desc": "Walmart",
-          "amount": 52.5,
+          "desc": "Marshalls",
+          "amount": 9.99,
           "category": "Shopping",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-09",
+          "desc": "ShopRite",
+          "amount": 20.26,
+          "category": "Groceries",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -6315,12 +6299,38 @@
           "refund": false
         },
         {
-          "date": "09-08",
-          "desc": "Marshalls",
-          "amount": 9.99,
+          "date": "09-09",
+          "desc": "Walmart",
+          "amount": 33.3,
           "category": "Shopping",
-          "city": "North Brunswick",
-          "state": "NJ",
+          "city": null,
+          "state": "AR",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-09",
+          "desc": "Walmart",
+          "amount": 52.5,
+          "category": "Shopping",
+          "city": null,
+          "state": "AR",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-09",
+          "desc": "Walmart",
+          "amount": 3.2,
+          "category": "Shopping",
+          "city": null,
+          "state": "AR",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -12211,6 +12221,36 @@
       "period_label": "September 2026"
     },
     {
+      "date": "09-09",
+      "desc": "Walmart",
+      "amount": 33.3,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-09",
+      "period_label": "September 2026"
+    },
+    {
+      "date": "09-09",
+      "desc": "Walmart",
+      "amount": 52.5,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-09",
+      "period_label": "September 2026"
+    },
+    {
+      "date": "09-09",
+      "desc": "Walmart",
+      "amount": 3.2,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-09",
+      "period_label": "September 2026"
+    },
+    {
       "date": "06-16",
       "desc": "CVS",
       "amount": 5.38,
@@ -12229,7 +12269,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-10T06:00:52.069Z",
+  "generated_at": "2026-09-10T12:00:56.557Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12333,7 +12373,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1092,
+    "txns_fetched": 1093,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
