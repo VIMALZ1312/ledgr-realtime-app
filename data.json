@@ -175,8 +175,8 @@
       "mask": "5961",
       "type": "depository",
       "subtype": "checking",
-      "balance": 95.71,
-      "available": 95.71,
+      "balance": 88.71,
+      "available": 88.71,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 90009.6767903045,
+    "total_checking": 90002.6767903045,
     "total_credit": 5662.24,
     "total_loans": 385105.65,
-    "net": -300758.21320969553
+    "net": -300765.21320969553
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -12303,7 +12303,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-11T12:00:55.801Z",
+  "generated_at": "2026-09-11T18:00:57.188Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12407,7 +12407,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1099,
+    "txns_fetched": 1100,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
