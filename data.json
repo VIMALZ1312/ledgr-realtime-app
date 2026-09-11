@@ -1,8 +1,8 @@
 {
   "kpis": {
-    "income": 0,
-    "income_period": "",
-    "true_outflows": 3687.3,
+    "income": 7469.96,
+    "income_period": "September 2026",
+    "true_outflows": 3774.88,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -92,7 +92,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 553.41,
-      "available": 553.41,
+      "available": 4447.8,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -231,7 +231,7 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 990.6,
+      "balance": 1010.86,
       "available": null,
       "is_credit": true,
       "is_loan": false,
@@ -260,7 +260,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 17932.73,
-      "available": 17932.73,
+      "available": 21408.3,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -353,9 +353,9 @@
   ],
   "net_worth": {
     "total_checking": 90009.6767903045,
-    "total_credit": 5641.98,
+    "total_credit": 5662.24,
     "total_loans": 385105.65,
-    "net": -300737.9532096955
+    "net": -300758.21320969553
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -368,10 +368,10 @@
   "spending": {
     "Entertainment": 2341.4399999999996,
     "Healthcare": 3623.63,
-    "Tech/Subs": 10236.36,
+    "Tech/Subs": 10258.77,
     "Refund": -10500.960000000001,
     "Gas/Travel": 8989.15,
-    "Shopping": 20470.57,
+    "Shopping": 20535.74,
     "Groceries": 4035.91,
     "Restaurants": 3775.17,
     "Tax/Professional": 19386.88,
@@ -597,15 +597,31 @@
   ],
   "pending_transactions": [
     {
-      "date": "09-09",
-      "desc": "ShopRite",
-      "amount": 20.26,
-      "category": "Groceries",
+      "date": "09-10",
+      "desc": "Garden Farm",
+      "amount": 65.17,
+      "category": "Shopping",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "09-10",
+      "desc": "FedEx",
+      "amount": 22.41,
+      "category": "Tech/Subs",
       "bank": "BofA",
       "pending": true
     }
   ],
   "detected_recurring": [
+    {
+      "desc": "Garden Farm",
+      "category": "Shopping",
+      "count": 11,
+      "months": 9,
+      "avg_amount": 63.57,
+      "last_amount": 79.37
+    },
     {
       "desc": "ShopRite",
       "category": "Groceries",
@@ -629,14 +645,6 @@
       "months": 8,
       "avg_amount": 280,
       "last_amount": 280
-    },
-    {
-      "desc": "Garden Farm",
-      "category": "Shopping",
-      "count": 10,
-      "months": 8,
-      "avg_amount": 63.41,
-      "last_amount": 79.37
     },
     {
       "desc": "Delight Big Bazar",
@@ -1159,6 +1167,14 @@
       "last_amount": 28
     },
     {
+      "desc": "FedEx",
+      "category": "Tech/Subs",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 26.98,
+      "last_amount": 31.55
+    },
+    {
       "desc": "Vivek Flowers",
       "category": "Shopping",
       "count": 3,
@@ -1363,10 +1379,10 @@
     {
       "period": "2026-09",
       "period_label": "September 2026",
-      "income": 0,
-      "bofa_income": 0,
+      "income": 7469.96,
+      "bofa_income": 7469.96,
       "td_income": 0,
-      "outflows": 3687.3,
+      "outflows": 3774.88,
       "xoom": 0,
       "investments": 0
     }
@@ -5944,13 +5960,13 @@
       "categories": {
         "Restaurants": 203.36,
         "Entertainment": 65.02,
-        "Tech/Subs": 745.55,
-        "Shopping": 2087.89,
+        "Tech/Subs": 767.9599999999999,
+        "Shopping": 2153.06,
         "Gas/Travel": 87.11,
         "Groceries": 248.37,
         "Healthcare": 250
       },
-      "total": 3687.3,
+      "total": 3774.88,
       "transactions": [
         {
           "date": "09-08",
@@ -6279,19 +6295,6 @@
         },
         {
           "date": "09-09",
-          "desc": "ShopRite",
-          "amount": 20.26,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-09",
           "desc": "Walmart",
           "amount": 33.3,
           "category": "Shopping",
@@ -6323,6 +6326,45 @@
           "category": "Shopping",
           "city": null,
           "state": "AR",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-10",
+          "desc": "Garden Farm",
+          "amount": 65.17,
+          "category": "Shopping",
+          "city": "Brunswick",
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-10",
+          "desc": "FedEx",
+          "amount": 22.41,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-10",
+          "desc": "ShopRite",
+          "amount": 20.26,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -12261,7 +12303,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-11T06:00:55.184Z",
+  "generated_at": "2026-09-11T12:00:55.801Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12365,7 +12407,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1094,
+    "txns_fetched": 1099,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
