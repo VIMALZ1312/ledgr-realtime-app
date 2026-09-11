@@ -273,7 +273,7 @@
       "mask": "4351",
       "type": "loan",
       "subtype": "mortgage",
-      "balance": 385624.42,
+      "balance": 385105.65,
       "available": null,
       "is_credit": false,
       "is_loan": true,
@@ -315,7 +315,7 @@
       "mask": "1345",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 86.83,
+      "balance": 114.83,
       "available": 9885,
       "is_credit": true,
       "is_loan": false,
@@ -329,7 +329,7 @@
       "mask": "7397",
       "type": "investment",
       "subtype": "crypto exchange",
-      "balance": 20.08,
+      "balance": 19.34,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -343,7 +343,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 64206.2110044551,
+      "balance": 62807.6167903045,
       "available": 15891.02,
       "is_credit": false,
       "is_loan": false,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 91408.2710044551,
-    "total_credit": 5613.98,
-    "total_loans": 385624.42,
-    "net": -299830.12899554486
+    "total_checking": 90009.6767903045,
+    "total_credit": 5641.98,
+    "total_loans": 385105.65,
+    "net": -300737.9532096955
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -602,14 +602,6 @@
       "amount": 20.26,
       "category": "Groceries",
       "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "09-08",
-      "desc": "Kd Consultancy LLC",
-      "amount": 28,
-      "category": "Tech/Subs",
-      "bank": "Robinhood",
       "pending": true
     }
   ],
@@ -12269,7 +12261,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-11T00:00:59.834Z",
+  "generated_at": "2026-09-11T06:00:55.184Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12373,7 +12365,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1093,
+    "txns_fetched": 1094,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
