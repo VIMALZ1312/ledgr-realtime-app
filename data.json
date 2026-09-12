@@ -2,14 +2,14 @@
   "kpis": {
     "income": 7969.96,
     "income_period": "September 2026",
-    "true_outflows": 4272.82,
+    "true_outflows": 4284.66,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 26369.83,
+      "balance": 29845.4,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -231,7 +231,7 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 1010.86,
+      "balance": 1076.03,
       "available": null,
       "is_credit": true,
       "is_loan": false,
@@ -259,7 +259,7 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 17932.73,
+      "balance": 21408.3,
       "available": 21408.3,
       "is_credit": false,
       "is_loan": false,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 90268.577449945,
-    "total_credit": 5738.43,
+    "total_checking": 93744.147449945,
+    "total_credit": 5803.599999999999,
     "total_loans": 385105.65,
-    "net": -300575.50255005504
+    "net": -297165.102550055
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -372,7 +372,7 @@
     "Refund": -10500.960000000001,
     "Gas/Travel": 8989.15,
     "Shopping": 21016.49,
-    "Groceries": 4035.91,
+    "Groceries": 4047.75,
     "Restaurants": 3789.17,
     "Tax/Professional": 19386.88,
     "Insurance": 230.74
@@ -598,17 +598,17 @@
   "pending_transactions": [
     {
       "date": "09-10",
-      "desc": "Garden Farm",
-      "amount": 65.17,
-      "category": "Shopping",
+      "desc": "FedEx",
+      "amount": 22.41,
+      "category": "Tech/Subs",
       "bank": "BofA",
       "pending": true
     },
     {
-      "date": "09-10",
-      "desc": "FedEx",
-      "amount": 22.41,
-      "category": "Tech/Subs",
+      "date": "09-11",
+      "desc": "Deccan Halal Mart",
+      "amount": 11.84,
+      "category": "Groceries",
       "bank": "BofA",
       "pending": true
     },
@@ -945,10 +945,10 @@
     {
       "desc": "Deccan Halal Mart",
       "category": "Groceries",
-      "count": 9,
+      "count": 10,
       "months": 3,
-      "avg_amount": 30.27,
-      "last_amount": 81.36
+      "avg_amount": 28.42,
+      "last_amount": 11.84
     },
     {
       "desc": "Dollar Tree",
@@ -1398,7 +1398,7 @@
       "income": 7969.959999999999,
       "bofa_income": 7969.959999999999,
       "td_income": 0,
-      "outflows": 4272.82,
+      "outflows": 4284.66,
       "xoom": 0,
       "investments": 0
     }
@@ -5979,10 +5979,10 @@
         "Tech/Subs": 767.9599999999999,
         "Shopping": 2633.81,
         "Gas/Travel": 87.11,
-        "Groceries": 248.37,
+        "Groceries": 260.21,
         "Healthcare": 250
       },
-      "total": 4272.82,
+      "total": 4284.66,
       "transactions": [
         {
           "date": "09-08",
@@ -6402,19 +6402,6 @@
         },
         {
           "date": "09-10",
-          "desc": "Garden Farm",
-          "amount": 65.17,
-          "category": "Shopping",
-          "city": "Brunswick",
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-10",
           "desc": "FedEx",
           "amount": 22.41,
           "category": "Tech/Subs",
@@ -6431,6 +6418,32 @@
           "desc": "ShopRite",
           "amount": 20.26,
           "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-11",
+          "desc": "Deccan Halal Mart",
+          "amount": 11.84,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-11",
+          "desc": "Garden Farm",
+          "amount": 65.17,
+          "category": "Shopping",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -12394,7 +12407,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-12T06:00:57.524Z",
+  "generated_at": "2026-09-12T12:00:57.498Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12498,7 +12511,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1106,
+    "txns_fetched": 1107,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
