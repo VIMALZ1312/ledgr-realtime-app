@@ -2,7 +2,7 @@
   "kpis": {
     "income": 7969.96,
     "income_period": "September 2026",
-    "true_outflows": 4385.76,
+    "true_outflows": 4594.97,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -231,7 +231,7 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 1076.03,
+      "balance": 1110.28,
       "available": null,
       "is_credit": true,
       "is_loan": false,
@@ -353,9 +353,9 @@
   ],
   "net_worth": {
     "total_checking": 97638.537449945,
-    "total_credit": 5803.599999999999,
+    "total_credit": 5837.849999999999,
     "total_loans": 385105.65,
-    "net": -293270.712550055
+    "net": -293304.962550055
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -372,7 +372,7 @@
     "Refund": -10500.960000000001,
     "Gas/Travel": 8989.15,
     "Shopping": 21016.49,
-    "Groceries": 4047.75,
+    "Groceries": 4256.96,
     "Restaurants": 3789.17,
     "Tax/Professional": 19386.88,
     "Insurance": 230.74
@@ -597,17 +597,9 @@
   ],
   "pending_transactions": [
     {
-      "date": "09-10",
-      "desc": "FedEx",
-      "amount": 22.41,
-      "category": "Tech/Subs",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "09-11",
-      "desc": "Deccan Halal Mart",
-      "amount": 11.84,
+      "date": "09-12",
+      "desc": "Patidar Supermarket Nort",
+      "amount": 209.21,
       "category": "Groceries",
       "bank": "BofA",
       "pending": true
@@ -743,6 +735,14 @@
       "last_amount": 1.99
     },
     {
+      "desc": "Patidar Supermarket Nort",
+      "category": "Groceries",
+      "count": 11,
+      "months": 6,
+      "avg_amount": 115.1,
+      "last_amount": 121.51
+    },
+    {
       "desc": "NJ E-ZPass",
       "category": "Gas/Travel",
       "count": 9,
@@ -765,14 +765,6 @@
       "months": 6,
       "avg_amount": 5.33,
       "last_amount": 5.33
-    },
-    {
-      "desc": "Patidar Supermarket Nort",
-      "category": "Groceries",
-      "count": 10,
-      "months": 5,
-      "avg_amount": 105.69,
-      "last_amount": 121.51
     },
     {
       "desc": "Patel Brothers",
@@ -1414,7 +1406,7 @@
       "income": 7969.959999999999,
       "bofa_income": 7969.959999999999,
       "td_income": 0,
-      "outflows": 4385.76,
+      "outflows": 4594.97,
       "xoom": 0,
       "investments": 0
     }
@@ -5995,10 +5987,10 @@
         "Tech/Subs": 767.9599999999999,
         "Shopping": 2633.81,
         "Gas/Travel": 87.11,
-        "Groceries": 260.21,
+        "Groceries": 469.42,
         "Healthcare": 351.1
       },
-      "total": 4385.76,
+      "total": 4594.970000000001,
       "transactions": [
         {
           "date": "09-08",
@@ -6418,34 +6410,8 @@
         },
         {
           "date": "09-10",
-          "desc": "FedEx",
-          "amount": 22.41,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-10",
           "desc": "ShopRite",
           "amount": 20.26,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-11",
-          "desc": "Deccan Halal Mart",
-          "amount": 11.84,
           "category": "Groceries",
           "city": null,
           "state": null,
@@ -6462,6 +6428,45 @@
           "category": "Shopping",
           "city": null,
           "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-12",
+          "desc": "Patidar Supermarket Nort",
+          "amount": 209.21,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-12",
+          "desc": "Deccan Halal Mart",
+          "amount": 11.84,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-12",
+          "desc": "FedEx",
+          "amount": 22.41,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "TN",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -12431,6 +12436,16 @@
       "period_label": "September 2026"
     },
     {
+      "date": "09-12",
+      "desc": "FedEx",
+      "amount": 22.41,
+      "category": "Tech/Subs",
+      "city": null,
+      "state": "TN",
+      "period": "2026-09",
+      "period_label": "September 2026"
+    },
+    {
       "date": "06-16",
       "desc": "CVS",
       "amount": 5.38,
@@ -12449,7 +12464,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-13T06:00:58.969Z",
+  "generated_at": "2026-09-13T12:00:57.844Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12553,7 +12568,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1109,
+    "txns_fetched": 1110,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
