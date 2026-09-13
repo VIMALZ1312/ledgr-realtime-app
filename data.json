@@ -2,7 +2,7 @@
   "kpis": {
     "income": 7969.96,
     "income_period": "September 2026",
-    "true_outflows": 4284.66,
+    "true_outflows": 4385.76,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -316,7 +316,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 114.83,
-      "available": 9464,
+      "available": 9364,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -367,7 +367,7 @@
   },
   "spending": {
     "Entertainment": 2344.63,
-    "Healthcare": 3623.63,
+    "Healthcare": 3724.73,
     "Tech/Subs": 10258.77,
     "Refund": -10500.960000000001,
     "Gas/Travel": 8989.15,
@@ -617,6 +617,22 @@
       "desc": "Costco",
       "amount": 421.75,
       "category": "Shopping",
+      "bank": "Robinhood",
+      "pending": true
+    },
+    {
+      "date": "09-12",
+      "desc": "Fresh Style Barbershop",
+      "amount": 58.43,
+      "category": "Healthcare",
+      "bank": "Robinhood",
+      "pending": true
+    },
+    {
+      "date": "09-12",
+      "desc": "Fresh Style Barbershop",
+      "amount": 42.67,
+      "category": "Healthcare",
       "bank": "Robinhood",
       "pending": true
     }
@@ -1398,7 +1414,7 @@
       "income": 7969.959999999999,
       "bofa_income": 7969.959999999999,
       "td_income": 0,
-      "outflows": 4284.66,
+      "outflows": 4385.76,
       "xoom": 0,
       "investments": 0
     }
@@ -5980,9 +5996,9 @@
         "Shopping": 2633.81,
         "Gas/Travel": 87.11,
         "Groceries": 260.21,
-        "Healthcare": 250
+        "Healthcare": 351.1
       },
-      "total": 4284.66,
+      "total": 4385.76,
       "transactions": [
         {
           "date": "09-08",
@@ -6483,6 +6499,32 @@
           "desc": "Costco",
           "amount": 421.75,
           "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-12",
+          "desc": "Fresh Style Barbershop",
+          "amount": 58.43,
+          "category": "Healthcare",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-12",
+          "desc": "Fresh Style Barbershop",
+          "amount": 42.67,
+          "category": "Healthcare",
           "city": null,
           "state": null,
           "bank": "Robinhood",
@@ -12407,7 +12449,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-12T18:00:57.572Z",
+  "generated_at": "2026-09-13T00:01:06.959Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12511,7 +12553,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1107,
+    "txns_fetched": 1109,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
