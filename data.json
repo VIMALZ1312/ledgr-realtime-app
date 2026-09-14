@@ -2,7 +2,7 @@
   "kpis": {
     "income": 7969.96,
     "income_period": "September 2026",
-    "true_outflows": 4594.97,
+    "true_outflows": 4882.86,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -19,7 +19,7 @@
       "balance": 2750.2,
       "is_credit": true,
       "period_label": "Live",
-      "wf_checking": 673.52
+      "wf_checking": 1173.52
     },
     "td": {
       "balance": 63,
@@ -133,7 +133,7 @@
       "mask": "3068",
       "type": "depository",
       "subtype": "checking",
-      "balance": 673.52,
+      "balance": 1173.52,
       "available": 1173.52,
       "is_credit": false,
       "is_loan": false,
@@ -148,7 +148,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 0,
-      "available": 1000,
+      "available": 999,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -162,7 +162,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 2750.2,
-      "available": 143,
+      "available": 92,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -316,7 +316,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 114.83,
-      "available": 9364,
+      "available": 9077,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 97638.537449945,
+    "total_checking": 98138.537449945,
     "total_credit": 5837.849999999999,
     "total_loans": 385105.65,
-    "net": -293304.962550055
+    "net": -292804.962550055
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -367,13 +367,13 @@
   },
   "spending": {
     "Entertainment": 2344.63,
-    "Healthcare": 3724.73,
+    "Healthcare": 3924.73,
     "Tech/Subs": 10258.77,
     "Refund": -10500.960000000001,
     "Gas/Travel": 8989.15,
     "Shopping": 21016.49,
     "Groceries": 4256.96,
-    "Restaurants": 3789.17,
+    "Restaurants": 3877.0600000000004,
     "Tax/Professional": 19386.88,
     "Insurance": 230.74
   },
@@ -627,6 +627,22 @@
       "category": "Healthcare",
       "bank": "Robinhood",
       "pending": true
+    },
+    {
+      "date": "09-12",
+      "desc": "Srishti",
+      "amount": 87.89,
+      "category": "Restaurants",
+      "bank": "Robinhood",
+      "pending": true
+    },
+    {
+      "date": "09-13",
+      "desc": "Walgreens",
+      "amount": 200,
+      "category": "Healthcare",
+      "bank": "Robinhood",
+      "pending": true
     }
   ],
   "detected_recurring": [
@@ -687,6 +703,14 @@
       "last_amount": -7.45
     },
     {
+      "desc": "Walgreens",
+      "category": "Healthcare",
+      "count": 19,
+      "months": 8,
+      "avg_amount": 35.13,
+      "last_amount": 3.26
+    },
+    {
       "desc": "Apple",
       "category": "Shopping",
       "count": 23,
@@ -717,14 +741,6 @@
       "months": 7,
       "avg_amount": 35.18,
       "last_amount": 35.18
-    },
-    {
-      "desc": "Walgreens",
-      "category": "Healthcare",
-      "count": 18,
-      "months": 7,
-      "avg_amount": 25.97,
-      "last_amount": 3.26
     },
     {
       "desc": "Google One",
@@ -1167,6 +1183,14 @@
       "last_amount": 46.88
     },
     {
+      "desc": "Srishti",
+      "category": "Restaurants",
+      "count": 4,
+      "months": 2,
+      "avg_amount": 39.69,
+      "last_amount": 87.89
+    },
+    {
       "desc": "AMC Theatres",
       "category": "Entertainment",
       "count": 2,
@@ -1406,7 +1430,7 @@
       "income": 7969.959999999999,
       "bofa_income": 7969.959999999999,
       "td_income": 0,
-      "outflows": 4594.97,
+      "outflows": 4882.86,
       "xoom": 0,
       "investments": 0
     }
@@ -5982,15 +6006,15 @@
       "label": "September 2026",
       "period": "2026-09",
       "categories": {
-        "Restaurants": 217.36,
+        "Restaurants": 305.25,
         "Entertainment": 68.21,
         "Tech/Subs": 767.9599999999999,
         "Shopping": 2633.81,
         "Gas/Travel": 87.11,
         "Groceries": 469.42,
-        "Healthcare": 351.1
+        "Healthcare": 551.1
       },
-      "total": 4594.970000000001,
+      "total": 4882.8600000000015,
       "transactions": [
         {
           "date": "09-08",
@@ -6529,6 +6553,32 @@
           "date": "09-12",
           "desc": "Fresh Style Barbershop",
           "amount": 42.67,
+          "category": "Healthcare",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-12",
+          "desc": "Srishti",
+          "amount": 87.89,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-13",
+          "desc": "Walgreens",
+          "amount": 200,
           "category": "Healthcare",
           "city": null,
           "state": null,
@@ -12464,7 +12514,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-13T18:00:58.829Z",
+  "generated_at": "2026-09-14T00:01:05.422Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12568,7 +12618,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1110,
+    "txns_fetched": 1112,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
