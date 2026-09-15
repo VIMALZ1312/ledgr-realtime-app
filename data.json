@@ -9,7 +9,7 @@
   },
   "accounts": {
     "bofa": {
-      "balance": 33739.79,
+      "balance": 32634.510000000002,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -231,8 +231,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 1110.28,
-      "available": null,
+      "balance": 209.21,
+      "available": 490.79,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -259,8 +259,8 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 21408.3,
-      "available": 21408.3,
+      "balance": 20303.02,
+      "available": 20303.02,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 96824.800749256,
-    "total_credit": 6435.599999999999,
+    "total_checking": 95719.520749256,
+    "total_credit": 5534.53,
     "total_loans": 385105.65,
-    "net": -294716.449250744
+    "net": -294920.65925074404
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -593,17 +593,15 @@
       "amount": 1615,
       "period": "2026-09",
       "period_label": "September 2026"
+    },
+    {
+      "from": "payment from PADMAJA SALA for \"For Coconut & Betle leaves\"; Conf# 99cwi11zk",
+      "amount": 5,
+      "period": "2026-09",
+      "period_label": "September 2026"
     }
   ],
   "pending_transactions": [
-    {
-      "date": "09-12",
-      "desc": "Patidar Supermarket Nort",
-      "amount": 209.21,
-      "category": "Groceries",
-      "bank": "BofA",
-      "pending": true
-    },
     {
       "date": "09-13",
       "desc": "Walgreens",
@@ -5979,7 +5977,7 @@
         "Tech/Subs": 767.9599999999999,
         "Shopping": 2633.81,
         "Gas/Travel": 87.11,
-        "Groceries": 469.42,
+        "Groceries": 469.41999999999996,
         "Healthcare": 551.1,
         "Refund": -12.99
       },
@@ -6429,19 +6427,6 @@
         },
         {
           "date": "09-12",
-          "desc": "Patidar Supermarket Nort",
-          "amount": 209.21,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-12",
           "desc": "Deccan Halal Mart",
           "amount": 11.84,
           "category": "Groceries",
@@ -6460,6 +6445,19 @@
           "category": "Tech/Subs",
           "city": null,
           "state": "TN",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-14",
+          "desc": "Patidar Supermarket Nort",
+          "amount": 209.21,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -12496,7 +12494,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-15T06:00:55.267Z",
+  "generated_at": "2026-09-15T12:00:56.890Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12600,7 +12598,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1115,
+    "txns_fetched": 1118,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
