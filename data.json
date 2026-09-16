@@ -2,7 +2,7 @@
   "kpis": {
     "income": 7969.96,
     "income_period": "September 2026",
-    "true_outflows": 4869.87,
+    "true_outflows": 5028.09,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 2750.2,
+      "balance": 2908.4199999999996,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 1173.52
@@ -147,8 +147,8 @@
       "mask": "8036",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 0,
-      "available": 999,
+      "balance": 1.99,
+      "available": 998,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -161,8 +161,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 2750.2,
-      "available": 92,
+      "balance": 2906.43,
+      "available": 93,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -353,9 +353,9 @@
   ],
   "net_worth": {
     "total_checking": 91651.629050995,
-    "total_credit": 5734.53,
+    "total_credit": 5892.75,
     "total_loans": 385105.65,
-    "net": -299188.550949005
+    "net": -299346.77094900503
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -366,14 +366,14 @@
     "by_month": []
   },
   "spending": {
-    "Entertainment": 2344.63,
+    "Entertainment": 2453.2299999999996,
     "Healthcare": 3924.73,
-    "Tech/Subs": 10258.77,
-    "Refund": -10513.949999999999,
+    "Tech/Subs": 10263.77,
+    "Refund": -10516.53,
     "Gas/Travel": 8989.15,
-    "Shopping": 21016.49,
+    "Shopping": 21035.25,
     "Groceries": 4256.96,
-    "Restaurants": 3877.0600000000004,
+    "Restaurants": 3905.5,
     "Tax/Professional": 19386.88,
     "Insurance": 230.74
   },
@@ -622,9 +622,9 @@
     {
       "desc": "Amazon",
       "category": "Shopping",
-      "count": 80,
+      "count": 81,
       "months": 9,
-      "avg_amount": 24.96,
+      "avg_amount": 24.88,
       "last_amount": 28.95
     },
     {
@@ -670,9 +670,9 @@
     {
       "desc": "Apple",
       "category": "Shopping",
-      "count": 23,
+      "count": 25,
       "months": 8,
-      "avg_amount": 19.92,
+      "avg_amount": 22.49,
       "last_amount": 5.32
     },
     {
@@ -682,6 +682,14 @@
       "months": 8,
       "avg_amount": 17.75,
       "last_amount": 28.24
+    },
+    {
+      "desc": "Google One",
+      "category": "Entertainment",
+      "count": 8,
+      "months": 8,
+      "avg_amount": 1.99,
+      "last_amount": 1.99
     },
     {
       "desc": "Big Blue Swim School",
@@ -698,14 +706,6 @@
       "months": 7,
       "avg_amount": 35.18,
       "last_amount": 35.18
-    },
-    {
-      "desc": "Google One",
-      "category": "Entertainment",
-      "count": 7,
-      "months": 7,
-      "avg_amount": 1.99,
-      "last_amount": 1.99
     },
     {
       "desc": "Patidar Supermarket Nort",
@@ -726,9 +726,9 @@
     {
       "desc": "Netlify Fy",
       "category": "Tech/Subs",
-      "count": 16,
+      "count": 17,
       "months": 6,
-      "avg_amount": 6.25,
+      "avg_amount": 6.18,
       "last_amount": 9
     },
     {
@@ -1387,7 +1387,7 @@
       "income": 7969.959999999999,
       "bofa_income": 7969.959999999999,
       "td_income": 0,
-      "outflows": 4869.87,
+      "outflows": 5028.09,
       "xoom": 0,
       "investments": 0
     }
@@ -5963,16 +5963,16 @@
       "label": "September 2026",
       "period": "2026-09",
       "categories": {
-        "Restaurants": 305.25,
-        "Entertainment": 68.21,
-        "Tech/Subs": 767.9599999999999,
-        "Shopping": 2633.81,
+        "Restaurants": 333.69,
+        "Entertainment": 176.81,
+        "Tech/Subs": 772.9599999999999,
+        "Shopping": 2652.57,
         "Gas/Travel": 87.11,
         "Groceries": 469.41999999999996,
-        "Healthcare": 551.1,
-        "Refund": -12.99
+        "Refund": -15.57,
+        "Healthcare": 551.1
       },
-      "total": 4869.870000000002,
+      "total": 5028.09,
       "transactions": [
         {
           "date": "09-08",
@@ -6228,6 +6228,84 @@
           "category": "Shopping",
           "city": "North Brunswick",
           "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-12",
+          "desc": "Google One",
+          "amount": 1.99,
+          "category": "Entertainment",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "dM5Ed30xEot9Ap000VOXuYRQY0X87ASg8Zep8",
+          "mask": "8036",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-14",
+          "desc": "Amazon",
+          "amount": 18.76,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-13",
+          "desc": "Netlify Fy",
+          "amount": 5,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "CA",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-13",
+          "desc": "Apple",
+          "amount": -2.58,
+          "category": "Refund",
+          "city": null,
+          "state": "CA",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": true
+        },
+        {
+          "date": "09-12",
+          "desc": "Pkts Foods LLC",
+          "amount": 28.44,
+          "category": "Restaurants",
+          "city": "Dayton",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-11",
+          "desc": "Apple",
+          "amount": 106.61,
+          "category": "Entertainment",
+          "city": null,
+          "state": "CA",
           "bank": "Wells Fargo",
           "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
           "mask": "9762",
@@ -12187,6 +12265,36 @@
       "period_label": "September 2026"
     },
     {
+      "date": "09-13",
+      "desc": "Netlify Fy",
+      "amount": 5,
+      "category": "Tech/Subs",
+      "city": null,
+      "state": "CA",
+      "period": "2026-09",
+      "period_label": "September 2026"
+    },
+    {
+      "date": "09-13",
+      "desc": "Apple",
+      "amount": -2.58,
+      "category": "Refund",
+      "city": null,
+      "state": "CA",
+      "period": "2026-09",
+      "period_label": "September 2026"
+    },
+    {
+      "date": "09-11",
+      "desc": "Apple",
+      "amount": 106.61,
+      "category": "Entertainment",
+      "city": null,
+      "state": "CA",
+      "period": "2026-09",
+      "period_label": "September 2026"
+    },
+    {
       "date": "04-09",
       "desc": "Trendia Trendia.co",
       "amount": 178.01,
@@ -12485,7 +12593,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-16T00:01:06.729Z",
+  "generated_at": "2026-09-16T06:00:55.248Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12589,7 +12697,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1118,
+    "txns_fetched": 1124,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
