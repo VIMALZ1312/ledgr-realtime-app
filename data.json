@@ -2,7 +2,7 @@
   "kpis": {
     "income": 7969.96,
     "income_period": "September 2026",
-    "true_outflows": 5028.09,
+    "true_outflows": 5119.79,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -260,7 +260,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 20303.02,
-      "available": 20303.02,
+      "available": 20211.32,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -329,7 +329,7 @@
       "mask": "7397",
       "type": "investment",
       "subtype": "crypto exchange",
-      "balance": 18.56,
+      "balance": 17.96,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -343,7 +343,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 61652.029050995,
+      "balance": 62385.8870210847,
       "available": 15901.47,
       "is_credit": false,
       "is_loan": false,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 91651.629050995,
+    "total_checking": 92385.4870210847,
     "total_credit": 5892.75,
     "total_loans": 385105.65,
-    "net": -299346.77094900503
+    "net": -298612.9129789153
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -368,7 +368,7 @@
   "spending": {
     "Entertainment": 2453.2299999999996,
     "Healthcare": 3924.73,
-    "Tech/Subs": 10263.77,
+    "Tech/Subs": 10355.47,
     "Refund": -10516.53,
     "Gas/Travel": 8989.15,
     "Shopping": 21035.25,
@@ -601,7 +601,16 @@
       "period_label": "September 2026"
     }
   ],
-  "pending_transactions": [],
+  "pending_transactions": [
+    {
+      "date": "09-16",
+      "desc": "Best Brains Nort",
+      "amount": 91.7,
+      "category": "Tech/Subs",
+      "bank": "BofA",
+      "pending": true
+    }
+  ],
   "detected_recurring": [
     {
       "desc": "Garden Farm",
@@ -1387,7 +1396,7 @@
       "income": 7969.959999999999,
       "bofa_income": 7969.959999999999,
       "td_income": 0,
-      "outflows": 5028.09,
+      "outflows": 5119.79,
       "xoom": 0,
       "investments": 0
     }
@@ -5965,14 +5974,14 @@
       "categories": {
         "Restaurants": 333.69,
         "Entertainment": 176.81,
-        "Tech/Subs": 772.9599999999999,
+        "Tech/Subs": 864.66,
         "Shopping": 2652.57,
         "Gas/Travel": 87.11,
         "Groceries": 469.41999999999996,
         "Refund": -15.57,
         "Healthcare": 551.1
       },
-      "total": 5028.09,
+      "total": 5119.79,
       "transactions": [
         {
           "date": "09-08",
@@ -6530,6 +6539,19 @@
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-16",
+          "desc": "Best Brains Nort",
+          "amount": 91.7,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
+          "mask": "9715",
           "pending": false,
           "refund": false
         },
@@ -12593,7 +12615,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-16T12:00:57.347Z",
+  "generated_at": "2026-09-16T18:00:53.509Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12697,7 +12719,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1124,
+    "txns_fetched": 1125,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
