@@ -2,7 +2,7 @@
   "kpis": {
     "income": 7969.96,
     "income_period": "September 2026",
-    "true_outflows": 5119.79,
+    "true_outflows": 5515.63,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -92,7 +92,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 487.66,
-      "available": 487.66,
+      "available": -8.18,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -368,7 +368,7 @@
   "spending": {
     "Entertainment": 2453.2299999999996,
     "Healthcare": 3924.73,
-    "Tech/Subs": 10355.47,
+    "Tech/Subs": 10751.31,
     "Refund": -10516.53,
     "Gas/Travel": 8989.15,
     "Shopping": 21035.25,
@@ -604,6 +604,14 @@
   "pending_transactions": [
     {
       "date": "09-16",
+      "desc": "Verizon",
+      "amount": 395.84,
+      "category": "Tech/Subs",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "09-16",
       "desc": "Best Brains Nort",
       "amount": 91.7,
       "category": "Tech/Subs",
@@ -781,6 +789,14 @@
       "last_amount": 5815
     },
     {
+      "desc": "Verizon",
+      "category": "Tech/Subs",
+      "count": 4,
+      "months": 4,
+      "avg_amount": 393.62,
+      "last_amount": 395.84
+    },
+    {
       "desc": "Costco",
       "category": "Refund",
       "count": 6,
@@ -851,14 +867,6 @@
       "months": 4,
       "avg_amount": 9.6,
       "last_amount": 15
-    },
-    {
-      "desc": "Verizon",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 392.88,
-      "last_amount": 391.6
     },
     {
       "desc": "Public Service",
@@ -1396,7 +1404,7 @@
       "income": 7969.959999999999,
       "bofa_income": 7969.959999999999,
       "td_income": 0,
-      "outflows": 5119.79,
+      "outflows": 5515.63,
       "xoom": 0,
       "investments": 0
     }
@@ -5974,14 +5982,14 @@
       "categories": {
         "Restaurants": 333.69,
         "Entertainment": 176.81,
-        "Tech/Subs": 864.66,
+        "Tech/Subs": 1260.5,
         "Shopping": 2652.57,
         "Gas/Travel": 87.11,
         "Groceries": 469.41999999999996,
         "Refund": -15.57,
         "Healthcare": 551.1
       },
-      "total": 5119.79,
+      "total": 5515.63,
       "transactions": [
         {
           "date": "09-08",
@@ -6001,6 +6009,19 @@
           "desc": "Netflix",
           "amount": 21.31,
           "category": "Entertainment",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "jJEy77qLQxHNznaqxjJAhmEBM05B06iRRwaZd",
+          "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-16",
+          "desc": "Verizon",
+          "amount": 395.84,
+          "category": "Tech/Subs",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -12615,7 +12636,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-16T18:00:53.509Z",
+  "generated_at": "2026-09-17T00:01:03.043Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12719,7 +12740,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1125,
+    "txns_fetched": 1127,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
