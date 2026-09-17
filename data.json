@@ -2,14 +2,14 @@
   "kpis": {
     "income": 7969.96,
     "income_period": "September 2026",
-    "true_outflows": 5515.63,
+    "true_outflows": 5658.13,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 28674.370000000003,
+      "balance": 28582.67,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -259,7 +259,7 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 20303.02,
+      "balance": 20211.32,
       "available": 20211.32,
       "is_credit": false,
       "is_loan": false,
@@ -316,7 +316,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 912.58,
-      "available": 9087,
+      "available": 8946,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -329,7 +329,7 @@
       "mask": "7397",
       "type": "investment",
       "subtype": "crypto exchange",
-      "balance": 17.96,
+      "balance": 18.62,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -343,7 +343,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 62385.8870210847,
+      "balance": 61977.221966585,
       "available": 15901.47,
       "is_credit": false,
       "is_loan": false,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 92385.4870210847,
+    "total_checking": 91885.121966585,
     "total_credit": 5892.75,
     "total_loans": 385105.65,
-    "net": -298612.9129789153
+    "net": -299113.27803341503
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -371,7 +371,7 @@
     "Tech/Subs": 10751.31,
     "Refund": -10516.53,
     "Gas/Travel": 8989.15,
-    "Shopping": 21035.25,
+    "Shopping": 21177.75,
     "Groceries": 4256.96,
     "Restaurants": 3905.5,
     "Tax/Professional": 19386.88,
@@ -611,11 +611,19 @@
       "pending": true
     },
     {
-      "date": "09-16",
-      "desc": "Best Brains Nort",
-      "amount": 91.7,
-      "category": "Tech/Subs",
-      "bank": "BofA",
+      "date": "09-17",
+      "desc": "Axb",
+      "amount": 128.58,
+      "category": "Shopping",
+      "bank": "Robinhood",
+      "pending": true
+    },
+    {
+      "date": "09-17",
+      "desc": "Shein",
+      "amount": 13.92,
+      "category": "Shopping",
+      "bank": "Robinhood",
       "pending": true
     }
   ],
@@ -1165,6 +1173,14 @@
       "last_amount": 87.89
     },
     {
+      "desc": "Shein",
+      "category": "Shopping",
+      "count": 3,
+      "months": 2,
+      "avg_amount": 32.79,
+      "last_amount": 13.92
+    },
+    {
       "desc": "AMC Theatres",
       "category": "Entertainment",
       "count": 2,
@@ -1404,7 +1420,7 @@
       "income": 7969.959999999999,
       "bofa_income": 7969.959999999999,
       "td_income": 0,
-      "outflows": 5515.63,
+      "outflows": 5658.13,
       "xoom": 0,
       "investments": 0
     }
@@ -5983,13 +5999,13 @@
         "Restaurants": 333.69,
         "Entertainment": 176.81,
         "Tech/Subs": 1260.5,
-        "Shopping": 2652.57,
+        "Shopping": 2795.07,
         "Gas/Travel": 87.11,
         "Groceries": 469.41999999999996,
         "Refund": -15.57,
         "Healthcare": 551.1
       },
-      "total": 5515.63,
+      "total": 5658.13,
       "transactions": [
         {
           "date": "09-08",
@@ -6672,6 +6688,32 @@
           "desc": "Walgreens",
           "amount": 200,
           "category": "Healthcare",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-17",
+          "desc": "Axb",
+          "amount": 128.58,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-17",
+          "desc": "Shein",
+          "amount": 13.92,
+          "category": "Shopping",
           "city": null,
           "state": null,
           "bank": "Robinhood",
@@ -12636,7 +12678,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-17T12:00:59.865Z",
+  "generated_at": "2026-09-17T18:00:55.151Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12740,7 +12782,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1127,
+    "txns_fetched": 1129,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
