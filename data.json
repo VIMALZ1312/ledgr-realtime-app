@@ -2,7 +2,7 @@
   "kpis": {
     "income": 7969.96,
     "income_period": "September 2026",
-    "true_outflows": 5695.44,
+    "true_outflows": 5793.87,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -316,7 +316,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 912.58,
-      "available": 8946,
+      "available": 8945,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -370,9 +370,9 @@
     "Healthcare": 3935.3900000000003,
     "Tech/Subs": 10751.31,
     "Refund": -10516.53,
-    "Gas/Travel": 8989.15,
+    "Gas/Travel": 9052.92,
     "Shopping": 21204.4,
-    "Groceries": 4256.96,
+    "Groceries": 4291.62,
     "Restaurants": 3905.5,
     "Tax/Professional": 19386.88,
     "Insurance": 230.74
@@ -612,6 +612,22 @@
     },
     {
       "date": "09-17",
+      "desc": "2040 RTE 130 GAS",
+      "amount": 63.77,
+      "category": "Gas/Travel",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "09-17",
+      "desc": "Delight Big Bazar",
+      "amount": 34.66,
+      "category": "Groceries",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "09-17",
       "desc": "Axb",
       "amount": 128.58,
       "category": "Shopping",
@@ -663,9 +679,9 @@
     {
       "desc": "Delight Big Bazar",
       "category": "Groceries",
-      "count": 11,
+      "count": 12,
       "months": 8,
-      "avg_amount": 60.28,
+      "avg_amount": 58.14,
       "last_amount": 42.93
     },
     {
@@ -1420,7 +1436,7 @@
       "income": 7969.959999999999,
       "bofa_income": 7969.959999999999,
       "td_income": 0,
-      "outflows": 5695.44,
+      "outflows": 5793.87,
       "xoom": 0,
       "investments": 0
     }
@@ -6001,11 +6017,11 @@
         "Healthcare": 561.76,
         "Tech/Subs": 1260.5,
         "Shopping": 2821.72,
-        "Gas/Travel": 87.11,
-        "Groceries": 469.41999999999996,
+        "Gas/Travel": 150.88,
+        "Groceries": 504.0799999999999,
         "Refund": -15.57
       },
-      "total": 5695.440000000001,
+      "total": 5793.870000000002,
       "transactions": [
         {
           "date": "09-08",
@@ -6615,6 +6631,32 @@
           "bank": "BofA",
           "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
           "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-17",
+          "desc": "2040 RTE 130 GAS",
+          "amount": 63.77,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-17",
+          "desc": "Delight Big Bazar",
+          "amount": 34.66,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
           "pending": false,
           "refund": false
         },
@@ -12704,7 +12746,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-18T12:00:59.650Z",
+  "generated_at": "2026-09-18T18:00:56.126Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12808,7 +12850,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1134,
+    "txns_fetched": 1136,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
