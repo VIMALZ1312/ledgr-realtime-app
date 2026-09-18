@@ -2,7 +2,7 @@
   "kpis": {
     "income": 7969.96,
     "income_period": "September 2026",
-    "true_outflows": 5668.79,
+    "true_outflows": 5695.44,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 2908.4199999999996,
+      "balance": 2935.0699999999997,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 1173.52
@@ -28,7 +28,7 @@
       "payroll": 0
     },
     "discover": {
-      "balance": 1862.54,
+      "balance": 1825.54,
       "is_credit": true,
       "period_label": "Live"
     },
@@ -161,8 +161,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 2906.43,
-      "available": 93,
+      "balance": 2933.08,
+      "available": 31,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -287,7 +287,7 @@
       "mask": "0494",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 1862.54,
+      "balance": 1825.54,
       "available": null,
       "is_credit": true,
       "is_loan": false,
@@ -329,7 +329,7 @@
       "mask": "7397",
       "type": "investment",
       "subtype": "crypto exchange",
-      "balance": 18.57,
+      "balance": 18.55,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -343,7 +343,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 63668.54277661,
+      "balance": 63587.5687209375,
       "available": 15901.47,
       "is_credit": false,
       "is_loan": false,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 93070.60277661,
-    "total_credit": 5892.75,
+    "total_checking": 92989.6287209375,
+    "total_credit": 5882.4,
     "total_loans": 385105.65,
-    "net": -297927.79722339
+    "net": -297998.4212790625
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -371,7 +371,7 @@
     "Tech/Subs": 10751.31,
     "Refund": -10516.53,
     "Gas/Travel": 8989.15,
-    "Shopping": 21177.75,
+    "Shopping": 21204.4,
     "Groceries": 4256.96,
     "Restaurants": 3905.5,
     "Tax/Professional": 19386.88,
@@ -647,9 +647,9 @@
     {
       "desc": "Amazon",
       "category": "Shopping",
-      "count": 81,
+      "count": 82,
       "months": 9,
-      "avg_amount": 24.88,
+      "avg_amount": 24.9,
       "last_amount": 28.95
     },
     {
@@ -1420,7 +1420,7 @@
       "income": 7969.959999999999,
       "bofa_income": 7969.959999999999,
       "td_income": 0,
-      "outflows": 5668.79,
+      "outflows": 5695.44,
       "xoom": 0,
       "investments": 0
     }
@@ -6000,12 +6000,12 @@
         "Entertainment": 176.81,
         "Healthcare": 561.76,
         "Tech/Subs": 1260.5,
-        "Shopping": 2795.07,
+        "Shopping": 2821.72,
         "Gas/Travel": 87.11,
         "Groceries": 469.41999999999996,
         "Refund": -15.57
       },
-      "total": 5668.79,
+      "total": 5695.440000000001,
       "transactions": [
         {
           "date": "09-08",
@@ -6365,6 +6365,19 @@
           "category": "Entertainment",
           "city": null,
           "state": "CA",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-17",
+          "desc": "Amazon",
+          "amount": 26.65,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
           "bank": "Wells Fargo",
           "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
           "mask": "9762",
@@ -12691,7 +12704,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-18T06:00:55.045Z",
+  "generated_at": "2026-09-18T12:00:59.650Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12795,7 +12808,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1132,
+    "txns_fetched": 1134,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
