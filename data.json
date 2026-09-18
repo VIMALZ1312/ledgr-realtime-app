@@ -2,14 +2,14 @@
   "kpis": {
     "income": 7969.96,
     "income_period": "September 2026",
-    "true_outflows": 5658.13,
+    "true_outflows": 5668.79,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 28582.67,
+      "balance": 28076.83,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -91,8 +91,8 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 487.66,
-      "available": -8.18,
+      "balance": -18.18,
+      "available": -65.84,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -329,7 +329,7 @@
       "mask": "7397",
       "type": "investment",
       "subtype": "crypto exchange",
-      "balance": 18.62,
+      "balance": 18.57,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -343,7 +343,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 61977.221966585,
+      "balance": 63668.54277661,
       "available": 15901.47,
       "is_credit": false,
       "is_loan": false,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 91885.121966585,
+    "total_checking": 93070.60277661,
     "total_credit": 5892.75,
     "total_loans": 385105.65,
-    "net": -299113.27803341503
+    "net": -297927.79722339
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -367,7 +367,7 @@
   },
   "spending": {
     "Entertainment": 2453.2299999999996,
-    "Healthcare": 3924.73,
+    "Healthcare": 3935.3900000000003,
     "Tech/Subs": 10751.31,
     "Refund": -10516.53,
     "Gas/Travel": 8989.15,
@@ -603,10 +603,10 @@
   ],
   "pending_transactions": [
     {
-      "date": "09-16",
-      "desc": "Verizon",
-      "amount": 395.84,
-      "category": "Tech/Subs",
+      "date": "09-17",
+      "desc": "Planet Fitness",
+      "amount": 10.66,
+      "category": "Healthcare",
       "bank": "BofA",
       "pending": true
     },
@@ -845,6 +845,14 @@
       "last_amount": 21.31
     },
     {
+      "desc": "Planet Fitness",
+      "category": "Healthcare",
+      "count": 5,
+      "months": 4,
+      "avg_amount": 18.98,
+      "last_amount": 10.66
+    },
+    {
       "desc": "Shaan Halal Zabiha Meat",
       "category": "Groceries",
       "count": 8,
@@ -971,14 +979,6 @@
       "months": 3,
       "avg_amount": 21.14,
       "last_amount": 42.97
-    },
-    {
-      "desc": "Planet Fitness",
-      "category": "Healthcare",
-      "count": 4,
-      "months": 3,
-      "avg_amount": 21.06,
-      "last_amount": 10.66
     },
     {
       "desc": "Kids Smile",
@@ -1420,7 +1420,7 @@
       "income": 7969.959999999999,
       "bofa_income": 7969.959999999999,
       "td_income": 0,
-      "outflows": 5658.13,
+      "outflows": 5668.79,
       "xoom": 0,
       "investments": 0
     }
@@ -5998,14 +5998,14 @@
       "categories": {
         "Restaurants": 333.69,
         "Entertainment": 176.81,
+        "Healthcare": 561.76,
         "Tech/Subs": 1260.5,
         "Shopping": 2795.07,
         "Gas/Travel": 87.11,
         "Groceries": 469.41999999999996,
-        "Refund": -15.57,
-        "Healthcare": 551.1
+        "Refund": -15.57
       },
-      "total": 5658.13,
+      "total": 5668.79,
       "transactions": [
         {
           "date": "09-08",
@@ -6025,6 +6025,19 @@
           "desc": "Netflix",
           "amount": 21.31,
           "category": "Entertainment",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "jJEy77qLQxHNznaqxjJAhmEBM05B06iRRwaZd",
+          "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-17",
+          "desc": "Planet Fitness",
+          "amount": 10.66,
+          "category": "Healthcare",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -12678,7 +12691,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-17T18:00:55.151Z",
+  "generated_at": "2026-09-18T00:01:02.504Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12782,7 +12795,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1129,
+    "txns_fetched": 1132,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
