@@ -2,7 +2,7 @@
   "kpis": {
     "income": 7969.96,
     "income_period": "September 2026",
-    "true_outflows": 5802.87,
+    "true_outflows": 6099.19,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -231,8 +231,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 209.21,
-      "available": 490.79,
+      "balance": 307.64,
+      "available": 392.36,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -315,8 +315,8 @@
       "mask": "1345",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 912.58,
-      "available": 8936,
+      "balance": 1066.41,
+      "available": 8871,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -353,9 +353,9 @@
   ],
   "net_worth": {
     "total_checking": 93313.30529240001,
-    "total_credit": 5882.4,
+    "total_credit": 6134.66,
     "total_loans": 385105.65,
-    "net": -297674.7447076
+    "net": -297927.0047076
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -367,12 +367,12 @@
   },
   "spending": {
     "Entertainment": 2453.2299999999996,
-    "Healthcare": 3935.3900000000003,
+    "Healthcare": 4065.3900000000003,
     "Tech/Subs": 10751.31,
     "Refund": -10516.53,
-    "Gas/Travel": 9052.92,
-    "Shopping": 21204.4,
-    "Groceries": 4291.62,
+    "Gas/Travel": 9128.16,
+    "Shopping": 21244.72,
+    "Groceries": 4342.379999999999,
     "Restaurants": 3914.5,
     "Tax/Professional": 19386.88,
     "Insurance": 230.74
@@ -603,27 +603,35 @@
   ],
   "pending_transactions": [
     {
-      "date": "09-17",
-      "desc": "2040 RTE 130 GAS",
-      "amount": 63.77,
+      "date": "09-19",
+      "desc": "BP",
+      "amount": 75.24,
       "category": "Gas/Travel",
       "bank": "BofA",
       "pending": true
     },
     {
-      "date": "09-17",
-      "desc": "Delight Big Bazar",
-      "amount": 34.66,
+      "date": "09-18",
+      "desc": "Deccan Halal Mart",
+      "amount": 23.37,
       "category": "Groceries",
       "bank": "BofA",
       "pending": true
     },
     {
-      "date": "09-17",
-      "desc": "Axb",
-      "amount": 128.58,
-      "category": "Shopping",
-      "bank": "Robinhood",
+      "date": "09-18",
+      "desc": "Delight Big Bazar",
+      "amount": 27.39,
+      "category": "Groceries",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "09-18",
+      "desc": "Martial Arts Dojang",
+      "amount": 130,
+      "category": "Healthcare",
+      "bank": "BofA",
       "pending": true
     },
     {
@@ -639,6 +647,14 @@
       "desc": "Taco Bell",
       "amount": 9,
       "category": "Restaurants",
+      "bank": "Robinhood",
+      "pending": true
+    },
+    {
+      "date": "09-19",
+      "desc": "Temu",
+      "amount": 40.32,
+      "category": "Shopping",
       "bank": "Robinhood",
       "pending": true
     }
@@ -677,20 +693,20 @@
       "last_amount": 280
     },
     {
-      "desc": "Delight Big Bazar",
-      "category": "Groceries",
-      "count": 12,
-      "months": 8,
-      "avg_amount": 58.14,
-      "last_amount": 42.93
-    },
-    {
       "desc": "BP",
       "category": "Gas/Travel",
-      "count": 16,
+      "count": 17,
       "months": 8,
-      "avg_amount": 55.68,
+      "avg_amount": 56.83,
       "last_amount": 20.09
+    },
+    {
+      "desc": "Delight Big Bazar",
+      "category": "Groceries",
+      "count": 13,
+      "months": 8,
+      "avg_amount": 55.78,
+      "last_amount": 42.93
     },
     {
       "desc": "Walmart",
@@ -975,10 +991,10 @@
     {
       "desc": "Deccan Halal Mart",
       "category": "Groceries",
-      "count": 10,
+      "count": 11,
       "months": 3,
-      "avg_amount": 28.42,
-      "last_amount": 11.84
+      "avg_amount": 27.96,
+      "last_amount": 23.37
     },
     {
       "desc": "Dollar Tree",
@@ -1167,9 +1183,9 @@
     {
       "desc": "Temu",
       "category": "Shopping",
-      "count": 3,
+      "count": 4,
       "months": 2,
-      "avg_amount": 46.93,
+      "avg_amount": 45.28,
       "last_amount": 61.79
     },
     {
@@ -1436,7 +1452,7 @@
       "income": 7969.959999999999,
       "bofa_income": 7969.959999999999,
       "td_income": 0,
-      "outflows": 5802.87,
+      "outflows": 6099.19,
       "xoom": 0,
       "investments": 0
     }
@@ -6015,13 +6031,13 @@
         "Restaurants": 342.69,
         "Entertainment": 176.81,
         "Tech/Subs": 1260.5,
-        "Healthcare": 561.76,
-        "Shopping": 2821.72,
-        "Gas/Travel": 150.88,
-        "Groceries": 504.0799999999999,
+        "Healthcare": 691.76,
+        "Shopping": 2862.04,
+        "Gas/Travel": 226.12,
+        "Groceries": 554.8399999999999,
         "Refund": -15.57
       },
-      "total": 5802.870000000002,
+      "total": 6099.190000000001,
       "transactions": [
         {
           "date": "09-08",
@@ -6635,9 +6651,9 @@
           "refund": false
         },
         {
-          "date": "09-17",
-          "desc": "2040 RTE 130 GAS",
-          "amount": 63.77,
+          "date": "09-19",
+          "desc": "BP",
+          "amount": 75.24,
           "category": "Gas/Travel",
           "city": null,
           "state": null,
@@ -6648,12 +6664,64 @@
           "refund": false
         },
         {
-          "date": "09-17",
+          "date": "09-18",
+          "desc": "Deccan Halal Mart",
+          "amount": 23.37,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-18",
+          "desc": "Delight Big Bazar",
+          "amount": 27.39,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-18",
+          "desc": "Martial Arts Dojang",
+          "amount": 130,
+          "category": "Healthcare",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-18",
           "desc": "Delight Big Bazar",
           "amount": 34.66,
           "category": "Groceries",
           "city": null,
           "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-18",
+          "desc": "Gas n Go",
+          "amount": 63.77,
+          "category": "Gas/Travel",
+          "city": "North Brunswick",
+          "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -6766,19 +6834,6 @@
         },
         {
           "date": "09-17",
-          "desc": "Axb",
-          "amount": 128.58,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
-          "mask": "1345",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-17",
           "desc": "Shein",
           "amount": 13.92,
           "category": "Shopping",
@@ -6795,6 +6850,32 @@
           "desc": "Taco Bell",
           "amount": 9,
           "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-16",
+          "desc": "Axb",
+          "amount": 128.58,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-19",
+          "desc": "Temu",
+          "amount": 40.32,
+          "category": "Shopping",
           "city": null,
           "state": null,
           "bank": "Robinhood",
@@ -12759,7 +12840,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-19T12:00:56.852Z",
+  "generated_at": "2026-09-19T18:00:55.002Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12863,7 +12944,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1139,
+    "txns_fetched": 1145,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
