@@ -2,7 +2,7 @@
   "kpis": {
     "income": 7969.96,
     "income_period": "September 2026",
-    "true_outflows": 5793.87,
+    "true_outflows": 5802.87,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -316,7 +316,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 912.58,
-      "available": 8945,
+      "available": 8936,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -329,7 +329,7 @@
       "mask": "7397",
       "type": "investment",
       "subtype": "crypto exchange",
-      "balance": 20.06,
+      "balance": 20.22,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -343,7 +343,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 63492.39955394,
+      "balance": 63978.9052924,
       "available": 15901.47,
       "is_credit": false,
       "is_loan": false,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 92826.79955394,
+    "total_checking": 93313.30529240001,
     "total_credit": 5882.4,
     "total_loans": 385105.65,
-    "net": -298161.25044606003
+    "net": -297674.7447076
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -373,7 +373,7 @@
     "Gas/Travel": 9052.92,
     "Shopping": 21204.4,
     "Groceries": 4291.62,
-    "Restaurants": 3905.5,
+    "Restaurants": 3914.5,
     "Tax/Professional": 19386.88,
     "Insurance": 230.74
   },
@@ -631,6 +631,14 @@
       "desc": "Shein",
       "amount": 13.92,
       "category": "Shopping",
+      "bank": "Robinhood",
+      "pending": true
+    },
+    {
+      "date": "09-18",
+      "desc": "Taco Bell",
+      "amount": 9,
+      "category": "Restaurants",
       "bank": "Robinhood",
       "pending": true
     }
@@ -989,6 +997,14 @@
       "last_amount": 42.97
     },
     {
+      "desc": "Taco Bell",
+      "category": "Restaurants",
+      "count": 3,
+      "months": 3,
+      "avg_amount": 6.05,
+      "last_amount": 9
+    },
+    {
       "desc": "Kids Smile",
       "category": "Healthcare",
       "count": 2,
@@ -1317,14 +1333,6 @@
       "last_amount": 5.33
     },
     {
-      "desc": "Taco Bell",
-      "category": "Restaurants",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 4.58,
-      "last_amount": 5
-    },
-    {
       "desc": "CVS",
       "category": "Healthcare",
       "count": 2,
@@ -1428,7 +1436,7 @@
       "income": 7969.959999999999,
       "bofa_income": 7969.959999999999,
       "td_income": 0,
-      "outflows": 5793.87,
+      "outflows": 5802.87,
       "xoom": 0,
       "investments": 0
     }
@@ -6004,7 +6012,7 @@
       "label": "September 2026",
       "period": "2026-09",
       "categories": {
-        "Restaurants": 333.69,
+        "Restaurants": 342.69,
         "Entertainment": 176.81,
         "Tech/Subs": 1260.5,
         "Healthcare": 561.76,
@@ -6013,7 +6021,7 @@
         "Groceries": 504.0799999999999,
         "Refund": -15.57
       },
-      "total": 5793.870000000002,
+      "total": 5802.870000000002,
       "transactions": [
         {
           "date": "09-08",
@@ -6774,6 +6782,19 @@
           "desc": "Shein",
           "amount": 13.92,
           "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-18",
+          "desc": "Taco Bell",
+          "amount": 9,
+          "category": "Restaurants",
           "city": null,
           "state": null,
           "bank": "Robinhood",
@@ -12738,7 +12759,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-19T00:01:02.464Z",
+  "generated_at": "2026-09-19T06:00:58.325Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12842,7 +12863,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1138,
+    "txns_fetched": 1139,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
