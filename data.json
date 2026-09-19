@@ -9,7 +9,7 @@
   },
   "accounts": {
     "bofa": {
-      "balance": 28076.83,
+      "balance": 28009.17,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -91,8 +91,8 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": -18.18,
-      "available": -65.84,
+      "balance": -85.84,
+      "available": -85.84,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -329,7 +329,7 @@
       "mask": "7397",
       "type": "investment",
       "subtype": "crypto exchange",
-      "balance": 18.55,
+      "balance": 20.06,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -343,7 +343,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 63587.5687209375,
+      "balance": 63492.39955394,
       "available": 15901.47,
       "is_credit": false,
       "is_loan": false,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 92989.6287209375,
+    "total_checking": 92826.79955394,
     "total_credit": 5882.4,
     "total_loans": 385105.65,
-    "net": -297998.4212790625
+    "net": -298161.25044606003
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -602,14 +602,6 @@
     }
   ],
   "pending_transactions": [
-    {
-      "date": "09-17",
-      "desc": "Planet Fitness",
-      "amount": 10.66,
-      "category": "Healthcare",
-      "bank": "BofA",
-      "pending": true
-    },
     {
       "date": "09-17",
       "desc": "2040 RTE 130 GAS",
@@ -6014,8 +6006,8 @@
       "categories": {
         "Restaurants": 333.69,
         "Entertainment": 176.81,
-        "Healthcare": 561.76,
         "Tech/Subs": 1260.5,
+        "Healthcare": 561.76,
         "Shopping": 2821.72,
         "Gas/Travel": 150.88,
         "Groceries": 504.0799999999999,
@@ -6050,10 +6042,10 @@
           "refund": false
         },
         {
-          "date": "09-17",
-          "desc": "Planet Fitness",
-          "amount": 10.66,
-          "category": "Healthcare",
+          "date": "09-16",
+          "desc": "Verizon",
+          "amount": 395.84,
+          "category": "Tech/Subs",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -6063,10 +6055,10 @@
           "refund": false
         },
         {
-          "date": "09-16",
-          "desc": "Verizon",
-          "amount": 395.84,
-          "category": "Tech/Subs",
+          "date": "09-17",
+          "desc": "Planet Fitness",
+          "amount": 10.66,
+          "category": "Healthcare",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -12746,7 +12738,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-18T18:00:56.126Z",
+  "generated_at": "2026-09-19T00:01:02.464Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12850,7 +12842,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1136,
+    "txns_fetched": 1138,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
