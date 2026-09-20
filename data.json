@@ -231,8 +231,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 307.64,
-      "available": 392.36,
+      "balance": 488.4,
+      "available": 211.6,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -353,9 +353,9 @@
   ],
   "net_worth": {
     "total_checking": 93313.30529240001,
-    "total_credit": 6169.84,
+    "total_credit": 6350.6,
     "total_loans": 385105.65,
-    "net": -297962.18470760004
+    "net": -298142.94470760005
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -607,30 +607,6 @@
       "desc": "BP",
       "amount": 75.24,
       "category": "Gas/Travel",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "09-18",
-      "desc": "Deccan Halal Mart",
-      "amount": 23.37,
-      "category": "Groceries",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "09-18",
-      "desc": "Delight Big Bazar",
-      "amount": 27.39,
-      "category": "Groceries",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "09-18",
-      "desc": "Martial Arts Dojang",
-      "amount": 130,
-      "category": "Healthcare",
       "bank": "BofA",
       "pending": true
     },
@@ -6686,45 +6662,6 @@
         },
         {
           "date": "09-18",
-          "desc": "Deccan Halal Mart",
-          "amount": 23.37,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-18",
-          "desc": "Delight Big Bazar",
-          "amount": 27.39,
-          "category": "Groceries",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-18",
-          "desc": "Martial Arts Dojang",
-          "amount": 130,
-          "category": "Healthcare",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-18",
           "desc": "Delight Big Bazar",
           "amount": 34.66,
           "category": "Groceries",
@@ -6743,6 +6680,45 @@
           "category": "Gas/Travel",
           "city": "North Brunswick",
           "state": "NJ",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-19",
+          "desc": "Deccan Halal Mart",
+          "amount": 23.37,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-19",
+          "desc": "Martial Arts Dojang",
+          "amount": 130,
+          "category": "Healthcare",
+          "city": null,
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-19",
+          "desc": "Delight Big Bazar",
+          "amount": 27.39,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
           "mask": "2776",
@@ -12884,7 +12860,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-20T12:00:59.342Z",
+  "generated_at": "2026-09-20T18:00:57.306Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
