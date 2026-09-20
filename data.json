@@ -2,7 +2,7 @@
   "kpis": {
     "income": 7969.96,
     "income_period": "September 2026",
-    "true_outflows": 6099.19,
+    "true_outflows": 6209.78,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 2935.0699999999997,
+      "balance": 2970.25,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 1173.52
@@ -161,8 +161,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 2933.08,
-      "available": 31,
+      "balance": 2968.26,
+      "available": null,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -316,7 +316,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 1066.41,
-      "available": 8871,
+      "available": 8796,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -353,9 +353,9 @@
   ],
   "net_worth": {
     "total_checking": 93313.30529240001,
-    "total_credit": 6134.66,
+    "total_credit": 6169.84,
     "total_loans": 385105.65,
-    "net": -297927.0047076
+    "net": -297962.18470760004
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -371,9 +371,9 @@
     "Tech/Subs": 10751.31,
     "Refund": -10516.53,
     "Gas/Travel": 9128.16,
-    "Shopping": 21244.72,
+    "Shopping": 21279.9,
     "Groceries": 4342.379999999999,
-    "Restaurants": 3914.5,
+    "Restaurants": 3989.91,
     "Tax/Professional": 19386.88,
     "Insurance": 230.74
   },
@@ -657,6 +657,14 @@
       "category": "Shopping",
       "bank": "Robinhood",
       "pending": true
+    },
+    {
+      "date": "09-20",
+      "desc": "House of Biryani's and Kebabs",
+      "amount": 75.41,
+      "category": "Restaurants",
+      "bank": "Robinhood",
+      "pending": true
     }
   ],
   "detected_recurring": [
@@ -717,6 +725,14 @@
       "last_amount": -7.45
     },
     {
+      "desc": "Simplisafe",
+      "category": "Shopping",
+      "count": 8,
+      "months": 8,
+      "avg_amount": 35.18,
+      "last_amount": 35.18
+    },
+    {
       "desc": "Walgreens",
       "category": "Healthcare",
       "count": 19,
@@ -755,14 +771,6 @@
       "months": 7,
       "avg_amount": 239.09,
       "last_amount": 266
-    },
-    {
-      "desc": "Simplisafe",
-      "category": "Shopping",
-      "count": 7,
-      "months": 7,
-      "avg_amount": 35.18,
-      "last_amount": 35.18
     },
     {
       "desc": "Patidar Supermarket Nort",
@@ -853,6 +861,14 @@
       "last_amount": 125
     },
     {
+      "desc": "House of Biryani's and Kebabs",
+      "category": "Restaurants",
+      "count": 5,
+      "months": 4,
+      "avg_amount": 108.58,
+      "last_amount": 73.07
+    },
+    {
       "desc": "Trader Joe's",
       "category": "Groceries",
       "count": 4,
@@ -923,14 +939,6 @@
       "months": 3,
       "avg_amount": 232.03,
       "last_amount": 190.62
-    },
-    {
-      "desc": "House of Biryani's and Kebabs",
-      "category": "Restaurants",
-      "count": 4,
-      "months": 3,
-      "avg_amount": 116.88,
-      "last_amount": 73.07
     },
     {
       "desc": "Renaissance Gree",
@@ -1452,7 +1460,7 @@
       "income": 7969.959999999999,
       "bofa_income": 7969.959999999999,
       "td_income": 0,
-      "outflows": 6099.19,
+      "outflows": 6209.78,
       "xoom": 0,
       "investments": 0
     }
@@ -6028,16 +6036,16 @@
       "label": "September 2026",
       "period": "2026-09",
       "categories": {
-        "Restaurants": 342.69,
+        "Restaurants": 418.1,
         "Entertainment": 176.81,
         "Tech/Subs": 1260.5,
         "Healthcare": 691.76,
-        "Shopping": 2862.04,
+        "Shopping": 2897.2200000000003,
         "Gas/Travel": 226.12,
         "Groceries": 554.8399999999999,
         "Refund": -15.57
       },
-      "total": 6099.190000000001,
+      "total": 6209.780000000001,
       "transactions": [
         {
           "date": "09-08",
@@ -6410,6 +6418,19 @@
           "category": "Shopping",
           "city": null,
           "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-18",
+          "desc": "Simplisafe",
+          "amount": 35.18,
+          "category": "Shopping",
+          "city": null,
+          "state": "MA",
           "bank": "Wells Fargo",
           "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
           "mask": "9762",
@@ -6876,6 +6897,19 @@
           "desc": "Temu",
           "amount": 40.32,
           "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-20",
+          "desc": "House of Biryani's and Kebabs",
+          "amount": 75.41,
+          "category": "Restaurants",
           "city": null,
           "state": null,
           "bank": "Robinhood",
@@ -12542,6 +12576,16 @@
       "period_label": "September 2026"
     },
     {
+      "date": "09-18",
+      "desc": "Simplisafe",
+      "amount": 35.18,
+      "category": "Shopping",
+      "city": null,
+      "state": "MA",
+      "period": "2026-09",
+      "period_label": "September 2026"
+    },
+    {
       "date": "04-09",
       "desc": "Trendia Trendia.co",
       "amount": 178.01,
@@ -12840,7 +12884,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-20T06:00:59.081Z",
+  "generated_at": "2026-09-20T12:00:59.342Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12944,7 +12988,7 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1145,
+    "txns_fetched": 1147,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
