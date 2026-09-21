@@ -12923,7 +12923,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-21T01:52:06.898Z",
+  "generated_at": "2026-09-21T02:00:18.004Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -13027,7 +13027,18 @@
       }
     ],
     "failed": [],
-    "forced_refresh": [],
+    "forced_refresh": [
+      "pnc",
+      "bofa",
+      "td",
+      "wf",
+      "robin",
+      "wifebofa",
+      "zillow"
+    ],
+    "refresh_errors": {
+      "discover": "PRODUCTS_NOT_SUPPORTED"
+    },
     "cached_balances": [],
     "txns_fetched": 1152,
     "duplicates_removed": 15,
