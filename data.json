@@ -2,7 +2,7 @@
   "kpis": {
     "income": 7969.96,
     "income_period": "September 2026",
-    "true_outflows": 6209.78,
+    "true_outflows": 6353.96,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 2970.25,
+      "balance": 1820.25,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 1173.52
@@ -134,7 +134,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 1173.52,
-      "available": 1173.52,
+      "available": 23.52,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -161,8 +161,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 2968.26,
-      "available": null,
+      "balance": 1818.26,
+      "available": 972,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -316,7 +316,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 1066.41,
-      "available": 8796,
+      "available": 8697,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -353,9 +353,9 @@
   ],
   "net_worth": {
     "total_checking": 93313.30529240001,
-    "total_credit": 6350.6,
+    "total_credit": 5200.6,
     "total_loans": 385105.65,
-    "net": -298142.94470760005
+    "net": -296992.94470760005
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -371,9 +371,9 @@
     "Tech/Subs": 10751.31,
     "Refund": -10516.53,
     "Gas/Travel": 9128.16,
-    "Shopping": 21279.9,
-    "Groceries": 4342.379999999999,
-    "Restaurants": 3989.91,
+    "Shopping": 21323.66,
+    "Groceries": 4438.339999999999,
+    "Restaurants": 3994.37,
     "Tax/Professional": 19386.88,
     "Insurance": 230.74
   },
@@ -611,6 +611,14 @@
       "pending": true
     },
     {
+      "date": "09-20",
+      "desc": "Walmart",
+      "amount": 43.76,
+      "category": "Shopping",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
       "date": "09-17",
       "desc": "Shein",
       "amount": 13.92,
@@ -639,6 +647,22 @@
       "desc": "House of Biryani's and Kebabs",
       "amount": 75.41,
       "category": "Restaurants",
+      "bank": "Robinhood",
+      "pending": true
+    },
+    {
+      "date": "09-20",
+      "desc": "Dunkin'",
+      "amount": 4.46,
+      "category": "Restaurants",
+      "bank": "Robinhood",
+      "pending": true
+    },
+    {
+      "date": "09-20",
+      "desc": "Aquaridise",
+      "amount": 95.96,
+      "category": "Groceries",
       "bank": "Robinhood",
       "pending": true
     }
@@ -695,9 +719,9 @@
     {
       "desc": "Walmart",
       "category": "Shopping",
-      "count": 23,
+      "count": 24,
       "months": 8,
-      "avg_amount": 38.31,
+      "avg_amount": 38.54,
       "last_amount": -7.45
     },
     {
@@ -765,6 +789,14 @@
       "last_amount": 25
     },
     {
+      "desc": "Dunkin'",
+      "category": "Restaurants",
+      "count": 9,
+      "months": 6,
+      "avg_amount": 7.54,
+      "last_amount": 10.36
+    },
+    {
       "desc": "Netlify Fy",
       "category": "Tech/Subs",
       "count": 17,
@@ -795,14 +827,6 @@
       "months": 5,
       "avg_amount": 55.45,
       "last_amount": 55.45
-    },
-    {
-      "desc": "Dunkin'",
-      "category": "Restaurants",
-      "count": 8,
-      "months": 5,
-      "avg_amount": 7.93,
-      "last_amount": 10.36
     },
     {
       "desc": "R K Jewels",
@@ -1436,7 +1460,7 @@
       "income": 7969.959999999999,
       "bofa_income": 7969.959999999999,
       "td_income": 0,
-      "outflows": 6209.78,
+      "outflows": 6353.96,
       "xoom": 0,
       "investments": 0
     }
@@ -6012,16 +6036,16 @@
       "label": "September 2026",
       "period": "2026-09",
       "categories": {
-        "Restaurants": 418.1,
+        "Restaurants": 422.56,
         "Entertainment": 176.81,
         "Tech/Subs": 1260.5,
         "Healthcare": 691.76,
-        "Shopping": 2897.2200000000003,
+        "Shopping": 2940.9800000000005,
         "Gas/Travel": 226.12,
-        "Groceries": 554.8399999999999,
+        "Groceries": 650.8,
         "Refund": -15.57
       },
-      "total": 6209.780000000001,
+      "total": 6353.960000000001,
       "transactions": [
         {
           "date": "09-08",
@@ -6726,6 +6750,19 @@
           "refund": false
         },
         {
+          "date": "09-20",
+          "desc": "Walmart",
+          "amount": 43.76,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
           "date": "09-04",
           "desc": "Temu",
           "amount": 40.4,
@@ -6886,6 +6923,32 @@
           "desc": "House of Biryani's and Kebabs",
           "amount": 75.41,
           "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-20",
+          "desc": "Dunkin'",
+          "amount": 4.46,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-20",
+          "desc": "Aquaridise",
+          "amount": 95.96,
+          "category": "Groceries",
           "city": null,
           "state": null,
           "bank": "Robinhood",
@@ -12860,7 +12923,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-21T00:08:20.066Z",
+  "generated_at": "2026-09-21T01:51:42.806Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12964,7 +13027,17 @@
       }
     ],
     "failed": [],
-    "txns_fetched": 1147,
+    "forced_refresh": [
+      "robin",
+      "wifebofa",
+      "pnc",
+      "bofa",
+      "wf",
+      "zillow",
+      "td"
+    ],
+    "cached_balances": [],
+    "txns_fetched": 1152,
     "duplicates_removed": 15,
     "duplicate_sample": [
       {
