@@ -12,6 +12,13 @@ const plaid = new PlaidApi(new Configuration({
 
 const NICKNAME_ALIASES = { mybofa: 'bofa', mydisc: 'discover', mytd: 'td', mywf: 'wf', myrobin: 'robin' };
 
+// On-demand sync freshness. /transactions/refresh asks Plaid to extract from the
+// bank right now instead of serving its last scheduled pull; the wait gives that
+// extraction time to land before we read. Set PLAID_FORCE_REFRESH=0 to turn it
+// off (refresh calls are billable on some Plaid plans).
+const FORCE_REFRESH = process.env.PLAID_FORCE_REFRESH !== '0';
+const REFRESH_WAIT_MS = Number(process.env.PLAID_REFRESH_WAIT_MS || 8000);
+
 // Netlify auto-configures Blobs on git/CLI deploys. This site deploys via API
 // zip-upload (continuous deploy is off), where that context isn't injected — so
 // support explicit config too: set NETLIFY_BLOBS_SITE_ID + NETLIFY_BLOBS_TOKEN
@@ -306,7 +313,9 @@ async function pushToGitHub(data) {
     if (r.ok) { const j = await r.json(); sha = j.sha; }
   } catch {}
   const content = Buffer.from(JSON.stringify(data, null, 2)).toString('base64');
-  const body = { message: `Auto-sync (netlify): ${new Date().toISOString().slice(0, 16)} UTC`, content, ...(sha ? { sha } : {}) };
+  // The "[skip ci]" tag backs up the `ignore` command in netlify.toml: this is a
+  // data-only commit and must not trigger a paid production deploy.
+  const body = { message: `Auto-sync (netlify): ${new Date().toISOString().slice(0, 16)} UTC [skip ci]`, content, ...(sha ? { sha } : {}) };
   const resp = await fetch(apiUrl, {
     method: 'PUT',
     headers: { Authorization: `token ${token}`, 'Content-Type': 'application/json', 'User-Agent': 'ledgr-bot' },
@@ -353,10 +362,36 @@ async function buildDataJson() {
   const startDate = new Date(now);
   startDate.setDate(startDate.getDate() - 90);
 
+  // Every sync is now user-initiated, so it must return the freshest numbers the
+  // bank will give us rather than whatever Plaid last extracted on its own
+  // schedule. Ask each Item to pull from the institution first, in parallel, then
+  // give the extractions a moment to land before reading transactions.
+  // Best-effort throughout: an Item whose plan or institution doesn't support
+  // /transactions/refresh just falls back to Plaid's cached view.
+  const refreshed = [];
+  if (FORCE_REFRESH) {
+    await Promise.all(Object.entries(tokens).map(async ([nickname, token]) => {
+      try { await plaid.transactionsRefresh({ access_token: token }); refreshed.push(nickname); }
+      catch (err) { console.warn(`transactionsRefresh skipped for ${nickname}:`, err.response?.data?.error_code || err.message); }
+    }));
+    if (refreshed.length) await new Promise(r => setTimeout(r, REFRESH_WAIT_MS));
+  }
+
   const tokenStatus = [];
+  const staleBalances = [];
   for (const [nickname, token] of Object.entries(tokens)) {
     try {
-      const acctResp = await plaid.accountsGet({ access_token: token });
+      // accountsBalanceGet forces a live balance read; accountsGet returns
+      // Plaid's cached balance, which is what made the old scheduled data look
+      // current while being hours stale.
+      let acctResp;
+      try {
+        acctResp = await plaid.accountsBalanceGet({ access_token: token });
+      } catch (balErr) {
+        console.warn(`accountsBalanceGet fell back for ${nickname}:`, balErr.response?.data?.error_code || balErr.message);
+        acctResp = await plaid.accountsGet({ access_token: token });
+        staleBalances.push(nickname);
+      }
       acctResp.data.accounts.forEach(a => allAccounts.push({ ...a, _nickname: nickname }));
       let cursor = null, added = [], hasMore = true;
       while (hasMore) {
@@ -391,6 +426,10 @@ async function buildDataJson() {
     nicknames: Object.keys(tokens),
     detail: tokenStatus,
     failed: tokenStatus.filter(t => !t.ok).map(t => t.nickname + ' (' + t.error + ')'),
+    // Freshness diagnostics — which banks were force-pulled, and which fell back
+    // to a cached balance (so a stale number is visible instead of silent).
+    forced_refresh: refreshed,
+    cached_balances: staleBalances,
     txns_fetched: allTransactions.length,
     duplicates_removed: deduped.removed.length,
     duplicate_sample: deduped.removed.slice(0, 10),

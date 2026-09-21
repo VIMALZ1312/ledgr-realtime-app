@@ -1,5 +1,11 @@
 [build]
   publish = "."
+  # The on-demand sync pushes data.json to this repo on every run, and the
+  # dashboard reads that file straight from GitHub raw — so a site rebuild
+  # publishes nothing new and just burns 15 Netlify credits per deploy.
+  # exit 0 = skip the build, exit 1 = build. Only data commits are skipped;
+  # any real code change builds normally.
+  ignore = "git log -1 --pretty=%s | grep -q '^Auto-sync (netlify)'"
 
 # Only deploy from main branch — no deploy previews for PRs
 [context.production]
@@ -17,9 +23,10 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
-# 6-hour auto-sync — replaces the Replit node-cron job
-[functions."scheduled-sync"]
-  schedule = "0 */6 * * *"
+# No scheduled sync: Plaid is pulled on demand only — when the dashboard is
+# opened with stale data, or when the Sync button is pressed. (The old
+# "0 */6 * * *" scheduled-sync ran four times a day whether or not anyone was
+# looking, and each run's data commit triggered a paid production deploy.)
 
 # Friendly /api/* paths proxy to the functions so the frontend can use
 # same-origin relative URLs (no CORS, no Replit hostname).

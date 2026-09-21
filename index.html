@@ -1574,36 +1574,52 @@ function renderZelle() {
   set('main-content', html);
 }
 
-function triggerSync() {
+// There is no scheduled sync any more: Plaid is pulled here and nowhere else.
+// `auto` is the on-open pull (quiet, no alert on failure — the stale data on
+// screen is still usable); the Sync button calls this with auto=false.
+var SYNC_IN_FLIGHT = false;
+function triggerSync(auto) {
+  if(SYNC_IN_FLIGHT) return;
+  SYNC_IN_FLIGHT = true;
   var b = $('sync-btn'), bt = $('sync-btn-top');
   var before = (D && D.generated_at) || '';
   function setBusy(on, label) {
     if(b) { b.textContent = on ? (label || 'Syncing…') : 'Sync'; b.disabled = on; }
     if(bt) { bt.innerHTML = on ? '&#8987;' : '&#9889;'; bt.disabled = on; }
   }
-  setBusy(true);
+  setBusy(true, auto ? 'Refreshing…' : 'Syncing…');
   // /api/sync proxies to the Netlify background function — returns 202 and runs
-  // async (~1–3 min), then pushes a fresh data.json to GitHub. Reset the button
-  // quickly (snappy, like before) and quietly auto-refresh when new data lands.
+  // async, forcing a live Plaid pull (/transactions/refresh + live balances),
+  // then pushes a fresh data.json to GitHub. Reset the button quickly (snappy,
+  // like before) and quietly swap in the new data when it lands.
   var syncedEl = $('synced-at');
-  fetch(BACKEND + '/api/sync', { method: 'POST' })
+  fetch(BACKEND + '/api/sync', { method: 'POST', cache: 'no-store' })
     .then(function(r) {
       if(r.status !== 202 && !r.ok) throw new Error('HTTP ' + r.status);
       setTimeout(function(){ setBusy(false); }, 2000); // free the button right away
-      if(syncedEl) syncedEl.textContent = 'Syncing… (~1–2 min)';
-      var tries = 0, max = 18; // ~6 min safety
-      var iv = setInterval(function() {
+      if(syncedEl) syncedEl.textContent = 'Pulling from banks… (~1–2 min)';
+      // Poll GitHub raw for a data.json whose generated_at differs from the copy
+      // we're showing. cache:'no-store' + the ?t= buster defeat both the browser
+      // and the raw.githubusercontent CDN, so "latest" really is latest.
+      var tries = 0, max = 24; // 10s then every 15s ≈ 6 min safety
+      function check() {
         tries++;
-        fetch('https://raw.githubusercontent.com/VIMALZ1312/ledgr-realtime-app/main/data.json?t=' + Date.now())
+        fetch('https://raw.githubusercontent.com/VIMALZ1312/ledgr-realtime-app/main/data.json?t=' + Date.now(), { cache: 'no-store' })
           .then(function(x){ return x.json(); })
           .then(function(nd) {
-            if(nd.generated_at && nd.generated_at !== before) { clearInterval(iv); loadData(); }
-            else if(tries >= max) { clearInterval(iv); if(syncedEl) syncedEl.textContent = 'Sync still running — reload soon'; }
+            if(nd.generated_at && nd.generated_at !== before) { clearInterval(iv); SYNC_IN_FLIGHT = false; loadData(); }
+            else if(tries >= max) { clearInterval(iv); SYNC_IN_FLIGHT = false; if(syncedEl) syncedEl.textContent = 'Sync still running — reload soon'; }
           })
-          .catch(function(){ if(tries >= max) clearInterval(iv); });
-      }, 20000);
+          .catch(function(){ if(tries >= max) { clearInterval(iv); SYNC_IN_FLIGHT = false; } });
+      }
+      setTimeout(check, 10000);
+      var iv = setInterval(check, 15000);
     })
-    .catch(function(e){ setBusy(false); alert('Cannot reach sync function: ' + e.message); });
+    .catch(function(e){
+      SYNC_IN_FLIGHT = false; setBusy(false);
+      if(auto) { if(syncedEl) syncedEl.textContent = 'Auto-refresh failed — tap Sync'; }
+      else alert('Cannot reach sync function: ' + e.message);
+    });
 }
 
 function deduplicateData(data) {
@@ -1862,8 +1878,12 @@ function toggleExclude(desc) {
 }
 
 
-function loadData() {
-  fetch('https://raw.githubusercontent.com/VIMALZ1312/ledgr-realtime-app/main/data.json?t=' + Date.now())
+// How stale the data may be before opening the app pulls from Plaid again.
+// Without this, every reload (or PWA resume) would kick off a full bank pull.
+var AUTO_SYNC_STALE_MIN = 15;
+
+function loadData(opts) {
+  fetch('https://raw.githubusercontent.com/VIMALZ1312/ledgr-realtime-app/main/data.json?t=' + Date.now(), { cache: 'no-store' })
     .then(function(r){ return r.json(); })
     .then(function(data) {
       // 1. Deduplicate first (fixes server-side duplication regardless of Replit version)
@@ -1879,12 +1899,20 @@ function loadData() {
         var el = $('synced-at');
         if(el) el.textContent = dt.toLocaleString('en-US', {month:'short', day:'numeric', hour:'2-digit', minute:'2-digit'});
       }
+      // Opening the app is itself a request for current numbers: show the last
+      // snapshot immediately, then pull from Plaid in the background if it's
+      // older than AUTO_SYNC_STALE_MIN. (Only on the initial load — the reload
+      // that follows a sync must not start another one.)
+      if(opts && opts.autoSync) {
+        var ageMin = data.generated_at ? (Date.now() - new Date(data.generated_at).getTime()) / 60000 : Infinity;
+        if(ageMin > AUTO_SYNC_STALE_MIN) triggerSync(true);
+      }
     })
     .catch(function(e){ set('main-content', '<div style="padding:20px;color:var(--red);font-size:13px">Failed to load data: ' + e + '</div>'); });
 }
 
 buildNav();
-loadData();
+loadData({ autoSync: true });
 fetchSavings(); // pull the Google-Sheet savings total so Net Worth includes it
 </script>
 </body>
