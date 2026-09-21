@@ -369,10 +369,15 @@ async function buildDataJson() {
   // Best-effort throughout: an Item whose plan or institution doesn't support
   // /transactions/refresh just falls back to Plaid's cached view.
   const refreshed = [];
+  const refreshErrors = {};
   if (FORCE_REFRESH) {
     await Promise.all(Object.entries(tokens).map(async ([nickname, token]) => {
       try { await plaid.transactionsRefresh({ access_token: token }); refreshed.push(nickname); }
-      catch (err) { console.warn(`transactionsRefresh skipped for ${nickname}:`, err.response?.data?.error_code || err.message); }
+      catch (err) {
+        const code = err.response?.data?.error_code || err.message;
+        refreshErrors[nickname] = code;
+        console.warn(`transactionsRefresh skipped for ${nickname}:`, code);
+      }
     }));
     if (refreshed.length) await new Promise(r => setTimeout(r, REFRESH_WAIT_MS));
   }
@@ -429,6 +434,7 @@ async function buildDataJson() {
     // Freshness diagnostics — which banks were force-pulled, and which fell back
     // to a cached balance (so a stale number is visible instead of silent).
     forced_refresh: refreshed,
+    refresh_errors: refreshErrors,
     cached_balances: staleBalances,
     txns_fetched: allTransactions.length,
     duplicates_removed: deduped.removed.length,
