@@ -13325,7 +13325,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-29T11:21:59.619Z",
+  "generated_at": "2026-09-29T11:22:48.808Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -13431,11 +13431,11 @@
     "failed": [],
     "forced_refresh": [
       "pnc",
-      "zillow",
-      "td",
       "bofa",
       "wf",
+      "td",
       "wifebofa",
+      "zillow",
       "robin"
     ],
     "refresh_errors": {
