@@ -2,14 +2,14 @@
   "kpis": {
     "income": 16096.64,
     "income_period": "September 2026",
-    "true_outflows": 5090.6,
+    "true_outflows": 5495.03,
     "outflows_period": "September 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 33993.47,
+      "balance": 33985.47,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -92,7 +92,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 5186.8,
-      "available": 5186.8,
+      "available": 4279.96,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -105,8 +105,8 @@
       "mask": "8206",
       "type": "depository",
       "subtype": "savings",
-      "balance": -1.29,
-      "available": -1.29,
+      "balance": -9.29,
+      "available": -9.29,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -162,7 +162,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 2521.23,
-      "available": 364,
+      "available": 363,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -227,20 +227,6 @@
     {
       "bank": "BofA",
       "nickname": "wifebofa",
-      "name": "Customized Cash Rewards Visa Signature",
-      "mask": "2776",
-      "type": "credit",
-      "subtype": "credit card",
-      "balance": 864.85,
-      "available": null,
-      "is_credit": true,
-      "is_loan": false,
-      "is_checking": false,
-      "is_savings": false
-    },
-    {
-      "bank": "BofA",
-      "nickname": "wifebofa",
       "name": "Advantage Savings",
       "mask": "5677",
       "type": "depository",
@@ -260,7 +246,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 20922.7,
-      "available": 20922.7,
+      "available": 20699.95,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -316,7 +302,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 1400.61,
-      "available": 8599,
+      "available": 8495,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -329,7 +315,7 @@
       "mask": "7397",
       "type": "investment",
       "subtype": "crypto exchange",
-      "balance": 21.25,
+      "balance": 21.39,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -343,7 +329,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 64244.3772247799,
+      "balance": 64351.15270049,
       "available": 13843.88,
       "is_credit": false,
       "is_loan": false,
@@ -352,10 +338,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 98773.7872247799,
-    "total_credit": 4830.73,
+    "total_checking": 98872.56270049,
+    "total_credit": 3965.88,
     "total_loans": 385624.42,
-    "net": -291681.36277522007
+    "net": -290717.73729951
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -370,9 +356,9 @@
     "Healthcare": 4308.39,
     "Tech/Subs": 11148.43,
     "Refund": -13115.709999999997,
-    "Gas/Travel": 9128.16,
-    "Shopping": 21586.46,
-    "Groceries": 4629.8099999999995,
+    "Gas/Travel": 9403.35,
+    "Shopping": 21690.88,
+    "Groceries": 4654.63,
     "Restaurants": 3994.37,
     "Tax/Professional": 19386.88,
     "Insurance": 230.74
@@ -621,11 +607,43 @@
   ],
   "pending_transactions": [
     {
+      "date": "09-30",
+      "desc": "Pse&g",
+      "amount": 275.19,
+      "category": "Gas/Travel",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
       "date": "09-25",
       "desc": "U.S. Polo Association",
       "amount": 31.29,
       "category": "Shopping",
       "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "09-29",
+      "desc": "ShopRite",
+      "amount": 24.82,
+      "category": "Groceries",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "09-30",
+      "desc": "Temu",
+      "amount": 27.41,
+      "category": "Shopping",
+      "bank": "Robinhood",
+      "pending": true
+    },
+    {
+      "date": "09-30",
+      "desc": "Temu",
+      "amount": 77.01,
+      "category": "Shopping",
+      "bank": "Robinhood",
       "pending": true
     }
   ],
@@ -641,9 +659,9 @@
     {
       "desc": "ShopRite",
       "category": "Groceries",
-      "count": 24,
+      "count": 25,
       "months": 9,
-      "avg_amount": 30.63,
+      "avg_amount": 30.39,
       "last_amount": 11.98
     },
     {
@@ -1191,20 +1209,20 @@
       "last_amount": 149
     },
     {
+      "desc": "Temu",
+      "category": "Shopping",
+      "count": 6,
+      "months": 2,
+      "avg_amount": 47.59,
+      "last_amount": 61.79
+    },
+    {
       "desc": "UPS",
       "category": "Tech/Subs",
       "count": 2,
       "months": 2,
       "avg_amount": 46.86,
       "last_amount": 62.66
-    },
-    {
-      "desc": "Temu",
-      "category": "Shopping",
-      "count": 4,
-      "months": 2,
-      "avg_amount": 45.28,
-      "last_amount": 61.79
     },
     {
       "desc": "Nj Motor Vehicle",
@@ -1438,7 +1456,7 @@
       "income": 16096.64,
       "bofa_income": 16096.64,
       "td_income": 0,
-      "outflows": 5090.6,
+      "outflows": 5495.03,
       "xoom": 0,
       "investments": 0
     }
@@ -2900,7 +2918,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -2913,7 +2931,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -2939,7 +2957,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -2952,7 +2970,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -2965,7 +2983,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -2978,7 +2996,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -2991,7 +3009,7 @@
           "state": "NY",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -3004,7 +3022,7 @@
           "state": "NY",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -3017,7 +3035,7 @@
           "state": "AR",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -3030,7 +3048,7 @@
           "state": "NY",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -3043,7 +3061,7 @@
           "state": "NY",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -3056,7 +3074,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -3069,7 +3087,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -3082,7 +3100,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -3095,7 +3113,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -3134,7 +3152,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -3147,7 +3165,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -3160,7 +3178,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -3173,7 +3191,7 @@
           "state": "AR",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -4192,7 +4210,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -4205,7 +4223,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -4231,7 +4249,7 @@
           "state": "AR",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -4244,7 +4262,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -4270,7 +4288,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -4296,7 +4314,7 @@
           "state": "AR",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -4309,7 +4327,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -4335,7 +4353,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -4348,7 +4366,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -4361,7 +4379,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -4374,7 +4392,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -4387,7 +4405,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -4400,7 +4418,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -4426,7 +4444,7 @@
           "state": "AR",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -5601,7 +5619,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -5614,7 +5632,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -5627,7 +5645,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -5640,7 +5658,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -5653,7 +5671,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -5679,7 +5697,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -5692,7 +5710,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -5705,7 +5723,7 @@
           "state": "OH",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -5718,7 +5736,7 @@
           "state": "OH",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -5744,7 +5762,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -5757,7 +5775,7 @@
           "state": "AR",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -5770,7 +5788,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -5783,7 +5801,7 @@
           "state": "AR",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": true
         },
@@ -5796,7 +5814,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -5809,7 +5827,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -5822,7 +5840,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -5835,7 +5853,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -6019,11 +6037,11 @@
         "Tech/Subs": 1657.6200000000001,
         "Healthcare": 934.76,
         "Refund": -2614.7499999999995,
-        "Shopping": 3203.7799999999997,
-        "Gas/Travel": 226.12,
-        "Groceries": 842.27
+        "Gas/Travel": 501.31,
+        "Shopping": 3308.2,
+        "Groceries": 867.09
       },
-      "total": 5090.6,
+      "total": 5495.03,
       "transactions": [
         {
           "date": "09-08",
@@ -6134,6 +6152,19 @@
           "desc": "Hulu",
           "amount": 12.78,
           "category": "Entertainment",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "jJEy77qLQxHNznaqxjJAhmEBM05B06iRRwaZd",
+          "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-30",
+          "desc": "Pse&g",
+          "amount": 275.19,
+          "category": "Gas/Travel",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -6645,7 +6676,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -6658,7 +6689,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -6671,7 +6702,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -6684,7 +6715,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -6697,7 +6728,7 @@
           "state": "AR",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -6736,7 +6767,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -6749,7 +6780,7 @@
           "state": "AR",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -6762,7 +6793,7 @@
           "state": "AR",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -6775,7 +6806,7 @@
           "state": "AR",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -6788,7 +6819,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -6801,7 +6832,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -6814,7 +6845,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -6827,7 +6858,7 @@
           "state": "TN",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -6840,7 +6871,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -6866,7 +6897,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -6879,7 +6910,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -6892,7 +6923,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -6905,7 +6936,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -6918,7 +6949,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -6931,7 +6962,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -6944,7 +6975,7 @@
           "state": "AR",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -6970,7 +7001,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -6983,7 +7014,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -7009,7 +7040,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -7022,7 +7053,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -7035,7 +7066,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -7048,7 +7079,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -7061,7 +7092,20 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-29",
+          "desc": "ShopRite",
+          "amount": 24.82,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -7291,6 +7335,32 @@
           "desc": "UPS",
           "amount": 62.66,
           "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-30",
+          "desc": "Temu",
+          "amount": 27.41,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-30",
+          "desc": "Temu",
+          "amount": 77.01,
+          "category": "Shopping",
           "city": null,
           "state": null,
           "bank": "Robinhood",
@@ -8119,7 +8189,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -8132,7 +8202,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -8145,7 +8215,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -8158,7 +8228,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -8171,7 +8241,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -8184,7 +8254,7 @@
           "state": "IL",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -8197,7 +8267,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -8210,7 +8280,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -8223,7 +8293,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -8236,7 +8306,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -8262,7 +8332,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         }
@@ -9138,7 +9208,7 @@
           "state": "CA",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -9151,7 +9221,7 @@
           "state": "CA",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -9164,7 +9234,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -9190,7 +9260,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -9203,7 +9273,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -9216,7 +9286,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -9229,7 +9299,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -9242,7 +9312,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -9255,7 +9325,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -9268,7 +9338,7 @@
           "state": "NY",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -9281,7 +9351,7 @@
           "state": "CA",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -9294,7 +9364,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -9307,7 +9377,7 @@
           "state": "AR",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": true
         },
@@ -9320,7 +9390,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -9333,7 +9403,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -9346,7 +9416,7 @@
           "state": "AR",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         }
@@ -10119,7 +10189,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -10132,7 +10202,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -10145,7 +10215,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -10158,7 +10228,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -10171,7 +10241,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -10184,7 +10254,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -10197,7 +10267,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -10210,7 +10280,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -10223,7 +10293,7 @@
           "state": "AR",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -10236,7 +10306,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -10249,7 +10319,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -10262,7 +10332,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -10275,7 +10345,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         }
@@ -10656,7 +10726,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -10669,7 +10739,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -10682,7 +10752,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         }
@@ -11557,7 +11627,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -11570,7 +11640,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -11583,7 +11653,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -11596,7 +11666,7 @@
           "state": "TN",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -11622,7 +11692,7 @@
           "state": "AR",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -11635,7 +11705,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -11648,7 +11718,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -11661,7 +11731,7 @@
           "state": "NJ",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -11674,7 +11744,7 @@
           "state": "MA",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -11687,7 +11757,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -11700,7 +11770,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -11713,7 +11783,7 @@
           "state": "AR",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -11726,7 +11796,7 @@
           "state": "AR",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -11752,7 +11822,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -11765,7 +11835,7 @@
           "state": null,
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": false
         },
@@ -11778,7 +11848,7 @@
           "state": "AR",
           "bank": "BofA",
           "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
-          "mask": "2776",
+          "mask": null,
           "pending": false,
           "refund": true
         }
@@ -13325,7 +13395,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-09-29T11:22:48.808Z",
+  "generated_at": "2026-10-01T01:21:26.942Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -13388,11 +13458,10 @@
       {
         "nickname": "wifebofa",
         "ok": true,
-        "accounts": 4,
+        "accounts": 3,
         "source": "PLAID_TOKEN_WIFEBOFA",
         "masks": [
           "1739",
-          "2776",
           "5677",
           "9715"
         ]
@@ -13431,18 +13500,20 @@
     "failed": [],
     "forced_refresh": [
       "pnc",
+      "zillow",
+      "td",
       "bofa",
       "wf",
-      "td",
-      "wifebofa",
-      "zillow",
-      "robin"
+      "wifebofa"
     ],
     "refresh_errors": {
-      "discover": "PRODUCTS_NOT_SUPPORTED"
+      "discover": "PRODUCTS_NOT_SUPPORTED",
+      "robin": "INSTITUTION_NOT_RESPONDING"
     },
-    "cached_balances": [],
-    "txns_fetched": 1208,
+    "cached_balances": [
+      "robin"
+    ],
+    "txns_fetched": 1215,
     "duplicates_removed": 18,
     "duplicate_sample": [
       {
