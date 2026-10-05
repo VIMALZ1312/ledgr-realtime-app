@@ -2,21 +2,21 @@
   "kpis": {
     "income": 0,
     "income_period": "",
-    "true_outflows": 564.82,
+    "true_outflows": 1427.45,
     "outflows_period": "October 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 32858.63,
+      "balance": 31068.81,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
       "outflows": 0
     },
     "wf": {
-      "balance": 2558.44,
+      "balance": 2820.5,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 384.23
@@ -28,7 +28,7 @@
       "payroll": 0
     },
     "discover": {
-      "balance": 44.04,
+      "balance": 96,
       "is_credit": true,
       "period_label": "Live"
     },
@@ -91,8 +91,8 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 4279.96,
-      "available": 3951.1,
+      "balance": 3951.1,
+      "available": 2940.13,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -161,8 +161,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 2558.44,
-      "available": 248,
+      "balance": 2820.5,
+      "available": 73,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -204,7 +204,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 63,
-      "available": 63,
+      "available": 151,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -231,8 +231,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 920.96,
-      "available": null,
+      "balance": 41.87,
+      "available": 658.13,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -259,8 +259,8 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 20702.7,
-      "available": 19366.74,
+      "balance": 19241.74,
+      "available": 18978.74,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -287,7 +287,7 @@
       "mask": "0494",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 44.04,
+      "balance": 96,
       "available": null,
       "is_credit": true,
       "is_loan": false,
@@ -316,7 +316,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 1505.03,
-      "available": 8494,
+      "available": 8395,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -329,7 +329,7 @@
       "mask": "7397",
       "type": "investment",
       "subtype": "crypto exchange",
-      "balance": 21.49,
+      "balance": 21.72,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -343,8 +343,8 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 64788.90509631,
-      "available": 13843.88,
+      "balance": 65832.0670491597,
+      "available": 20117.51,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -352,10 +352,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 98183.47509631,
-    "total_credit": 5028.47,
+    "total_checking": 97436.8170491597,
+    "total_credit": 4463.4,
     "total_loans": 385624.42,
-    "net": -292469.41490369
+    "net": -292651.0029508403
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -368,12 +368,12 @@
   "spending": {
     "Entertainment": 2694.659999999999,
     "Healthcare": 4308.39,
-    "Tech/Subs": 11713.25,
+    "Tech/Subs": 11976.25,
     "Refund": -13115.709999999997,
     "Gas/Travel": 9403.35,
-    "Shopping": 21676.96,
-    "Groceries": 4654.63,
-    "Restaurants": 4217.12,
+    "Shopping": 22027.01,
+    "Groceries": 4808.21,
+    "Restaurants": 4313.12,
     "Tax/Professional": 19386.88,
     "Insurance": 230.74
   },
@@ -535,6 +535,12 @@
       "period_label": "September 2026"
     },
     {
+      "from": "TD  RECEIVED 627600O03JHD Zelle RAKESH KUMAR GAL",
+      "amount": 88,
+      "period": "2026-10",
+      "period_label": "October 2026"
+    },
+    {
       "from": "payment from RAKESH VISTARAKULA for \"Enjoy\"; Conf# txd9tvy96",
       "amount": 2500,
       "period": "2026-01",
@@ -621,35 +627,35 @@
   ],
   "pending_transactions": [
     {
-      "date": "10-01",
-      "desc": "Optimum",
-      "amount": 69.66,
+      "date": "10-04",
+      "desc": "Patel Brothers",
+      "amount": 111.71,
+      "category": "Groceries",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "10-04",
+      "desc": "Garden Farm",
+      "amount": 125.11,
+      "category": "Shopping",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "10-05",
+      "desc": "Best Brains",
+      "amount": 263,
       "category": "Tech/Subs",
       "bank": "BofA",
       "pending": true
     },
     {
-      "date": "10-01",
-      "desc": "ACH HOLD Twp of North Bru ON 10/01",
-      "amount": 100.16,
-      "category": "Tech/Subs",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "10-01",
-      "desc": "Renaissance",
-      "amount": 115,
-      "category": "Tech/Subs",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "10-01",
-      "desc": "Kumon North America Inc",
-      "amount": 280,
-      "category": "Tech/Subs",
-      "bank": "BofA",
+      "date": "10-03",
+      "desc": "Tommy Hilfiger",
+      "amount": 99.94,
+      "category": "Shopping",
+      "bank": "Robinhood",
       "pending": true
     }
   ],
@@ -657,9 +663,9 @@
     {
       "desc": "Garden Farm",
       "category": "Shopping",
-      "count": 11,
-      "months": 9,
-      "avg_amount": 63.57,
+      "count": 12,
+      "months": 10,
+      "avg_amount": 68.7,
       "last_amount": 79.37
     },
     {
@@ -767,6 +773,14 @@
       "last_amount": 121.51
     },
     {
+      "desc": "Patel Brothers",
+      "category": "Groceries",
+      "count": 8,
+      "months": 6,
+      "avg_amount": 99.21,
+      "last_amount": 82.65
+    },
+    {
       "desc": "NJ E-ZPass",
       "category": "Gas/Travel",
       "count": 9,
@@ -799,12 +813,12 @@
       "last_amount": 5.33
     },
     {
-      "desc": "Patel Brothers",
-      "category": "Groceries",
-      "count": 7,
+      "desc": "Zelle payment to Tere Cleaning Lady Conf# z7k9t7gd4",
+      "category": "Shopping",
+      "count": 6,
       "months": 5,
-      "avg_amount": 97.42,
-      "last_amount": 82.65
+      "avg_amount": 129.17,
+      "last_amount": 125
     },
     {
       "desc": "Everwash",
@@ -839,14 +853,6 @@
       "last_amount": 290.11
     },
     {
-      "desc": "Zelle payment to Tere Cleaning Lady Conf# z7k9t7gd4",
-      "category": "Shopping",
-      "count": 5,
-      "months": 4,
-      "avg_amount": 130,
-      "last_amount": 125
-    },
-    {
       "desc": "House of Biryani's and Kebabs",
       "category": "Restaurants",
       "count": 5,
@@ -877,6 +883,14 @@
       "months": 4,
       "avg_amount": 41.3,
       "last_amount": 12.78
+    },
+    {
+      "desc": "Deccan Halal Mart",
+      "category": "Groceries",
+      "count": 14,
+      "months": 4,
+      "avg_amount": 26.76,
+      "last_amount": 41.87
     },
     {
       "desc": "Netflix",
@@ -935,6 +949,14 @@
       "last_amount": 190.62
     },
     {
+      "desc": "Twp of North Bru DES:XXXXX70922 ID:XXXXX76786 INDN:Vimal raj Loganathan CO ID:XXXXX79161 WEB",
+      "category": "Tech/Subs",
+      "count": 4,
+      "months": 3,
+      "avg_amount": 131.7,
+      "last_amount": 100.16
+    },
+    {
       "desc": "Renaissance Gree",
       "category": "Tech/Subs",
       "count": 4,
@@ -967,6 +989,14 @@
       "last_amount": 100
     },
     {
+      "desc": "DoorDash",
+      "category": "Restaurants",
+      "count": 3,
+      "months": 3,
+      "avg_amount": 69.3,
+      "last_amount": 96
+    },
+    {
       "desc": "PetSmart",
       "category": "Shopping",
       "count": 8,
@@ -989,14 +1019,6 @@
       "months": 3,
       "avg_amount": 34.01,
       "last_amount": 1.68
-    },
-    {
-      "desc": "Deccan Halal Mart",
-      "category": "Groceries",
-      "count": 13,
-      "months": 3,
-      "avg_amount": 25.6,
-      "last_amount": 15.46
     },
     {
       "desc": "Dollar Tree",
@@ -1111,14 +1133,6 @@
       "last_amount": 233.34
     },
     {
-      "desc": "Twp of North Bru DES:XXXXX70922 ID:XXXXX76786 INDN:Vimal raj Loganathan CO ID:XXXXX79161 WEB",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 2,
-      "avg_amount": 142.22,
-      "last_amount": 141.22
-    },
-    {
       "desc": "The Children's Place",
       "category": "Shopping",
       "count": 2,
@@ -1173,14 +1187,6 @@
       "months": 2,
       "avg_amount": 57.7,
       "last_amount": 50.06
-    },
-    {
-      "desc": "DoorDash",
-      "category": "Restaurants",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 55.96,
-      "last_amount": 76.7
     },
     {
       "desc": "H&M",
@@ -1464,7 +1470,7 @@
       "income": 0,
       "bofa_income": 0,
       "td_income": 0,
-      "outflows": 564.82,
+      "outflows": 1427.45,
       "xoom": 0,
       "investments": 0
     }
@@ -7261,32 +7267,6 @@
           "refund": false
         },
         {
-          "date": "09-19",
-          "desc": "Taco Bell",
-          "amount": 9,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
-          "mask": "1345",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "09-19",
-          "desc": "Temu",
-          "amount": 40.32,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
-          "mask": "1345",
-          "pending": false,
-          "refund": false
-        },
-        {
           "date": "09-20",
           "desc": "House of Biryani's and Kebabs",
           "amount": 75.41,
@@ -7376,6 +7356,32 @@
           "mask": "1345",
           "pending": false,
           "refund": false
+        },
+        {
+          "date": "09-19",
+          "desc": "Taco Bell",
+          "amount": 9,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-19",
+          "desc": "Temu",
+          "amount": 40.32,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
         }
       ]
     },
@@ -7383,9 +7389,12 @@
       "label": "October 2026",
       "period": "2026-10",
       "categories": {
-        "Tech/Subs": 564.8199999999999
+        "Tech/Subs": 827.8199999999999,
+        "Shopping": 350.05,
+        "Groceries": 153.57999999999998,
+        "Restaurants": 96
       },
-      "total": 564.8199999999999,
+      "total": 1427.45,
       "transactions": [
         {
           "date": "10-01",
@@ -7402,7 +7411,7 @@
         },
         {
           "date": "10-01",
-          "desc": "ACH HOLD Twp of North Bru ON 10/01",
+          "desc": "Twp of North Bru DES:XXXXX70922 ID:XXXXX72648 INDN:Vimal raj Loganathan CO ID:XXXXX79161 WEB",
           "amount": 100.16,
           "category": "Tech/Subs",
           "city": null,
@@ -7428,7 +7437,7 @@
         },
         {
           "date": "10-01",
-          "desc": "Kumon North America Inc",
+          "desc": "Kumon North America",
           "amount": 280,
           "category": "Tech/Subs",
           "city": null,
@@ -7436,6 +7445,97 @@
           "bank": "BofA",
           "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
           "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-02",
+          "desc": "Zelle payment to Tere Cleaning Lady Conf# yvjwixt4q",
+          "amount": 125,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
+          "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-04",
+          "desc": "Patel Brothers",
+          "amount": 111.71,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-04",
+          "desc": "Garden Farm",
+          "amount": 125.11,
+          "category": "Shopping",
+          "city": "Brunswick",
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-03",
+          "desc": "Deccan Halal Mart",
+          "amount": 41.87,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "5PgVKn3LZdunz4Z9ZR4wuJgBEBa7qZHVVXyA6",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-05",
+          "desc": "Best Brains",
+          "amount": 263,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
+          "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-01",
+          "desc": "DoorDash",
+          "amount": 96,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "Rvvr7Zy8qBh5ZxMV3QxrSOJdbV4dX7uqKkPXZ",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-03",
+          "desc": "Tommy Hilfiger",
+          "amount": 99.94,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
           "pending": false,
           "refund": false
         }
@@ -13465,7 +13565,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-10-01T20:35:41.457Z",
+  "generated_at": "2026-10-05T14:06:27.034Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -13570,19 +13670,19 @@
     ],
     "failed": [],
     "forced_refresh": [
-      "pnc",
       "bofa",
-      "td",
+      "pnc",
       "zillow",
+      "td",
       "wifebofa",
-      "wf",
-      "robin"
+      "robin",
+      "wf"
     ],
     "refresh_errors": {
       "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 1225,
+    "txns_fetched": 1237,
     "duplicates_removed": 18,
     "duplicate_sample": [
       {
