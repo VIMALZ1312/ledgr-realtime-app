@@ -92,7 +92,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 782.18,
-      "available": 782.18,
+      "available": 908.18,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -134,7 +134,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 1000,
-      "available": 1000,
+      "available": null,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -204,7 +204,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 126,
-      "available": 126,
+      "available": null,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -351,6 +351,18 @@
       "amount": 600,
       "period": "2026-09",
       "period_label": "September 2026"
+    },
+    {
+      "from": "Transfer Conf# 0KAB9YZGZ; VIMAL RAJ LOGANATHAN",
+      "amount": 126,
+      "period": "2026-10",
+      "period_label": "October 2026"
+    },
+    {
+      "from": "Transfer Conf# T22SC84MQ; VIMALRAJ LOGANATHAN",
+      "amount": 1000,
+      "period": "2026-10",
+      "period_label": "October 2026"
     },
     {
       "from": "FROM AHMED MOHAMMED ON 07/24 REF # BACAN9A28MWZ PHONE BILL FOR APRILJUNE2026",
@@ -10713,7 +10725,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-10-18T22:51:25.162Z",
+  "generated_at": "2026-10-18T23:10:03.322Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -10816,18 +10828,18 @@
     ],
     "forced_refresh": [
       "pnc",
-      "robin",
       "bofa",
       "zillow",
       "td",
+      "robin",
       "wf"
     ],
     "refresh_errors": {
-      "discover": "PRODUCTS_NOT_SUPPORTED",
-      "wifebofa": "ITEM_LOGIN_REQUIRED"
+      "wifebofa": "ITEM_LOGIN_REQUIRED",
+      "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 931,
+    "txns_fetched": 933,
     "duplicates_removed": 0,
     "duplicate_sample": []
   }
