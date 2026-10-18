@@ -92,7 +92,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 782.18,
-      "available": 908.18,
+      "available": 1908.18,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -260,7 +260,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 1719.4,
-      "available": 8254,
+      "available": 9284,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -10725,7 +10725,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-10-18T23:10:03.322Z",
+  "generated_at": "2026-10-18T23:13:46.504Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -10828,18 +10828,18 @@
     ],
     "forced_refresh": [
       "pnc",
-      "bofa",
       "zillow",
-      "td",
+      "wf",
+      "bofa",
       "robin",
-      "wf"
+      "td"
     ],
     "refresh_errors": {
       "wifebofa": "ITEM_LOGIN_REQUIRED",
       "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 933,
+    "txns_fetched": 934,
     "duplicates_removed": 0,
     "duplicate_sample": []
   }
