@@ -1,34 +1,34 @@
 {
   "kpis": {
-    "income": 4411.34,
+    "income": 8818.49,
     "income_period": "October 2026",
-    "true_outflows": 1688.54,
+    "true_outflows": 2285.76,
     "outflows_period": "October 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 815.52,
+      "balance": 4487.950000000001,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
       "outflows": 0
     },
     "wf": {
-      "balance": 2853.1699999999996,
+      "balance": 3196.0499999999997,
       "is_credit": true,
       "period_label": "Live",
-      "wf_checking": 1000
+      "wf_checking": 1210
     },
     "td": {
-      "balance": 126,
+      "balance": 0,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0
     },
     "discover": {
-      "balance": 96,
+      "balance": 10.2,
       "is_credit": true,
       "period_label": "Live"
     },
@@ -77,8 +77,8 @@
       "mask": "5677",
       "type": "depository",
       "subtype": "savings",
-      "balance": 0,
-      "available": null,
+      "balance": 0.09,
+      "available": 0.09,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -91,8 +91,8 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 782.18,
-      "available": 1908.18,
+      "balance": 4454.52,
+      "available": 4454.52,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -133,8 +133,8 @@
       "mask": "3068",
       "type": "depository",
       "subtype": "checking",
-      "balance": 1000,
-      "available": null,
+      "balance": 1210,
+      "available": 1210,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -161,8 +161,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 2851.18,
-      "available": 25,
+      "balance": 3194.06,
+      "available": null,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -203,7 +203,7 @@
       "mask": "9222",
       "type": "depository",
       "subtype": "checking",
-      "balance": 126,
+      "balance": 0,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -231,7 +231,7 @@
       "mask": "0494",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 96,
+      "balance": 10.2,
       "available": null,
       "is_credit": true,
       "is_loan": false,
@@ -259,8 +259,8 @@
       "mask": "1345",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 1719.4,
-      "available": 9284,
+      "balance": 1032.66,
+      "available": 8718,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -273,7 +273,7 @@
       "mask": "7397",
       "type": "investment",
       "subtype": "crypto exchange",
-      "balance": 18.58,
+      "balance": 18.51,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -287,7 +287,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 62752.02745598,
+      "balance": 62842.32548092,
       "available": 22299.74,
       "is_credit": false,
       "is_loan": false,
@@ -296,10 +296,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 64775.257455980005,
-    "total_credit": 4668.57,
+    "total_checking": 68621.98548092,
+    "total_credit": 4238.91,
     "total_loans": 385105.65,
-    "net": -324998.96254402003
+    "net": -320722.57451908
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -311,13 +311,13 @@
   },
   "spending": {
     "Entertainment": 2453.2799999999997,
-    "Healthcare": 2720.93,
-    "Tech/Subs": 8875.43,
+    "Healthcare": 2731.59,
+    "Tech/Subs": 9135.17,
     "Refund": -11384.869999999997,
     "Gas/Travel": 5589.73,
-    "Shopping": 7718.03,
-    "Groceries": 2195.91,
-    "Restaurants": 3886.3399999999992,
+    "Shopping": 7728.0199999999995,
+    "Groceries": 2316.45,
+    "Restaurants": 4082.629999999999,
     "Tax/Professional": 1958.0100000000002,
     "Insurance": 230.74
   },
@@ -353,13 +353,13 @@
       "period_label": "September 2026"
     },
     {
-      "from": "Transfer Conf# 0KAB9YZGZ; VIMAL RAJ LOGANATHAN",
+      "from": "payment from VIMAL RAJ LOGANATHAN Conf# 0KAB9YZGZ",
       "amount": 126,
       "period": "2026-10",
       "period_label": "October 2026"
     },
     {
-      "from": "Transfer Conf# T22SC84MQ; VIMALRAJ LOGANATHAN",
+      "from": "payment from VIMALRAJ LOGANATHAN Conf# T22SC84MQ",
       "amount": 1000,
       "period": "2026-10",
       "period_label": "October 2026"
@@ -499,9 +499,17 @@
   ],
   "pending_transactions": [
     {
-      "date": "10-17",
-      "desc": "DoorDash",
-      "amount": 26.14,
+      "date": "10-26",
+      "desc": "Verizon",
+      "amount": 245.74,
+      "category": "Tech/Subs",
+      "bank": "Robinhood",
+      "pending": true
+    },
+    {
+      "date": "10-26",
+      "desc": "Taco Bell",
+      "amount": 4.15,
       "category": "Restaurants",
       "bank": "Robinhood",
       "pending": true
@@ -565,6 +573,14 @@
       "last_amount": 266
     },
     {
+      "desc": "Patel Brothers",
+      "category": "Groceries",
+      "count": 8,
+      "months": 6,
+      "avg_amount": 100.31,
+      "last_amount": 82.65
+    },
+    {
       "desc": "NJ E-ZPass",
       "category": "Gas/Travel",
       "count": 9,
@@ -607,18 +623,10 @@
     {
       "desc": "Verizon",
       "category": "Tech/Subs",
-      "count": 5,
+      "count": 6,
       "months": 5,
-      "avg_amount": 394.06,
-      "last_amount": 395.84
-    },
-    {
-      "desc": "Patel Brothers",
-      "category": "Groceries",
-      "count": 7,
-      "months": 5,
-      "avg_amount": 97.42,
-      "last_amount": 82.65
+      "avg_amount": 369.34,
+      "last_amount": 245.74
     },
     {
       "desc": "Patidar Supermarket Nort",
@@ -651,6 +659,14 @@
       "months": 5,
       "avg_amount": 21.31,
       "last_amount": 21.31
+    },
+    {
+      "desc": "Planet Fitness",
+      "category": "Healthcare",
+      "count": 6,
+      "months": 5,
+      "avg_amount": 17.59,
+      "last_amount": 10.66
     },
     {
       "desc": "Costco",
@@ -693,14 +709,6 @@
       "last_amount": 12.78
     },
     {
-      "desc": "Planet Fitness",
-      "category": "Healthcare",
-      "count": 5,
-      "months": 4,
-      "avg_amount": 18.98,
-      "last_amount": 10.66
-    },
-    {
       "desc": "Aitubo.ai Hunghom",
       "category": "Tech/Subs",
       "count": 4,
@@ -723,6 +731,14 @@
       "months": 4,
       "avg_amount": 9.6,
       "last_amount": 15
+    },
+    {
+      "desc": "Taco Bell",
+      "category": "Restaurants",
+      "count": 4,
+      "months": 4,
+      "avg_amount": 5.57,
+      "last_amount": 4.15
     },
     {
       "desc": "Public Service",
@@ -775,10 +791,10 @@
     {
       "desc": "DoorDash",
       "category": "Restaurants",
-      "count": 4,
+      "count": 5,
       "months": 3,
-      "avg_amount": 58.51,
-      "last_amount": 26.14
+      "avg_amount": 68.29,
+      "last_amount": 107.38
     },
     {
       "desc": "PetSmart",
@@ -835,14 +851,6 @@
       "months": 3,
       "avg_amount": 8.34,
       "last_amount": 6.24
-    },
-    {
-      "desc": "Taco Bell",
-      "category": "Restaurants",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 6.05,
-      "last_amount": 9
     },
     {
       "desc": "RETURN OF POSTED CHECK / ITEM (RECEIVED ON 08-12) ELECTRONIC TRANSACTION",
@@ -925,6 +933,14 @@
       "last_amount": 102.29
     },
     {
+      "desc": "Thanjai Mess",
+      "category": "Restaurants",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 60.39,
+      "last_amount": 47.62
+    },
+    {
       "desc": "Simplytrawell",
       "category": "Gas/Travel",
       "count": 3,
@@ -989,6 +1005,14 @@
       "last_amount": 46.88
     },
     {
+      "desc": "Bikanervala",
+      "category": "Restaurants",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 34.14,
+      "last_amount": 37.14
+    },
+    {
       "desc": "AMC Theatres",
       "category": "Entertainment",
       "count": 2,
@@ -1051,6 +1075,14 @@
       "months": 2,
       "avg_amount": 10.64,
       "last_amount": 13.59
+    },
+    {
+      "desc": "Nokia",
+      "category": "Shopping",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 9.99,
+      "last_amount": 9.99
     },
     {
       "desc": "Vzn Br Cafe",
@@ -1179,10 +1211,10 @@
     {
       "period": "2026-10",
       "period_label": "October 2026",
-      "income": 4411.34,
-      "bofa_income": 4411.34,
+      "income": 8818.490000000002,
+      "bofa_income": 8818.490000000002,
       "td_income": 0,
-      "outflows": 1688.54,
+      "outflows": 2285.76,
       "xoom": 0,
       "investments": 0
     }
@@ -5800,15 +5832,16 @@
       "label": "October 2026",
       "period": "2026-10",
       "categories": {
-        "Tech/Subs": 1180.6599999999999,
-        "Shopping": 250,
+        "Tech/Subs": 1440.3999999999999,
+        "Shopping": 259.99,
         "Entertainment": 21.31,
-        "Restaurants": 128.38,
+        "Healthcare": 16.95,
+        "Restaurants": 324.66999999999996,
         "Gas/Travel": 71.77,
         "Tax/Professional": 30.13,
-        "Healthcare": 6.29
+        "Groceries": 120.54
       },
-      "total": 1688.5399999999997,
+      "total": 2285.7599999999998,
       "transactions": [
         {
           "date": "10-01",
@@ -5902,10 +5935,36 @@
           "refund": false
         },
         {
+          "date": "10-19",
+          "desc": "Planet Fitness",
+          "amount": 10.66,
+          "category": "Healthcare",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "jJEy77qLQxHNznaqxjJAhmEBM05B06iRRwaZd",
+          "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
           "date": "10-01",
           "desc": "DoorDash",
           "amount": 96,
           "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Discover",
+          "account_id": "Rvvr7Zy8qBh5ZxMV3QxrSOJdbV4dX7uqKkPXZ",
+          "mask": "0494",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-22",
+          "desc": "Nokia",
+          "amount": 9.99,
+          "category": "Shopping",
           "city": null,
           "state": null,
           "bank": "Discover",
@@ -5980,9 +6039,100 @@
           "refund": false
         },
         {
-          "date": "10-17",
+          "date": "10-19",
           "desc": "DoorDash",
           "amount": 26.14,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-19",
+          "desc": "DoorDash",
+          "amount": 107.38,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-23",
+          "desc": "Patel Brothers",
+          "amount": 120.54,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-24",
+          "desc": "Bikanervala",
+          "amount": 37.14,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-23",
+          "desc": "Thanjai Mess",
+          "amount": 47.62,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-26",
+          "desc": "Verizon",
+          "amount": 245.74,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-26",
+          "desc": "Openart Ai",
+          "amount": 14,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-26",
+          "desc": "Taco Bell",
+          "amount": 4.15,
           "category": "Restaurants",
           "city": null,
           "state": null,
@@ -10725,7 +10875,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-10-18T23:13:46.504Z",
+  "generated_at": "2026-10-27T11:26:21.049Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -10828,18 +10978,18 @@
     ],
     "forced_refresh": [
       "pnc",
-      "zillow",
-      "wf",
       "bofa",
+      "wf",
       "robin",
-      "td"
+      "td",
+      "zillow"
     ],
     "refresh_errors": {
       "wifebofa": "ITEM_LOGIN_REQUIRED",
       "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 934,
+    "txns_fetched": 955,
     "duplicates_removed": 0,
     "duplicate_sample": []
   }
