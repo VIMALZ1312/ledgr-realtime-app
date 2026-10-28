@@ -16,10 +16,10 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 3196.0499999999997,
+      "balance": 2006.31,
       "is_credit": true,
       "period_label": "Live",
-      "wf_checking": 1210
+      "wf_checking": 40.71
     },
     "td": {
       "balance": 0,
@@ -133,8 +133,8 @@
       "mask": "3068",
       "type": "depository",
       "subtype": "checking",
-      "balance": 1210,
-      "available": 1210,
+      "balance": 40.71,
+      "available": 40.71,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -161,8 +161,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 3194.06,
-      "available": null,
+      "balance": 2004.32,
+      "available": 995,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -259,8 +259,8 @@
       "mask": "1345",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 1032.66,
-      "available": 8718,
+      "balance": 0,
+      "available": 9751,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -273,7 +273,7 @@
       "mask": "7397",
       "type": "investment",
       "subtype": "crypto exchange",
-      "balance": 18.51,
+      "balance": 19.11,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -287,7 +287,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 62842.32548092,
+      "balance": 63861.419983005,
       "available": 22299.74,
       "is_credit": false,
       "is_loan": false,
@@ -296,10 +296,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 68621.98548092,
-    "total_credit": 4238.91,
+    "total_checking": 68471.789983005,
+    "total_credit": 2016.51,
     "total_loans": 385105.65,
-    "net": -320722.57451908
+    "net": -318650.370016995
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -10875,7 +10875,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-10-27T11:26:47.570Z",
+  "generated_at": "2026-10-28T19:59:57.618Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -10980,16 +10980,16 @@
       "pnc",
       "zillow",
       "bofa",
-      "robin",
+      "td",
       "wf",
-      "td"
+      "robin"
     ],
     "refresh_errors": {
       "wifebofa": "ITEM_LOGIN_REQUIRED",
       "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 955,
+    "txns_fetched": 956,
     "duplicates_removed": 0,
     "duplicate_sample": []
   }
