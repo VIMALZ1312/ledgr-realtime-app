@@ -2,21 +2,21 @@
   "kpis": {
     "income": 8818.49,
     "income_period": "October 2026",
-    "true_outflows": 2285.76,
+    "true_outflows": 2762.11,
     "outflows_period": "October 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 4487.950000000001,
+      "balance": 3258.1099999999997,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
       "outflows": 0
     },
     "wf": {
-      "balance": 2006.31,
+      "balance": 2004.32,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 40.71
@@ -91,8 +91,8 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 4454.52,
-      "available": 4454.52,
+      "balance": 3232.68,
+      "available": 3232.68,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -105,26 +105,12 @@
       "mask": "8206",
       "type": "depository",
       "subtype": "savings",
-      "balance": -9.29,
-      "available": -9.29,
+      "balance": -17.29,
+      "available": -17.29,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
       "is_savings": true
-    },
-    {
-      "bank": "Wells Fargo",
-      "nickname": "wf",
-      "name": "BOBS DISCOUNT FURNITURE ...1432",
-      "mask": "1432",
-      "type": "credit",
-      "subtype": "credit card",
-      "balance": 0,
-      "available": 5100,
-      "is_credit": true,
-      "is_loan": false,
-      "is_checking": false,
-      "is_savings": false
     },
     {
       "bank": "Wells Fargo",
@@ -147,8 +133,8 @@
       "mask": "8036",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 1.99,
-      "available": 998,
+      "balance": 0,
+      "available": 1000,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -259,8 +245,8 @@
       "mask": "1345",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 0,
-      "available": 9751,
+      "balance": 71.99,
+      "available": 9617,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -273,7 +259,7 @@
       "mask": "7397",
       "type": "investment",
       "subtype": "crypto exchange",
-      "balance": 19.11,
+      "balance": 17.89,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -287,8 +273,8 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 63861.419983005,
-      "available": 22299.74,
+      "balance": 59917.42,
+      "available": 25476.67,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -296,10 +282,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 68471.789983005,
-    "total_credit": 2016.51,
+    "total_checking": 63297.95,
+    "total_credit": 2086.5099999999998,
     "total_loans": 385105.65,
-    "net": -318650.370016995
+    "net": -323894.21
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -310,14 +296,14 @@
     "by_month": []
   },
   "spending": {
-    "Entertainment": 2453.2799999999997,
+    "Entertainment": 2486.2299999999996,
     "Healthcare": 2731.59,
-    "Tech/Subs": 9135.17,
-    "Refund": -11384.869999999997,
-    "Gas/Travel": 5589.73,
-    "Shopping": 7728.0199999999995,
+    "Tech/Subs": 9280.220000000001,
+    "Refund": -11403.629999999997,
+    "Gas/Travel": 5778.91,
+    "Shopping": 7861.45,
     "Groceries": 2316.45,
-    "Restaurants": 4082.629999999999,
+    "Restaurants": 4205.69,
     "Tax/Professional": 1958.0100000000002,
     "Insurance": 230.74
   },
@@ -419,6 +405,12 @@
       "period_label": "September 2026"
     },
     {
+      "from": "FROM DEEPAK REDDY DEVULAPALLY ON 09/27 REF # JPM99CXZ9POW MONTHLY PHONE BILL",
+      "amount": 40.71,
+      "period": "2026-09",
+      "period_label": "September 2026"
+    },
+    {
       "from": "FROM AHMED MOHAMMED",
       "amount": 483.9,
       "period": "2026-04",
@@ -499,17 +491,17 @@
   ],
   "pending_transactions": [
     {
-      "date": "10-26",
+      "date": "10-30",
       "desc": "Verizon",
-      "amount": 245.74,
+      "amount": 256.39,
       "category": "Tech/Subs",
       "bank": "Robinhood",
       "pending": true
     },
     {
-      "date": "10-26",
-      "desc": "Taco Bell",
-      "amount": 4.15,
+      "date": "10-30",
+      "desc": "Grubhub",
+      "amount": 55.22,
       "category": "Restaurants",
       "bank": "Robinhood",
       "pending": true
@@ -527,9 +519,9 @@
     {
       "desc": "Amazon",
       "category": "Shopping",
-      "count": 84,
+      "count": 87,
       "months": 9,
-      "avg_amount": 25.53,
+      "avg_amount": 25.76,
       "last_amount": 28.95
     },
     {
@@ -539,6 +531,14 @@
       "months": 9,
       "avg_amount": 17.45,
       "last_amount": 28.24
+    },
+    {
+      "desc": "Big Blue Swim School",
+      "category": "Tech/Subs",
+      "count": 10,
+      "months": 8,
+      "avg_amount": 228.62,
+      "last_amount": 266
     },
     {
       "desc": "Simplisafe",
@@ -551,9 +551,9 @@
     {
       "desc": "Apple",
       "category": "Shopping",
-      "count": 25,
+      "count": 26,
       "months": 8,
-      "avg_amount": 22.49,
+      "avg_amount": 22.86,
       "last_amount": 5.32
     },
     {
@@ -563,14 +563,6 @@
       "months": 8,
       "avg_amount": 1.99,
       "last_amount": 1.99
-    },
-    {
-      "desc": "Big Blue Swim School",
-      "category": "Tech/Subs",
-      "count": 9,
-      "months": 7,
-      "avg_amount": 239.09,
-      "last_amount": 266
     },
     {
       "desc": "Patel Brothers",
@@ -625,8 +617,8 @@
       "category": "Tech/Subs",
       "count": 6,
       "months": 5,
-      "avg_amount": 369.34,
-      "last_amount": 245.74
+      "avg_amount": 371.12,
+      "last_amount": 256.39
     },
     {
       "desc": "Patidar Supermarket Nort",
@@ -699,6 +691,14 @@
       "months": 4,
       "avg_amount": 58.26,
       "last_amount": 69.66
+    },
+    {
+      "desc": "PetSmart",
+      "category": "Shopping",
+      "count": 8,
+      "months": 4,
+      "avg_amount": 52.05,
+      "last_amount": 18.1
     },
     {
       "desc": "Renaissance Buy Rite",
@@ -797,14 +797,6 @@
       "last_amount": 107.38
     },
     {
-      "desc": "PetSmart",
-      "category": "Shopping",
-      "count": 7,
-      "months": 3,
-      "avg_amount": 56.9,
-      "last_amount": 30.89
-    },
-    {
       "desc": "Shaan Halal Meat Market",
       "category": "Groceries",
       "count": 3,
@@ -867,6 +859,14 @@
       "months": 2,
       "avg_amount": 255.23,
       "last_amount": 229.29
+    },
+    {
+      "desc": "Pse&g",
+      "category": "Gas/Travel",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 232.19,
+      "last_amount": 189.18
     },
     {
       "desc": "Best Buy",
@@ -1191,8 +1191,8 @@
     {
       "period": "2026-08",
       "period_label": "August 2026",
-      "income": 12384.58,
-      "bofa_income": 12384.58,
+      "income": 11319.75,
+      "bofa_income": 11319.75,
       "td_income": 0,
       "outflows": 1734.18,
       "xoom": 0,
@@ -1204,7 +1204,7 @@
       "income": 9145.49,
       "bofa_income": 9145.49,
       "td_income": 0,
-      "outflows": 1357.55,
+      "outflows": 1486.11,
       "xoom": 0,
       "investments": 0
     },
@@ -1214,7 +1214,7 @@
       "income": 8818.490000000002,
       "bofa_income": 8818.490000000002,
       "td_income": 0,
-      "outflows": 2285.76,
+      "outflows": 2762.11,
       "xoom": 0,
       "investments": 0
     }
@@ -4971,15 +4971,15 @@
       "period": "2026-09",
       "categories": {
         "Restaurants": 422.56,
-        "Entertainment": 418.24,
+        "Entertainment": 450.23,
         "Tech/Subs": 1058.31,
         "Healthcare": 554.76,
-        "Refund": -2614.7499999999995,
+        "Refund": -2633.5099999999998,
         "Gas/Travel": 300.19,
-        "Shopping": 1040.92,
+        "Shopping": 1156.25,
         "Groceries": 177.32
       },
-      "total": 1357.5500000000009,
+      "total": 1486.1100000000008,
       "transactions": [
         {
           "date": "09-08",
@@ -5593,6 +5593,58 @@
           "refund": false
         },
         {
+          "date": "09-27",
+          "desc": "Apple",
+          "amount": 31.99,
+          "category": "Entertainment",
+          "city": null,
+          "state": "CA",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-30",
+          "desc": "Amazon",
+          "amount": -18.76,
+          "category": "Refund",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": true
+        },
+        {
+          "date": "09-29",
+          "desc": "Amazon",
+          "amount": 55.97,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-30",
+          "desc": "Amazon",
+          "amount": 59.36,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
           "date": "09-22",
           "desc": "Nokia",
           "amount": 9.99,
@@ -5832,16 +5884,16 @@
       "label": "October 2026",
       "period": "2026-10",
       "categories": {
-        "Tech/Subs": 1440.3999999999999,
-        "Shopping": 259.99,
-        "Entertainment": 21.31,
+        "Tech/Subs": 1585.4499999999998,
+        "Shopping": 278.09000000000003,
+        "Entertainment": 22.27,
         "Healthcare": 16.95,
-        "Restaurants": 324.66999999999996,
-        "Gas/Travel": 71.77,
+        "Gas/Travel": 260.95,
+        "Restaurants": 447.73,
         "Tax/Professional": 30.13,
         "Groceries": 120.54
       },
-      "total": 2285.7599999999998,
+      "total": 2762.1099999999997,
       "transactions": [
         {
           "date": "10-01",
@@ -5944,6 +5996,58 @@
           "bank": "BofA",
           "account_id": "jJEy77qLQxHNznaqxjJAhmEBM05B06iRRwaZd",
           "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-30",
+          "desc": "Pse&g",
+          "amount": 189.18,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "jJEy77qLQxHNznaqxjJAhmEBM05B06iRRwaZd",
+          "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-01",
+          "desc": "Big Blue Swim School",
+          "amount": 134.4,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-03",
+          "desc": "Commerce Center",
+          "amount": 0.96,
+          "category": "Entertainment",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-03",
+          "desc": "PetSmart",
+          "amount": 18.1,
+          "category": "Shopping",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
           "pending": false,
           "refund": false
         },
@@ -6105,19 +6209,6 @@
         },
         {
           "date": "10-26",
-          "desc": "Verizon",
-          "amount": 245.74,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
-          "mask": "1345",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "10-26",
           "desc": "Openart Ai",
           "amount": 14,
           "category": "Tech/Subs",
@@ -6133,6 +6224,45 @@
           "date": "10-26",
           "desc": "Taco Bell",
           "amount": 4.15,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-28",
+          "desc": "Chatpati Delhi",
+          "amount": 67.84,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-30",
+          "desc": "Verizon",
+          "amount": 256.39,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-30",
+          "desc": "Grubhub",
+          "amount": 55.22,
           "category": "Restaurants",
           "city": null,
           "state": null,
@@ -10857,6 +10987,16 @@
       "period_label": "September 2026"
     },
     {
+      "date": "09-27",
+      "desc": "Apple",
+      "amount": 31.99,
+      "category": "Entertainment",
+      "city": null,
+      "state": "CA",
+      "period": "2026-09",
+      "period_label": "September 2026"
+    },
+    {
       "date": "06-16",
       "desc": "CVS",
       "amount": 5.38,
@@ -10875,7 +11015,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-10-28T19:59:57.618Z",
+  "generated_at": "2026-10-31T16:05:58.446Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -10907,10 +11047,9 @@
       {
         "nickname": "wf",
         "ok": true,
-        "accounts": 4,
+        "accounts": 3,
         "source": "PLAID_TOKEN_WF",
         "masks": [
-          "1432",
           "3068",
           "8036",
           "9762"
@@ -10980,16 +11119,16 @@
       "pnc",
       "zillow",
       "bofa",
+      "robin",
       "td",
-      "wf",
-      "robin"
+      "wf"
     ],
     "refresh_errors": {
       "wifebofa": "ITEM_LOGIN_REQUIRED",
       "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 956,
+    "txns_fetched": 961,
     "duplicates_removed": 0,
     "duplicate_sample": []
   }
