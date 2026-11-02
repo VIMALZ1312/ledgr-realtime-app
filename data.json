@@ -2,7 +2,7 @@
   "kpis": {
     "income": 8818.49,
     "income_period": "October 2026",
-    "true_outflows": 2762.11,
+    "true_outflows": 2735.97,
     "outflows_period": "October 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -148,7 +148,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 2004.32,
-      "available": 995,
+      "available": 150,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -303,7 +303,7 @@
     "Gas/Travel": 5778.91,
     "Shopping": 7861.45,
     "Groceries": 2316.45,
-    "Restaurants": 4205.69,
+    "Restaurants": 4179.549999999999,
     "Tax/Professional": 1958.0100000000002,
     "Insurance": 230.74
   },
@@ -781,20 +781,20 @@
       "last_amount": 198.29
     },
     {
+      "desc": "DoorDash",
+      "category": "Restaurants",
+      "count": 4,
+      "months": 3,
+      "avg_amount": 78.82,
+      "last_amount": 107.38
+    },
+    {
       "desc": "Claude.ai",
       "category": "Tech/Subs",
       "count": 4,
       "months": 3,
       "avg_amount": 76.76,
       "last_amount": 100
-    },
-    {
-      "desc": "DoorDash",
-      "category": "Restaurants",
-      "count": 5,
-      "months": 3,
-      "avg_amount": 68.29,
-      "last_amount": 107.38
     },
     {
       "desc": "Shaan Halal Meat Market",
@@ -1214,7 +1214,7 @@
       "income": 8818.490000000002,
       "bofa_income": 8818.490000000002,
       "td_income": 0,
-      "outflows": 2762.11,
+      "outflows": 2735.97,
       "xoom": 0,
       "investments": 0
     }
@@ -5889,11 +5889,11 @@
         "Entertainment": 22.27,
         "Healthcare": 16.95,
         "Gas/Travel": 260.95,
-        "Restaurants": 447.73,
+        "Restaurants": 421.59000000000003,
         "Tax/Professional": 30.13,
         "Groceries": 120.54
       },
-      "total": 2762.1099999999997,
+      "total": 2735.9699999999993,
       "transactions": [
         {
           "date": "10-01",
@@ -6134,19 +6134,6 @@
           "desc": "Walgreens",
           "amount": 6.29,
           "category": "Healthcare",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
-          "mask": "1345",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "10-19",
-          "desc": "DoorDash",
-          "amount": 26.14,
-          "category": "Restaurants",
           "city": null,
           "state": null,
           "bank": "Robinhood",
@@ -11015,7 +11002,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-10-31T16:05:58.446Z",
+  "generated_at": "2026-11-02T00:11:11.329Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -11128,7 +11115,7 @@
       "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 961,
+    "txns_fetched": 960,
     "duplicates_removed": 0,
     "duplicate_sample": []
   }
