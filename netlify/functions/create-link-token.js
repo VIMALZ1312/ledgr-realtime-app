@@ -33,7 +33,19 @@ exports.handler = async (event) => {
       const access_token = tokens[nickname];
       if (access_token) {
         // products must be omitted in update mode — Plaid rejects the pair.
-        const response = await plaid.linkTokenCreate({ ...BASE, access_token });
+        //
+        // account_selection_enabled is what lets a re-auth ADD an account that
+        // was left unshared when the Item was first linked. Without it, the
+        // first wifebofa re-link came back with three of four accounts (BofA
+        // ...2776 absent) and no way to correct it from this flow. Plaid only
+        // shows its own Account Select for institutions that don't run one
+        // inside their OAuth flow; where the bank has its own (BofA usually
+        // does), the account still has to be ticked on the bank's page.
+        const response = await plaid.linkTokenCreate({
+          ...BASE,
+          access_token,
+          update: { account_selection_enabled: true },
+        });
         return { statusCode: 200, headers, body: JSON.stringify({
           link_token: response.data.link_token, mode: 'update', nickname,
         })};
