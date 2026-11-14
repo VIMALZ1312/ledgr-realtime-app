@@ -26,11 +26,13 @@ button.sec{background:#191926;color:#c8f060;border:1px solid rgba(200,240,96,0.3
   <div class="sub">Connect Bank Account</div>
 
   <div class="step">
-    1. Enter nickname (bofa / wf / td / discover)<br>
+    1. Enter nickname (bofa / wf / td / discover / wifebofa)<br>
     2. Tap Connect → complete bank login<br>
-    3. Token auto-saves (or is shown to paste into Netlify)<br>
-    4. Repeat for each bank<br>
-    5. Tap Sync when all banks connected
+    3. A nickname that already exists is <b>re-authenticated</b> —
+       its token keeps working, nothing to paste, no redeploy<br>
+    4. A new nickname adds a bank (token auto-saves, or is shown
+       to paste into Netlify)<br>
+    5. Tap Sync when done
   </div>
 
   <input id="nickname" placeholder="Nickname: bofa, wf, td, discover" />
@@ -48,12 +50,29 @@ async function startLink() {
   if (!nickname) { setStatus('Enter a nickname first.', 'err'); return; }
   setStatus('Getting link token...', 'warn');
   try {
-    const r = await fetch('/.netlify/functions/create-link-token', { method: 'POST', headers: {'Content-Type':'application/json'} });
-    const { link_token, error } = await r.json();
+    // Sending the nickname lets the backend pick update mode when a token
+    // for it already exists — the fix for ITEM_LOGIN_REQUIRED, and the way
+    // to avoid minting a second Item for a bank that is already linked.
+    const r = await fetch('/.netlify/functions/create-link-token', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ nickname })
+    });
+    const { link_token, error, mode, note } = await r.json();
     if (error) throw new Error(JSON.stringify(error));
+    if (note) setStatus(note, 'warn');
+    else setStatus(mode === 'update' ? 'Re-authenticating "' + nickname + '" — complete the bank login.' : 'Opening Plaid Link...', 'warn');
     const handler = Plaid.create({
       token: link_token,
       onSuccess: async (public_token, metadata) => {
+        // Update mode re-authenticated the Item this nickname's access token
+        // already points at, so that token is live again and there is nothing
+        // to exchange. Exchanging here would create a SECOND Item for the
+        // same bank: duplicate transactions and double Plaid billing.
+        if (mode === 'update') {
+          setStatus('✓ Re-authenticated "' + nickname + '". Its existing token works again — tap "Sync All Banks Now".', 'ok');
+          return;
+        }
         setStatus('Exchanging token...', 'warn');
         const resp = await fetch('/.netlify/functions/exchange-token', {
           method: 'POST',
