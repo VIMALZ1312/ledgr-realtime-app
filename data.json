@@ -1,8 +1,8 @@
 {
   "kpis": {
-    "income": 4350.82,
+    "income": 4850.82,
     "income_period": "November 2026",
-    "true_outflows": 459.99,
+    "true_outflows": 1184.79,
     "outflows_period": "November 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -296,14 +296,14 @@
     "by_month": []
   },
   "spending": {
-    "Entertainment": 2507.539999999999,
-    "Healthcare": 2756.68,
-    "Tech/Subs": 9396.140000000001,
-    "Refund": -11403.629999999997,
+    "Entertainment": 2592.8399999999992,
+    "Healthcare": 2847.0099999999998,
+    "Tech/Subs": 9816.600000000002,
+    "Refund": -11405.619999999997,
     "Gas/Travel": 5778.91,
-    "Shopping": 7861.45,
+    "Shopping": 9004.47,
     "Groceries": 2316.45,
-    "Restaurants": 4114.47,
+    "Restaurants": 4226.36,
     "Tax/Professional": 1958.0100000000002,
     "Insurance": 230.74
   },
@@ -411,6 +411,42 @@
       "period_label": "September 2026"
     },
     {
+      "from": "FROM PARTY MANIACS INC . ON 10/07 REF # CTZ0KA0N35L3 REFUND",
+      "amount": 500,
+      "period": "2026-10",
+      "period_label": "October 2026"
+    },
+    {
+      "from": "FROM KAUSHIK KANDASWAMY ON 10/18 REF # JPM99D0BZCLL MOVIE JAILER2",
+      "amount": 20,
+      "period": "2026-10",
+      "period_label": "October 2026"
+    },
+    {
+      "from": "FROM RAKESH VISTARAKULA ON 10/26 REF # BACSODPVUSVE PRANAY PHONE BILL UNTIL SEP 2026",
+      "amount": 550,
+      "period": "2026-10",
+      "period_label": "October 2026"
+    },
+    {
+      "from": "FROM MAHENDRAREDDY CHITTEPU ON 10/26 REF # BACDZ5BKNZM7 MEETUP",
+      "amount": 140,
+      "period": "2026-10",
+      "period_label": "October 2026"
+    },
+    {
+      "from": "FROM DEEPAK REDDY DEVULAPALLY ON 10/27 REF # JPM99D19N0TQ MONTHLY PHONE BILL",
+      "amount": 40.71,
+      "period": "2026-10",
+      "period_label": "October 2026"
+    },
+    {
+      "from": "FROM SAIREDDY KASTHURI ON 11/07 REF # COF81VL1G2GS",
+      "amount": 70,
+      "period": "2026-11",
+      "period_label": "November 2026"
+    },
+    {
       "from": "FROM AHMED MOHAMMED",
       "amount": 483.9,
       "period": "2026-04",
@@ -507,44 +543,52 @@
   ],
   "detected_recurring": [
     {
-      "desc": "Walgreens",
-      "category": "Healthcare",
-      "count": 19,
-      "months": 9,
-      "avg_amount": 30,
-      "last_amount": 3.26
-    },
-    {
       "desc": "Amazon",
       "category": "Shopping",
-      "count": 87,
-      "months": 9,
-      "avg_amount": 25.76,
+      "count": 98,
+      "months": 11,
+      "avg_amount": 28.11,
       "last_amount": 28.95
     },
     {
       "desc": "Regal Cinemas",
       "category": "Entertainment",
-      "count": 17,
-      "months": 9,
-      "avg_amount": 17.45,
+      "count": 20,
+      "months": 10,
+      "avg_amount": 18.75,
       "last_amount": 28.24
+    },
+    {
+      "desc": "Google One",
+      "category": "Entertainment",
+      "count": 10,
+      "months": 10,
+      "avg_amount": 2.29,
+      "last_amount": 1.99
     },
     {
       "desc": "Big Blue Swim School",
       "category": "Tech/Subs",
-      "count": 10,
-      "months": 8,
-      "avg_amount": 228.62,
+      "count": 11,
+      "months": 9,
+      "avg_amount": 234.31,
       "last_amount": 266
     },
     {
       "desc": "Simplisafe",
       "category": "Shopping",
-      "count": 8,
-      "months": 8,
+      "count": 9,
+      "months": 9,
       "avg_amount": 35.18,
       "last_amount": 35.18
+    },
+    {
+      "desc": "Walgreens",
+      "category": "Healthcare",
+      "count": 20,
+      "months": 9,
+      "avg_amount": 30,
+      "last_amount": 3.26
     },
     {
       "desc": "Apple",
@@ -555,12 +599,12 @@
       "last_amount": 5.32
     },
     {
-      "desc": "Google One",
-      "category": "Entertainment",
+      "desc": "Costco",
+      "category": "Refund",
       "count": 8,
-      "months": 8,
-      "avg_amount": 1.99,
-      "last_amount": 1.99
+      "months": 6,
+      "avg_amount": 231.4,
+      "last_amount": 290.11
     },
     {
       "desc": "Patel Brothers",
@@ -627,6 +671,14 @@
       "last_amount": 395.84
     },
     {
+      "desc": "House of Biryani's and Kebabs",
+      "category": "Restaurants",
+      "count": 6,
+      "months": 5,
+      "avg_amount": 99.55,
+      "last_amount": 73.07
+    },
+    {
       "desc": "Patidar Supermarket Nort",
       "category": "Groceries",
       "count": 7,
@@ -667,28 +719,12 @@
       "last_amount": 10.66
     },
     {
-      "desc": "Costco",
-      "category": "Refund",
-      "count": 6,
-      "months": 4,
-      "avg_amount": 225.21,
-      "last_amount": 290.11
-    },
-    {
       "desc": "Twp of North Bru DES:XXXXX70922 ID:XXXXX76786 INDN:Vimal raj Loganathan CO ID:XXXXX79161 WEB",
       "category": "Tech/Subs",
       "count": 5,
       "months": 4,
       "avg_amount": 144.2,
       "last_amount": 194.2
-    },
-    {
-      "desc": "House of Biryani's and Kebabs",
-      "category": "Restaurants",
-      "count": 5,
-      "months": 4,
-      "avg_amount": 108.58,
-      "last_amount": 73.07
     },
     {
       "desc": "Walmart",
@@ -713,6 +749,22 @@
       "months": 4,
       "avg_amount": 41.3,
       "last_amount": 12.78
+    },
+    {
+      "desc": "Polar",
+      "category": "Tech/Subs",
+      "count": 4,
+      "months": 4,
+      "avg_amount": 20.26,
+      "last_amount": 20.26
+    },
+    {
+      "desc": "Dollar Tree",
+      "category": "Shopping",
+      "count": 4,
+      "months": 4,
+      "avg_amount": 18.39,
+      "last_amount": 19.19
     },
     {
       "desc": "CVS",
@@ -763,6 +815,14 @@
       "last_amount": 190.62
     },
     {
+      "desc": "The Home Depot",
+      "category": "Shopping",
+      "count": 3,
+      "months": 3,
+      "avg_amount": 132.04,
+      "last_amount": 233.34
+    },
+    {
       "desc": "Renaissance Gree",
       "category": "Tech/Subs",
       "count": 4,
@@ -811,6 +871,14 @@
       "last_amount": 143
     },
     {
+      "desc": "Thanjai Mess",
+      "category": "Restaurants",
+      "count": 3,
+      "months": 3,
+      "avg_amount": 49.85,
+      "last_amount": 28.77
+    },
+    {
       "desc": "Shaan Halal Meat Market",
       "category": "Groceries",
       "count": 3,
@@ -819,20 +887,12 @@
       "last_amount": 47.44
     },
     {
-      "desc": "Dollar Tree",
-      "category": "Shopping",
+      "desc": "Buy Rite Renaissance",
+      "category": "Restaurants",
       "count": 3,
       "months": 3,
-      "avg_amount": 22.3,
-      "last_amount": 19.19
-    },
-    {
-      "desc": "Polar",
-      "category": "Tech/Subs",
-      "count": 3,
-      "months": 3,
-      "avg_amount": 20.26,
-      "last_amount": 20.26
+      "avg_amount": 16.87,
+      "last_amount": 17.58
     },
     {
       "desc": "Hulu",
@@ -857,6 +917,14 @@
       "months": 3,
       "avg_amount": 8.34,
       "last_amount": 6.24
+    },
+    {
+      "desc": "ACCOUNT ADJUSTMENT",
+      "category": "Refund",
+      "count": 3,
+      "months": 3,
+      "avg_amount": -1.99,
+      "last_amount": -1.99
     },
     {
       "desc": "RETURN OF POSTED CHECK / ITEM (RECEIVED ON 08-12) ELECTRONIC TRANSACTION",
@@ -899,20 +967,20 @@
       "last_amount": 50
     },
     {
-      "desc": "The Home Depot",
-      "category": "Shopping",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 154.44,
-      "last_amount": 233.34
-    },
-    {
       "desc": "Renaissance",
       "category": "Tech/Subs",
       "count": 2,
       "months": 2,
       "avg_amount": 115,
       "last_amount": 115
+    },
+    {
+      "desc": "Anthropic",
+      "category": "Tech/Subs",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 100,
+      "last_amount": 100
     },
     {
       "desc": "Avis",
@@ -945,14 +1013,6 @@
       "months": 2,
       "avg_amount": 67.79,
       "last_amount": 102.29
-    },
-    {
-      "desc": "Thanjai Mess",
-      "category": "Restaurants",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 60.39,
-      "last_amount": 47.62
     },
     {
       "desc": "Simplytrawell",
@@ -1091,6 +1151,14 @@
       "last_amount": 9.99
     },
     {
+      "desc": "Netli",
+      "category": "Tech/Subs",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 9,
+      "last_amount": 9
+    },
+    {
       "desc": "Wingstop",
       "category": "Restaurants",
       "count": 2,
@@ -1115,12 +1183,12 @@
       "last_amount": 5.33
     },
     {
-      "desc": "ACCOUNT ADJUSTMENT",
-      "category": "Refund",
+      "desc": "CVS Pharmacy",
+      "category": "Healthcare",
       "count": 2,
       "months": 2,
-      "avg_amount": -1.99,
-      "last_amount": -1.99
+      "avg_amount": 5.33,
+      "last_amount": 5.33
     }
   ],
   "monthly_history": [
@@ -1217,20 +1285,20 @@
     {
       "period": "2026-10",
       "period_label": "October 2026",
-      "income": 8818.490000000002,
-      "bofa_income": 8818.490000000002,
+      "income": 9818.490000000002,
+      "bofa_income": 9818.490000000002,
       "td_income": 0,
-      "outflows": 2373.22,
+      "outflows": 3497.43,
       "xoom": 0,
       "investments": 0
     },
     {
       "period": "2026-11",
       "period_label": "November 2026",
-      "income": 4350.82,
-      "bofa_income": 4350.82,
+      "income": 4850.82,
+      "bofa_income": 4850.82,
       "td_income": 0,
-      "outflows": 459.99,
+      "outflows": 1184.79,
       "xoom": 0,
       "investments": 0
     }
@@ -5900,16 +5968,17 @@
       "label": "October 2026",
       "period": "2026-10",
       "categories": {
-        "Tech/Subs": 1315.06,
-        "Shopping": 278.09000000000003,
-        "Entertainment": 22.27,
-        "Healthcare": 16.95,
+        "Tech/Subs": 1444.32,
+        "Shopping": 1038.85,
+        "Entertainment": 102.58,
+        "Healthcare": 107.28,
         "Gas/Travel": 260.95,
-        "Restaurants": 329.23,
+        "Restaurants": 394.77000000000004,
+        "Refund": -1.99,
         "Tax/Professional": 30.13,
         "Groceries": 120.54
       },
-      "total": 2373.2200000000003,
+      "total": 3497.4299999999994,
       "transactions": [
         {
           "date": "10-01",
@@ -6060,6 +6129,292 @@
           "amount": 18.1,
           "category": "Shopping",
           "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-03",
+          "desc": "Regal Cinemas",
+          "amount": 2.12,
+          "category": "Entertainment",
+          "city": null,
+          "state": "TN",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-05",
+          "desc": "Amazon",
+          "amount": 18.76,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-06",
+          "desc": "Amazon",
+          "amount": 8.16,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-06",
+          "desc": "Amazon",
+          "amount": 35.31,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-04",
+          "desc": "The Home Depot",
+          "amount": 87.25,
+          "category": "Shopping",
+          "city": "Milltown",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-08",
+          "desc": "House of Biryani's and Kebabs",
+          "amount": 54.35,
+          "category": "Restaurants",
+          "city": "Dayton",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-07",
+          "desc": "Amazon",
+          "amount": 162.04,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-12",
+          "desc": "Google One",
+          "amount": 1.99,
+          "category": "Entertainment",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "dM5Ed30xEot9Ap000VOXuYRQY0X87ASg8Zep8",
+          "mask": "8036",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-12",
+          "desc": "Amazon",
+          "amount": 49.04,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-18",
+          "desc": "Simplisafe",
+          "amount": 35.18,
+          "category": "Shopping",
+          "city": null,
+          "state": "MA",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-17",
+          "desc": "Walgreens",
+          "amount": 30,
+          "category": "Healthcare",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-16",
+          "desc": "Buy Rite Renaissance",
+          "amount": 11.19,
+          "category": "Restaurants",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-16",
+          "desc": "Regal Cinemas",
+          "amount": 47.96,
+          "category": "Entertainment",
+          "city": null,
+          "state": "TN",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-20",
+          "desc": "Netli",
+          "amount": 9,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "CA",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-22",
+          "desc": "Amazon",
+          "amount": 75.98,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-21",
+          "desc": "CVS Pharmacy",
+          "amount": 5.33,
+          "category": "Healthcare",
+          "city": null,
+          "state": "RI",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-25",
+          "desc": "Regal Cinemas",
+          "amount": 28.24,
+          "category": "Entertainment",
+          "city": null,
+          "state": "TN",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-23",
+          "desc": "Anthropic",
+          "amount": 100,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-26",
+          "desc": "Polar",
+          "amount": 20.26,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "CA",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-28",
+          "desc": "ACCOUNT ADJUSTMENT",
+          "amount": -1.99,
+          "category": "Refund",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "dM5Ed30xEot9Ap000VOXuYRQY0X87ASg8Zep8",
+          "mask": "8036",
+          "pending": false,
+          "refund": true
+        },
+        {
+          "date": "10-31",
+          "desc": "Costco",
+          "amount": 289.04,
+          "category": "Shopping",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-31",
+          "desc": "Hair Time Beauty Salon",
+          "amount": 55,
+          "category": "Healthcare",
+          "city": "Franklin Park",
           "state": "NJ",
           "bank": "Wells Fargo",
           "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
@@ -6229,12 +6584,13 @@
       "label": "November 2026",
       "period": "2026-11",
       "categories": {
-        "Tech/Subs": 386.31,
-        "Entertainment": 21.31,
-        "Restaurants": 27.28,
+        "Tech/Subs": 677.51,
+        "Entertainment": 26.299999999999997,
+        "Shopping": 382.26,
+        "Restaurants": 73.63,
         "Healthcare": 25.09
       },
-      "total": 459.98999999999995,
+      "total": 1184.79,
       "transactions": [
         {
           "date": "11-02",
@@ -6298,6 +6654,149 @@
           "bank": "BofA",
           "account_id": "jJEy77qLQxHNznaqxjJAhmEBM05B06iRRwaZd",
           "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-01",
+          "desc": "Costco",
+          "amount": 210.87,
+          "category": "Shopping",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-01",
+          "desc": "Big Blue Swim School",
+          "amount": 291.2,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-06",
+          "desc": "Amazon",
+          "amount": 17.98,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-07",
+          "desc": "Amazon",
+          "amount": 8.41,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-06",
+          "desc": "Dollar Tree",
+          "amount": 6.66,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-06",
+          "desc": "Thanjai Mess",
+          "amount": 28.77,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-05",
+          "desc": "Buy Rite Renaissance",
+          "amount": 17.58,
+          "category": "Restaurants",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-09",
+          "desc": "Amazon",
+          "amount": 9.59,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-09",
+          "desc": "Amazon",
+          "amount": 28.75,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-08",
+          "desc": "Amazon",
+          "amount": 100,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-11",
+          "desc": "Google One",
+          "amount": 4.99,
+          "category": "Entertainment",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
           "pending": false,
           "refund": false
         },
@@ -11078,6 +11577,76 @@
       "period_label": "September 2026"
     },
     {
+      "date": "10-03",
+      "desc": "Regal Cinemas",
+      "amount": 2.12,
+      "category": "Entertainment",
+      "city": null,
+      "state": "TN",
+      "period": "2026-10",
+      "period_label": "October 2026"
+    },
+    {
+      "date": "10-18",
+      "desc": "Simplisafe",
+      "amount": 35.18,
+      "category": "Shopping",
+      "city": null,
+      "state": "MA",
+      "period": "2026-10",
+      "period_label": "October 2026"
+    },
+    {
+      "date": "10-16",
+      "desc": "Regal Cinemas",
+      "amount": 47.96,
+      "category": "Entertainment",
+      "city": null,
+      "state": "TN",
+      "period": "2026-10",
+      "period_label": "October 2026"
+    },
+    {
+      "date": "10-20",
+      "desc": "Netli",
+      "amount": 9,
+      "category": "Tech/Subs",
+      "city": null,
+      "state": "CA",
+      "period": "2026-10",
+      "period_label": "October 2026"
+    },
+    {
+      "date": "10-21",
+      "desc": "CVS Pharmacy",
+      "amount": 5.33,
+      "category": "Healthcare",
+      "city": null,
+      "state": "RI",
+      "period": "2026-10",
+      "period_label": "October 2026"
+    },
+    {
+      "date": "10-25",
+      "desc": "Regal Cinemas",
+      "amount": 28.24,
+      "category": "Entertainment",
+      "city": null,
+      "state": "TN",
+      "period": "2026-10",
+      "period_label": "October 2026"
+    },
+    {
+      "date": "10-26",
+      "desc": "Polar",
+      "amount": 20.26,
+      "category": "Tech/Subs",
+      "city": null,
+      "state": "CA",
+      "period": "2026-10",
+      "period_label": "October 2026"
+    },
+    {
       "date": "06-16",
       "desc": "CVS",
       "amount": 5.38,
@@ -11096,7 +11665,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-11-14T22:22:12.753Z",
+  "generated_at": "2026-11-14T22:37:48.132Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -11123,7 +11692,11 @@
           "5677",
           "7309",
           "8206"
-        ]
+        ],
+        "txns": 227,
+        "pages": 1,
+        "truncated": false,
+        "last_txn": "2026-11-13"
       },
       {
         "nickname": "wf",
@@ -11134,7 +11707,11 @@
           "3068",
           "8036",
           "9762"
-        ]
+        ],
+        "txns": 615,
+        "pages": 2,
+        "truncated": false,
+        "last_txn": "2026-11-11"
       },
       {
         "nickname": "pnc",
@@ -11143,7 +11720,11 @@
         "source": "PLAID_TOKEN_PNC",
         "masks": [
           "5961"
-        ]
+        ],
+        "txns": 15,
+        "pages": 1,
+        "truncated": false,
+        "last_txn": "2026-11-11"
       },
       {
         "nickname": "td",
@@ -11153,7 +11734,11 @@
         "masks": [
           "5186",
           "9222"
-        ]
+        ],
+        "txns": 41,
+        "pages": 1,
+        "truncated": false,
+        "last_txn": "2026-11-05"
       },
       {
         "nickname": "wifebofa",
@@ -11169,7 +11754,11 @@
         "source": "PLAID_TOKEN_ZILLOW",
         "masks": [
           "4351"
-        ]
+        ],
+        "txns": 9,
+        "pages": 1,
+        "truncated": false,
+        "last_txn": "2026-11-10"
       },
       {
         "nickname": "discover",
@@ -11179,7 +11768,11 @@
         "masks": [
           "0494",
           "1922"
-        ]
+        ],
+        "txns": 35,
+        "pages": 1,
+        "truncated": false,
+        "last_txn": "2026-10-24"
       },
       {
         "nickname": "robin",
@@ -11190,26 +11783,29 @@
           "1345",
           "7397",
           "7724"
-        ]
+        ],
+        "txns": 86,
+        "pages": 1,
+        "truncated": false,
+        "last_txn": "2026-11-13"
       }
     ],
     "failed": [
       "wifebofa (ITEM_LOGIN_REQUIRED)"
     ],
-    "forced_refresh": [
-      "pnc",
-      "zillow",
-      "bofa",
-      "robin",
-      "wf",
-      "td"
-    ],
+    "forced_refresh": [],
     "refresh_errors": {
-      "discover": "PRODUCTS_NOT_SUPPORTED",
-      "wifebofa": "ITEM_LOGIN_REQUIRED"
+      "pnc": "TRANSACTIONS_LIMIT",
+      "zillow": "TRANSACTIONS_LIMIT",
+      "td": "TRANSACTIONS_LIMIT",
+      "wf": "TRANSACTIONS_LIMIT",
+      "wifebofa": "TRANSACTIONS_LIMIT",
+      "bofa": "TRANSACTIONS_LIMIT",
+      "robin": "TRANSACTIONS_LIMIT",
+      "discover": "TRANSACTIONS_LIMIT"
     },
     "cached_balances": [],
-    "txns_fetched": 978,
+    "txns_fetched": 1028,
     "duplicates_removed": 0,
     "duplicate_sample": []
   }
