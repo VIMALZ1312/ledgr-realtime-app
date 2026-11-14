@@ -398,19 +398,41 @@ async function buildDataJson() {
         staleBalances.push(nickname);
       }
       acctResp.data.accounts.forEach(a => allAccounts.push({ ...a, _nickname: nickname }));
-      let cursor = null, added = [], hasMore = true;
-      while (hasMore) {
-        const txResp = await plaid.transactionsSync({ access_token: token, cursor: cursor || undefined });
-        added = added.concat(txResp.data.added);
-        cursor = txResp.data.next_cursor;
-        hasMore = txResp.data.has_more;
-        if (added.length > 500) break;
+      // Every sync starts from a null cursor, so this pages an Item's WHOLE
+      // history, and /transactions/sync hands back the oldest updates first.
+      // That makes an early bail drop the NEWEST transactions, not the oldest:
+      // the previous `if (added.length > 500) break` silently froze the biggest
+      // Item (Wells Fargo, ~600 txns) weeks in the past — its window was full,
+      // so nothing recent could enter — while smaller Items stayed current.
+      // Page until Plaid says it is done; MAX_PAGES only stops a runaway loop,
+      // and `truncated` makes hitting it visible instead of silent.
+      const PAGE_SIZE = 500;        // /transactions/sync maximum
+      const MAX_PAGES = 60;         // 30k txns — far beyond any real Item
+      // added/modified/removed are folded by transaction_id so a charge that
+      // changed mid-history lands once, in its final form.
+      const byId = new Map();
+      let cursor = null, hasMore = true, pages = 0;
+      while (hasMore && pages < MAX_PAGES) {
+        const txResp = await plaid.transactionsSync({ access_token: token, cursor: cursor || undefined, count: PAGE_SIZE });
+        const page = txResp.data;
+        (page.added || []).forEach(t => byId.set(t.transaction_id, t));
+        (page.modified || []).forEach(t => byId.set(t.transaction_id, t));
+        (page.removed || []).forEach(r => byId.delete(r.transaction_id));
+        cursor = page.next_cursor;
+        hasMore = page.has_more;
+        pages++;
       }
+      if (hasMore) console.warn(`Transaction paging hit MAX_PAGES for ${nickname} — history is truncated`);
+      const added = [...byId.values()];
       added.forEach(t => allTransactions.push({ ...t, _nickname: nickname }));
+      const lastTxnDate = added.reduce((m, t) => (t.date > m ? t.date : m), '');
       tokenStatus.push({
         nickname, ok: true, accounts: acctResp.data.accounts.length,
         source: TOKEN_SOURCES[nickname] || null,
         masks: acctResp.data.accounts.map(a => a.mask).filter(Boolean),
+        // Per-Item freshness: a newest-transaction date sitting weeks behind the
+        // other Items is how a stalled or truncated feed shows itself.
+        txns: added.length, pages, truncated: hasMore, last_txn: lastTxnDate || null,
       });
     } catch (err) {
       const code = err.response?.data?.error_code || err.message;
