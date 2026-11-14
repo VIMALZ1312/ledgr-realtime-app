@@ -2,7 +2,7 @@
   "kpis": {
     "income": 8326.38,
     "income_period": "November 2026",
-    "true_outflows": 1852.79,
+    "true_outflows": 2293.83,
     "outflows_period": "November 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -213,6 +213,20 @@
     {
       "bank": "BofA",
       "nickname": "wifebofa",
+      "name": "Customized Cash Rewards Visa Signature",
+      "mask": "2776",
+      "type": "credit",
+      "subtype": "credit card",
+      "balance": 39.25,
+      "available": 660.75,
+      "is_credit": true,
+      "is_loan": false,
+      "is_checking": false,
+      "is_savings": false
+    },
+    {
+      "bank": "BofA",
+      "nickname": "wifebofa",
       "name": "Advantage Savings",
       "mask": "5677",
       "type": "depository",
@@ -325,9 +339,9 @@
   ],
   "net_worth": {
     "total_checking": 76848.67,
-    "total_credit": 2821.85,
+    "total_credit": 2861.1,
     "total_loans": 384584.29,
-    "net": -310557.47
+    "net": -310596.72
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -338,15 +352,15 @@
     "by_month": []
   },
   "spending": {
-    "Entertainment": 2592.8399999999992,
-    "Healthcare": 3992.7600000000007,
-    "Tech/Subs": 13439.500000000004,
-    "Refund": -13109.459999999997,
-    "Gas/Travel": 8785.99,
-    "Shopping": 30476.489999999998,
-    "Groceries": 2408.66,
-    "Restaurants": 4494.11,
-    "Tax/Professional": 19406.010000000002,
+    "Entertainment": 3049.8999999999996,
+    "Healthcare": 4475.76,
+    "Tech/Subs": 14168.840000000002,
+    "Refund": -11759.72,
+    "Gas/Travel": 9484.2,
+    "Shopping": 32874.450000000004,
+    "Groceries": 5575.7699999999995,
+    "Restaurants": 4895.25,
+    "Tax/Professional": 19417.010000000002,
     "Insurance": 230.74
   },
   "zelle_received": [
@@ -665,6 +679,14 @@
   ],
   "pending_transactions": [
     {
+      "date": "11-11",
+      "desc": "Mirra",
+      "amount": 206.65,
+      "category": "Shopping",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
       "date": "11-13",
       "desc": "Vzn Br Cafe",
       "amount": 9.51,
@@ -675,12 +697,28 @@
   ],
   "detected_recurring": [
     {
+      "desc": "ShopRite",
+      "category": "Groceries",
+      "count": 29,
+      "months": 11,
+      "avg_amount": 31.15,
+      "last_amount": 58.97
+    },
+    {
       "desc": "Amazon",
       "category": "Shopping",
       "count": 98,
       "months": 11,
       "avg_amount": 28.11,
       "last_amount": 28.95
+    },
+    {
+      "desc": "Garden Farm",
+      "category": "Shopping",
+      "count": 13,
+      "months": 10,
+      "avg_amount": 66.54,
+      "last_amount": 79.37
     },
     {
       "desc": "Regal Cinemas",
@@ -707,6 +745,30 @@
       "last_amount": 266
     },
     {
+      "desc": "BP",
+      "category": "Gas/Travel",
+      "count": 18,
+      "months": 9,
+      "avg_amount": 57.01,
+      "last_amount": 20.09
+    },
+    {
+      "desc": "Delight Big Bazar",
+      "category": "Groceries",
+      "count": 15,
+      "months": 9,
+      "avg_amount": 54.12,
+      "last_amount": 42.93
+    },
+    {
+      "desc": "Walmart",
+      "category": "Shopping",
+      "count": 26,
+      "months": 9,
+      "avg_amount": 36.91,
+      "last_amount": 60.46
+    },
+    {
       "desc": "Simplisafe",
       "category": "Shopping",
       "count": 9,
@@ -723,14 +785,6 @@
       "last_amount": 3.26
     },
     {
-      "desc": "Kumon Of North",
-      "category": "Tech/Subs",
-      "count": 8,
-      "months": 8,
-      "avg_amount": 280,
-      "last_amount": 280
-    },
-    {
       "desc": "Apple",
       "category": "Shopping",
       "count": 26,
@@ -739,12 +793,28 @@
       "last_amount": 5.32
     },
     {
-      "desc": "ShopRite",
+      "desc": "Patidar Supermarket",
       "category": "Groceries",
       "count": 12,
       "months": 7,
-      "avg_amount": 27.01,
-      "last_amount": 32.18
+      "avg_amount": 97.04,
+      "last_amount": 121.51
+    },
+    {
+      "desc": "Dunkin'",
+      "category": "Restaurants",
+      "count": 10,
+      "months": 7,
+      "avg_amount": 7.66,
+      "last_amount": 10.36
+    },
+    {
+      "desc": "Kumon North America Inc",
+      "category": "Tech/Subs",
+      "count": 6,
+      "months": 6,
+      "avg_amount": 280,
+      "last_amount": 280
     },
     {
       "desc": "Costco",
@@ -765,9 +835,9 @@
     {
       "desc": "Patel Brothers",
       "category": "Groceries",
-      "count": 8,
+      "count": 9,
       "months": 6,
-      "avg_amount": 100.31,
+      "avg_amount": 101.58,
       "last_amount": 82.65
     },
     {
@@ -785,14 +855,6 @@
       "months": 6,
       "avg_amount": 21.31,
       "last_amount": 21.31
-    },
-    {
-      "desc": "Dunkin'",
-      "category": "Restaurants",
-      "count": 9,
-      "months": 6,
-      "avg_amount": 7.54,
-      "last_amount": 10.36
     },
     {
       "desc": "Netlify Fy",
@@ -835,14 +897,6 @@
       "last_amount": 91.3
     },
     {
-      "desc": "BP",
-      "category": "Gas/Travel",
-      "count": 9,
-      "months": 5,
-      "avg_amount": 60.9,
-      "last_amount": 68.95
-    },
-    {
       "desc": "Optimum",
       "category": "Tech/Subs",
       "count": 6,
@@ -857,6 +911,14 @@
       "months": 5,
       "avg_amount": 55.45,
       "last_amount": 55.45
+    },
+    {
+      "desc": "Deccan Halal Mart",
+      "category": "Groceries",
+      "count": 19,
+      "months": 5,
+      "avg_amount": 27.43,
+      "last_amount": 16.02
     },
     {
       "desc": "Planet Fitness",
@@ -875,6 +937,14 @@
       "last_amount": 5815
     },
     {
+      "desc": "Kumon North America",
+      "category": "Tech/Subs",
+      "count": 4,
+      "months": 4,
+      "avg_amount": 280,
+      "last_amount": 280
+    },
+    {
       "desc": "Twp of North Bru DES:XXXXX70922 ID:XXXXX76786 INDN:Vimal raj Loganathan CO ID:XXXXX79161 WEB",
       "category": "Tech/Subs",
       "count": 5,
@@ -883,20 +953,20 @@
       "last_amount": 194.2
     },
     {
-      "desc": "Walmart",
-      "category": "Shopping",
-      "count": 5,
-      "months": 4,
-      "avg_amount": 67.14,
-      "last_amount": 77.3
-    },
-    {
       "desc": "PetSmart",
       "category": "Shopping",
-      "count": 8,
+      "count": 9,
       "months": 4,
-      "avg_amount": 52.05,
+      "avg_amount": 48.16,
       "last_amount": 18.1
+    },
+    {
+      "desc": "Trader Joe's",
+      "category": "Groceries",
+      "count": 4,
+      "months": 4,
+      "avg_amount": 43.08,
+      "last_amount": 13.14
     },
     {
       "desc": "Renaissance Buy Rite",
@@ -921,6 +991,14 @@
       "months": 4,
       "avg_amount": 18.39,
       "last_amount": 19.19
+    },
+    {
+      "desc": "Shaan Halal Zabiha Meat",
+      "category": "Groceries",
+      "count": 8,
+      "months": 4,
+      "avg_amount": 17.45,
+      "last_amount": 10.29
     },
     {
       "desc": "CVS",
@@ -969,6 +1047,14 @@
       "months": 3,
       "avg_amount": 232.03,
       "last_amount": 190.62
+    },
+    {
+      "desc": "Best Brains",
+      "category": "Tech/Subs",
+      "count": 3,
+      "months": 3,
+      "avg_amount": 205.9,
+      "last_amount": 263
     },
     {
       "desc": "The Home Depot",
@@ -1043,12 +1129,20 @@
       "last_amount": 47.44
     },
     {
-      "desc": "Deccan Halal Mart",
-      "category": "Groceries",
+      "desc": "Apna Bazaar Cash & Carry",
+      "category": "Shopping",
       "count": 5,
       "months": 3,
-      "avg_amount": 40.93,
-      "last_amount": 81.36
+      "avg_amount": 21.14,
+      "last_amount": 42.97
+    },
+    {
+      "desc": "Atul Bakery - North Brunswick Township",
+      "category": "Restaurants",
+      "count": 3,
+      "months": 3,
+      "avg_amount": 18.07,
+      "last_amount": 14.03
     },
     {
       "desc": "Buy Rite Renaissance",
@@ -1057,6 +1151,14 @@
       "months": 3,
       "avg_amount": 16.87,
       "last_amount": 17.58
+    },
+    {
+      "desc": "Singas Famous Pizza",
+      "category": "Restaurants",
+      "count": 3,
+      "months": 3,
+      "avg_amount": 14.95,
+      "last_amount": 10.94
     },
     {
       "desc": "Hulu",
@@ -1107,14 +1209,6 @@
       "last_amount": 2965
     },
     {
-      "desc": "Kids Smile",
-      "category": "Healthcare",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 546,
-      "last_amount": 50
-    },
-    {
       "desc": "Spirit Airlines",
       "category": "Gas/Travel",
       "count": 4,
@@ -1123,20 +1217,12 @@
       "last_amount": 1188.4
     },
     {
-      "desc": "Kumon North America",
+      "desc": "Shvasa",
       "category": "Tech/Subs",
       "count": 2,
       "months": 2,
-      "avg_amount": 280,
-      "last_amount": 280
-    },
-    {
-      "desc": "Best Brains",
-      "category": "Tech/Subs",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 263,
-      "last_amount": 263
+      "avg_amount": 299.5,
+      "last_amount": 199
     },
     {
       "desc": "Vfs Services Usa Inc.",
@@ -1163,6 +1249,14 @@
       "last_amount": 319.86
     },
     {
+      "desc": "Gordon Dey Farms LLC",
+      "category": "Restaurants",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 172.75,
+      "last_amount": 122.75
+    },
+    {
       "desc": "North Brunswick Family De",
       "category": "Healthcare",
       "count": 2,
@@ -1177,6 +1271,14 @@
       "months": 2,
       "avg_amount": 115,
       "last_amount": 115
+    },
+    {
+      "desc": "The Children's Place",
+      "category": "Shopping",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 102.23,
+      "last_amount": 165.7
     },
     {
       "desc": "United Airlines",
@@ -1219,14 +1321,6 @@
       "last_amount": 71.77
     },
     {
-      "desc": "Garden Farm",
-      "category": "Shopping",
-      "count": 3,
-      "months": 2,
-      "avg_amount": 67.79,
-      "last_amount": 102.29
-    },
-    {
       "desc": "Simplytrawell",
       "category": "Gas/Travel",
       "count": 3,
@@ -1241,6 +1335,30 @@
       "months": 2,
       "avg_amount": 57.7,
       "last_amount": 50.06
+    },
+    {
+      "desc": "H&M",
+      "category": "Shopping",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 54.52,
+      "last_amount": 32.95
+    },
+    {
+      "desc": "QuickChek",
+      "category": "Shopping",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 53.89,
+      "last_amount": 50.14
+    },
+    {
+      "desc": "Marshalls",
+      "category": "Shopping",
+      "count": 3,
+      "months": 2,
+      "avg_amount": 49.8,
+      "last_amount": 61.62
     },
     {
       "desc": "DRIVEEZMD MPC",
@@ -1267,12 +1385,28 @@
       "last_amount": 10.73
     },
     {
+      "desc": "Temu",
+      "category": "Shopping",
+      "count": 5,
+      "months": 2,
+      "avg_amount": 41.7,
+      "last_amount": 61.79
+    },
+    {
       "desc": "Thanjai Mess Fsr",
       "category": "Restaurants",
       "count": 2,
       "months": 2,
       "avg_amount": 40.49,
       "last_amount": 46.88
+    },
+    {
+      "desc": "Srishti",
+      "category": "Restaurants",
+      "count": 4,
+      "months": 2,
+      "avg_amount": 39.69,
+      "last_amount": 87.89
     },
     {
       "desc": "AMC Theatres",
@@ -1291,6 +1425,22 @@
       "last_amount": 28
     },
     {
+      "desc": "Academic Eye Center",
+      "category": "Healthcare",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 27.87,
+      "last_amount": 20.73
+    },
+    {
+      "desc": "FedEx",
+      "category": "Tech/Subs",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 26.98,
+      "last_amount": 31.55
+    },
+    {
       "desc": "Five Below",
       "category": "Shopping",
       "count": 3,
@@ -1307,20 +1457,12 @@
       "last_amount": 29.32
     },
     {
-      "desc": "Shaan Halal Zabiha Meat",
-      "category": "Groceries",
+      "desc": "Scholastic",
+      "category": "Shopping",
       "count": 2,
       "months": 2,
-      "avg_amount": 16.1,
-      "last_amount": 22.49
-    },
-    {
-      "desc": "Patidar Supermarket",
-      "category": "Groceries",
-      "count": 3,
-      "months": 2,
-      "avg_amount": 12.89,
-      "last_amount": 1.68
+      "avg_amount": 14.39,
+      "last_amount": 18.12
     },
     {
       "desc": "Commerce Center Stm",
@@ -1394,17 +1536,17 @@
       "income": 3581.26,
       "bofa_income": 3581.26,
       "td_income": 0,
-      "outflows": 1674.15,
+      "outflows": 1939.63,
       "xoom": 0,
       "investments": 0
     },
     {
       "period": "2026-02",
       "period_label": "February 2026",
-      "income": 12779.789999999999,
-      "bofa_income": 7779.79,
+      "income": 14189.829999999998,
+      "bofa_income": 9189.83,
       "td_income": 5000,
-      "outflows": 9817.51,
+      "outflows": 11783.47,
       "xoom": 0,
       "investments": 0
     },
@@ -1414,7 +1556,7 @@
       "income": 12049.41,
       "bofa_income": 7049.4,
       "td_income": 5000.01,
-      "outflows": 20482.51,
+      "outflows": 21190.05,
       "xoom": 0,
       "investments": 0
     },
@@ -1424,7 +1566,7 @@
       "income": 9910.97,
       "bofa_income": 7410.95,
       "td_income": 2500.02,
-      "outflows": 3910.67,
+      "outflows": 4886.52,
       "xoom": 0,
       "investments": 0
     },
@@ -1434,7 +1576,7 @@
       "income": 8900.41,
       "bofa_income": 8900.41,
       "td_income": 0,
-      "outflows": 3360.98,
+      "outflows": 3987.04,
       "xoom": 0,
       "investments": 0
     },
@@ -1444,17 +1586,17 @@
       "income": 16362.05,
       "bofa_income": 16362.05,
       "td_income": 0,
-      "outflows": 5404.17,
+      "outflows": 6127.94,
       "xoom": 0,
       "investments": 0
     },
     {
       "period": "2026-07",
       "period_label": "July 2026",
-      "income": 24064.09,
-      "bofa_income": 24064.09,
+      "income": 24340.82,
+      "bofa_income": 24340.82,
       "td_income": 0,
-      "outflows": 3063.29,
+      "outflows": 3815.09,
       "xoom": 0,
       "investments": 0
     },
@@ -1464,7 +1606,7 @@
       "income": 18734.21,
       "bofa_income": 18734.21,
       "td_income": 0,
-      "outflows": 5869.18,
+      "outflows": 6306.64,
       "xoom": 0,
       "investments": 0
     },
@@ -1474,7 +1616,7 @@
       "income": 16096.64,
       "bofa_income": 16096.64,
       "td_income": 0,
-      "outflows": 4009.76,
+      "outflows": 5755.41,
       "xoom": 0,
       "investments": 0
     },
@@ -1484,7 +1626,7 @@
       "income": 16769.660000000003,
       "bofa_income": 16769.660000000003,
       "td_income": 0,
-      "outflows": 13272.63,
+      "outflows": 14326.58,
       "xoom": 0,
       "investments": 0
     },
@@ -1494,7 +1636,7 @@
       "income": 8326.38,
       "bofa_income": 8326.38,
       "td_income": 0,
-      "outflows": 1852.79,
+      "outflows": 2293.83,
       "xoom": 0,
       "investments": 0
     }
@@ -1504,18 +1646,18 @@
       "label": "August 2026",
       "period": "2026-08",
       "categories": {
-        "Entertainment": 604.92,
+        "Entertainment": 687,
         "Healthcare": 261.07000000000005,
-        "Tech/Subs": 2045.7599999999998,
+        "Tech/Subs": 2094.77,
         "Refund": -4026.68,
-        "Gas/Travel": 595.35,
-        "Shopping": 4982.6,
-        "Groceries": 526.8000000000001,
-        "Restaurants": 741.8000000000001,
+        "Gas/Travel": 605.02,
+        "Shopping": 5061.910000000002,
+        "Groceries": 649.91,
+        "Restaurants": 836.0800000000002,
         "Tax/Professional": 92.76,
         "Insurance": 44.8
       },
-      "total": 5869.180000000002,
+      "total": 6306.640000000002,
       "transactions": [
         {
           "date": "08-26",
@@ -2949,7 +3091,7 @@
         },
         {
           "date": "08-03",
-          "desc": "Kumon Of North",
+          "desc": "Kumon North America Inc",
           "amount": 280,
           "category": "Tech/Subs",
           "city": null,
@@ -2983,6 +3125,253 @@
           "bank": "BofA",
           "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
           "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-05",
+          "desc": "Zinger Halal Express",
+          "amount": 10.92,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-03",
+          "desc": "East Brunswick Schools Administration",
+          "amount": 11.3,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-01",
+          "desc": "Deccan Halal Mart",
+          "amount": 16.03,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-28",
+          "desc": "Srishti",
+          "amount": 23.45,
+          "category": "Restaurants",
+          "city": "Dayton",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-28",
+          "desc": "Srishti",
+          "amount": 3.2,
+          "category": "Restaurants",
+          "city": "Dayton",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-28",
+          "desc": "Apna Bazaar Cash & Carry",
+          "amount": 11.3,
+          "category": "Shopping",
+          "city": "Dayton",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-28",
+          "desc": "Walmart",
+          "amount": 40.27,
+          "category": "Shopping",
+          "city": null,
+          "state": "AR",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-20",
+          "desc": "Deccan Halal Mart",
+          "amount": 11.94,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-20",
+          "desc": "Sellabroad",
+          "amount": 37.71,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-19",
+          "desc": "ShopRite",
+          "amount": 67.41,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-15",
+          "desc": "Deccan Halal Mart",
+          "amount": 27.73,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-13",
+          "desc": "Corning Museum",
+          "amount": 82.08,
+          "category": "Entertainment",
+          "city": "Corning",
+          "state": "NY",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-13",
+          "desc": "Mirabito",
+          "amount": 9.67,
+          "category": "Gas/Travel",
+          "city": "Freeville",
+          "state": "NY",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-12",
+          "desc": "Walmart",
+          "amount": 20.39,
+          "category": "Shopping",
+          "city": null,
+          "state": "AR",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-10",
+          "desc": "Taste NY",
+          "amount": 10,
+          "category": "Restaurants",
+          "city": "Kirkwood",
+          "state": "NY",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-10",
+          "desc": "Taste NY",
+          "amount": 2.5,
+          "category": "Restaurants",
+          "city": "Kirkwood",
+          "state": "NY",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-08",
+          "desc": "Apna Bazaar Cash & Carry",
+          "amount": 1.58,
+          "category": "Shopping",
+          "city": "Dayton",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-08",
+          "desc": "Apna Bazaar Cash & Carry",
+          "amount": 5.77,
+          "category": "Shopping",
+          "city": "Dayton",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "08-08",
+          "desc": "Srishti",
+          "amount": 44.21,
+          "category": "Restaurants",
+          "city": "Dayton",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
           "pending": false,
           "refund": false
         },
@@ -3318,16 +3707,16 @@
       "period": "2026-07",
       "categories": {
         "Tech/Subs": 1772.27,
-        "Gas/Travel": 1631.35,
+        "Gas/Travel": 1744.1799999999998,
         "Entertainment": 367.36,
-        "Shopping": 1052.6599999999999,
+        "Shopping": 1272.2999999999995,
         "Healthcare": 1008.99,
         "Refund": -3801.85,
         "Tax/Professional": 281.16,
-        "Groceries": 439.21,
-        "Restaurants": 312.14000000000004
+        "Groceries": 784.83,
+        "Restaurants": 385.85
       },
-      "total": 3063.29,
+      "total": 3815.0899999999983,
       "transactions": [
         {
           "date": "07-31",
@@ -3981,7 +4370,7 @@
         },
         {
           "date": "07-01",
-          "desc": "Kumon Of North",
+          "desc": "Kumon North America Inc",
           "amount": 280,
           "category": "Tech/Subs",
           "city": null,
@@ -4067,6 +4456,188 @@
           "bank": "BofA",
           "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
           "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-27",
+          "desc": "Walmart",
+          "amount": 12.73,
+          "category": "Shopping",
+          "city": null,
+          "state": "AR",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-25",
+          "desc": "BP",
+          "amount": 58.89,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-24",
+          "desc": "Garden Farm",
+          "amount": 53.24,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-20",
+          "desc": "Deccan Halal Mart",
+          "amount": 12.06,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-20",
+          "desc": "Shein",
+          "amount": 46.59,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-17",
+          "desc": "ShopRite",
+          "amount": 2.49,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-16",
+          "desc": "Trader Joe's",
+          "amount": 71.82,
+          "category": "Groceries",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-15",
+          "desc": "PetSmart",
+          "amount": 17.04,
+          "category": "Shopping",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-08",
+          "desc": "Walmart",
+          "amount": 52.22,
+          "category": "Shopping",
+          "city": null,
+          "state": "AR",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-07",
+          "desc": "Atul Bakery - North Brunswick Township",
+          "amount": 27.71,
+          "category": "Restaurants",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-06",
+          "desc": "Patidar Supermarket",
+          "amount": 259.25,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-02",
+          "desc": "Walmart",
+          "amount": 37.82,
+          "category": "Shopping",
+          "city": null,
+          "state": "AR",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-01",
+          "desc": "VP Racing Fuels",
+          "amount": 53.94,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "07-01",
+          "desc": "Shaan Halal Meats & Grill",
+          "amount": 46,
+          "category": "Restaurants",
+          "city": "Somerset",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
           "pending": false,
           "refund": false
         },
@@ -4427,16 +4998,17 @@
       "label": "June 2026",
       "period": "2026-06",
       "categories": {
-        "Healthcare": 1189.85,
+        "Healthcare": 1214.85,
         "Tech/Subs": 1399.45,
-        "Entertainment": 517.54,
+        "Entertainment": 688.15,
         "Gas/Travel": 810.1,
-        "Refund": -341.79,
-        "Shopping": 442.08,
-        "Restaurants": 292.03000000000003,
-        "Tax/Professional": 1094.91
+        "Refund": -346.76000000000005,
+        "Shopping": 693.08,
+        "Restaurants": 304.51000000000005,
+        "Tax/Professional": 1094.91,
+        "Groceries": 269.65
       },
-      "total": 5404.169999999999,
+      "total": 6127.939999999999,
       "transactions": [
         {
           "date": "06-17",
@@ -5207,7 +5779,7 @@
         },
         {
           "date": "06-01",
-          "desc": "Kumon Of North",
+          "desc": "Kumon North America Inc",
           "amount": 280,
           "category": "Tech/Subs",
           "city": null,
@@ -5220,7 +5792,7 @@
         },
         {
           "date": "06-08",
-          "desc": "Kids Smile",
+          "desc": "Kids Smile Dentistry",
           "amount": 1042,
           "category": "Healthcare",
           "city": null,
@@ -5243,6 +5815,227 @@
           "mask": "9715",
           "pending": false,
           "refund": true
+        },
+        {
+          "date": "06-30",
+          "desc": "ShopRite",
+          "amount": 9,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-30",
+          "desc": "Delight Big Bazar",
+          "amount": 27.44,
+          "category": "Groceries",
+          "city": "Monmouth",
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-29",
+          "desc": "Garden Farm",
+          "amount": 74.78,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-27",
+          "desc": "ShopRite",
+          "amount": 52.93,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-24",
+          "desc": "Sr Medical Center",
+          "amount": 25,
+          "category": "Healthcare",
+          "city": null,
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-24",
+          "desc": "Walmart",
+          "amount": -4.97,
+          "category": "Refund",
+          "city": "Bentonville",
+          "state": "AR",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": true
+        },
+        {
+          "date": "06-23",
+          "desc": "Walmart",
+          "amount": 56.18,
+          "category": "Shopping",
+          "city": null,
+          "state": "AR",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-22",
+          "desc": "Delight Big Bazar",
+          "amount": 90.7,
+          "category": "Groceries",
+          "city": "Monmouth",
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-13",
+          "desc": "Macy's",
+          "amount": 19.24,
+          "category": "Shopping",
+          "city": null,
+          "state": "OH",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-13",
+          "desc": "Macy's",
+          "amount": 37.31,
+          "category": "Shopping",
+          "city": null,
+          "state": "OH",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-11",
+          "desc": "Atul Bakery - North Brunswick Township",
+          "amount": 12.48,
+          "category": "Restaurants",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-10",
+          "desc": "ShopRite",
+          "amount": 4.25,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-05",
+          "desc": "ShopRite",
+          "amount": 69.8,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-05",
+          "desc": "QuickChek",
+          "amount": 57.64,
+          "category": "Shopping",
+          "city": "Dayton",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-03",
+          "desc": "Delight Big Bazar",
+          "amount": 15.53,
+          "category": "Groceries",
+          "city": "Monmouth",
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-01",
+          "desc": "Great Adventure Admiss",
+          "amount": 170.61,
+          "category": "Entertainment",
+          "city": "Jackson",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "06-01",
+          "desc": "Great Adventure Merch",
+          "amount": 5.85,
+          "category": "Shopping",
+          "city": "Jackson",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
         },
         {
           "date": "06-26",
@@ -5421,14 +6214,14 @@
       "categories": {
         "Restaurants": 645.3100000000001,
         "Entertainment": 450.23,
-        "Tech/Subs": 1635.21,
-        "Healthcare": 554.76,
+        "Tech/Subs": 1657.6200000000001,
+        "Healthcare": 934.76,
         "Refund": -2633.5099999999998,
-        "Gas/Travel": 300.19,
-        "Shopping": 2880.25,
-        "Groceries": 177.32
+        "Gas/Travel": 501.31,
+        "Shopping": 3332.5999999999995,
+        "Groceries": 867.0900000000001
       },
-      "total": 4009.7599999999998,
+      "total": 5755.409999999999,
       "transactions": [
         {
           "date": "09-08",
@@ -6095,7 +6888,7 @@
         },
         {
           "date": "09-01",
-          "desc": "Kumon Of North",
+          "desc": "Kumon North America",
           "amount": 280,
           "category": "Tech/Subs",
           "city": null,
@@ -6134,7 +6927,7 @@
         },
         {
           "date": "09-16",
-          "desc": "Best Brains Nort",
+          "desc": "Best Brains",
           "amount": 91.7,
           "category": "Tech/Subs",
           "city": null,
@@ -6181,6 +6974,383 @@
           "bank": "BofA",
           "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
           "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-30",
+          "desc": "ShopRite",
+          "amount": 24.82,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-30",
+          "desc": "Us Polo Assn",
+          "amount": 31.29,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-28",
+          "desc": "Deccan Halal Mart",
+          "amount": 15.46,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-28",
+          "desc": "Ks Outlet Ks",
+          "amount": 67.97,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-26",
+          "desc": "Patidar Supermarket",
+          "amount": 125.03,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-26",
+          "desc": "Patidar Supermarket",
+          "amount": 6.35,
+          "category": "Groceries",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-25",
+          "desc": "Delight Big Bazar",
+          "amount": 34.89,
+          "category": "Groceries",
+          "city": "Monmouth",
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-23",
+          "desc": "Deccan Halal Mart",
+          "amount": 9.74,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-22",
+          "desc": "Walmart",
+          "amount": 41.77,
+          "category": "Shopping",
+          "city": null,
+          "state": "AR",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-21",
+          "desc": "BP",
+          "amount": 75.24,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-19",
+          "desc": "Deccan Halal Mart",
+          "amount": 23.37,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-19",
+          "desc": "Martial Arts Dojang",
+          "amount": 130,
+          "category": "Healthcare",
+          "city": null,
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-19",
+          "desc": "Delight Big Bazar",
+          "amount": 27.39,
+          "category": "Groceries",
+          "city": "Monmouth",
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-18",
+          "desc": "Delight Big Bazar",
+          "amount": 34.66,
+          "category": "Groceries",
+          "city": "Monmouth",
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-18",
+          "desc": "Gas n Go",
+          "amount": 63.77,
+          "category": "Gas/Travel",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-14",
+          "desc": "Patidar Supermarket",
+          "amount": 209.21,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-12",
+          "desc": "Deccan Halal Mart",
+          "amount": 11.84,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-12",
+          "desc": "FedEx",
+          "amount": 22.41,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "TN",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-11",
+          "desc": "Garden Farm",
+          "amount": 65.17,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-10",
+          "desc": "ShopRite",
+          "amount": 20.26,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-09",
+          "desc": "Walmart",
+          "amount": 33.3,
+          "category": "Shopping",
+          "city": null,
+          "state": "AR",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-09",
+          "desc": "Walmart",
+          "amount": 52.5,
+          "category": "Shopping",
+          "city": null,
+          "state": "AR",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-09",
+          "desc": "Walmart",
+          "amount": 3.2,
+          "category": "Shopping",
+          "city": null,
+          "state": "AR",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-08",
+          "desc": "Marshalls",
+          "amount": 9.99,
+          "category": "Shopping",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-07",
+          "desc": "Walmart",
+          "amount": 69.37,
+          "category": "Shopping",
+          "city": null,
+          "state": "AR",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-05",
+          "desc": "Marshalls",
+          "amount": 77.79,
+          "category": "Shopping",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-03",
+          "desc": "SGS Datta Yoga Center",
+          "amount": 250,
+          "category": "Healthcare",
+          "city": null,
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-03",
+          "desc": "BP",
+          "amount": 62.11,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "09-01",
+          "desc": "Delight Big Bazar",
+          "amount": 146.75,
+          "category": "Groceries",
+          "city": "Monmouth",
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
           "pending": false,
           "refund": false
         },
@@ -6424,17 +7594,17 @@
       "label": "October 2026",
       "period": "2026-10",
       "categories": {
-        "Tech/Subs": 1987.32,
-        "Shopping": 10264.12,
+        "Tech/Subs": 2014.6899999999998,
+        "Shopping": 10510.37,
         "Entertainment": 102.58,
         "Healthcare": 107.28,
-        "Gas/Travel": 260.95,
-        "Restaurants": 394.77000000000004,
-        "Refund": -1.99,
-        "Groceries": 127.47,
+        "Gas/Travel": 393.32,
+        "Restaurants": 467.72,
+        "Refund": -35.29,
+        "Groceries": 735.78,
         "Tax/Professional": 30.13
       },
-      "total": 13272.630000000003,
+      "total": 14326.580000000005,
       "transactions": [
         {
           "date": "10-01",
@@ -6957,6 +8127,279 @@
           "refund": false
         },
         {
+          "date": "10-27",
+          "desc": "Scholastic",
+          "amount": 10.65,
+          "category": "Shopping",
+          "city": null,
+          "state": "MO",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-27",
+          "desc": "Singas Famous Pizza",
+          "amount": 10.94,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-27",
+          "desc": "Garden Farm",
+          "amount": 40.59,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-27",
+          "desc": "RaceWay",
+          "amount": 72.44,
+          "category": "Gas/Travel",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-26",
+          "desc": "Patidar Supermarket",
+          "amount": 203.25,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-26",
+          "desc": "Patidar Supermarket",
+          "amount": 5.05,
+          "category": "Groceries",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-23",
+          "desc": "ShopRite",
+          "amount": 37.19,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-21",
+          "desc": "Walmart",
+          "amount": -33.3,
+          "category": "Refund",
+          "city": "Bentonville",
+          "state": "AR",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": true
+        },
+        {
+          "date": "10-19",
+          "desc": "Walmart",
+          "amount": 69.9,
+          "category": "Shopping",
+          "city": null,
+          "state": "AR",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-16",
+          "desc": "Deccan Halal Mart",
+          "amount": 30.78,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-12",
+          "desc": "ShopRite",
+          "amount": 66.2,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-12",
+          "desc": "Delight Big Bazar",
+          "amount": 51.9,
+          "category": "Groceries",
+          "city": "Monmouth",
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-12",
+          "desc": "Dunkin'",
+          "amount": 8.7,
+          "category": "Restaurants",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-12",
+          "desc": "Bubble Island",
+          "amount": 53.31,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-10",
+          "desc": "Deccan Halal Mart",
+          "amount": 30.9,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-10",
+          "desc": "Deccan Halal Mart",
+          "amount": 29.46,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-10",
+          "desc": "BP",
+          "amount": 59.93,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-08",
+          "desc": "North Brunswick Public Schools",
+          "amount": 27.37,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-06",
+          "desc": "Patel Brothers",
+          "amount": 111.71,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-05",
+          "desc": "Garden Farm",
+          "amount": 125.11,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "10-03",
+          "desc": "Deccan Halal Mart",
+          "amount": 41.87,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
           "date": "10-01",
           "desc": "DoorDash",
           "amount": 96,
@@ -7120,11 +8563,12 @@
       "categories": {
         "Tech/Subs": 1220.51,
         "Entertainment": 26.299999999999997,
-        "Shopping": 507.26,
-        "Restaurants": 73.63,
-        "Healthcare": 25.09
+        "Shopping": 713.91,
+        "Restaurants": 87.66,
+        "Groceries": 185.36,
+        "Healthcare": 60.09
       },
-      "total": 1852.79,
+      "total": 2293.830000000001,
       "transactions": [
         {
           "date": "11-02",
@@ -7374,6 +8818,97 @@
           "refund": false
         },
         {
+          "date": "11-11",
+          "desc": "Mirra",
+          "amount": 206.65,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-11",
+          "desc": "Deccan Halal Mart",
+          "amount": 39.25,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-09",
+          "desc": "ShopRite",
+          "amount": 33.17,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-07",
+          "desc": "Academic Eye Center",
+          "amount": 35,
+          "category": "Healthcare",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-06",
+          "desc": "Atul Bakery - North Brunswick Township",
+          "amount": 14.03,
+          "category": "Restaurants",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-06",
+          "desc": "Patidar Supermarket",
+          "amount": 96.92,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-05",
+          "desc": "Deccan Halal Mart",
+          "amount": 16.02,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
           "date": "11-03",
           "desc": "Vzn Br Cafe",
           "amount": 2.87,
@@ -7431,17 +8966,17 @@
       "label": "April 2026",
       "period": "2026-04",
       "categories": {
-        "Shopping": 706.7500000000001,
-        "Tech/Subs": 921.2,
-        "Groceries": 428.96,
+        "Shopping": 1036.39,
+        "Tech/Subs": 1321.2,
+        "Groceries": 598.4000000000001,
         "Restaurants": 252.89000000000001,
-        "Gas/Travel": 496.93,
-        "Healthcare": 450.5199999999999,
+        "Gas/Travel": 550.7,
+        "Healthcare": 473.5199999999999,
         "Refund": -98.55000000000001,
         "Entertainment": 28.24,
         "Tax/Professional": 723.73
       },
-      "total": 3910.67,
+      "total": 4886.52,
       "transactions": [
         {
           "date": "04-16",
@@ -8212,7 +9747,7 @@
         },
         {
           "date": "04-01",
-          "desc": "Kumon Of North",
+          "desc": "Kumon North America Inc",
           "amount": 280,
           "category": "Tech/Subs",
           "city": null,
@@ -8225,7 +9760,7 @@
         },
         {
           "date": "04-01",
-          "desc": "New Jersey Tgi",
+          "desc": "State of New Jersey",
           "amount": 713,
           "category": "Tax/Professional",
           "city": null,
@@ -8248,6 +9783,149 @@
           "mask": "9715",
           "pending": false,
           "refund": false
+        },
+        {
+          "date": "04-27",
+          "desc": "Shvasa",
+          "amount": 400,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "04-22",
+          "desc": "ShopRite",
+          "amount": 45.92,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "04-20",
+          "desc": "Delight Big Bazar",
+          "amount": 81.11,
+          "category": "Groceries",
+          "city": "Monmouth",
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "04-18",
+          "desc": "Shaan Halal Zabiha Meat",
+          "amount": 12.57,
+          "category": "Groceries",
+          "city": "Dayton",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "04-18",
+          "desc": "Apna Bazaar Cash & Carry",
+          "amount": 44.08,
+          "category": "Shopping",
+          "city": "Dayton",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "04-13",
+          "desc": "Great Clips",
+          "amount": 23,
+          "category": "Healthcare",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "04-13",
+          "desc": "Garden Farm",
+          "amount": 68.79,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "04-09",
+          "desc": "BP",
+          "amount": 53.77,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "04-09",
+          "desc": "Trendia",
+          "amount": 178.01,
+          "category": "Shopping",
+          "city": null,
+          "state": "IL",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "04-08",
+          "desc": "ShopRite",
+          "amount": 29.84,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "04-30",
+          "desc": "The Children's Place",
+          "amount": 38.76,
+          "category": "Shopping",
+          "city": null,
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
         }
       ]
     },
@@ -8255,17 +9933,17 @@
       "label": "March 2026",
       "period": "2026-03",
       "categories": {
-        "Shopping": 951.7399999999999,
-        "Restaurants": 782.9300000000001,
-        "Gas/Travel": 830.07,
+        "Shopping": 1225.9699999999998,
+        "Restaurants": 793.8700000000001,
+        "Gas/Travel": 954.35,
         "Tech/Subs": 857.35,
-        "Entertainment": 161.45,
-        "Groceries": 148.64,
+        "Entertainment": 171.45,
+        "Groceries": 451.30999999999995,
         "Healthcare": 35.33,
-        "Refund": -20,
+        "Refund": -34.58,
         "Tax/Professional": 16735
       },
-      "total": 20482.510000000002,
+      "total": 21190.05,
       "transactions": [
         {
           "date": "03-31",
@@ -9114,7 +10792,7 @@
         },
         {
           "date": "03-02",
-          "desc": "Kumon Of North",
+          "desc": "Kumon North America",
           "amount": 280,
           "category": "Tech/Subs",
           "city": null,
@@ -9124,6 +10802,214 @@
           "mask": "9715",
           "pending": false,
           "refund": false
+        },
+        {
+          "date": "03-30",
+          "desc": "WP GRIFFITH P",
+          "amount": 20.42,
+          "category": "Gas/Travel",
+          "city": "Los Angeles",
+          "state": "CA",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "03-30",
+          "desc": "Griffith Observatory",
+          "amount": 10,
+          "category": "Entertainment",
+          "city": "Los Angeles",
+          "state": "CA",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "03-21",
+          "desc": "Garden Farm",
+          "amount": 46.53,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "03-19",
+          "desc": "BP",
+          "amount": 56.09,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "03-18",
+          "desc": "Patidar Supermarket",
+          "amount": 99.27,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "03-18",
+          "desc": "Avas Flowers",
+          "amount": 88.38,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "03-16",
+          "desc": "Delight Big Bazar",
+          "amount": 36.89,
+          "category": "Groceries",
+          "city": "Monmouth",
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "03-16",
+          "desc": "Singas Famous Pizza",
+          "amount": 10.94,
+          "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "03-13",
+          "desc": "BP",
+          "amount": 47.77,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "03-12",
+          "desc": "H&M",
+          "amount": 32.95,
+          "category": "Shopping",
+          "city": null,
+          "state": "NY",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "03-11",
+          "desc": "Old Navy",
+          "amount": 42.77,
+          "category": "Shopping",
+          "city": null,
+          "state": "CA",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "03-09",
+          "desc": "Delight Big Bazar",
+          "amount": 102.99,
+          "category": "Groceries",
+          "city": "Monmouth",
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "03-06",
+          "desc": "Walmart",
+          "amount": -14.58,
+          "category": "Refund",
+          "city": null,
+          "state": "AR",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": true
+        },
+        {
+          "date": "03-05",
+          "desc": "Trader Joe's",
+          "amount": 53.7,
+          "category": "Groceries",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "03-04",
+          "desc": "Shaan Halal Zabiha Meat",
+          "amount": 9.82,
+          "category": "Groceries",
+          "city": "Dayton",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "03-04",
+          "desc": "Walmart",
+          "amount": 63.6,
+          "category": "Shopping",
+          "city": null,
+          "state": "AR",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
         }
       ]
     },
@@ -9131,17 +11017,18 @@
       "label": "February 2026",
       "period": "2026-02",
       "categories": {
-        "Shopping": 6284.32,
-        "Gas/Travel": 3192.2400000000002,
+        "Shopping": 6380.97,
+        "Gas/Travel": 3236.32,
         "Tech/Subs": 790.2,
-        "Groceries": 202.12,
+        "Groceries": 391.93999999999994,
         "Insurance": 185.94,
         "Restaurants": 311.9,
-        "Healthcare": 103.42000000000002,
-        "Entertainment": 253.24,
-        "Refund": -1505.87
+        "Healthcare": 123.42000000000002,
+        "Entertainment": 447.61,
+        "Refund": -95.83000000000001,
+        "Tax/Professional": 11
       },
-      "total": 9817.509999999998,
+      "total": 11783.47,
       "transactions": [
         {
           "date": "02-26",
@@ -9768,19 +11655,6 @@
           "refund": false
         },
         {
-          "date": "02-25",
-          "desc": "Airbnb",
-          "amount": -1410.04,
-          "category": "Refund",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
-          "mask": "9715",
-          "pending": false,
-          "refund": true
-        },
-        {
           "date": "02-24",
           "desc": "Airbnb",
           "amount": 1410.04,
@@ -9873,7 +11747,7 @@
         },
         {
           "date": "02-02",
-          "desc": "Kumon Of North",
+          "desc": "Kumon North America Inc",
           "amount": 280,
           "category": "Tech/Subs",
           "city": null,
@@ -9881,6 +11755,162 @@
           "bank": "BofA",
           "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
           "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "02-28",
+          "desc": "ShopRite",
+          "amount": 33.5,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "02-21",
+          "desc": "Trader Joe's",
+          "amount": 33.64,
+          "category": "Groceries",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "02-20",
+          "desc": "Shaan Halal Zabiha Meat",
+          "amount": 22.65,
+          "category": "Groceries",
+          "city": "Dayton",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "02-19",
+          "desc": "Hindu Temple & Cultural Society Of USA Inc",
+          "amount": 11,
+          "category": "Tax/Professional",
+          "city": "Bridgewater",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "02-17",
+          "desc": "Shaan Halal Zabiha Meat",
+          "amount": 42.14,
+          "category": "Groceries",
+          "city": "Dayton",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "02-14",
+          "desc": "Bidabadi Pediatrics Lk",
+          "amount": 20,
+          "category": "Healthcare",
+          "city": null,
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "02-12",
+          "desc": "BP",
+          "amount": 44.08,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "02-11",
+          "desc": "Garden Farm",
+          "amount": 69.26,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "02-09",
+          "desc": "Walmart",
+          "amount": 27.39,
+          "category": "Shopping",
+          "city": null,
+          "state": "AR",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "02-06",
+          "desc": "Eventifyuco",
+          "amount": 194.37,
+          "category": "Entertainment",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "02-05",
+          "desc": "ShopRite",
+          "amount": 11.45,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "02-02",
+          "desc": "Delight Big Bazar",
+          "amount": 46.44,
+          "category": "Groceries",
+          "city": "Monmouth",
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
           "pending": false,
           "refund": false
         }
@@ -9892,14 +11922,14 @@
       "categories": {
         "Gas/Travel": 452.59,
         "Healthcare": 127.86,
-        "Tech/Subs": 48.790000000000006,
-        "Shopping": 413.94000000000005,
+        "Tech/Subs": 247.79000000000002,
+        "Shopping": 452.70000000000005,
         "Restaurants": 26.64,
         "Entertainment": 28.24,
-        "Groceries": 127.77000000000001,
+        "Groceries": 155.49,
         "Tax/Professional": 448.32
       },
-      "total": 1674.1499999999999,
+      "total": 1939.6299999999999,
       "transactions": [
         {
           "date": "01-24",
@@ -10251,6 +12281,45 @@
           "mask": "9762",
           "pending": false,
           "refund": false
+        },
+        {
+          "date": "01-24",
+          "desc": "Garden Farm",
+          "amount": 38.76,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "01-22",
+          "desc": "Delight Big Bazar",
+          "amount": 27.72,
+          "category": "Groceries",
+          "city": "Monmouth",
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "01-22",
+          "desc": "Shvasa",
+          "amount": 199,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
         }
       ]
     },
@@ -10258,16 +12327,16 @@
       "label": "May 2026",
       "period": "2026-05",
       "categories": {
-        "Shopping": 1990.7699999999998,
-        "Restaurants": 660.0699999999999,
-        "Tech/Subs": 761.44,
-        "Gas/Travel": 216.22000000000003,
-        "Refund": -679.22,
+        "Shopping": 2194.2499999999995,
+        "Restaurants": 782.8199999999999,
+        "Tech/Subs": 792.99,
+        "Gas/Travel": 236.31000000000003,
+        "Refund": -686.6700000000001,
         "Entertainment": 52.739999999999995,
         "Healthcare": 128.59,
-        "Groceries": 230.37
+        "Groceries": 486.01000000000005
       },
-      "total": 3360.98,
+      "total": 3987.04,
       "transactions": [
         {
           "date": "05-03",
@@ -11103,7 +13172,7 @@
         },
         {
           "date": "05-01",
-          "desc": "Kumon Of North",
+          "desc": "Kumon North America Inc",
           "amount": 280,
           "category": "Tech/Subs",
           "city": null,
@@ -11116,9 +13185,9 @@
         },
         {
           "date": "05-06",
-          "desc": "Withdrwl Dey Farm At",
+          "desc": "Gordon Dey Farms LLC",
           "amount": 122.75,
-          "category": "Shopping",
+          "category": "Restaurants",
           "city": "Cranbury",
           "state": "NJ",
           "bank": "BofA",
@@ -11137,6 +13206,214 @@
           "bank": "BofA",
           "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
           "mask": "9715",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "05-27",
+          "desc": "ShopRite",
+          "amount": 11.98,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "05-27",
+          "desc": "Walmart",
+          "amount": -7.45,
+          "category": "Refund",
+          "city": "Bentonville",
+          "state": "AR",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": true
+        },
+        {
+          "date": "05-22",
+          "desc": "Patidar Supermarket",
+          "amount": 121.51,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "05-19",
+          "desc": "Delight Big Bazar",
+          "amount": 42.93,
+          "category": "Groceries",
+          "city": "Monmouth",
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "05-19",
+          "desc": "Walmart",
+          "amount": 19.81,
+          "category": "Shopping",
+          "city": null,
+          "state": "AR",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "05-19",
+          "desc": "Walmart",
+          "amount": 23.24,
+          "category": "Shopping",
+          "city": null,
+          "state": "AR",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "05-18",
+          "desc": "Temu",
+          "amount": 38.59,
+          "category": "Shopping",
+          "city": null,
+          "state": "MA",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "05-18",
+          "desc": "Temu",
+          "amount": 61.79,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "05-16",
+          "desc": "Shaan Halal Zabiha Meat",
+          "amount": 9.96,
+          "category": "Groceries",
+          "city": "Dayton",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "05-16",
+          "desc": "Apna Bazaar Cash & Carry",
+          "amount": 42.97,
+          "category": "Shopping",
+          "city": "Dayton",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "05-15",
+          "desc": "Garden Farm",
+          "amount": 79.37,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "05-06",
+          "desc": "Walmart",
+          "amount": 60.46,
+          "category": "Shopping",
+          "city": null,
+          "state": "AR",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "05-02",
+          "desc": "FedEx",
+          "amount": 31.55,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "TN",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "05-01",
+          "desc": "ShopRite",
+          "amount": 58.97,
+          "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "05-01",
+          "desc": "BP",
+          "amount": 20.09,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "05-01",
+          "desc": "Shaan Halal Zabiha Meat",
+          "amount": 10.29,
+          "category": "Groceries",
+          "city": "Dayton",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
           "pending": false,
           "refund": false
         }
@@ -12465,6 +14742,316 @@
       "period_label": "February 2026"
     },
     {
+      "date": "10-27",
+      "desc": "Scholastic",
+      "amount": 10.65,
+      "category": "Shopping",
+      "city": null,
+      "state": "MO",
+      "period": "2026-10",
+      "period_label": "October 2026"
+    },
+    {
+      "date": "10-21",
+      "desc": "Walmart",
+      "amount": -33.3,
+      "category": "Refund",
+      "city": "Bentonville",
+      "state": "AR",
+      "period": "2026-10",
+      "period_label": "October 2026"
+    },
+    {
+      "date": "10-19",
+      "desc": "Walmart",
+      "amount": 69.9,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-10",
+      "period_label": "October 2026"
+    },
+    {
+      "date": "04-09",
+      "desc": "Trendia",
+      "amount": 178.01,
+      "category": "Shopping",
+      "city": null,
+      "state": "IL",
+      "period": "2026-04",
+      "period_label": "April 2026"
+    },
+    {
+      "date": "03-30",
+      "desc": "WP GRIFFITH P",
+      "amount": 20.42,
+      "category": "Gas/Travel",
+      "city": "Los Angeles",
+      "state": "CA",
+      "period": "2026-03",
+      "period_label": "March 2026"
+    },
+    {
+      "date": "03-30",
+      "desc": "Griffith Observatory",
+      "amount": 10,
+      "category": "Entertainment",
+      "city": "Los Angeles",
+      "state": "CA",
+      "period": "2026-03",
+      "period_label": "March 2026"
+    },
+    {
+      "date": "03-11",
+      "desc": "Old Navy",
+      "amount": 42.77,
+      "category": "Shopping",
+      "city": null,
+      "state": "CA",
+      "period": "2026-03",
+      "period_label": "March 2026"
+    },
+    {
+      "date": "03-06",
+      "desc": "Walmart",
+      "amount": -14.58,
+      "category": "Refund",
+      "city": null,
+      "state": "AR",
+      "period": "2026-03",
+      "period_label": "March 2026"
+    },
+    {
+      "date": "03-04",
+      "desc": "Walmart",
+      "amount": 63.6,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-03",
+      "period_label": "March 2026"
+    },
+    {
+      "date": "02-09",
+      "desc": "Walmart",
+      "amount": 27.39,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-02",
+      "period_label": "February 2026"
+    },
+    {
+      "date": "07-27",
+      "desc": "Walmart",
+      "amount": 12.73,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-07",
+      "period_label": "July 2026"
+    },
+    {
+      "date": "07-08",
+      "desc": "Walmart",
+      "amount": 52.22,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-07",
+      "period_label": "July 2026"
+    },
+    {
+      "date": "07-02",
+      "desc": "Walmart",
+      "amount": 37.82,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-07",
+      "period_label": "July 2026"
+    },
+    {
+      "date": "06-24",
+      "desc": "Walmart",
+      "amount": -4.97,
+      "category": "Refund",
+      "city": "Bentonville",
+      "state": "AR",
+      "period": "2026-06",
+      "period_label": "June 2026"
+    },
+    {
+      "date": "06-23",
+      "desc": "Walmart",
+      "amount": 56.18,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-06",
+      "period_label": "June 2026"
+    },
+    {
+      "date": "06-13",
+      "desc": "Macy's",
+      "amount": 19.24,
+      "category": "Shopping",
+      "city": null,
+      "state": "OH",
+      "period": "2026-06",
+      "period_label": "June 2026"
+    },
+    {
+      "date": "06-13",
+      "desc": "Macy's",
+      "amount": 37.31,
+      "category": "Shopping",
+      "city": null,
+      "state": "OH",
+      "period": "2026-06",
+      "period_label": "June 2026"
+    },
+    {
+      "date": "05-27",
+      "desc": "Walmart",
+      "amount": -7.45,
+      "category": "Refund",
+      "city": "Bentonville",
+      "state": "AR",
+      "period": "2026-05",
+      "period_label": "May 2026"
+    },
+    {
+      "date": "05-19",
+      "desc": "Walmart",
+      "amount": 19.81,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-05",
+      "period_label": "May 2026"
+    },
+    {
+      "date": "05-19",
+      "desc": "Walmart",
+      "amount": 23.24,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-05",
+      "period_label": "May 2026"
+    },
+    {
+      "date": "05-18",
+      "desc": "Temu",
+      "amount": 38.59,
+      "category": "Shopping",
+      "city": null,
+      "state": "MA",
+      "period": "2026-05",
+      "period_label": "May 2026"
+    },
+    {
+      "date": "05-06",
+      "desc": "Walmart",
+      "amount": 60.46,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-05",
+      "period_label": "May 2026"
+    },
+    {
+      "date": "05-02",
+      "desc": "FedEx",
+      "amount": 31.55,
+      "category": "Tech/Subs",
+      "city": null,
+      "state": "TN",
+      "period": "2026-05",
+      "period_label": "May 2026"
+    },
+    {
+      "date": "09-22",
+      "desc": "Walmart",
+      "amount": 41.77,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-09",
+      "period_label": "September 2026"
+    },
+    {
+      "date": "09-12",
+      "desc": "FedEx",
+      "amount": 22.41,
+      "category": "Tech/Subs",
+      "city": null,
+      "state": "TN",
+      "period": "2026-09",
+      "period_label": "September 2026"
+    },
+    {
+      "date": "09-09",
+      "desc": "Walmart",
+      "amount": 33.3,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-09",
+      "period_label": "September 2026"
+    },
+    {
+      "date": "09-09",
+      "desc": "Walmart",
+      "amount": 52.5,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-09",
+      "period_label": "September 2026"
+    },
+    {
+      "date": "09-09",
+      "desc": "Walmart",
+      "amount": 3.2,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-09",
+      "period_label": "September 2026"
+    },
+    {
+      "date": "09-07",
+      "desc": "Walmart",
+      "amount": 69.37,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-09",
+      "period_label": "September 2026"
+    },
+    {
+      "date": "08-28",
+      "desc": "Walmart",
+      "amount": 40.27,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-08",
+      "period_label": "August 2026"
+    },
+    {
+      "date": "08-12",
+      "desc": "Walmart",
+      "amount": 20.39,
+      "category": "Shopping",
+      "city": null,
+      "state": "AR",
+      "period": "2026-08",
+      "period_label": "August 2026"
+    },
+    {
       "date": "06-16",
       "desc": "CVS",
       "amount": 5.38,
@@ -12483,7 +15070,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-11-14T23:14:08.289Z",
+  "generated_at": "2026-11-14T23:16:00.281Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -12561,17 +15148,18 @@
       {
         "nickname": "wifebofa",
         "ok": true,
-        "accounts": 3,
+        "accounts": 4,
         "source": "PLAID_TOKEN_WIFEBOFA",
         "masks": [
           "1739",
+          "2776",
           "5677",
           "9715"
         ],
-        "txns": 189,
+        "txns": 377,
         "pages": 1,
         "truncated": false,
-        "last_txn": "2026-11-10"
+        "last_txn": "2026-11-11"
       },
       {
         "nickname": "zillow",
@@ -12630,7 +15218,7 @@
       "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 1217,
+    "txns_fetched": 1405,
     "duplicates_removed": 22,
     "duplicate_sample": [
       {
