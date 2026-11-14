@@ -23,10 +23,18 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
-# No scheduled sync: Plaid is pulled on demand only — when the dashboard is
-# opened with stale data, or when the Sync button is pressed. (The old
-# "0 */6 * * *" scheduled-sync ran four times a day whether or not anyone was
-# looking, and each run's data commit triggered a paid production deploy.)
+# Automatic sync, twice a day at 06:00 and 18:00 ET. The on-open pull in
+# index.html only fires when someone actually opens the dashboard, so without a
+# cron data.json goes stale through any stretch of not looking; the Sync button
+# stays available for an immediate pull.
+#
+# The old "0 */6 * * *" cron was removed because each run's data commit
+# triggered a paid production deploy. That cost is gone: data commits now carry
+# [skip ci] and match the `ignore` command above, so these runs cost function
+# invocations and Plaid calls only. Four times a day was more than the data
+# changes; twice is plenty. Edit this one line to change the cadence.
+[functions."sync-scheduled"]
+  schedule = "0 11,23 * * *"   # UTC
 
 # Friendly /api/* paths proxy to the functions so the frontend can use
 # same-origin relative URLs (no CORS, no Replit hostname).
