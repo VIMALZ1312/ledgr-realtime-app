@@ -34,6 +34,13 @@ body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-ser
 .btn-sync:disabled{opacity:.5;}
 .btn-sec{width:100%;padding:8px;background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:5px;font-family:'IBM Plex Mono',monospace;font-size:11px;cursor:pointer;margin-bottom:4px;}
 .synced-at{font-size:10px;color:var(--muted2);margin-top:4px;font-family:'IBM Plex Mono',monospace;}
+/* Re-link banner — sits above every tab when a bank stops syncing. */
+#relink-banner{padding:8px 14px 0;}
+.relink-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:color-mix(in srgb,var(--red) 12%,transparent);border:1px solid color-mix(in srgb,var(--red) 40%,transparent);border-radius:6px;padding:9px 11px;margin-bottom:6px;}
+.relink-txt{flex:1;min-width:170px;font-size:12px;line-height:1.45;}
+.relink-sub{display:block;color:var(--muted);font-size:10.5px;margin-top:2px;}
+.relink-btn{flex:0 0 auto;background:var(--red);color:#fff;border:none;border-radius:5px;padding:8px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;cursor:pointer;white-space:nowrap;}
+.relink-btn:active{opacity:.75;}
 .topbar{display:none;position:sticky;top:0;z-index:200;height:52px;background:var(--surface);border-bottom:1px solid var(--border);align-items:center;padding:0 14px;gap:10px;}
 .t-logo{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:17px;letter-spacing:2px;flex:1;}
 .t-logo span{color:var(--green);}
@@ -145,6 +152,7 @@ body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-ser
       <button class="t-btn theme-btn-icon" onclick="toggleTheme()" id="theme-topbar">&#9790;</button>
       <button class="t-btn" onclick="triggerSync()" id="sync-btn-top">&#9889;</button>
     </div>
+    <div id="relink-banner" hidden></div>
     <div class="main" id="main-content">
       <div style="display:flex;align-items:center;justify-content:center;height:200px;font-size:13px;color:var(--muted);font-family:'IBM Plex Mono',monospace">Loading...</div>
     </div>
@@ -437,6 +445,7 @@ function toggleTheme() {
 })();
 
 function render() {
+  renderRelinkBanner();
   if(!D) { set('main-content', '<div style="display:flex;align-items:center;justify-content:center;height:200px;font-size:13px;color:var(--muted);font-family:IBM Plex Mono,monospace">No data. Tap Sync.</div>'); return; }
   _tid = 0;
   if(TAB === 'overview') renderOverview();
@@ -459,6 +468,61 @@ var BANK_NAMES = {
 };
 function bankKeyOf(a){ return (a.nickname || a._nickname || a.bank || '?').toString().toLowerCase(); }
 function bankLabelOf(key, fallback){ return BANK_NAMES[key] || fallback || key; }
+
+// ── Re-link banner ────────────────────────────────────────────
+// A dead bank used to be visible only inside sync_status in the JSON, which
+// is how the wife's BofA login sat broken from late September to mid-November:
+// every sync reported success overall, and her accounts simply stopped being
+// in the file. This surfaces it on every tab with a one-tap fix.
+//
+// Only codes a re-login can actually fix belong here. PRODUCTS_NOT_SUPPORTED
+// is Discover's plan limit on /transactions/refresh — re-linking changes
+// nothing, and a banner that cannot be cleared trains you to ignore banners.
+var RELINK_CODES = /ITEM_LOGIN_REQUIRED|ITEM_LOCKED|PENDING_EXPIRATION|PENDING_DISCONNECT|ITEM_NOT_FOUND|INVALID_ACCESS_TOKEN|ACCESS_NOT_GRANTED/i;
+function banksNeedingRelink() {
+  var ss = (D && D.sync_status) || {};
+  var out = [], seen = {};
+  // An Item that returned nothing at all: no balances, no transactions.
+  (ss.detail || []).forEach(function(x) {
+    if (!x || x.ok) return;
+    var code = x.error || 'SYNC_FAILED';
+    if (/PRODUCTS_NOT_SUPPORTED/i.test(code)) return;
+    seen[x.nickname] = 1;
+    out.push({ nickname: x.nickname, code: code, dead: true });
+  });
+  // Still returning balances, but the bank refused a live refresh — the
+  // early warning that a login is about to expire.
+  var re = ss.refresh_errors || {};
+  Object.keys(re).forEach(function(nick) {
+    if (seen[nick] || !RELINK_CODES.test(re[nick] || '')) return;
+    out.push({ nickname: nick, code: re[nick], dead: false });
+  });
+  return out;
+}
+function renderRelinkBanner() {
+  var el = $('relink-banner');
+  if (!el) return;
+  var broken = banksNeedingRelink();
+  if (!broken.length) { el.hidden = true; el.innerHTML = ''; return; }
+  var html = '';
+  broken.forEach(function(b) {
+    var why = /LOGIN_REQUIRED|LOCKED|ACCESS_NOT_GRANTED|INVALID_ACCESS_TOKEN|ITEM_NOT_FOUND/i.test(b.code)
+      ? 'needs you to log in again'
+      : /PENDING/i.test(b.code) ? 'will stop updating unless you log in again'
+      : 'is not syncing (' + b.code + ')';
+    var note = b.dead
+      ? 'No balances or transactions from this bank until it is re-linked.'
+      : 'Balances still load, but its transactions are going stale.';
+    html += '<div class="relink-row"><div class="relink-txt"><b>&#9888; ' + bankLabelOf(b.nickname, b.nickname) + '</b> ' + why
+      + '<span class="relink-sub">' + note + '</span></div>'
+      + '<button class="relink-btn" onclick="goRelink(\'' + b.nickname + '\')">Re-link now &rarr;</button></div>';
+  });
+  el.innerHTML = html;
+  el.hidden = false;
+}
+// link.html reads ?nickname= and pre-fills the field with step-by-step text,
+// so this is one tap from seeing the problem to the bank's login screen.
+function goRelink(nick) { location.href = 'link.html?nickname=' + encodeURIComponent(nick); }
 function renderBanksStrip(accts) {
   if(!accts || !accts.length) return '';
   var groups = {};

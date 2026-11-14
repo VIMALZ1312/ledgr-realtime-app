@@ -111,6 +111,19 @@ function setStatus(msg, cls) {
   el.textContent = msg;
   el.className = 'status ' + (cls || '');
 }
+
+// Arriving from the dashboard's re-link button: ?nickname=wifebofa fills the
+// field and spells out the steps, including ticking every account — a re-auth
+// that silently drops an account is how BofA ...2776 went missing once
+// already. The nickname still has a token, so the backend picks update mode
+// and the existing token is revived rather than replaced.
+(function prefillFromQuery() {
+  var nick = (new URLSearchParams(location.search).get('nickname') || '').trim().toLowerCase();
+  if (!nick) return;
+  var input = document.getElementById('nickname');
+  if (input) input.value = nick;
+  setStatus('Re-linking "' + nick + '".\n\n1. Tap Connect Bank\n2. Complete the bank login\n3. If asked which accounts to share, tick ALL of them\n4. Tap Sync All Banks Now\n\nNothing to copy or paste — the existing token is reused.', 'warn');
+})();
 </script>
 </body>
 </html>
