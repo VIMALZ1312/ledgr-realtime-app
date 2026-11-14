@@ -9,7 +9,7 @@
   },
   "accounts": {
     "bofa": {
-      "balance": 1759.8600000000001,
+      "balance": 1599.8600000000001,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
@@ -91,7 +91,7 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 1734.43,
+      "balance": 1574.43,
       "available": 1574.43,
       "is_credit": false,
       "is_loan": false,
@@ -148,7 +148,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 2641.58,
-      "available": 358,
+      "available": 349,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -282,10 +282,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 60715.77,
+    "total_checking": 60555.77,
     "total_credit": 2821.85,
     "total_loans": 384584.29,
-    "net": -326690.37
+    "net": -326850.37
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -303,7 +303,7 @@
     "Gas/Travel": 5778.91,
     "Shopping": 7861.45,
     "Groceries": 2316.45,
-    "Restaurants": 4169.69,
+    "Restaurants": 4114.47,
     "Tax/Professional": 1958.0100000000002,
     "Insurance": 230.74
   },
@@ -1220,7 +1220,7 @@
       "income": 8818.490000000002,
       "bofa_income": 8818.490000000002,
       "td_income": 0,
-      "outflows": 2428.44,
+      "outflows": 2373.22,
       "xoom": 0,
       "investments": 0
     },
@@ -5905,11 +5905,11 @@
         "Entertainment": 22.27,
         "Healthcare": 16.95,
         "Gas/Travel": 260.95,
-        "Restaurants": 384.45,
+        "Restaurants": 329.23,
         "Tax/Professional": 30.13,
         "Groceries": 120.54
       },
-      "total": 2428.44,
+      "total": 2373.2200000000003,
       "transactions": [
         {
           "date": "10-01",
@@ -6201,19 +6201,6 @@
           "date": "10-28",
           "desc": "Chatpati Delhi",
           "amount": 67.84,
-          "category": "Restaurants",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
-          "mask": "1345",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "10-31",
-          "desc": "Grubhub",
-          "amount": 55.22,
           "category": "Restaurants",
           "city": null,
           "state": null,
@@ -11109,7 +11096,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-11-13T22:15:08.389Z",
+  "generated_at": "2026-11-14T22:22:12.753Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -11218,11 +11205,11 @@
       "td"
     ],
     "refresh_errors": {
-      "wifebofa": "ITEM_LOGIN_REQUIRED",
-      "discover": "PRODUCTS_NOT_SUPPORTED"
+      "discover": "PRODUCTS_NOT_SUPPORTED",
+      "wifebofa": "ITEM_LOGIN_REQUIRED"
     },
     "cached_balances": [],
-    "txns_fetched": 979,
+    "txns_fetched": 978,
     "duplicates_removed": 0,
     "duplicate_sample": []
   }
