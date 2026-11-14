@@ -1206,14 +1206,6 @@ function renderTravel() {
   set('main-content', html);
 }
 
-function cleanZelleName(raw) {
-  var m = raw.match(/payment from ([A-Z][A-Za-z ]+?)(?:\s+for\s+|\s+Conf#|;)/i);
-  if(m) return m[1].trim().replace(/\b\w/g, function(c){return c.toUpperCase();});
-  m = raw.match(/payment from ([A-Z][A-Za-z ]{3,40})/i);
-  if(m) return m[1].trim().replace(/\b\w/g, function(c){return c.toUpperCase();});
-  return raw.substring(0, 30);
-}
-
 function renderTravel() {
   var raw = (D.travel||[]).filter(function(t) {
     return t.state && HOME_ST.indexOf(t.state)<0 && !BILLING.some(function(b){return (t.desc||'').toUpperCase().indexOf(b)>=0;});
@@ -1299,18 +1291,25 @@ function renderTravel() {
 
 function cleanZelleName(raw){
   if(!raw) return '';
-  // Pattern 1: "payment from NAME for..." or "payment from NAME Conf#..."
+  function title(x){ return x.trim().toLowerCase().replace(/\b\w/g,function(c){return c.toUpperCase();}); }
+  // Pattern 1: BofA — "payment from NAME for..." or "payment from NAME Conf#..."
   var m=raw.match(/payment from ([A-Z][A-Za-z\s]+?)(?:\s+for\s+|\s+Conf#|;)/i);
-  if(m) return m[1].trim().toLowerCase().replace(/\b\w/g,function(c){return c.toUpperCase();});
-  // Pattern 2: "FROM NAME Conf#..." (newer format)
-  m=raw.match(/^FROM ([A-Z][A-Z\s]+?)(?:\s+Conf#|\s*$)/i);
-  if(m) return m[1].trim().toLowerCase().replace(/\b\w/g,function(c){return c.toUpperCase();});
-  // Pattern 3: TD received with name "Zelle NAME ..."
+  if(m) return title(m[1]);
+  // Pattern 2: Wells Fargo — "FROM NAME ON 10/26 REF # <ref> <memo>", plus
+  // the older bare "FROM NAME". The backend strips the word "Zelle" out of
+  // the name before storing it, so Pattern 3 can never fire on a WF row; and
+  // without a stop at " ON <date>" or " REF #" these fell through to the
+  // 30-character fallback below, which kept the date and reference number in
+  // the label. One sender then became a separate row per payment, which is
+  // why the table looked far emptier than the data actually was.
+  m=raw.match(/^FROM\s+([A-Z][A-Za-z.'\-\s]*?)\s*(?:\s+ON\s+\d{1,2}\/\d{1,2}\b|\s+REF\s*#|\s+Conf#|\s*$)/i);
+  if(m && m[1].trim().length>2) return title(m[1]);
+  // Pattern 3: TD — "TD RECEIVED <ref> Zelle NAME"
   m=raw.match(/Zelle ([A-Z][A-Z\s]{3,30})/i);
-  if(m) return m[1].trim().toLowerCase().replace(/\b\w/g,function(c){return c.toUpperCase();});
+  if(m) return title(m[1]);
   // Pattern 4: plain "payment from NAME"
   m=raw.match(/payment from ([A-Z][A-Za-z\s]{3,40})/i);
-  if(m) return m[1].trim().toLowerCase().replace(/\b\w/g,function(c){return c.toUpperCase();});
+  if(m) return title(m[1]);
   return raw.substring(0,30);
 }
 
@@ -1598,22 +1597,24 @@ function triggerSync(auto) {
       if(r.status !== 202 && !r.ok) throw new Error('HTTP ' + r.status);
       setTimeout(function(){ setBusy(false); }, 2000); // free the button right away
       if(syncedEl) syncedEl.textContent = 'Pulling from banks… (~1–2 min)';
-      // Poll GitHub raw for a data.json whose generated_at differs from the copy
-      // we're showing. cache:'no-store' + the ?t= buster defeat both the browser
-      // and the raw.githubusercontent CDN, so "latest" really is latest.
+      // Poll for a data.json whose generated_at differs from the copy on screen.
+      // fetchData() reads /api/data, which reflects a finished sync within a
+      // second or two. Polling raw.githubusercontent here is what made the Sync
+      // button look broken: that CDN sends max-age=300, so a sync that finished
+      // in 25 seconds stayed invisible for up to five minutes, this poll gave up
+      // before it appeared, and the numbers only changed if you came back later.
       var tries = 0, max = 24; // 10s then every 15s ≈ 6 min safety
       function check() {
         tries++;
-        fetch('https://raw.githubusercontent.com/VIMALZ1312/ledgr-realtime-app/main/data.json?t=' + Date.now(), { cache: 'no-store' })
-          .then(function(x){ return x.json(); })
+        fetchData()
           .then(function(nd) {
             if(nd.generated_at && nd.generated_at !== before) { clearInterval(iv); SYNC_IN_FLIGHT = false; loadData(); }
             else if(tries >= max) { clearInterval(iv); SYNC_IN_FLIGHT = false; if(syncedEl) syncedEl.textContent = 'Sync still running — reload soon'; }
           })
           .catch(function(){ if(tries >= max) { clearInterval(iv); SYNC_IN_FLIGHT = false; } });
       }
-      setTimeout(check, 10000);
-      var iv = setInterval(check, 15000);
+      setTimeout(check, 6000);
+      var iv = setInterval(check, 6000);
     })
     .catch(function(e){
       SYNC_IN_FLIGHT = false; setBusy(false);
@@ -1880,11 +1881,28 @@ function toggleExclude(desc) {
 
 // How stale the data may be before opening the app pulls from Plaid again.
 // Without this, every reload (or PWA resume) would kick off a full bank pull.
-var AUTO_SYNC_STALE_MIN = 15;
+// At 15 minutes a handful of visits meant a handful of full eight-bank pulls
+// in a day, on top of the cron; six hours keeps opening the app cheap, and
+// the Sync button is still there whenever an immediate pull is wanted.
+var AUTO_SYNC_STALE_MIN = 360;
+
+// Read data.json from somewhere that is actually current. /api/data is
+// same-origin and no-store, and the function behind it serves Blobs or the
+// GitHub contents API, both of which reflect a finished sync immediately.
+// raw.githubusercontent.com is only the fallback for when that function is
+// unreachable: it is CDN-cached with max-age=300, so on its own it can hand
+// back a five-minute-old file and make a completed sync look like it failed.
+var RAW_DATA_URL = 'https://raw.githubusercontent.com/VIMALZ1312/ledgr-realtime-app/main/data.json';
+function fetchData() {
+  return fetch('/api/data?t=' + Date.now(), { cache: 'no-store' })
+    .then(function(r){ if(!r.ok) throw new Error('/api/data HTTP ' + r.status); return r.json(); })
+    .catch(function(){
+      return fetch(RAW_DATA_URL + '?t=' + Date.now(), { cache: 'no-store' }).then(function(r){ return r.json(); });
+    });
+}
 
 function loadData(opts) {
-  fetch('https://raw.githubusercontent.com/VIMALZ1312/ledgr-realtime-app/main/data.json?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r){ return r.json(); })
+  fetchData()
     .then(function(data) {
       // 1. Deduplicate first (fixes server-side duplication regardless of Replit version)
       data = deduplicateData(data);
