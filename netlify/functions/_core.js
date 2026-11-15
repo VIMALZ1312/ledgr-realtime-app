@@ -386,7 +386,7 @@ function buildCashflow(accounts, transactions, months = 7) {
     spent: { total: 0, purchases: 0, refunds: 0, loans: 0, fees: 0, zelle_out: 0, other_out: 0 },
     moved: { invested: 0, india: 0 },
     internal: { count: 0, total: 0 },
-    by_category: {}, ai: {}, fees: [], big: [], unmatched: [], refunds_big: [], loan_items: [], days: 0,
+    by_category: {}, ai: {}, fees: [], big: [], unmatched: [], refunds_big: [], loan_items: [], bounced: [], days: 0,
   });
   const out = {};
   periods.forEach(p => { out[p] = blank(); });
@@ -424,6 +424,9 @@ function buildCashflow(accounts, transactions, months = 7) {
       }
       if (/ZELLE/.test(n) && SELF_NAME_RE.test(n)) { internal(); return; }
       if (OWN_XFER_RE.test(n)) { internal(); return; }
+      // A payment the bank sent back for lack of funds (the mortgage, Jul–Sep).
+      // Settled in the finalize step: it cancels the payment it returned.
+      if (/RETURN OF POSTED|RETURNED ITEM|RETURNED PAYMENT/.test(n)) { note(m, 'bounced', t); return; }
       // Cash out of our own brokerage is our money coming home, not income.
       if (/ROBINHOOD/.test(n)) { internal(); return; }
       if (isIncome(t)) { m.income.salary += amt; return; }
@@ -462,7 +465,14 @@ function buildCashflow(accounts, transactions, months = 7) {
   const todayStr = now.toISOString().slice(0, 10);
   periods.forEach(p => {
     const m = out[p];
-    m.income.total = m.income.salary + m.income.zelle_in + m.income.interest + m.income.other_in;
+    // A bounced payment undoes the loan payment of the same size; anything else
+    // returned is money back, like a refund.
+    m.bounced.forEach(b => {
+      const i = m.loan_items.findIndex(l => !l.reversed && Math.abs(l.amount - b.amount) < 0.01);
+      if (i >= 0) { m.loan_items[i].reversed = true; m.spent.loans -= b.amount; }
+      else m.spent.refunds += b.amount;
+    });
+    m.income.total =m.income.salary + m.income.zelle_in + m.income.interest + m.income.other_in;
     m.spent.total = m.spent.purchases - m.spent.refunds + m.spent.loans + m.spent.fees + m.spent.zelle_out + m.spent.other_out;
     ['income', 'spent', 'moved', 'internal'].forEach(g => Object.keys(m[g]).forEach(k => { m[g][k] = r2(m[g][k]); }));
     Object.keys(m.by_category).forEach(k => { m.by_category[k] = r2(m.by_category[k]); });

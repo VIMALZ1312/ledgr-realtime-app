@@ -657,6 +657,11 @@ function renderInsights() {
   if(shop/n > 300){
     tips.push({ save: shop/n/5, html: '📦 <b>Shopping + Amazon: ~'+fmt(shop/n)+'/month.</b> Waiting 48 hours before non-essential buys could save ~'+fmt(shop/n/5*12)+'/year.' });
   }
+  var bounced = [].concat.apply([], hist.concat([cur]).map(function(p){ return cf[p].bounced || []; }));
+  if(bounced.length){
+    var maxB = bounced.reduce(function(s,b){ return Math.max(s, b.amount); }, 0);
+    tips.push({ save: 1e9, html: '⚠️ <b>'+bounced.length+' payment'+(bounced.length>1?'s':'')+' bounced</b> (largest '+fmt(maxB)+') because checking ran short. Each bounce brings fees and can hurt your credit. Keep about '+fmt(Math.ceil(maxB/500)*500)+' extra in checking before the mortgage date.' });
+  }
   tips.sort(function(a,b){ return b.save - a.save; });
   if(fees === 0) tips.push({ html: '✅ No card interest or fees in '+n+' months — nice.' });
   html += '<div>'+head('💡 Where you can save · last '+n+' months')+tips.slice(0,4).map(function(t){ return line('', t.html); }).join('')+'</div>';
