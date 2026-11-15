@@ -553,99 +553,121 @@ function _showBank(key) {
   openModal(label, g.length + ' accounts', b || '<div style="color:var(--muted)">No accounts</div>');
 }
 
-// ── Insights (Overview): what moved net worth, MoM + last 7 days ─
-function renderInsights(ms, mh) {
-  var periods = Object.keys(ms).sort();
-  if(periods.length < 2) return '';
-  var cur = periods[periods.length-1], prev = periods[periods.length-2];
-  var incomeOf = function(p){ var e=(mh||[]).find(function(m){ return m.period===p; }); return e ? Number(e.income)||0 : 0; };
-  var curLbl = short(ms[cur].label), prevLbl = short(ms[prev].label);
+// ── Insights (Overview): money in, money out, what's left — plain words ──
+// Built on D.cashflow (see buildCashflow in _core.js), which has already
+// dropped card payments, moves between our own accounts and self-Zelle.
+function renderInsights() {
+  var cf = D.cashflow;
+  var wrap = function(head, body){
+    return '<div class="panel"><div class="panel-head"><div class="panel-title">Insights</div><div class="panel-action">'+head+'</div></div>'
+      + '<div style="display:flex;flex-direction:column;gap:14px;font-size:13px;line-height:1.5">'+body+'</div></div>';
+  };
+  if(!cf) return wrap('', '<div style="color:var(--muted)">Insights appear after the next sync. Tap Sync.</div>');
 
-  // Detect a partial (in-progress) current month so comparisons stay fair
-  var now = new Date();
-  var curKey = now.getFullYear()+'-'+('0'+(now.getMonth()+1)).slice(-2);
-  var isPartial = (cur === curKey);
-  var dayCutoff = now.getDate();
-  var daysInCur = new Date(now.getFullYear(), now.getMonth()+1, 0).getDate();
-  var factor = (isPartial && dayCutoff>0) ? daysInCur/dayCutoff : 1;
+  var periods = Object.keys(cf).sort();
+  var show = periods.slice(-2);                 // last month + this month
+  var cur = periods[periods.length-1];
+  var hist = periods.filter(function(p){ return p !== cur; }).slice(-6); // last 6 full months
+  var mName = function(p){ return new Date(p+'-15T00:00:00').toLocaleString('en-US',{month:'long'}); };
+  var line = function(icon, h){ return '<div style="display:flex;gap:8px">'+(icon ? '<span>'+icon+'</span>' : '')+'<div>'+h+'</div></div>'; };
+  var head = function(t){ return '<div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px">'+t+'</div>'; };
+  var html = '';
 
-  var dayOf = function(t){ var p=(t.date||'').split('-'); return parseInt(p[1]||p[0],10)||0; };
-  var sumTxns = function(txns, maxDay){ return (txns||[]).reduce(function(s,t){ return (maxDay==null || dayOf(t)<=maxDay) ? s+(t.amount||0) : s; }, 0); };
-  var catsOf = function(txns, maxDay){ var o={}; (txns||[]).forEach(function(t){ if(maxDay==null || dayOf(t)<=maxDay) o[t.category]=(o[t.category]||0)+(t.amount||0); }); return o; };
+  // 1. In / out / left — one card per month
+  html += '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px">';
+  show.forEach(function(p){
+    var m = cf[p], inc = m.income.total, out = m.spent.total, left = inc - out;
+    var partial = m.days < m.days_in_month;
+    var pct = inc > 0 ? Math.max(0, Math.min(100, Math.round(left/inc*100))) : 0;
+    var col = left >= 0 ? 'var(--green)' : 'var(--red)';
+    var row = function(lbl, v, c, b){ return '<div style="display:flex;justify-content:space-between;padding:3px 0'+(b?';font-weight:700':'')+'"><span>'+lbl+'</span><span style="font-family:IBM Plex Mono,monospace;color:'+c+'">'+v+'</span></div>'; };
+    html += '<div style="background:var(--s2);border:1px solid var(--border);border-radius:8px;padding:12px">';
+    html += '<div style="font-weight:700;margin-bottom:6px">'+mName(p)+(partial ? ' <span style="font-weight:400;font-size:11px;color:var(--muted)">so far · day '+m.days+' of '+m.days_in_month+'</span>' : '')+'</div>';
+    html += row('💵 Came in', fmt(inc), 'var(--text)');
+    html += row('🛒 Went out', fmt(out), 'var(--text)');
+    html += '<div style="border-top:1px solid var(--border);margin:4px 0"></div>';
+    html += row(left >= 0 ? '🐷 Left to save' : '⚠️ Spent more than earned', fmt(Math.abs(left)), col, true);
+    html += '<div style="height:6px;background:var(--border);border-radius:3px;margin:6px 0 4px;overflow:hidden"><div style="height:100%;width:'+pct+'%;background:'+col+'"></div></div>';
+    html += '<div style="font-size:11px;color:var(--muted)">'+(left >= 0 ? 'You kept '+pct+'¢ of every $1.' : 'Spending was bigger than income.');
+    var moved = [];
+    if(m.moved.invested) moved.push(fmt(m.moved.invested)+' to Robinhood');
+    if(m.moved.india) moved.push(fmt(m.moved.india)+' to India');
+    if(moved.length) html += ' Moved '+moved.join(' and ')+' (not counted as spending).';
+    html += '</div>';
+    var outBits = [];
+    if(m.spent.loans) outBits.push('home/car loans '+fmt(m.spent.loans));
+    if(m.spent.fees) outBits.push('<span style="color:var(--red)">fees '+fmt(m.spent.fees)+'</span>');
+    if(outBits.length) html += '<div style="font-size:11px;color:var(--muted);margin-top:2px">Out includes '+outBits.join(', ')+'.</div>';
+    html += '</div>';
+  });
+  html += '</div>';
+  var ignored = show.reduce(function(s,p){ return s + cf[p].internal.total; }, 0);
+  if(ignored) html += '<div style="font-size:11px;color:var(--muted);margin-top:-6px">Ignored '+fmt(ignored)+' of card payments and moves between your own accounts, so nothing is counted twice.</div>';
 
-  var curSpend = ms[cur].total||0;
-  var prevSpendFull = ms[prev].total||0;
-  // When current month is partial, compare against the prior month's SAME elapsed days
-  var prevSpendCmp = isPartial ? sumTxns(ms[prev].transactions, dayCutoff) : prevSpendFull;
-  var curCats = ms[cur].categories||{};
-  var prevCatsCmp = isPartial ? catsOf(ms[prev].transactions, dayCutoff) : (ms[prev].categories||{});
-  var curInc = incomeOf(cur), prevInc = incomeOf(prev);
-  var projSpend = curSpend*factor, projInc = curInc*factor;
-  var curNetMTD = curInc - curSpend, projNet = projInc - projSpend, prevNetFull = prevInc - prevSpendFull;
+  // Typical month per category = average over up to 6 full months before p.
+  var avgCat = function(cat, before){
+    var ps = periods.filter(function(x){ return x < before; }).slice(-6);
+    if(!ps.length) return 0;
+    return ps.reduce(function(s,x){ return s + (cf[x].by_category[cat]||0); }, 0) / ps.length;
+  };
 
-  // Category deltas on a like-for-like basis
-  var cats = {};
-  Object.keys(curCats).forEach(function(c){ cats[c]=true; });
-  Object.keys(prevCatsCmp).forEach(function(c){ cats[c]=true; });
-  var deltas = Object.keys(cats).map(function(c){ return { cat:c, d:(curCats[c]||0)-(prevCatsCmp[c]||0) }; });
-  var ups = deltas.filter(function(x){ return x.d>1; }).sort(function(a,b){ return b.d-a.d; });
-  var downs = deltas.filter(function(x){ return x.d<-1; }).sort(function(a,b){ return a.d-b.d; });
+  // 2. Unusual spending in the months shown
+  var odd = [];
+  show.forEach(function(p){
+    var m = cf[p];
+    Object.keys(m.by_category).forEach(function(cat){
+      if(cat === 'Refund') return;
+      var v = m.by_category[cat], avg = avgCat(cat, p);
+      if(v < 150) return;
+      var isNew = avg < 25;
+      if(isNew || (v > avg*1.5 && v - avg > 150)){
+        var big = (m.big||[]).filter(function(b){ return flowCat(b.desc) === cat; })[0];
+        odd.push({ d: v - avg, html: '<b>'+esc(cat)+'</b> '+fmt(v)+' in '+mName(p)+' — '+(isNew ? 'new, you don’t usually spend here' : 'usually ~'+fmt(avg)+'/month')+(big ? ' (mostly '+esc(big.desc)+')' : '')+'.' });
+      }
+    });
+  });
+  odd.sort(function(a,b){ return b.d - a.d; });
+  html += '<div>'+head('🔍 Unusual spending')+(odd.length ? odd.slice(0,4).map(function(o){ return line('•', o.html); }).join('') : line('✅','Nothing unusual — spending looks normal.'))+'</div>';
 
-  // Week-over-week within the current month
-  var curTxns = ms[cur].transactions||[];
-  var last7=0, prev7=0;
-  curTxns.forEach(function(t){ var dd=dayOf(t); if(dd>dayCutoff-7 && dd<=dayCutoff) last7+=(t.amount||0); else if(dd>dayCutoff-14 && dd<=dayCutoff-7) prev7+=(t.amount||0); });
-
-  var rows = [];
-
-  // Partial-month context banner
-  if(isPartial){
-    rows.push('<div style="display:flex;gap:8px"><span>🗓️</span><div><b>'+curLbl+' is partial</b> — day '+dayCutoff+' of '+daysInCur+'. Compared vs '+prevLbl+'’s first '+dayCutoff+' days; full-month projections in (parentheses).</div></div>');
+  // 3. Where to save — judged on the last 6 full months
+  var n = hist.length || 1;
+  var sumOver = function(fn){ return hist.reduce(function(s,p){ return s + fn(cf[p]); }, 0); };
+  var tips = [];
+  var fees = sumOver(function(m){ return m.spent.fees; });
+  var feeItems = [].concat.apply([], hist.map(function(p){ return cf[p].fees || []; }));
+  if(fees > 0){
+    tips.push({ save: fees/n, html: '💳 <b>Card interest & fees: '+fmt(fees)+'</b> in '+n+' months'+(feeItems[0] ? ' (e.g. '+esc(feeItems[0].desc)+')' : '')+'. Pay cards in full every month and this becomes $0.' });
   }
-
-  // Net cash flow headline (projected vs prior full month when partial)
-  var netCol = curNetMTD>=0 ? 'var(--green)' : 'var(--red)';
-  if(isPartial){
-    var trend = projNet>prevNetFull ? 'on pace to beat '+prevLbl : 'tracking below '+prevLbl;
-    rows.push('<div style="display:flex;gap:8px"><span>'+(curNetMTD>=0?'🟢':'🔴')+'</span><div><b style="color:'+netCol+'">'+curLbl+' net cash flow: '+fmt(curNetMTD)+' so far</b> ('+(curNetMTD>=0?'surplus':'deficit')+'). Projected ~'+fmt(projNet)+' for the full month vs '+prevLbl+' '+fmt(prevNetFull)+' — '+trend+'.</div></div>');
-  } else {
-    rows.push('<div style="display:flex;gap:8px"><span>'+(curNetMTD>=0?'🟢':'🔴')+'</span><div><b style="color:'+netCol+'">'+curLbl+' net cash flow: '+fmt(curNetMTD)+'</b> ('+(curNetMTD>=0?'surplus':'deficit')+'). '+prevLbl+' was '+fmt(prevNetFull)+'. '+(curNetMTD>prevNetFull?'Improving — net worth trending up.':'Worsening — net worth under pressure.')+'</div></div>');
+  var aiTot = sumOver(function(m){ return m.by_category['AI tools']||0; });
+  if(aiTot > 0){
+    var aiM = {}; hist.forEach(function(p){ Object.keys(cf[p].ai||{}).forEach(function(k){ aiM[k] = (aiM[k]||0) + cf[p].ai[k]; }); });
+    var names = Object.keys(aiM).sort(function(a,b){ return aiM[b]-aiM[a]; });
+    var aiTip = names.length > 1 ? ' Keep the one you use most — dropping the rest saves ~'+fmt((aiTot - aiM[names[0]])/n*12)+'/year.' : ' Still using it every week? Cancelling saves ~'+fmt(aiTot/n*12)+'/year.';
+    tips.push({ save: aiTot/n/2, html: '🤖 <b>AI tools: ~'+fmt(aiTot/n)+'/month</b> ('+names.slice(0,4).map(function(k){ return esc(k)+' '+fmt(aiM[k]); }).join(', ')+' over '+n+' months).'+aiTip });
   }
-
-  // Spending vs same-elapsed-days
-  var spendDelta = curSpend - prevSpendCmp;
-  var pct = prevSpendCmp ? Math.round(Math.abs(spendDelta)/prevSpendCmp*100) : 0;
-  var spendLine = 'Spending '+(spendDelta>0?'up':'down')+' <b>'+fmt(Math.abs(spendDelta))+'</b> ('+pct+'%) vs '+prevLbl+(isPartial?' (same '+dayCutoff+' days)':'')+' — '+fmt(curSpend)+(isPartial?' so far, ~'+fmt(projSpend)+' projected':' total')+'.';
-  rows.push('<div style="display:flex;gap:8px"><span>'+(spendDelta>0?'📈':'📉')+'</span><div>'+spendLine+'</div></div>');
-
-  // Income
-  if(curInc||prevInc){
-    if(isPartial){
-      rows.push('<div style="display:flex;gap:8px"><span>💵</span><div>Income <b>'+fmt(curInc)+'</b> so far, ~'+fmt(projInc)+' projected; '+prevLbl+' was '+fmt(prevInc)+'.</div></div>');
-    } else {
-      var incDelta=curInc-prevInc;
-      rows.push('<div style="display:flex;gap:8px"><span>💵</span><div>Income '+(incDelta>=0?'up':'down')+' <b>'+fmt(Math.abs(incDelta))+'</b> vs '+prevLbl+' — '+fmt(curInc)+' in '+curLbl+'.</div></div>');
-    }
+  var food = sumOver(function(m){ return (m.by_category['Food delivery']||0) + (m.by_category['Restaurants']||0); });
+  if(food/n > 100){
+    tips.push({ save: food/n/4, html: '🍔 <b>Eating out + delivery: ~'+fmt(food/n)+'/month.</b> Cutting a quarter of it saves ~'+fmt(food/n/4*12)+'/year.' });
   }
+  var shop = sumOver(function(m){ return (m.by_category['Shopping']||0) + (m.by_category['Amazon']||0); });
+  if(shop/n > 300){
+    tips.push({ save: shop/n/5, html: '📦 <b>Shopping + Amazon: ~'+fmt(shop/n)+'/month.</b> Waiting 48 hours before non-essential buys could save ~'+fmt(shop/n/5*12)+'/year.' });
+  }
+  tips.sort(function(a,b){ return b.save - a.save; });
+  if(fees === 0) tips.push({ html: '✅ No card interest or fees in '+n+' months — nice.' });
+  html += '<div>'+head('💡 Where you can save · last '+n+' months')+tips.slice(0,4).map(function(t){ return line('', t.html); }).join('')+'</div>';
 
-  // Category movers (like-for-like)
-  if(ups.length){
-    var topUp = ups.slice(0,3).map(function(x){ var col=CAT_COLORS[x.cat]||'#6b6b80'; return '<span style="color:'+col+'">'+x.cat+'</span> +'+fmt(x.d); }).join(', ');
-    rows.push('<div style="display:flex;gap:8px"><span>⚠️</span><div>Running higher than '+prevLbl+(isPartial?' (same days)':'')+' — watch for unwanted spend: '+topUp+'.</div></div>');
-  }
-  if(downs.length){
-    var topDown = downs.slice(0,2).map(function(x){ return x.cat+' '+fmt(x.d); }).join(', ');
-    rows.push('<div style="display:flex;gap:8px"><span>✅</span><div>Running lower: '+topDown+'.</div></div>');
-  }
-  if(last7||prev7){
-    rows.push('<div style="display:flex;gap:8px"><span>📅</span><div>Last 7 days: <b>'+fmt(last7)+'</b> spent vs '+fmt(prev7)+' the prior week.</div></div>');
-  }
-  var big = curTxns.slice().sort(function(a,b){ return (b.amount||0)-(a.amount||0); })[0];
-  if(big){ rows.push('<div style="display:flex;gap:8px"><span>🔎</span><div>Largest '+curLbl+' charge: <b>'+fmt2(big.amount)+'</b> — '+big.desc+' ('+big.category+').</div></div>'); }
-
-  var headNote = isPartial ? (prevLbl+' → '+curLbl+' · partial') : (prevLbl+' → '+curLbl);
-  return '<div class="panel"><div class="panel-head"><div class="panel-title">Insights</div><div class="panel-action">'+headNote+'</div></div>'
-    + '<div style="display:flex;flex-direction:column;gap:9px;font-size:12.5px;line-height:1.45">'+rows.join('')+'</div></div>';
+  var lbl = show.map(function(p){ return mName(p).slice(0,3); }).join(' · ');
+  return wrap(lbl, html);
+}
+// Same buckets as flowCategory() in _core.js, to tie a big charge to its category.
+function flowCat(desc){
+  var n = String(desc||'').toUpperCase();
+  if(/OPENAI|CHATGPT|ANTHROPIC|CLAUDE|MIDJOURNEY|PERPLEXITY|CURSOR\b|COPILOT|GEMINI|AITUBO|ELEVENLABS|RUNWAYML|REPLIT|LOVABLE|SUNO\b|GROK|POE\.COM|CHARACTER\.AI|JASPER/.test(n)) return 'AI tools';
+  if(/KUMON|BEST BRAINS|BIG BLUE|SWIM SCHOOL|SCHOLASTIC|BRIGHTCHAMP|TUTOR|KIDS EVENT/.test(n)) return 'Kids';
+  if(/COVERED EXTERIORS|HOME DEPOT|LOWE'?S|CONTRACTOR|ROOFING|LIGHT INSTALLATION/.test(n)) return 'Home projects';
+  if(/FRAGOMEN|LAW |ATTORNEY|LEGAL|USCIS/.test(n)) return 'Legal/immigration';
+  return '';
 }
 
 function renderOverview() {
@@ -671,7 +693,7 @@ function renderOverview() {
   html += '</div>';
 
   // Text insights — what moved net worth, MoM + last 7 days
-  html += renderInsights(ms, mh);
+  html += renderInsights();
 
   // Chart data embedded in data attributes
   var chartLabels = JSON.stringify(periods.map(function(p){ return short(ms[p].label); }));

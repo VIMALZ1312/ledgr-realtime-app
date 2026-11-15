@@ -301,6 +301,168 @@ function buildStructuredData(accounts, transactions) {
   };
 }
 
+// ── CASH FLOW: money in vs money out per month, internal moves removed ────────
+// monthly_spending above only sees what categorize() keeps, so it misses the
+// mortgage/car loan (LOAN_PAYMENTS), card interest (BANK_FEES) and counts Zelle
+// between our own accounts. This works from the raw (cross-Item deduped)
+// transactions instead, and sorts every posted transaction into one bucket:
+//   income   → salary | zelle_in (from other people) | interest | other_in
+//   spent    → purchases (by category) | loans (mortgage/car) | fees | zelle_out | other_out
+//   moved    → invested (to brokerage) | india (Xoom etc.) — not spending
+//   internal → card payments, transfers between our own accounts, self-Zelle
+// Plaid sign: amount > 0 is money leaving the account, < 0 is money arriving.
+const SELF_NAME_RE = new RegExp(process.env.SELF_NAMES_RE || 'VIMAL ?RAJ', 'i');
+const AI_RE = /OPENAI|CHATGPT|ANTHROPIC|CLAUDE|MIDJOURNEY|PERPLEXITY|CURSOR\b|COPILOT|GEMINI|AITUBO|ELEVENLABS|RUNWAYML|REPLIT|LOVABLE|SUNO\b|GROK|POE\.COM|CHARACTER\.AI|JASPER/i;
+const INDIA_RE = /XOOM|REMITLY|WISE\b|TRANSFERWISE|WESTERN UNION|REMIT2INDIA|ICICI|INSTAREM/i;
+// Card-issuer names only: a generic "ONLINE PAYMENT" is often a real bill (PSEG).
+const CARD_PAY_RE = /CREDIT CARD|CRD EPAY|CRD AUTOPAY|CARD PAYMENT|BA ELECTRONIC PAYMENT|DISCOVER E-?PAYMENT|DISCOVER DES|CAPITAL ONE|AMEX EPAYMENT|AMERICAN EXPRESS|CHASE CREDIT|WF CREDIT|WELLS FARGO CARD|ROBINHOOD CARD|CITI CARD|APPLECARD|GSBANK|PAYMENT - THANK|PAYMENT THANK/i;
+const FEE_RE = /INTEREST CHARGE|FINANCE CHARGE|LATE FEE|ANNUAL FEE|OVERDRAFT|FOREIGN TRANSACTION FEE|MONTHLY MAINTENANCE|SERVICE FEE/i;
+const TRANSFERISH_RE = /TRANSFER|XFER|ZELLE|PAYMENT|PMT|AUTOPAY|DEPOSIT|ROBINHOOD|ONLINE BANKING|FUNDS/i;
+
+// Sharper buckets than categorize() for the things the insights talk about.
+function flowCategory(t) {
+  const n = (t.merchant_name || t.name || '').toUpperCase();
+  if (AI_RE.test(n)) return 'AI tools';
+  if (/KUMON|BEST BRAINS|BIG BLUE|SWIM SCHOOL|SCHOLASTIC|BRIGHTCHAMP|TUTOR|KIDS EVENT/.test(n)) return 'Kids';
+  if (/VERIZON|PSE&G|PSEG|OPTIMUM|TWP OF|TOWNSHIP|COMCAST|XFINITY|NJ NATURAL|T-MOBILE|AT&T|WATER|ELECTRIC/.test(n)) return 'Bills & utilities';
+  if (/DOORDASH|UBER ?EATS|GRUBHUB|INSTACART|POSTMATES/.test(n)) return 'Food delivery';
+  if (/COVERED EXTERIORS|HOME DEPOT|LOWE'?S|CONTRACTOR|ROOFING|LIGHT INSTALLATION/.test(n)) return 'Home projects';
+  if (/FRAGOMEN|LAW |ATTORNEY|LEGAL|USCIS/.test(n)) return 'Legal/immigration';
+  return categorize(t) || 'Other';
+}
+
+function buildCashflow(accounts, transactions, months = 7) {
+  const acctById = {};
+  accounts.forEach(a => { acctById[a.account_id] = a; });
+  const kindOf = t => { const a = acctById[t.account_id]; return a ? a.type : null; }; // depository|credit|loan|investment
+  const nameOf = t => (t.name || t.merchant_name || '');
+  const pfc = t => t.personal_finance_category || {};
+  const isTransferish = t => ['TRANSFER_IN', 'TRANSFER_OUT', 'LOAN_PAYMENTS'].includes(pfc(t).primary) || TRANSFERISH_RE.test(nameOf(t));
+
+  const now = new Date();
+  const periods = [];
+  for (let i = months - 1; i >= 0; i--) {
+    const d = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() - i, 1));
+    periods.push(d.toISOString().slice(0, 7));
+  }
+  const firstDay = periods[0] + '-01';
+  // Pair window reaches a few days before the first month so an early-month
+  // transfer still finds its other leg.
+  const posted = transactions.filter(t => !t.pending && t.amount && t.date >= shiftDate(firstDay, -5) && acctById[t.account_id]);
+
+  // 1. Pair the two legs of moves between our own accounts: same size, opposite
+  //    sign, different account, within 4 days, both transfer-like.
+  const pairOf = new Map();
+  const byAbs = new Map();
+  posted.forEach(t => { if (!isTransferish(t)) return; const k = Math.abs(t.amount).toFixed(2); if (!byAbs.has(k)) byAbs.set(k, []); byAbs.get(k).push(t); });
+  byAbs.forEach(list => {
+    const outs = list.filter(t => t.amount > 0).sort((a, b) => a.date.localeCompare(b.date));
+    const ins = list.filter(t => t.amount < 0);
+    outs.forEach(o => {
+      let best = null, bestGap = 99;
+      ins.forEach(i => {
+        if (pairOf.has(i.transaction_id) || i.account_id === o.account_id) return;
+        const gap = Math.abs(dayDiff(o.date, i.date));
+        if (gap <= 4 && gap < bestGap) { best = i; bestGap = gap; }
+      });
+      if (best) { pairOf.set(o.transaction_id, best); pairOf.set(best.transaction_id, o); }
+    });
+  });
+
+  const blank = () => ({
+    income: { total: 0, salary: 0, zelle_in: 0, interest: 0, other_in: 0 },
+    spent: { total: 0, purchases: 0, refunds: 0, loans: 0, fees: 0, zelle_out: 0, other_out: 0 },
+    moved: { invested: 0, india: 0 },
+    internal: { count: 0, total: 0 },
+    by_category: {}, ai: {}, fees: [], big: [], unmatched: [], days: 0,
+  });
+  const out = {};
+  periods.forEach(p => { out[p] = blank(); });
+  const r2 = x => Math.round(x * 100) / 100;
+  const note = (m, list, t, label) => m[list].push({ date: t.date, desc: nameOf(t).slice(0, 60), amount: r2(Math.abs(t.amount)), label });
+
+  posted.forEach(t => {
+    const p = t.date.slice(0, 7);
+    const m = out[p];
+    if (!m) return;
+    const kind = kindOf(t);
+    const amt = Math.abs(t.amount);
+    const n = nameOf(t).toUpperCase();
+    const det = pfc(t).detailed || '';
+    const prim = pfc(t).primary || '';
+    const pair = pairOf.get(t.transaction_id);
+    const internal = () => { m.internal.count++; m.internal.total += amt; };
+
+    // Loan and brokerage accounts only hold the far side of moves (payments
+    // received, trades, dividends that stay invested) — never cash flow itself.
+    if (kind === 'loan' || kind === 'investment') return;
+
+    if (pair) {
+      const otherKind = kindOf(pair);
+      if (t.amount > 0 && otherKind === 'loan') { m.spent.loans += amt; return; }          // mortgage / car loan paid to a linked loan
+      if (t.amount > 0 && otherKind === 'investment') { m.moved.invested += amt; return; } // to Robinhood
+      if (t.amount < 0 && otherKind === 'investment') { internal(); return; }              // cash back out of brokerage
+      internal(); return;                                                                   // checking↔checking, card payments
+    }
+
+    if (t.amount < 0) { // ── money arriving ──
+      if (kind === 'credit') {
+        if (prim === 'TRANSFER_IN' || prim === 'LOAN_PAYMENTS' || CARD_PAY_RE.test(n) || /PAYMENT/.test(n)) { internal(); return; } // card paid from an unlinked account
+        m.spent.refunds += amt; return;
+      }
+      if (/ZELLE/.test(n) && SELF_NAME_RE.test(n)) { internal(); return; }
+      if (isIncome(t)) { m.income.salary += amt; return; }
+      if (det.includes('INTEREST_EARNED') || det.includes('DIVIDENDS')) { m.income.interest += amt; return; }
+      if (/ZELLE/.test(n)) { m.income.zelle_in += amt; return; }
+      if (prim === 'TRANSFER_IN' || TRANSFERISH_RE.test(n)) { m.income.other_in += amt; note(m, 'unmatched', t, 'in'); return; }
+      m.spent.refunds += amt; return; // a merchant refund landing in checking
+    }
+
+    // ── money leaving (checking or card) ──
+    if (det.includes('CREDIT_CARD_PAYMENT') || (kind === 'depository' && CARD_PAY_RE.test(n) && !/ZELLE/.test(n))) { internal(); return; }
+    if (prim === 'BANK_FEES' || det.includes('INTEREST_CHARGE') || FEE_RE.test(n)) { m.spent.fees += amt; note(m, 'fees', t); return; }
+    if (prim === 'LOAN_PAYMENTS') { m.spent.loans += amt; return; }
+    if (/ZELLE/.test(n) && SELF_NAME_RE.test(n)) { internal(); return; }
+    if (INDIA_RE.test(n)) { m.moved.india += amt; return; }
+    if (det.includes('INVESTMENT') || /ROBINHOOD/.test(n)) { m.moved.invested += amt; return; }
+    if (/ZELLE/.test(n)) {
+      m.spent.zelle_out += amt;
+      // Keep a sharp bucket (Kids event, Home projects); otherwise "Zelle to people".
+      let c = flowCategory(t);
+      if (['Other', 'Tech/Subs', 'Shopping', 'Refund'].includes(c)) c = 'Zelle to people';
+      m.by_category[c] = (m.by_category[c] || 0) + amt;
+      if (amt >= 1000) note(m, 'big', t);
+      return;
+    }
+    if (prim === 'TRANSFER_OUT') { m.spent.other_out += amt; note(m, 'unmatched', t, 'out'); return; }
+
+    m.spent.purchases += amt;
+    const cat = flowCategory(t);
+    m.by_category[cat] = (m.by_category[cat] || 0) + amt;
+    if (cat === 'AI tools') { const k = (t.merchant_name || t.name || 'AI').trim(); m.ai[k] = (m.ai[k] || 0) + amt; }
+    if (amt >= 1000) note(m, 'big', t);
+  });
+
+  const todayStr = now.toISOString().slice(0, 10);
+  periods.forEach(p => {
+    const m = out[p];
+    m.income.total = m.income.salary + m.income.zelle_in + m.income.interest + m.income.other_in;
+    m.spent.total = m.spent.purchases - m.spent.refunds + m.spent.loans + m.spent.fees + m.spent.zelle_out + m.spent.other_out;
+    ['income', 'spent', 'moved', 'internal'].forEach(g => Object.keys(m[g]).forEach(k => { m[g][k] = r2(m[g][k]); }));
+    Object.keys(m.by_category).forEach(k => { m.by_category[k] = r2(m.by_category[k]); });
+    Object.keys(m.ai).forEach(k => { m.ai[k] = r2(m.ai[k]); });
+    m.big.sort((a, b) => b.amount - a.amount);
+    m.unmatched = m.unmatched.sort((a, b) => b.amount - a.amount).slice(0, 15);
+    // How many days of the month are in (the current month is partial).
+    const last = new Date(Date.UTC(+p.slice(0, 4), +p.slice(5, 7), 0)).getUTCDate();
+    m.days = todayStr.slice(0, 7) === p ? +todayStr.slice(8, 10) : last;
+    m.days_in_month = last;
+  });
+  return out;
+}
+function shiftDate(iso, days) { const d = new Date(iso + 'T00:00:00Z'); d.setUTCDate(d.getUTCDate() + days); return d.toISOString().slice(0, 10); }
+function dayDiff(a, b) { return (new Date(a + 'T00:00:00Z') - new Date(b + 'T00:00:00Z')) / 86400000; }
+
 // ── GITHUB PUSH (verbatim behavior from server.js) + Blobs cache ──────────────
 async function pushToGitHub(data) {
   const token = process.env.GITHUB_TOKEN;
@@ -443,6 +605,8 @@ async function buildDataJson() {
 
   const deduped = dedupeCrossItemTxns(allAccounts, allTransactions);
   const data = buildStructuredData(allAccounts, deduped.transactions);
+  try { data.cashflow = buildCashflow(allAccounts, deduped.transactions); }
+  catch (e) { console.error('cashflow build failed:', e); data.cashflow = null; } // never let insights break a sync
   data.generated_at = new Date().toISOString();
   data.source = 'plaid_realtime';
   data.statement_count = Object.keys(tokens).length + ' live accounts';
@@ -469,4 +633,4 @@ async function buildDataJson() {
   return { accounts_synced: allAccounts.length, transactions_synced: allTransactions.length, generated_at: data.generated_at };
 }
 
-module.exports = { plaid, Products, CountryCode, getTokens, saveToken, buildDataJson, dataStore, dedupeCrossItemTxns };
+module.exports = { plaid, Products, CountryCode, getTokens, saveToken, buildDataJson, dataStore, dedupeCrossItemTxns, buildCashflow };
