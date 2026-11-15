@@ -15164,16 +15164,633 @@
       "loan_items": [
         {
           "date": "2026-05-19",
-          "desc": "SP+AFF* TITANWATCHESUS AFFIRM.COM",
+          "desc": "Affirm",
           "amount": 23.83
         },
         {
           "date": "2026-05-05",
-          "desc": "SP+AFF* TITANWATCHESUS AFFIRM.COM",
+          "desc": "Affirm",
           "amount": 23.83
         }
       ],
       "bounced": [],
+      "tx_in": [
+        {
+          "d": "05-04",
+          "n": "TD ZELLE RECEIVED 612300F06X12 Zelle RAKESH KUMAR ",
+          "a": 88,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "05-08",
+          "n": "VERIZON V3 DIR DEP 050226 NJ2551601 LOGANATHAN,VIM",
+          "a": 500,
+          "g": "Salary"
+        },
+        {
+          "d": "05-08",
+          "n": "WIPRO LTD DES:PAYROLL ID:XXXXX9454512ZSL INDN:VIST",
+          "a": 3475.58,
+          "g": "Salary"
+        },
+        {
+          "d": "05-11",
+          "n": "Zelle payment from POOJA SHARMA for \"Country chick",
+          "a": 18,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "05-11",
+          "n": "Zelle payment from POOJA SHARMA for \"Chicken and c",
+          "a": 26,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "05-13",
+          "n": "Promotion Bonus",
+          "a": 400,
+          "g": "Salary"
+        },
+        {
+          "d": "05-20",
+          "n": "Zelle payment from SOWMYA KONDURI Conf# irdnyzxiq",
+          "a": 2000,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "05-20",
+          "n": "Interest Earned",
+          "a": 0.03,
+          "g": "Salary"
+        },
+        {
+          "d": "05-22",
+          "n": "VERIZON V3 DIR DEP 051626 NJ2551601 LOGANATHAN,VIM",
+          "a": 500,
+          "g": "Salary"
+        },
+        {
+          "d": "05-22",
+          "n": "WIPRO LTD DES:PAYROLL ID:XXXXX2838703ZSL INDN:VIST",
+          "a": 4024.8,
+          "g": "Salary"
+        },
+        {
+          "d": "05-27",
+          "n": "Zelle payment from SOWMYA KONDURI Conf# hmlrofa6g",
+          "a": 2000,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "05-29",
+          "n": "ZEL FROM DEEPAK REDDY DEVULAPALLY",
+          "a": 40.71,
+          "g": "Other money in"
+        }
+      ],
+      "tx_out": [
+        {
+          "d": "05-01",
+          "n": "INTEREST CHARGE ON PURCHASES",
+          "a": 44.81,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "05-01",
+          "n": "Kumon North America Inc",
+          "a": 280,
+          "g": "Kids"
+        },
+        {
+          "d": "05-01",
+          "n": "ShopRite",
+          "a": 58.97,
+          "g": "Groceries"
+        },
+        {
+          "d": "05-01",
+          "n": "BP",
+          "a": 20.09,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "05-01",
+          "n": "Shaan Halal Zabiha Meat",
+          "a": 10.29,
+          "g": "Groceries"
+        },
+        {
+          "d": "05-02",
+          "n": "Renaissance Buy Rite",
+          "a": 12.78,
+          "g": "Restaurants"
+        },
+        {
+          "d": "05-02",
+          "n": "FedEx",
+          "a": 31.55,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "05-03",
+          "n": "Amazon",
+          "a": 7.45,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-03",
+          "n": "Best Buy",
+          "a": 319.86,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-04",
+          "n": "Big Blue Swim School",
+          "a": 266,
+          "g": "Kids"
+        },
+        {
+          "d": "05-04",
+          "n": "BP",
+          "a": 69.66,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "05-04",
+          "n": "Amazon",
+          "a": -7.45,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "05-04",
+          "n": "Zelle payment to Jeyashree Conf# ujvob95hu",
+          "a": 30,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "05-05",
+          "n": "Amazon",
+          "a": 23.8,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-05",
+          "n": "MAINTENANCE FEE",
+          "a": 25,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "05-05",
+          "n": "Affirm",
+          "a": 23.83,
+          "g": "Home & car loans"
+        },
+        {
+          "d": "05-06",
+          "n": "Wingstop",
+          "a": 5.95,
+          "g": "Restaurants"
+        },
+        {
+          "d": "05-06",
+          "n": "Gordon Dey Farms LLC",
+          "a": 122.75,
+          "g": "Restaurants"
+        },
+        {
+          "d": "05-06",
+          "n": "Preferred Rewards-ATM Oper Rebate Refund of $2.75",
+          "a": -2.75,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "05-06",
+          "n": "Walmart",
+          "a": 60.46,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-08",
+          "n": "Samudhra Franklin",
+          "a": 129.43,
+          "g": "Restaurants"
+        },
+        {
+          "d": "05-08",
+          "n": "Walgreens",
+          "a": 100,
+          "g": "Healthcare"
+        },
+        {
+          "d": "05-09",
+          "n": "Apple",
+          "a": 3.19,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-09",
+          "n": "Amazon",
+          "a": 21.31,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-09",
+          "n": "Commerce Center Stm",
+          "a": 11.72,
+          "g": "Entertainment"
+        },
+        {
+          "d": "05-10",
+          "n": "Join Ventures Pte. LTD",
+          "a": 24,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "05-10",
+          "n": "The Children's Place",
+          "a": 165.7,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-10",
+          "n": "Chipotle Mexican Grill",
+          "a": 13.59,
+          "g": "Restaurants"
+        },
+        {
+          "d": "05-10",
+          "n": "Charleys Philly Steaks",
+          "a": 7.44,
+          "g": "Restaurants"
+        },
+        {
+          "d": "05-11",
+          "n": "Amazon",
+          "a": 46.99,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-11",
+          "n": "Everwash",
+          "a": 55.45,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "05-12",
+          "n": "Amazon",
+          "a": 102.03,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-12",
+          "n": "Amazon",
+          "a": 8.52,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-12",
+          "n": "Amazon",
+          "a": 10.65,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-13",
+          "n": "Google One",
+          "a": 1.99,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "05-13",
+          "n": "Amazon",
+          "a": 20.19,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-13",
+          "n": "Amazon",
+          "a": 140.7,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-15",
+          "n": "Netlify Fy",
+          "a": 5,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "05-15",
+          "n": "Amazon",
+          "a": 39.99,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-15",
+          "n": "Garden Farm",
+          "a": 79.37,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-16",
+          "n": "Amazon",
+          "a": 13.53,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-16",
+          "n": "Shaan Halal Zabiha Meat",
+          "a": 9.96,
+          "g": "Groceries"
+        },
+        {
+          "d": "05-16",
+          "n": "Apna Bazaar Cash & Carry",
+          "a": 42.97,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-17",
+          "n": "CASH BACK REDEMPTION REF 200005376",
+          "a": -49.17,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "05-17",
+          "n": "CASH BACK REDEMPTION REF 200005350",
+          "a": -312.15,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "05-17",
+          "n": "Costco",
+          "a": 290.11,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-17",
+          "n": "Amazon",
+          "a": 26.29,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-17",
+          "n": "ShopRite",
+          "a": 44.83,
+          "g": "Groceries"
+        },
+        {
+          "d": "05-17",
+          "n": "Anthropic Anthropic.comca",
+          "a": 5,
+          "g": "AI tools"
+        },
+        {
+          "d": "05-17",
+          "n": "Anthropic Anthropic.comca",
+          "a": 15,
+          "g": "AI tools"
+        },
+        {
+          "d": "05-18",
+          "n": "Simplisafe",
+          "a": 35.18,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-18",
+          "n": "Temu",
+          "a": 38.59,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-18",
+          "n": "Temu",
+          "a": 61.79,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-19",
+          "n": "Amazon",
+          "a": 26.08,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-19",
+          "n": "Amazon",
+          "a": -19.99,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "05-19",
+          "n": "Delight Big Bazar",
+          "a": 42.93,
+          "g": "Groceries"
+        },
+        {
+          "d": "05-19",
+          "n": "Walmart",
+          "a": 19.81,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-19",
+          "n": "Walmart",
+          "a": 23.24,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-19",
+          "n": "Affirm",
+          "a": 23.83,
+          "g": "Home & car loans"
+        },
+        {
+          "d": "05-20",
+          "n": "Netlify Fy",
+          "a": 9,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "05-20",
+          "n": "BP",
+          "a": 68.95,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "05-20",
+          "n": "Hotbreads",
+          "a": 167.48,
+          "g": "Restaurants"
+        },
+        {
+          "d": "05-21",
+          "n": "CVS ExtraCare",
+          "a": 5.33,
+          "g": "Healthcare"
+        },
+        {
+          "d": "05-22",
+          "n": "Arusuvai",
+          "a": 111.28,
+          "g": "Restaurants"
+        },
+        {
+          "d": "05-22",
+          "n": "Zelle payment to Tere Cleaning Lady for \"Maycleani",
+          "a": 125,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "05-22",
+          "n": "Patidar Supermarket",
+          "a": 121.51,
+          "g": "Groceries"
+        },
+        {
+          "d": "05-23",
+          "n": "Domino's",
+          "a": 143,
+          "g": "Restaurants"
+        },
+        {
+          "d": "05-23",
+          "n": "Claude.ai",
+          "a": 100,
+          "g": "AI tools"
+        },
+        {
+          "d": "05-24",
+          "n": "Apple",
+          "a": 127.94,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-24",
+          "n": "Amazon",
+          "a": 29.99,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-24",
+          "n": "Commerce Center Stm",
+          "a": 12.78,
+          "g": "Entertainment"
+        },
+        {
+          "d": "05-25",
+          "n": "Amazon",
+          "a": 15.91,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-25",
+          "n": "The Home Depot",
+          "a": 233.34,
+          "g": "Home projects"
+        },
+        {
+          "d": "05-25",
+          "n": "Thanjai Mess Fsr",
+          "a": 46.88,
+          "g": "Restaurants"
+        },
+        {
+          "d": "05-25",
+          "n": "Bereket Marketplace",
+          "a": 12.94,
+          "g": "Groceries"
+        },
+        {
+          "d": "05-25",
+          "n": "Regal Cinemas",
+          "a": 28.24,
+          "g": "Entertainment"
+        },
+        {
+          "d": "05-26",
+          "n": "Rita's",
+          "a": 22.24,
+          "g": "Restaurants"
+        },
+        {
+          "d": "05-26",
+          "n": "Zelle payment to Rakesh Conf# zqhe88sbn",
+          "a": 54,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "05-27",
+          "n": "NORTH BRUNSWICK FAMILY DENORTH BRUNSWINJ",
+          "a": -290.46,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "05-27",
+          "n": "Amazon",
+          "a": 28.95,
+          "g": "Shopping"
+        },
+        {
+          "d": "05-27",
+          "n": "ShopRite",
+          "a": 11.98,
+          "g": "Groceries"
+        },
+        {
+          "d": "05-27",
+          "n": "Walmart",
+          "a": -7.45,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "05-28",
+          "n": "Patidar Supermarket",
+          "a": 1.68,
+          "g": "Groceries"
+        },
+        {
+          "d": "05-28",
+          "n": "Kendall Park Primary Care - Primary Care Partners ",
+          "a": 20,
+          "g": "Healthcare"
+        },
+        {
+          "d": "05-28",
+          "n": "Walgreens",
+          "a": 3.26,
+          "g": "Healthcare"
+        },
+        {
+          "d": "05-29",
+          "n": "Patidar Supermarket Nort",
+          "a": 91.3,
+          "g": "Groceries"
+        },
+        {
+          "d": "05-29",
+          "n": "ShopRite",
+          "a": 32.18,
+          "g": "Groceries"
+        },
+        {
+          "d": "05-30",
+          "n": "Shaan Halal Meat Market",
+          "a": 47.44,
+          "g": "Groceries"
+        },
+        {
+          "d": "05-30",
+          "n": "Sunoco",
+          "a": 77.61,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "05-31",
+          "n": "Apple",
+          "a": 5.32,
+          "g": "Shopping"
+        }
+      ],
+      "tx_moved": [],
       "days": 31,
       "days_in_month": 31
     },
@@ -15231,7 +15848,7 @@
       "big": [
         {
           "date": "2026-06-08",
-          "desc": "CHECKCARD 0605 KIDS SMILE SOUTH BRUNSWINJ XXXXX9761XXXXXXXXX",
+          "desc": "Kids Smile Dentistry",
           "amount": 1042
         }
       ],
@@ -15263,26 +15880,800 @@
       "loan_items": [
         {
           "date": "2026-06-23",
-          "desc": "KMF DES:KMFUSA.com ID:XXXXX17265 INDN:VIMAL LOGANATHAN CO ID",
+          "desc": "Kia Motors Finance",
           "amount": 631.65
         },
         {
           "date": "2026-06-12",
-          "desc": "ROCKET MORTGAGE DES:LOAN ID:6247993 INDN:VIMAL RAJ *LOGANATH",
+          "desc": "Rocket Mortgage",
           "amount": 3800.14
         },
         {
           "date": "2026-06-16",
-          "desc": "SP+AFF* TITANWATCHESUS AFFIRM.COM",
+          "desc": "Affirm",
           "amount": 23.84
         },
         {
           "date": "2026-06-02",
-          "desc": "SP+AFF* TITANWATCHESUS AFFIRM.COM",
+          "desc": "Affirm",
           "amount": 23.83
         }
       ],
       "bounced": [],
+      "tx_in": [
+        {
+          "d": "06-03",
+          "n": "TD ZELLE RECEIVED 615400B0BXTY Zelle RAKESH KUMAR ",
+          "a": 88,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "06-05",
+          "n": "VERIZON V3 DES:DIR DEP ID:NJ2551601 INDN:LOGANATHA",
+          "a": 3978.43,
+          "g": "Salary"
+        },
+        {
+          "d": "06-05",
+          "n": "VERIZON V3 DIR DEP 053026 NJ2551601 LOGANATHAN,VIM",
+          "a": 500,
+          "g": "Salary"
+        },
+        {
+          "d": "06-05",
+          "n": "WIPRO LTD DES:PAYROLL ID:XXXXX2628157ZSL INDN:VIST",
+          "a": 3475.58,
+          "g": "Salary"
+        },
+        {
+          "d": "06-18",
+          "n": "VERIZON V3 DES:DIR DEP ID:NJ2551601 INDN:LOGANATHA",
+          "a": 3978.45,
+          "g": "Salary"
+        },
+        {
+          "d": "06-18",
+          "n": "VERIZON V3 DIR DEP 061326 NJ2551601 LOGANATHAN,VIM",
+          "a": 500,
+          "g": "Salary"
+        },
+        {
+          "d": "06-18",
+          "n": "WIPRO LTD DES:PAYROLL ID:XXXXX8326495ZSL INDN:VIST",
+          "a": 3475.57,
+          "g": "Salary"
+        },
+        {
+          "d": "06-26",
+          "n": "Interest Earned",
+          "a": 0.02,
+          "g": "Salary"
+        },
+        {
+          "d": "06-30",
+          "n": "ZEL FROM DEEPAK REDDY DEVULAPALLY",
+          "a": 40.71,
+          "g": "Other money in"
+        }
+      ],
+      "tx_out": [
+        {
+          "d": "06-01",
+          "n": "Optimum",
+          "a": 50.66,
+          "g": "Bills & utilities"
+        },
+        {
+          "d": "06-01",
+          "n": "Renaissance Gree",
+          "a": 115,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "06-01",
+          "n": "Public Service",
+          "a": 190.62,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "06-01",
+          "n": "Big Blue Swim School",
+          "a": 266,
+          "g": "Kids"
+        },
+        {
+          "d": "06-01",
+          "n": "Desi Chowrastha",
+          "a": 65.33,
+          "g": "Restaurants"
+        },
+        {
+          "d": "06-01",
+          "n": "Kumon North America Inc",
+          "a": 280,
+          "g": "Kids"
+        },
+        {
+          "d": "06-01",
+          "n": "Great Adventure Admiss",
+          "a": 170.61,
+          "g": "Entertainment"
+        },
+        {
+          "d": "06-01",
+          "n": "Great Adventure Merch",
+          "a": 5.85,
+          "g": "Shopping"
+        },
+        {
+          "d": "06-01",
+          "n": "Great Adventure Merch",
+          "a": 5.85,
+          "g": "Shopping"
+        },
+        {
+          "d": "06-02",
+          "n": "Affirm",
+          "a": 23.83,
+          "g": "Home & car loans"
+        },
+        {
+          "d": "06-03",
+          "n": "Amazon",
+          "a": -46.99,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "06-03",
+          "n": "Amazon",
+          "a": 4.59,
+          "g": "Shopping"
+        },
+        {
+          "d": "06-03",
+          "n": "Best Buy",
+          "a": 31.98,
+          "g": "Shopping"
+        },
+        {
+          "d": "06-03",
+          "n": "Delight Big Bazar",
+          "a": 15.53,
+          "g": "Groceries"
+        },
+        {
+          "d": "06-04",
+          "n": "Amazon",
+          "a": 15.98,
+          "g": "Shopping"
+        },
+        {
+          "d": "06-05",
+          "n": "Apple",
+          "a": 8.52,
+          "g": "Shopping"
+        },
+        {
+          "d": "06-05",
+          "n": "MAINTENANCE FEE",
+          "a": 25,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "06-05",
+          "n": "ShopRite",
+          "a": 69.8,
+          "g": "Groceries"
+        },
+        {
+          "d": "06-05",
+          "n": "QuickChek",
+          "a": 57.64,
+          "g": "Shopping"
+        },
+        {
+          "d": "06-05",
+          "n": "Vrz Br Cafe",
+          "a": 2.67,
+          "g": "Restaurants"
+        },
+        {
+          "d": "06-06",
+          "n": "Hindu American Temple An",
+          "a": 68,
+          "g": "Tax/Professional"
+        },
+        {
+          "d": "06-06",
+          "n": "House of Biryani's and Kebabs",
+          "a": 72.47,
+          "g": "Restaurants"
+        },
+        {
+          "d": "06-08",
+          "n": "Canva",
+          "a": 1,
+          "g": "Shopping"
+        },
+        {
+          "d": "06-08",
+          "n": "Amazon",
+          "a": 49.36,
+          "g": "Shopping"
+        },
+        {
+          "d": "06-08",
+          "n": "Simplytrawell",
+          "a": 59.9,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "06-08",
+          "n": "Simplytrawell",
+          "a": 59.9,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "06-08",
+          "n": "Kids Smile Dentistry",
+          "a": 1042,
+          "g": "Healthcare"
+        },
+        {
+          "d": "06-09",
+          "n": "Netflix",
+          "a": 21.31,
+          "g": "Entertainment"
+        },
+        {
+          "d": "06-09",
+          "n": "Apple",
+          "a": 3.19,
+          "g": "Shopping"
+        },
+        {
+          "d": "06-09",
+          "n": "Canva* paAAAHGAKT3IZY7Q Kent DE",
+          "a": -1,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "06-09",
+          "n": "Vfs Services Usa Inc.",
+          "a": 229.29,
+          "g": "Tax/Professional"
+        },
+        {
+          "d": "06-09",
+          "n": "Vfs Services Usa Inc.",
+          "a": 281.16,
+          "g": "Tax/Professional"
+        },
+        {
+          "d": "06-09",
+          "n": "Kd Consultancy LLC",
+          "a": 28,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "06-10",
+          "n": "ShopRite",
+          "a": 4.25,
+          "g": "Groceries"
+        },
+        {
+          "d": "06-11",
+          "n": "Everwash",
+          "a": 55.45,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "06-11",
+          "n": "Atul Bakery - North Brunswick Township",
+          "a": 12.48,
+          "g": "Bills & utilities"
+        },
+        {
+          "d": "06-12",
+          "n": "Rocket Mortgage",
+          "a": 3800.14,
+          "g": "Home & car loans"
+        },
+        {
+          "d": "06-12",
+          "n": "Vzn Br Cafe",
+          "a": 14.06,
+          "g": "Restaurants"
+        },
+        {
+          "d": "06-13",
+          "n": "Google One",
+          "a": 1.99,
+          "g": "Entertainment"
+        },
+        {
+          "d": "06-13",
+          "n": "Avis",
+          "a": 160.89,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "06-13",
+          "n": "Macy's",
+          "a": 19.24,
+          "g": "Shopping"
+        },
+        {
+          "d": "06-13",
+          "n": "Macy's",
+          "a": 37.31,
+          "g": "Shopping"
+        },
+        {
+          "d": "06-14",
+          "n": "Apple",
+          "a": 31.98,
+          "g": "Shopping"
+        },
+        {
+          "d": "06-14",
+          "n": "Uber",
+          "a": 31.94,
+          "g": "Tax/Professional"
+        },
+        {
+          "d": "06-14",
+          "n": "Dunkin'",
+          "a": 17.86,
+          "g": "Restaurants"
+        },
+        {
+          "d": "06-14",
+          "n": "Replit Inc.",
+          "a": 55.52,
+          "g": "AI tools"
+        },
+        {
+          "d": "06-14",
+          "n": "Walgreens",
+          "a": 18.12,
+          "g": "Healthcare"
+        },
+        {
+          "d": "06-15",
+          "n": "Zelle payment to KAVI MUSIC LLC for \"Aryan fee inv",
+          "a": 180,
+          "g": "Entertainment"
+        },
+        {
+          "d": "06-16",
+          "n": "Verizon",
+          "a": 391.6,
+          "g": "Bills & utilities"
+        },
+        {
+          "d": "06-16",
+          "n": "Affirm",
+          "a": 23.84,
+          "g": "Home & car loans"
+        },
+        {
+          "d": "06-16",
+          "n": "CVS",
+          "a": 5.38,
+          "g": "Healthcare"
+        },
+        {
+          "d": "06-17",
+          "n": "Planet Fitness",
+          "a": 10.66,
+          "g": "Healthcare"
+        },
+        {
+          "d": "06-17",
+          "n": "CHECKCARD 0616 KIDS SMILE SOUTH BRUNSWINJ XXXXX976",
+          "a": -293.8,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "06-18",
+          "n": "Zelle payment to Rakesh Gallannagari for \"Poker\"; ",
+          "a": 30,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "06-18",
+          "n": "Simplisafe",
+          "a": 35.18,
+          "g": "Shopping"
+        },
+        {
+          "d": "06-20",
+          "n": "Hotelcom",
+          "a": 234.46,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "06-20",
+          "n": "Netlify Fy",
+          "a": 9,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "06-21",
+          "n": "Amazon",
+          "a": 50,
+          "g": "Shopping"
+        },
+        {
+          "d": "06-21",
+          "n": "Amazon",
+          "a": 23.83,
+          "g": "Shopping"
+        },
+        {
+          "d": "06-21",
+          "n": "Amazon",
+          "a": 41.58,
+          "g": "Shopping"
+        },
+        {
+          "d": "06-21",
+          "n": "CVS ExtraCare",
+          "a": 5.33,
+          "g": "Healthcare"
+        },
+        {
+          "d": "06-21",
+          "n": "BP",
+          "a": 67.38,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "06-22",
+          "n": "NJ E-ZPass",
+          "a": 25,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "06-22",
+          "n": "Delight Big Bazar",
+          "a": 90.7,
+          "g": "Groceries"
+        },
+        {
+          "d": "06-22",
+          "n": "*****_*****",
+          "a": 14.07,
+          "g": "Shopping"
+        },
+        {
+          "d": "06-22",
+          "n": "Nokia Of America Corpo",
+          "a": 9.99,
+          "g": "Shopping"
+        },
+        {
+          "d": "06-23",
+          "n": "Kia Motors Finance",
+          "a": 631.65,
+          "g": "Home & car loans"
+        },
+        {
+          "d": "06-23",
+          "n": "COMMUNITYPASS SERV FEE COMMUNITYPASSGA",
+          "a": 2.75,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "06-23",
+          "n": "COMMUNITYPASS SERV FEE COMMUNITYPASSGA",
+          "a": 4.4,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "06-23",
+          "n": "REC",
+          "a": 110,
+          "g": "Entertainment"
+        },
+        {
+          "d": "06-23",
+          "n": "REC",
+          "a": 176,
+          "g": "Entertainment"
+        },
+        {
+          "d": "06-23",
+          "n": "Claude Sub Anthropic.comca",
+          "a": 100,
+          "g": "AI tools"
+        },
+        {
+          "d": "06-23",
+          "n": "Walmart",
+          "a": 56.18,
+          "g": "Shopping"
+        },
+        {
+          "d": "06-24",
+          "n": "Amazon",
+          "a": 53.3,
+          "g": "Shopping"
+        },
+        {
+          "d": "06-24",
+          "n": "VFS Services USA Inc. Washington DCDC",
+          "a": -202,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "06-24",
+          "n": "VFS Services USA Inc. Washington DCDC",
+          "a": -252,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "06-24",
+          "n": "Sr Medical Center",
+          "a": 25,
+          "g": "Healthcare"
+        },
+        {
+          "d": "06-24",
+          "n": "Walmart",
+          "a": -4.97,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "06-25",
+          "n": "Apple",
+          "a": 5.32,
+          "g": "Shopping"
+        },
+        {
+          "d": "06-25",
+          "n": "Regal Cinemas",
+          "a": 28.24,
+          "g": "Entertainment"
+        },
+        {
+          "d": "06-25",
+          "n": "Vzn Br Cafe",
+          "a": 2.51,
+          "g": "Restaurants"
+        },
+        {
+          "d": "06-25",
+          "n": "Vrz Br Cafe",
+          "a": 12.48,
+          "g": "Restaurants"
+        },
+        {
+          "d": "06-26",
+          "n": "Vfs Services Usa Inc.",
+          "a": 255.23,
+          "g": "Tax/Professional"
+        },
+        {
+          "d": "06-26",
+          "n": "Vfs Services Usa Inc.",
+          "a": 229.29,
+          "g": "Tax/Professional"
+        },
+        {
+          "d": "06-26",
+          "n": "Walgreens",
+          "a": 30.4,
+          "g": "Healthcare"
+        },
+        {
+          "d": "06-26",
+          "n": "Simplytrawell",
+          "a": 59.9,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "06-26",
+          "n": "Simplytrawell",
+          "a": 59.9,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "06-26",
+          "n": "Vrz Br Cafe",
+          "a": 14.06,
+          "g": "Restaurants"
+        },
+        {
+          "d": "06-27",
+          "n": "NJ 365 Urgent Care",
+          "a": 50,
+          "g": "Healthcare"
+        },
+        {
+          "d": "06-27",
+          "n": "Walgreens",
+          "a": 18.12,
+          "g": "Healthcare"
+        },
+        {
+          "d": "06-27",
+          "n": "Walgreens",
+          "a": 3.46,
+          "g": "Healthcare"
+        },
+        {
+          "d": "06-27",
+          "n": "Dollar Tree",
+          "a": 24.52,
+          "g": "Shopping"
+        },
+        {
+          "d": "06-27",
+          "n": "House of Biryani's and Kebabs",
+          "a": 90.59,
+          "g": "Restaurants"
+        },
+        {
+          "d": "06-27",
+          "n": "ShopRite",
+          "a": 52.93,
+          "g": "Groceries"
+        },
+        {
+          "d": "06-28",
+          "n": "Amazon",
+          "a": 37.69,
+          "g": "Shopping"
+        },
+        {
+          "d": "06-28",
+          "n": "Netlify Fy",
+          "a": 5,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "06-28",
+          "n": "Walgreens",
+          "a": 6.38,
+          "g": "Healthcare"
+        },
+        {
+          "d": "06-28",
+          "n": "UPS",
+          "a": 31.07,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "06-29",
+          "n": "Avis",
+          "a": 11.95,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "06-29",
+          "n": "Zelle payment to Naypex Conf# ufdqdzo8l",
+          "a": 48,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "06-29",
+          "n": "Garden Farm",
+          "a": 74.78,
+          "g": "Shopping"
+        },
+        {
+          "d": "06-30",
+          "n": "Netlify Fy",
+          "a": 5,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "06-30",
+          "n": "Netlify Fy",
+          "a": 5,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "06-30",
+          "n": "ShopRite",
+          "a": 9,
+          "g": "Groceries"
+        },
+        {
+          "d": "06-30",
+          "n": "Delight Big Bazar",
+          "a": 27.44,
+          "g": "Groceries"
+        }
+      ],
+      "tx_moved": [
+        {
+          "d": "06-01",
+          "n": "XOOM DES:DEBIT O ID:XXXXXXXXXX19141 INDN:LOGANATHA",
+          "a": 353.19,
+          "g": "To India"
+        },
+        {
+          "d": "06-01",
+          "n": "XOOM DES:DEBIT O ID:XXXXXXXXXX19190 INDN:LOGANATHA",
+          "a": 702.69,
+          "g": "To India"
+        },
+        {
+          "d": "06-03",
+          "n": "Robinhood",
+          "a": 253.12,
+          "g": "To Robinhood"
+        },
+        {
+          "d": "06-05",
+          "n": "Robinhood",
+          "a": 5000,
+          "g": "To Robinhood"
+        },
+        {
+          "d": "06-05",
+          "n": "Robinhood",
+          "a": 100,
+          "g": "To Robinhood"
+        },
+        {
+          "d": "06-09",
+          "n": "Grok Xai",
+          "a": 30,
+          "g": "To Robinhood"
+        },
+        {
+          "d": "06-10",
+          "n": "Remitly",
+          "a": 1000,
+          "g": "To India"
+        },
+        {
+          "d": "06-11",
+          "n": "Robinhood",
+          "a": 14900,
+          "g": "To Robinhood"
+        },
+        {
+          "d": "06-12",
+          "n": "Remitly",
+          "a": 8000,
+          "g": "To India"
+        },
+        {
+          "d": "06-16",
+          "n": "Robinhood",
+          "a": 100,
+          "g": "To Robinhood"
+        },
+        {
+          "d": "06-22",
+          "n": "Robinhood",
+          "a": 100,
+          "g": "To Robinhood"
+        },
+        {
+          "d": "06-22",
+          "n": "XOOM DES:DEBIT O ID:XXXXXXXXXX25724 INDN:LOGANATHA",
+          "a": 511.99,
+          "g": "To India"
+        },
+        {
+          "d": "06-22",
+          "n": "Robinhood",
+          "a": 614.99,
+          "g": "To Robinhood"
+        },
+        {
+          "d": "06-23",
+          "n": "Robinhood",
+          "a": 100,
+          "g": "To Robinhood"
+        }
+      ],
       "days": 30,
       "days_in_month": 30
     },
@@ -15399,18 +16790,18 @@
       "loan_items": [
         {
           "date": "2026-07-23",
-          "desc": "KMF DES:KMFUSA.com ID:XXXXX17265 INDN:VIMAL LOGANATHAN CO ID",
+          "desc": "Kia Motors Finance",
           "amount": 631.65
         },
         {
           "date": "2026-07-16",
-          "desc": "ROCKET MORTGAGE DES:RETRY PYMT ID:6966478 INDN:VIMAL RAJ *LO",
+          "desc": "Rocket Mortgage",
           "amount": 3800.14,
           "reversed": true
         },
         {
           "date": "2026-07-13",
-          "desc": "ROCKET MORTGAGE DES:LOAN ID:6966478 INDN:VIMAL RAJ *LOGANATH",
+          "desc": "Rocket Mortgage",
           "amount": 3800.14
         }
       ],
@@ -15419,6 +16810,864 @@
           "date": "2026-07-14",
           "desc": "RETURN OF POSTED CHECK / ITEM (RECEIVED ON 07-13) ELECTRONIC",
           "amount": 3800.14
+        }
+      ],
+      "tx_in": [
+        {
+          "d": "07-02",
+          "n": "VERIZON V3 DES:DIR DEP ID:NJ2551601 INDN:LOGANATHA",
+          "a": 3978.43,
+          "g": "Salary"
+        },
+        {
+          "d": "07-02",
+          "n": "VERIZON V3 DIR DEP 062726 NJ2551601 LOGANATHAN,VIM",
+          "a": 500,
+          "g": "Salary"
+        },
+        {
+          "d": "07-02",
+          "n": "WIPRO LTD DES:PAYROLL ID:XXXXX7041016ZSL INDN:VIST",
+          "a": 3475.58,
+          "g": "Salary"
+        },
+        {
+          "d": "07-03",
+          "n": "TD ZELLE RECEIVED 618400D00EKH Zelle RAKESH KUMAR ",
+          "a": 88,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "07-03",
+          "n": "Zelle payment from RAKESH VISTARAKULA for \"Nagasri",
+          "a": 160,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "07-16",
+          "n": "Zelle payment from VENKATESH KASANAGOTTU Conf# 0GB",
+          "a": 1200,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "07-17",
+          "n": "VERIZON V3 DES:DIR DEP ID:NJ2551601 INDN:LOGANATHA",
+          "a": 3978.44,
+          "g": "Salary"
+        },
+        {
+          "d": "07-17",
+          "n": "Mercury Insuranc DES:Deposit ID:8b6860f7-a49a-4 IN",
+          "a": 3077.97,
+          "g": "Other money in"
+        },
+        {
+          "d": "07-17",
+          "n": "VERIZON V3 DIR DEP 071126 NJ2551601 LOGANATHAN,VIM",
+          "a": 500,
+          "g": "Salary"
+        },
+        {
+          "d": "07-17",
+          "n": "Zelle payment from VENKATESH KASANAGOTTU Conf# 0YB",
+          "a": 300,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "07-17",
+          "n": "WIPRO LTD DES:PAYROLL ID:XXXXX5136112ZSL INDN:VIST",
+          "a": 3475.59,
+          "g": "Salary"
+        },
+        {
+          "d": "07-23",
+          "n": "Interest Earned",
+          "a": 0.03,
+          "g": "Salary"
+        },
+        {
+          "d": "07-24",
+          "n": "ZELLE FROM AHMED MOHAMMED ON 07/24 REF # BACAN9A28",
+          "a": 274.96,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "07-28",
+          "n": "ZELLE FROM DEEPAK REDDY DEVULAPALLY ON 07/27 REF #",
+          "a": 40.71,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "07-29",
+          "n": "Interest Earned",
+          "a": 0.01,
+          "g": "Salary"
+        },
+        {
+          "d": "07-31",
+          "n": "VERIZON V3 DES:DIR DEP ID:NJ2551601 INDN:LOGANATHA",
+          "a": 3978.44,
+          "g": "Salary"
+        },
+        {
+          "d": "07-31",
+          "n": "VERIZON V3 DIR DEP 072526 NJ2551601 LOGANATHAN,VIM",
+          "a": 500,
+          "g": "Salary"
+        },
+        {
+          "d": "07-31",
+          "n": "WIPRO LTD DES:PAYROLL ID:XXXXX1096653ZSL INDN:VIST",
+          "a": 3475.57,
+          "g": "Salary"
+        }
+      ],
+      "tx_out": [
+        {
+          "d": "07-01",
+          "n": "OVERDRAFT ITEM FEE FOR ACTIVITY OF 07-01 ELECTRONI",
+          "a": 10,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "07-01",
+          "n": "OVERDRAFT ITEM FEE FOR ACTIVITY OF 07-01 ELECTRONI",
+          "a": 10,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "07-01",
+          "n": "Optimum",
+          "a": 50.66,
+          "g": "Bills & utilities"
+        },
+        {
+          "d": "07-01",
+          "n": "Renaissance Gree",
+          "a": 115,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "07-01",
+          "n": "Big Blue Swim School",
+          "a": 332.5,
+          "g": "Kids"
+        },
+        {
+          "d": "07-01",
+          "n": "The Music Shop",
+          "a": 43.71,
+          "g": "Entertainment"
+        },
+        {
+          "d": "07-01",
+          "n": "Kumon North America Inc",
+          "a": 280,
+          "g": "Kids"
+        },
+        {
+          "d": "07-01",
+          "n": "VP Racing Fuels",
+          "a": 53.94,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "07-01",
+          "n": "Shaan Halal Meats & Grill",
+          "a": 46,
+          "g": "Restaurants"
+        },
+        {
+          "d": "07-01",
+          "n": "MERCURY*MICIL-IL-NJPPA",
+          "a": -1.71,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "07-02",
+          "n": "Twp of North Bru DES:XXXXX70922 ID:XXXXX22978 INDN",
+          "a": 141.22,
+          "g": "Bills & utilities"
+        },
+        {
+          "d": "07-02",
+          "n": "Public Service",
+          "a": 219.21,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "07-02",
+          "n": "Zelle payment to Tere Cleaning Lady Conf# xjvqyie8",
+          "a": 150,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "07-02",
+          "n": "Walmart",
+          "a": 37.82,
+          "g": "Shopping"
+        },
+        {
+          "d": "07-02",
+          "n": "HBO Max",
+          "a": 78.99,
+          "g": "Entertainment"
+        },
+        {
+          "d": "07-02",
+          "n": "Vzn Br Cafe",
+          "a": 2.87,
+          "g": "Restaurants"
+        },
+        {
+          "d": "07-03",
+          "n": "MAINTENANCE FEE",
+          "a": 25,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "07-03",
+          "n": "Zelle payment to Naypex Conf# uqgvjkvmo",
+          "a": 160,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "07-03",
+          "n": "Regal Cinemas",
+          "a": 18.65,
+          "g": "Entertainment"
+        },
+        {
+          "d": "07-04",
+          "n": "Zara",
+          "a": 212.73,
+          "g": "Shopping"
+        },
+        {
+          "d": "07-04",
+          "n": "Avis",
+          "a": 87.92,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "07-04",
+          "n": "Feg LLC",
+          "a": 5,
+          "g": "Entertainment"
+        },
+        {
+          "d": "07-05",
+          "n": "NJ E-ZPass",
+          "a": 25,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "07-06",
+          "n": "Zelle payment to Prasad cricket for \"Aryan Q3\"; Co",
+          "a": 456,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "07-06",
+          "n": "Simplytrawell",
+          "a": 59.9,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "07-06",
+          "n": "Patidar Supermarket",
+          "a": 259.25,
+          "g": "Groceries"
+        },
+        {
+          "d": "07-07",
+          "n": "Vfs Services Usa Inc.",
+          "a": 281.16,
+          "g": "Tax/Professional"
+        },
+        {
+          "d": "07-07",
+          "n": "Delight Big Bazar",
+          "a": 44.53,
+          "g": "Groceries"
+        },
+        {
+          "d": "07-07",
+          "n": "Atul Bakery - North Brunswick Township",
+          "a": 27.71,
+          "g": "Bills & utilities"
+        },
+        {
+          "d": "07-08",
+          "n": "Amazon",
+          "a": 28.46,
+          "g": "Shopping"
+        },
+        {
+          "d": "07-08",
+          "n": "Fragomen",
+          "a": 855,
+          "g": "Legal/immigration"
+        },
+        {
+          "d": "07-08",
+          "n": "VFS Services USA Inc. Washington DCDC",
+          "a": -202,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "07-08",
+          "n": "Deccan Halal Mart",
+          "a": 40.75,
+          "g": "Groceries"
+        },
+        {
+          "d": "07-08",
+          "n": "Walmart",
+          "a": 52.22,
+          "g": "Shopping"
+        },
+        {
+          "d": "07-09",
+          "n": "Netflix",
+          "a": 21.31,
+          "g": "Entertainment"
+        },
+        {
+          "d": "07-09",
+          "n": "Amazon",
+          "a": 32.62,
+          "g": "Shopping"
+        },
+        {
+          "d": "07-09",
+          "n": "Netlify Fy",
+          "a": 5,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "07-09",
+          "n": "Apple",
+          "a": 3.19,
+          "g": "Shopping"
+        },
+        {
+          "d": "07-09",
+          "n": "Anthropic Anthropic.comca",
+          "a": 10.02,
+          "g": "AI tools"
+        },
+        {
+          "d": "07-10",
+          "n": "MONTHLY SERVICE CHARGE VR",
+          "a": 7,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "07-10",
+          "n": "Vzn Br Cafe",
+          "a": 14.06,
+          "g": "Restaurants"
+        },
+        {
+          "d": "07-11",
+          "n": "PetSmart",
+          "a": 209.74,
+          "g": "Shopping"
+        },
+        {
+          "d": "07-11",
+          "n": "Everwash",
+          "a": 55.45,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "07-12",
+          "n": "Patidar Supermarket Nort",
+          "a": 142.29,
+          "g": "Groceries"
+        },
+        {
+          "d": "07-12",
+          "n": "Amazon",
+          "a": 53.3,
+          "g": "Shopping"
+        },
+        {
+          "d": "07-12",
+          "n": "Walgreens",
+          "a": 4.25,
+          "g": "Healthcare"
+        },
+        {
+          "d": "07-12",
+          "n": "Singas Famous Pizza",
+          "a": 22.97,
+          "g": "Restaurants"
+        },
+        {
+          "d": "07-12",
+          "n": "Dunkin'",
+          "a": 6.46,
+          "g": "Restaurants"
+        },
+        {
+          "d": "07-12",
+          "n": "ShopRite",
+          "a": 40.99,
+          "g": "Groceries"
+        },
+        {
+          "d": "07-13",
+          "n": "Rocket Mortgage",
+          "a": 3800.14,
+          "g": "Home & car loans"
+        },
+        {
+          "d": "07-13",
+          "n": "Google One",
+          "a": 1.99,
+          "g": "Entertainment"
+        },
+        {
+          "d": "07-13",
+          "n": "Apple",
+          "a": 105.56,
+          "g": "Entertainment"
+        },
+        {
+          "d": "07-13",
+          "n": "Shein",
+          "a": 37.87,
+          "g": "Shopping"
+        },
+        {
+          "d": "07-14",
+          "n": "Vrz Sbx Cafe",
+          "a": 12.48,
+          "g": "Restaurants"
+        },
+        {
+          "d": "07-14",
+          "n": "Taco Bell",
+          "a": 5,
+          "g": "Restaurants"
+        },
+        {
+          "d": "07-14",
+          "n": "Bounced — returned by bank",
+          "a": -3800.14,
+          "g": "Home & car loans"
+        },
+        {
+          "d": "07-15",
+          "n": "Netlify Fy",
+          "a": 5,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "07-15",
+          "n": "Amazon",
+          "a": 10.01,
+          "g": "Shopping"
+        },
+        {
+          "d": "07-15",
+          "n": "PetSmart",
+          "a": 17.04,
+          "g": "Shopping"
+        },
+        {
+          "d": "07-16",
+          "n": "Verizon",
+          "a": 395.34,
+          "g": "Bills & utilities"
+        },
+        {
+          "d": "07-16",
+          "n": "Rocket Mortgage",
+          "a": 3800.14,
+          "g": "Home & car loans"
+        },
+        {
+          "d": "07-16",
+          "n": "Amazon",
+          "a": 10.56,
+          "g": "Shopping"
+        },
+        {
+          "d": "07-16",
+          "n": "Amazon",
+          "a": 38.36,
+          "g": "Shopping"
+        },
+        {
+          "d": "07-16",
+          "n": "Walgreens",
+          "a": 103.75,
+          "g": "Healthcare"
+        },
+        {
+          "d": "07-16",
+          "n": "BofA Rewards-ATM Oper Rebate Refund of $3.75",
+          "a": -3.75,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "07-16",
+          "n": "Trader Joe's",
+          "a": 71.82,
+          "g": "Groceries"
+        },
+        {
+          "d": "07-16",
+          "n": "Gold Annual",
+          "a": 49,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "07-17",
+          "n": "Planet Fitness",
+          "a": 10.66,
+          "g": "Healthcare"
+        },
+        {
+          "d": "07-17",
+          "n": "Anthropic Anthropic.comca",
+          "a": 10.04,
+          "g": "AI tools"
+        },
+        {
+          "d": "07-17",
+          "n": "ShopRite",
+          "a": 2.49,
+          "g": "Groceries"
+        },
+        {
+          "d": "07-17",
+          "n": "Regal Cinemas",
+          "a": 2.12,
+          "g": "Entertainment"
+        },
+        {
+          "d": "07-18",
+          "n": "Simplisafe",
+          "a": 35.18,
+          "g": "Shopping"
+        },
+        {
+          "d": "07-19",
+          "n": "Hair Time Salon",
+          "a": 30,
+          "g": "Healthcare"
+        },
+        {
+          "d": "07-20",
+          "n": "Netlify Fy",
+          "a": 9,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "07-20",
+          "n": "Deccan Halal Mart",
+          "a": 12.06,
+          "g": "Groceries"
+        },
+        {
+          "d": "07-20",
+          "n": "Shein",
+          "a": 46.59,
+          "g": "Shopping"
+        },
+        {
+          "d": "07-21",
+          "n": "Cvsextracare",
+          "a": 5.33,
+          "g": "Healthcare"
+        },
+        {
+          "d": "07-21",
+          "n": "Patel Brothers",
+          "a": 80.59,
+          "g": "Groceries"
+        },
+        {
+          "d": "07-21",
+          "n": "Vzn Br Cafe",
+          "a": 14.06,
+          "g": "Restaurants"
+        },
+        {
+          "d": "07-21",
+          "n": "Gulf Oil",
+          "a": 73,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "07-22",
+          "n": "Amazon",
+          "a": 7.73,
+          "g": "Shopping"
+        },
+        {
+          "d": "07-22",
+          "n": "Nokia Of America Corpo",
+          "a": 9.99,
+          "g": "Shopping"
+        },
+        {
+          "d": "07-23",
+          "n": "PAYPAL DES:PURCHASE ID:FACEBOOKTEC INDN:VIMAL RAJ ",
+          "a": 10.65,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "07-23",
+          "n": "Kia Motors Finance",
+          "a": 631.65,
+          "g": "Home & car loans"
+        },
+        {
+          "d": "07-23",
+          "n": "Claude Sub Anthropic.comca",
+          "a": 100,
+          "g": "AI tools"
+        },
+        {
+          "d": "07-23",
+          "n": "CASH REWARDS STATEMENT CREDIT",
+          "a": -276.73,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "07-24",
+          "n": "Brilhante",
+          "a": 7.92,
+          "g": "Shopping"
+        },
+        {
+          "d": "07-24",
+          "n": "Garden Farm",
+          "a": 53.24,
+          "g": "Shopping"
+        },
+        {
+          "d": "07-24",
+          "n": "DoorDash",
+          "a": 76.7,
+          "g": "Food delivery"
+        },
+        {
+          "d": "07-24",
+          "n": "Buy Rite Renaissance",
+          "a": 21.85,
+          "g": "Restaurants"
+        },
+        {
+          "d": "07-25",
+          "n": "Regal Cinemas",
+          "a": 28.24,
+          "g": "Entertainment"
+        },
+        {
+          "d": "07-25",
+          "n": "Anthropic Anthropic.comca",
+          "a": 10.02,
+          "g": "AI tools"
+        },
+        {
+          "d": "07-25",
+          "n": "BP",
+          "a": 58.89,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "07-25",
+          "n": "ShopRite",
+          "a": 18.43,
+          "g": "Groceries"
+        },
+        {
+          "d": "07-25",
+          "n": "Chowpatty Sweets And Snacks",
+          "a": 51.75,
+          "g": "Restaurants"
+        },
+        {
+          "d": "07-26",
+          "n": "Polar",
+          "a": 20.26,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "07-26",
+          "n": "AMC Theatres",
+          "a": 49.01,
+          "g": "Entertainment"
+        },
+        {
+          "d": "07-27",
+          "n": "PAYPAL DES:PURCHASE ID:FACEBOOKTEC INDN:VIMAL RAJ ",
+          "a": 7.45,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "07-27",
+          "n": "Hulu",
+          "a": 12.78,
+          "g": "Entertainment"
+        },
+        {
+          "d": "07-27",
+          "n": "Zelle payment to Divya164 for \"Laddu\"; Conf# tvmqq",
+          "a": 70,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "07-27",
+          "n": "R K Jewels",
+          "a": 80,
+          "g": "Shopping"
+        },
+        {
+          "d": "07-27",
+          "n": "Walmart",
+          "a": 12.73,
+          "g": "Shopping"
+        },
+        {
+          "d": "07-28",
+          "n": "MINIMUM INTEREST CHARGE",
+          "a": 1,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "07-29",
+          "n": "ShopRite",
+          "a": 71.63,
+          "g": "Groceries"
+        },
+        {
+          "d": "07-30",
+          "n": "Zelle payment to Prudhvi 62 Conf# xh84wplml",
+          "a": 42,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "07-30",
+          "n": "Monthly Maintenance Fee",
+          "a": 8,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "07-30",
+          "n": "Zelle payment to Tere Cleaning Lady Conf# y8qn7626",
+          "a": 125,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "07-30",
+          "n": "Expedia",
+          "a": 642.18,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "07-30",
+          "n": "Expedia",
+          "a": 251.73,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "07-31",
+          "n": "ANNUAL FEE",
+          "a": 95,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "07-31",
+          "n": "Optimum",
+          "a": 50.66,
+          "g": "Bills & utilities"
+        },
+        {
+          "d": "07-31",
+          "n": "Renaissance Gree",
+          "a": 115,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "07-31",
+          "n": "Public Service",
+          "a": 272.41,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "07-31",
+          "n": "Vrz Br Cafe",
+          "a": 6.24,
+          "g": "Restaurants"
+        },
+        {
+          "d": "07-31",
+          "n": "Village Brewing Company",
+          "a": 77.7,
+          "g": "Restaurants"
+        }
+      ],
+      "tx_moved": [
+        {
+          "d": "07-02",
+          "n": "XOOM DES:DEBIT O ID:XXXXXXXXXX97713 INDN:LOGANATHA",
+          "a": 302.79,
+          "g": "To India"
+        },
+        {
+          "d": "07-02",
+          "n": "XOOM DES:DEBIT O ID:XXXXXXXXXX97694 INDN:LOGANATHA",
+          "a": 752.89,
+          "g": "To India"
+        },
+        {
+          "d": "07-03",
+          "n": "Robinhood",
+          "a": 100,
+          "g": "To Robinhood"
+        },
+        {
+          "d": "07-03",
+          "n": "Robinhood",
+          "a": 201.15,
+          "g": "To Robinhood"
+        },
+        {
+          "d": "07-09",
+          "n": "Grok Xai",
+          "a": 30,
+          "g": "To Robinhood"
+        },
+        {
+          "d": "07-16",
+          "n": "Robinhood",
+          "a": 100,
+          "g": "To Robinhood"
+        },
+        {
+          "d": "07-17",
+          "n": "Robinhood",
+          "a": 100,
+          "g": "To Robinhood"
+        },
+        {
+          "d": "07-23",
+          "n": "Robinhood",
+          "a": 100,
+          "g": "To Robinhood"
+        },
+        {
+          "d": "07-31",
+          "n": "Robinhood",
+          "a": 100,
+          "g": "To Robinhood"
         }
       ],
       "days": 31,
@@ -15516,7 +17765,7 @@
       "big": [
         {
           "date": "2026-08-24",
-          "desc": "RK JEWELS 08/22 #XXXXX5590 PURCHASE RK JEWELS",
+          "desc": "R K Jewels",
           "amount": 3730
         }
       ],
@@ -15556,18 +17805,18 @@
       "loan_items": [
         {
           "date": "2026-08-24",
-          "desc": "KMF DES:KMFUSA.com ID:XXXXX17265 INDN:VIMAL LOGANATHAN CO ID",
+          "desc": "Kia Motors Finance",
           "amount": 631.65
         },
         {
           "date": "2026-08-24",
-          "desc": "ROCKET MORTGAGE DES:LOAN ID:1516326 INDN:VIMAL RAJ *LOGANATH",
+          "desc": "Rocket Mortgage",
           "amount": 3800.14,
           "reversed": true
         },
         {
           "date": "2026-08-12",
-          "desc": "ROCKET MORTGAGE DES:LOAN ID:7948453 INDN:VIMAL RAJ *LOGANATH",
+          "desc": "Rocket Mortgage",
           "amount": 3800.14
         }
       ],
@@ -15576,6 +17825,1212 @@
           "date": "2026-08-13",
           "desc": "RETURN OF POSTED CHECK / ITEM (RECEIVED ON 08-12) ELECTRONIC",
           "amount": 3800.14
+        }
+      ],
+      "tx_in": [
+        {
+          "d": "08-03",
+          "n": "TD ZELLE RECEIVED 621500O023A1 Zelle RAKESH KUMAR ",
+          "a": 88,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "08-03",
+          "n": "Zelle payment from PRUDHVI ANANTHULA for \"POTLUCK ",
+          "a": 75,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "08-14",
+          "n": "VERIZON V3 DES:DIR DEP ID:NJ2551601 INDN:LOGANATHA",
+          "a": 3978.43,
+          "g": "Salary"
+        },
+        {
+          "d": "08-14",
+          "n": "VERIZON V3 DIR DEP 080826 NJ2551601 LOGANATHAN,VIM",
+          "a": 500,
+          "g": "Salary"
+        },
+        {
+          "d": "08-14",
+          "n": "WIPRO LTD DES:PAYROLL ID:XXXXX3325580ZSL INDN:VIST",
+          "a": 3475.58,
+          "g": "Salary"
+        },
+        {
+          "d": "08-19",
+          "n": "Mercury Insuranc DES:Deposit ID:5659de7c-5672-4 IN",
+          "a": 776.78,
+          "g": "Other money in"
+        },
+        {
+          "d": "08-21",
+          "n": "Interest Earned",
+          "a": 0.1,
+          "g": "Salary"
+        },
+        {
+          "d": "08-24",
+          "n": "ZELLE FROM PRADEEP CHELLUR ON 08/21 REF # JPM99CTY",
+          "a": 70,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "08-26",
+          "n": "ZELLE FROM RAJASEKHAR SALA ON 08/26 REF # PNCAA0CO",
+          "a": 16.2,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "08-28",
+          "n": "VERIZON V3 DES:DIR DEP ID:NJ2551601 INDN:LOGANATHA",
+          "a": 4024.62,
+          "g": "Salary"
+        },
+        {
+          "d": "08-28",
+          "n": "ZELLE FROM PRADEEP CHELLUR ON 08/28 REF # JPM99CUK",
+          "a": 20,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "08-28",
+          "n": "VERIZON V3 DIR DEP 082226 NJ2551601 LOGANATHAN,VIM",
+          "a": 500,
+          "g": "Salary"
+        },
+        {
+          "d": "08-28",
+          "n": "ZELLE FROM DEEPAK REDDY DEVULAPALLY ON 08/27 REF #",
+          "a": 40.71,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "08-28",
+          "n": "WIPRO LTD DES:PAYROLL ID:XXXXX1830229ZSL INDN:VIST",
+          "a": 3938.88,
+          "g": "Salary"
+        },
+        {
+          "d": "08-31",
+          "n": "Zelle payment from LAKSHMI Sowjanya CHINTA for \"Ba",
+          "a": 8,
+          "g": "Zelle from people"
+        }
+      ],
+      "tx_out": [
+        {
+          "d": "08-01",
+          "n": "VSI",
+          "a": 108,
+          "g": "Entertainment"
+        },
+        {
+          "d": "08-01",
+          "n": "Apple",
+          "a": 5.32,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-01",
+          "n": "NJ E-ZPass",
+          "a": 25,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "08-01",
+          "n": "Deccan Halal Mart",
+          "a": 16.03,
+          "g": "Groceries"
+        },
+        {
+          "d": "08-01",
+          "n": "Peregrineenterprises",
+          "a": 30,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-01",
+          "n": "Peregrineenterprises",
+          "a": 35,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-01",
+          "n": "AMC Theatres",
+          "a": 10.76,
+          "g": "Entertainment"
+        },
+        {
+          "d": "08-02",
+          "n": "Patel Brothers",
+          "a": 107.43,
+          "g": "Groceries"
+        },
+        {
+          "d": "08-02",
+          "n": "PetSmart",
+          "a": 60.71,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-03",
+          "n": "Planet Fitness",
+          "a": 52.25,
+          "g": "Healthcare"
+        },
+        {
+          "d": "08-03",
+          "n": "Twp of North Bru DES:XXXXX70922 ID:XXXXX76786 INDN",
+          "a": 91.34,
+          "g": "Bills & utilities"
+        },
+        {
+          "d": "08-03",
+          "n": "BKOFAMERICA ATM 07/31 #XXXXX8419 WITHDRWL SOMERVIL",
+          "a": 400,
+          "g": "Cash & other money out"
+        },
+        {
+          "d": "08-03",
+          "n": "NON-WELLS FARGO ATM TRANSACTION FEE",
+          "a": 3,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "08-03",
+          "n": "NON-WF ATM WITHDRAWAL AUTHORIZED ON 07/31 50 WEST ",
+          "a": 250,
+          "g": "Cash & other money out"
+        },
+        {
+          "d": "08-03",
+          "n": "Amazon",
+          "a": 11.49,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-03",
+          "n": "NJ E-ZPass",
+          "a": 25,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "08-03",
+          "n": "The Music Shop",
+          "a": 43.71,
+          "g": "Entertainment"
+        },
+        {
+          "d": "08-03",
+          "n": "Garden Farm",
+          "a": 52.01,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-03",
+          "n": "Anthropic Anthropic.comca",
+          "a": 10.03,
+          "g": "AI tools"
+        },
+        {
+          "d": "08-03",
+          "n": "Kumon North America Inc",
+          "a": 280,
+          "g": "Kids"
+        },
+        {
+          "d": "08-03",
+          "n": "East Brunswick Schools Administration",
+          "a": 11.3,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "08-03",
+          "n": "Skechers Warehouse Outlet",
+          "a": 79.99,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-03",
+          "n": "Habibi Motor Cafe",
+          "a": 20.79,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-04",
+          "n": "Wawa",
+          "a": 68.22,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "08-04",
+          "n": "PetSmart",
+          "a": 41.55,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-05",
+          "n": "MAINTENANCE FEE",
+          "a": 25,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "08-05",
+          "n": "Zinger Halal Express",
+          "a": 10.92,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-05",
+          "n": "Regal Cinemas",
+          "a": 1.59,
+          "g": "Entertainment"
+        },
+        {
+          "d": "08-05",
+          "n": "Regal Cinemas",
+          "a": 11.67,
+          "g": "Entertainment"
+        },
+        {
+          "d": "08-06",
+          "n": "E-ZPass MA",
+          "a": 25,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "08-06",
+          "n": "Netlify Fy",
+          "a": 5,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "08-07",
+          "n": "MIDDLESEX CO-1 08/07 #XXXXX9295 WITHDRWL MIDDLESEX",
+          "a": 2.5,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "08-07",
+          "n": "MIDDLESEX CO-1 08/07 #XXXXX9295 WITHDRWL MIDDLESEX",
+          "a": 103.99,
+          "g": "Cash & other money out"
+        },
+        {
+          "d": "08-07",
+          "n": "Commerce Center Stm",
+          "a": 11.72,
+          "g": "Entertainment"
+        },
+        {
+          "d": "08-07",
+          "n": "Commerce Center Stm",
+          "a": 9.59,
+          "g": "Entertainment"
+        },
+        {
+          "d": "08-07",
+          "n": "PetSmart",
+          "a": 38.34,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-08",
+          "n": "Patidar Supermarket",
+          "a": 18.98,
+          "g": "Groceries"
+        },
+        {
+          "d": "08-08",
+          "n": "Deccan Halal Mart",
+          "a": 16.7,
+          "g": "Groceries"
+        },
+        {
+          "d": "08-08",
+          "n": "Patidar Supermarket Nort",
+          "a": 126,
+          "g": "Groceries"
+        },
+        {
+          "d": "08-08",
+          "n": "Amazon",
+          "a": 30.91,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-08",
+          "n": "Amazon",
+          "a": 22.06,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-08",
+          "n": "Amazon",
+          "a": 34.09,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-08",
+          "n": "Thanjai Mess",
+          "a": 73.16,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-08",
+          "n": "Apna Bazaar Cash & Carry",
+          "a": 1.58,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-08",
+          "n": "Apna Bazaar Cash & Carry",
+          "a": 5.77,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-08",
+          "n": "Srishti",
+          "a": 44.21,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-09",
+          "n": "Greek Peak",
+          "a": 11.47,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-09",
+          "n": "greek peak",
+          "a": 16.2,
+          "g": "Healthcare"
+        },
+        {
+          "d": "08-09",
+          "n": "Apple",
+          "a": 3.19,
+          "g": "Entertainment"
+        },
+        {
+          "d": "08-09",
+          "n": "Taste Ny",
+          "a": 24,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-09",
+          "n": "Taste Ny",
+          "a": 2.97,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-10",
+          "n": "Netflix",
+          "a": 21.31,
+          "g": "Entertainment"
+        },
+        {
+          "d": "08-10",
+          "n": "Greek Peak",
+          "a": 9.72,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-10",
+          "n": "Greek Peak",
+          "a": 9.72,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-10",
+          "n": "Greek Peak",
+          "a": 43.2,
+          "g": "Entertainment"
+        },
+        {
+          "d": "08-10",
+          "n": "Walmart",
+          "a": 18.9,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-10",
+          "n": "hope lake",
+          "a": 61,
+          "g": "Healthcare"
+        },
+        {
+          "d": "08-10",
+          "n": "Anthropic Anthropic.comca",
+          "a": 10.03,
+          "g": "AI tools"
+        },
+        {
+          "d": "08-10",
+          "n": "Taste NY",
+          "a": 10,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-10",
+          "n": "Taste NY",
+          "a": 2.5,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-10",
+          "n": "Greekpeak",
+          "a": 140,
+          "g": "Entertainment"
+        },
+        {
+          "d": "08-11",
+          "n": "Greek Peak",
+          "a": 19.44,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-11",
+          "n": "Taughannock Concessi",
+          "a": 21,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-11",
+          "n": "Everwash",
+          "a": 55.45,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "08-11",
+          "n": "Taughannock Falls State Park",
+          "a": 10,
+          "g": "Entertainment"
+        },
+        {
+          "d": "08-12",
+          "n": "Rocket Mortgage",
+          "a": 3800.14,
+          "g": "Home & car loans"
+        },
+        {
+          "d": "08-12",
+          "n": "Watkins Glen-main",
+          "a": 40.88,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "08-12",
+          "n": "Dunkin'",
+          "a": 12.67,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-12",
+          "n": "Dunkin'",
+          "a": 3.98,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-12",
+          "n": "Mirabito",
+          "a": 70.37,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "08-12",
+          "n": "Watkins Glen Sp",
+          "a": 10,
+          "g": "Entertainment"
+        },
+        {
+          "d": "08-12",
+          "n": "The Corning Museum Of Gla",
+          "a": 82,
+          "g": "Entertainment"
+        },
+        {
+          "d": "08-12",
+          "n": "Kinney Drugs",
+          "a": 5.39,
+          "g": "Healthcare"
+        },
+        {
+          "d": "08-12",
+          "n": "MONTHLY SERVICE CHARGE VR",
+          "a": 7,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "08-12",
+          "n": "Walmart",
+          "a": 20.39,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-12",
+          "n": "Auburn Limousine",
+          "a": 14,
+          "g": "Tax/Professional"
+        },
+        {
+          "d": "08-13",
+          "n": "Dunkin'",
+          "a": 5.4,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-13",
+          "n": "Sangam Restaurant",
+          "a": 91.26,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-13",
+          "n": "Garden Farm",
+          "a": 49.07,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-13",
+          "n": "Walgreens",
+          "a": 10.24,
+          "g": "Healthcare"
+        },
+        {
+          "d": "08-13",
+          "n": "PetSmart",
+          "a": 6.39,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-13",
+          "n": "Netlify Fy",
+          "a": 5,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "08-13",
+          "n": "Brunswick Urgent Care",
+          "a": 50,
+          "g": "Healthcare"
+        },
+        {
+          "d": "08-13",
+          "n": "Corning Museum",
+          "a": 82.08,
+          "g": "Entertainment"
+        },
+        {
+          "d": "08-13",
+          "n": "Mirabito",
+          "a": 9.67,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "08-13",
+          "n": "Late Fee",
+          "a": 25,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "08-13",
+          "n": "Bounced — returned by bank",
+          "a": -3800.14,
+          "g": "Home & car loans"
+        },
+        {
+          "d": "08-14",
+          "n": "PetSmart",
+          "a": 10.65,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-14",
+          "n": "Zelle payment to Pratimaparlorzelle Conf# s7m713k0",
+          "a": 15,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "08-14",
+          "n": "DoorDash",
+          "a": 35.21,
+          "g": "Food delivery"
+        },
+        {
+          "d": "08-14",
+          "n": "Regal Cinemas",
+          "a": 2.12,
+          "g": "Entertainment"
+        },
+        {
+          "d": "08-14",
+          "n": "Raj Auto Center",
+          "a": 534.14,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "08-15",
+          "n": "Google One",
+          "a": 1.99,
+          "g": "Entertainment"
+        },
+        {
+          "d": "08-15",
+          "n": "Raj Auto Center",
+          "a": 89.13,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "08-15",
+          "n": "Deccan Halal Mart",
+          "a": 27.73,
+          "g": "Groceries"
+        },
+        {
+          "d": "08-15",
+          "n": "Long Branch Parking",
+          "a": 12,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "08-15",
+          "n": "Regal Cinemas",
+          "a": 2.12,
+          "g": "Entertainment"
+        },
+        {
+          "d": "08-15",
+          "n": "Chipotle Mexican Grill",
+          "a": 10.45,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-15",
+          "n": "Chipotle Mexican Grill",
+          "a": 3.41,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-15",
+          "n": "Chipotle Mexican Grill",
+          "a": 15.09,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-16",
+          "n": "Amazon",
+          "a": 25,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-16",
+          "n": "Commerce Center Stm",
+          "a": 11.5,
+          "g": "Entertainment"
+        },
+        {
+          "d": "08-16",
+          "n": "Avenue",
+          "a": 80.79,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-16",
+          "n": "CASH BACK REDEMPTION REF 206982087",
+          "a": -174.55,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "08-16",
+          "n": "Patel Brothers",
+          "a": 125.18,
+          "g": "Groceries"
+        },
+        {
+          "d": "08-17",
+          "n": "Planet Fitness",
+          "a": 10.66,
+          "g": "Healthcare"
+        },
+        {
+          "d": "08-17",
+          "n": "Verizon",
+          "a": 391.7,
+          "g": "Bills & utilities"
+        },
+        {
+          "d": "08-17",
+          "n": "Zelle payment to Divya Ria Hawthorne Road Conf# xd",
+          "a": 14,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "08-18",
+          "n": "Amazon",
+          "a": 33.71,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-18",
+          "n": "Simplisafe",
+          "a": 35.18,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-19",
+          "n": "Amazon",
+          "a": 38.3,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-19",
+          "n": "Anthropic Anthropic.comca",
+          "a": 10,
+          "g": "AI tools"
+        },
+        {
+          "d": "08-19",
+          "n": "ShopRite",
+          "a": 67.41,
+          "g": "Groceries"
+        },
+        {
+          "d": "08-20",
+          "n": "Vzn Br Cafe Basking",
+          "a": 12.48,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-20",
+          "n": "Amazon",
+          "a": 12.54,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-20",
+          "n": "Amazon",
+          "a": 11.72,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-20",
+          "n": "Amazon",
+          "a": 16.99,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-20",
+          "n": "Amazon",
+          "a": 21.39,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-20",
+          "n": "Netlify Fy",
+          "a": 9,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "08-20",
+          "n": "Deccan Halal Mart",
+          "a": 11.94,
+          "g": "Groceries"
+        },
+        {
+          "d": "08-20",
+          "n": "Sellabroad",
+          "a": 37.71,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "08-20",
+          "n": "Interest Charge",
+          "a": 44.26,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "08-21",
+          "n": "PAYPAL DES:PURCHASE ID:KTS INDN:VIMAL RAJ LOGANATH",
+          "a": 300,
+          "g": "Cash & other money out"
+        },
+        {
+          "d": "08-21",
+          "n": "Renaissance Buy Rite",
+          "a": 21.85,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-21",
+          "n": "Cvsextracare",
+          "a": 5.33,
+          "g": "Healthcare"
+        },
+        {
+          "d": "08-22",
+          "n": "Nj Motor Vehicle",
+          "a": 78.76,
+          "g": "Tax/Professional"
+        },
+        {
+          "d": "08-22",
+          "n": "House of Biryani's and Kebabs",
+          "a": 231.38,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-22",
+          "n": "BP",
+          "a": 57.57,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "08-22",
+          "n": "Progressive Insurance",
+          "a": 44.8,
+          "g": "Insurance"
+        },
+        {
+          "d": "08-22",
+          "n": "Patel Brothers",
+          "a": 20.99,
+          "g": "Groceries"
+        },
+        {
+          "d": "08-22",
+          "n": "Nokia Of America Corpo",
+          "a": 9.99,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-23",
+          "n": "Amazon",
+          "a": 10.65,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-23",
+          "n": "Amazon",
+          "a": 10.65,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-23",
+          "n": "Deccan Halal Mart",
+          "a": 19.39,
+          "g": "Groceries"
+        },
+        {
+          "d": "08-23",
+          "n": "Amazon",
+          "a": 19.67,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-23",
+          "n": "Amazon",
+          "a": 46.64,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-23",
+          "n": "BP",
+          "a": 66.33,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "08-23",
+          "n": "Claude Sub Anthropic.comca",
+          "a": 100,
+          "g": "AI tools"
+        },
+        {
+          "d": "08-24",
+          "n": "Kia Motors Finance",
+          "a": 631.65,
+          "g": "Home & car loans"
+        },
+        {
+          "d": "08-24",
+          "n": "Rocket Mortgage",
+          "a": 3800.14,
+          "g": "Home & car loans"
+        },
+        {
+          "d": "08-24",
+          "n": "Zelle payment to Naypex Conf# t2cxdi6xh",
+          "a": 16,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "08-24",
+          "n": "R K Jewels",
+          "a": 3730,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-25",
+          "n": "Apple",
+          "a": 31.99,
+          "g": "Entertainment"
+        },
+        {
+          "d": "08-25",
+          "n": "Regal Cinemas",
+          "a": 28.24,
+          "g": "Entertainment"
+        },
+        {
+          "d": "08-26",
+          "n": "Hulu",
+          "a": 12.78,
+          "g": "Entertainment"
+        },
+        {
+          "d": "08-26",
+          "n": "ShopRite",
+          "a": 13.85,
+          "g": "Groceries"
+        },
+        {
+          "d": "08-26",
+          "n": "Amazon",
+          "a": 106.61,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-26",
+          "n": "Amazon",
+          "a": 10.65,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-26",
+          "n": "Polar",
+          "a": 20.26,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "08-27",
+          "n": "DRIVEEZMD MPC",
+          "a": -50,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "08-27",
+          "n": "Amazon",
+          "a": 13.85,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-27",
+          "n": "Bikanervala",
+          "a": 31.13,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-27",
+          "n": "Zelle payment to Tere Cleaning Lady Conf# z7k9t7gd",
+          "a": 125,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "08-27",
+          "n": "Regal Cinemas",
+          "a": 2.12,
+          "g": "Entertainment"
+        },
+        {
+          "d": "08-28",
+          "n": "Monthly Maintenance Fee",
+          "a": 8,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "08-28",
+          "n": "ACCOUNT ADJUSTMENT",
+          "a": -1.99,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "08-28",
+          "n": "Anthropic Anthropic.comca",
+          "a": 10.04,
+          "g": "AI tools"
+        },
+        {
+          "d": "08-28",
+          "n": "Srishti",
+          "a": 23.45,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-28",
+          "n": "Srishti",
+          "a": 3.2,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-28",
+          "n": "Apna Bazaar Cash & Carry",
+          "a": 11.3,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-28",
+          "n": "Walmart",
+          "a": 40.27,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-29",
+          "n": "Patidar Supermarket",
+          "a": 18,
+          "g": "Groceries"
+        },
+        {
+          "d": "08-29",
+          "n": "GDP",
+          "a": 30.89,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-29",
+          "n": "ShopRite",
+          "a": 13.85,
+          "g": "Groceries"
+        },
+        {
+          "d": "08-29",
+          "n": "Apple",
+          "a": 5.32,
+          "g": "Entertainment"
+        },
+        {
+          "d": "08-29",
+          "n": "Walgreens",
+          "a": 50,
+          "g": "Healthcare"
+        },
+        {
+          "d": "08-29",
+          "n": "Vivek Flowers",
+          "a": 9.59,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-29",
+          "n": "Vivek Flowers",
+          "a": 23.45,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-30",
+          "n": "Walmart",
+          "a": 124.3,
+          "g": "Shopping"
+        },
+        {
+          "d": "08-30",
+          "n": "Netlify Fy",
+          "a": 5,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "08-30",
+          "n": "Taco Bell",
+          "a": 4.15,
+          "g": "Restaurants"
+        },
+        {
+          "d": "08-30",
+          "n": "Deccan Halal Mart",
+          "a": 46.43,
+          "g": "Groceries"
+        },
+        {
+          "d": "08-31",
+          "n": "Optimum",
+          "a": 69.66,
+          "g": "Bills & utilities"
+        },
+        {
+          "d": "08-31",
+          "n": "Renaissance Gree",
+          "a": 115,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "08-31",
+          "n": "Twp of North Bru DES:XXXXX70922 ID:XXXXX03137 INDN",
+          "a": 194.1,
+          "g": "Bills & utilities"
+        },
+        {
+          "d": "08-31",
+          "n": "Public Service",
+          "a": 245.86,
+          "g": "Gas/Travel"
+        }
+      ],
+      "tx_moved": [
+        {
+          "d": "08-03",
+          "n": "Robinhood",
+          "a": 205.36,
+          "g": "To Robinhood"
+        },
+        {
+          "d": "08-03",
+          "n": "XOOM DES:DEBIT O ID:XXXXXXXXXX15640 INDN:LOGANATHA",
+          "a": 340.85,
+          "g": "To India"
+        },
+        {
+          "d": "08-03",
+          "n": "XOOM DES:DEBIT O ID:XXXXXXXXXX15669 INDN:LOGANATHA",
+          "a": 752.89,
+          "g": "To India"
+        },
+        {
+          "d": "08-11",
+          "n": "Robinhood",
+          "a": 15000,
+          "g": "To Robinhood"
+        },
+        {
+          "d": "08-14",
+          "n": "Robinhood",
+          "a": 100,
+          "g": "To Robinhood"
+        },
+        {
+          "d": "08-18",
+          "n": "Robinhood",
+          "a": 100,
+          "g": "To Robinhood"
+        },
+        {
+          "d": "08-18",
+          "n": "XOOM DES:DEBIT O ID:XXXXXXXXXX00939 INDN:LOGANATHA",
+          "a": 1000,
+          "g": "To India"
+        },
+        {
+          "d": "08-25",
+          "n": "Robinhood",
+          "a": 100,
+          "g": "To Robinhood"
+        },
+        {
+          "d": "08-28",
+          "n": "Robinhood",
+          "a": 100,
+          "g": "To Robinhood"
         }
       ],
       "days": 31,
@@ -15590,9 +19045,9 @@
         "other_in": 0
       },
       "spent": {
-        "total": 10971.4,
+        "total": 12936.94,
         "purchases": 8279.92,
-        "refunds": 2004.61,
+        "refunds": 39.07,
         "loans": 4431.79,
         "fees": 129.3,
         "zelle_out": 135,
@@ -15603,8 +19058,8 @@
         "india": 1106.08
       },
       "internal": {
-        "count": 22,
-        "total": 24714.14
+        "count": 25,
+        "total": 26679.68
       },
       "by_category": {
         "Restaurants": 645.31,
@@ -15675,7 +19130,7 @@
       "big": [
         {
           "date": "2026-09-08",
-          "desc": "RK JEWELS 09/05 #XXXXX5844 PURCHASE RK JEWELS",
+          "desc": "R K Jewels",
           "amount": 1615
         }
       ],
@@ -15684,18 +19139,18 @@
       "loan_items": [
         {
           "date": "2026-09-14",
-          "desc": "ROCKET MORTGAGE DES:LOAN ID:6489142 INDN:VIMAL RAJ *LOGANATH",
+          "desc": "Rocket Mortgage",
           "amount": 3800.14
         },
         {
           "date": "2026-09-23",
-          "desc": "KMF DES:KMFUSA.com ID:XXXXX17265 INDN:VIMAL LOGANATHAN CO ID",
+          "desc": "Kia Motors Finance",
           "amount": 631.65,
           "reversed": true
         },
         {
           "date": "2026-09-30",
-          "desc": "KMF DES:KMFUSA.com ID:XXXXX17265 INDN:VIMAL LOGANATHAN CO ID",
+          "desc": "Kia Motors Finance",
           "amount": 631.65
         }
       ],
@@ -15719,6 +19174,828 @@
           "date": "2026-09-24",
           "desc": "RETURN OF POSTED CHECK / ITEM (RECEIVED ON 09-23) ELECTRONIC",
           "amount": 631.65
+        }
+      ],
+      "tx_in": [
+        {
+          "d": "09-03",
+          "n": "TD ZELLE RECEIVED 624600L0A5T1 Zelle RAKESH KUMAR ",
+          "a": 88,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "09-08",
+          "n": "ZELLE FROM ANGU RAM ON 09/05 REF # WFCT22M88SG9",
+          "a": 13,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "09-08",
+          "n": "Zelle payment from DIVYA GANGAVARAM for \"grnd\"; Co",
+          "a": 14,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "09-08",
+          "n": "Zelle payment from DIVYA GANGAVARAM for \"frnd\"; Co",
+          "a": 28,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "09-08",
+          "n": "Zelle payment from DIVYA GANGAVARAM for \"frnd\"; Co",
+          "a": 1615,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "09-11",
+          "n": "VERIZON V3 DES:DIR DEP ID:NJ2551601 INDN:LOGANATHA",
+          "a": 3994.39,
+          "g": "Salary"
+        },
+        {
+          "d": "09-11",
+          "n": "VERIZON V3 DIR DEP 090526 NJ2551601 LOGANATHAN,VIM",
+          "a": 500,
+          "g": "Salary"
+        },
+        {
+          "d": "09-11",
+          "n": "WIPRO LTD DES:PAYROLL ID:XXXXX3157385ZSL INDN:VIST",
+          "a": 3475.57,
+          "g": "Salary"
+        },
+        {
+          "d": "09-14",
+          "n": "Zelle payment from PADMAJA SALA for \"For Coconut &",
+          "a": 5,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "09-22",
+          "n": "Interest Earned",
+          "a": 0.14,
+          "g": "Salary"
+        },
+        {
+          "d": "09-24",
+          "n": "ZELLE FROM VENKATESH KASANAGOTTU ON 09/24 REF # DF",
+          "a": 320,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "09-25",
+          "n": "VERIZON V3 DES:DIR DEP ID:NJ2551601 INDN:LOGANATHA",
+          "a": 4150.96,
+          "g": "Salary"
+        },
+        {
+          "d": "09-25",
+          "n": "VERIZON V3 DIR DEP 091926 NJ2551601 LOGANATHAN,VIM",
+          "a": 500,
+          "g": "Salary"
+        },
+        {
+          "d": "09-25",
+          "n": "WIPRO LTD DES:PAYROLL ID:XXXXX3155384ZSL INDN:VIST",
+          "a": 3475.58,
+          "g": "Salary"
+        },
+        {
+          "d": "09-28",
+          "n": "ZELLE FROM DEEPAK REDDY DEVULAPALLY ON 09/27 REF #",
+          "a": 40.71,
+          "g": "Zelle from people"
+        }
+      ],
+      "tx_out": [
+        {
+          "d": "09-01",
+          "n": "Big Blue Swim School",
+          "a": 266,
+          "g": "Kids"
+        },
+        {
+          "d": "09-01",
+          "n": "Amazon",
+          "a": 40.82,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-01",
+          "n": "The Music Shop",
+          "a": 43.71,
+          "g": "Entertainment"
+        },
+        {
+          "d": "09-01",
+          "n": "Kumon North America",
+          "a": 280,
+          "g": "Kids"
+        },
+        {
+          "d": "09-01",
+          "n": "Delight Big Bazar",
+          "a": 146.75,
+          "g": "Groceries"
+        },
+        {
+          "d": "09-03",
+          "n": "Big Blue Swim School",
+          "a": 56,
+          "g": "Kids"
+        },
+        {
+          "d": "09-03",
+          "n": "Big Blue Swim School",
+          "a": 100.8,
+          "g": "Kids"
+        },
+        {
+          "d": "09-03",
+          "n": "Amazon",
+          "a": 58.63,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-03",
+          "n": "SGS Datta Yoga Center",
+          "a": 250,
+          "g": "Healthcare"
+        },
+        {
+          "d": "09-03",
+          "n": "BP",
+          "a": 62.11,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "09-04",
+          "n": "PetSmart",
+          "a": 30.89,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-04",
+          "n": "MAINTENANCE FEE",
+          "a": 25,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "09-04",
+          "n": "Temu",
+          "a": 40.4,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-05",
+          "n": "NJ E-ZPass",
+          "a": 25,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "09-05",
+          "n": "Netlify Fy",
+          "a": 5,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "09-05",
+          "n": "Marshalls",
+          "a": 77.79,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-06",
+          "n": "Chowpatty Restaurant",
+          "a": 72.51,
+          "g": "Restaurants"
+        },
+        {
+          "d": "09-06",
+          "n": "Renaissance Buy Rite",
+          "a": 35.16,
+          "g": "Restaurants"
+        },
+        {
+          "d": "09-06",
+          "n": "Little Macs",
+          "a": 76.82,
+          "g": "Restaurants"
+        },
+        {
+          "d": "09-06",
+          "n": "Deccan Halal Mart",
+          "a": 81.36,
+          "g": "Groceries"
+        },
+        {
+          "d": "09-06",
+          "n": "Borough Of",
+          "a": 9.75,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "09-07",
+          "n": "Five Below",
+          "a": 29.16,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-07",
+          "n": "Walmart",
+          "a": 69.37,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-08",
+          "n": "Little Macs",
+          "a": 18.87,
+          "g": "Restaurants"
+        },
+        {
+          "d": "09-08",
+          "n": "Amazon",
+          "a": 29.84,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-08",
+          "n": "Nothing Bundt Cakes",
+          "a": 14,
+          "g": "Restaurants"
+        },
+        {
+          "d": "09-08",
+          "n": "Zelle payment to Naypex Conf# wheepqsv2",
+          "a": 20,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "09-08",
+          "n": "Zelle payment to Naypex for \"Bangles\"; Conf# sghn4",
+          "a": 56,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "09-08",
+          "n": "R K Jewels",
+          "a": 1615,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-08",
+          "n": "Marshalls",
+          "a": 9.99,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-08",
+          "n": "Kd Consultancy LLC",
+          "a": 28,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "09-09",
+          "n": "Netflix",
+          "a": 21.31,
+          "g": "Entertainment"
+        },
+        {
+          "d": "09-09",
+          "n": "Apple",
+          "a": 3.19,
+          "g": "Entertainment"
+        },
+        {
+          "d": "09-09",
+          "n": "Walmart",
+          "a": 33.3,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-09",
+          "n": "Walmart",
+          "a": 52.5,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-09",
+          "n": "Walmart",
+          "a": 3.2,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-10",
+          "n": "ShopRite",
+          "a": 20.26,
+          "g": "Groceries"
+        },
+        {
+          "d": "09-11",
+          "n": "Apple",
+          "a": 106.61,
+          "g": "Entertainment"
+        },
+        {
+          "d": "09-11",
+          "n": "MONTHLY SERVICE CHARGE VR",
+          "a": 7,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "09-11",
+          "n": "Garden Farm",
+          "a": 65.17,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-11",
+          "n": "Costco",
+          "a": -12.99,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "09-11",
+          "n": "Costco",
+          "a": 421.75,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-12",
+          "n": "Google One",
+          "a": 1.99,
+          "g": "Entertainment"
+        },
+        {
+          "d": "09-12",
+          "n": "Pkts Foods LLC",
+          "a": 28.44,
+          "g": "Restaurants"
+        },
+        {
+          "d": "09-12",
+          "n": "Deccan Halal Mart",
+          "a": 11.84,
+          "g": "Groceries"
+        },
+        {
+          "d": "09-12",
+          "n": "FedEx",
+          "a": 22.41,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "09-12",
+          "n": "Fresh Style Barbershop",
+          "a": 58.43,
+          "g": "Healthcare"
+        },
+        {
+          "d": "09-12",
+          "n": "Fresh Style Barbershop",
+          "a": 42.67,
+          "g": "Healthcare"
+        },
+        {
+          "d": "09-12",
+          "n": "Srishti",
+          "a": 87.89,
+          "g": "Restaurants"
+        },
+        {
+          "d": "09-13",
+          "n": "Netlify Fy",
+          "a": 5,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "09-13",
+          "n": "Apple",
+          "a": -2.58,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "09-13",
+          "n": "Walgreens",
+          "a": 200,
+          "g": "Healthcare"
+        },
+        {
+          "d": "09-14",
+          "n": "Rocket Mortgage",
+          "a": 3800.14,
+          "g": "Home & car loans"
+        },
+        {
+          "d": "09-14",
+          "n": "Amazon",
+          "a": 18.76,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-14",
+          "n": "Patidar Supermarket",
+          "a": 209.21,
+          "g": "Groceries"
+        },
+        {
+          "d": "09-16",
+          "n": "OVERDRAFT ITEM FEE FOR ACTIVITY OF 09-16 ELECTRONI",
+          "a": 10,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "09-16",
+          "n": "Verizon",
+          "a": 395.84,
+          "g": "Bills & utilities"
+        },
+        {
+          "d": "09-16",
+          "n": "Best Brains",
+          "a": 91.7,
+          "g": "Kids"
+        },
+        {
+          "d": "09-16",
+          "n": "Axb",
+          "a": 128.58,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-17",
+          "n": "OVERDRAFT ITEM FEE FOR ACTIVITY OF 09-17 ELECTRONI",
+          "a": 10,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "09-17",
+          "n": "OVERDRAFT ITEM FEE FOR ACTIVITY OF 09-17 ELECTRONI",
+          "a": 10,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "09-17",
+          "n": "Planet Fitness",
+          "a": 10.66,
+          "g": "Healthcare"
+        },
+        {
+          "d": "09-17",
+          "n": "Amazon",
+          "a": 26.65,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-18",
+          "n": "Simplisafe",
+          "a": 35.18,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-18",
+          "n": "Delight Big Bazar",
+          "a": 34.66,
+          "g": "Groceries"
+        },
+        {
+          "d": "09-18",
+          "n": "Gas n Go",
+          "a": 63.77,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "09-18",
+          "n": "Interest Charge",
+          "a": 25.25,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "09-19",
+          "n": "The Music Shop",
+          "a": 198.29,
+          "g": "Entertainment"
+        },
+        {
+          "d": "09-19",
+          "n": "Regal Cinemas",
+          "a": 2.12,
+          "g": "Entertainment"
+        },
+        {
+          "d": "09-19",
+          "n": "Deccan Halal Mart",
+          "a": 23.37,
+          "g": "Groceries"
+        },
+        {
+          "d": "09-19",
+          "n": "Martial Arts Dojang",
+          "a": 130,
+          "g": "Healthcare"
+        },
+        {
+          "d": "09-19",
+          "n": "Delight Big Bazar",
+          "a": 27.39,
+          "g": "Groceries"
+        },
+        {
+          "d": "09-19",
+          "n": "Taco Bell",
+          "a": 9,
+          "g": "Restaurants"
+        },
+        {
+          "d": "09-19",
+          "n": "Temu",
+          "a": 40.32,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-20",
+          "n": "Netli",
+          "a": 9,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "09-20",
+          "n": "House of Biryani's and Kebabs",
+          "a": 75.41,
+          "g": "Restaurants"
+        },
+        {
+          "d": "09-20",
+          "n": "Dunkin'",
+          "a": 4.46,
+          "g": "Restaurants"
+        },
+        {
+          "d": "09-20",
+          "n": "Aquaridise",
+          "a": 95.96,
+          "g": "Groceries"
+        },
+        {
+          "d": "09-21",
+          "n": "CVS Pharmacy",
+          "a": 5.33,
+          "g": "Healthcare"
+        },
+        {
+          "d": "09-21",
+          "n": "BP",
+          "a": 75.24,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "09-22",
+          "n": "Artgharantx",
+          "a": 205.2,
+          "g": "Healthcare"
+        },
+        {
+          "d": "09-22",
+          "n": "Walmart",
+          "a": 41.77,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-22",
+          "n": "Nokia",
+          "a": 9.99,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-23",
+          "n": "Kia Motors Finance",
+          "a": 631.65,
+          "g": "Home & car loans"
+        },
+        {
+          "d": "09-23",
+          "n": "Anthropic",
+          "a": 100,
+          "g": "AI tools"
+        },
+        {
+          "d": "09-23",
+          "n": "Artgharana",
+          "a": 205.2,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "09-23",
+          "n": "Deccan Halal Mart",
+          "a": 9.74,
+          "g": "Groceries"
+        },
+        {
+          "d": "09-23",
+          "n": "INTEREST CHARGE:PURCHASES",
+          "a": 34.05,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "09-24",
+          "n": "Amazon",
+          "a": 25.85,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-24",
+          "n": "Bounced — returned by bank",
+          "a": -631.65,
+          "g": "Home & car loans"
+        },
+        {
+          "d": "09-25",
+          "n": "Amazon",
+          "a": 76.69,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-25",
+          "n": "Regal Cinemas",
+          "a": 28.24,
+          "g": "Entertainment"
+        },
+        {
+          "d": "09-25",
+          "n": "Zelle payment to gokul flowers Conf# ybvrwdbt9",
+          "a": 53,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "09-25",
+          "n": "Zelle payment to Pratimaparlorzelle Conf# xwaj2vvs",
+          "a": 6,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "09-25",
+          "n": "Delight Big Bazar",
+          "a": 34.89,
+          "g": "Groceries"
+        },
+        {
+          "d": "09-25",
+          "n": "CVS",
+          "a": 32.47,
+          "g": "Healthcare"
+        },
+        {
+          "d": "09-26",
+          "n": "Polar",
+          "a": 20.26,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "09-26",
+          "n": "Patidar Supermarket",
+          "a": 125.03,
+          "g": "Groceries"
+        },
+        {
+          "d": "09-26",
+          "n": "Patidar Supermarket",
+          "a": 6.35,
+          "g": "Groceries"
+        },
+        {
+          "d": "09-27",
+          "n": "ACCOUNT ADJUSTMENT",
+          "a": -1.99,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "09-27",
+          "n": "Apple",
+          "a": 31.99,
+          "g": "Entertainment"
+        },
+        {
+          "d": "09-27",
+          "n": "UPS",
+          "a": 62.66,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "09-28",
+          "n": "Hulu",
+          "a": 12.78,
+          "g": "Entertainment"
+        },
+        {
+          "d": "09-28",
+          "n": "Deccan Halal Mart",
+          "a": 15.46,
+          "g": "Groceries"
+        },
+        {
+          "d": "09-28",
+          "n": "Ks Outlet Ks",
+          "a": 67.97,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-29",
+          "n": "Monthly Maintenance Fee",
+          "a": 8,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "09-29",
+          "n": "Amazon",
+          "a": 55.97,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-29",
+          "n": "Temu",
+          "a": 27.41,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-30",
+          "n": "Pse&g",
+          "a": 275.19,
+          "g": "Bills & utilities"
+        },
+        {
+          "d": "09-30",
+          "n": "Kia Motors Finance",
+          "a": 631.65,
+          "g": "Home & car loans"
+        },
+        {
+          "d": "09-30",
+          "n": "Amazon",
+          "a": -18.76,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "09-30",
+          "n": "Amazon",
+          "a": 59.36,
+          "g": "Shopping"
+        },
+        {
+          "d": "09-30",
+          "n": "Gordon Dey Farms LLC",
+          "a": 222.75,
+          "g": "Restaurants"
+        },
+        {
+          "d": "09-30",
+          "n": "BofA Rewards-ATM Oper Rebate Refund of $2.75",
+          "a": -2.75,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "09-30",
+          "n": "ShopRite",
+          "a": 24.82,
+          "g": "Groceries"
+        },
+        {
+          "d": "09-30",
+          "n": "Us Polo Assn",
+          "a": 31.29,
+          "g": "Shopping"
+        }
+      ],
+      "tx_moved": [
+        {
+          "d": "09-02",
+          "n": "XOOM DES:DEBIT O ID:XXXXXXXXXX55886 INDN:LOGANATHA",
+          "a": 353.19,
+          "g": "To India"
+        },
+        {
+          "d": "09-02",
+          "n": "XOOM DES:DEBIT O ID:XXXXXXXXXX55915 INDN:LOGANATHA",
+          "a": 752.89,
+          "g": "To India"
+        },
+        {
+          "d": "09-11",
+          "n": "Robinhood",
+          "a": 100,
+          "g": "To Robinhood"
+        },
+        {
+          "d": "09-16",
+          "n": "Robinhood",
+          "a": 100,
+          "g": "To Robinhood"
+        },
+        {
+          "d": "09-25",
+          "n": "Robinhood",
+          "a": 100,
+          "g": "To Robinhood"
         }
       ],
       "days": 30,
@@ -15816,12 +20093,12 @@
       "big": [
         {
           "date": "2026-10-14",
-          "desc": "Covered Exterior DES:Receivable ID:110407 INDN:Chaitanya Vis",
+          "desc": "Covered Exteriors",
           "amount": 6135.27
         },
         {
           "date": "2026-10-20",
-          "desc": "PURCHASE 1019 FRAGOMEN FRAGOMEN.COM NJ XXXXX3462XXXXXXXXXX73",
+          "desc": "Fragomen",
           "amount": 2965
         }
       ],
@@ -15830,16 +20107,646 @@
       "loan_items": [
         {
           "date": "2026-10-13",
-          "desc": "ROCKET MORTGAGE DES:LOAN ID:7174644 INDN:VIMAL RAJ *LOGANATH",
+          "desc": "Rocket Mortgage",
           "amount": 3800.14
         },
         {
           "date": "2026-10-23",
-          "desc": "KMF DES:KMFUSA.com ID:XXXXX17265 INDN:VIMAL LOGANATHAN CO ID",
+          "desc": "Kia Motors Finance",
           "amount": 631.65
         }
       ],
       "bounced": [],
+      "tx_in": [
+        {
+          "d": "10-05",
+          "n": "TD ZELLE RECEIVED 627600O03JHD Zelle RAKESH KUMAR ",
+          "a": 88,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "10-09",
+          "n": "VERIZON V3 DES:DIR DEP ID:NJ2551601 INDN:LOGANATHA",
+          "a": 4411.34,
+          "g": "Salary"
+        },
+        {
+          "d": "10-09",
+          "n": "VERIZON V3 DIR DEP 100326 NJ2551601 LOGANATHAN,VIM",
+          "a": 500,
+          "g": "Salary"
+        },
+        {
+          "d": "10-09",
+          "n": "WIPRO LTD DES:PAYROLL ID:XXXXX4221904ZSL INDN:VIST",
+          "a": 3475.58,
+          "g": "Salary"
+        },
+        {
+          "d": "10-13",
+          "n": "Zelle payment from SAIREDDY KASTHURI for \"Gift Car",
+          "a": 105,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "10-19",
+          "n": "ZELLE FROM KAUSHIK KANDASWAMY ON 10/18 REF # JPM99",
+          "a": 20,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "10-22",
+          "n": "Interest Earned",
+          "a": 0.09,
+          "g": "Salary"
+        },
+        {
+          "d": "10-23",
+          "n": "VERIZON V3 DES:DIR DEP ID:NJ2551601 INDN:LOGANATHA",
+          "a": 4407.06,
+          "g": "Salary"
+        },
+        {
+          "d": "10-23",
+          "n": "VERIZON V3 DIR DEP 101726 NJ2551601 LOGANATHAN,VIM",
+          "a": 500,
+          "g": "Salary"
+        },
+        {
+          "d": "10-23",
+          "n": "WIPRO LTD DES:PAYROLL ID:XXXXX4320807ZSL INDN:VIST",
+          "a": 3475.59,
+          "g": "Salary"
+        },
+        {
+          "d": "10-26",
+          "n": "ZELLE FROM RAKESH VISTARAKULA ON 10/26 REF # BACSO",
+          "a": 550,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "10-26",
+          "n": "ZELLE FROM MAHENDRAREDDY CHITTEPU ON 10/26 REF # B",
+          "a": 140,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "10-28",
+          "n": "ZELLE FROM DEEPAK REDDY DEVULAPALLY ON 10/27 REF #",
+          "a": 40.71,
+          "g": "Zelle from people"
+        }
+      ],
+      "tx_out": [
+        {
+          "d": "10-01",
+          "n": "Optimum",
+          "a": 69.66,
+          "g": "Bills & utilities"
+        },
+        {
+          "d": "10-01",
+          "n": "Twp of North Bru DES:XXXXX70922 ID:XXXXX72648 INDN",
+          "a": 100.16,
+          "g": "Bills & utilities"
+        },
+        {
+          "d": "10-01",
+          "n": "Renaissance",
+          "a": 115,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "10-01",
+          "n": "Big Blue Swim School",
+          "a": 134.4,
+          "g": "Kids"
+        },
+        {
+          "d": "10-01",
+          "n": "Kumon North America",
+          "a": 280,
+          "g": "Kids"
+        },
+        {
+          "d": "10-01",
+          "n": "Zelle payment to Sampath Diwali Conf# tq4b8wkmz",
+          "a": 135,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "10-01",
+          "n": "DoorDash",
+          "a": 96,
+          "g": "Food delivery"
+        },
+        {
+          "d": "10-02",
+          "n": "INTEREST CHARGE ON PURCHASES",
+          "a": 47.12,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "10-02",
+          "n": "Zelle payment to Tere Cleaning Lady Conf# yvjwixt4",
+          "a": 125,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "10-03",
+          "n": "Commerce Center",
+          "a": 0.96,
+          "g": "Entertainment"
+        },
+        {
+          "d": "10-03",
+          "n": "PetSmart",
+          "a": 18.1,
+          "g": "Shopping"
+        },
+        {
+          "d": "10-03",
+          "n": "Regal Cinemas",
+          "a": 2.12,
+          "g": "Entertainment"
+        },
+        {
+          "d": "10-03",
+          "n": "Deccan Halal Mart",
+          "a": 41.87,
+          "g": "Groceries"
+        },
+        {
+          "d": "10-04",
+          "n": "The Home Depot",
+          "a": 87.25,
+          "g": "Home projects"
+        },
+        {
+          "d": "10-05",
+          "n": "Zelle payment to Prasad cricket for \"Aryan's crick",
+          "a": 456,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "10-05",
+          "n": "Amazon",
+          "a": 18.76,
+          "g": "Shopping"
+        },
+        {
+          "d": "10-05",
+          "n": "MAINTENANCE FEE",
+          "a": 25,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "10-05",
+          "n": "Best Brains",
+          "a": 263,
+          "g": "Kids"
+        },
+        {
+          "d": "10-05",
+          "n": "Garden Farm",
+          "a": 125.11,
+          "g": "Shopping"
+        },
+        {
+          "d": "10-06",
+          "n": "Amazon",
+          "a": 8.16,
+          "g": "Shopping"
+        },
+        {
+          "d": "10-06",
+          "n": "Amazon",
+          "a": 35.31,
+          "g": "Shopping"
+        },
+        {
+          "d": "10-06",
+          "n": "Patel Brothers",
+          "a": 111.71,
+          "g": "Groceries"
+        },
+        {
+          "d": "10-07",
+          "n": "Zelle payment to Kids Event Planner for \"Payment 1",
+          "a": 500,
+          "g": "Kids"
+        },
+        {
+          "d": "10-07",
+          "n": "Zelle payment to Guillermo perales for \"Light inst",
+          "a": 250,
+          "g": "Home projects"
+        },
+        {
+          "d": "10-07",
+          "n": "Amazon",
+          "a": 162.04,
+          "g": "Shopping"
+        },
+        {
+          "d": "10-08",
+          "n": "Zelle payment to Guillermo perales for \"Come next ",
+          "a": 450,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "10-08",
+          "n": "House of Biryani's and Kebabs",
+          "a": 54.35,
+          "g": "Restaurants"
+        },
+        {
+          "d": "10-08",
+          "n": "North Brunswick Public Schools",
+          "a": 27.37,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "10-09",
+          "n": "Netflix",
+          "a": 21.31,
+          "g": "Entertainment"
+        },
+        {
+          "d": "10-09",
+          "n": "Vrz Br Cafe",
+          "a": 6.24,
+          "g": "Restaurants"
+        },
+        {
+          "d": "10-09",
+          "n": "Gulf Oil",
+          "a": 71.77,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "10-10",
+          "n": "MONTHLY SERVICE CHARGE VR",
+          "a": 7,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "10-10",
+          "n": "Deccan Halal Mart",
+          "a": 30.9,
+          "g": "Groceries"
+        },
+        {
+          "d": "10-10",
+          "n": "Deccan Halal Mart",
+          "a": 29.46,
+          "g": "Groceries"
+        },
+        {
+          "d": "10-10",
+          "n": "BP",
+          "a": 59.93,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "10-10",
+          "n": "Sri Venkateswara Temple",
+          "a": 25.86,
+          "g": "Tax/Professional"
+        },
+        {
+          "d": "10-10",
+          "n": "Sri Venkateswara Temple",
+          "a": 4.27,
+          "g": "Tax/Professional"
+        },
+        {
+          "d": "10-11",
+          "n": "Walgreens",
+          "a": 6.29,
+          "g": "Healthcare"
+        },
+        {
+          "d": "10-12",
+          "n": "Google One",
+          "a": 1.99,
+          "g": "Entertainment"
+        },
+        {
+          "d": "10-12",
+          "n": "Amazon",
+          "a": 49.04,
+          "g": "Shopping"
+        },
+        {
+          "d": "10-12",
+          "n": "ShopRite",
+          "a": 66.2,
+          "g": "Groceries"
+        },
+        {
+          "d": "10-12",
+          "n": "Delight Big Bazar",
+          "a": 51.9,
+          "g": "Groceries"
+        },
+        {
+          "d": "10-12",
+          "n": "Dunkin'",
+          "a": 8.7,
+          "g": "Restaurants"
+        },
+        {
+          "d": "10-12",
+          "n": "Bubble Island",
+          "a": 53.31,
+          "g": "Restaurants"
+        },
+        {
+          "d": "10-13",
+          "n": "Rocket Mortgage",
+          "a": 3800.14,
+          "g": "Home & car loans"
+        },
+        {
+          "d": "10-13",
+          "n": "ShopRite",
+          "a": 6.93,
+          "g": "Groceries"
+        },
+        {
+          "d": "10-13",
+          "n": "Late Fee",
+          "a": 36,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "10-14",
+          "n": "Covered Exteriors",
+          "a": 6135.27,
+          "g": "Home projects"
+        },
+        {
+          "d": "10-16",
+          "n": "Verizon",
+          "a": 395.84,
+          "g": "Bills & utilities"
+        },
+        {
+          "d": "10-16",
+          "n": "Buy Rite Renaissance",
+          "a": 11.19,
+          "g": "Restaurants"
+        },
+        {
+          "d": "10-16",
+          "n": "Regal Cinemas",
+          "a": 47.96,
+          "g": "Entertainment"
+        },
+        {
+          "d": "10-16",
+          "n": "Deccan Halal Mart",
+          "a": 30.78,
+          "g": "Groceries"
+        },
+        {
+          "d": "10-17",
+          "n": "Walgreens",
+          "a": 30,
+          "g": "Healthcare"
+        },
+        {
+          "d": "10-18",
+          "n": "Simplisafe",
+          "a": 35.18,
+          "g": "Shopping"
+        },
+        {
+          "d": "10-19",
+          "n": "Planet Fitness",
+          "a": 10.66,
+          "g": "Healthcare"
+        },
+        {
+          "d": "10-19",
+          "n": "Walmart",
+          "a": 69.9,
+          "g": "Shopping"
+        },
+        {
+          "d": "10-19",
+          "n": "DoorDash",
+          "a": 107.38,
+          "g": "Food delivery"
+        },
+        {
+          "d": "10-20",
+          "n": "Netli",
+          "a": 9,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "10-20",
+          "n": "Fragomen",
+          "a": 2965,
+          "g": "Legal/immigration"
+        },
+        {
+          "d": "10-20",
+          "n": "Interest Charge",
+          "a": 38.85,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "10-21",
+          "n": "CVS Pharmacy",
+          "a": 5.33,
+          "g": "Healthcare"
+        },
+        {
+          "d": "10-21",
+          "n": "Walmart",
+          "a": -33.3,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "10-22",
+          "n": "Amazon",
+          "a": 75.98,
+          "g": "Shopping"
+        },
+        {
+          "d": "10-22",
+          "n": "Nokia",
+          "a": 9.99,
+          "g": "Shopping"
+        },
+        {
+          "d": "10-23",
+          "n": "Kia Motors Finance",
+          "a": 631.65,
+          "g": "Home & car loans"
+        },
+        {
+          "d": "10-23",
+          "n": "Anthropic",
+          "a": 100,
+          "g": "AI tools"
+        },
+        {
+          "d": "10-23",
+          "n": "ShopRite",
+          "a": 37.19,
+          "g": "Groceries"
+        },
+        {
+          "d": "10-23",
+          "n": "Patel Brothers",
+          "a": 120.54,
+          "g": "Groceries"
+        },
+        {
+          "d": "10-23",
+          "n": "Thanjai Mess",
+          "a": 47.62,
+          "g": "Restaurants"
+        },
+        {
+          "d": "10-24",
+          "n": "INTEREST CHARGE:PURCHASES",
+          "a": 0.21,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "10-25",
+          "n": "Regal Cinemas",
+          "a": 28.24,
+          "g": "Entertainment"
+        },
+        {
+          "d": "10-26",
+          "n": "Polar",
+          "a": 20.26,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "10-26",
+          "n": "Zelle payment to Divya Reddy Conf# v6qo13p83",
+          "a": 90,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "10-26",
+          "n": "Patidar Supermarket",
+          "a": 203.25,
+          "g": "Groceries"
+        },
+        {
+          "d": "10-26",
+          "n": "Patidar Supermarket",
+          "a": 5.05,
+          "g": "Groceries"
+        },
+        {
+          "d": "10-26",
+          "n": "Taco Bell",
+          "a": 4.15,
+          "g": "Restaurants"
+        },
+        {
+          "d": "10-27",
+          "n": "Scholastic",
+          "a": 10.65,
+          "g": "Kids"
+        },
+        {
+          "d": "10-27",
+          "n": "Singas Famous Pizza",
+          "a": 10.94,
+          "g": "Restaurants"
+        },
+        {
+          "d": "10-27",
+          "n": "Garden Farm",
+          "a": 40.59,
+          "g": "Shopping"
+        },
+        {
+          "d": "10-27",
+          "n": "RaceWay",
+          "a": 72.44,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "10-28",
+          "n": "ACCOUNT ADJUSTMENT",
+          "a": -1.99,
+          "g": "Refunds & cashback"
+        },
+        {
+          "d": "10-28",
+          "n": "Chatpati Delhi",
+          "a": 67.84,
+          "g": "Restaurants"
+        },
+        {
+          "d": "10-29",
+          "n": "Monthly Maintenance Fee",
+          "a": 8,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "10-29",
+          "n": "Zelle payment to Pratimaparlorzelle Conf# ycydqodv",
+          "a": 16,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "10-30",
+          "n": "Pse&g",
+          "a": 189.18,
+          "g": "Bills & utilities"
+        },
+        {
+          "d": "10-31",
+          "n": "Costco",
+          "a": 289.04,
+          "g": "Shopping"
+        },
+        {
+          "d": "10-31",
+          "n": "Hair Time Beauty Salon",
+          "a": 55,
+          "g": "Healthcare"
+        }
+      ],
+      "tx_moved": [
+        {
+          "d": "10-05",
+          "n": "XOOM DES:DEBIT O ID:XXXXXXXXXX22932 INDN:LOGANATHA",
+          "a": 104.29,
+          "g": "To India"
+        },
+        {
+          "d": "10-05",
+          "n": "XOOM DES:DEBIT O ID:XXXXXXXXXX22870 INDN:LOGANATHA",
+          "a": 203.99,
+          "g": "To India"
+        },
+        {
+          "d": "10-05",
+          "n": "XOOM DES:DEBIT O ID:XXXXXXXXXX22863 INDN:LOGANATHA",
+          "a": 702.69,
+          "g": "To India"
+        },
+        {
+          "d": "10-27",
+          "n": "Remitly",
+          "a": 6000,
+          "g": "To India"
+        }
+      ],
       "days": 31,
       "days_in_month": 31
     },
@@ -15906,16 +20813,286 @@
       "loan_items": [
         {
           "date": "2026-11-12",
-          "desc": "ROCKET MORTGAGE DES:LOAN ID:7985280 INDN:VIMAL RAJ *LOGANATH",
+          "desc": "Rocket Mortgage",
           "amount": 3909.09
         }
       ],
       "bounced": [],
+      "tx_in": [
+        {
+          "d": "11-03",
+          "n": "TD ZELLE RECEIVED 630700C0F2OY Zelle RAKESH KUMAR ",
+          "a": 88,
+          "g": "Zelle from people"
+        },
+        {
+          "d": "11-06",
+          "n": "VERIZON V3 DES:DIR DEP ID:NJ2551601 INDN:LOGANATHA",
+          "a": 4350.82,
+          "g": "Salary"
+        },
+        {
+          "d": "11-06",
+          "n": "VERIZON V3 DIR DEP 103126 NJ2551601 LOGANATHAN,VIM",
+          "a": 500,
+          "g": "Salary"
+        },
+        {
+          "d": "11-06",
+          "n": "WIPRO LTD DES:PAYROLL ID:XXXXX5486854ZSL INDN:VIST",
+          "a": 3475.56,
+          "g": "Salary"
+        },
+        {
+          "d": "11-09",
+          "n": "ZELLE FROM SAIREDDY KASTHURI ON 11/07 REF # COF81V",
+          "a": 70,
+          "g": "Zelle from people"
+        }
+      ],
+      "tx_out": [
+        {
+          "d": "11-01",
+          "n": "Costco",
+          "a": 210.87,
+          "g": "Shopping"
+        },
+        {
+          "d": "11-01",
+          "n": "Big Blue Swim School",
+          "a": 291.2,
+          "g": "Kids"
+        },
+        {
+          "d": "11-02",
+          "n": "Optimum",
+          "a": 69.66,
+          "g": "Bills & utilities"
+        },
+        {
+          "d": "11-02",
+          "n": "Renaissance",
+          "a": 115,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "11-02",
+          "n": "Twp of North Bru DES:XXXXX70922 ID:XXXXX75419 INDN",
+          "a": 194.2,
+          "g": "Bills & utilities"
+        },
+        {
+          "d": "11-02",
+          "n": "INTEREST CHARGE ON PURCHASES",
+          "a": 68.42,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "11-02",
+          "n": "Kumon North America",
+          "a": 280,
+          "g": "Kids"
+        },
+        {
+          "d": "11-02",
+          "n": "Zelle payment to Sureshpavitra Conf# ylnglkgtn",
+          "a": 30,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "11-03",
+          "n": "Best Brains",
+          "a": 263,
+          "g": "Kids"
+        },
+        {
+          "d": "11-03",
+          "n": "Vzn Br Cafe",
+          "a": 2.87,
+          "g": "Restaurants"
+        },
+        {
+          "d": "11-04",
+          "n": "Zelle payment to Tere Cleaning Lady Conf# yznyst4l",
+          "a": 125,
+          "g": "Zelle to people"
+        },
+        {
+          "d": "11-04",
+          "n": "CVS",
+          "a": 25.09,
+          "g": "Healthcare"
+        },
+        {
+          "d": "11-05",
+          "n": "Buy Rite Renaissance",
+          "a": 17.58,
+          "g": "Restaurants"
+        },
+        {
+          "d": "11-05",
+          "n": "MAINTENANCE FEE",
+          "a": 25,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "11-05",
+          "n": "Deccan Halal Mart",
+          "a": 16.02,
+          "g": "Groceries"
+        },
+        {
+          "d": "11-06",
+          "n": "Amazon",
+          "a": 17.98,
+          "g": "Shopping"
+        },
+        {
+          "d": "11-06",
+          "n": "Dollar Tree",
+          "a": 6.66,
+          "g": "Shopping"
+        },
+        {
+          "d": "11-06",
+          "n": "Thanjai Mess",
+          "a": 28.77,
+          "g": "Restaurants"
+        },
+        {
+          "d": "11-06",
+          "n": "Atul Bakery - North Brunswick Township",
+          "a": 14.03,
+          "g": "Bills & utilities"
+        },
+        {
+          "d": "11-06",
+          "n": "Patidar Supermarket",
+          "a": 96.92,
+          "g": "Groceries"
+        },
+        {
+          "d": "11-07",
+          "n": "Amazon",
+          "a": 8.41,
+          "g": "Shopping"
+        },
+        {
+          "d": "11-07",
+          "n": "Academic Eye Center",
+          "a": 35,
+          "g": "Healthcare"
+        },
+        {
+          "d": "11-08",
+          "n": "Amazon",
+          "a": 100,
+          "g": "Shopping"
+        },
+        {
+          "d": "11-09",
+          "n": "Netflix",
+          "a": 21.31,
+          "g": "Entertainment"
+        },
+        {
+          "d": "11-09",
+          "n": "Amazon",
+          "a": 9.59,
+          "g": "Shopping"
+        },
+        {
+          "d": "11-09",
+          "n": "Amazon",
+          "a": 28.75,
+          "g": "Shopping"
+        },
+        {
+          "d": "11-09",
+          "n": "ShopRite",
+          "a": 33.17,
+          "g": "Groceries"
+        },
+        {
+          "d": "11-09",
+          "n": "Domino's",
+          "a": 14.9,
+          "g": "Restaurants"
+        },
+        {
+          "d": "11-11",
+          "n": "Google One",
+          "a": 4.99,
+          "g": "Entertainment"
+        },
+        {
+          "d": "11-11",
+          "n": "MONTHLY SERVICE CHARGE VR",
+          "a": 7,
+          "g": "Bank & card fees"
+        },
+        {
+          "d": "11-11",
+          "n": "Deccan Halal Mart",
+          "a": 39.25,
+          "g": "Groceries"
+        },
+        {
+          "d": "11-12",
+          "n": "PAYPAL DES:PURCHASE ID:FACEBOOKTEC INDN:VIMAL RAJ ",
+          "a": 7.45,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "11-12",
+          "n": "Rocket Mortgage",
+          "a": 3909.09,
+          "g": "Home & car loans"
+        },
+        {
+          "d": "11-14",
+          "n": "Mirra",
+          "a": 206.65,
+          "g": "Shopping"
+        }
+      ],
+      "tx_moved": [
+        {
+          "d": "11-02",
+          "n": "XOOM DES:DEBIT O ID:XXXXXXXXXX57627 INDN:LOGANATHA",
+          "a": 114.69,
+          "g": "To India"
+        },
+        {
+          "d": "11-02",
+          "n": "XOOM DES:DEBIT O ID:XXXXXXXXXX56444 INDN:LOGANATHA",
+          "a": 252.29,
+          "g": "To India"
+        },
+        {
+          "d": "11-02",
+          "n": "XOOM DES:DEBIT O ID:XXXXXXXXXX57501 INDN:LOGANATHA",
+          "a": 272.49,
+          "g": "To India"
+        },
+        {
+          "d": "11-02",
+          "n": "XOOM DES:DEBIT O ID:XXXXXXXXXX57004 INDN:LOGANATHA",
+          "a": 752.89,
+          "g": "To India"
+        },
+        {
+          "d": "11-12",
+          "n": "Robinhood",
+          "a": 100,
+          "g": "To Robinhood"
+        }
+      ],
       "days": 15,
       "days_in_month": 30
     }
   },
-  "generated_at": "2026-11-15T21:55:05.237Z",
+  "generated_at": "2026-11-15T22:04:09.499Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -16053,11 +21230,11 @@
     "forced_refresh": [
       "pnc",
       "zillow",
-      "robin",
       "wifebofa",
+      "robin",
       "bofa",
-      "td",
-      "wf"
+      "wf",
+      "td"
     ],
     "refresh_errors": {
       "discover": "PRODUCTS_NOT_SUPPORTED"
