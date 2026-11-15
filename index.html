@@ -898,6 +898,27 @@ function savingsRows(){
   });
   return out;
 }
+// USD→INR rate for the savings tab. open.er-api.com is free, keyless, CORS-open
+// and publishes once a day; cache per calendar day so it's fetched at most daily.
+var FX_INR = null, FX_DATE = '', _fxFetching = false, _fxTried = false;
+(function(){ try { var c = JSON.parse(localStorage.getItem('lgr_fx_inr') || 'null'); if(c && c.rate){ FX_INR = c.rate; FX_DATE = c.date; } } catch(e) {} })();
+function todayStr(){ return new Date().toISOString().slice(0,10); }
+function fetchInrRate(){
+  // One attempt per page load: the render() after a failure must not retry in a loop.
+  if(_fxFetching || _fxTried || (FX_INR && FX_DATE === todayStr())) return;
+  _fxFetching = true; _fxTried = true;
+  fetch('https://open.er-api.com/v6/latest/USD')
+    .then(function(r){ return r.json(); })
+    .then(function(j){
+      var rate = j && j.rates && j.rates.INR;
+      if(!rate) throw new Error('no INR rate');
+      FX_INR = rate; FX_DATE = todayStr();
+      try { localStorage.setItem('lgr_fx_inr', JSON.stringify({ rate: rate, date: FX_DATE })); } catch(e) {}
+    })
+    .catch(function(e){ console.warn('[LEDGR] INR rate fetch failed:', e); }) // keep yesterday's rate if we have one
+    .then(function(){ _fxFetching = false; if(TAB === 'mynw') render(); });
+}
+function fmtInr(usd){ return FX_INR ? '₹' + Math.round(usd * FX_INR).toLocaleString('en-IN') : '—'; }
 // What the private sheet ADDS to Overview net worth. Live rows are excluded:
 // those balances are real accounts already counted in checkingBal.
 function savingsTotal(){
@@ -971,6 +992,7 @@ function renderMyNetworth(){
     html += '<button onclick="mynwRefresh()" style="padding:9px 18px;background:var(--green);color:#000;border:none;border-radius:6px;font-weight:600;cursor:pointer">Retry</button></div>';
     set('main-content', html); return;
   }
+  fetchInrRate();
   var rows = savingsRows().sort(function(a,b){ return b.amount - a.amount; });
   var total = rows.reduce(function(s,x){ return s + x.amount; }, 0);
   var pieRows = rows.filter(function(x){ return x.amount > 0; });
@@ -991,17 +1013,21 @@ function renderMyNetworth(){
   html += '<button onclick="mynwRefresh()" class="panel-action" style="background:none;border:none;color:var(--muted);cursor:pointer">&#8635; Refresh</button></div>';
   html += '<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:13px">';
   html += '<thead><tr><th style="text-align:left;padding:8px 10px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--border);font-weight:500">Category</th>';
-  html += '<th style="text-align:right;padding:8px 10px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--border);font-weight:500">USD Amount</th></tr></thead><tbody>';
+  html += '<th style="text-align:right;padding:8px 10px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--border);font-weight:500">USD Amount</th>';
+  html += '<th style="text-align:right;padding:8px 10px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--border);font-weight:500">INR Amount</th></tr></thead><tbody>';
   rows.forEach(function(x, i){
     var col = PIE_COLORS[pieRows.indexOf(x) % PIE_COLORS.length];
     var dot = x.amount > 0 ? '<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:' + col + ';margin-right:8px;vertical-align:middle"></span>' : '<span style="display:inline-block;width:8px;margin-right:8px"></span>';
     html += '<tr style="border-bottom:1px solid var(--border2)"><td style="padding:9px 10px">' + dot + esc(x.category) + (x.live ? ' <span style="font-size:9px;letter-spacing:1px;color:var(--green);border:1px solid var(--green);border-radius:3px;padding:1px 4px;margin-left:4px;vertical-align:middle">LIVE</span>' : '') + '</td>';
-    html += '<td style="padding:9px 10px;text-align:right;font-family:IBM Plex Mono,monospace">' + fmt2(x.amount) + '</td></tr>';
+    html += '<td style="padding:9px 10px;text-align:right;font-family:IBM Plex Mono,monospace">' + fmt2(x.amount) + '</td>';
+    html += '<td style="padding:9px 10px;text-align:right;font-family:IBM Plex Mono,monospace;color:var(--muted)">' + fmtInr(x.amount) + '</td></tr>';
   });
   html += '<tr style="background:var(--s2);border-top:2px solid var(--border)"><td style="padding:10px;font-weight:700">Grand Total</td>';
-  html += '<td style="padding:10px;text-align:right;font-family:IBM Plex Mono,monospace;font-weight:700;color:var(--green)">' + fmt2(total) + '</td></tr>';
+  html += '<td style="padding:10px;text-align:right;font-family:IBM Plex Mono,monospace;font-weight:700;color:var(--green)">' + fmt2(total) + '</td>';
+  html += '<td style="padding:10px;text-align:right;font-family:IBM Plex Mono,monospace;font-weight:700;color:var(--green)">' + fmtInr(total) + '</td></tr>';
   html += '</tbody></table></div>';
-  html += '<div style="font-size:10px;color:var(--muted);margin-top:8px">LIVE rows come from your synced Robinhood and wife’s BofA checking · the rest from your Google Sheet</div></div>';
+  html += '<div style="font-size:10px;color:var(--muted);margin-top:8px">LIVE rows come from your synced Robinhood and wife’s BofA checking · the rest from your Google Sheet'
+    + (FX_INR ? '<br>1 USD = ₹' + FX_INR.toFixed(2) + ' · rate as of ' + esc(FX_DATE) + ', refreshed daily' : '<br>INR rate loading…') + '</div></div>';
 
   set('main-content', html);
 
