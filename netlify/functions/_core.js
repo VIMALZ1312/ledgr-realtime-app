@@ -391,7 +391,8 @@ function buildCashflow(accounts, transactions, months = 7) {
   const out = {};
   periods.forEach(p => { out[p] = blank(); });
   const r2 = x => Math.round(x * 100) / 100;
-  const note = (m, list, t, label) => m[list].push({ date: t.date, desc: nameOf(t).slice(0, 60), amount: r2(Math.abs(t.amount)), label });
+  // Prefer Plaid's clean merchant name ("Fragomen") over the raw bank line.
+  const note = (m, list, t, label) => m[list].push({ date: t.date, desc: (t.merchant_name || nameOf(t)).slice(0, 60), amount: r2(Math.abs(t.amount)), label });
 
   posted.forEach(t => {
     const p = t.date.slice(0, 7);
@@ -465,12 +466,13 @@ function buildCashflow(accounts, transactions, months = 7) {
   const todayStr = now.toISOString().slice(0, 10);
   periods.forEach(p => {
     const m = out[p];
-    // A bounced payment undoes the loan payment of the same size; anything else
-    // returned is money back, like a refund.
+    // A bounced payment undoes the loan payment of the same size. Any other
+    // bounce is almost always a card payment, which was internal to begin with,
+    // so it stays internal rather than posing as a refund.
     m.bounced.forEach(b => {
       const i = m.loan_items.findIndex(l => !l.reversed && Math.abs(l.amount - b.amount) < 0.01);
       if (i >= 0) { m.loan_items[i].reversed = true; m.spent.loans -= b.amount; }
-      else m.spent.refunds += b.amount;
+      else { m.internal.count++; m.internal.total += b.amount; }
     });
     m.income.total =m.income.salary + m.income.zelle_in + m.income.interest + m.income.other_in;
     m.spent.total = m.spent.purchases - m.spent.refunds + m.spent.loans + m.spent.fees + m.spent.zelle_out + m.spent.other_out;
