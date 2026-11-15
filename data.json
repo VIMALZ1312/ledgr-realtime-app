@@ -15173,6 +15173,7 @@
           "amount": 23.83
         }
       ],
+      "bounced": [],
       "days": 31,
       "days_in_month": 31
     },
@@ -15281,6 +15282,7 @@
           "amount": 23.83
         }
       ],
+      "bounced": [],
       "days": 30,
       "days_in_month": 30
     },
@@ -15295,8 +15297,8 @@
       "spent": {
         "total": 12448.54,
         "purchases": 7341.94,
-        "refunds": 4284.33,
-        "loans": 8231.93,
+        "refunds": 484.19,
+        "loans": 4431.79,
         "fees": 156,
         "zelle_out": 1003,
         "other_out": 0
@@ -15384,11 +15386,6 @@
       ],
       "refunds_big": [
         {
-          "date": "2026-07-14",
-          "desc": "RETURN OF POSTED CHECK / ITEM (RECEIVED ON 07-13) ELECTRONIC",
-          "amount": 3800.14
-        },
-        {
           "date": "2026-07-08",
           "desc": "VFS Services USA Inc. Washington DCDC",
           "amount": 202
@@ -15408,11 +15405,19 @@
         {
           "date": "2026-07-16",
           "desc": "ROCKET MORTGAGE DES:RETRY PYMT ID:6966478 INDN:VIMAL RAJ *LO",
-          "amount": 3800.14
+          "amount": 3800.14,
+          "reversed": true
         },
         {
           "date": "2026-07-13",
           "desc": "ROCKET MORTGAGE DES:LOAN ID:6966478 INDN:VIMAL RAJ *LOGANATH",
+          "amount": 3800.14
+        }
+      ],
+      "bounced": [
+        {
+          "date": "2026-07-14",
+          "desc": "RETURN OF POSTED CHECK / ITEM (RECEIVED ON 07-13) ELECTRONIC",
           "amount": 3800.14
         }
       ],
@@ -15430,8 +15435,8 @@
       "spent": {
         "total": 15772.69,
         "purchases": 10228.69,
-        "refunds": 4026.68,
-        "loans": 8231.93,
+        "refunds": 226.54,
+        "loans": 4431.79,
         "fees": 114.76,
         "zelle_out": 170,
         "other_out": 1053.99
@@ -15547,13 +15552,7 @@
           "label": "out"
         }
       ],
-      "refunds_big": [
-        {
-          "date": "2026-08-13",
-          "desc": "RETURN OF POSTED CHECK / ITEM (RECEIVED ON 08-12) ELECTRONIC",
-          "amount": 3800.14
-        }
-      ],
+      "refunds_big": [],
       "loan_items": [
         {
           "date": "2026-08-24",
@@ -15563,11 +15562,19 @@
         {
           "date": "2026-08-24",
           "desc": "ROCKET MORTGAGE DES:LOAN ID:1516326 INDN:VIMAL RAJ *LOGANATH",
-          "amount": 3800.14
+          "amount": 3800.14,
+          "reversed": true
         },
         {
           "date": "2026-08-12",
           "desc": "ROCKET MORTGAGE DES:LOAN ID:7948453 INDN:VIMAL RAJ *LOGANATH",
+          "amount": 3800.14
+        }
+      ],
+      "bounced": [
+        {
+          "date": "2026-08-13",
+          "desc": "RETURN OF POSTED CHECK / ITEM (RECEIVED ON 08-12) ELECTRONIC",
           "amount": 3800.14
         }
       ],
@@ -15585,8 +15592,8 @@
       "spent": {
         "total": 10971.4,
         "purchases": 8279.92,
-        "refunds": 2636.26,
-        "loans": 5063.44,
+        "refunds": 2004.61,
+        "loans": 4431.79,
         "fees": 129.3,
         "zelle_out": 135,
         "other_out": 0
@@ -15673,18 +15680,7 @@
         }
       ],
       "unmatched": [],
-      "refunds_big": [
-        {
-          "date": "2026-09-22",
-          "desc": "RETURN OF POSTED CHECK / ITEM (RECEIVED ON 09-21) ELECTRONIC",
-          "amount": 1825.54
-        },
-        {
-          "date": "2026-09-24",
-          "desc": "RETURN OF POSTED CHECK / ITEM (RECEIVED ON 09-23) ELECTRONIC",
-          "amount": 631.65
-        }
-      ],
+      "refunds_big": [],
       "loan_items": [
         {
           "date": "2026-09-14",
@@ -15694,11 +15690,34 @@
         {
           "date": "2026-09-23",
           "desc": "KMF DES:KMFUSA.com ID:XXXXX17265 INDN:VIMAL LOGANATHAN CO ID",
-          "amount": 631.65
+          "amount": 631.65,
+          "reversed": true
         },
         {
           "date": "2026-09-30",
           "desc": "KMF DES:KMFUSA.com ID:XXXXX17265 INDN:VIMAL LOGANATHAN CO ID",
+          "amount": 631.65
+        }
+      ],
+      "bounced": [
+        {
+          "date": "2026-09-22",
+          "desc": "RETURN OF POSTED CHECK / ITEM (RECEIVED ON 09-21) ELECTRONIC",
+          "amount": 1825.54
+        },
+        {
+          "date": "2026-09-23",
+          "desc": "RETURN OF POSTED CHECK / ITEM (RECEIVED ON 09-22) ELECTRONIC",
+          "amount": 40
+        },
+        {
+          "date": "2026-09-24",
+          "desc": "RETURN OF POSTED CHECK / ITEM (RECEIVED ON 09-23) ELECTRONIC",
+          "amount": 100
+        },
+        {
+          "date": "2026-09-24",
+          "desc": "RETURN OF POSTED CHECK / ITEM (RECEIVED ON 09-23) ELECTRONIC",
           "amount": 631.65
         }
       ],
@@ -15820,6 +15839,7 @@
           "amount": 631.65
         }
       ],
+      "bounced": [],
       "days": 31,
       "days_in_month": 31
     },
@@ -15890,11 +15910,12 @@
           "amount": 3909.09
         }
       ],
+      "bounced": [],
       "days": 15,
       "days_in_month": 30
     }
   },
-  "generated_at": "2026-11-15T21:51:28.496Z",
+  "generated_at": "2026-11-15T21:53:34.292Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -16031,10 +16052,10 @@
     "failed": [],
     "forced_refresh": [
       "pnc",
-      "robin",
       "wifebofa",
       "zillow",
       "bofa",
+      "robin",
       "wf",
       "td"
     ],
