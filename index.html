@@ -22,6 +22,7 @@ body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-ser
 .logo{padding:20px 18px 16px;border-bottom:1px solid var(--border);}
 .logo-mark{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:18px;letter-spacing:2px;}
 .logo-mark span{color:var(--green);}
+.logo-mark,.t-logo{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;cursor:default;}
 .logo-sub{font-size:11px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-top:3px;}
 .dot{display:inline-block;width:6px;height:6px;background:var(--green);border-radius:50%;margin-right:5px;animation:blink 2s infinite;}
 @keyframes blink{0%,100%{opacity:1;}50%{opacity:.2;}}
@@ -211,9 +212,10 @@ var PAGES = [
   {id:'travel',    label:'Travel',    icon:'&#9992;'},
   {id:'subs',      label:'Subscriptions', icon:'&#128179;'},
   {id:'zelle',     label:'Zelle',     icon:'&#128184;'},
-  {id:'search',    label:'Search',    icon:'&#128269;'},
-  {id:'mynw',      label:'My Net Worth', icon:'&#128274;'}
+  {id:'search',    label:'Search',    icon:'&#128269;'}
 ];
+// 'mynw' is deliberately not in PAGES: no nav entry; it opens only by
+// triple-tapping the LEDGR logo (see the logo triple-tap handler).
 var _tid = 0;
 function uid() { return 'el' + (++_tid); }
 // Some accounts are pulled in under more than one login (e.g. BofA appears under
@@ -422,7 +424,7 @@ function buildNav() {
   }).join(''));
 }
 
-function switchTab(id) { TAB = id; buildNav(); render(); }
+function switchTab(id) { if(id !== 'mynw') MYNW_UNLOCKED = false; TAB = id; buildNav(); render(); }
 function openDrawer() { $('drawer').classList.add('open'); $('overlay').classList.add('open'); }
 function closeDrawer() { $('drawer').classList.remove('open'); $('overlay').classList.remove('open'); }
 function openModal(title, sub, body) { set('modal-title', title); set('modal-sub', sub); set('modal-body', body); $('modal').classList.add('open'); }
@@ -898,42 +900,29 @@ function fetchSavings(){
     .catch(function(e){ SAVINGS_ERR = e.message || 'Could not load sheet'; })
     .then(function(){ _savFetching = false; if(TAB==='mynw' || TAB==='overview') render(); });
 }
-function mynwHash(){ return localStorage.getItem('lgr_mynw_hash') || ''; }
-function sha256(str){
-  if(window.crypto && crypto.subtle && crypto.subtle.digest){
-    return crypto.subtle.digest('SHA-256', new TextEncoder().encode(str)).then(function(buf){
-      return Array.prototype.map.call(new Uint8Array(buf), function(b){ return ('0'+b.toString(16)).slice(-2); }).join('');
-    });
-  }
-  var h=5381; for(var i=0;i<str.length;i++){ h=((h*33) ^ str.charCodeAt(i)) >>> 0; }
-  return Promise.resolve('f'+h.toString(16));
-}
-function mynwUnlock(){
-  var inp = $('mynw-pass'); if(!inp || !inp.value) return;
-  sha256(inp.value).then(function(h){
-    if(!mynwHash()){ localStorage.setItem('lgr_mynw_hash', h); MYNW_UNLOCKED = true; render(); }
-    else if(h === mynwHash()){ MYNW_UNLOCKED = true; render(); }
-    else { var e=$('mynw-err'); if(e) e.textContent = 'Wrong password.'; }
+// Hidden entry: three taps on the LEDGR logo (sidebar, drawer or top bar)
+// within ~700ms opens the tab. Nothing in the UI hints that it exists.
+try { localStorage.removeItem('lgr_mynw_hash'); } catch(e) {} // retire the old password
+(function(){
+  var taps = 0, timer = null;
+  document.addEventListener('click', function(e){
+    if(!e.target.closest || !e.target.closest('.logo-mark, .t-logo')) return;
+    taps++;
+    clearTimeout(timer);
+    timer = setTimeout(function(){ taps = 0; }, 700);
+    if(taps >= 3){
+      taps = 0; clearTimeout(timer);
+      MYNW_UNLOCKED = true;
+      closeDrawer();
+      switchTab('mynw');
+    }
   });
-}
-function mynwLock(){ MYNW_UNLOCKED = false; render(); }
+})();
+function mynwLock(){ MYNW_UNLOCKED = false; switchTab('overview'); }
 function mynwRefresh(){ SAVINGS_LOADED = false; if(_savChart){ _savChart.destroy(); _savChart=null; } fetchSavings(); render(); }
 function renderMyNetworth(){
   var html='';
-  if(!MYNW_UNLOCKED){
-    var firstTime = !mynwHash();
-    html += '<div class="panel" style="max-width:400px;margin:48px auto;text-align:center">';
-    html += '<div style="font-size:34px;margin-bottom:10px">&#128274;</div>';
-    html += '<div class="panel-title" style="margin-bottom:6px;text-align:center">' + (firstTime ? 'Set a Password' : 'My Net Worth · Locked') + '</div>';
-    html += '<div style="font-size:12px;color:var(--muted);margin-bottom:16px;line-height:1.5">' + (firstTime ? 'Create a password to protect this tab.<br>Keep it safe — there is no recovery.' : 'Enter your password to view your savings.') + '</div>';
-    html += '<input id="mynw-pass" type="password" placeholder="Password" autocomplete="off" onkeydown="if(event.key===\'Enter\')mynwUnlock()" style="width:100%;padding:11px;background:var(--s2);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:14px;margin-bottom:10px;box-sizing:border-box">';
-    html += '<button onclick="mynwUnlock()" style="width:100%;padding:11px;background:var(--green);color:#000;border:none;border-radius:6px;font-weight:600;font-size:13px;cursor:pointer">' + (firstTime ? 'Set Password &amp; Unlock' : 'Unlock') + '</button>';
-    html += '<div id="mynw-err" style="font-size:12px;color:var(--red);margin-top:10px"></div>';
-    html += '</div>';
-    set('main-content', html);
-    setTimeout(function(){ var p=$('mynw-pass'); if(p) p.focus(); }, 60);
-    return;
-  }
+  if(!MYNW_UNLOCKED){ switchTab('overview'); return; }
   if(!SAVINGS_LOADED && !SAVINGS_ERR){
     fetchSavings();
     set('main-content', '<div style="display:flex;align-items:center;justify-content:center;height:200px;font-size:13px;color:var(--muted);font-family:IBM Plex Mono,monospace">Loading from Google Sheet…</div>');
@@ -957,7 +946,7 @@ function renderMyNetworth(){
   html += '</div>';
 
   // Pie chart
-  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Allocation</div><button onclick="mynwLock()" style="background:none;border:none;color:var(--muted);font-size:11px;font-family:IBM Plex Mono,monospace;cursor:pointer">&#128274; Lock</button></div>';
+  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Allocation</div><button onclick="mynwLock()" style="background:none;border:none;color:var(--muted);font-size:11px;font-family:IBM Plex Mono,monospace;cursor:pointer">Hide</button></div>';
   html += '<div style="position:relative;height:300px"><canvas id="savPie"></canvas></div></div>';
 
   // Table
@@ -1014,7 +1003,7 @@ function showNetWorth() {
   var sv = savingsTotal();
   if(sv !== 0) {
     b += '<div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin:12px 0 8px">PRIVATE SAVINGS</div>';
-    b += '<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;font-size:13px"><span style="color:var(--muted)">&#128274; Included in net worth</span><span style="font-family:IBM Plex Mono,monospace;color:' + (MYNW_UNLOCKED ? 'var(--green)' : 'var(--muted2)') + '">' + (MYNW_UNLOCKED ? fmt2(sv) : '••••• unlock to view') + '</span></div>';
+    b += '<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;font-size:13px"><span style="color:var(--muted)">Included in net worth</span><span style="font-family:IBM Plex Mono,monospace;color:' + (MYNW_UNLOCKED ? 'var(--green)' : 'var(--muted2)') + '">' + (MYNW_UNLOCKED ? fmt2(sv) : '•••••') + '</span></div>';
   }
   openModal('Net Worth', 'All accounts', b);
 }
