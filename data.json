@@ -15093,21 +15093,21 @@
         "other_in": 40.71
       },
       "spent": {
-        "total": 6185.76,
+        "total": 4185.76,
         "purchases": 4548.71,
         "refunds": 689.42,
         "loans": 47.66,
         "fees": 69.81,
         "zelle_out": 209,
-        "other_out": 2000
+        "other_out": 0
       },
       "moved": {
         "invested": 0,
         "india": 0
       },
       "internal": {
-        "count": 11,
-        "total": 6715.62
+        "count": 13,
+        "total": 8715.62
       },
       "by_category": {
         "Shopping": 1835.91,
@@ -15130,28 +15130,18 @@
         {
           "date": "2026-05-01",
           "desc": "INTEREST CHARGE ON PURCHASES",
-          "amount": 44.81
+          "amount": 44.81,
+          "label": "interest"
         },
         {
           "date": "2026-05-05",
           "desc": "MAINTENANCE FEE",
-          "amount": 25
+          "amount": 25,
+          "label": "maintenance"
         }
       ],
       "big": [],
       "unmatched": [
-        {
-          "date": "2026-05-06",
-          "desc": "Online Banking transfer to CHK 7309 Confirmation# XXXXX94019",
-          "amount": 1300,
-          "label": "out"
-        },
-        {
-          "date": "2026-05-15",
-          "desc": "Online Banking transfer to CHK 7309 Confirmation# XXXXX24720",
-          "amount": 700,
-          "label": "out"
-        },
         {
           "date": "2026-05-29",
           "desc": "ZEL FROM DEEPAK REDDY DEVULAPALLY",
@@ -15159,16 +15149,40 @@
           "label": "in"
         }
       ],
+      "refunds_big": [
+        {
+          "date": "2026-05-17",
+          "desc": "CASH BACK REDEMPTION REF 200005350",
+          "amount": 312.15
+        },
+        {
+          "date": "2026-05-27",
+          "desc": "NORTH BRUNSWICK FAMILY DENORTH BRUNSWINJ",
+          "amount": 290.46
+        }
+      ],
+      "loan_items": [
+        {
+          "date": "2026-05-19",
+          "desc": "SP+AFF* TITANWATCHESUS AFFIRM.COM",
+          "amount": 23.83
+        },
+        {
+          "date": "2026-05-05",
+          "desc": "SP+AFF* TITANWATCHESUS AFFIRM.COM",
+          "amount": 23.83
+        }
+      ],
       "days": 31,
       "days_in_month": 31
     },
     "2026-06": {
       "income": {
-        "total": 35799.26,
+        "total": 16036.76,
         "salary": 15908.05,
         "zelle_in": 88,
         "interest": 0,
-        "other_in": 19803.21
+        "other_in": 40.71
       },
       "spent": {
         "total": 10387.05,
@@ -15184,8 +15198,8 @@
         "india": 10567.87
       },
       "internal": {
-        "count": 27,
-        "total": 14862.65
+        "count": 29,
+        "total": 34625.15
       },
       "by_category": {
         "Zelle to people": 78,
@@ -15209,7 +15223,8 @@
         {
           "date": "2026-06-05",
           "desc": "MAINTENANCE FEE",
-          "amount": 25
+          "amount": 25,
+          "label": "maintenance"
         }
       ],
       "big": [
@@ -15221,22 +15236,49 @@
       ],
       "unmatched": [
         {
-          "date": "2026-06-10",
-          "desc": "Robinhood",
-          "amount": 14850,
-          "label": "in"
-        },
-        {
-          "date": "2026-06-04",
-          "desc": "Robinhood",
-          "amount": 4912.5,
-          "label": "in"
-        },
-        {
           "date": "2026-06-30",
           "desc": "ZEL FROM DEEPAK REDDY DEVULAPALLY",
           "amount": 40.71,
           "label": "in"
+        }
+      ],
+      "refunds_big": [
+        {
+          "date": "2026-06-24",
+          "desc": "VFS Services USA Inc. Washington DCDC",
+          "amount": 202
+        },
+        {
+          "date": "2026-06-24",
+          "desc": "VFS Services USA Inc. Washington DCDC",
+          "amount": 252
+        },
+        {
+          "date": "2026-06-17",
+          "desc": "CHECKCARD 0616 KIDS SMILE SOUTH BRUNSWINJ XXXXX9761XXXXXXXXX",
+          "amount": 293.8
+        }
+      ],
+      "loan_items": [
+        {
+          "date": "2026-06-23",
+          "desc": "KMF DES:KMFUSA.com ID:XXXXX17265 INDN:VIMAL LOGANATHAN CO ID",
+          "amount": 631.65
+        },
+        {
+          "date": "2026-06-12",
+          "desc": "ROCKET MORTGAGE DES:LOAN ID:6247993 INDN:VIMAL RAJ *LOGANATH",
+          "amount": 3800.14
+        },
+        {
+          "date": "2026-06-16",
+          "desc": "SP+AFF* TITANWATCHESUS AFFIRM.COM",
+          "amount": 23.84
+        },
+        {
+          "date": "2026-06-02",
+          "desc": "SP+AFF* TITANWATCHESUS AFFIRM.COM",
+          "amount": 23.83
         }
       ],
       "days": 30,
@@ -15244,11 +15286,11 @@
     },
     "2026-07": {
       "income": {
-        "total": 30478.87,
+        "total": 29003.73,
         "salary": 23862.09,
         "zelle_in": 2063.67,
         "interest": 0,
-        "other_in": 4553.11
+        "other_in": 3077.97
       },
       "spent": {
         "total": 12448.54,
@@ -15264,8 +15306,8 @@
         "india": 1055.68
       },
       "internal": {
-        "count": 19,
-        "total": 16792.68
+        "count": 20,
+        "total": 18267.82
       },
       "by_category": {
         "Bills & utilities": 665.59,
@@ -15291,37 +15333,44 @@
         {
           "date": "2026-07-31",
           "desc": "ANNUAL FEE",
-          "amount": 95
+          "amount": 95,
+          "label": "annual"
         },
         {
           "date": "2026-07-01",
           "desc": "OVERDRAFT ITEM FEE FOR ACTIVITY OF 07-01 ELECTRONIC TRANSACT",
-          "amount": 10
+          "amount": 10,
+          "label": "overdraft"
         },
         {
           "date": "2026-07-01",
           "desc": "OVERDRAFT ITEM FEE FOR ACTIVITY OF 07-01 ELECTRONIC TRANSACT",
-          "amount": 10
+          "amount": 10,
+          "label": "overdraft"
         },
         {
           "date": "2026-07-30",
           "desc": "Monthly Maintenance Fee",
-          "amount": 8
+          "amount": 8,
+          "label": "maintenance"
         },
         {
           "date": "2026-07-28",
           "desc": "MINIMUM INTEREST CHARGE",
-          "amount": 1
+          "amount": 1,
+          "label": "interest"
         },
         {
           "date": "2026-07-10",
           "desc": "MONTHLY SERVICE CHARGE VR",
-          "amount": 7
+          "amount": 7,
+          "label": "maintenance"
         },
         {
           "date": "2026-07-03",
           "desc": "MAINTENANCE FEE",
-          "amount": 25
+          "amount": 25,
+          "label": "maintenance"
         }
       ],
       "big": [],
@@ -15331,12 +15380,40 @@
           "desc": "Mercury Insuranc DES:Deposit ID:8b6860f7-a49a-4 INDN:Vimal l",
           "amount": 3077.97,
           "label": "in"
+        }
+      ],
+      "refunds_big": [
+        {
+          "date": "2026-07-14",
+          "desc": "RETURN OF POSTED CHECK / ITEM (RECEIVED ON 07-13) ELECTRONIC",
+          "amount": 3800.14
+        },
+        {
+          "date": "2026-07-08",
+          "desc": "VFS Services USA Inc. Washington DCDC",
+          "amount": 202
+        },
+        {
+          "date": "2026-07-23",
+          "desc": "CASH REWARDS STATEMENT CREDIT",
+          "amount": 276.73
+        }
+      ],
+      "loan_items": [
+        {
+          "date": "2026-07-23",
+          "desc": "KMF DES:KMFUSA.com ID:XXXXX17265 INDN:VIMAL LOGANATHAN CO ID",
+          "amount": 631.65
+        },
+        {
+          "date": "2026-07-16",
+          "desc": "ROCKET MORTGAGE DES:RETRY PYMT ID:6966478 INDN:VIMAL RAJ *LO",
+          "amount": 3800.14
         },
         {
           "date": "2026-07-13",
-          "desc": "Robinhood",
-          "amount": 1475.14,
-          "label": "in"
+          "desc": "ROCKET MORTGAGE DES:LOAN ID:6966478 INDN:VIMAL RAJ *LOGANATH",
+          "amount": 3800.14
         }
       ],
       "days": 31,
@@ -15344,28 +15421,28 @@
     },
     "2026-08": {
       "income": {
-        "total": 33605.01,
+        "total": 17512.3,
         "salary": 16417.61,
         "zelle_in": 317.91,
         "interest": 0,
-        "other_in": 16869.49
+        "other_in": 776.78
       },
       "spent": {
-        "total": 18772.69,
+        "total": 15772.69,
         "purchases": 10228.69,
         "refunds": 4026.68,
         "loans": 8231.93,
         "fees": 114.76,
         "zelle_out": 170,
-        "other_out": 4053.99
+        "other_out": 1053.99
       },
       "moved": {
         "invested": 15605.36,
         "india": 2093.74
       },
       "internal": {
-        "count": 30,
-        "total": 35974.34
+        "count": 33,
+        "total": 55067.05
       },
       "by_category": {
         "Entertainment": 687,
@@ -15391,37 +15468,44 @@
         {
           "date": "2026-08-28",
           "desc": "Monthly Maintenance Fee",
-          "amount": 8
+          "amount": 8,
+          "label": "maintenance"
         },
         {
           "date": "2026-08-07",
           "desc": "MIDDLESEX CO-1 08/07 #XXXXX9295 WITHDRWL MIDDLESEX CO-1433 E",
-          "amount": 2.5
+          "amount": 2.5,
+          "label": "other"
         },
         {
           "date": "2026-08-03",
           "desc": "NON-WELLS FARGO ATM TRANSACTION FEE",
-          "amount": 3
+          "amount": 3,
+          "label": "atm"
         },
         {
           "date": "2026-08-12",
           "desc": "MONTHLY SERVICE CHARGE VR",
-          "amount": 7
+          "amount": 7,
+          "label": "maintenance"
         },
         {
           "date": "2026-08-05",
           "desc": "MAINTENANCE FEE",
-          "amount": 25
+          "amount": 25,
+          "label": "maintenance"
         },
         {
           "date": "2026-08-13",
           "desc": "Late Fee",
-          "amount": 25
+          "amount": 25,
+          "label": "late"
         },
         {
           "date": "2026-08-20",
           "desc": "Interest Charge",
-          "amount": 44.26
+          "amount": 44.26,
+          "label": "interest"
         }
       ],
       "big": [
@@ -15432,24 +15516,6 @@
         }
       ],
       "unmatched": [
-        {
-          "date": "2026-08-10",
-          "desc": "Robinhood",
-          "amount": 15092.71,
-          "label": "in"
-        },
-        {
-          "date": "2026-08-13",
-          "desc": "Online Banking transfer to CHK 7309 Confirmation# XXXXX70043",
-          "amount": 3000,
-          "label": "out"
-        },
-        {
-          "date": "2026-08-18",
-          "desc": "Robinhood",
-          "amount": 1000,
-          "label": "in"
-        },
         {
           "date": "2026-08-19",
           "desc": "Mercury Insuranc DES:Deposit ID:5659de7c-5672-4 INDN:null VI",
@@ -15479,6 +15545,30 @@
           "desc": "MIDDLESEX CO-1 08/07 #XXXXX9295 WITHDRWL MIDDLESEX CO-1433 E",
           "amount": 103.99,
           "label": "out"
+        }
+      ],
+      "refunds_big": [
+        {
+          "date": "2026-08-13",
+          "desc": "RETURN OF POSTED CHECK / ITEM (RECEIVED ON 08-12) ELECTRONIC",
+          "amount": 3800.14
+        }
+      ],
+      "loan_items": [
+        {
+          "date": "2026-08-24",
+          "desc": "KMF DES:KMFUSA.com ID:XXXXX17265 INDN:VIMAL LOGANATHAN CO ID",
+          "amount": 631.65
+        },
+        {
+          "date": "2026-08-24",
+          "desc": "ROCKET MORTGAGE DES:LOAN ID:1516326 INDN:VIMAL RAJ *LOGANATH",
+          "amount": 3800.14
+        },
+        {
+          "date": "2026-08-12",
+          "desc": "ROCKET MORTGAGE DES:LOAN ID:7948453 INDN:VIMAL RAJ *LOGANATH",
+          "amount": 3800.14
         }
       ],
       "days": 31,
@@ -15529,42 +15619,50 @@
         {
           "date": "2026-09-16",
           "desc": "OVERDRAFT ITEM FEE FOR ACTIVITY OF 09-16 ELECTRONIC TRANSACT",
-          "amount": 10
+          "amount": 10,
+          "label": "overdraft"
         },
         {
           "date": "2026-09-17",
           "desc": "OVERDRAFT ITEM FEE FOR ACTIVITY OF 09-17 ELECTRONIC TRANSACT",
-          "amount": 10
+          "amount": 10,
+          "label": "overdraft"
         },
         {
           "date": "2026-09-17",
           "desc": "OVERDRAFT ITEM FEE FOR ACTIVITY OF 09-17 ELECTRONIC TRANSACT",
-          "amount": 10
+          "amount": 10,
+          "label": "overdraft"
         },
         {
           "date": "2026-09-29",
           "desc": "Monthly Maintenance Fee",
-          "amount": 8
+          "amount": 8,
+          "label": "maintenance"
         },
         {
           "date": "2026-09-11",
           "desc": "MONTHLY SERVICE CHARGE VR",
-          "amount": 7
+          "amount": 7,
+          "label": "maintenance"
         },
         {
           "date": "2026-09-04",
           "desc": "MAINTENANCE FEE",
-          "amount": 25
+          "amount": 25,
+          "label": "maintenance"
         },
         {
           "date": "2026-09-23",
           "desc": "INTEREST CHARGE:PURCHASES",
-          "amount": 34.05
+          "amount": 34.05,
+          "label": "interest"
         },
         {
           "date": "2026-09-18",
           "desc": "Interest Charge",
-          "amount": 25.25
+          "amount": 25.25,
+          "label": "interest"
         }
       ],
       "big": [
@@ -15575,6 +15673,35 @@
         }
       ],
       "unmatched": [],
+      "refunds_big": [
+        {
+          "date": "2026-09-22",
+          "desc": "RETURN OF POSTED CHECK / ITEM (RECEIVED ON 09-21) ELECTRONIC",
+          "amount": 1825.54
+        },
+        {
+          "date": "2026-09-24",
+          "desc": "RETURN OF POSTED CHECK / ITEM (RECEIVED ON 09-23) ELECTRONIC",
+          "amount": 631.65
+        }
+      ],
+      "loan_items": [
+        {
+          "date": "2026-09-14",
+          "desc": "ROCKET MORTGAGE DES:LOAN ID:6489142 INDN:VIMAL RAJ *LOGANATH",
+          "amount": 3800.14
+        },
+        {
+          "date": "2026-09-23",
+          "desc": "KMF DES:KMFUSA.com ID:XXXXX17265 INDN:VIMAL LOGANATHAN CO ID",
+          "amount": 631.65
+        },
+        {
+          "date": "2026-09-30",
+          "desc": "KMF DES:KMFUSA.com ID:XXXXX17265 INDN:VIMAL LOGANATHAN CO ID",
+          "amount": 631.65
+        }
+      ],
       "days": 30,
       "days_in_month": 30
     },
@@ -15627,37 +15754,44 @@
         {
           "date": "2026-10-29",
           "desc": "Monthly Maintenance Fee",
-          "amount": 8
+          "amount": 8,
+          "label": "maintenance"
         },
         {
           "date": "2026-10-02",
           "desc": "INTEREST CHARGE ON PURCHASES",
-          "amount": 47.12
+          "amount": 47.12,
+          "label": "interest"
         },
         {
           "date": "2026-10-10",
           "desc": "MONTHLY SERVICE CHARGE VR",
-          "amount": 7
+          "amount": 7,
+          "label": "maintenance"
         },
         {
           "date": "2026-10-05",
           "desc": "MAINTENANCE FEE",
-          "amount": 25
+          "amount": 25,
+          "label": "maintenance"
         },
         {
           "date": "2026-10-24",
           "desc": "INTEREST CHARGE:PURCHASES",
-          "amount": 0.21
+          "amount": 0.21,
+          "label": "interest"
         },
         {
           "date": "2026-10-13",
           "desc": "Late Fee",
-          "amount": 36
+          "amount": 36,
+          "label": "late"
         },
         {
           "date": "2026-10-20",
           "desc": "Interest Charge",
-          "amount": 38.85
+          "amount": 38.85,
+          "label": "interest"
         }
       ],
       "big": [
@@ -15673,6 +15807,19 @@
         }
       ],
       "unmatched": [],
+      "refunds_big": [],
+      "loan_items": [
+        {
+          "date": "2026-10-13",
+          "desc": "ROCKET MORTGAGE DES:LOAN ID:7174644 INDN:VIMAL RAJ *LOGANATH",
+          "amount": 3800.14
+        },
+        {
+          "date": "2026-10-23",
+          "desc": "KMF DES:KMFUSA.com ID:XXXXX17265 INDN:VIMAL LOGANATHAN CO ID",
+          "amount": 631.65
+        }
+      ],
       "days": 31,
       "days_in_month": 31
     },
@@ -15717,26 +15864,37 @@
         {
           "date": "2026-11-02",
           "desc": "INTEREST CHARGE ON PURCHASES",
-          "amount": 68.42
+          "amount": 68.42,
+          "label": "interest"
         },
         {
           "date": "2026-11-11",
           "desc": "MONTHLY SERVICE CHARGE VR",
-          "amount": 7
+          "amount": 7,
+          "label": "maintenance"
         },
         {
           "date": "2026-11-05",
           "desc": "MAINTENANCE FEE",
-          "amount": 25
+          "amount": 25,
+          "label": "maintenance"
         }
       ],
       "big": [],
       "unmatched": [],
+      "refunds_big": [],
+      "loan_items": [
+        {
+          "date": "2026-11-12",
+          "desc": "ROCKET MORTGAGE DES:LOAN ID:7985280 INDN:VIMAL RAJ *LOGANATH",
+          "amount": 3909.09
+        }
+      ],
       "days": 15,
       "days_in_month": 30
     }
   },
-  "generated_at": "2026-11-15T21:49:10.230Z",
+  "generated_at": "2026-11-15T21:51:28.496Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -15873,12 +16031,12 @@
     "failed": [],
     "forced_refresh": [
       "pnc",
-      "zillow",
       "robin",
       "wifebofa",
-      "td",
+      "zillow",
+      "bofa",
       "wf",
-      "bofa"
+      "td"
     ],
     "refresh_errors": {
       "discover": "PRODUCTS_NOT_SUPPORTED"
