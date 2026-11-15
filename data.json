@@ -679,14 +679,6 @@
   ],
   "pending_transactions": [
     {
-      "date": "11-11",
-      "desc": "Mirra",
-      "amount": 206.65,
-      "category": "Shopping",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
       "date": "11-13",
       "desc": "Vzn Br Cafe",
       "amount": 9.51,
@@ -8568,7 +8560,7 @@
         "Groceries": 185.36,
         "Healthcare": 60.09
       },
-      "total": 2293.830000000001,
+      "total": 2293.8300000000004,
       "transactions": [
         {
           "date": "11-02",
@@ -8819,19 +8811,6 @@
         },
         {
           "date": "11-11",
-          "desc": "Mirra",
-          "amount": 206.65,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "BofA",
-          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
-          "mask": "2776",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "date": "11-11",
           "desc": "Deccan Halal Mart",
           "amount": 39.25,
           "category": "Groceries",
@@ -8900,6 +8879,19 @@
           "desc": "Deccan Halal Mart",
           "amount": 16.02,
           "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-14",
+          "desc": "Mirra",
+          "amount": 206.65,
+          "category": "Shopping",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -15070,7 +15062,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-11-15T11:01:34.477Z",
+  "generated_at": "2026-11-15T18:29:12.230Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -15159,7 +15151,7 @@
         "txns": 377,
         "pages": 1,
         "truncated": false,
-        "last_txn": "2026-11-11"
+        "last_txn": "2026-11-14"
       },
       {
         "nickname": "zillow",
@@ -15208,14 +15200,14 @@
     "forced_refresh": [
       "pnc",
       "zillow",
+      "wf",
+      "bofa",
       "robin",
-      "td",
-      "wf"
+      "wifebofa",
+      "td"
     ],
     "refresh_errors": {
-      "discover": "PRODUCTS_NOT_SUPPORTED",
-      "wifebofa": "INSTITUTION_NOT_RESPONDING",
-      "bofa": "INSTITUTION_NOT_RESPONDING"
+      "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
     "txns_fetched": 1405,
