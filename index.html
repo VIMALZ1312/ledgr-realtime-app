@@ -865,7 +865,44 @@ var SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSV45yHGbG6
 var SAVINGS_ROWS = [], SAVINGS_TOTAL = 0, SAVINGS_LOADED = false, SAVINGS_ERR = null, _savFetching = false, _savChart = null;
 var PIE_COLORS = ['#00d084','#4da8ff','#a78bfa','#ff8c42','#f5c518','#ff4060','#67e8f9','#c084fc','#34d399','#fb923c','#e879f9','#60d0ff','#c8f060','#f87171','#818cf8','#10b981'];
 function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
-function savingsTotal(){ return SAVINGS_TOTAL; }
+// Two sheet rows are replaced by real balances from the synced accounts:
+//   Stocks  ← every Robinhood brokerage account
+//   Savings ← every checking account on the wife's BofA login (wifebofa)
+// Match on the raw list, not dedupAccts(): BofA accounts can appear under both
+// the bofa and wifebofa logins and dedup may keep the bofa copy.
+var LIVE_SAVINGS = {
+  'stocks':  function(a){ return a.bank === 'Robinhood' && a.subtype === 'brokerage'; },
+  'savings': function(a){ return bankKeyOf(a) === 'wifebofa' && a.subtype === 'checking'; }
+};
+function liveSavingsAmount(key){
+  var seen = {}, sum = 0;
+  ((D && D.all_accounts) || []).forEach(function(a){
+    if(!LIVE_SAVINGS[key](a)) return;
+    var id = a.bank + '|' + a.mask + '|' + a.subtype;
+    if(seen[id]) return;
+    seen[id] = true; sum += Number(a.balance) || 0;
+  });
+  return sum;
+}
+// Sheet rows with the live categories swapped in (added if the sheet lacks them).
+function savingsRows(){
+  var have = {};
+  var out = SAVINGS_ROWS.map(function(x){
+    var k = x.category.trim().toLowerCase();
+    if(!LIVE_SAVINGS[k] || !D) return x;
+    have[k] = true;
+    return { category: x.category, amount: liveSavingsAmount(k), live: true };
+  });
+  if(D) Object.keys(LIVE_SAVINGS).forEach(function(k){
+    if(!have[k]) out.push({ category: k.charAt(0).toUpperCase() + k.slice(1), amount: liveSavingsAmount(k), live: true });
+  });
+  return out;
+}
+// What the private sheet ADDS to Overview net worth. Live rows are excluded:
+// those balances are real accounts already counted in checkingBal.
+function savingsTotal(){
+  return savingsRows().reduce(function(s,x){ return x.live ? s : s + x.amount; }, 0);
+}
 function parseMoney(s){ var n=parseFloat(String(s==null?'':s).replace(/[^0-9.\-]/g,'')); return isNaN(n)?0:n; }
 function parseCSV(text){
   var rows=[], row=[], cur='', q=false;
@@ -934,8 +971,8 @@ function renderMyNetworth(){
     html += '<button onclick="mynwRefresh()" style="padding:9px 18px;background:var(--green);color:#000;border:none;border-radius:6px;font-weight:600;cursor:pointer">Retry</button></div>';
     set('main-content', html); return;
   }
-  var rows = SAVINGS_ROWS.slice().sort(function(a,b){ return b.amount - a.amount; });
-  var total = SAVINGS_TOTAL;
+  var rows = savingsRows().sort(function(a,b){ return b.amount - a.amount; });
+  var total = rows.reduce(function(s,x){ return s + x.amount; }, 0);
   var pieRows = rows.filter(function(x){ return x.amount > 0; });
   var top = pieRows[0];
   var topPct = (top && total) ? (top.amount/total*100) : 0;
@@ -958,13 +995,13 @@ function renderMyNetworth(){
   rows.forEach(function(x, i){
     var col = PIE_COLORS[pieRows.indexOf(x) % PIE_COLORS.length];
     var dot = x.amount > 0 ? '<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:' + col + ';margin-right:8px;vertical-align:middle"></span>' : '<span style="display:inline-block;width:8px;margin-right:8px"></span>';
-    html += '<tr style="border-bottom:1px solid var(--border2)"><td style="padding:9px 10px">' + dot + esc(x.category) + '</td>';
+    html += '<tr style="border-bottom:1px solid var(--border2)"><td style="padding:9px 10px">' + dot + esc(x.category) + (x.live ? ' <span style="font-size:9px;letter-spacing:1px;color:var(--green);border:1px solid var(--green);border-radius:3px;padding:1px 4px;margin-left:4px;vertical-align:middle">LIVE</span>' : '') + '</td>';
     html += '<td style="padding:9px 10px;text-align:right;font-family:IBM Plex Mono,monospace">' + fmt2(x.amount) + '</td></tr>';
   });
   html += '<tr style="background:var(--s2);border-top:2px solid var(--border)"><td style="padding:10px;font-weight:700">Grand Total</td>';
   html += '<td style="padding:10px;text-align:right;font-family:IBM Plex Mono,monospace;font-weight:700;color:var(--green)">' + fmt2(total) + '</td></tr>';
   html += '</tbody></table></div>';
-  html += '<div style="font-size:10px;color:var(--muted);margin-top:8px">&#128274; Synced live from your Google Sheet · included in Overview net worth</div></div>';
+  html += '<div style="font-size:10px;color:var(--muted);margin-top:8px">LIVE rows come from your synced Robinhood and wife’s BofA checking · the rest from your Google Sheet</div></div>';
 
   set('main-content', html);
 
