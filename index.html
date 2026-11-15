@@ -636,7 +636,11 @@ function renderInsights() {
   var fees = sumOver(function(m){ return m.spent.fees; });
   var feeItems = [].concat.apply([], hist.map(function(p){ return cf[p].fees || []; }));
   if(fees > 0){
-    tips.push({ save: fees/n, html: '💳 <b>Card interest & fees: '+fmt(fees)+'</b> in '+n+' months'+(feeItems[0] ? ' (e.g. '+esc(feeItems[0].desc)+')' : '')+'. Pay cards in full every month and this becomes $0.' });
+    var fk = {}; feeItems.forEach(function(f){ var k = f.label || 'other'; fk[k] = (fk[k]||0) + f.amount; });
+    var FIX = { interest:'card interest — pay the full card balance', late:'late fees — turn on autopay', overdraft:'overdraft fees — keep a cushion in checking',
+                maintenance:'monthly account fees — ask for a free account or keep the minimum balance', annual:'card annual fee — ask to waive or downgrade', atm:'ATM fees — use your own bank’s ATM', other:'other fees' };
+    var parts = Object.keys(fk).sort(function(a,b){ return fk[b]-fk[a]; }).map(function(k){ return fmt(fk[k])+' '+FIX[k]; });
+    tips.push({ save: fees/n, html: '💳 <b>Bank & card fees: '+fmt(fees)+' in '+n+' months</b> — money for nothing. '+parts.join('; ')+'.' });
   }
   var aiTot = sumOver(function(m){ return m.by_category['AI tools']||0; });
   if(aiTot > 0){

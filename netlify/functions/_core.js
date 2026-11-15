@@ -317,7 +317,19 @@ const INDIA_RE = /XOOM|REMITLY|WISE\b|TRANSFERWISE|WESTERN UNION|REMIT2INDIA|ICI
 // Card-issuer names only: a generic "ONLINE PAYMENT" is often a real bill (PSEG).
 const CARD_PAY_RE = /CREDIT CARD|CRD EPAY|CRD AUTOPAY|CARD PAYMENT|BA ELECTRONIC PAYMENT|DISCOVER E-?PAYMENT|DISCOVER DES|CAPITAL ONE|AMEX EPAYMENT|AMERICAN EXPRESS|CHASE CREDIT|WF CREDIT|WELLS FARGO CARD|ROBINHOOD CARD|CITI CARD|APPLECARD|GSBANK|PAYMENT - THANK|PAYMENT THANK/i;
 const FEE_RE = /INTEREST CHARGE|FINANCE CHARGE|LATE FEE|ANNUAL FEE|OVERDRAFT|FOREIGN TRANSACTION FEE|MONTHLY MAINTENANCE|SERVICE FEE/i;
-const TRANSFERISH_RE = /TRANSFER|XFER|ZELLE|PAYMENT|PMT|AUTOPAY|DEPOSIT|ROBINHOOD|ONLINE BANKING|FUNDS/i;
+// BofA's own wording for a move between two of our accounts. Its other leg can
+// be missing (account on an Item that didn't return it), so trust the words.
+const OWN_XFER_RE = /ONLINE BANKING TRANSFER (TO|FROM) (CHK|SAV)|TRANSFER (TO|FROM) (CHECKING|SAVINGS|CHK|SAV) ?X*\d{4}/i;
+function feeKind(n) {
+  if (/INTEREST/.test(n)) return 'interest';
+  if (/LATE/.test(n)) return 'late';
+  if (/OVERDRAFT|NSF|INSUFFICIENT/.test(n)) return 'overdraft';
+  if (/MAINTENANCE|SERVICE CHARGE|SERVICE FEE/.test(n)) return 'maintenance';
+  if (/ANNUAL/.test(n)) return 'annual';
+  if (/ATM/.test(n)) return 'atm';
+  return 'other';
+}
+const TRANSFERISH_RE =/TRANSFER|XFER|ZELLE|PAYMENT|PMT|AUTOPAY|DEPOSIT|ROBINHOOD|ONLINE BANKING|FUNDS/i;
 
 // Sharper buckets than categorize() for the things the insights talk about.
 function flowCategory(t) {
@@ -374,7 +386,7 @@ function buildCashflow(accounts, transactions, months = 7) {
     spent: { total: 0, purchases: 0, refunds: 0, loans: 0, fees: 0, zelle_out: 0, other_out: 0 },
     moved: { invested: 0, india: 0 },
     internal: { count: 0, total: 0 },
-    by_category: {}, ai: {}, fees: [], big: [], unmatched: [], days: 0,
+    by_category: {}, ai: {}, fees: [], big: [], unmatched: [], refunds_big: [], loan_items: [], days: 0,
   });
   const out = {};
   periods.forEach(p => { out[p] = blank(); });
@@ -399,7 +411,7 @@ function buildCashflow(accounts, transactions, months = 7) {
 
     if (pair) {
       const otherKind = kindOf(pair);
-      if (t.amount > 0 && otherKind === 'loan') { m.spent.loans += amt; return; }          // mortgage / car loan paid to a linked loan
+      if (t.amount > 0 && otherKind === 'loan') { m.spent.loans += amt; note(m, 'loan_items', t); return; } // mortgage / car loan paid to a linked loan
       if (t.amount > 0 && otherKind === 'investment') { m.moved.invested += amt; return; } // to Robinhood
       if (t.amount < 0 && otherKind === 'investment') { internal(); return; }              // cash back out of brokerage
       internal(); return;                                                                   // checking↔checking, card payments
@@ -408,21 +420,25 @@ function buildCashflow(accounts, transactions, months = 7) {
     if (t.amount < 0) { // ── money arriving ──
       if (kind === 'credit') {
         if (prim === 'TRANSFER_IN' || prim === 'LOAN_PAYMENTS' || CARD_PAY_RE.test(n) || /PAYMENT/.test(n)) { internal(); return; } // card paid from an unlinked account
-        m.spent.refunds += amt; return;
+        m.spent.refunds += amt; if (amt >= 200) note(m, 'refunds_big', t); return;
       }
       if (/ZELLE/.test(n) && SELF_NAME_RE.test(n)) { internal(); return; }
+      if (OWN_XFER_RE.test(n)) { internal(); return; }
+      // Cash out of our own brokerage is our money coming home, not income.
+      if (/ROBINHOOD/.test(n)) { internal(); return; }
       if (isIncome(t)) { m.income.salary += amt; return; }
       if (det.includes('INTEREST_EARNED') || det.includes('DIVIDENDS')) { m.income.interest += amt; return; }
       if (/ZELLE/.test(n)) { m.income.zelle_in += amt; return; }
       if (prim === 'TRANSFER_IN' || TRANSFERISH_RE.test(n)) { m.income.other_in += amt; note(m, 'unmatched', t, 'in'); return; }
-      m.spent.refunds += amt; return; // a merchant refund landing in checking
+      m.spent.refunds += amt; if (amt >= 200) note(m, 'refunds_big', t); return; // a merchant refund landing in checking
     }
 
     // ── money leaving (checking or card) ──
     if (det.includes('CREDIT_CARD_PAYMENT') || (kind === 'depository' && CARD_PAY_RE.test(n) && !/ZELLE/.test(n))) { internal(); return; }
-    if (prim === 'BANK_FEES' || det.includes('INTEREST_CHARGE') || FEE_RE.test(n)) { m.spent.fees += amt; note(m, 'fees', t); return; }
-    if (prim === 'LOAN_PAYMENTS') { m.spent.loans += amt; return; }
+    if (prim === 'BANK_FEES' || det.includes('INTEREST_CHARGE') || FEE_RE.test(n)) { m.spent.fees += amt; note(m, 'fees', t, feeKind(n)); return; }
+    if (prim === 'LOAN_PAYMENTS') { m.spent.loans += amt; note(m, 'loan_items', t); return; }
     if (/ZELLE/.test(n) && SELF_NAME_RE.test(n)) { internal(); return; }
+    if (OWN_XFER_RE.test(n)) { internal(); return; }
     if (INDIA_RE.test(n)) { m.moved.india += amt; return; }
     if (det.includes('INVESTMENT') || /ROBINHOOD/.test(n)) { m.moved.invested += amt; return; }
     if (/ZELLE/.test(n)) {
