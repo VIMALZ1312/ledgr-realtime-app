@@ -115,7 +115,7 @@
     {
       "bank": "Wells Fargo",
       "nickname": "wf",
-      "name": "EVERYDAY CHECKING ...3068",
+      "name": "Everyday Checking ...3068",
       "mask": "3068",
       "type": "depository",
       "subtype": "checking",
@@ -148,7 +148,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 2641.58,
-      "available": 349,
+      "available": 54,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -217,8 +217,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 39.25,
-      "available": 660.75,
+      "balance": 245.9,
+      "available": 454.1,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -339,9 +339,9 @@
   ],
   "net_worth": {
     "total_checking": 76848.67,
-    "total_credit": 2861.1,
+    "total_credit": 3067.75,
     "total_loans": 384584.29,
-    "net": -310596.72
+    "net": -310803.37
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -15070,7 +15070,7 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-11-14T23:26:15.361Z",
+  "generated_at": "2026-11-15T11:01:34.477Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -15208,14 +15208,14 @@
     "forced_refresh": [
       "pnc",
       "zillow",
-      "wifebofa",
-      "wf",
       "robin",
       "td",
-      "bofa"
+      "wf"
     ],
     "refresh_errors": {
-      "discover": "PRODUCTS_NOT_SUPPORTED"
+      "discover": "PRODUCTS_NOT_SUPPORTED",
+      "wifebofa": "INSTITUTION_NOT_RESPONDING",
+      "bofa": "INSTITUTION_NOT_RESPONDING"
     },
     "cached_balances": [],
     "txns_fetched": 1405,
