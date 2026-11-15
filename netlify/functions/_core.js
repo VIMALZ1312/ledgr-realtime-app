@@ -386,13 +386,16 @@ function buildCashflow(accounts, transactions, months = 7) {
     spent: { total: 0, purchases: 0, refunds: 0, loans: 0, fees: 0, zelle_out: 0, other_out: 0 },
     moved: { invested: 0, india: 0 },
     internal: { count: 0, total: 0 },
-    by_category: {}, ai: {}, fees: [], big: [], unmatched: [], refunds_big: [], loan_items: [], bounced: [], days: 0,
+    by_category: {}, ai: {}, fees: [], big: [], unmatched: [], refunds_big: [], loan_items: [], bounced: [], tx_in: [], tx_out: [], tx_moved: [], days: 0,
   });
   const out = {};
   periods.forEach(p => { out[p] = blank(); });
   const r2 = x => Math.round(x * 100) / 100;
   // Prefer Plaid's clean merchant name ("Fragomen") over the raw bank line.
   const note = (m, list, t, label) => m[list].push({ date: t.date, desc: (t.merchant_name || nameOf(t)).slice(0, 60), amount: r2(Math.abs(t.amount)), label });
+  // Every transaction behind a total, for the Insights tap-to-see-why popups:
+  // d=MM-DD, n=name, a=amount (negative = reduces that total), g=group shown.
+  const item = (m, list, t, g, sign = 1) => m[list].push({ d: t.date.slice(5), n: (t.merchant_name || nameOf(t)).slice(0, 50), a: r2(sign * Math.abs(t.amount)), g });
 
   posted.forEach(t => {
     const p = t.date.slice(0, 7);
@@ -412,8 +415,8 @@ function buildCashflow(accounts, transactions, months = 7) {
 
     if (pair) {
       const otherKind = kindOf(pair);
-      if (t.amount > 0 && otherKind === 'loan') { m.spent.loans += amt; note(m, 'loan_items', t); return; } // mortgage / car loan paid to a linked loan
-      if (t.amount > 0 && otherKind === 'investment') { m.moved.invested += amt; return; } // to Robinhood
+      if (t.amount > 0 && otherKind === 'loan') { m.spent.loans += amt; note(m, 'loan_items', t); item(m, 'tx_out', t, 'Home & car loans'); return; } // mortgage / car loan paid to a linked loan
+      if (t.amount > 0 && otherKind === 'investment') { m.moved.invested += amt; item(m, 'tx_moved', t, 'To Robinhood'); return; } // to Robinhood
       if (t.amount < 0 && otherKind === 'investment') { internal(); return; }              // cash back out of brokerage
       internal(); return;                                                                   // checking↔checking, card payments
     }
@@ -421,7 +424,7 @@ function buildCashflow(accounts, transactions, months = 7) {
     if (t.amount < 0) { // ── money arriving ──
       if (kind === 'credit') {
         if (prim === 'TRANSFER_IN' || prim === 'LOAN_PAYMENTS' || CARD_PAY_RE.test(n) || /PAYMENT/.test(n)) { internal(); return; } // card paid from an unlinked account
-        m.spent.refunds += amt; if (amt >= 200) note(m, 'refunds_big', t); return;
+        m.spent.refunds += amt; if (amt >= 200) note(m, 'refunds_big', t); item(m, 'tx_out', t, 'Refunds & cashback', -1); return;
       }
       if (/ZELLE/.test(n) && SELF_NAME_RE.test(n)) { internal(); return; }
       if (OWN_XFER_RE.test(n)) { internal(); return; }
@@ -430,35 +433,37 @@ function buildCashflow(accounts, transactions, months = 7) {
       if (/RETURN OF POSTED|RETURNED ITEM|RETURNED PAYMENT/.test(n)) { note(m, 'bounced', t); return; }
       // Cash out of our own brokerage is our money coming home, not income.
       if (/ROBINHOOD/.test(n)) { internal(); return; }
-      if (isIncome(t)) { m.income.salary += amt; return; }
-      if (det.includes('INTEREST_EARNED') || det.includes('DIVIDENDS')) { m.income.interest += amt; return; }
-      if (/ZELLE/.test(n)) { m.income.zelle_in += amt; return; }
-      if (prim === 'TRANSFER_IN' || TRANSFERISH_RE.test(n)) { m.income.other_in += amt; note(m, 'unmatched', t, 'in'); return; }
-      m.spent.refunds += amt; if (amt >= 200) note(m, 'refunds_big', t); return; // a merchant refund landing in checking
+      if (isIncome(t)) { m.income.salary += amt; item(m, 'tx_in', t, 'Salary'); return; }
+      if (det.includes('INTEREST_EARNED') || det.includes('DIVIDENDS')) { m.income.interest += amt; item(m, 'tx_in', t, 'Interest'); return; }
+      if (/ZELLE/.test(n)) { m.income.zelle_in += amt; item(m, 'tx_in', t, 'Zelle from people'); return; }
+      if (prim === 'TRANSFER_IN' || TRANSFERISH_RE.test(n)) { m.income.other_in += amt; note(m, 'unmatched', t, 'in'); item(m, 'tx_in', t, 'Other money in'); return; }
+      m.spent.refunds += amt; if (amt >= 200) note(m, 'refunds_big', t); item(m, 'tx_out', t, 'Refunds & cashback', -1); return; // a merchant refund landing in checking
     }
 
     // ── money leaving (checking or card) ──
     if (det.includes('CREDIT_CARD_PAYMENT') || (kind === 'depository' && CARD_PAY_RE.test(n) && !/ZELLE/.test(n))) { internal(); return; }
-    if (prim === 'BANK_FEES' || det.includes('INTEREST_CHARGE') || FEE_RE.test(n)) { m.spent.fees += amt; note(m, 'fees', t, feeKind(n)); return; }
-    if (prim === 'LOAN_PAYMENTS') { m.spent.loans += amt; note(m, 'loan_items', t); return; }
+    if (prim === 'BANK_FEES' || det.includes('INTEREST_CHARGE') || FEE_RE.test(n)) { m.spent.fees += amt; note(m, 'fees', t, feeKind(n)); item(m, 'tx_out', t, 'Bank & card fees'); return; }
+    if (prim === 'LOAN_PAYMENTS') { m.spent.loans += amt; note(m, 'loan_items', t); item(m, 'tx_out', t, 'Home & car loans'); return; }
     if (/ZELLE/.test(n) && SELF_NAME_RE.test(n)) { internal(); return; }
     if (OWN_XFER_RE.test(n)) { internal(); return; }
-    if (INDIA_RE.test(n)) { m.moved.india += amt; return; }
-    if (det.includes('INVESTMENT') || /ROBINHOOD/.test(n)) { m.moved.invested += amt; return; }
+    if (INDIA_RE.test(n)) { m.moved.india += amt; item(m, 'tx_moved', t, 'To India'); return; }
+    if (det.includes('INVESTMENT') || /ROBINHOOD/.test(n)) { m.moved.invested += amt; item(m, 'tx_moved', t, 'To Robinhood'); return; }
     if (/ZELLE/.test(n)) {
       m.spent.zelle_out += amt;
       // Keep a sharp bucket (Kids event, Home projects); otherwise "Zelle to people".
       let c = flowCategory(t);
       if (['Other', 'Tech/Subs', 'Shopping', 'Refund'].includes(c)) c = 'Zelle to people';
       m.by_category[c] = (m.by_category[c] || 0) + amt;
+      item(m, 'tx_out', t, c);
       if (amt >= 1000) note(m, 'big', t);
       return;
     }
-    if (prim === 'TRANSFER_OUT') { m.spent.other_out += amt; note(m, 'unmatched', t, 'out'); return; }
+    if (prim === 'TRANSFER_OUT') { m.spent.other_out += amt; note(m, 'unmatched', t, 'out'); item(m, 'tx_out', t, 'Cash & other money out'); return; }
 
     m.spent.purchases += amt;
     const cat = flowCategory(t);
     m.by_category[cat] = (m.by_category[cat] || 0) + amt;
+    item(m, 'tx_out', t, cat);
     if (cat === 'AI tools') { const k = (t.merchant_name || t.name || 'AI').trim(); m.ai[k] = (m.ai[k] || 0) + amt; }
     if (amt >= 1000) note(m, 'big', t);
   });
@@ -471,7 +476,7 @@ function buildCashflow(accounts, transactions, months = 7) {
     // so it stays internal rather than posing as a refund.
     m.bounced.forEach(b => {
       const i = m.loan_items.findIndex(l => !l.reversed && Math.abs(l.amount - b.amount) < 0.01);
-      if (i >= 0) { m.loan_items[i].reversed = true; m.spent.loans -= b.amount; }
+      if (i >= 0) { m.loan_items[i].reversed = true; m.spent.loans -= b.amount; m.tx_out.push({ d: b.date.slice(5), n: 'Bounced — returned by bank', a: -b.amount, g: 'Home & car loans' }); }
       else { m.internal.count++; m.internal.total += b.amount; }
     });
     m.income.total =m.income.salary + m.income.zelle_in + m.income.interest + m.income.other_in;
@@ -480,6 +485,7 @@ function buildCashflow(accounts, transactions, months = 7) {
     Object.keys(m.by_category).forEach(k => { m.by_category[k] = r2(m.by_category[k]); });
     Object.keys(m.ai).forEach(k => { m.ai[k] = r2(m.ai[k]); });
     m.big.sort((a, b) => b.amount - a.amount);
+    ['tx_in', 'tx_out', 'tx_moved'].forEach(k => m[k].sort((a, b) => a.d.localeCompare(b.d)));
     m.unmatched = m.unmatched.sort((a, b) => b.amount - a.amount).slice(0, 15);
     // How many days of the month are in (the current month is partial).
     const last = new Date(Date.UTC(+p.slice(0, 4), +p.slice(5, 7), 0)).getUTCDate();

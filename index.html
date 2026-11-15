@@ -580,11 +580,15 @@ function renderInsights() {
     var partial = m.days < m.days_in_month;
     var pct = inc > 0 ? Math.max(0, Math.min(100, Math.round(left/inc*100))) : 0;
     var col = left >= 0 ? 'var(--green)' : 'var(--red)';
-    var row = function(lbl, v, c, b){ return '<div style="display:flex;justify-content:space-between;padding:3px 0'+(b?';font-weight:700':'')+'"><span>'+lbl+'</span><span style="font-family:IBM Plex Mono,monospace;color:'+c+'">'+v+'</span></div>'; };
+    // click: 'in' | 'out' opens the transactions behind that amount.
+    var row = function(lbl, v, c, b, click){
+      var tap = (click && (m['tx_'+click]||[]).length) ? ' onclick="showFlow(\''+p+'\',\''+click+'\')" style="cursor:pointer;font-family:IBM Plex Mono,monospace;color:'+c+';text-decoration:underline dotted;text-underline-offset:3px"' : ' style="font-family:IBM Plex Mono,monospace;color:'+c+'"';
+      return '<div style="display:flex;justify-content:space-between;padding:3px 0'+(b?';font-weight:700':'')+'"><span>'+lbl+'</span><span'+tap+'>'+v+(tap.indexOf('onclick')>0?' ›':'')+'</span></div>';
+    };
     html += '<div style="background:var(--s2);border:1px solid var(--border);border-radius:8px;padding:12px">';
     html += '<div style="font-weight:700;margin-bottom:6px">'+mName(p)+(partial ? ' <span style="font-weight:400;font-size:11px;color:var(--muted)">so far · day '+m.days+' of '+m.days_in_month+'</span>' : '')+'</div>';
-    html += row('💵 Came in', fmt(inc), 'var(--text)');
-    html += row('🛒 Went out', fmt(out), 'var(--text)');
+    html += row('💵 Came in', fmt(inc), 'var(--text)', false, 'in');
+    html += row('🛒 Went out', fmt(out), 'var(--text)', false, 'out');
     html += '<div style="border-top:1px solid var(--border);margin:4px 0"></div>';
     html += row(left >= 0 ? '🐷 Left to save' : '⚠️ Spent more than earned', fmt(Math.abs(left)), col, true);
     html += '<div style="height:6px;background:var(--border);border-radius:3px;margin:6px 0 4px;overflow:hidden"><div style="height:100%;width:'+pct+'%;background:'+col+'"></div></div>';
@@ -622,7 +626,8 @@ function renderInsights() {
       var isNew = avg < 25;
       if(isNew || (v > avg*1.5 && v - avg > 150)){
         var big = (m.big||[]).filter(function(b){ return flowCat(b.desc) === cat; })[0];
-        odd.push({ d: v - avg, html: '<b>'+esc(cat)+'</b> '+fmt(v)+' in '+mName(p)+' — '+(isNew ? 'new, you don’t usually spend here' : 'usually ~'+fmt(avg)+'/month')+(big ? ' (mostly '+esc(cleanDesc(big.desc))+')' : '')+'.' });
+        var tapCat = (m.tx_out||[]).length ? ' onclick="showFlow(\''+p+'\',\'out\',\''+esc(cat).replace(/'/g,'&#39;')+'\')" style="cursor:pointer;text-decoration:underline dotted;text-underline-offset:3px"' : '';
+        odd.push({ d: v - avg, html: '<b'+tapCat+'>'+esc(cat)+'</b> '+fmt(v)+' in '+mName(p)+' — '+(isNew ? 'new, you don’t usually spend here' : 'usually ~'+fmt(avg)+'/month')+(big ? ' (mostly '+esc(cleanDesc(big.desc))+')' : '')+'.' });
       }
     });
   });
@@ -676,6 +681,42 @@ function renderInsights() {
 
   var lbl = show.map(function(p){ return mName(p).slice(0,3); }).join(' · ');
   return wrap(lbl, html);
+}
+// Popup: every transaction behind a month's "Came in" or "Went out", grouped
+// (by source for income, by category for spending), biggest group first.
+// Tap a group to open its list; `focus` opens one group straight away.
+function showFlow(p, dir, focus){
+  var m = D.cashflow && D.cashflow[p]; if(!m) return;
+  var items = m['tx_'+dir] || [];
+  var mon = new Date(p+'-15T00:00:00').toLocaleString('en-US',{month:'long', year:'numeric'});
+  var groups = {};
+  items.forEach(function(x){ (groups[x.g] = groups[x.g] || []).push(x); });
+  var sum = function(l){ return l.reduce(function(s,x){ return s + x.a; }, 0); };
+  var names = Object.keys(groups).sort(function(a,b){ return sum(groups[b]) - sum(groups[a]); });
+  var total = sum(items);
+  var section = function(g, list, open){
+    var id = uid(), t = sum(list);
+    var rows = list.slice().sort(function(a,b){ return Math.abs(b.a) - Math.abs(a.a); }).map(function(x){
+      return '<div style="display:flex;justify-content:space-between;gap:10px;padding:5px 0 5px 14px;font-size:12px;border-top:1px solid var(--border2)">'
+        + '<span style="color:var(--muted);min-width:38px">'+esc(x.d)+'</span><span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+esc(cleanDesc(x.n))+'</span>'
+        + '<span style="font-family:IBM Plex Mono,monospace;color:'+(x.a<0?'var(--green)':'var(--text)')+'">'+(x.a<0?'−':'')+fmt2(Math.abs(x.a))+'</span></div>';
+    }).join('');
+    var pct = total ? Math.round(t/total*100) : 0;
+    return '<div style="border-bottom:1px solid var(--border)">'
+      + '<div onclick="var e=document.getElementById(\''+id+'\');e.style.display=e.style.display===\'none\'?\'block\':\'none\'" style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;cursor:pointer">'
+      + '<span><b>'+esc(g)+'</b> <span style="font-size:11px;color:var(--muted)">'+list.length+' · '+(pct>0?pct+'%':'')+'</span></span>'
+      + '<span style="font-family:IBM Plex Mono,monospace;font-weight:600;color:'+(t<0?'var(--green)':'var(--text)')+'">'+(t<0?'−':'')+fmt2(Math.abs(t))+' ›</span></div>'
+      + '<div id="'+id+'" style="display:'+(open?'block':'none')+';padding-bottom:8px">'+rows+'</div></div>';
+  };
+  var b = names.map(function(g){ return section(g, groups[g], g === focus); }).join('');
+  b += '<div style="display:flex;justify-content:space-between;padding:12px 0 4px;font-weight:700"><span>Total</span><span style="font-family:IBM Plex Mono,monospace">'+fmt2(total)+'</span></div>';
+  if(dir === 'out' && (m.tx_moved||[]).length){
+    var mv = {}; m.tx_moved.forEach(function(x){ (mv[x.g] = mv[x.g] || []).push(x); });
+    b += '<div style="font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin:16px 0 2px">Not counted as spending</div>';
+    b += Object.keys(mv).map(function(g){ return section(g, mv[g], false); }).join('');
+  }
+  b += '<div style="font-size:11px;color:var(--muted);margin-top:10px">Card payments and moves between your own accounts are left out'+(dir==='out'?'; refunds and bounced payments show in green and reduce the total':'')+'. Tap a group to see its transactions.</div>';
+  openModal(dir === 'in' ? 'Money in · '+mon : 'Money out · '+mon, dir === 'in' ? 'Where your income came from' : 'Where your money went, by category', b);
 }
 function aiVendor(k){
   var n = String(k).toUpperCase();
