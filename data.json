@@ -21092,7 +21092,7 @@
       "days_in_month": 30
     }
   },
-  "generated_at": "2026-11-15T22:04:09.499Z",
+  "generated_at": "2026-11-15T23:01:34.445Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -21230,10 +21230,10 @@
     "forced_refresh": [
       "pnc",
       "zillow",
+      "wf",
+      "bofa",
       "wifebofa",
       "robin",
-      "bofa",
-      "wf",
       "td"
     ],
     "refresh_errors": {
