@@ -622,7 +622,7 @@ function renderInsights() {
       var isNew = avg < 25;
       if(isNew || (v > avg*1.5 && v - avg > 150)){
         var big = (m.big||[]).filter(function(b){ return flowCat(b.desc) === cat; })[0];
-        odd.push({ d: v - avg, html: '<b>'+esc(cat)+'</b> '+fmt(v)+' in '+mName(p)+' — '+(isNew ? 'new, you don’t usually spend here' : 'usually ~'+fmt(avg)+'/month')+(big ? ' (mostly '+esc(big.desc)+')' : '')+'.' });
+        odd.push({ d: v - avg, html: '<b>'+esc(cat)+'</b> '+fmt(v)+' in '+mName(p)+' — '+(isNew ? 'new, you don’t usually spend here' : 'usually ~'+fmt(avg)+'/month')+(big ? ' (mostly '+esc(cleanDesc(big.desc))+')' : '')+'.' });
       }
     });
   });
@@ -647,10 +647,15 @@ function renderInsights() {
   }
   var aiTot = sumOver(function(m){ return m.by_category['AI tools']||0; });
   if(aiTot > 0){
-    var aiM = {}; hist.forEach(function(p){ Object.keys(cf[p].ai||{}).forEach(function(k){ aiM[k] = (aiM[k]||0) + cf[p].ai[k]; }); });
+    // One company bills under several names ("Claude Sub Anthropic.comca",
+    // "Anthropic", "Claude.ai") — group by company before judging.
+    var aiM = {}; hist.forEach(function(p){ Object.keys(cf[p].ai||{}).forEach(function(k){ var v = aiVendor(k); aiM[v] = (aiM[v]||0) + cf[p].ai[k]; }); });
     var names = Object.keys(aiM).sort(function(a,b){ return aiM[b]-aiM[a]; });
-    var aiTip = names.length > 1 ? ' Keep the one you use most — dropping the rest saves ~'+fmt((aiTot - aiM[names[0]])/n*12)+'/year.' : ' Still using it every week? Cancelling saves ~'+fmt(aiTot/n*12)+'/year.';
-    tips.push({ save: aiTot/n/2, html: '🤖 <b>AI tools: ~'+fmt(aiTot/n)+'/month</b> ('+names.slice(0,4).map(function(k){ return esc(k)+' '+fmt(aiM[k]); }).join(', ')+' over '+n+' months).'+aiTip });
+    var per = names.map(function(k){ return esc(k)+' ~'+fmt(aiM[k]/n)+'/mo'; }).join(', ');
+    var aiTip = names.length > 1
+      ? ' Several AI tools do the same job — keep '+esc(names[0])+' and drop the rest to save ~'+fmt((aiTot - aiM[names[0]])/n*12)+'/year.'
+      : (aiTot/n > 30 ? ' If you don’t use it every day, a cheaper plan (~$20) saves ~'+fmt((aiTot/n - 20)*12)+'/year.' : ' Small and steady — fine if you use it.');
+    tips.push({ save: aiTot/n/2, html: '🤖 <b>AI tools: ~'+fmt(aiTot/n)+'/month</b> ('+per+').'+aiTip });
   }
   var food = sumOver(function(m){ return (m.by_category['Food delivery']||0) + (m.by_category['Restaurants']||0); });
   if(food/n > 100){
@@ -672,12 +677,32 @@ function renderInsights() {
   var lbl = show.map(function(p){ return mName(p).slice(0,3); }).join(' · ');
   return wrap(lbl, html);
 }
+function aiVendor(k){
+  var n = String(k).toUpperCase();
+  if(/ANTHROPIC|CLAUDE/.test(n)) return 'Claude';
+  if(/OPENAI|CHATGPT/.test(n)) return 'ChatGPT';
+  if(/GEMINI|GOOGLE/.test(n)) return 'Gemini';
+  if(/REPLIT/.test(n)) return 'Replit';
+  if(/CURSOR/.test(n)) return 'Cursor';
+  if(/COPILOT|GITHUB/.test(n)) return 'GitHub Copilot';
+  if(/PERPLEXITY/.test(n)) return 'Perplexity';
+  if(/MIDJOURNEY/.test(n)) return 'Midjourney';
+  return String(k).split(/\s+/)[0];
+}
+// Raw bank lines ("PURCHASE 1019 FRAGOMEN FRAGOMEN.COM NJ XXX…") → "Fragomen".
+function cleanDesc(d){
+  var s = String(d||'').replace(/^(PURCHASE|CHECKCARD|POS|DEBIT CARD PURCHASE)\s*\d*\s*/i,'')
+    .split(/\s+(?:X{3,}|\d{4,}|[A-Z]{2}\s+X)|\.COM|\s+DES:/i)[0].trim();
+  var w = s.split(/\s+/); if(w.length > 1 && w[0].toUpperCase() === w[1].toUpperCase()) w.shift();
+  s = w.slice(0,3).join(' ');
+  return s === s.toUpperCase() ? s.toLowerCase().replace(/\b\w/g, function(c){ return c.toUpperCase(); }) : s;
+}
 // Same buckets as flowCategory() in _core.js, to tie a big charge to its category.
 function flowCat(desc){
   var n = String(desc||'').toUpperCase();
   if(/OPENAI|CHATGPT|ANTHROPIC|CLAUDE|MIDJOURNEY|PERPLEXITY|CURSOR\b|COPILOT|GEMINI|AITUBO|ELEVENLABS|RUNWAYML|REPLIT|LOVABLE|SUNO\b|GROK|POE\.COM|CHARACTER\.AI|JASPER/.test(n)) return 'AI tools';
   if(/KUMON|BEST BRAINS|BIG BLUE|SWIM SCHOOL|SCHOLASTIC|BRIGHTCHAMP|TUTOR|KIDS EVENT/.test(n)) return 'Kids';
-  if(/COVERED EXTERIORS|HOME DEPOT|LOWE'?S|CONTRACTOR|ROOFING|LIGHT INSTALLATION/.test(n)) return 'Home projects';
+  if(/COVERED EXTERIOR|HOME DEPOT|LOWE'?S|CONTRACTOR|ROOFING|LIGHT INSTALLATION/.test(n)) return 'Home projects';
   if(/FRAGOMEN|LAW |ATTORNEY|LEGAL|USCIS/.test(n)) return 'Legal/immigration';
   return '';
 }

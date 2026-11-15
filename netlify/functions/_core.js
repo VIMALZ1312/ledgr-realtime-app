@@ -338,7 +338,7 @@ function flowCategory(t) {
   if (/KUMON|BEST BRAINS|BIG BLUE|SWIM SCHOOL|SCHOLASTIC|BRIGHTCHAMP|TUTOR|KIDS EVENT/.test(n)) return 'Kids';
   if (/VERIZON|PSE&G|PSEG|OPTIMUM|TWP OF|TOWNSHIP|COMCAST|XFINITY|NJ NATURAL|T-MOBILE|AT&T|WATER|ELECTRIC/.test(n)) return 'Bills & utilities';
   if (/DOORDASH|UBER ?EATS|GRUBHUB|INSTACART|POSTMATES/.test(n)) return 'Food delivery';
-  if (/COVERED EXTERIORS|HOME DEPOT|LOWE'?S|CONTRACTOR|ROOFING|LIGHT INSTALLATION/.test(n)) return 'Home projects';
+  if (/COVERED EXTERIOR|HOME DEPOT|LOWE'?S|CONTRACTOR|ROOFING|LIGHT INSTALLATION/.test(n)) return 'Home projects';
   if (/FRAGOMEN|LAW |ATTORNEY|LEGAL|USCIS/.test(n)) return 'Legal/immigration';
   return categorize(t) || 'Other';
 }
