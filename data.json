@@ -2,7 +2,7 @@
   "kpis": {
     "income": 8326.38,
     "income_period": "November 2026",
-    "true_outflows": 2293.83,
+    "true_outflows": 2309.65,
     "outflows_period": "November 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -302,7 +302,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 170.07,
-      "available": 9820,
+      "available": 9805,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -353,7 +353,7 @@
   },
   "spending": {
     "Entertainment": 3049.8999999999996,
-    "Healthcare": 4475.76,
+    "Healthcare": 4491.58,
     "Tech/Subs": 14168.840000000002,
     "Refund": -11759.72,
     "Gas/Travel": 9484.2,
@@ -685,6 +685,14 @@
       "category": "Restaurants",
       "bank": "Robinhood",
       "pending": true
+    },
+    {
+      "date": "11-15",
+      "desc": "CVS",
+      "amount": 15.82,
+      "category": "Healthcare",
+      "bank": "Robinhood",
+      "pending": true
     }
   ],
   "detected_recurring": [
@@ -995,9 +1003,9 @@
     {
       "desc": "CVS",
       "category": "Healthcare",
-      "count": 4,
+      "count": 5,
       "months": 4,
-      "avg_amount": 16.37,
+      "avg_amount": 16.26,
       "last_amount": 2.53
     },
     {
@@ -1628,7 +1636,7 @@
       "income": 8326.38,
       "bofa_income": 8326.38,
       "td_income": 0,
-      "outflows": 2293.83,
+      "outflows": 2309.65,
       "xoom": 0,
       "investments": 0
     }
@@ -8558,9 +8566,9 @@
         "Shopping": 713.91,
         "Restaurants": 87.66,
         "Groceries": 185.36,
-        "Healthcare": 60.09
+        "Healthcare": 75.91
       },
-      "total": 2293.8300000000004,
+      "total": 2309.6500000000005,
       "transactions": [
         {
           "date": "11-02",
@@ -8944,6 +8952,19 @@
           "desc": "Vzn Br Cafe",
           "amount": 9.51,
           "category": "Restaurants",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-15",
+          "desc": "CVS",
+          "amount": 15.82,
+          "category": "Healthcare",
           "city": null,
           "state": null,
           "bank": "Robinhood",
@@ -15062,7 +15083,660 @@
     "hoa": 105.95,
     "cable": 50.66
   },
-  "generated_at": "2026-11-15T18:29:12.230Z",
+  "cashflow": {
+    "2026-05": {
+      "income": {
+        "total": 13073.12,
+        "salary": 8900.41,
+        "zelle_in": 4132,
+        "interest": 0,
+        "other_in": 40.71
+      },
+      "spent": {
+        "total": 6185.76,
+        "purchases": 4548.71,
+        "refunds": 689.42,
+        "loans": 47.66,
+        "fees": 69.81,
+        "zelle_out": 209,
+        "other_out": 2000
+      },
+      "moved": {
+        "invested": 0,
+        "india": 0
+      },
+      "internal": {
+        "count": 11,
+        "total": 6715.62
+      },
+      "by_category": {
+        "Shopping": 1835.91,
+        "Restaurants": 782.82,
+        "Kids": 546,
+        "Gas/Travel": 236.31,
+        "Tech/Subs": 126.99,
+        "Entertainment": 52.74,
+        "Healthcare": 128.59,
+        "Groceries": 486.01,
+        "AI tools": 120,
+        "Home projects": 233.34,
+        "Zelle to people": 209
+      },
+      "ai": {
+        "Anthropic Anthropic.comca": 20,
+        "Claude.ai": 100
+      },
+      "fees": [
+        {
+          "date": "2026-05-01",
+          "desc": "INTEREST CHARGE ON PURCHASES",
+          "amount": 44.81
+        },
+        {
+          "date": "2026-05-05",
+          "desc": "MAINTENANCE FEE",
+          "amount": 25
+        }
+      ],
+      "big": [],
+      "unmatched": [
+        {
+          "date": "2026-05-06",
+          "desc": "Online Banking transfer to CHK 7309 Confirmation# XXXXX94019",
+          "amount": 1300,
+          "label": "out"
+        },
+        {
+          "date": "2026-05-15",
+          "desc": "Online Banking transfer to CHK 7309 Confirmation# XXXXX24720",
+          "amount": 700,
+          "label": "out"
+        },
+        {
+          "date": "2026-05-29",
+          "desc": "ZEL FROM DEEPAK REDDY DEVULAPALLY",
+          "amount": 40.71,
+          "label": "in"
+        }
+      ],
+      "days": 31,
+      "days_in_month": 31
+    },
+    "2026-06": {
+      "income": {
+        "total": 35799.26,
+        "salary": 15908.05,
+        "zelle_in": 88,
+        "interest": 0,
+        "other_in": 19803.21
+      },
+      "spent": {
+        "total": 10387.05,
+        "purchases": 6425.35,
+        "refunds": 800.76,
+        "loans": 4479.46,
+        "fees": 25,
+        "zelle_out": 258,
+        "other_out": 0
+      },
+      "moved": {
+        "invested": 21198.11,
+        "india": 10567.87
+      },
+      "internal": {
+        "count": 27,
+        "total": 14862.65
+      },
+      "by_category": {
+        "Zelle to people": 78,
+        "Healthcare": 1214.85,
+        "Bills & utilities": 454.74,
+        "Entertainment": 688.15,
+        "Tech/Subs": 260.67,
+        "Gas/Travel": 929.9,
+        "Shopping": 698.93,
+        "Kids": 546,
+        "Restaurants": 292.03,
+        "Tax/Professional": 1094.91,
+        "AI tools": 155.52,
+        "Groceries": 269.65
+      },
+      "ai": {
+        "Claude Sub Anthropic.comca": 100,
+        "Replit Inc.": 55.52
+      },
+      "fees": [
+        {
+          "date": "2026-06-05",
+          "desc": "MAINTENANCE FEE",
+          "amount": 25
+        }
+      ],
+      "big": [
+        {
+          "date": "2026-06-08",
+          "desc": "CHECKCARD 0605 KIDS SMILE SOUTH BRUNSWINJ XXXXX9761XXXXXXXXX",
+          "amount": 1042
+        }
+      ],
+      "unmatched": [
+        {
+          "date": "2026-06-10",
+          "desc": "Robinhood",
+          "amount": 14850,
+          "label": "in"
+        },
+        {
+          "date": "2026-06-04",
+          "desc": "Robinhood",
+          "amount": 4912.5,
+          "label": "in"
+        },
+        {
+          "date": "2026-06-30",
+          "desc": "ZEL FROM DEEPAK REDDY DEVULAPALLY",
+          "amount": 40.71,
+          "label": "in"
+        }
+      ],
+      "days": 30,
+      "days_in_month": 30
+    },
+    "2026-07": {
+      "income": {
+        "total": 30478.87,
+        "salary": 23862.09,
+        "zelle_in": 2063.67,
+        "interest": 0,
+        "other_in": 4553.11
+      },
+      "spent": {
+        "total": 12448.54,
+        "purchases": 7341.94,
+        "refunds": 4284.33,
+        "loans": 8231.93,
+        "fees": 156,
+        "zelle_out": 1003,
+        "other_out": 0
+      },
+      "moved": {
+        "invested": 731.15,
+        "india": 1055.68
+      },
+      "internal": {
+        "count": 19,
+        "total": 16792.68
+      },
+      "by_category": {
+        "Bills & utilities": 665.59,
+        "Tech/Subs": 391.81,
+        "Gas/Travel": 1744.18,
+        "Zelle to people": 1003,
+        "Entertainment": 367.36,
+        "Shopping": 997.3,
+        "Healthcare": 153.99,
+        "Kids": 612.5,
+        "Tax/Professional": 281.16,
+        "Legal/immigration": 855,
+        "AI tools": 130.08,
+        "Groceries": 784.83,
+        "Restaurants": 281.44,
+        "Food delivery": 76.7
+      },
+      "ai": {
+        "Anthropic Anthropic.comca": 30.08,
+        "Claude Sub Anthropic.comca": 100
+      },
+      "fees": [
+        {
+          "date": "2026-07-31",
+          "desc": "ANNUAL FEE",
+          "amount": 95
+        },
+        {
+          "date": "2026-07-01",
+          "desc": "OVERDRAFT ITEM FEE FOR ACTIVITY OF 07-01 ELECTRONIC TRANSACT",
+          "amount": 10
+        },
+        {
+          "date": "2026-07-01",
+          "desc": "OVERDRAFT ITEM FEE FOR ACTIVITY OF 07-01 ELECTRONIC TRANSACT",
+          "amount": 10
+        },
+        {
+          "date": "2026-07-30",
+          "desc": "Monthly Maintenance Fee",
+          "amount": 8
+        },
+        {
+          "date": "2026-07-28",
+          "desc": "MINIMUM INTEREST CHARGE",
+          "amount": 1
+        },
+        {
+          "date": "2026-07-10",
+          "desc": "MONTHLY SERVICE CHARGE VR",
+          "amount": 7
+        },
+        {
+          "date": "2026-07-03",
+          "desc": "MAINTENANCE FEE",
+          "amount": 25
+        }
+      ],
+      "big": [],
+      "unmatched": [
+        {
+          "date": "2026-07-17",
+          "desc": "Mercury Insuranc DES:Deposit ID:8b6860f7-a49a-4 INDN:Vimal l",
+          "amount": 3077.97,
+          "label": "in"
+        },
+        {
+          "date": "2026-07-13",
+          "desc": "Robinhood",
+          "amount": 1475.14,
+          "label": "in"
+        }
+      ],
+      "days": 31,
+      "days_in_month": 31
+    },
+    "2026-08": {
+      "income": {
+        "total": 33605.01,
+        "salary": 16417.61,
+        "zelle_in": 317.91,
+        "interest": 0,
+        "other_in": 16869.49
+      },
+      "spent": {
+        "total": 18772.69,
+        "purchases": 10228.69,
+        "refunds": 4026.68,
+        "loans": 8231.93,
+        "fees": 114.76,
+        "zelle_out": 170,
+        "other_out": 4053.99
+      },
+      "moved": {
+        "invested": 15605.36,
+        "india": 2093.74
+      },
+      "internal": {
+        "count": 30,
+        "total": 35974.34
+      },
+      "by_category": {
+        "Entertainment": 687,
+        "Healthcare": 261.07,
+        "Bills & utilities": 746.8,
+        "Gas/Travel": 605.02,
+        "Tech/Subs": 927.87,
+        "Shopping": 4947.56,
+        "AI tools": 140.1,
+        "Groceries": 649.91,
+        "Restaurants": 810.59,
+        "Tax/Professional": 92.76,
+        "Insurance": 44.8,
+        "Kids": 280,
+        "Zelle to people": 170,
+        "Food delivery": 35.21
+      },
+      "ai": {
+        "Anthropic Anthropic.comca": 40.1,
+        "Claude Sub Anthropic.comca": 100
+      },
+      "fees": [
+        {
+          "date": "2026-08-28",
+          "desc": "Monthly Maintenance Fee",
+          "amount": 8
+        },
+        {
+          "date": "2026-08-07",
+          "desc": "MIDDLESEX CO-1 08/07 #XXXXX9295 WITHDRWL MIDDLESEX CO-1433 E",
+          "amount": 2.5
+        },
+        {
+          "date": "2026-08-03",
+          "desc": "NON-WELLS FARGO ATM TRANSACTION FEE",
+          "amount": 3
+        },
+        {
+          "date": "2026-08-12",
+          "desc": "MONTHLY SERVICE CHARGE VR",
+          "amount": 7
+        },
+        {
+          "date": "2026-08-05",
+          "desc": "MAINTENANCE FEE",
+          "amount": 25
+        },
+        {
+          "date": "2026-08-13",
+          "desc": "Late Fee",
+          "amount": 25
+        },
+        {
+          "date": "2026-08-20",
+          "desc": "Interest Charge",
+          "amount": 44.26
+        }
+      ],
+      "big": [
+        {
+          "date": "2026-08-24",
+          "desc": "RK JEWELS 08/22 #XXXXX5590 PURCHASE RK JEWELS",
+          "amount": 3730
+        }
+      ],
+      "unmatched": [
+        {
+          "date": "2026-08-10",
+          "desc": "Robinhood",
+          "amount": 15092.71,
+          "label": "in"
+        },
+        {
+          "date": "2026-08-13",
+          "desc": "Online Banking transfer to CHK 7309 Confirmation# XXXXX70043",
+          "amount": 3000,
+          "label": "out"
+        },
+        {
+          "date": "2026-08-18",
+          "desc": "Robinhood",
+          "amount": 1000,
+          "label": "in"
+        },
+        {
+          "date": "2026-08-19",
+          "desc": "Mercury Insuranc DES:Deposit ID:5659de7c-5672-4 INDN:null VI",
+          "amount": 776.78,
+          "label": "in"
+        },
+        {
+          "date": "2026-08-03",
+          "desc": "BKOFAMERICA ATM 07/31 #XXXXX8419 WITHDRWL SOMERVILLE",
+          "amount": 400,
+          "label": "out"
+        },
+        {
+          "date": "2026-08-21",
+          "desc": "PAYPAL DES:PURCHASE ID:KTS INDN:VIMAL RAJ LOGANATHAN CO ID:P",
+          "amount": 300,
+          "label": "out"
+        },
+        {
+          "date": "2026-08-03",
+          "desc": "NON-WF ATM WITHDRAWAL AUTHORIZED ON 07/31 50 WEST 33RD STREE",
+          "amount": 250,
+          "label": "out"
+        },
+        {
+          "date": "2026-08-07",
+          "desc": "MIDDLESEX CO-1 08/07 #XXXXX9295 WITHDRWL MIDDLESEX CO-1433 E",
+          "amount": 103.99,
+          "label": "out"
+        }
+      ],
+      "days": 31,
+      "days_in_month": 31
+    },
+    "2026-09": {
+      "income": {
+        "total": 18220.35,
+        "salary": 16096.64,
+        "zelle_in": 2123.71,
+        "interest": 0,
+        "other_in": 0
+      },
+      "spent": {
+        "total": 10971.4,
+        "purchases": 8279.92,
+        "refunds": 2636.26,
+        "loans": 5063.44,
+        "fees": 129.3,
+        "zelle_out": 135,
+        "other_out": 0
+      },
+      "moved": {
+        "invested": 300,
+        "india": 1106.08
+      },
+      "internal": {
+        "count": 22,
+        "total": 24714.14
+      },
+      "by_category": {
+        "Restaurants": 645.31,
+        "Entertainment": 450.23,
+        "Bills & utilities": 671.03,
+        "Healthcare": 934.76,
+        "Kids": 794.5,
+        "Shopping": 3223.6,
+        "Gas/Travel": 226.12,
+        "Tech/Subs": 367.28,
+        "Groceries": 867.09,
+        "AI tools": 100,
+        "Zelle to people": 135
+      },
+      "ai": {
+        "Anthropic": 100
+      },
+      "fees": [
+        {
+          "date": "2026-09-16",
+          "desc": "OVERDRAFT ITEM FEE FOR ACTIVITY OF 09-16 ELECTRONIC TRANSACT",
+          "amount": 10
+        },
+        {
+          "date": "2026-09-17",
+          "desc": "OVERDRAFT ITEM FEE FOR ACTIVITY OF 09-17 ELECTRONIC TRANSACT",
+          "amount": 10
+        },
+        {
+          "date": "2026-09-17",
+          "desc": "OVERDRAFT ITEM FEE FOR ACTIVITY OF 09-17 ELECTRONIC TRANSACT",
+          "amount": 10
+        },
+        {
+          "date": "2026-09-29",
+          "desc": "Monthly Maintenance Fee",
+          "amount": 8
+        },
+        {
+          "date": "2026-09-11",
+          "desc": "MONTHLY SERVICE CHARGE VR",
+          "amount": 7
+        },
+        {
+          "date": "2026-09-04",
+          "desc": "MAINTENANCE FEE",
+          "amount": 25
+        },
+        {
+          "date": "2026-09-23",
+          "desc": "INTEREST CHARGE:PURCHASES",
+          "amount": 34.05
+        },
+        {
+          "date": "2026-09-18",
+          "desc": "Interest Charge",
+          "amount": 25.25
+        }
+      ],
+      "big": [
+        {
+          "date": "2026-09-08",
+          "desc": "RK JEWELS 09/05 #XXXXX5844 PURCHASE RK JEWELS",
+          "amount": 1615
+        }
+      ],
+      "unmatched": [],
+      "days": 30,
+      "days_in_month": 30
+    },
+    "2026-10": {
+      "income": {
+        "total": 17713.37,
+        "salary": 16769.66,
+        "zelle_in": 943.71,
+        "interest": 0,
+        "other_in": 0
+      },
+      "spent": {
+        "total": 20067.55,
+        "purchases": 13486.87,
+        "refunds": 35.29,
+        "loans": 4431.79,
+        "fees": 162.18,
+        "zelle_out": 2022,
+        "other_out": 0
+      },
+      "moved": {
+        "invested": 0,
+        "india": 7010.97
+      },
+      "internal": {
+        "count": 32,
+        "total": 30106.66
+      },
+      "by_category": {
+        "Bills & utilities": 754.84,
+        "Tech/Subs": 171.63,
+        "Zelle to people": 1272,
+        "Kids": 1188.05,
+        "Home projects": 6472.52,
+        "Entertainment": 102.58,
+        "Healthcare": 107.28,
+        "Shopping": 937.2,
+        "Restaurants": 264.34,
+        "AI tools": 100,
+        "Groceries": 735.78,
+        "Legal/immigration": 2965,
+        "Gas/Travel": 204.14,
+        "Food delivery": 203.38,
+        "Tax/Professional": 30.13
+      },
+      "ai": {
+        "Anthropic": 100
+      },
+      "fees": [
+        {
+          "date": "2026-10-29",
+          "desc": "Monthly Maintenance Fee",
+          "amount": 8
+        },
+        {
+          "date": "2026-10-02",
+          "desc": "INTEREST CHARGE ON PURCHASES",
+          "amount": 47.12
+        },
+        {
+          "date": "2026-10-10",
+          "desc": "MONTHLY SERVICE CHARGE VR",
+          "amount": 7
+        },
+        {
+          "date": "2026-10-05",
+          "desc": "MAINTENANCE FEE",
+          "amount": 25
+        },
+        {
+          "date": "2026-10-24",
+          "desc": "INTEREST CHARGE:PURCHASES",
+          "amount": 0.21
+        },
+        {
+          "date": "2026-10-13",
+          "desc": "Late Fee",
+          "amount": 36
+        },
+        {
+          "date": "2026-10-20",
+          "desc": "Interest Charge",
+          "amount": 38.85
+        }
+      ],
+      "big": [
+        {
+          "date": "2026-10-14",
+          "desc": "Covered Exterior DES:Receivable ID:110407 INDN:Chaitanya Vis",
+          "amount": 6135.27
+        },
+        {
+          "date": "2026-10-20",
+          "desc": "PURCHASE 1019 FRAGOMEN FRAGOMEN.COM NJ XXXXX3462XXXXXXXXXX73",
+          "amount": 2965
+        }
+      ],
+      "unmatched": [],
+      "days": 31,
+      "days_in_month": 31
+    },
+    "2026-11": {
+      "income": {
+        "total": 8484.38,
+        "salary": 8326.38,
+        "zelle_in": 158,
+        "interest": 0,
+        "other_in": 0
+      },
+      "spent": {
+        "total": 6323.83,
+        "purchases": 2159.32,
+        "refunds": 0,
+        "loans": 3909.09,
+        "fees": 100.42,
+        "zelle_out": 155,
+        "other_out": 0
+      },
+      "moved": {
+        "invested": 100,
+        "india": 1392.36
+      },
+      "internal": {
+        "count": 6,
+        "total": 2276.12
+      },
+      "by_category": {
+        "Bills & utilities": 277.89,
+        "Tech/Subs": 122.45,
+        "Entertainment": 26.3,
+        "Shopping": 588.91,
+        "Kids": 834.2,
+        "Restaurants": 64.12,
+        "Zelle to people": 155,
+        "Groceries": 185.36,
+        "Healthcare": 60.09
+      },
+      "ai": {},
+      "fees": [
+        {
+          "date": "2026-11-02",
+          "desc": "INTEREST CHARGE ON PURCHASES",
+          "amount": 68.42
+        },
+        {
+          "date": "2026-11-11",
+          "desc": "MONTHLY SERVICE CHARGE VR",
+          "amount": 7
+        },
+        {
+          "date": "2026-11-05",
+          "desc": "MAINTENANCE FEE",
+          "amount": 25
+        }
+      ],
+      "big": [],
+      "unmatched": [],
+      "days": 15,
+      "days_in_month": 30
+    }
+  },
+  "generated_at": "2026-11-15T21:49:10.230Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -15190,27 +15864,27 @@
           "7397",
           "7724"
         ],
-        "txns": 86,
+        "txns": 87,
         "pages": 1,
         "truncated": false,
-        "last_txn": "2026-11-13"
+        "last_txn": "2026-11-15"
       }
     ],
     "failed": [],
     "forced_refresh": [
       "pnc",
       "zillow",
-      "wf",
-      "bofa",
       "robin",
       "wifebofa",
-      "td"
+      "td",
+      "wf",
+      "bofa"
     ],
     "refresh_errors": {
       "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 1405,
+    "txns_fetched": 1406,
     "duplicates_removed": 22,
     "duplicate_sample": [
       {
