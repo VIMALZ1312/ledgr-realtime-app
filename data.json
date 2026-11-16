@@ -2,7 +2,7 @@
   "kpis": {
     "income": 8326.38,
     "income_period": "November 2026",
-    "true_outflows": 2309.65,
+    "true_outflows": 2515.64,
     "outflows_period": "November 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 2641.58,
+      "balance": 2847.5699999999997,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 110.71
@@ -133,8 +133,8 @@
       "mask": "8036",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 0,
-      "available": 999,
+      "balance": 1.99,
+      "available": 998,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -147,7 +147,7 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 2641.58,
+      "balance": 2845.58,
       "available": 54,
       "is_credit": true,
       "is_loan": false,
@@ -339,9 +339,9 @@
   ],
   "net_worth": {
     "total_checking": 76848.67,
-    "total_credit": 3067.75,
+    "total_credit": 3273.74,
     "total_loans": 384584.29,
-    "net": -310803.37
+    "net": -311009.36
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -352,13 +352,13 @@
     "by_month": []
   },
   "spending": {
-    "Entertainment": 3049.8999999999996,
+    "Entertainment": 3051.8899999999994,
     "Healthcare": 4491.58,
     "Tech/Subs": 14168.840000000002,
     "Refund": -11759.72,
     "Gas/Travel": 9484.2,
     "Shopping": 32874.450000000004,
-    "Groceries": 5575.7699999999995,
+    "Groceries": 5779.7699999999995,
     "Restaurants": 4895.25,
     "Tax/Professional": 19417.010000000002,
     "Insurance": 230.74
@@ -731,9 +731,9 @@
     {
       "desc": "Google One",
       "category": "Entertainment",
-      "count": 10,
+      "count": 11,
       "months": 10,
-      "avg_amount": 2.29,
+      "avg_amount": 2.26,
       "last_amount": 1.99
     },
     {
@@ -793,6 +793,14 @@
       "last_amount": 5.32
     },
     {
+      "desc": "Patel Brothers",
+      "category": "Groceries",
+      "count": 10,
+      "months": 7,
+      "avg_amount": 111.82,
+      "last_amount": 82.65
+    },
+    {
       "desc": "Patidar Supermarket",
       "category": "Groceries",
       "count": 12,
@@ -831,14 +839,6 @@
       "months": 6,
       "avg_amount": 128.57,
       "last_amount": 125
-    },
-    {
-      "desc": "Patel Brothers",
-      "category": "Groceries",
-      "count": 9,
-      "months": 6,
-      "avg_amount": 101.58,
-      "last_amount": 82.65
     },
     {
       "desc": "NJ E-ZPass",
@@ -1636,7 +1636,7 @@
       "income": 8326.38,
       "bofa_income": 8326.38,
       "td_income": 0,
-      "outflows": 2309.65,
+      "outflows": 2515.64,
       "xoom": 0,
       "investments": 0
     }
@@ -8562,13 +8562,13 @@
       "period": "2026-11",
       "categories": {
         "Tech/Subs": 1220.51,
-        "Entertainment": 26.299999999999997,
+        "Entertainment": 28.289999999999996,
         "Shopping": 713.91,
         "Restaurants": 87.66,
-        "Groceries": 185.36,
+        "Groceries": 389.36,
         "Healthcare": 75.91
       },
-      "total": 2309.6500000000005,
+      "total": 2515.640000000001,
       "transactions": [
         {
           "date": "11-02",
@@ -8772,6 +8772,32 @@
           "category": "Entertainment",
           "city": null,
           "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-12",
+          "desc": "Google One",
+          "amount": 1.99,
+          "category": "Entertainment",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "dM5Ed30xEot9Ap000VOXuYRQY0X87ASg8Zep8",
+          "mask": "8036",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-14",
+          "desc": "Patel Brothers",
+          "amount": 204,
+          "category": "Groceries",
+          "city": "Piscataway",
+          "state": "NJ",
           "bank": "Wells Fargo",
           "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
           "mask": "9762",
@@ -20759,8 +20785,8 @@
         "other_in": 0
       },
       "spent": {
-        "total": 6323.83,
-        "purchases": 2159.32,
+        "total": 6529.82,
+        "purchases": 2365.31,
         "refunds": 0,
         "loans": 3909.09,
         "fees": 100.42,
@@ -20778,12 +20804,12 @@
       "by_category": {
         "Bills & utilities": 277.89,
         "Tech/Subs": 122.45,
-        "Entertainment": 26.3,
+        "Entertainment": 28.29,
         "Shopping": 588.91,
         "Kids": 834.2,
         "Restaurants": 64.12,
+        "Groceries": 389.36,
         "Zelle to people": 155,
-        "Groceries": 185.36,
         "Healthcare": 60.09
       },
       "ai": {},
@@ -21050,6 +21076,18 @@
           "g": "Home & car loans"
         },
         {
+          "d": "11-12",
+          "n": "Google One",
+          "a": 1.99,
+          "g": "Entertainment"
+        },
+        {
+          "d": "11-14",
+          "n": "Patel Brothers",
+          "a": 204,
+          "g": "Groceries"
+        },
+        {
           "d": "11-14",
           "n": "Mirra",
           "a": 206.65,
@@ -21088,11 +21126,11 @@
           "g": "To Robinhood"
         }
       ],
-      "days": 15,
+      "days": 16,
       "days_in_month": 30
     }
   },
-  "generated_at": "2026-11-15T23:01:34.445Z",
+  "generated_at": "2026-11-16T11:01:38.506Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -21135,10 +21173,10 @@
           "8036",
           "9762"
         ],
-        "txns": 615,
+        "txns": 617,
         "pages": 2,
         "truncated": false,
-        "last_txn": "2026-11-11"
+        "last_txn": "2026-11-14"
       },
       {
         "nickname": "pnc",
@@ -21230,17 +21268,17 @@
     "forced_refresh": [
       "pnc",
       "zillow",
-      "wf",
       "bofa",
       "wifebofa",
       "robin",
-      "td"
+      "td",
+      "wf"
     ],
     "refresh_errors": {
       "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 1406,
+    "txns_fetched": 1408,
     "duplicates_removed": 22,
     "duplicate_sample": [
       {
