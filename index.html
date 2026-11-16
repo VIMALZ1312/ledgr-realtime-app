@@ -984,18 +984,42 @@ function liveSavingsAmount(key){
   });
   return sum;
 }
-// Sheet rows with the live categories swapped in (added if the sheet lacks them).
+// Quick access = money reachable within days without a big penalty. Everything
+// else (property, 401K, private shares, jewelry) is locked / long-term.
+// Column C in the sheet ("Quick" / "Locked") overrides this per row.
+var QUICK_SAVINGS = { 'savings':1, 'stocks':1, 'certificate of deposit':1, 'icici mutual fund':1, 'gold coin':1 };
+function liquidityOf(x){
+  if(/^quick/.test(x.type || '')) return 'quick';
+  if(/^lock/.test(x.type || '')) return 'locked';
+  return QUICK_SAVINGS[x.category.trim().toLowerCase()] ? 'quick' : 'locked';
+}
+// Live mortgage balance (Rocket, linked via the zillow login), deduped by mask.
+function mortgageBalance(){
+  var seen = {}, sum = 0;
+  ((D && D.all_accounts) || []).forEach(function(a){
+    if(a.type !== 'loan' || a.subtype !== 'mortgage' || seen[a.mask]) return;
+    seen[a.mask] = true; sum += Number(a.balance) || 0;
+  });
+  return sum;
+}
+// Sheet rows with the live categories swapped in (added if the sheet lacks them),
+// House Equity net of the live mortgage, and each row tagged quick/locked.
 function savingsRows(){
   var have = {};
   var out = SAVINGS_ROWS.map(function(x){
     var k = x.category.trim().toLowerCase();
+    if(k === 'house equity' && D){
+      var loan = mortgageBalance();
+      return { category: x.category, amount: x.amount - loan, gross: x.amount, loan: loan, type: x.type };
+    }
     if(!LIVE_SAVINGS[k] || !D) return x;
     have[k] = true;
-    return { category: x.category, amount: liveSavingsAmount(k), live: true };
+    return { category: x.category, amount: liveSavingsAmount(k), live: true, type: x.type };
   });
   if(D) Object.keys(LIVE_SAVINGS).forEach(function(k){
     if(!have[k]) out.push({ category: k.charAt(0).toUpperCase() + k.slice(1), amount: liveSavingsAmount(k), live: true });
   });
+  out.forEach(function(x){ x.group = liquidityOf(x); });
   return out;
 }
 // USD→INR rate for the savings tab. open.er-api.com is free, keyless, CORS-open
@@ -1020,9 +1044,11 @@ function fetchInrRate(){
 }
 function fmtInr(usd){ return FX_INR ? '₹' + Math.round(usd * FX_INR).toLocaleString('en-IN') : '—'; }
 // What the private sheet ADDS to Overview net worth. Live rows are excluded:
-// those balances are real accounts already counted in checkingBal.
+// those balances are real accounts already counted in checkingBal. House
+// Equity adds its GROSS value, because Overview already subtracts the mortgage
+// with the other loans — using the net here would subtract it twice.
 function savingsTotal(){
-  return savingsRows().reduce(function(s,x){ return x.live ? s : s + x.amount; }, 0);
+  return savingsRows().reduce(function(s,x){ return x.live ? s : s + (x.gross != null ? x.gross : x.amount); }, 0);
 }
 function parseMoney(s){ var n=parseFloat(String(s==null?'':s).replace(/[^0-9.\-]/g,'')); return isNaN(n)?0:n; }
 function parseCSV(text){
@@ -1049,7 +1075,8 @@ function fetchSavings(){
         var cat = (r[0]||'').trim();
         if(!cat) return;
         if(idx===0 && /category/i.test(cat)) return; // header row
-        out.push({ category: cat, amount: parseMoney(r[1]) });
+        // Column C (optional) overrides the quick/locked split: "Quick" or "Locked".
+        out.push({ category: cat, amount: parseMoney(r[1]), type: (r[2]||'').trim().toLowerCase() });
       });
       SAVINGS_ROWS = out;
       SAVINGS_TOTAL = out.reduce(function(s,x){ return s + x.amount; }, 0);
@@ -1099,9 +1126,18 @@ function renderMyNetworth(){
   var top = pieRows[0];
   var topPct = (top && total) ? (top.amount/total*100) : 0;
 
+  var GROUPS = [
+    { key:'quick',  label:'Quick access',        sub:'can use within days' },
+    { key:'locked', label:'Locked / long-term', sub:'property, retirement, private shares' }
+  ];
+  var groupTotal = function(g){ return rows.reduce(function(s,x){ return x.group === g ? s + x.amount : s; }, 0); };
+  var quickTot = groupTotal('quick'), lockedTot = groupTotal('locked');
+
   // KPI
-  html += '<div class="kpi-row"><div class="kpi" style="cursor:default"><div class="kpi-label">TOTAL SAVINGS</div><div class="kpi-val" style="color:var(--green)">' + fmt2(total) + '</div><div class="kpi-sub">' + rows.length + ' categories · in net worth</div></div>';
-  if(top){ html += '<div class="kpi" style="cursor:default"><div class="kpi-label">LARGEST</div><div class="kpi-val" style="color:var(--green);font-size:18px">' + esc(top.category) + '</div><div class="kpi-sub">' + topPct.toFixed(1) + '% of savings</div></div>'; }
+  html += '<div class="kpi-row">';
+  html += '<div class="kpi" style="cursor:default"><div class="kpi-label">QUICK ACCESS</div><div class="kpi-val" style="color:var(--green)">' + fmt(quickTot) + '</div><div class="kpi-sub">' + (total ? Math.round(quickTot/total*100) : 0) + '% · usable within days</div></div>';
+  html += '<div class="kpi" style="cursor:default"><div class="kpi-label">LOCKED / LONG-TERM</div><div class="kpi-val" style="color:var(--blue)">' + fmt(lockedTot) + '</div><div class="kpi-sub">' + (total ? Math.round(lockedTot/total*100) : 0) + '% · property, 401K, private</div></div>';
+  html += '<div class="kpi" style="cursor:default"><div class="kpi-label">TOTAL SAVINGS</div><div class="kpi-val">' + fmt(total) + '</div><div class="kpi-sub">' + rows.length + ' categories · house net of mortgage</div></div>';
   html += '</div>';
 
   // Pie chart
@@ -1115,18 +1151,34 @@ function renderMyNetworth(){
   html += '<thead><tr><th style="text-align:left;padding:8px 10px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--border);font-weight:500">Category</th>';
   html += '<th style="text-align:right;padding:8px 10px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--border);font-weight:500">USD Amount</th>';
   html += '<th style="text-align:right;padding:8px 10px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--border);font-weight:500">INR Amount</th></tr></thead><tbody>';
-  rows.forEach(function(x, i){
-    var col = PIE_COLORS[pieRows.indexOf(x) % PIE_COLORS.length];
-    var dot = x.amount > 0 ? '<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:' + col + ';margin-right:8px;vertical-align:middle"></span>' : '<span style="display:inline-block;width:8px;margin-right:8px"></span>';
-    html += '<tr style="border-bottom:1px solid var(--border2)"><td style="padding:9px 10px">' + dot + esc(x.category) + (x.live ? ' <span style="font-size:9px;letter-spacing:1px;color:var(--green);border:1px solid var(--green);border-radius:3px;padding:1px 4px;margin-left:4px;vertical-align:middle">LIVE</span>' : '') + '</td>';
-    html += '<td style="padding:9px 10px;text-align:right;font-family:IBM Plex Mono,monospace">' + fmt2(x.amount) + '</td>';
-    html += '<td style="padding:9px 10px;text-align:right;font-family:IBM Plex Mono,monospace;color:var(--muted)">' + fmtInr(x.amount) + '</td></tr>';
+  var tag = function(t, c){ return ' <span style="font-size:9px;letter-spacing:1px;color:'+c+';border:1px solid '+c+';border-radius:3px;padding:1px 4px;margin-left:4px;vertical-align:middle">'+t+'</span>'; };
+  GROUPS.forEach(function(g){
+    var gr = rows.filter(function(x){ return x.group === g.key; });
+    if(!gr.length) return;
+    var gt = groupTotal(g.key);
+    html += '<tr><td colspan="3" style="padding:14px 10px 6px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border)">' + g.label + ' <span style="text-transform:none;letter-spacing:0">· ' + g.sub + '</span></td></tr>';
+    gr.forEach(function(x){
+      var col = PIE_COLORS[pieRows.indexOf(x) % PIE_COLORS.length];
+      var dot = x.amount > 0 ? '<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:' + col + ';margin-right:8px;vertical-align:middle"></span>' : '<span style="display:inline-block;width:8px;margin-right:8px"></span>';
+      var extra = x.live ? tag('LIVE','var(--green)') : '';
+      if(x.loan != null){
+        extra += tag('− MORTGAGE','var(--blue)');
+        extra += '<div style="font-size:11px;color:var(--muted);margin:2px 0 0 16px">home ' + fmt(x.gross) + ' − mortgage ' + fmt(x.loan) + ' (live)</div>';
+      }
+      html += '<tr style="border-bottom:1px solid var(--border2)"><td style="padding:9px 10px">' + dot + esc(x.category) + extra + '</td>';
+      html += '<td style="padding:9px 10px;text-align:right;font-family:IBM Plex Mono,monospace;vertical-align:top">' + fmt2(x.amount) + '</td>';
+      html += '<td style="padding:9px 10px;text-align:right;font-family:IBM Plex Mono,monospace;color:var(--muted);vertical-align:top">' + fmtInr(x.amount) + '</td></tr>';
+    });
+    html += '<tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;font-weight:600">' + g.label + ' total</td>';
+    html += '<td style="padding:8px 10px;text-align:right;font-family:IBM Plex Mono,monospace;font-weight:600">' + fmt2(gt) + '</td>';
+    html += '<td style="padding:8px 10px;text-align:right;font-family:IBM Plex Mono,monospace;font-weight:600;color:var(--muted)">' + fmtInr(gt) + '</td></tr>';
   });
   html += '<tr style="background:var(--s2);border-top:2px solid var(--border)"><td style="padding:10px;font-weight:700">Grand Total</td>';
   html += '<td style="padding:10px;text-align:right;font-family:IBM Plex Mono,monospace;font-weight:700;color:var(--green)">' + fmt2(total) + '</td>';
   html += '<td style="padding:10px;text-align:right;font-family:IBM Plex Mono,monospace;font-weight:700;color:var(--green)">' + fmtInr(total) + '</td></tr>';
   html += '</tbody></table></div>';
-  html += '<div style="font-size:10px;color:var(--muted);margin-top:8px">LIVE rows come from your synced Robinhood and wife’s BofA checking · the rest from your Google Sheet'
+  html += '<div style="font-size:10px;color:var(--muted);margin-top:8px">LIVE rows come from your synced Robinhood and wife’s BofA checking · House Equity subtracts the live Rocket mortgage · the rest from your Google Sheet'
+    + '<br>Move a row between groups by typing Quick or Locked in column C of the sheet'
     + (FX_INR ? '<br>1 USD = ₹' + FX_INR.toFixed(2) + ' · rate as of ' + esc(FX_DATE) + ', refreshed daily' : '<br>INR rate loading…') + '</div></div>';
 
   set('main-content', html);
