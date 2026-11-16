@@ -987,7 +987,7 @@ function liveSavingsAmount(key){
 // Quick access = money reachable within days without a big penalty. Everything
 // else (property, 401K, private shares, jewelry) is locked / long-term.
 // Column C in the sheet ("Quick" / "Locked") overrides this per row.
-var QUICK_SAVINGS = { 'savings':1, 'stocks':1, 'certificate of deposit':1, 'icici mutual fund':1, 'gold coin':1 };
+var QUICK_SAVINGS = { 'savings':1, 'stocks':1, 'certificate of deposit':1, 'icici mutual fund':1, 'gold':1, 'gold coin':1 };
 function liquidityOf(x){
   if(/^quick/.test(x.type || '')) return 'quick';
   if(/^lock/.test(x.type || '')) return 'locked';
