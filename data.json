@@ -2,21 +2,21 @@
   "kpis": {
     "income": 8326.38,
     "income_period": "November 2026",
-    "true_outflows": 3341.91,
+    "true_outflows": 3395.41,
     "outflows_period": "November 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 17892.760000000002,
+      "balance": 16213.85,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
       "outflows": 0
     },
     "wf": {
-      "balance": 2938.87,
+      "balance": 2992.37,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 110.71
@@ -28,7 +28,7 @@
       "payroll": 0
     },
     "discover": {
-      "balance": 10.2,
+      "balance": 0,
       "is_credit": true,
       "period_label": "Live"
     },
@@ -91,7 +91,7 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 1574.43,
+      "balance": 895.52,
       "available": 895.52,
       "is_credit": false,
       "is_loan": false,
@@ -147,7 +147,7 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 2936.88,
+      "balance": 2990.38,
       "available": null,
       "is_credit": true,
       "is_loan": false,
@@ -217,8 +217,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 245.9,
-      "available": 454.1,
+      "balance": 315.03,
+      "available": 1884.97,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -245,7 +245,7 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 16250.18,
+      "balance": 15250.18,
       "available": 15250.18,
       "is_credit": false,
       "is_loan": false,
@@ -273,7 +273,7 @@
       "mask": "0494",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 10.2,
+      "balance": 0,
       "available": null,
       "is_credit": true,
       "is_loan": false,
@@ -338,10 +338,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 74962.62,
-    "total_credit": 3387.5,
+    "total_checking": 73283.71,
+    "total_credit": 3499.93,
     "total_loans": 384584.29,
-    "net": -313009.17
+    "net": -314800.50999999995
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -353,11 +353,11 @@
   },
   "spending": {
     "Entertainment": 3051.8899999999994,
-    "Healthcare": 4519.37,
+    "Healthcare": 4563.28,
     "Tech/Subs": 14560.990000000002,
     "Refund": -11759.72,
     "Gas/Travel": 9484.2,
-    "Shopping": 32874.450000000004,
+    "Shopping": 32884.04,
     "Groceries": 5828.899999999999,
     "Restaurants": 4986.55,
     "Tax/Professional": 19417.010000000002,
@@ -677,48 +677,7 @@
       "period_label": "October 2026"
     }
   ],
-  "pending_transactions": [
-    {
-      "date": "11-17",
-      "desc": "Planet Fitness",
-      "amount": 10.66,
-      "category": "Healthcare",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "11-17",
-      "desc": "Progressive Insurance",
-      "amount": 265.9,
-      "category": "Insurance",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "11-17",
-      "desc": "Verizon",
-      "amount": 392.15,
-      "category": "Tech/Subs",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "11-16",
-      "desc": "Deccan Halal Mart",
-      "amount": 49.13,
-      "category": "Groceries",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "11-16",
-      "desc": "Med Bidabadi Pediatrics",
-      "amount": 20,
-      "category": "Healthcare",
-      "bank": "BofA",
-      "pending": true
-    }
-  ],
+  "pending_transactions": [],
   "detected_recurring": [
     {
       "desc": "ShopRite",
@@ -731,9 +690,9 @@
     {
       "desc": "Amazon",
       "category": "Shopping",
-      "count": 98,
+      "count": 99,
       "months": 11,
-      "avg_amount": 28.11,
+      "avg_amount": 27.93,
       "last_amount": 28.95
     },
     {
@@ -743,6 +702,14 @@
       "months": 10,
       "avg_amount": 66.54,
       "last_amount": 79.37
+    },
+    {
+      "desc": "Walgreens",
+      "category": "Healthcare",
+      "count": 22,
+      "months": 10,
+      "avg_amount": 33.99,
+      "last_amount": 3.26
     },
     {
       "desc": "Regal Cinemas",
@@ -799,14 +766,6 @@
       "months": 9,
       "avg_amount": 35.18,
       "last_amount": 35.18
-    },
-    {
-      "desc": "Walgreens",
-      "category": "Healthcare",
-      "count": 21,
-      "months": 9,
-      "avg_amount": 33.51,
-      "last_amount": 3.26
     },
     {
       "desc": "Apple",
@@ -1497,6 +1456,14 @@
       "last_amount": 29.32
     },
     {
+      "desc": "Bidabadi Pediatrics Lk",
+      "category": "Healthcare",
+      "count": 2,
+      "months": 2,
+      "avg_amount": 20,
+      "last_amount": 20
+    },
+    {
       "desc": "Scholastic",
       "category": "Shopping",
       "count": 2,
@@ -1676,7 +1643,7 @@
       "income": 8326.38,
       "bofa_income": 8326.38,
       "td_income": 0,
-      "outflows": 3341.91,
+      "outflows": 3395.41,
       "xoom": 0,
       "investments": 0
     }
@@ -8603,13 +8570,13 @@
       "categories": {
         "Tech/Subs": 1612.66,
         "Entertainment": 28.289999999999996,
-        "Healthcare": 103.7,
+        "Healthcare": 147.60999999999999,
         "Insurance": 265.9,
-        "Shopping": 713.91,
+        "Shopping": 723.4999999999999,
         "Restaurants": 178.95999999999998,
         "Groceries": 438.49
       },
-      "total": 3341.9100000000008,
+      "total": 3395.4100000000008,
       "transactions": [
         {
           "date": "11-02",
@@ -8898,6 +8865,32 @@
           "refund": false
         },
         {
+          "date": "11-16",
+          "desc": "Amazon",
+          "amount": 9.59,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-16",
+          "desc": "Walgreens",
+          "amount": 43.91,
+          "category": "Healthcare",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
           "date": "11-04",
           "desc": "Zelle payment to Tere Cleaning Lady Conf# yznyst4l1",
           "amount": 125,
@@ -9028,12 +9021,12 @@
           "refund": false
         },
         {
-          "date": "11-16",
-          "desc": "Deccan Halal Mart",
-          "amount": 49.13,
-          "category": "Groceries",
+          "date": "11-17",
+          "desc": "Bidabadi Pediatrics Lk",
+          "amount": 20,
+          "category": "Healthcare",
           "city": null,
-          "state": null,
+          "state": "NJ",
           "bank": "BofA",
           "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
           "mask": "2776",
@@ -9041,10 +9034,10 @@
           "refund": false
         },
         {
-          "date": "11-16",
-          "desc": "Med Bidabadi Pediatrics",
-          "amount": 20,
-          "category": "Healthcare",
+          "date": "11-17",
+          "desc": "Deccan Halal Mart",
+          "amount": 49.13,
+          "category": "Groceries",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -20904,8 +20897,8 @@
         "other_in": 0
       },
       "spent": {
-        "total": 6643.58,
-        "purchases": 2479.07,
+        "total": 7434.92,
+        "purchases": 3270.41,
         "refunds": 0,
         "loans": 3909.09,
         "fees": 100.42,
@@ -20914,22 +20907,23 @@
       },
       "moved": {
         "invested": 100,
-        "india": 1392.36
+        "india": 2392.36
       },
       "internal": {
-        "count": 6,
-        "total": 2276.12
+        "count": 7,
+        "total": 2286.32
       },
       "by_category": {
-        "Bills & utilities": 277.89,
+        "Bills & utilities": 670.04,
         "Tech/Subs": 122.45,
         "Entertainment": 28.29,
-        "Shopping": 588.91,
+        "Healthcare": 147.61,
+        "Insurance": 265.9,
+        "Shopping": 598.5,
         "Kids": 834.2,
         "Restaurants": 164.93,
-        "Groceries": 389.36,
-        "Zelle to people": 155,
-        "Healthcare": 73.04
+        "Groceries": 438.49,
+        "Zelle to people": 155
       },
       "ai": {},
       "fees": [
@@ -21229,6 +21223,48 @@
           "n": "CVS",
           "a": 12.95,
           "g": "Healthcare"
+        },
+        {
+          "d": "11-16",
+          "n": "Amazon",
+          "a": 9.59,
+          "g": "Shopping"
+        },
+        {
+          "d": "11-16",
+          "n": "Walgreens",
+          "a": 43.91,
+          "g": "Healthcare"
+        },
+        {
+          "d": "11-17",
+          "n": "Planet Fitness",
+          "a": 10.66,
+          "g": "Healthcare"
+        },
+        {
+          "d": "11-17",
+          "n": "Progressive Insurance",
+          "a": 265.9,
+          "g": "Insurance"
+        },
+        {
+          "d": "11-17",
+          "n": "Verizon",
+          "a": 392.15,
+          "g": "Bills & utilities"
+        },
+        {
+          "d": "11-17",
+          "n": "Bidabadi Pediatrics Lk",
+          "a": 20,
+          "g": "Healthcare"
+        },
+        {
+          "d": "11-17",
+          "n": "Deccan Halal Mart",
+          "a": 49.13,
+          "g": "Groceries"
         }
       ],
       "tx_moved": [
@@ -21261,13 +21297,19 @@
           "n": "Robinhood",
           "a": 100,
           "g": "To Robinhood"
+        },
+        {
+          "d": "11-17",
+          "n": "Remitly",
+          "a": 1000,
+          "g": "To India"
         }
       ],
-      "days": 17,
+      "days": 18,
       "days_in_month": 30
     }
   },
-  "generated_at": "2026-11-17T23:01:39.594Z",
+  "generated_at": "2026-11-18T11:01:47.205Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -21310,10 +21352,10 @@
           "8036",
           "9762"
         ],
-        "txns": 618,
+        "txns": 620,
         "pages": 2,
         "truncated": false,
-        "last_txn": "2026-11-14"
+        "last_txn": "2026-11-16"
       },
       {
         "nickname": "pnc",
@@ -21405,17 +21447,17 @@
     "forced_refresh": [
       "pnc",
       "zillow",
-      "wifebofa",
       "wf",
-      "bofa",
       "robin",
-      "td"
+      "td",
+      "bofa",
+      "wifebofa"
     ],
     "refresh_errors": {
       "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 1416,
+    "txns_fetched": 1418,
     "duplicates_removed": 22,
     "duplicate_sample": [
       {
