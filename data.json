@@ -315,7 +315,7 @@
       "mask": "7397",
       "type": "investment",
       "subtype": "crypto exchange",
-      "balance": 13.86,
+      "balance": 13.85,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -329,8 +329,8 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 56821.44,
-      "available": 11696.25,
+      "balance": 56341.72,
+      "available": 14516.19,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -338,10 +338,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 73283.71,
+    "total_checking": 72803.99,
     "total_credit": 3499.93,
     "total_loans": 384584.29,
-    "net": -314800.50999999995
+    "net": -315280.23
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -20910,8 +20910,8 @@
         "india": 2392.36
       },
       "internal": {
-        "count": 7,
-        "total": 2286.32
+        "count": 8,
+        "total": 2296.52
       },
       "by_category": {
         "Bills & utilities": 670.04,
@@ -21309,7 +21309,7 @@
       "days_in_month": 30
     }
   },
-  "generated_at": "2026-11-18T11:01:47.205Z",
+  "generated_at": "2026-11-18T23:01:38.316Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -21422,10 +21422,10 @@
           "0494",
           "1922"
         ],
-        "txns": 35,
+        "txns": 36,
         "pages": 1,
         "truncated": false,
-        "last_txn": "2026-10-24"
+        "last_txn": "2026-11-17"
       },
       {
         "nickname": "robin",
@@ -21446,18 +21446,18 @@
     "failed": [],
     "forced_refresh": [
       "pnc",
+      "wifebofa",
+      "bofa",
+      "robin",
       "zillow",
       "wf",
-      "robin",
-      "td",
-      "bofa",
-      "wifebofa"
+      "td"
     ],
     "refresh_errors": {
       "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 1418,
+    "txns_fetched": 1419,
     "duplicates_removed": 22,
     "duplicate_sample": [
       {
