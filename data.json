@@ -2,7 +2,7 @@
   "kpis": {
     "income": 8826.38,
     "income_period": "November 2026",
-    "true_outflows": 3494.15,
+    "true_outflows": 3550.32,
     "outflows_period": "November 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -315,7 +315,7 @@
       "mask": "7397",
       "type": "investment",
       "subtype": "crypto exchange",
-      "balance": 13.85,
+      "balance": 13.77,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -329,7 +329,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 56341.72,
+      "balance": 54984.69,
       "available": 14516.19,
       "is_credit": false,
       "is_loan": false,
@@ -338,10 +338,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 72803.99,
+    "total_checking": 71446.96,
     "total_credit": 3572.02,
     "total_loans": 384584.29,
-    "net": -315352.31999999995
+    "net": -316709.35
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -356,7 +356,7 @@
     "Healthcare": 4563.28,
     "Tech/Subs": 14560.990000000002,
     "Refund": -11759.72,
-    "Gas/Travel": 9484.2,
+    "Gas/Travel": 9540.369999999999,
     "Shopping": 32977.46,
     "Groceries": 5828.899999999999,
     "Restaurants": 4991.87,
@@ -680,6 +680,14 @@
   "pending_transactions": [
     {
       "date": "11-19",
+      "desc": "BP",
+      "amount": 56.17,
+      "category": "Gas/Travel",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
+      "date": "11-19",
       "desc": "Wingstop",
       "amount": 5.32,
       "category": "Restaurants",
@@ -721,6 +729,14 @@
       "last_amount": 79.37
     },
     {
+      "desc": "BP",
+      "category": "Gas/Travel",
+      "count": 19,
+      "months": 10,
+      "avg_amount": 56.96,
+      "last_amount": 20.09
+    },
+    {
       "desc": "Simplisafe",
       "category": "Shopping",
       "count": 10,
@@ -759,14 +775,6 @@
       "months": 9,
       "avg_amount": 234.31,
       "last_amount": 266
-    },
-    {
-      "desc": "BP",
-      "category": "Gas/Travel",
-      "count": 18,
-      "months": 9,
-      "avg_amount": 57.01,
-      "last_amount": 20.09
     },
     {
       "desc": "Delight Big Bazar",
@@ -1660,7 +1668,7 @@
       "income": 8826.38,
       "bofa_income": 8826.38,
       "td_income": 0,
-      "outflows": 3494.15,
+      "outflows": 3550.32,
       "xoom": 0,
       "investments": 0
     }
@@ -8591,9 +8599,10 @@
         "Insurance": 265.9,
         "Shopping": 816.92,
         "Restaurants": 184.27999999999997,
-        "Groceries": 438.49
+        "Groceries": 438.49,
+        "Gas/Travel": 56.17
       },
-      "total": 3494.1500000000005,
+      "total": 3550.3200000000006,
       "transactions": [
         {
           "date": "11-02",
@@ -9081,6 +9090,19 @@
           "desc": "Deccan Halal Mart",
           "amount": 49.13,
           "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-19",
+          "desc": "BP",
+          "amount": 56.17,
+          "category": "Gas/Travel",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -21400,7 +21422,7 @@
       "days_in_month": 30
     }
   },
-  "generated_at": "2026-11-19T11:01:37.760Z",
+  "generated_at": "2026-11-19T23:01:40.812Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -21486,10 +21508,10 @@
           "5677",
           "9715"
         ],
-        "txns": 380,
+        "txns": 381,
         "pages": 1,
         "truncated": false,
-        "last_txn": "2026-11-17"
+        "last_txn": "2026-11-19"
       },
       {
         "nickname": "zillow",
@@ -21541,14 +21563,14 @@
       "bofa",
       "wifebofa",
       "robin",
-      "wf",
-      "td"
+      "td",
+      "wf"
     ],
     "refresh_errors": {
       "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 1424,
+    "txns_fetched": 1425,
     "duplicates_removed": 22,
     "duplicate_sample": [
       {
