@@ -2,7 +2,7 @@
   "kpis": {
     "income": 17291.08,
     "income_period": "November 2026",
-    "true_outflows": 3634.27,
+    "true_outflows": 3890.66,
     "outflows_period": "November 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -301,8 +301,8 @@
       "mask": "1345",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 192.53,
-      "available": 9781,
+      "balance": 205.68,
+      "available": 9517,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -315,7 +315,7 @@
       "mask": "7397",
       "type": "investment",
       "subtype": "crypto exchange",
-      "balance": 13.77,
+      "balance": 12.7,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -329,7 +329,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 54984.69,
+      "balance": 52730.25,
       "available": 14516.19,
       "is_credit": false,
       "is_loan": false,
@@ -338,10 +338,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 71446.96,
-    "total_credit": 3655.97,
+    "total_checking": 69192.52,
+    "total_credit": 3669.1199999999994,
     "total_loans": 384584.29,
-    "net": -316793.3
+    "net": -319060.88999999996
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -354,7 +354,7 @@
   "spending": {
     "Entertainment": 3054.0099999999993,
     "Healthcare": 4563.28,
-    "Tech/Subs": 14560.990000000002,
+    "Tech/Subs": 14817.380000000001,
     "Refund": -11759.72,
     "Gas/Travel": 9605.22,
     "Shopping": 32994.44,
@@ -688,17 +688,17 @@
     },
     {
       "date": "11-19",
-      "desc": "Wingstop",
-      "amount": 5.32,
-      "category": "Restaurants",
+      "desc": "Five Below",
+      "amount": 21.33,
+      "category": "Shopping",
       "bank": "Robinhood",
       "pending": true
     },
     {
-      "date": "11-19",
-      "desc": "Five Below",
-      "amount": 21.33,
-      "category": "Shopping",
+      "date": "11-20",
+      "desc": "Verizon",
+      "amount": 256.39,
+      "category": "Tech/Subs",
       "bank": "Robinhood",
       "pending": true
     }
@@ -827,10 +827,10 @@
     {
       "desc": "Verizon",
       "category": "Tech/Subs",
-      "count": 6,
+      "count": 7,
       "months": 6,
-      "avg_amount": 393.74,
-      "last_amount": 392.15
+      "avg_amount": 374.12,
+      "last_amount": 256.39
     },
     {
       "desc": "Kumon North America Inc",
@@ -1668,7 +1668,7 @@
       "income": 17291.08,
       "bofa_income": 17291.08,
       "td_income": 0,
-      "outflows": 3634.27,
+      "outflows": 3890.66,
       "xoom": 0,
       "investments": 0
     }
@@ -8593,7 +8593,7 @@
       "label": "November 2026",
       "period": "2026-11",
       "categories": {
-        "Tech/Subs": 1612.66,
+        "Tech/Subs": 1869.0500000000002,
         "Entertainment": 30.409999999999997,
         "Healthcare": 147.60999999999999,
         "Insurance": 265.9,
@@ -8602,7 +8602,7 @@
         "Groceries": 438.49,
         "Gas/Travel": 121.02
       },
-      "total": 3634.2700000000004,
+      "total": 3890.6600000000003,
       "transactions": [
         {
           "date": "11-02",
@@ -9217,6 +9217,19 @@
         },
         {
           "date": "11-19",
+          "desc": "Five Below",
+          "amount": 21.33,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-18",
           "desc": "Wingstop",
           "amount": 5.32,
           "category": "Restaurants",
@@ -9229,10 +9242,10 @@
           "refund": false
         },
         {
-          "date": "11-19",
-          "desc": "Five Below",
-          "amount": 21.33,
-          "category": "Shopping",
+          "date": "11-20",
+          "desc": "Verizon",
+          "amount": 256.39,
+          "category": "Tech/Subs",
           "city": null,
           "state": null,
           "bank": "Robinhood",
@@ -21047,11 +21060,11 @@
         "other_in": 0
       },
       "spent": {
-        "total": 7590.96,
-        "purchases": 3426.45,
+        "total": 7604.11,
+        "purchases": 3431.77,
         "refunds": 0,
         "loans": 3909.09,
-        "fees": 100.42,
+        "fees": 108.25,
         "zelle_out": 155,
         "other_out": 0
       },
@@ -21071,7 +21084,7 @@
         "Insurance": 265.9,
         "Shopping": 687.57,
         "Kids": 834.2,
-        "Restaurants": 164.93,
+        "Restaurants": 170.25,
         "Groceries": 438.49,
         "Gas/Travel": 64.85,
         "Zelle to people": 155
@@ -21095,6 +21108,12 @@
           "desc": "MAINTENANCE FEE",
           "amount": 25,
           "label": "maintenance"
+        },
+        {
+          "date": "2026-11-19",
+          "desc": "Interest Charge",
+          "amount": 7.83,
+          "label": "interest"
         }
       ],
       "big": [],
@@ -21442,10 +21461,22 @@
           "g": "Entertainment"
         },
         {
+          "d": "11-18",
+          "n": "Wingstop",
+          "a": 5.32,
+          "g": "Restaurants"
+        },
+        {
           "d": "11-19",
           "n": "Amazon",
           "a": 16.98,
           "g": "Shopping"
+        },
+        {
+          "d": "11-19",
+          "n": "Interest Charge",
+          "a": 7.83,
+          "g": "Bank & card fees"
         }
       ],
       "tx_moved": [
@@ -21490,7 +21521,7 @@
       "days_in_month": 30
     }
   },
-  "generated_at": "2026-11-20T11:01:42.307Z",
+  "generated_at": "2026-11-20T23:01:41.684Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -21618,27 +21649,27 @@
           "7397",
           "7724"
         ],
-        "txns": 89,
+        "txns": 91,
         "pages": 1,
         "truncated": false,
-        "last_txn": "2026-11-19"
+        "last_txn": "2026-11-20"
       }
     ],
     "failed": [],
     "forced_refresh": [
       "pnc",
       "zillow",
-      "robin",
-      "bofa",
       "wifebofa",
-      "td",
-      "wf"
+      "bofa",
+      "robin",
+      "wf",
+      "td"
     ],
     "refresh_errors": {
       "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 1430,
+    "txns_fetched": 1432,
     "duplicates_removed": 22,
     "duplicate_sample": [
       {
