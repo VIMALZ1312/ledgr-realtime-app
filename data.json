@@ -1,8 +1,8 @@
 {
   "kpis": {
-    "income": 8826.38,
+    "income": 17291.08,
     "income_period": "November 2026",
-    "true_outflows": 3550.32,
+    "true_outflows": 3634.27,
     "outflows_period": "November 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 3064.4599999999996,
+      "balance": 3148.41,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 110.71
@@ -92,7 +92,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 895.52,
-      "available": 895.52,
+      "available": 5246.33,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -147,7 +147,7 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 3062.47,
+      "balance": 3146.42,
       "available": null,
       "is_credit": true,
       "is_loan": false,
@@ -246,7 +246,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 15250.18,
-      "available": 15250.18,
+      "available": 19364.07,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -339,9 +339,9 @@
   ],
   "net_worth": {
     "total_checking": 71446.96,
-    "total_credit": 3572.02,
+    "total_credit": 3655.97,
     "total_loans": 384584.29,
-    "net": -316709.35
+    "net": -316793.3
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -352,12 +352,12 @@
     "by_month": []
   },
   "spending": {
-    "Entertainment": 3051.8899999999994,
+    "Entertainment": 3054.0099999999993,
     "Healthcare": 4563.28,
     "Tech/Subs": 14560.990000000002,
     "Refund": -11759.72,
-    "Gas/Travel": 9540.369999999999,
-    "Shopping": 32977.46,
+    "Gas/Travel": 9605.22,
+    "Shopping": 32994.44,
     "Groceries": 5828.899999999999,
     "Restaurants": 4991.87,
     "Tax/Professional": 19417.010000000002,
@@ -715,10 +715,18 @@
     {
       "desc": "Amazon",
       "category": "Shopping",
-      "count": 100,
+      "count": 101,
       "months": 11,
-      "avg_amount": 28.02,
+      "avg_amount": 27.91,
       "last_amount": 28.95
+    },
+    {
+      "desc": "Regal Cinemas",
+      "category": "Entertainment",
+      "count": 21,
+      "months": 11,
+      "avg_amount": 17.96,
+      "last_amount": 28.24
     },
     {
       "desc": "Garden Farm",
@@ -731,9 +739,9 @@
     {
       "desc": "BP",
       "category": "Gas/Travel",
-      "count": 19,
+      "count": 20,
       "months": 10,
-      "avg_amount": 56.96,
+      "avg_amount": 57.36,
       "last_amount": 20.09
     },
     {
@@ -751,14 +759,6 @@
       "months": 10,
       "avg_amount": 33.99,
       "last_amount": 3.26
-    },
-    {
-      "desc": "Regal Cinemas",
-      "category": "Entertainment",
-      "count": 20,
-      "months": 10,
-      "avg_amount": 18.75,
-      "last_amount": 28.24
     },
     {
       "desc": "Google One",
@@ -1665,10 +1665,10 @@
     {
       "period": "2026-11",
       "period_label": "November 2026",
-      "income": 8826.38,
-      "bofa_income": 8826.38,
+      "income": 17291.08,
+      "bofa_income": 17291.08,
       "td_income": 0,
-      "outflows": 3550.32,
+      "outflows": 3634.27,
       "xoom": 0,
       "investments": 0
     }
@@ -8594,15 +8594,15 @@
       "period": "2026-11",
       "categories": {
         "Tech/Subs": 1612.66,
-        "Entertainment": 28.289999999999996,
+        "Entertainment": 30.409999999999997,
         "Healthcare": 147.60999999999999,
         "Insurance": 265.9,
-        "Shopping": 816.92,
+        "Shopping": 833.9,
         "Restaurants": 184.27999999999997,
         "Groceries": 438.49,
-        "Gas/Travel": 56.17
+        "Gas/Travel": 121.02
       },
-      "total": 3550.3200000000006,
+      "total": 3634.2700000000004,
       "transactions": [
         {
           "date": "11-02",
@@ -8936,6 +8936,45 @@
           "category": "Shopping",
           "city": null,
           "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-19",
+          "desc": "Amazon",
+          "amount": 16.98,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-18",
+          "desc": "BP",
+          "amount": 64.85,
+          "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-18",
+          "desc": "Regal Cinemas",
+          "amount": 2.12,
+          "category": "Entertainment",
+          "city": null,
+          "state": "TN",
           "bank": "Wells Fargo",
           "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
           "mask": "9762",
@@ -14984,6 +15023,16 @@
       "period_label": "November 2026"
     },
     {
+      "date": "11-18",
+      "desc": "Regal Cinemas",
+      "amount": 2.12,
+      "category": "Entertainment",
+      "city": null,
+      "state": "TN",
+      "period": "2026-11",
+      "period_label": "November 2026"
+    },
+    {
       "date": "02-11",
       "desc": "Spirit Airlines",
       "amount": 1188.4,
@@ -20998,8 +21047,8 @@
         "other_in": 0
       },
       "spent": {
-        "total": 7507.01,
-        "purchases": 3342.5,
+        "total": 7590.96,
+        "purchases": 3426.45,
         "refunds": 0,
         "loans": 3909.09,
         "fees": 100.42,
@@ -21017,13 +21066,14 @@
       "by_category": {
         "Bills & utilities": 670.04,
         "Tech/Subs": 122.45,
-        "Entertainment": 28.29,
+        "Entertainment": 30.41,
         "Healthcare": 147.61,
         "Insurance": 265.9,
-        "Shopping": 670.59,
+        "Shopping": 687.57,
         "Kids": 834.2,
         "Restaurants": 164.93,
         "Groceries": 438.49,
+        "Gas/Travel": 64.85,
         "Zelle to people": 155
       },
       "ai": {},
@@ -21378,6 +21428,24 @@
           "n": "Simplisafe",
           "a": 35.18,
           "g": "Shopping"
+        },
+        {
+          "d": "11-18",
+          "n": "BP",
+          "a": 64.85,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "11-18",
+          "n": "Regal Cinemas",
+          "a": 2.12,
+          "g": "Entertainment"
+        },
+        {
+          "d": "11-19",
+          "n": "Amazon",
+          "a": 16.98,
+          "g": "Shopping"
         }
       ],
       "tx_moved": [
@@ -21418,11 +21486,11 @@
           "g": "To India"
         }
       ],
-      "days": 19,
+      "days": 20,
       "days_in_month": 30
     }
   },
-  "generated_at": "2026-11-19T23:01:40.812Z",
+  "generated_at": "2026-11-20T11:01:42.307Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -21450,10 +21518,10 @@
           "7309",
           "8206"
         ],
-        "txns": 231,
+        "txns": 232,
         "pages": 1,
         "truncated": false,
-        "last_txn": "2026-11-17"
+        "last_txn": "2026-11-20"
       },
       {
         "nickname": "wf",
@@ -21465,10 +21533,10 @@
           "8036",
           "9762"
         ],
-        "txns": 623,
+        "txns": 626,
         "pages": 2,
         "truncated": false,
-        "last_txn": "2026-11-19"
+        "last_txn": "2026-11-20"
       },
       {
         "nickname": "pnc",
@@ -21508,10 +21576,10 @@
           "5677",
           "9715"
         ],
-        "txns": 381,
+        "txns": 382,
         "pages": 1,
         "truncated": false,
-        "last_txn": "2026-11-19"
+        "last_txn": "2026-11-20"
       },
       {
         "nickname": "zillow",
@@ -21560,9 +21628,9 @@
     "forced_refresh": [
       "pnc",
       "zillow",
+      "robin",
       "bofa",
       "wifebofa",
-      "robin",
       "td",
       "wf"
     ],
@@ -21570,7 +21638,7 @@
       "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 1425,
+    "txns_fetched": 1430,
     "duplicates_removed": 22,
     "duplicate_sample": [
       {
