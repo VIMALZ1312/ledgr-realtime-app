@@ -13,7 +13,7 @@
 //      reflects a commit immediately, and authenticated calls get 5,000/hour
 //      rather than 60. Requested as raw media so the 1 MB base64 ceiling on
 //      the JSON representation does not apply.
-const { dataStore } = require('./_core');
+const { connectBlobs, dataStore } = require('./_core');
 
 const REPO = process.env.GITHUB_REPO || 'VIMALZ1312/ledgr-realtime-app';
 const FILE = process.env.GITHUB_FILE_PATH || 'data.json';
@@ -32,7 +32,8 @@ async function fromGitHubApi() {
   return resp.text();
 }
 
-exports.handler = async () => {
+exports.handler = async (event) => {
+  connectBlobs(event);
   const headers = { 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json', 'Cache-Control': 'no-store' };
   // Report which sources were tried when all of them fail — a 503 whose body
   // says "blobs not configured, GITHUB_TOKEN missing" is debuggable; a bare

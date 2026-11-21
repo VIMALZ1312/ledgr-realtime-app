@@ -3,7 +3,7 @@
 // produces byte-for-byte the same structure as Replit. Tokens live in Netlify
 // Blobs (auto-saved on link) AND/OR PLAID_TOKEN_* env vars (for migration).
 const { Configuration, PlaidApi, PlaidEnvironments, Products, CountryCode } = require('plaid');
-const { getStore } = require('@netlify/blobs');
+const { getStore, connectLambda } = require('@netlify/blobs');
 
 const plaid = new PlaidApi(new Configuration({
   basePath: PlaidEnvironments[process.env.PLAID_ENV || 'sandbox'],
@@ -28,6 +28,14 @@ const BLOBS_SITE = process.env.NETLIFY_BLOBS_SITE_ID || process.env.SITE_ID;
 const BLOBS_TOKEN = process.env.NETLIFY_BLOBS_TOKEN;
 function storeArg(name) {
   return (BLOBS_SITE && BLOBS_TOKEN) ? { name, siteID: BLOBS_SITE, token: BLOBS_TOKEN } : name;
+}
+// These are Lambda-style handlers (exports.handler), where Blobs only finds its
+// site context after connectLambda(event). Without it every Blobs call threw
+// "environment has not been configured" and quietly fell back. Each handler
+// calls this first; explicit NETLIFY_BLOBS_* env config needs nothing.
+function connectBlobs(event) {
+  if (BLOBS_SITE && BLOBS_TOKEN) return;
+  try { if (event && event.blobs) connectLambda(event); } catch (e) { console.warn('connectLambda failed:', e.message); }
 }
 function tokenStore() { return getStore(storeArg('plaid-tokens')); }
 function dataStore() { return getStore(storeArg('ledgr-data')); }
@@ -760,4 +768,4 @@ async function buildDataJson() {
   return { accounts_synced: allAccounts.length, transactions_synced: allTransactions.length, generated_at: data.generated_at };
 }
 
-module.exports = { plaid, Products, CountryCode, getTokens, saveToken, buildDataJson, dataStore, dedupeCrossItemTxns, buildCashflow, applyHidden, txnFingerprint, slimTxn, rebuildFromCache, setHidden };
+module.exports = { connectBlobs, plaid, Products, CountryCode, getTokens, saveToken, buildDataJson, dataStore, dedupeCrossItemTxns, buildCashflow, applyHidden, txnFingerprint, slimTxn, rebuildFromCache, setHidden };

@@ -1,8 +1,9 @@
 // Exchange a Plaid public_token for an access_token AND persist it to Netlify
 // Blobs automatically — no manual env-var paste (the key Option A improvement).
-const { plaid, saveToken } = require('./_core');
+const { connectBlobs, plaid, saveToken } = require('./_core');
 
 exports.handler = async (event) => {
+  connectBlobs(event);
   const headers = { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Content-Type', 'Access-Control-Allow-Methods': 'POST, OPTIONS', 'Content-Type': 'application/json' };
   if (event.httpMethod === 'OPTIONS') return { statusCode: 200, headers, body: '' };
   try {
