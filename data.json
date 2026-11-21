@@ -357,7 +357,7 @@
     "Tech/Subs": 14826.380000000001,
     "Refund": -11759.72,
     "Gas/Travel": 9605.22,
-    "Shopping": 32994.44,
+    "Shopping": 26859.170000000002,
     "Groceries": 5828.899999999999,
     "Restaurants": 4991.87,
     "Tax/Professional": 19417.010000000002,
@@ -1642,7 +1642,7 @@
       "income": 16769.660000000003,
       "bofa_income": 16769.660000000003,
       "td_income": 0,
-      "outflows": 14326.58,
+      "outflows": 8191.31,
       "xoom": 0,
       "investments": 0
     },
@@ -8063,7 +8063,7 @@
       "period": "2026-10",
       "categories": {
         "Tech/Subs": 2014.6899999999998,
-        "Shopping": 10510.37,
+        "Shopping": 4375.0999999999985,
         "Entertainment": 102.58,
         "Healthcare": 107.28,
         "Gas/Travel": 393.32,
@@ -8072,7 +8072,7 @@
         "Groceries": 735.78,
         "Tax/Professional": 30.13
       },
-      "total": 14326.580000000005,
+      "total": 8191.309999999997,
       "transactions": [
         {
           "id": "vdMawwY7XBCO7dnrYA88cK3knkydQLTk7r1R0",
@@ -8600,20 +8600,6 @@
           "category": "Groceries",
           "city": "North Brunswick",
           "state": "NJ",
-          "bank": "BofA",
-          "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
-          "mask": "9715",
-          "pending": false,
-          "refund": false
-        },
-        {
-          "id": "A49dZ8N0QkcPzvd0dzkKTQN5J5E6XpcjOA0mV",
-          "date": "10-14",
-          "desc": "Covered Exteriors",
-          "amount": 6135.27,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
           "bank": "BofA",
           "account_id": "83zEvxkPmLhAbZm6mkZJHXRAvAaOKNUZZLpVY",
           "mask": "9715",
@@ -26613,8 +26599,8 @@
         "other_in": 0
       },
       "spent": {
-        "total": 27078.52,
-        "purchases": 13486.87,
+        "total": 20943.25,
+        "purchases": 7351.6,
         "refunds": 35.29,
         "loans": 4431.79,
         "fees": 162.18,
@@ -26635,7 +26621,7 @@
         "Sent to India": 7010.97,
         "Zelle to people": 1272,
         "Kids": 1188.05,
-        "Home projects": 6472.52,
+        "Home projects": 337.25,
         "Entertainment": 102.58,
         "Healthcare": 107.28,
         "Shopping": 937.2,
@@ -26695,11 +26681,6 @@
         }
       ],
       "big": [
-        {
-          "date": "2026-10-14",
-          "desc": "Covered Exteriors",
-          "amount": 6135.27
-        },
         {
           "date": "2026-10-20",
           "desc": "Fragomen",
@@ -27290,15 +27271,6 @@
           "g": "Bank & card fees",
           "b": "Robinhood",
           "k": "1345"
-        },
-        {
-          "id": "A49dZ8N0QkcPzvd0dzkKTQN5J5E6XpcjOA0mV",
-          "d": "10-14",
-          "n": "Covered Exteriors",
-          "a": 6135.27,
-          "g": "Home projects",
-          "b": "BofA",
-          "k": "9715"
         },
         {
           "id": "Bvq9ggZ1bDIm9egKnrDzuMa0ZNqZdku730zo0",
@@ -28400,9 +28372,19 @@
       "days_in_month": 30
     }
   },
-  "hidden": [],
+  "hidden": [
+    {
+      "id": "A49dZ8N0QkcPzvd0dzkKTQN5J5E6XpcjOA0mV",
+      "date": "2026-10-14",
+      "desc": "Covered Exteriors",
+      "amount": 6135.27,
+      "bank": "BofA",
+      "mask": "9715",
+      "hidden_at": "2026-11-21T22:17:39.649Z"
+    }
+  ],
   "generated_at": "2026-11-21T22:04:37.112Z",
-  "rebuilt_at": "2026-11-21T22:13:12.298Z",
+  "rebuilt_at": "2026-11-21T22:17:39.880Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -28624,6 +28606,6 @@
         "dropped_from": "wifebofa"
       }
     ],
-    "hidden_removed": 0
+    "hidden_removed": 1
   }
 }
