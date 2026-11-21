@@ -26,8 +26,10 @@ const REFRESH_WAIT_MS = Number(process.env.PLAID_REFRESH_WAIT_MS || 8000);
 // to auto-config, and callers degrade gracefully if Blobs is unavailable.
 const BLOBS_SITE = process.env.NETLIFY_BLOBS_SITE_ID || process.env.SITE_ID;
 const BLOBS_TOKEN = process.env.NETLIFY_BLOBS_TOKEN;
+// Strong consistency: a read right after a write (delete → rebuild → load) must
+// see that write. The default 'eventual' mode can serve a value up to ~60s old.
 function storeArg(name) {
-  return (BLOBS_SITE && BLOBS_TOKEN) ? { name, siteID: BLOBS_SITE, token: BLOBS_TOKEN } : name;
+  return (BLOBS_SITE && BLOBS_TOKEN) ? { name, siteID: BLOBS_SITE, token: BLOBS_TOKEN, consistency: 'strong' } : { name, consistency: 'strong' };
 }
 // These are Lambda-style handlers (exports.handler), where Blobs only finds its
 // site context after connectLambda(event). Without it every Blobs call threw
@@ -602,8 +604,8 @@ function slimTxn(t) {
 
 // Turn one bank download into data.json (GitHub + Blobs). Used by a full sync
 // and by a rebuild after the hidden list changes, which needs no bank calls.
-async function publishFromRaw(raw) {
-  const hidden = await getHidden();
+async function publishFromRaw(raw, hiddenNow) {
+  const hidden = hiddenNow || await getHidden();
   const visible = applyHidden(raw.accounts, raw.transactions, hidden);
   const deduped = dedupeCrossItemTxns(raw.accounts, visible.transactions);
   const data = buildStructuredData(raw.accounts, deduped.transactions);
@@ -649,7 +651,7 @@ async function setHidden(id, hide) {
     hidden = hidden.filter(h => h.id !== id);
   }
   await dataStore().set(HIDDEN_KEY, JSON.stringify(hidden));
-  await publishFromRaw(raw);
+  await publishFromRaw(raw, hidden); // pass the list just written; don't re-read it
   return hidden.length;
 }
 
