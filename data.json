@@ -27674,11 +27674,11 @@
         "other_in": 0
       },
       "spent": {
-        "total": 10107.72,
+        "total": 10100.72,
         "purchases": 3543.02,
         "refunds": 0,
         "loans": 3909.09,
-        "fees": 108.25,
+        "fees": 101.25,
         "zelle_out": 155,
         "other_out": 0,
         "india": 2392.36
@@ -27711,12 +27711,6 @@
           "desc": "INTEREST CHARGE ON PURCHASES",
           "amount": 68.42,
           "label": "interest"
-        },
-        {
-          "date": "2026-11-11",
-          "desc": "MONTHLY SERVICE CHARGE VR",
-          "amount": 7,
-          "label": "maintenance"
         },
         {
           "date": "2026-11-05",
@@ -28115,15 +28109,6 @@
           "k": "9762"
         },
         {
-          "id": "beqo1Mmw8RF76pvQbg3PCkzAMw7xD1TPQYrx3",
-          "d": "11-11",
-          "n": "MONTHLY SERVICE CHARGE VR",
-          "a": 7,
-          "g": "Bank & card fees",
-          "b": "PNC",
-          "k": "5961"
-        },
-        {
           "id": "K7KyXPmNBgCRMgyXyMzOuQaxoRbK6KT1aAQQr",
           "d": "11-11",
           "n": "Deccan Halal Mart",
@@ -28400,9 +28385,19 @@
       "days_in_month": 30
     }
   },
-  "hidden": [],
+  "hidden": [
+    {
+      "id": "beqo1Mmw8RF76pvQbg3PCkzAMw7xD1TPQYrx3",
+      "date": "2026-11-11",
+      "desc": "MONTHLY SERVICE CHARGE VR",
+      "amount": 7,
+      "bank": "PNC",
+      "mask": "5961",
+      "hidden_at": "2026-11-21T22:13:08.773Z"
+    }
+  ],
   "generated_at": "2026-11-21T22:04:37.112Z",
-  "rebuilt_at": "2026-11-21T22:05:00.830Z",
+  "rebuilt_at": "2026-11-21T22:13:09.198Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -28624,6 +28619,6 @@
         "dropped_from": "wifebofa"
       }
     ],
-    "hidden_removed": 0
+    "hidden_removed": 1
   }
 }
