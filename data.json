@@ -2,24 +2,24 @@
   "kpis": {
     "income": 17291.08,
     "income_period": "November 2026",
-    "true_outflows": 3890.66,
+    "true_outflows": 3924.41,
     "outflows_period": "November 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 16213.85,
+      "balance": 24678.55,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
       "outflows": 0
     },
     "wf": {
-      "balance": 3148.41,
+      "balance": 3182.16,
       "is_credit": true,
       "period_label": "Live",
-      "wf_checking": 110.71
+      "wf_checking": 610.71
     },
     "td": {
       "balance": 63,
@@ -91,7 +91,7 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 895.52,
+      "balance": 5246.33,
       "available": 5246.33,
       "is_credit": false,
       "is_loan": false,
@@ -119,7 +119,7 @@
       "mask": "3068",
       "type": "depository",
       "subtype": "checking",
-      "balance": 110.71,
+      "balance": 610.71,
       "available": 610.71,
       "is_credit": false,
       "is_loan": false,
@@ -147,7 +147,7 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 3146.42,
+      "balance": 3180.17,
       "available": null,
       "is_credit": true,
       "is_loan": false,
@@ -217,8 +217,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 315.03,
-      "available": 1884.97,
+      "balance": 371.2,
+      "available": 1828.8,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -245,7 +245,7 @@
       "mask": "9715",
       "type": "depository",
       "subtype": "checking",
-      "balance": 15250.18,
+      "balance": 19364.07,
       "available": 19364.07,
       "is_credit": false,
       "is_loan": false,
@@ -301,8 +301,8 @@
       "mask": "1345",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 205.68,
-      "available": 9517,
+      "balance": 227.01,
+      "available": 9516,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -338,10 +338,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 69192.52,
-    "total_credit": 3669.1199999999994,
+    "total_checking": 78157.22,
+    "total_credit": 3780.37,
     "total_loans": 384584.29,
-    "net": -319060.88999999996
+    "net": -310207.43999999994
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -353,8 +353,8 @@
   },
   "spending": {
     "Entertainment": 3054.0099999999993,
-    "Healthcare": 4563.28,
-    "Tech/Subs": 14817.380000000001,
+    "Healthcare": 4588.03,
+    "Tech/Subs": 14826.380000000001,
     "Refund": -11759.72,
     "Gas/Travel": 9605.22,
     "Shopping": 32994.44,
@@ -679,22 +679,6 @@
   ],
   "pending_transactions": [
     {
-      "date": "11-19",
-      "desc": "BP",
-      "amount": 56.17,
-      "category": "Gas/Travel",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "11-19",
-      "desc": "Five Below",
-      "amount": 21.33,
-      "category": "Shopping",
-      "bank": "Robinhood",
-      "pending": true
-    },
-    {
       "date": "11-20",
       "desc": "Verizon",
       "amount": 256.39,
@@ -755,9 +739,9 @@
     {
       "desc": "Walgreens",
       "category": "Healthcare",
-      "count": 22,
+      "count": 24,
       "months": 10,
-      "avg_amount": 33.99,
+      "avg_amount": 32.19,
       "last_amount": 3.26
     },
     {
@@ -1668,7 +1652,7 @@
       "income": 17291.08,
       "bofa_income": 17291.08,
       "td_income": 0,
-      "outflows": 3890.66,
+      "outflows": 3924.41,
       "xoom": 0,
       "investments": 0
     }
@@ -8593,16 +8577,16 @@
       "label": "November 2026",
       "period": "2026-11",
       "categories": {
-        "Tech/Subs": 1869.0500000000002,
+        "Tech/Subs": 1878.0500000000002,
         "Entertainment": 30.409999999999997,
-        "Healthcare": 147.60999999999999,
+        "Healthcare": 172.35999999999999,
         "Insurance": 265.9,
         "Shopping": 833.9,
         "Restaurants": 184.27999999999997,
         "Groceries": 438.49,
         "Gas/Travel": 121.02
       },
-      "total": 3890.6600000000003,
+      "total": 3924.4100000000003,
       "transactions": [
         {
           "date": "11-02",
@@ -8982,6 +8966,45 @@
           "refund": false
         },
         {
+          "date": "11-20",
+          "desc": "Netlify",
+          "amount": 9,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": "CA",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-19",
+          "desc": "Walgreens",
+          "amount": 19.99,
+          "category": "Healthcare",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-19",
+          "desc": "Walgreens",
+          "amount": 4.76,
+          "category": "Healthcare",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
           "date": "11-04",
           "desc": "Zelle payment to Tere Cleaning Lady Conf# yznyst4l1",
           "amount": 125,
@@ -9138,7 +9161,7 @@
           "refund": false
         },
         {
-          "date": "11-19",
+          "date": "11-20",
           "desc": "BP",
           "amount": 56.17,
           "category": "Gas/Travel",
@@ -9216,19 +9239,6 @@
           "refund": false
         },
         {
-          "date": "11-19",
-          "desc": "Five Below",
-          "amount": 21.33,
-          "category": "Shopping",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
-          "mask": "1345",
-          "pending": false,
-          "refund": false
-        },
-        {
           "date": "11-18",
           "desc": "Wingstop",
           "amount": 5.32,
@@ -9246,6 +9256,19 @@
           "desc": "Verizon",
           "amount": 256.39,
           "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "date": "11-20",
+          "desc": "Five Below",
+          "amount": 21.33,
+          "category": "Shopping",
           "city": null,
           "state": null,
           "bank": "Robinhood",
@@ -15042,6 +15065,16 @@
       "category": "Entertainment",
       "city": null,
       "state": "TN",
+      "period": "2026-11",
+      "period_label": "November 2026"
+    },
+    {
+      "date": "11-20",
+      "desc": "Netlify",
+      "amount": 9,
+      "category": "Tech/Subs",
+      "city": null,
+      "state": "CA",
       "period": "2026-11",
       "period_label": "November 2026"
     },
@@ -21053,15 +21086,15 @@
     },
     "2026-11": {
       "income": {
-        "total": 8484.38,
-        "salary": 8326.38,
+        "total": 17449.08,
+        "salary": 17291.08,
         "zelle_in": 158,
         "interest": 0,
         "other_in": 0
       },
       "spent": {
-        "total": 7604.11,
-        "purchases": 3431.77,
+        "total": 7715.36,
+        "purchases": 3543.02,
         "refunds": 0,
         "loans": 3909.09,
         "fees": 108.25,
@@ -21078,15 +21111,15 @@
       },
       "by_category": {
         "Bills & utilities": 670.04,
-        "Tech/Subs": 122.45,
+        "Tech/Subs": 131.45,
         "Entertainment": 30.41,
-        "Healthcare": 147.61,
+        "Healthcare": 172.36,
         "Insurance": 265.9,
-        "Shopping": 687.57,
+        "Shopping": 708.9,
         "Kids": 834.2,
         "Restaurants": 170.25,
         "Groceries": 438.49,
-        "Gas/Travel": 64.85,
+        "Gas/Travel": 121.02,
         "Zelle to people": 155
       },
       "ai": {},
@@ -21157,6 +21190,24 @@
           "n": "ZELLE FROM SAIREDDY KASTHURI ON 11/07 REF # COF81V",
           "a": 70,
           "g": "Zelle from people"
+        },
+        {
+          "d": "11-20",
+          "n": "VERIZON V3 DES:DIR DEP ID:NJ2551601 INDN:LOGANATHA",
+          "a": 4350.81,
+          "g": "Salary"
+        },
+        {
+          "d": "11-20",
+          "n": "VERIZON V3 DIR DEP 111426 NJ2551601 LOGANATHAN,VIM",
+          "a": 500,
+          "g": "Salary"
+        },
+        {
+          "d": "11-20",
+          "n": "WIPRO LTD DES:PAYROLL ID:XXXXX3210529ZSL INDN:VIST",
+          "a": 4113.89,
+          "g": "Salary"
         }
       ],
       "tx_out": [
@@ -21474,9 +21525,39 @@
         },
         {
           "d": "11-19",
+          "n": "Walgreens",
+          "a": 19.99,
+          "g": "Healthcare"
+        },
+        {
+          "d": "11-19",
+          "n": "Walgreens",
+          "a": 4.76,
+          "g": "Healthcare"
+        },
+        {
+          "d": "11-19",
           "n": "Interest Charge",
           "a": 7.83,
           "g": "Bank & card fees"
+        },
+        {
+          "d": "11-20",
+          "n": "Netlify",
+          "a": 9,
+          "g": "Tech/Subs"
+        },
+        {
+          "d": "11-20",
+          "n": "BP",
+          "a": 56.17,
+          "g": "Gas/Travel"
+        },
+        {
+          "d": "11-20",
+          "n": "Five Below",
+          "a": 21.33,
+          "g": "Shopping"
         }
       ],
       "tx_moved": [
@@ -21517,11 +21598,11 @@
           "g": "To India"
         }
       ],
-      "days": 20,
+      "days": 21,
       "days_in_month": 30
     }
   },
-  "generated_at": "2026-11-20T23:01:41.684Z",
+  "generated_at": "2026-11-21T11:01:39.789Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -21564,7 +21645,7 @@
           "8036",
           "9762"
         ],
-        "txns": 626,
+        "txns": 629,
         "pages": 2,
         "truncated": false,
         "last_txn": "2026-11-20"
@@ -21660,16 +21741,16 @@
       "pnc",
       "zillow",
       "wifebofa",
-      "bofa",
       "robin",
       "wf",
-      "td"
+      "td",
+      "bofa"
     ],
     "refresh_errors": {
       "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 1432,
+    "txns_fetched": 1435,
     "duplicates_removed": 22,
     "duplicate_sample": [
       {
