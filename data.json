@@ -28401,8 +28401,8 @@
     }
   },
   "hidden": [],
-  "generated_at": "2026-11-21T21:58:27.656Z",
-  "rebuilt_at": "2026-11-21T21:58:28.006Z",
+  "generated_at": "2026-11-21T22:04:37.112Z",
+  "rebuilt_at": "2026-11-21T22:04:37.700Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -28542,8 +28542,8 @@
       "zillow",
       "robin",
       "wifebofa",
-      "wf",
       "bofa",
+      "wf",
       "td"
     ],
     "refresh_errors": {
