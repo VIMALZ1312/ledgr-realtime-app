@@ -10,11 +10,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <title>LEDGR</title>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
-[data-theme="dark"]{--bg:#060608;--surface:#0e0e14;--card:#13131c;--s2:#1a1a26;--s3:#202030;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.04);--text:#e8e8f0;--muted:#60607a;--muted2:#38384a;--modal-bg:rgba(0,0,0,0.8);--modal-card:#13131c;--green:#00d084;--red:#ff4060;--yellow:#f5c518;--blue:#4da8ff;--orange:#ff8c42;--purple:#a78bfa;--accent:#c8f060;}
-[data-theme="light"]{--bg:#f5f5f0;--surface:#fff;--card:#fff;--s2:#f0f0ec;--s3:#e8e8e4;--border:rgba(0,0,0,0.09);--border2:rgba(0,0,0,0.05);--text:#111118;--muted:#6b6b80;--muted2:#c0c0cc;--modal-bg:rgba(0,0,0,0.45);--modal-card:#fff;--green:#007a40;--red:#cc1033;--yellow:#b8860b;--blue:#1a6bc4;--orange:#c05a10;--purple:#6d28d9;--accent:#2d7a00;}
+/* Pastel theme. Accents (--green, --red…) stay readable as text; the --p-*
+   tints are the soft fills behind cards, pills and the active tab. */
+[data-theme="dark"]{--bg:#14121d;--surface:#1b1928;--card:#201e2f;--s2:#29263b;--s3:#322e48;--border:rgba(200,190,255,0.10);--border2:rgba(200,190,255,0.06);--text:#efedf8;--muted:#a29dbd;--muted2:#5d5878;--modal-bg:rgba(8,6,16,0.72);--modal-card:#211f31;--green:#86e0bd;--red:#f6a3b7;--yellow:#f4d48f;--blue:#a5c3fa;--orange:#f7b98e;--purple:#c0b4fc;--accent:#c0b4fc;
+  --p-mint:rgba(134,224,189,0.13);--p-rose:rgba(246,163,183,0.13);--p-sky:rgba(165,195,250,0.13);--p-lav:rgba(192,180,252,0.15);--p-peach:rgba(247,185,142,0.13);--shadow:0 1px 2px rgba(0,0,0,.25),0 8px 24px rgba(0,0,0,.18);--on-accent:#1b1928;}
+[data-theme="light"]{--bg:#f6f4fb;--surface:#ffffff;--card:#ffffff;--s2:#f3f0fa;--s3:#e9e4f5;--border:rgba(84,64,150,0.10);--border2:rgba(84,64,150,0.06);--text:#272240;--muted:#7f799b;--muted2:#c4bfd8;--modal-bg:rgba(39,34,64,0.35);--modal-card:#ffffff;--green:#1f9d77;--red:#d6577a;--yellow:#b9862a;--blue:#4a7fe0;--orange:#d97b44;--purple:#7a68ee;--accent:#7a68ee;
+  --p-mint:#e2f6ee;--p-rose:#fde9ef;--p-sky:#e6eefd;--p-lav:#efebfe;--p-peach:#fdeee4;--shadow:0 1px 2px rgba(60,40,120,.05),0 6px 20px rgba(60,40,120,.06);--on-accent:#ffffff;}
 *{box-sizing:border-box;margin:0;padding:0;}
 body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;font-size:15px;line-height:1.5;min-height:100vh;}
 .shell{display:flex;min-height:100vh;}
@@ -106,6 +110,75 @@ body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-ser
 .state-body{padding:0 14px 12px 14px;}
 .travel-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
 .travel-chips .chip{margin:0;}
+
+/* ── Pastel polish ─────────────────────────────────────────────────────── */
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:14.5px;-webkit-font-smoothing:antialiased;}
+/* Numbers: the app sets IBM Plex Mono inline in many places; render them in
+   the UI face with even-width digits so columns still line up. */
+[style*="IBM Plex Mono"],.kpi-val,.row-amt,.cat-bar-amt,.state-total{font-family:'Plus Jakarta Sans',system-ui,sans-serif !important;font-variant-numeric:tabular-nums;letter-spacing:-.01em;}
+.logo-mark,.t-logo{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;letter-spacing:1px;}
+.logo-mark span,.t-logo span{color:var(--purple);}
+.dot{background:var(--green);}
+.sidebar{background:var(--surface);border-right:1px solid var(--border);}
+.nav{padding:10px 10px;}
+.nav-item{border-left:none;border-radius:12px;margin:2px 0;padding:10px 12px;font-weight:500;color:var(--muted);}
+.nav-item:hover{background:var(--s2);color:var(--text);}
+.nav-item.active{background:var(--p-lav);color:var(--purple);font-weight:700;}
+.nav-icon{width:22px;text-align:center;}
+.btn-sync{background:var(--purple);color:var(--on-accent);border-radius:12px;font-family:inherit;font-size:13px;font-weight:700;padding:10px;}
+.btn-sec{border-radius:10px;font-family:inherit;}
+.topbar{background:color-mix(in srgb,var(--surface) 85%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
+.t-btn{border-radius:12px;background:var(--s2);}
+.bottom-tabs{background:color-mix(in srgb,var(--surface) 90%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:6px 6px calc(6px + env(safe-area-inset-bottom));}
+.btab{border-radius:14px;margin:0 2px;padding:7px 2px;font-weight:600;font-size:10px;font-family:inherit;transition:background .15s,color .15s;}
+.btab.active{background:var(--p-lav);color:var(--purple);}
+.main{max-width:1100px;}
+.panel{border-radius:18px;border:1px solid var(--border);box-shadow:var(--shadow);padding:18px;}
+.panel-title{font-size:13px;font-weight:700;letter-spacing:.2px;text-transform:none;color:var(--text);}
+.panel-action{font-family:inherit;}
+.kpi{border-radius:18px;border:none;box-shadow:var(--shadow);padding:16px;}
+.kpi-row .kpi:nth-child(3n+1){background:var(--p-mint);}
+.kpi-row .kpi:nth-child(3n+2){background:var(--p-sky);}
+.kpi-row .kpi:nth-child(3n+3){background:var(--p-rose);}
+.kpi:hover{filter:brightness(.98);background-blend-mode:multiply;}
+.kpi-label{font-size:11px;letter-spacing:.3px;text-transform:none;font-weight:600;color:var(--muted);}
+.kpi-val{font-size:24px;font-weight:800;}
+.modal-card{border-radius:24px 24px 0 0;box-shadow:0 -10px 40px rgba(0,0,0,.15);}
+.modal-title{font-weight:800;font-size:18px;}
+.modal-sub{font-family:inherit;}
+.chip{border-radius:999px;background:var(--p-lav);border:none;}
+.cat-bar-track{height:8px;border-radius:99px;background:var(--s2);}
+.cat-bar-fill{border-radius:99px;}
+.state-block{border-radius:16px;box-shadow:var(--shadow);}
+.expandable:hover{border-radius:10px;}
+.relink-row{border-radius:14px;}
+/* Overview header + compact connected-banks badge (top right) */
+.page-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:2px 2px 14px;}
+.page-hello{font-size:20px;font-weight:800;letter-spacing:-.02em;}
+.page-sub{font-size:12px;color:var(--muted);margin-top:1px;}
+.banks-badge{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border:1px solid var(--border);border-radius:999px;background:var(--card);color:var(--text);font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;box-shadow:var(--shadow);white-space:nowrap;}
+.banks-dot{width:7px;height:7px;border-radius:50%;background:var(--green);flex-shrink:0;}
+.banks-dot.warn{background:var(--red);}
+.bank-chip{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border:none;border-radius:999px;background:var(--p-lav);color:var(--text);font-family:inherit;font-size:12.5px;font-weight:600;cursor:pointer;}
+/* Search */
+.srch-input{width:100%;padding:12px 16px;background:var(--s2);border:1px solid transparent;border-radius:14px;color:var(--text);font-family:inherit;font-size:14px;outline:none;}
+.srch-input:focus{border-color:var(--purple);background:var(--card);}
+.seg{display:inline-flex;background:var(--s2);border-radius:12px;padding:3px;gap:2px;}
+.seg-btn{border:none;background:none;color:var(--muted);font-family:inherit;font-size:12px;font-weight:600;padding:6px 12px;border-radius:9px;cursor:pointer;}
+.seg-btn.on{background:var(--card);color:var(--purple);box-shadow:var(--shadow);}
+.srch-month{font-size:11px;font-weight:700;color:var(--muted);margin:14px 0 4px;}
+.txn{display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--border2);}
+.txn-date{font-size:11px;color:var(--muted);width:40px;flex-shrink:0;font-variant-numeric:tabular-nums;}
+.txn-main{flex:1;min-width:0;}
+.txn-name{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.txn-meta{font-size:11px;color:var(--muted);margin-top:2px;}
+.pill{display:inline-block;background:var(--p-lav);color:var(--purple);border-radius:999px;padding:1px 8px;font-size:10.5px;font-weight:600;}
+.txn-amt{font-size:13.5px;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;}
+.txn-del{border:none;background:var(--p-rose);border-radius:10px;width:30px;height:30px;cursor:pointer;font-size:13px;flex-shrink:0;}
+.txn-del:disabled{opacity:.5;}
+.txn-restore{border:none;background:var(--p-mint);color:var(--green);border-radius:10px;padding:7px 10px;font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;}
+.toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,20px);opacity:0;background:var(--text);color:var(--bg);padding:10px 16px;border-radius:999px;font-size:13px;font-weight:600;z-index:900;transition:all .25s;box-shadow:var(--shadow);}
+.toast.show{opacity:1;transform:translate(-50%,0);}
 @media(max-width:700px){
   .sidebar{display:none;}
   .topbar{display:flex;}
@@ -531,19 +604,26 @@ function renderBanksStrip(accts) {
   accts.forEach(function(a){ var k = bankKeyOf(a); (groups[k] = groups[k] || []).push(a); });
   window._bankGroups = groups;
   var keys = Object.keys(groups).sort();
+  window._bankKeys = keys; window._bankAcctCount = accts.length;
+  // Compact: a page header with one small badge at the top right. The full
+  // list opens in a popup, so it no longer pushes the numbers down the page.
+  var failed = ((D.sync_status && D.sync_status.failed) || []).length;
+  var hour = new Date().getHours();
+  var hello = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
+  var when = D.generated_at ? new Date(D.generated_at).toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'}) : '';
+  return '<div class="page-head"><div><div class="page-hello">'+hello+'</div><div class="page-sub">Updated '+esc(when)+'</div></div>'
+    + '<button class="banks-badge" onclick="showBanks()"><span class="banks-dot'+(failed?' warn':'')+'"></span>'+keys.length+' banks · '+accts.length+' accts</button></div>';
+}
+function showBanks(){
+  var groups = window._bankGroups || {}, keys = window._bankKeys || [];
   var chips = keys.map(function(k){
     var g = groups[k];
-    var label = bankLabelOf(k, g[0].bank);
     var hasCredit = g.some(function(x){ return x.is_credit; });
-    var dot = hasCredit ? 'var(--yellow)' : 'var(--green)';
-    return '<span onclick="_showBank(\''+k+'\')" style="display:inline-flex;align-items:center;gap:6px;padding:6px 11px;border:1px solid var(--border);border-radius:20px;background:var(--s2);cursor:pointer;font-size:12px;white-space:nowrap">'
-      + '<span style="width:7px;height:7px;border-radius:50%;background:'+dot+'"></span>'
-      + label + '<span style="color:var(--muted);font-size:11px">'+g.length+'</span></span>';
+    return '<button class="bank-chip" onclick="_showBank(\''+k+'\')"><span class="banks-dot" style="background:'+(hasCredit?'var(--yellow)':'var(--green)')+'"></span>'
+      + esc(bankLabelOf(k, g[0].bank)) + '<span style="color:var(--muted);font-size:11px">'+g.length+'</span></button>';
   }).join('');
-  return '<div class="panel"><div class="panel-head"><div class="panel-title">Connected Banks</div>'
-    + '<div class="panel-action">'+keys.length+' institutions · '+accts.length+' accounts</div></div>'
-    + '<div style="display:flex;flex-wrap:wrap;gap:8px">'+chips+'</div>'
-    + '<div style="font-size:10px;color:var(--muted);margin-top:8px">Tap a bank to see its accounts. Missing one? Re-link it via the Plaid helper.</div></div>';
+  openModal('Connected banks', keys.length+' institutions · '+(window._bankAcctCount||0)+' accounts',
+    '<div style="display:flex;flex-wrap:wrap;gap:8px">'+chips+'</div><div style="font-size:11px;color:var(--muted);margin-top:12px">Tap a bank to see its accounts. Missing one? Re-link it via the Plaid helper.</div>');
 }
 function _showBank(key) {
   var g = (window._bankGroups && window._bankGroups[key]) || [];
@@ -595,11 +675,11 @@ function renderInsights() {
     html += '<div style="font-size:11px;color:var(--muted)">'+(left >= 0 ? 'You kept '+pct+'¢ of every $1.' : 'Spending was bigger than income.');
     var moved = [];
     if(m.moved.invested) moved.push(fmt(m.moved.invested)+' to Robinhood');
-    if(m.moved.india) moved.push(fmt(m.moved.india)+' to India');
     if(moved.length) html += ' Moved '+moved.join(' and ')+' (not counted as spending).';
     html += '</div>';
     var outBits = [];
     if(m.spent.loans) outBits.push('home/car loans '+fmt(m.spent.loans));
+    if(m.spent.india) outBits.push('sent to India '+fmt(m.spent.india));
     if(m.spent.fees) outBits.push('<span style="color:var(--red)">fees '+fmt(m.spent.fees)+'</span>');
     if(outBits.length) html += '<div style="font-size:11px;color:var(--muted);margin-top:2px">Out includes '+outBits.join(', ')+'.</div>';
     html += '</div>';
@@ -626,7 +706,7 @@ function renderInsights() {
       var isNew = avg < 25;
       if(isNew || (v > avg*1.5 && v - avg > 150)){
         var big = (m.big||[]).filter(function(b){ return flowCat(b.desc) === cat; })[0];
-        var tapCat = (m.tx_out||[]).length ? ' onclick="showFlow(\''+p+'\',\'out\',\''+esc(cat).replace(/'/g,'&#39;')+'\')" style="cursor:pointer;text-decoration:underline dotted;text-underline-offset:3px"' : '';
+        var tapCat = (m.tx_out||[]).length ? ' onclick="showFlow(\''+p+'\',\'out\',\''+esc(cat).replace(/'/g,'\\\'')+'\')" style="cursor:pointer;text-decoration:underline dotted;text-underline-offset:3px"' : '';
         odd.push({ d: v - avg, html: '<b'+tapCat+'>'+esc(cat)+'</b> '+fmt(v)+' in '+mName(p)+' — '+(isNew ? 'new, you don’t usually spend here' : 'usually ~'+fmt(avg)+'/month')+(big ? ' (mostly '+esc(cleanDesc(big.desc))+')' : '')+'.' });
       }
     });
@@ -699,7 +779,9 @@ function showFlow(p, dir, focus){
     var rows = list.slice().sort(function(a,b){ return Math.abs(b.a) - Math.abs(a.a); }).map(function(x){
       return '<div style="display:flex;justify-content:space-between;gap:10px;padding:5px 0 5px 14px;font-size:12px;border-top:1px solid var(--border2)">'
         + '<span style="color:var(--muted);min-width:38px">'+esc(x.d)+'</span><span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+esc(cleanDesc(x.n))+'</span>'
-        + '<span style="font-family:IBM Plex Mono,monospace;color:'+(x.a<0?'var(--green)':'var(--text)')+'">'+(x.a<0?'−':'')+fmt2(Math.abs(x.a))+'</span></div>';
+        + '<span style="font-family:IBM Plex Mono,monospace;color:'+(x.a<0?'var(--green)':'var(--text)')+'">'+(x.a<0?'−':'')+fmt2(Math.abs(x.a))+'</span>'
+        + (x.id ? '<button class="txn-del" title="Delete everywhere" onclick="event.stopPropagation();deleteTxn(\''+esc(x.id)+'\', this, \''+esc(cleanDesc(x.n)).replace(/\\/g,'\\\\').replace(/'/g,'\\\'')+'\')">🗑</button>' : '')
+        + '</div>';
     }).join('');
     var pct = total ? Math.round(t/total*100) : 0;
     return '<div style="border-bottom:1px solid var(--border)">'
@@ -963,7 +1045,7 @@ function showTxns(title, txns, col) {
 var MYNW_UNLOCKED = false;
 var SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSV45yHGbG6isPhrJh8aJ8SKyMtj1t3O0XI0FKkoP7-4x4KQOVKfGyZ9ack2uP8aodk-a3SDkZ6Qnrb/pub?gid=769710320&single=true&output=csv';
 var SAVINGS_ROWS = [], SAVINGS_TOTAL = 0, SAVINGS_LOADED = false, SAVINGS_ERR = null, _savFetching = false, _savChart = null;
-var PIE_COLORS = ['#00d084','#4da8ff','#a78bfa','#ff8c42','#f5c518','#ff4060','#67e8f9','#c084fc','#34d399','#fb923c','#e879f9','#60d0ff','#c8f060','#f87171','#818cf8','#10b981'];
+var PIE_COLORS = ['#7fd3b4','#9bb8f5','#b9a9f7','#f6b38a','#f2d184','#f29bb2','#8fd6e8','#d3a8f0','#a8dcb0','#f5c39e','#e9a7d9','#a9c9f2','#cfe39a','#f4a7a0','#b2b6f5','#93d4c4'];
 function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
 // Two sheet rows are replaced by real balances from the synced accounts:
 //   Stocks  ← every Robinhood brokerage account
@@ -1964,138 +2046,124 @@ function migrateOldOverrides() {
 }
 migrateOldOverrides();
 
+// ── Search: every money-in and money-out transaction of the last year ──
+// Source is D.cashflow (tx_in / tx_out / tx_moved), so incoming money such as
+// an insurance payout is searchable too, not only spending. Each row can be
+// deleted: the backend hides it for good (Blobs) and rebuilds data.json, so it
+// drops out of every tab and never returns on a later sync.
+function searchIndex(){
+  var out = [];
+  var cf = (D && D.cashflow) || {};
+  Object.keys(cf).forEach(function(p){
+    var y = p.slice(0,4), m = cf[p];
+    [['tx_in','in'],['tx_out','out'],['tx_moved','moved']].forEach(function(pair){
+      (m[pair[0]]||[]).forEach(function(x){
+        if(!x.id) return; // e.g. a bounce reversal line, not a bank row
+        out.push({ id:x.id, period:p, date:y+'-'+x.d, d:x.d, name:x.n, amt:x.a, group:x.g, bank:x.b||'', mask:x.k||'', dir:pair[1] });
+      });
+    });
+  });
+  return out;
+}
+var _srchDir = 'all';
 function renderSearch() {
   var html = '<div class="panel">';
-  html += '<div class="panel-head"><div class="panel-title">Transaction Search</div></div>';
-  html += '<div style="display:flex;gap:8px;margin-bottom:6px">';
-  html += '<input id="srch-input" type="text" placeholder="restaurant, amazon, kavi, airbnb..." autocomplete="off" ';
-  html += 'style="flex:1;padding:10px 14px;background:var(--s2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:IBM Plex Mono,monospace;font-size:13px" ';
-  html += 'oninput="runSearch()" onkeydown="if(event.key===\'Enter\')runSearch()">';
-  html += '<button onclick="runSearch()" style="padding:10px 16px;background:var(--green);color:#000;border:none;border-radius:8px;font-family:IBM Plex Mono,monospace;font-size:13px;font-weight:600;cursor:pointer">Go</button>';
+  html += '<div class="panel-head"><div class="panel-title">Transaction Search</div><div class="panel-action">last 12 months</div></div>';
+  html += '<input id="srch-input" type="search" placeholder="Search: insurance, amazon, kumon, 6135…" autocomplete="off" class="srch-input" oninput="runSearch()">';
+  html += '<div class="seg" style="margin-top:10px">';
+  [['all','All'],['out','Money out'],['in','Money in']].forEach(function(o){
+    html += '<button class="seg-btn'+(_srchDir===o[0]?' on':'')+'" onclick="_srchDir=\''+o[0]+'\';renderSearch();runSearch()">'+o[1]+'</button>';
+  });
   html += '</div>';
-  html += '<div style="font-size:11px;color:var(--muted);margin-bottom:14px">Searches descriptions, categories, amounts, banks — across all months</div>';
+  html += '<div style="font-size:11px;color:var(--muted);margin-top:10px">Searches names, categories, amounts and banks. Tap 🗑 to delete a transaction everywhere — it stays deleted after every sync.</div>';
   html += '</div>';
   html += '<div id="srch-results"></div>';
+  html += renderHiddenList();
   set('main-content', html);
-  // Focus input
-  setTimeout(function(){ var el=document.getElementById('srch-input'); if(el) el.focus(); }, 100);
+  setTimeout(function(){ var el=$('srch-input'); if(el){ el.value = window._srchQ || ''; el.focus(); if(el.value) runSearch(); } }, 60);
 }
 
 function runSearch() {
-  var q = (document.getElementById('srch-input') || {}).value || '';
-  q = q.trim().toLowerCase();
-  var el = document.getElementById('srch-results');
-  if(!el) return;
-  if(q.length < 1) { el.innerHTML = ''; return; }
+  var inp = $('srch-input'); var el = $('srch-results');
+  if(!inp || !el) return;
+  var q = window._srchQ = inp.value;
+  var words = q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  if(!words.length){ el.innerHTML = ''; return; }
+  var rows = searchIndex().filter(function(r){
+    if(_srchDir !== 'all' && !(r.dir === _srchDir || (_srchDir === 'out' && r.dir === 'moved'))) return false;
+    var hay = (r.name+' '+r.group+' '+r.bank+' '+r.mask+' '+Math.abs(r.amt).toFixed(2)+' '+r.date).toLowerCase();
+    return words.every(function(w){ return hay.indexOf(w) >= 0; });
+  }).sort(function(a,b){ return b.date.localeCompare(a.date); });
 
-  var ms = (_rawD || D).monthly_spending || {}; // use raw so refunded txns still searchable
-  var words = q.split(/\s+/).filter(Boolean);
+  if(!rows.length){ el.innerHTML = '<div class="panel" style="color:var(--muted);font-size:13px">No transactions match “'+esc(q)+'”.</div>'; return; }
 
-  // Category synonyms for smart matching
-  var SYNONYMS = {
-    'restaurant':'Restaurants','restaurants':'Restaurants','food':'Restaurants','dining':'Restaurants','eat':'Restaurants',
-    'grocery':'Groceries','groceries':'Groceries','supermarket':'Groceries',
-    'subscription':'Subscription','subscriptions':'Subscription','sub':'Subscription','subs':'Subscription',
-    'entertainment':'Entertainment','streaming':'Entertainment',
-    'shopping':'Shopping','shop':'Shopping','amazon':'Amazon',
-    'gas':'Gas/Travel','travel':'Gas/Travel','uber':'Gas/Travel',
-    'health':'Healthcare','healthcare':'Healthcare','medical':'Healthcare','pharmacy':'Pharmacy',
-    'insurance':'Insurance','tax':'Tax/Professional',
-  };
-
-  var results = [];
-  Object.keys(ms).sort().reverse().forEach(function(p) {
-    var v = ms[p];
-    (v.transactions||[]).forEach(function(t) {
-      var score = 0;
-      var tDesc = (t.desc||'').toLowerCase();
-      var tCat = (t.category||'').toLowerCase();
-      var tAmt = String(t.amount||'');
-      var tBank = (t.bank||'').toLowerCase();
-
-      words.forEach(function(w) {
-        var syn = SYNONYMS[w];
-        // Exact category match via synonym
-        if(syn && t.category === syn) score += 10;
-        // Description contains word
-        if(tDesc.indexOf(w) >= 0) score += (tDesc.indexOf(w) === 0 ? 8 : 5);
-        // Category contains word
-        if(tCat.indexOf(w) >= 0) score += 4;
-        // Amount matches
-        if(tAmt.indexOf(w) >= 0) score += 3;
-        // Bank matches
-        if(tBank.indexOf(w) >= 0) score += 2;
-      });
-
-      if(score > 0) {
-        results.push({t:t, period:p, label:v.label, score:score});
-      }
-    });
+  var html = '<div class="panel"><div class="panel-head"><div class="panel-title">'+rows.length+' result'+(rows.length>1?'s':'')+'</div></div>';
+  var lastP = '';
+  rows.slice(0, 300).forEach(function(r){
+    if(r.period !== lastP){
+      lastP = r.period;
+      html += '<div class="srch-month">'+new Date(r.period+'-15T00:00:00').toLocaleString('en-US',{month:'long',year:'numeric'})+'</div>';
+    }
+    html += srchRow(r);
   });
-
-  // Sort by score desc, then date desc
-  results.sort(function(a,b){ return b.score-a.score || ((b.period+b.t.date).localeCompare(a.period+a.t.date)); });
-
-  // Also find refunded txns matching query
-  var refundedMatches = [];
-  var allRawTxns = [];
-  Object.keys((_rawD||D).monthly_spending||{}).forEach(function(p) {
-    ((_rawD||D).monthly_spending[p].transactions||[]).forEach(function(t) {
-      if(REFUNDED_TXNS[t.desc]) allRawTxns.push({t:t,period:p});
-    });
-  });
-  allRawTxns.forEach(function(item) {
-    var t=item.t, score=0;
-    var tDesc=(t.desc||'').toLowerCase();
-    words.forEach(function(w){ if(tDesc.indexOf(w)>=0) score+=5; });
-    if(score>0) refundedMatches.push(item);
-  });
-
-  if(!results.length && !refundedMatches.length) {
-    el.innerHTML = '<div class="panel" style="color:var(--muted);font-size:13px;padding:12px">No transactions found for "'+q+'"</div>';
-    return;
-  }
-
-  var total = results.reduce(function(s,r){return s+(r.t.amount||0);},0);
-  var html = '<div class="panel">';
-  html += '<div class="panel-head"><div class="panel-title">'+results.length+' results</div>';
-  html += '<div class="panel-action">'+fmt2(total)+' total</div></div>';
-
-  // Group by month
-  var byMonth = {};
-  results.forEach(function(r){
-    if(!byMonth[r.period]) byMonth[r.period] = {label:r.label, items:[]};
-    byMonth[r.period].items.push(r);
-  });
-
-  Object.keys(byMonth).sort().reverse().forEach(function(p) {
-    var mv = byMonth[p];
-    var mid = uid();
-    var mTotal = mv.items.reduce(function(s,r){return s+(r.t.amount||0);},0);
-    html += '<div>';
-    html += '<div class="row expandable" onclick="expand(\''+mid+'\')" style="background:var(--s2);padding:8px 12px;border-radius:6px;margin-bottom:4px">';
-    html += '<div class="row-label" style="font-weight:500">'+mv.label+'</div>';
-    html += '<div style="display:flex;align-items:center;gap:8px"><span style="font-size:12px;color:var(--muted)">'+mv.items.length+' txns</span><div class="row-amt" style="color:var(--red)">'+fmt2(mTotal)+'</div><span style="color:var(--muted)">›</span></div>';
-    html += '</div>';
-    html += '<div id="'+mid+'" class="expand-body">';
-    mv.items.forEach(function(r){ html += txnLine(r.t, CAT_COLORS[r.t.category]||'#6b6b80', ''); });
-    html += '</div></div>';
-  });
+  if(rows.length > 300) html += '<div style="font-size:11px;color:var(--muted);margin-top:8px">Showing the newest 300 — type more to narrow down.</div>';
   html += '</div>';
-
-  // Show refunded matches with restore option
-  if(refundedMatches && refundedMatches.length) {
-    html += '<div class="panel" style="border-color:rgba(245,197,24,0.3);margin-top:10px">';
-    html += '<div class="panel-head"><div class="panel-title" style="color:var(--yellow)">&#8629; Hidden (Refunded)</div>';
-    html += '<div class="panel-action" style="color:var(--muted)">tap &#8629; to restore</div></div>';
-    refundedMatches.forEach(function(item) {
-      var t=item.t; var col=CAT_COLORS[t.category]||'#6b6b80';
-      html += txnLine(t, col, 'opacity:0.6;');
-    });
-    html += '</div>';
-  }
-
   el.innerHTML = html;
+}
+function srchRow(r){
+  var isIn = r.dir === 'in', credit = r.amt < 0;
+  var sign = isIn ? '+' : (credit ? '−' : '');
+  var col = isIn || credit ? 'var(--green)' : 'var(--text)';
+  var tag = r.dir === 'moved' ? 'not spending' : (isIn ? 'money in' : r.group);
+  return '<div class="txn" id="row-'+esc(r.id)+'">'
+    + '<div class="txn-date">'+esc(r.d)+'</div>'
+    + '<div class="txn-main"><div class="txn-name">'+esc(cleanDesc(r.name))+'</div>'
+    + '<div class="txn-meta"><span class="pill">'+esc(tag)+'</span>'+(r.bank ? ' '+esc(r.bank)+(r.mask?' ••'+esc(r.mask):'') : '')+'</div></div>'
+    + '<div class="txn-amt" style="color:'+col+'">'+sign+fmt2(Math.abs(r.amt))+'</div>'
+    + '<button class="txn-del" title="Delete everywhere" onclick="deleteTxn(\''+esc(r.id)+'\', this)">🗑</button>'
+    + '</div>';
+}
+function renderHiddenList(){
+  var h = ((D && D.hidden) || []).slice().sort(function(a,b){ return (b.hidden_at||'').localeCompare(a.hidden_at||''); });
+  if(!h.length) return '';
+  var html = '<div class="panel"><div class="panel-head"><div class="panel-title">Deleted transactions</div><div class="panel-action">'+h.length+'</div></div>';
+  h.forEach(function(x){
+    var amt = Number(x.amount)||0; // Plaid sign: negative = money in
+    html += '<div class="txn" style="opacity:.7">'
+      + '<div class="txn-date">'+esc((x.date||'').slice(5))+'</div>'
+      + '<div class="txn-main"><div class="txn-name" style="text-decoration:line-through">'+esc(cleanDesc(x.desc))+'</div>'
+      + '<div class="txn-meta">'+esc(x.bank||'')+(x.mask?' ••'+esc(x.mask):'')+' · '+esc((x.date||'').slice(0,4))+'</div></div>'
+      + '<div class="txn-amt">'+(amt<0?'+':'')+fmt2(Math.abs(amt))+'</div>'
+      + '<button class="txn-restore" onclick="restoreTxn(\''+esc(x.id)+'\', this)">Restore</button></div>';
+  });
+  html += '<div style="font-size:11px;color:var(--muted);margin-top:8px">Deleted transactions are left out of every tab, total and insight.</div></div>';
+  return html;
+}
+function setHiddenRemote(id, hide){
+  return fetch(BACKEND + '/api/hide', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ id:id, hide:hide }) })
+    .then(function(r){ return r.json().then(function(j){ if(!r.ok || !j.ok) throw new Error(j.error || ('HTTP '+r.status)); return j; }); });
+}
+function deleteTxn(id, btn, label){
+  var row = $('row-'+id);
+  var name = label || (row ? (row.querySelector('.txn-name')||{}).textContent : 'this transaction');
+  if(!confirm('Delete “'+name+'” everywhere?\n\nIt will be left out of every tab and total, and stay deleted after syncing. You can restore it from Search later.')) return;
+  if(btn){ btn.disabled = true; btn.textContent = '…'; }
+  if(row) row.style.opacity = '.4';
+  setHiddenRemote(id, true)
+    .then(function(){ $('modal').classList.remove('open'); toast('Deleted — every tab updated'); loadData(); })
+    .catch(function(e){ if(row) row.style.opacity = ''; if(btn){ btn.disabled = false; btn.textContent = '🗑'; } alert('Could not delete: ' + e.message); });
+}
+function restoreTxn(id, btn){
+  if(btn){ btn.disabled = true; btn.textContent = '…'; }
+  setHiddenRemote(id, false)
+    .then(function(){ toast('Restored'); loadData(); })
+    .catch(function(e){ if(btn){ btn.disabled = false; btn.textContent = 'Restore'; } alert('Could not restore: ' + e.message); });
+}
+function toast(msg){
+  var t = document.createElement('div'); t.className = 'toast'; t.textContent = msg;
+  document.body.appendChild(t);
+  setTimeout(function(){ t.classList.add('show'); }, 10);
+  setTimeout(function(){ t.classList.remove('show'); setTimeout(function(){ t.remove(); }, 300); }, 2600);
 }
 
 function exportOverrides() {

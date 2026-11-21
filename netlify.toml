@@ -57,3 +57,8 @@
   from = "/api/data"
   to = "/.netlify/functions/data"
   status = 200
+
+[[redirects]]
+  from = "/api/hide"
+  to = "/.netlify/functions/hide"
+  status = 200

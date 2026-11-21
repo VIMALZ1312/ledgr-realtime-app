@@ -217,7 +217,7 @@ function buildStructuredData(accounts, transactions) {
     monthlySpending[period].categories[cat] = (monthlySpending[period].categories[cat] || 0) + t.amount;
     monthlySpending[period].total += t.amount;
     monthlySpending[period].transactions.push({
-      date: date.substring(5), desc: t.merchant_name || t.name, amount: t.amount, category: cat,
+      id: t.transaction_id, date: date.substring(5), desc: t.merchant_name || t.name, amount: t.amount, category: cat,
       city: t.location?.city || null, state: t.location?.region || null,
       bank: NICK_TO_BANK[t._nickname] || t._nickname || null, account_id: t.account_id || null,
       mask: t.account_id ? (accounts.find(a => a.account_id === t.account_id)?.mask || null) : null,
@@ -343,7 +343,11 @@ function flowCategory(t) {
   return categorize(t) || 'Other';
 }
 
-function buildCashflow(accounts, transactions, months = 7) {
+const BANK_OF_NICK = {
+  mybofa: 'BofA', bofa: 'BofA', bofa_2: 'BofA', wifebofa: 'BofA', wf: 'Wells Fargo', td: 'TD Bank', mydisc: 'Discover', discover: 'Discover',
+  robin: 'Robinhood', robin_2: 'Robinhood', robin_3: 'Robinhood', myrobin: 'Robinhood', robinhood: 'Robinhood', pnc: 'PNC',
+};
+function buildCashflow(accounts, transactions, months = 13) {
   const acctById = {};
   accounts.forEach(a => { acctById[a.account_id] = a; });
   const kindOf = t => { const a = acctById[t.account_id]; return a ? a.type : null; }; // depository|credit|loan|investment
@@ -383,8 +387,8 @@ function buildCashflow(accounts, transactions, months = 7) {
 
   const blank = () => ({
     income: { total: 0, salary: 0, zelle_in: 0, interest: 0, other_in: 0 },
-    spent: { total: 0, purchases: 0, refunds: 0, loans: 0, fees: 0, zelle_out: 0, other_out: 0 },
-    moved: { invested: 0, india: 0 },
+    spent: { total: 0, purchases: 0, refunds: 0, loans: 0, fees: 0, zelle_out: 0, other_out: 0, india: 0 },
+    moved: { invested: 0 },
     internal: { count: 0, total: 0 },
     by_category: {}, ai: {}, fees: [], big: [], unmatched: [], refunds_big: [], loan_items: [], bounced: [], tx_in: [], tx_out: [], tx_moved: [], days: 0,
   });
@@ -395,7 +399,11 @@ function buildCashflow(accounts, transactions, months = 7) {
   const note = (m, list, t, label) => m[list].push({ date: t.date, desc: (t.merchant_name || nameOf(t)).slice(0, 60), amount: r2(Math.abs(t.amount)), label });
   // Every transaction behind a total, for the Insights tap-to-see-why popups:
   // d=MM-DD, n=name, a=amount (negative = reduces that total), g=group shown.
-  const item = (m, list, t, g, sign = 1) => m[list].push({ d: t.date.slice(5), n: (t.merchant_name || nameOf(t)).slice(0, 50), a: r2(sign * Math.abs(t.amount)), g });
+  const maskById = {}; accounts.forEach(a => { maskById[a.account_id] = a.mask || ''; });
+  const item = (m, list, t, g, sign = 1) => m[list].push({
+    id: t.transaction_id, d: t.date.slice(5), n: (t.merchant_name || nameOf(t)).slice(0, 50), a: r2(sign * Math.abs(t.amount)), g,
+    b: BANK_OF_NICK[t._nickname] || t._nickname || '', k: maskById[t.account_id] || '',
+  });
 
   posted.forEach(t => {
     const p = t.date.slice(0, 7);
@@ -446,7 +454,8 @@ function buildCashflow(accounts, transactions, months = 7) {
     if (prim === 'LOAN_PAYMENTS') { m.spent.loans += amt; note(m, 'loan_items', t); item(m, 'tx_out', t, 'Home & car loans'); return; }
     if (/ZELLE/.test(n) && SELF_NAME_RE.test(n)) { internal(); return; }
     if (OWN_XFER_RE.test(n)) { internal(); return; }
-    if (INDIA_RE.test(n)) { m.moved.india += amt; item(m, 'tx_moved', t, 'To India'); return; }
+    // Money sent home to India counts as spending: it leaves the US budget for good.
+    if (INDIA_RE.test(n)) { m.spent.india += amt; m.by_category['Sent to India'] = (m.by_category['Sent to India'] || 0) + amt; item(m, 'tx_out', t, 'Sent to India'); return; }
     if (det.includes('INVESTMENT') || /ROBINHOOD/.test(n)) { m.moved.invested += amt; item(m, 'tx_moved', t, 'To Robinhood'); return; }
     if (/ZELLE/.test(n)) {
       m.spent.zelle_out += amt;
@@ -480,7 +489,7 @@ function buildCashflow(accounts, transactions, months = 7) {
       else { m.internal.count++; m.internal.total += b.amount; }
     });
     m.income.total =m.income.salary + m.income.zelle_in + m.income.interest + m.income.other_in;
-    m.spent.total = m.spent.purchases - m.spent.refunds + m.spent.loans + m.spent.fees + m.spent.zelle_out + m.spent.other_out;
+    m.spent.total = m.spent.purchases - m.spent.refunds + m.spent.loans + m.spent.fees + m.spent.zelle_out + m.spent.other_out + m.spent.india;
     ['income', 'spent', 'moved', 'internal'].forEach(g => Object.keys(m[g]).forEach(k => { m[g][k] = r2(m[g][k]); }));
     Object.keys(m.by_category).forEach(k => { m.by_category[k] = r2(m.by_category[k]); });
     Object.keys(m.ai).forEach(k => { m.ai[k] = r2(m.ai[k]); });
@@ -546,6 +555,94 @@ function dedupeCrossItemTxns(accounts, transactions) {
     kept.push(t);
   }
   return { transactions: kept, removed };
+}
+
+// ── HIDDEN TRANSACTIONS: ones the user deleted in the app ─────────────────────
+// Stored in Blobs and applied to the raw bank data before ANY aggregation, so a
+// deleted transaction vanishes from every tab and stays gone across syncs.
+// Matched by Plaid id, or by fingerprint (account mask + date + amount + name):
+// the fingerprint also catches the second copy of a charge on a joint account
+// (which arrives under a different id from the other login) and a re-issued id.
+const HIDDEN_KEY = 'hidden.json';
+const RAW_KEY = 'raw.json';
+function txnFingerprint(t, maskById) {
+  return [maskById[t.account_id] || '', t.date, Number(t.amount).toFixed(2), (t.merchant_name || t.name || '').trim().toLowerCase()].join('|');
+}
+async function getHidden() {
+  try { const v = await dataStore().get(HIDDEN_KEY); return v ? JSON.parse(v) : []; }
+  catch (e) { console.warn('hidden list unavailable:', e.message); return []; }
+}
+function applyHidden(accounts, transactions, hidden) {
+  if (!hidden.length) return { transactions, removed: 0 };
+  const maskById = {}; accounts.forEach(a => { maskById[a.account_id] = a.mask || ''; });
+  const ids = new Set(hidden.map(h => h.id)), fps = new Set(hidden.map(h => h.fp));
+  const kept = transactions.filter(t => !ids.has(t.transaction_id)
+    && !(t.pending_transaction_id && ids.has(t.pending_transaction_id))
+    && !fps.has(txnFingerprint(t, maskById)));
+  return { transactions: kept, removed: transactions.length - kept.length };
+}
+// Only the fields the build reads — the full Plaid objects are ~10x larger.
+function slimTxn(t) {
+  return {
+    transaction_id: t.transaction_id, pending_transaction_id: t.pending_transaction_id || null, account_id: t.account_id,
+    amount: t.amount, date: t.date, name: t.name, merchant_name: t.merchant_name || null, pending: !!t.pending,
+    personal_finance_category: t.personal_finance_category ? { primary: t.personal_finance_category.primary, detailed: t.personal_finance_category.detailed } : null,
+    category: t.category || null, location: t.location ? { city: t.location.city || null, region: t.location.region || null } : null,
+    _nickname: t._nickname,
+  };
+}
+
+// Turn one bank download into data.json (GitHub + Blobs). Used by a full sync
+// and by a rebuild after the hidden list changes, which needs no bank calls.
+async function publishFromRaw(raw) {
+  const hidden = await getHidden();
+  const visible = applyHidden(raw.accounts, raw.transactions, hidden);
+  const deduped = dedupeCrossItemTxns(raw.accounts, visible.transactions);
+  const data = buildStructuredData(raw.accounts, deduped.transactions);
+  try { data.cashflow = buildCashflow(raw.accounts, deduped.transactions); }
+  catch (e) { console.error('cashflow build failed:', e); data.cashflow = null; } // never let insights break a sync
+  data.hidden = hidden.map(h => ({ id: h.id, date: h.date, desc: h.desc, amount: h.amount, bank: h.bank, mask: h.mask, hidden_at: h.hidden_at }));
+  data.generated_at = raw.fetched_at;   // when the banks were last read
+  data.rebuilt_at = new Date().toISOString();
+  data.source = 'plaid_realtime';
+  data.statement_count = raw.meta.tokens + ' live accounts';
+  data.sync_status = Object.assign({}, raw.meta, {
+    duplicates_removed: deduped.removed.length,
+    duplicate_sample: deduped.removed.slice(0, 10),
+    hidden_removed: visible.removed,
+  });
+  await pushToGitHub(data);
+  try { await dataStore().set('data.json', JSON.stringify(data)); } catch (e) { console.warn('Blobs data cache skipped:', e.message); }
+  return data;
+}
+
+async function loadRaw() {
+  const v = await dataStore().get(RAW_KEY);
+  if (!v) throw new Error('No cached bank data yet — tap Sync once, then try again.');
+  return JSON.parse(v);
+}
+async function rebuildFromCache() { return publishFromRaw(await loadRaw()); }
+
+// Hide (or restore) one transaction by Plaid id, then rebuild data.json.
+async function setHidden(id, hide) {
+  const raw = await loadRaw();
+  let hidden = await getHidden();
+  if (hide) {
+    if (!hidden.some(h => h.id === id)) {
+      const t = raw.transactions.find(x => x.transaction_id === id);
+      if (!t) throw new Error('That transaction is not in the latest bank data.');
+      const maskById = {}; raw.accounts.forEach(a => { maskById[a.account_id] = a.mask || ''; });
+      hidden.push({
+        id, fp: txnFingerprint(t, maskById), date: t.date, desc: (t.merchant_name || t.name || '').slice(0, 80), amount: t.amount,
+        bank: BANK_OF_NICK[t._nickname] || t._nickname || '', mask: maskById[t.account_id] || '', hidden_at: new Date().toISOString(),
+      });
+    }
+  } else {
+    hidden = hidden.filter(h => h.id !== id);
+  }
+  await dataStore().set(HIDDEN_KEY, JSON.stringify(hidden));
+  await publishFromRaw(raw);
+  return hidden.length;
 }
 
 // ── CORE: fetch from Plaid and build data.json ───────────────────────────────
@@ -637,34 +734,30 @@ async function buildDataJson() {
     }
   }
 
-  const deduped = dedupeCrossItemTxns(allAccounts, allTransactions);
-  const data = buildStructuredData(allAccounts, deduped.transactions);
-  try { data.cashflow = buildCashflow(allAccounts, deduped.transactions); }
-  catch (e) { console.error('cashflow build failed:', e); data.cashflow = null; } // never let insights break a sync
-  data.generated_at = new Date().toISOString();
-  data.source = 'plaid_realtime';
-  data.statement_count = Object.keys(tokens).length + ' live accounts';
-  // Per-token diagnostics — surfaces missing/errored banks instead of silently
-  // dropping them (e.g. a token that needs re-auth, or one not configured).
-  data.sync_status = {
-    tokens: Object.keys(tokens).length,
-    nicknames: Object.keys(tokens),
-    detail: tokenStatus,
-    failed: tokenStatus.filter(t => !t.ok).map(t => t.nickname + ' (' + t.error + ')'),
-    // Freshness diagnostics — which banks were force-pulled, and which fell back
-    // to a cached balance (so a stale number is visible instead of silent).
-    forced_refresh: refreshed,
-    refresh_errors: refreshErrors,
-    cached_balances: staleBalances,
-    txns_fetched: allTransactions.length,
-    duplicates_removed: deduped.removed.length,
-    duplicate_sample: deduped.removed.slice(0, 10),
+  const raw = {
+    fetched_at: new Date().toISOString(),
+    accounts: allAccounts,
+    transactions: allTransactions.map(slimTxn),
+    // Per-token diagnostics — surfaces missing/errored banks instead of silently
+    // dropping them (e.g. a token that needs re-auth, or one not configured).
+    meta: {
+      tokens: Object.keys(tokens).length,
+      nicknames: Object.keys(tokens),
+      detail: tokenStatus,
+      failed: tokenStatus.filter(t => !t.ok).map(t => t.nickname + ' (' + t.error + ')'),
+      // Freshness diagnostics — which banks were force-pulled, and which fell back
+      // to a cached balance (so a stale number is visible instead of silent).
+      forced_refresh: refreshed,
+      refresh_errors: refreshErrors,
+      cached_balances: staleBalances,
+      txns_fetched: allTransactions.length,
+    },
   };
-
-  await pushToGitHub(data);
-  try { await dataStore().set('data.json', JSON.stringify(data)); } catch (e) { console.warn('Blobs data cache skipped:', e.message); }
+  // Keep this download so deleting a transaction can rebuild without the banks.
+  try { await dataStore().set(RAW_KEY, JSON.stringify(raw)); } catch (e) { console.warn('raw cache skipped:', e.message); }
+  const data = await publishFromRaw(raw);
 
   return { accounts_synced: allAccounts.length, transactions_synced: allTransactions.length, generated_at: data.generated_at };
 }
 
-module.exports = { plaid, Products, CountryCode, getTokens, saveToken, buildDataJson, dataStore, dedupeCrossItemTxns, buildCashflow };
+module.exports = { plaid, Products, CountryCode, getTokens, saveToken, buildDataJson, dataStore, dedupeCrossItemTxns, buildCashflow, applyHidden, txnFingerprint, slimTxn, rebuildFromCache, setHidden };
