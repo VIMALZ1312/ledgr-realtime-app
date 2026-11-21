@@ -2150,13 +2150,13 @@ function deleteTxn(id, btn, label){
   if(btn){ btn.disabled = true; btn.textContent = '…'; }
   if(row) row.style.opacity = '.4';
   setHiddenRemote(id, true)
-    .then(function(){ $('modal').classList.remove('open'); toast('Deleted — every tab updated'); loadData(); })
+    .then(function(j){ $('modal').classList.remove('open'); toast('Deleted — every tab updated'); if(j.data) applyData(j.data); else loadData(); })
     .catch(function(e){ if(row) row.style.opacity = ''; if(btn){ btn.disabled = false; btn.textContent = '🗑'; } alert('Could not delete: ' + e.message); });
 }
 function restoreTxn(id, btn){
   if(btn){ btn.disabled = true; btn.textContent = '…'; }
   setHiddenRemote(id, false)
-    .then(function(){ toast('Restored'); loadData(); })
+    .then(function(j){ toast('Restored'); if(j.data) applyData(j.data); else loadData(); })
     .catch(function(e){ if(btn){ btn.disabled = false; btn.textContent = 'Restore'; } alert('Could not restore: ' + e.message); });
 }
 function toast(msg){
@@ -2237,22 +2237,28 @@ function fetchData() {
     });
 }
 
+// Show a data.json: from /api/data on load, or straight from /api/hide's reply.
+function applyData(data) {
+  // 1. Deduplicate first (fixes server-side duplication regardless of Replit version)
+  data = deduplicateData(data);
+  // 2. Store clean raw copy
+  _rawD = JSON.parse(JSON.stringify(data));
+  // 3. Apply category overrides on top
+  D = applyOverrides(JSON.parse(JSON.stringify(_rawD)));
+  buildNav();
+  render();
+  if(TAB === 'search') runSearch();
+  if(data.generated_at) {
+    var dt = new Date(data.generated_at);
+    var el = $('synced-at');
+    if(el) el.textContent = dt.toLocaleString('en-US', {month:'short', day:'numeric', hour:'2-digit', minute:'2-digit'});
+  }
+  return data;
+}
 function loadData(opts) {
   fetchData()
     .then(function(data) {
-      // 1. Deduplicate first (fixes server-side duplication regardless of Replit version)
-      data = deduplicateData(data);
-      // 2. Store clean raw copy
-      _rawD = JSON.parse(JSON.stringify(data));
-      // 3. Apply category overrides on top
-      D = applyOverrides(JSON.parse(JSON.stringify(_rawD)));
-      buildNav();
-      render();
-      if(data.generated_at) {
-        var dt = new Date(data.generated_at);
-        var el = $('synced-at');
-        if(el) el.textContent = dt.toLocaleString('en-US', {month:'short', day:'numeric', hour:'2-digit', minute:'2-digit'});
-      }
+      data = applyData(data);
       // Opening the app is itself a request for current numbers: show the last
       // snapshot immediately, then pull from Plaid in the background if it's
       // older than AUTO_SYNC_STALE_MIN. (Only on the initial load — the reload

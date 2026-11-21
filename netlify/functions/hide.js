@@ -22,8 +22,9 @@ exports.handler = async (event) => {
     if (typeof id !== 'string' || !/^[A-Za-z0-9_-]{8,100}$/.test(id)) {
       return { statusCode: 400, headers, body: JSON.stringify({ error: 'A valid transaction id is required.' }) };
     }
-    const count = await setHidden(id, hide !== false);
-    return { statusCode: 200, headers, body: JSON.stringify({ ok: true, hidden_count: count }) };
+    const { count, data } = await setHidden(id, hide !== false);
+    // The rebuilt data.json rides along: Blobs reads can lag a write by ~60s.
+    return { statusCode: 200, headers, body: JSON.stringify({ ok: true, hidden_count: count, data }) };
   } catch (err) {
     console.error('hide failed:', err);
     return { statusCode: 500, headers, body: JSON.stringify({ error: err.message }) };

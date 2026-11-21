@@ -26,10 +26,11 @@ const REFRESH_WAIT_MS = Number(process.env.PLAID_REFRESH_WAIT_MS || 8000);
 // to auto-config, and callers degrade gracefully if Blobs is unavailable.
 const BLOBS_SITE = process.env.NETLIFY_BLOBS_SITE_ID || process.env.SITE_ID;
 const BLOBS_TOKEN = process.env.NETLIFY_BLOBS_TOKEN;
-// Strong consistency: a read right after a write (delete → rebuild → load) must
-// see that write. The default 'eventual' mode can serve a value up to ~60s old.
+// Reads are eventually consistent (Lambda-style functions can't use 'strong'),
+// so a value can lag a write by up to ~60s. Code that writes then needs the
+// result passes it along instead of re-reading (see setHidden).
 function storeArg(name) {
-  return (BLOBS_SITE && BLOBS_TOKEN) ? { name, siteID: BLOBS_SITE, token: BLOBS_TOKEN, consistency: 'strong' } : { name, consistency: 'strong' };
+  return (BLOBS_SITE && BLOBS_TOKEN) ? { name, siteID: BLOBS_SITE, token: BLOBS_TOKEN } : name;
 }
 // These are Lambda-style handlers (exports.handler), where Blobs only finds its
 // site context after connectLambda(event). Without it every Blobs call threw
@@ -651,8 +652,10 @@ async function setHidden(id, hide) {
     hidden = hidden.filter(h => h.id !== id);
   }
   await dataStore().set(HIDDEN_KEY, JSON.stringify(hidden));
-  await publishFromRaw(raw, hidden); // pass the list just written; don't re-read it
-  return hidden.length;
+  // Pass the list just written (a re-read could be stale) and hand the rebuilt
+  // data.json back so the app can show it without a lagging /api/data read.
+  const data = await publishFromRaw(raw, hidden);
+  return { count: hidden.length, data };
 }
 
 // ── CORE: fetch from Plaid and build data.json ───────────────────────────────
