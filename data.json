@@ -2,7 +2,7 @@
   "kpis": {
     "income": 17291.08,
     "income_period": "November 2026",
-    "true_outflows": 3924.41,
+    "true_outflows": 3933.41,
     "outflows_period": "November 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -302,7 +302,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 227.01,
-      "available": 9516,
+      "available": 9532,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -352,7 +352,7 @@
     "by_month": []
   },
   "spending": {
-    "Entertainment": 3054.0099999999993,
+    "Entertainment": 3063.0099999999993,
     "Healthcare": 4588.03,
     "Tech/Subs": 14826.380000000001,
     "Refund": -11759.72,
@@ -683,6 +683,14 @@
       "desc": "Verizon",
       "amount": 256.39,
       "category": "Tech/Subs",
+      "bank": "Robinhood",
+      "pending": true
+    },
+    {
+      "date": "11-21",
+      "desc": "Regal Center",
+      "amount": 9,
+      "category": "Entertainment",
       "bank": "Robinhood",
       "pending": true
     }
@@ -1652,7 +1660,7 @@
       "income": 17291.08,
       "bofa_income": 17291.08,
       "td_income": 0,
-      "outflows": 3924.41,
+      "outflows": 3933.41,
       "xoom": 0,
       "investments": 0
     }
@@ -9089,7 +9097,7 @@
       "period": "2026-11",
       "categories": {
         "Tech/Subs": 1878.0500000000002,
-        "Entertainment": 30.409999999999997,
+        "Entertainment": 39.41,
         "Healthcare": 172.35999999999999,
         "Insurance": 265.9,
         "Shopping": 833.9,
@@ -9097,7 +9105,7 @@
         "Groceries": 438.49,
         "Gas/Travel": 121.02
       },
-      "total": 3924.4100000000003,
+      "total": 3933.4100000000003,
       "transactions": [
         {
           "id": "YDE1KKBbaLt1rwnmzMa3hLnPR4A1mqCzNJDn8",
@@ -9833,6 +9841,20 @@
           "desc": "Five Below",
           "amount": 21.33,
           "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "id": "1MDZL5EL8qTP5PxzajrktwREvrLR7EfYkyRn3",
+          "date": "11-21",
+          "desc": "Regal Center",
+          "amount": 9,
+          "category": "Entertainment",
           "city": null,
           "state": null,
           "bank": "Robinhood",
@@ -28368,7 +28390,7 @@
           "k": "7309"
         }
       ],
-      "days": 21,
+      "days": 22,
       "days_in_month": 30
     }
   },
@@ -28383,8 +28405,8 @@
       "hidden_at": "2026-11-21T22:17:39.649Z"
     }
   ],
-  "generated_at": "2026-11-21T23:01:38.897Z",
-  "rebuilt_at": "2026-11-21T23:01:39.479Z",
+  "generated_at": "2026-11-22T11:01:39.064Z",
+  "rebuilt_at": "2026-11-22T11:01:39.651Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -28512,27 +28534,27 @@
           "7397",
           "7724"
         ],
-        "txns": 91,
+        "txns": 93,
         "pages": 1,
         "truncated": false,
-        "last_txn": "2026-11-20"
+        "last_txn": "2026-11-22"
       }
     ],
     "failed": [],
     "forced_refresh": [
       "pnc",
-      "robin",
       "zillow",
+      "robin",
       "wifebofa",
       "bofa",
-      "wf",
-      "td"
+      "td",
+      "wf"
     ],
     "refresh_errors": {
       "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 1435,
+    "txns_fetched": 1437,
     "duplicates_removed": 22,
     "duplicate_sample": [
       {
