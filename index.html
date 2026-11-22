@@ -180,19 +180,56 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:14.5px;-webk
 .toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,20px);opacity:0;background:var(--text);color:var(--bg);padding:10px 16px;border-radius:999px;font-size:13px;font-weight:600;z-index:900;transition:all .25s;box-shadow:var(--shadow);}
 .toast.show{opacity:1;transform:translate(-50%,0);}
 /* Dashboard */
-.dash-net{background:linear-gradient(135deg,var(--p-lav),var(--p-sky));border-radius:24px;padding:22px 22px 18px;margin-bottom:14px;cursor:pointer;box-shadow:var(--shadow);}
-.dash-net-label{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.3px;}
-.dash-net-val{font-size:38px;font-weight:800;letter-spacing:-.03em;margin:4px 0 10px;font-variant-numeric:tabular-nums;}
-.dash-net-sub{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:var(--muted);font-weight:600;}
+.dash-net{background:radial-gradient(120% 140% at 85% 0%,#6a5bd0 0%,transparent 55%),linear-gradient(140deg,#231c4d,#3a2f80 60%,#4b4fa8);color:#fff;text-align:center;border-radius:24px;padding:24px 20px 20px;margin-bottom:14px;cursor:pointer;box-shadow:0 10px 30px rgba(35,28,77,.35);}
+.dash-net-label{font-size:12px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.6px;text-transform:uppercase;}
+.dash-net-val{font-size:44px;font-weight:800;letter-spacing:-.03em;margin:6px 0 12px;font-variant-numeric:tabular-nums;color:#fff;}
+.dash-net-sub{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;font-size:12px;color:rgba(255,255,255,.78);font-weight:600;}
 .dash-head{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);font-weight:600;margin:4px 4px 8px;}
 .dash-bar{border-radius:20px;padding:14px 16px 16px;margin-bottom:10px;cursor:pointer;box-shadow:var(--shadow);}
 .dash-bar-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:10px;}
 .dash-bar-title{font-size:14px;font-weight:800;}
 .dash-bar-sub{font-size:12px;color:var(--muted);margin-top:2px;font-weight:500;}
 .dash-bar-pct{font-size:22px;font-weight:800;font-variant-numeric:tabular-nums;}
-.dash-track{display:flex;height:16px;background:var(--track);border-radius:99px;overflow:hidden;}
+.dash-track{position:relative;display:flex;height:42px;background:#fff;border-radius:14px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(60,40,120,.08);}
 .dash-fill{height:100%;}
-.dash-fill:first-child{border-radius:99px 0 0 99px;}
+.dash-track-text{position:absolute;inset:0;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:0 14px;font-size:12.5px;font-weight:700;color:#241d45;white-space:nowrap;font-variant-numeric:tabular-nums;}
+.dash-tt-l{overflow:hidden;text-overflow:ellipsis;min-width:0;}
+.dash-bar{padding:14px 14px 14px !important;}
+/* Spending timeline (Accounts) */
+.tl-wrap{overflow-x:auto;margin:0 -6px;padding:2px 6px 10px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;}
+.tl{display:flex;gap:12px;position:relative;width:max-content;}
+.tl::before{content:'';position:absolute;left:0;right:0;top:11px;height:2px;background:var(--border);}
+.tl-col{width:176px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;scroll-snap-align:end;}
+.tl-mon{position:relative;display:flex;align-items:center;gap:6px;font-size:12px;font-weight:800;background:var(--card);padding:2px 10px;border-radius:99px;border:1px solid var(--border);}
+.tl-dot{width:9px;height:9px;border-radius:50%;}
+.tl-string{width:2px;height:16px;background:var(--border);}
+.tl-sq{position:relative;width:132px;height:112px;border-radius:18px;background:color-mix(in srgb,var(--c) 22%,var(--card));border:1px solid color-mix(in srgb,var(--c) 45%,transparent);overflow:hidden;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:var(--shadow);transition:transform .15s;}
+.tl-sq:hover{transform:translateY(-2px);}
+.tl-sq-fill{position:absolute;left:0;right:0;bottom:0;background:color-mix(in srgb,var(--c) 38%,transparent);}
+.tl-sq-val{position:relative;font-size:24px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;}
+.tl-sq-chg{position:relative;font-size:11.5px;font-weight:800;margin-top:2px;}
+.tl-sq-vs{position:relative;font-size:10px;color:var(--muted);font-weight:600;}
+.tl-note{width:100%;background:var(--s2);border-radius:14px;padding:8px 10px;display:flex;flex-direction:column;gap:6px;}
+.tl-why{cursor:pointer;border-radius:8px;padding:2px 2px;}
+.tl-why:hover{background:var(--s3);}
+.tl-why-top{display:flex;justify-content:space-between;gap:6px;font-size:11.5px;font-weight:700;}
+.tl-why-top span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.tl-why-sub{font-size:10.5px;color:var(--muted);line-height:1.35;}
+/* Banks & cards (Accounts) */
+.bank-card{border:1px solid var(--border);border-radius:16px;padding:12px;margin-bottom:10px;background:var(--surface);}
+.bank-card-head{display:flex;justify-content:space-between;align-items:center;gap:10px;cursor:pointer;}
+.bank-card-name{font-size:14px;font-weight:800;}
+.acct-row{padding:8px 4px;border-bottom:1px solid var(--border2);display:flex;justify-content:space-between;align-items:center;font-size:13px;cursor:pointer;gap:10px;}
+.bank-tl{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:10px;}
+.bank-tl-col{background:var(--s2);border-radius:12px;padding:7px 6px;display:flex;flex-direction:column;gap:5px;min-width:0;}
+.bank-tl-mon{font-size:11px;font-weight:800;text-align:center;}
+.bank-tl-cell{cursor:pointer;border-radius:8px;padding:3px 3px;}
+.bank-tl-cell:hover{background:var(--s3);}
+.bank-tl-bar{display:flex;height:6px;border-radius:99px;background:var(--card);overflow:hidden;margin-bottom:3px;}
+.bank-tl-lbl{font-size:9.5px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.4px;}
+.bank-tl-amt{font-size:13px;font-weight:800;font-variant-numeric:tabular-nums;}
+.bank-tl-split{font-size:9.5px;color:var(--muted);line-height:1.25;}
+.bank-tl-net{font-size:11px;font-weight:800;text-align:center;border-top:1px solid var(--border);padding-top:4px;}
 .dash-est{background:repeating-linear-gradient(-45deg,color-mix(in srgb,var(--ink) 45%,transparent) 0 6px,color-mix(in srgb,var(--ink) 22%,transparent) 6px 12px);}
 .dash-cats{margin-top:14px;}
 .dash-cat{padding:9px 6px;margin:0 -6px;border-radius:12px;cursor:pointer;}
@@ -975,16 +1012,16 @@ function renderDashboard(netBal, cashBal, cardBal){
     var pct = Math.round((paid + est)/full*100);
     var over = paid + est > avg;
     return '<div class="dash-bar" style="background:'+tint+'" onclick="showBudget(\''+kind+'\')">'
-      + '<div class="dash-bar-top"><div><div class="dash-bar-title">'+title+'</div>'
-      + '<div class="dash-bar-sub">'+fmt(paid)+' paid'+(est ? ' + ~'+fmt(est)+' expected' : '')+' · usual '+fmt(avg)+'</div></div>'
-      + '<div class="dash-bar-pct" style="color:'+(over ? 'var(--red)' : ink)+'">'+pct+'%</div></div>'
+      + '<div class="dash-bar-top"><div class="dash-bar-title">'+title+'</div>'
+      + '<div class="dash-bar-pct" style="color:'+(over ? 'var(--red)' : 'var(--text)')+'">'+pct+'%</div></div>'
       + '<div class="dash-track"><div class="dash-fill" style="width:'+pPaid+'%;background:'+ink+'"></div>'
-      + (pEst > 0 ? '<div class="dash-fill dash-est" style="width:'+pEst+'%;--ink:'+ink+'"></div>' : '') + '</div>'
+      + (pEst > 0 ? '<div class="dash-fill dash-est" style="width:'+pEst+'%;--ink:'+ink+'"></div>' : '')
+      + '<div class="dash-track-text"><span class="dash-tt-l">'+fmt(paid)+' paid'+(est ? ' + ~'+fmt(est)+' due' : '')+'</span><span>of '+fmt(avg)+'</span></div></div>'
       + '</div>';
   };
-  html += '<div class="dash-head"><span>'+mon+(partial ? ' · day '+b.m.days+' of '+b.m.days_in_month : '')+'</span><span>bar = your 6-month average</span></div>';
-  html += bar('sub', 'Subscriptions & recurring', b.paidSub, b.expSub, b.avg.sub, 'var(--p-lav)', '#8b7cf6');
-  html += bar('non', 'Everything else', b.paidNon, 0, b.avg.non, 'var(--p-peach)', '#ec9a6a');
+  html += '<div class="dash-head"><span>'+mon+(partial ? ' · day '+b.m.days+' of '+b.m.days_in_month : '')+'</span><span>full bar = your usual month</span></div>';
+  html += bar('sub', 'Subscriptions & recurring', b.paidSub, b.expSub, b.avg.sub, 'var(--p-lav)', '#b7abfb');
+  html += bar('non', 'Everything else', b.paidNon, 0, b.avg.non, 'var(--p-peach)', '#f7bf98');
 
   // 3. Categories, biggest spend first
   if(b.cats.length){
@@ -1009,13 +1046,7 @@ function showBudget(kind){
   var b = window._budget; if(!b) return;
   var paid = (kind === 'sub' ? b.now.sub : b.now.non).slice().sort(function(x,y){ return Math.abs(y.a) - Math.abs(x.a); });
   var mon = new Date(b.cur+'-15T00:00:00').toLocaleString('en-US',{month:'long', year:'numeric'});
-  var row = function(x){
-    return '<div class="txn"><div class="txn-date">'+esc(x.d)+'</div>'
-      + '<div class="txn-main"><div class="txn-name">'+esc(cleanDesc(x.n))+'</div><div class="txn-meta"><span class="pill">'+esc(x.g)+'</span>'+(x.b ? ' '+esc(x.b)+(x.k ? ' ••'+esc(x.k) : '') : '')+'</div></div>'
-      + '<div class="txn-amt" style="color:'+(x.a < 0 ? 'var(--green)' : 'var(--text)')+'">'+(x.a < 0 ? '−' : '')+fmt2(Math.abs(x.a))+'</div>'
-      + (x.id ? '<button class="txn-del" title="Delete everywhere" onclick="deleteTxn(\''+esc(x.id)+'\', this, \''+esc(cleanDesc(x.n)).replace(/\\/g,'\\\\').replace(/\'/g,'\\\'')+'\')">🗑</button>' : '')
-      + '</div>';
-  };
+  var row = flowRow;
   var total = paid.reduce(function(t,x){ return t + x.a; }, 0);
   var h = '<div class="dash-modal-sum"><div><div class="kpi-label">Paid so far</div><div class="kpi-val">'+fmt2(total)+'</div></div>';
   if(kind === 'sub') h += '<div><div class="kpi-label">Still expected</div><div class="kpi-val" style="color:var(--purple)">~'+fmt(b.expSub)+'</div></div>';
@@ -1523,162 +1554,256 @@ function showCredit() {
   openModal('Owed · Cards & Loans', 'Credit cards + loans / mortgage', b);
 }
 
+// One transaction row for modals (date · name · category · bank · amount · 🗑).
+function flowRow(x){
+  return '<div class="txn"><div class="txn-date">'+esc(x.d)+'</div>'
+    + '<div class="txn-main"><div class="txn-name">'+esc(cleanDesc(x.n))+'</div><div class="txn-meta"><span class="pill">'+esc(x.g)+'</span>'+(x.b ? ' '+esc(x.b)+(x.k ? ' ••'+esc(x.k) : '') : '')+'</div></div>'
+    + '<div class="txn-amt" style="color:'+(x.a < 0 ? 'var(--green)' : 'var(--text)')+'">'+(x.a < 0 ? '−' : '')+fmt2(Math.abs(x.a))+'</div>'
+    + (x.id ? '<button class="txn-del" title="Delete everywhere" onclick="deleteTxn(\''+esc(x.id)+'\', this, \''+esc(cleanDesc(x.n)).replace(/\\/g,'\\\\').replace(/\'/g,'\\\'')+'\')">🗑</button>' : '')
+    + '</div>';
+}
+function fmtK(n){
+  var a = Math.abs(n), s = n < 0 ? '−' : '';
+  return a < 1000 ? s+'$'+Math.round(a) : s+'$'+(a/1000).toFixed(a < 10000 ? 1 : 0)+'k';
+}
+function monShort(p){ return new Date(p+'-15T00:00:00').toLocaleString('en-US',{month:'short'}); }
+function niceName(n){
+  var z = String(n||'').match(/zelle payment to (.+?)(?:\s+conf#|\s+for\s|\s*$)/i);
+  if(z) return 'Zelle to '+z[1].split(/\s+/).slice(0,2).join(' ').toLowerCase().replace(/\b\w/g,function(c){ return c.toUpperCase(); });
+  if(/\bATM\b/i.test(n)) return 'ATM cash';
+  return cleanDesc(n).replace(/\s+\d{2}\/\d{2}.*$/,'');
+}
+function dayOf(x){ return parseInt(String(x.d).slice(3), 10) || 0; }
+
+// ── Why did spending move? ──
+// Compares one month's spending with the month before, category by category,
+// and names the merchant behind each big move: a one-off (never seen in the
+// previous 6 months), more orders/visits, or a bill that hasn't come yet.
+// A month still in progress is compared with the same days of last month.
+var FREQ_GROUPS = { 'Amazon':'orders', 'Shopping':'orders', 'Restaurants':'visits', 'Groceries':'trips', 'Food delivery':'orders', 'Gas/Travel':'fill-ups', 'Entertainment':'charges', 'Zelle to people':'payments', 'Sent to India':'transfers' };
+function explainMonth(p){
+  var cf = D.cashflow || {}, keys = Object.keys(cf).sort(), i = keys.indexOf(p);
+  if(i < 1) return null;
+  var m = cf[p], pp = keys[i-1];
+  var partial = m.days < m.days_in_month;
+  var cur = m.tx_out || [];
+  var prev = (cf[pp].tx_out || []).filter(function(x){ return !partial || dayOf(x) <= m.days; });
+  var seen = {}, later = {};
+  keys.slice(i+1).forEach(function(q){ (cf[q].tx_out||[]).forEach(function(x){ later[merchKey(x)] = 1; }); });
+  keys.slice(Math.max(0, i-6), i).forEach(function(q){ (cf[q].tx_out||[]).forEach(function(x){ seen[merchKey(x)] = 1; }); });
+  var sum = function(l){ return l.reduce(function(t,x){ return t + x.a; }, 0); };
+  var byCat = function(l){ var o = {}; l.forEach(function(x){ (o[x.g] = o[x.g] || []).push(x); }); return o; };
+  var cc = byCat(cur), pc = byCat(prev);
+  var total = sum(cur), prevTotal = sum(prev), delta = total - prevTotal;
+  var floor = Math.max(100, Math.abs(prevTotal) * 0.03);
+  var reasons = [];
+  Object.keys(Object.assign({}, cc, pc)).forEach(function(g){
+    var a = cc[g] || [], b = pc[g] || [], d = sum(a) - sum(b);
+    if(Math.abs(d) < floor) return;
+    // The merchant that moved most in the same direction.
+    var mk = {};
+    a.forEach(function(x){ var k = merchKey(x); mk[k] = mk[k] || {c:0,p:0,cn:0,pn:0,name:x.n}; mk[k].c += x.a; mk[k].cn++; });
+    b.forEach(function(x){ var k = merchKey(x); mk[k] = mk[k] || {c:0,p:0,cn:0,pn:0,name:x.n}; mk[k].p += x.a; mk[k].pn++; });
+    var top = null, topK = '';
+    Object.keys(mk).forEach(function(k){ var v = mk[k], md = v.c - v.p; if(md * d > 0 && (!top || Math.abs(md) > Math.abs(top.c - top.p))){ top = v; topK = k; } });
+    var why = '';
+    if(top){
+      var nm = niceName(top.name), md = top.c - top.p;
+      if(d > 0 && !top.pn && !seen[topK] && top.c >= 250) why = nm+' '+fmt(top.c)+(later[topK] ? ' · new, keeps coming' : ' · one-off');
+      else if(d > 0 && !top.pn) why = nm+' '+fmt(top.c)+(top.cn > 1 ? ' ('+top.cn+'×)' : '');
+      else if(d < 0 && !top.cn) why = partial && g === 'Home & car loans' ? nm+' not paid yet' : 'no '+nm+' this month';
+      else if(FREQ_GROUPS[g] && Math.abs(a.length - b.length) >= 3 && Math.abs(md) < Math.abs(d) * 0.6) why = a.length+' '+FREQ_GROUPS[g]+' vs '+b.length+(Math.abs(md) >= 100 ? ' · '+nm+' '+(md > 0 ? '+' : '−')+fmtK(Math.abs(md)) : '');
+      else why = nm+' '+(md > 0 ? '+' : '−')+fmt(Math.abs(md));
+      if(Math.abs(md) < Math.abs(d) * 0.4 && FREQ_GROUPS[g] && a.length !== b.length) why = a.length+' '+FREQ_GROUPS[g]+' vs '+b.length+(Math.abs(md) >= 100 ? ' · '+nm+' '+(md > 0 ? '+' : '−')+fmtK(Math.abs(md)) : '');
+    }
+    if(g === 'Bank & card fees' && d > 0) why = (why ? why+' · ' : '')+'avoidable';
+    reasons.push({ g:g, d:d, why:why });
+  });
+  // Lead with what pushed the total the way it went, then the biggest counter-move.
+  reasons.sort(function(x,y){ return Math.abs(y.d) - Math.abs(x.d); });
+  var same = reasons.filter(function(r){ return r.d * delta > 0; }).slice(0, 3);
+  var other = reasons.filter(function(r){ return r.d * delta <= 0; }).slice(0, same.length < 3 ? 1 : 0);
+  return { p:p, pp:pp, total:total, prevTotal:prevTotal, delta:delta, partial:partial, days:m.days, reasons: same.concat(other) };
+}
+
+function renderSpendTimeline(){
+  var cf = D.cashflow || {}, keys = Object.keys(cf).sort().slice(-6);
+  if(!keys.length) return '';
+  var max = Math.max.apply(null, keys.map(function(p){ return (cf[p].tx_out||[]).reduce(function(t,x){ return t + x.a; }, 0); }).concat([1]));
+  var html = '<div class="panel"><div class="panel-head"><div class="panel-title">Spending timeline</div><div class="panel-action">last 6 months · tap a month</div></div>';
+  html += '<div class="tl-wrap" id="tl-wrap"><div class="tl">';
+  keys.forEach(function(p, i){
+    var e = explainMonth(p);
+    var total = (cf[p].tx_out||[]).reduce(function(t,x){ return t + x.a; }, 0);
+    var col = DASH_COLORS[i % DASH_COLORS.length];
+    var partial = cf[p].days < cf[p].days_in_month;
+    html += '<div class="tl-col">';
+    html += '<div class="tl-mon"><span class="tl-dot" style="background:'+col+'"></span>'+monShort(p)+(partial ? ' · so far' : '')+'</div>';
+    html += '<div class="tl-string"></div>';
+    html += '<div class="tl-sq" style="--c:'+col+'" onclick="showFlow(\''+p+'\',\'out\')">'
+      + '<div class="tl-sq-fill" style="height:'+Math.max(6, total/max*100)+'%"></div>'
+      + '<div class="tl-sq-val">'+fmtK(total)+'</div>';
+    if(e){
+      var up = e.delta > 0, pct = e.prevTotal > 0 ? Math.round(Math.abs(e.delta)/e.prevTotal*100) : 0;
+      html += '<div class="tl-sq-chg" style="color:'+(up ? 'var(--red)' : 'var(--green)')+'">'+(up ? '▲ ' : '▼ ')+fmtK(Math.abs(e.delta))+(pct ? ' · '+pct+'%' : '')+'</div>'
+        + '<div class="tl-sq-vs">vs '+monShort(e.pp)+(e.partial ? ' 1–'+e.days : '')+'</div>';
+    }
+    html += '</div>';
+    if(e && e.reasons.length){
+      html += '<div class="tl-string"></div><div class="tl-note">';
+      e.reasons.forEach(function(r){
+        var gEsc = esc(r.g).replace(/\\/g,'\\\\').replace(/'/g,'\\\'');
+        html += '<div class="tl-why" onclick="showFlow(\''+p+'\',\'out\',\''+gEsc+'\')">'
+          + '<div class="tl-why-top"><span>'+esc(r.g)+'</span><b style="color:'+(r.d > 0 ? 'var(--red)' : 'var(--green)')+'">'+(r.d > 0 ? '+' : '−')+fmtK(Math.abs(r.d))+'</b></div>'
+          + (r.why ? '<div class="tl-why-sub">'+esc(r.why)+'</div>' : '') + '</div>';
+      });
+      html += '</div>';
+    } else if(e){
+      html += '<div class="tl-string"></div><div class="tl-note"><div class="tl-why-sub">Steady — no category moved much.</div></div>';
+    }
+    html += '</div>';
+  });
+  html += '</div></div>';
+  html += '<div style="font-size:11px;color:var(--muted);margin-top:8px">Spending leaves out card payments and moves between your own accounts. Tap a box for every transaction, or a reason for that category.</div></div>';
+  return html;
+}
+
+// ── Per bank: money in vs money out, last 4 months (rolls over monthly) ──
+// Each bank's accounts and cards together. "In" is income landing in its
+// checking/savings; "Out" is spending on its cards plus spending straight
+// from its checking (loans, Zelle, debit). Card payments and transfers
+// between our own accounts are already left out by buildCashflow.
+function bankFlows(groups){
+  var cf = D.cashflow || {}, months = Object.keys(cf).sort().slice(-4);
+  var gOfMask = {};
+  groups.forEach(function(g, gi){ g.accts.forEach(function(a){ gOfMask[a.mask] = { gi:gi, credit: !!a.is_credit }; }); });
+  groups.forEach(function(g){ g.months = months.map(function(p){ return { p:p, inn:[], card:[], chk:[] }; }); });
+  months.forEach(function(p, mi){
+    (cf[p].tx_in||[]).forEach(function(x){ var o = gOfMask[x.k]; if(o) groups[o.gi].months[mi].inn.push(x); });
+    (cf[p].tx_out||[]).forEach(function(x){ var o = gOfMask[x.k]; if(o) groups[o.gi].months[mi][o.credit ? 'card' : 'chk'].push(x); });
+  });
+  return months;
+}
+function showBankFlow(gi, mi, kind){
+  var g = window._bankTL && window._bankTL[gi]; if(!g) return;
+  var c = g.months[mi], mon = new Date(c.p+'-15T00:00:00').toLocaleString('en-US',{month:'long', year:'numeric'});
+  var lists = kind === 'in' ? [['Money in', c.inn]] : [['On cards', c.card], ['From checking', c.chk]];
+  var h = '';
+  lists.forEach(function(l){
+    if(!l[1].length) return;
+    var t = l[1].reduce(function(s,x){ return s + x.a; }, 0);
+    h += '<div class="srch-month">'+l[0]+' · '+fmt2(t)+'</div>';
+    h += l[1].slice().sort(function(a,b){ return Math.abs(b.a) - Math.abs(a.a); }).map(flowRow).join('');
+  });
+  openModal(g.label+' · '+(kind === 'in' ? 'money in' : 'money out'), mon, h || '<div style="color:var(--muted);font-size:13px">Nothing this month.</div>');
+}
+
 function renderAccounts() {
   var allAccts = dedupAccts(D.all_accounts);
   var ms = D.monthly_spending || {};
-  var periods = Object.keys(ms).sort().reverse();
-  var last2 = periods.slice(0,2);
-  var html = '';
+  var last2 = Object.keys(ms).sort().reverse().slice(0,2);
   var ALIAS = {'wifebofa':'BofA','myrobin':'Robinhood','bofa':'BofA','bofa_2':'BofA'};
-
   function normBank(b){ return ALIAS[b||''] || b || ''; }
-
-  function monthTxnsForBank(p, bank) {
-    var nb = normBank(bank);
-    var all = ms[p] ? ms[p].transactions||[] : [];
-    var hasBankField = all.some(function(t){return t.bank!=null;});
-    if(!hasBankField) return all; // fallback - show all when bank missing
-    return all.filter(function(t){ return normBank(t.bank)===nb || t.bank===bank; });
-  }
-
-  // Transactions for ONE specific account. Join on mask (accounts only carry
-  // mask; transactions carry mask + account_id). Also require the bank to match
-  // so a coincidental same last-4 on another bank can't bleed in.
+  // Transactions for ONE account: joined on mask, and the bank must match so a
+  // coincidental same last-4 on another bank can't bleed in.
   function monthTxnsForAccount(p, acct) {
     var all = ms[p] ? ms[p].transactions||[] : [];
-    var hasMask = all.some(function(t){return t.mask!=null;});
-    if(!hasMask) return monthTxnsForBank(p, acct.bank); // fallback when txns lack mask
-    return all.filter(function(t){
-      return String(t.mask)===String(acct.mask)
-        && (t.bank==null || normBank(t.bank)===normBank(acct.bank));
+    return all.filter(function(t){ return String(t.mask)===String(acct.mask) && (t.bank==null || normBank(t.bank)===normBank(acct.bank)); });
+  }
+  // Loans and cards are money owed: always shown negative, in red.
+  function acctRow(a) {
+    var owed = (a.is_credit || a.type === 'loan') && a.balance > 0;
+    var name = a.name.replace(/\s*\.\.\.\d{4}/g,'').replace(/[^\x20-\x7E]+/g,'').trim();
+    var cid = uid();
+    var h = '<div><div class="acct-row" onclick="expand(\''+cid+'\')">'
+      + '<div><div>'+esc(name)+' <span style="color:var(--muted);font-size:11px">••'+esc(a.mask)+'</span></div>'
+      + '<div style="font-size:11px;color:var(--muted)">'+esc(a.subtype)+'</div></div>'
+      + '<div style="display:flex;align-items:center;gap:8px"><div style="font-weight:700;color:'+(owed?'var(--red)':'var(--green)')+'">'+(owed?'−':'')+fmt2(Math.abs(a.balance))+'</div><span style="color:var(--muted);font-size:11px">›</span></div></div>';
+    h += '<div id="'+cid+'" class="expand-body">';
+    var had = false;
+    last2.forEach(function(p){
+      var t = monthTxnsForAccount(p, a); if(!t.length) return; had = true;
+      h += '<div style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted2);padding:5px 14px 2px;background:var(--s2)">'+ms[p].label+'</div>';
+      t.sort(function(x,y){ return y.date.localeCompare(x.date); }).forEach(function(x){ h += txnLine(x, CAT_COLORS[x.category]||'#6b6b80', 'padding-left:14px;'); });
     });
+    if(!had) h += '<div style="padding:8px 14px;font-size:12px;color:var(--muted)">No transactions in last 2 months</div>';
+    return h + '</div></div>';
   }
 
-  // ── CHECKING & SAVINGS ──
-  var deposits = allAccts.filter(function(a){return !a.is_credit;});
-  var bankOrder = []; deposits.forEach(function(a){if(bankOrder.indexOf(a.bank)<0)bankOrder.push(a.bank);});
-  var depTotal = deposits.reduce(function(s,a){return s+a.balance;},0);
+  var html = renderSpendTimeline();
 
-  html += '<div class="panel">';
-  html += '<div class="panel-head"><div class="panel-title">Checking & Savings</div><div class="panel-action">'+fmt2(depTotal)+'</div></div>';
+  // ── BANKS & CARDS: each bank's accounts and cards together ──
+  var byKey = {}, groups = [];
+  allAccts.filter(function(a){ return a.type !== 'loan'; }).forEach(function(a){
+    var k = bankKeyOf(a);
+    if(!byKey[k]){ byKey[k] = { key:k, label: bankLabelOf(k, a.bank), accts:[] }; groups.push(byKey[k]); }
+    byKey[k].accts.push(a);
+  });
+  groups.forEach(function(g){
+    g.cash = g.accts.filter(function(a){ return !a.is_credit; }).reduce(function(s,a){ return s + a.balance; }, 0);
+    g.owed = g.accts.filter(function(a){ return a.is_credit && a.balance > 0; }).reduce(function(s,a){ return s + a.balance; }, 0);
+  });
+  groups.sort(function(a,b){ return (b.cash - b.owed) - (a.cash - a.owed); });
+  var months = bankFlows(groups);
+  window._bankTL = groups;
+  var cashT = groups.reduce(function(s,g){ return s + g.cash; }, 0), owedT = groups.reduce(function(s,g){ return s + g.owed; }, 0);
 
-  bankOrder.forEach(function(bank) {
-    var ba = deposits.filter(function(a){return a.bank===bank;});
-    var bankTotal = ba.reduce(function(s,a){return s+a.balance;},0);
+  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Banks & cards</div>'
+    + '<div class="panel-action"><span style="color:var(--green)">'+fmt(cashT)+'</span> · <span style="color:var(--red)">−'+fmt(owedT)+' cards</span></div></div>';
+  html += '<div style="font-size:11px;color:var(--muted);margin:-4px 0 10px">Each month: income landing in the bank vs spending on its cards and straight from its checking. Last 4 months — tap to see transactions.</div>';
+  groups.forEach(function(g, gi){
     var bid = uid();
-    html += '<div>';
-      html += '<div class="row expandable" onclick="expand(\''+bid+'\')">';
-        html += '<div><div class="row-label" style="font-weight:500">'+bank+'</div><div class="row-sub">'+ba.length+' account(s)</div></div>';
-        html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:var(--green)">'+fmt2(bankTotal)+'</div><span style="color:var(--muted)">›</span></div>';
-      html += '</div>';
-      html += '<div id="'+bid+'" class="expand-body">';
-        ba.forEach(function(a) {
-          var name = a.name.replace(/\s*\.\.\.\d{4}/g,'').trim();
-          var cid = uid();
-          html += '<div>';
-            html += '<div style="padding:7px 0 7px 14px;border-bottom:1px solid var(--border2);display:flex;justify-content:space-between;align-items:baseline;font-size:13px;cursor:pointer" onclick="expand(\''+cid+'\')">';
-              html += '<div><div>'+name+' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted);font-size:11px">••'+a.mask+'</span></div>';
-              html += '<div style="font-size:11px;color:var(--muted)">'+a.subtype+'</div></div>';
-              html += '<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:var(--green)">'+fmt2(a.balance)+'</div><span style="color:var(--muted);font-size:11px">› txns</span></div>';
-            html += '</div>';
-            html += '<div id="'+cid+'" class="expand-body">';
-              var hadData = false;
-              last2.forEach(function(p) {
-                var ptxns = monthTxnsForAccount(p, a);
-                if(!ptxns.length) return;
-                hadData = true;
-                html += '<div style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted2);padding:5px 14px 2px;background:var(--s2)">'+ms[p].label+'</div>';
-                ptxns.sort(function(a,b){return b.date.localeCompare(a.date);});
-                ptxns.forEach(function(t){ html += txnLine(t, CAT_COLORS[t.category]||'#6b6b80', 'padding-left:14px;'); });
-              });
-              if(!hadData) html += '<div style="padding:8px 14px;font-size:12px;color:var(--muted)">No transactions in last 2 months</div>';
-            html += '</div>';
-          html += '</div>';
-        });
-      html += '</div>';
+    html += '<div class="bank-card">';
+    html += '<div class="bank-card-head" onclick="expand(\''+bid+'\')"><div><div class="bank-card-name">'+esc(g.label)+'</div>'
+      + '<div class="row-sub">'+g.accts.length+' account'+(g.accts.length>1?'s':'')+' · tap for balances</div></div>'
+      + '<div style="text-align:right"><div style="font-weight:800;color:var(--green)">'+fmt2(g.cash)+'</div>'
+      + (g.owed > 0 ? '<div style="font-size:12px;font-weight:700;color:var(--red)">−'+fmt2(g.owed)+' cards</div>' : '') + '</div></div>';
+    html += '<div id="'+bid+'" class="expand-body">';
+    g.accts.slice().sort(function(a,b){ return (a.is_credit?1:0) - (b.is_credit?1:0); }).forEach(function(a){ html += acctRow(a); });
     html += '</div>';
-    html += '<div class="divider"></div>';
+    var sums = g.months.map(function(c){
+      var s = function(l){ return l.reduce(function(t,x){ return t + x.a; }, 0); };
+      return { inn: s(c.inn), card: s(c.card), chk: s(c.chk) };
+    });
+    var mx = Math.max.apply(null, sums.map(function(s){ return Math.max(s.inn, s.card + s.chk); }).concat([1]));
+    html += '<div class="bank-tl">';
+    sums.forEach(function(s, mi){
+      var out = s.card + s.chk, net = s.inn - out;
+      var partial = D.cashflow[months[mi]].days < D.cashflow[months[mi]].days_in_month;
+      html += '<div class="bank-tl-col">'
+        + '<div class="bank-tl-mon">'+monShort(months[mi])+(partial ? '*' : '')+'</div>'
+        + '<div class="bank-tl-cell" onclick="showBankFlow('+gi+','+mi+',\'in\')">'
+        +   '<div class="bank-tl-bar"><div style="width:'+(Math.max(0,s.inn)/mx*100)+'%;background:#86d3b5"></div></div>'
+        +   '<div class="bank-tl-lbl">In</div><div class="bank-tl-amt" style="color:var(--green)">+'+fmtK(s.inn)+'</div></div>'
+        + '<div class="bank-tl-cell" onclick="showBankFlow('+gi+','+mi+',\'out\')">'
+        +   '<div class="bank-tl-bar"><div style="width:'+(Math.max(0,s.card)/mx*100)+'%;background:#f5a9bf"></div><div style="width:'+(Math.max(0,s.chk)/mx*100)+'%;background:#f3c58b"></div></div>'
+        +   '<div class="bank-tl-lbl">Out</div><div class="bank-tl-amt" style="color:var(--red)">−'+fmtK(out)+'</div>'
+        +   (s.card > 0.5 && s.chk > 0.5 ? '<div class="bank-tl-split">cards '+fmtK(s.card)+' · chk '+fmtK(s.chk)+'</div>' : (s.card > 0.5 ? '<div class="bank-tl-split">on cards</div>' : (s.chk > 0.5 ? '<div class="bank-tl-split">from checking</div>' : '')))
+        + '</div>'
+        + '<div class="bank-tl-net" style="color:'+(net >= 0 ? 'var(--green)' : 'var(--red)')+'">net '+(net >= 0 ? '+' : '')+fmtK(net)+'</div>'
+        + '</div>';
+    });
+    html += '</div></div>';
   });
+  html += '<div style="font-size:10.5px;color:var(--muted);margin-top:6px"><span style="color:#e98aa6">■</span> on cards &nbsp;<span style="color:#e0a85e">■</span> from checking &nbsp;· * month in progress</div>';
   html += '</div>';
 
-  // ── SPENDING BY MONTH ──
-  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Spending by Month</div></div>';
-  periods.forEach(function(p) {
-    var v = ms[p]; var sid = uid();
-    html += '<div>';
-      html += '<div class="row expandable" onclick="expand(\''+sid+'\')">';
-        html += '<div class="row-label" style="font-weight:500">'+v.label+'</div>';
-        html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:var(--red)">'+fmt2(v.total)+'</div><span style="color:var(--muted)">›</span></div>';
-      html += '</div>';
-      html += '<div id="'+sid+'" class="expand-body">';
-        Object.entries(v.categories||{}).sort(function(a,b){return b[1]-a[1];}).forEach(function(ce) {
-          var col = CAT_COLORS[ce[0]]||'#6b6b80'; var cid = uid();
-          html += '<div style="padding:4px 0 4px 14px;border-bottom:1px solid var(--border2)">';
-            html += '<div style="display:flex;justify-content:space-between;cursor:pointer;font-size:13px;padding:3px 0" onclick="expand(\''+cid+'\')">';
-              html += '<span style="color:'+col+'">'+ce[0]+'</span>';
-              html += '<div style="display:flex;align-items:center;gap:6px"><span style="font-family:IBM Plex Mono,monospace;color:'+col+'">'+fmt2(ce[1])+'</span><span style="color:var(--muted)">›</span></div>';
-            html += '</div>';
-            html += '<div id="'+cid+'" class="expand-body">';
-              (v.transactions||[]).filter(function(t){return t.category===ce[0];}).sort(function(a,b){return b.date.localeCompare(a.date);}).forEach(function(t){ html += txnLine(t, col, 'padding-left:14px;'); });
-            html += '</div>';
-          html += '</div>';
-        });
-      html += '</div>';
+  // ── LOANS: owed, so negative ──
+  var loans = allAccts.filter(function(a){ return a.type === 'loan'; });
+  if(loans.length){
+    var loanT = loans.reduce(function(s,a){ return s + Math.max(0, a.balance); }, 0);
+    html += '<div class="panel"><div class="panel-head"><div class="panel-title">Loans</div><div class="panel-action" style="color:var(--red)">−'+fmt2(loanT)+'</div></div>';
+    loans.forEach(function(a){
+      var lbl = bankLabelOf(bankKeyOf(a), a.bank);
+      html += '<div class="acct-row" style="cursor:default"><div><div>'+esc(lbl)+' <span style="color:var(--muted);font-size:11px">••'+esc(a.mask)+'</span></div>'
+        + '<div style="font-size:11px;color:var(--muted)">'+esc(a.subtype)+' · owed</div></div>'
+        + '<div style="font-weight:700;color:var(--red)">−'+fmt2(Math.abs(a.balance))+'</div></div>';
+    });
     html += '</div>';
-    html += '<div class="divider"></div>';
-  });
-  html += '</div>';
-
-  // ── CREDIT CARDS ──
-  var credits = allAccts.filter(function(a){return a.is_credit;});
-  var creditBanks = []; credits.forEach(function(a){if(creditBanks.indexOf(a.bank)<0)creditBanks.push(a.bank);});
-  var creditTotal = credits.filter(function(a){return a.balance>0;}).reduce(function(s,a){return s+a.balance;},0);
-
-  html += '<div class="panel">';
-  html += '<div class="panel-head"><div class="panel-title">Credit Cards</div><div class="panel-action" style="color:var(--red)">'+fmt2(creditTotal)+' owed</div></div>';
-
-  creditBanks.forEach(function(bank) {
-    var ba = credits.filter(function(a){return a.bank===bank;});
-    var owed = ba.filter(function(a){return a.balance>0;}).reduce(function(s,a){return s+a.balance;},0);
-    var crid = uid();
-    html += '<div>';
-      html += '<div class="row expandable" onclick="expand(\''+crid+'\')">';
-        html += '<div><div class="row-label" style="font-weight:500">'+bank+'</div><div class="row-sub">'+ba.length+' card(s)</div></div>';
-        html += '<div style="display:flex;align-items:center;gap:8px"><div class="row-amt" style="color:'+(owed>0?'var(--red)':'var(--green)')+'">'+fmt2(owed)+'</div><span style="color:var(--muted)">›</span></div>';
-      html += '</div>';
-      html += '<div id="'+crid+'" class="expand-body">';
-        ba.forEach(function(a) {
-          var name = a.name.replace(/\s*\.\.\.\d{4}/g,'').trim();
-          var col = a.balance>0?'var(--red)':'var(--green)';
-          var sign = a.balance>0?'-':'';
-          var caid = uid();
-          html += '<div>';
-            html += '<div style="padding:7px 0 7px 14px;border-bottom:1px solid var(--border2);display:flex;justify-content:space-between;align-items:baseline;font-size:13px;cursor:pointer" onclick="expand(\''+caid+'\')">';
-              html += '<div><div>'+name+' <span style="font-family:IBM Plex Mono,monospace;color:var(--muted);font-size:11px">••'+a.mask+'</span></div>';
-              html += '<div style="font-size:11px;color:var(--muted)">'+a.subtype+'</div></div>';
-              html += '<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-weight:500;color:'+col+'">'+sign+fmt2(Math.abs(a.balance))+'</div><span style="color:var(--muted);font-size:11px">› txns</span></div>';
-            html += '</div>';
-            html += '<div id="'+caid+'" class="expand-body">';
-              var hadCC = false;
-              last2.forEach(function(p) {
-                var ptxns = monthTxnsForAccount(p, a);
-                if(!ptxns.length) return;
-                hadCC = true;
-                html += '<div style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted2);padding:5px 14px 2px;background:var(--s2)">'+ms[p].label+'</div>';
-                ptxns.sort(function(a,b){return b.date.localeCompare(a.date);});
-                ptxns.forEach(function(t){ html += txnLine(t, CAT_COLORS[t.category]||'#6b6b80', 'padding-left:14px;'); });
-              });
-              if(!hadCC) html += '<div style="padding:8px 14px;font-size:12px;color:var(--muted)">No transactions in last 2 months</div>';
-            html += '</div>';
-          html += '</div>';
-        });
-      html += '</div>';
-    html += '</div>';
-    html += '<div class="divider"></div>';
-  });
-  html += '</div>';
+  }
 
   set('main-content', html);
+  setTimeout(function(){ var w = $('tl-wrap'); if(w) w.scrollLeft = w.scrollWidth; }, 30);
 }
 
 function renderTravel() {
