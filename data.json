@@ -64,7 +64,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 42.63,
-      "available": 42.63,
+      "available": 542.63,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -92,7 +92,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 5246.33,
-      "available": 5246.33,
+      "available": 5309.33,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -190,7 +190,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 63,
-      "available": 63,
+      "available": null,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -204,7 +204,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 42.63,
-      "available": 42.63,
+      "available": 542.63,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -246,7 +246,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 19364.07,
-      "available": 19364.07,
+      "available": 18864.07,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -28427,8 +28427,8 @@
       "hidden_at": "2026-11-21T22:17:39.649Z"
     }
   ],
-  "generated_at": "2026-11-22T19:32:51.878Z",
-  "rebuilt_at": "2026-11-22T19:32:52.481Z",
+  "generated_at": "2026-11-22T23:01:36.541Z",
+  "rebuilt_at": "2026-11-22T23:01:37.156Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -28456,10 +28456,10 @@
           "7309",
           "8206"
         ],
-        "txns": 232,
+        "txns": 234,
         "pages": 1,
         "truncated": false,
-        "last_txn": "2026-11-20"
+        "last_txn": "2026-11-22"
       },
       {
         "nickname": "wf",
@@ -28514,7 +28514,7 @@
           "5677",
           "9715"
         ],
-        "txns": 383,
+        "txns": 385,
         "pages": 1,
         "truncated": false,
         "last_txn": "2026-11-22"
@@ -28566,18 +28566,18 @@
     "forced_refresh": [
       "pnc",
       "zillow",
-      "wifebofa",
-      "bofa",
+      "td",
       "robin",
+      "wifebofa",
       "wf",
-      "td"
+      "bofa"
     ],
     "refresh_errors": {
       "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 1438,
-    "duplicates_removed": 22,
+    "txns_fetched": 1442,
+    "duplicates_removed": 23,
     "duplicate_sample": [
       {
         "mask": "1739",
