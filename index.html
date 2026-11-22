@@ -762,51 +762,6 @@ function renderInsights() {
   var ignored = show.reduce(function(s,p){ return s + cf[p].internal.total; }, 0);
   if(ignored) html += '<div style="font-size:11px;color:var(--muted);margin-top:-6px">Ignored '+fmt(ignored)+' of card payments and moves between your own accounts, so nothing is counted twice.</div>';
 
-  // 2. Where to save — judged on the last 6 full months
-  var n = hist.length || 1;
-  var sumOver = function(fn){ return hist.reduce(function(s,p){ return s + fn(cf[p]); }, 0); };
-  var tips = [];
-  var fees = sumOver(function(m){ return m.spent.fees; });
-  var feeItems = [].concat.apply([], hist.map(function(p){ return cf[p].fees || []; }));
-  if(fees > 0){
-    var fk = {}; feeItems.forEach(function(f){ var k = f.label || 'other'; fk[k] = (fk[k]||0) + f.amount; });
-    var FIX = { interest:'card interest — pay the full card balance', late:'late fees — turn on autopay', overdraft:'overdraft fees — keep a cushion in checking',
-                maintenance:'monthly account fees — ask for a free account or keep the minimum balance', annual:'card annual fee — ask to waive or downgrade', atm:'ATM fees — use your own bank’s ATM', other:'other fees' };
-    var ks = Object.keys(fk).sort(function(a,b){ return fk[b]-fk[a]; });
-    var parts = ks.slice(0,3).map(function(k){ return fmt(fk[k])+' '+FIX[k]; });
-    var rest = ks.slice(3).reduce(function(s,k){ return s + fk[k]; }, 0);
-    if(rest >= 1) parts.push(fmt(rest)+' other fees');
-    tips.push({ save: fees/n, html: '💳 <b>Bank & card fees: '+fmt(fees)+' in '+n+' months</b> — money for nothing. '+parts.join('; ')+'.' });
-  }
-  var aiTot = sumOver(function(m){ return m.by_category['AI tools']||0; });
-  if(aiTot > 0){
-    // One company bills under several names ("Claude Sub Anthropic.comca",
-    // "Anthropic", "Claude.ai") — group by company before judging.
-    var aiM = {}; hist.forEach(function(p){ Object.keys(cf[p].ai||{}).forEach(function(k){ var v = aiVendor(k); aiM[v] = (aiM[v]||0) + cf[p].ai[k]; }); });
-    var names = Object.keys(aiM).sort(function(a,b){ return aiM[b]-aiM[a]; });
-    var per = names.map(function(k){ return esc(k)+' ~'+fmt(aiM[k]/n)+'/mo'; }).join(', ');
-    var aiTip = names.length > 1
-      ? ' Several AI tools do the same job — keep '+esc(names[0])+' and drop the rest to save ~'+fmt((aiTot - aiM[names[0]])/n*12)+'/year.'
-      : (aiTot/n > 30 ? ' If you don’t use it every day, a cheaper plan (~$20) saves ~'+fmt((aiTot/n - 20)*12)+'/year.' : ' Small and steady — fine if you use it.');
-    tips.push({ save: aiTot/n/2, html: '🤖 <b>AI tools: ~'+fmt(aiTot/n)+'/month</b> ('+per+').'+aiTip });
-  }
-  var food = sumOver(function(m){ return (m.by_category['Food delivery']||0) + (m.by_category['Restaurants']||0); });
-  if(food/n > 100){
-    tips.push({ save: food/n/4, html: '🍔 <b>Eating out + delivery: ~'+fmt(food/n)+'/month.</b> Cutting a quarter of it saves ~'+fmt(food/n/4*12)+'/year.' });
-  }
-  var shop = sumOver(function(m){ return (m.by_category['Shopping']||0) + (m.by_category['Amazon']||0); });
-  if(shop/n > 300){
-    tips.push({ save: shop/n/5, html: '📦 <b>Shopping + Amazon: ~'+fmt(shop/n)+'/month.</b> Waiting 48 hours before non-essential buys could save ~'+fmt(shop/n/5*12)+'/year.' });
-  }
-  var bounced = [].concat.apply([], hist.concat([cur]).map(function(p){ return cf[p].bounced || []; }));
-  if(bounced.length){
-    var maxB = bounced.reduce(function(s,b){ return Math.max(s, b.amount); }, 0);
-    tips.push({ save: 1e9, html: '⚠️ <b>'+bounced.length+' payment'+(bounced.length>1?'s':'')+' bounced</b> (largest '+fmt(maxB)+') because checking ran short. Each bounce brings fees and can hurt your credit. Keep about '+fmt(Math.ceil(maxB/500)*500)+' extra in checking before the mortgage date.' });
-  }
-  tips.sort(function(a,b){ return b.save - a.save; });
-  if(fees === 0) tips.push({ html: '✅ No card interest or fees in '+n+' months — nice.' });
-  html += '<div>'+head('💡 Where you can save · last '+n+' months')+tips.slice(0,5).map(function(t){ return line('', t.html); }).join('')+'</div>';
-
   var lbl = show.map(function(p){ return mName(p).slice(0,3); }).join(' · ');
   return wrap(lbl, html);
 }
