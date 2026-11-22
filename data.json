@@ -28427,8 +28427,8 @@
       "hidden_at": "2026-11-21T22:17:39.649Z"
     }
   ],
-  "generated_at": "2026-11-22T19:24:14.057Z",
-  "rebuilt_at": "2026-11-22T19:24:14.650Z",
+  "generated_at": "2026-11-22T19:25:10.667Z",
+  "rebuilt_at": "2026-11-22T19:25:10.963Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
