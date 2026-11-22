@@ -28427,8 +28427,8 @@
       "hidden_at": "2026-11-21T22:17:39.649Z"
     }
   ],
-  "generated_at": "2026-11-22T19:24:11.652Z",
-  "rebuilt_at": "2026-11-22T19:24:12.199Z",
+  "generated_at": "2026-11-22T19:24:14.057Z",
+  "rebuilt_at": "2026-11-22T19:24:14.650Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -28563,16 +28563,17 @@
       }
     ],
     "failed": [],
-    "forced_refresh": [],
+    "forced_refresh": [
+      "pnc",
+      "zillow",
+      "wifebofa",
+      "bofa",
+      "robin",
+      "wf",
+      "td"
+    ],
     "refresh_errors": {
-      "discover": "TRANSACTIONS_LIMIT",
-      "td": "TRANSACTIONS_LIMIT",
-      "wf": "TRANSACTIONS_LIMIT",
-      "bofa": "TRANSACTIONS_LIMIT",
-      "pnc": "TRANSACTIONS_LIMIT",
-      "robin": "TRANSACTIONS_LIMIT",
-      "wifebofa": "TRANSACTIONS_LIMIT",
-      "zillow": "TRANSACTIONS_LIMIT"
+      "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
     "txns_fetched": 1438,
