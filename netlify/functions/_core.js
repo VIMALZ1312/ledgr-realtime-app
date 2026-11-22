@@ -126,7 +126,9 @@ function categorize(txn) {
   };
   if (detailed.includes('AMAZON')) return 'Amazon';
   if (detailed.includes('GROCERIES') || detailed.includes('SUPERMARKET')) return 'Groceries';
-  if (detailed.includes('GAS') || detailed.includes('FUEL')) return 'Gas/Travel';
+  // RENT_AND_UTILITIES_GAS_AND_ELECTRICITY (PSE&G) contains "GAS" — it's a
+  // utility bill, not fuel, so it must not land in Gas/Travel.
+  if (primary !== 'RENT_AND_UTILITIES' && (detailed.includes('GAS') || detailed.includes('FUEL'))) return 'Gas/Travel';
   if (detailed.includes('PHARMACY')) return 'Pharmacy';
   if (detailed.includes('RESTAURANT') || detailed.includes('COFFEE') || detailed.includes('FAST_FOOD')) return 'Restaurants';
   if (detailed.includes('GYMS')) return 'Healthcare';
@@ -347,7 +349,8 @@ function flowCategory(t) {
   const n = (t.merchant_name || t.name || '').toUpperCase();
   if (AI_RE.test(n)) return 'AI tools';
   if (/KUMON|BEST BRAINS|BIG BLUE|SWIM SCHOOL|SCHOLASTIC|BRIGHTCHAMP|TUTOR|KIDS EVENT/.test(n)) return 'Kids';
-  if (/VERIZON|PSE&G|PSEG|OPTIMUM|TWP OF|TOWNSHIP|COMCAST|XFINITY|NJ NATURAL|T-MOBILE|AT&T|WATER|ELECTRIC/.test(n)) return 'Bills & utilities';
+  if (/VERIZON|PSE&G|PSEG|PUBLIC SERVICE|OPTIMUM|TWP OF|TOWNSHIP|COMCAST|XFINITY|NJ NATURAL|T-MOBILE|AT&T|WATER|ELECTRIC/.test(n)) return 'Bills & utilities';
+  if ((t.personal_finance_category || {}).primary === 'RENT_AND_UTILITIES') return 'Bills & utilities';
   if (/DOORDASH|UBER ?EATS|GRUBHUB|INSTACART|POSTMATES/.test(n)) return 'Food delivery';
   if (/COVERED EXTERIOR|HOME DEPOT|LOWE'?S|CONTRACTOR|ROOFING|LIGHT INSTALLATION/.test(n)) return 'Home projects';
   if (/FRAGOMEN|LAW |ATTORNEY|LEGAL|USCIS/.test(n)) return 'Legal/immigration';

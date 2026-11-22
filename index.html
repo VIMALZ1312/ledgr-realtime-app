@@ -866,12 +866,17 @@ function flowCat(desc){
 // opens its transactions.
 var DASH_COLORS = ['#a99bf5','#86d3b5','#f5a9bf','#8fb6f2','#f3c58b','#9fd8e6','#d4a9ee','#b9dd96','#f2a88c','#a5b2f3','#e8b0d8','#9fd9c4'];
 
-// Merchant key that survives the noise in bank lines (conf#, ids, dates).
+// Merchant key that survives the noise in bank lines (conf#, ids, dates), and
+// folds a merchant's different names together — PSE&G billed as "Public
+// Service" until August and "Pse&g" after, which split it into two merchants
+// that each looked too rare to be recurring.
+var MERCH_ALIASES = { 'public service':'pse&g', 'pseg':'pse&g', 'public service electric':'pse&g' };
 function merchKey(x){
-  return String(x.n||'').toLowerCase()
+  var k = String(x.n||'').toLowerCase()
     .replace(/conf#.*|des:.*|id:.*|indn:.*|web id.*/g,'')
     .replace(/\d{3,}/g,'').replace(/[^a-z& ]/g,' ').trim()
     .split(/\s+/).slice(0,5).join(' ') || x.g;
+  return MERCH_ALIASES[k] || k;
 }
 
 // Recurring = a subscription or bill: charged in >= 3 of the last 6 full
