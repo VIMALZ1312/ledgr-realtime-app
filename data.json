@@ -2,7 +2,7 @@
   "kpis": {
     "income": 17291.08,
     "income_period": "November 2026",
-    "true_outflows": 3933.41,
+    "true_outflows": 3949.96,
     "outflows_period": "November 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -358,7 +358,7 @@
     "Refund": -11759.72,
     "Gas/Travel": 9605.22,
     "Shopping": 26859.170000000002,
-    "Groceries": 5828.899999999999,
+    "Groceries": 5845.45,
     "Restaurants": 4991.87,
     "Tax/Professional": 19417.010000000002,
     "Insurance": 496.64
@@ -679,6 +679,14 @@
   ],
   "pending_transactions": [
     {
+      "date": "11-22",
+      "desc": "Deccan Halal Mart",
+      "amount": 16.55,
+      "category": "Groceries",
+      "bank": "BofA",
+      "pending": true
+    },
+    {
       "date": "11-20",
       "desc": "Verizon",
       "amount": 256.39,
@@ -923,10 +931,10 @@
     {
       "desc": "Deccan Halal Mart",
       "category": "Groceries",
-      "count": 20,
+      "count": 21,
       "months": 5,
-      "avg_amount": 28.51,
-      "last_amount": 49.13
+      "avg_amount": 27.94,
+      "last_amount": 16.55
     },
     {
       "desc": "R K Jewels",
@@ -1660,7 +1668,7 @@
       "income": 17291.08,
       "bofa_income": 17291.08,
       "td_income": 0,
-      "outflows": 3933.41,
+      "outflows": 3949.96,
       "xoom": 0,
       "investments": 0
     }
@@ -9102,10 +9110,10 @@
         "Insurance": 265.9,
         "Shopping": 833.9,
         "Restaurants": 184.27999999999997,
-        "Groceries": 438.49,
+        "Groceries": 455.04,
         "Gas/Travel": 121.02
       },
-      "total": 3933.4100000000003,
+      "total": 3949.9600000000005,
       "transactions": [
         {
           "id": "YDE1KKBbaLt1rwnmzMa3hLnPR4A1mqCzNJDn8",
@@ -9729,6 +9737,20 @@
           "desc": "BP",
           "amount": 56.17,
           "category": "Gas/Travel",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "id": "odaDer4pmjibqVvavqR1h16ODQqPQLHP1VZpY",
+          "date": "11-22",
+          "desc": "Deccan Halal Mart",
+          "amount": 16.55,
+          "category": "Groceries",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -28405,8 +28427,8 @@
       "hidden_at": "2026-11-21T22:17:39.649Z"
     }
   ],
-  "generated_at": "2026-11-22T11:01:39.064Z",
-  "rebuilt_at": "2026-11-22T11:01:39.651Z",
+  "generated_at": "2026-11-22T19:24:11.652Z",
+  "rebuilt_at": "2026-11-22T19:24:12.199Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -28492,10 +28514,10 @@
           "5677",
           "9715"
         ],
-        "txns": 382,
+        "txns": 383,
         "pages": 1,
         "truncated": false,
-        "last_txn": "2026-11-20"
+        "last_txn": "2026-11-22"
       },
       {
         "nickname": "zillow",
@@ -28541,20 +28563,19 @@
       }
     ],
     "failed": [],
-    "forced_refresh": [
-      "pnc",
-      "zillow",
-      "robin",
-      "wifebofa",
-      "bofa",
-      "td",
-      "wf"
-    ],
+    "forced_refresh": [],
     "refresh_errors": {
-      "discover": "PRODUCTS_NOT_SUPPORTED"
+      "discover": "TRANSACTIONS_LIMIT",
+      "td": "TRANSACTIONS_LIMIT",
+      "wf": "TRANSACTIONS_LIMIT",
+      "bofa": "TRANSACTIONS_LIMIT",
+      "pnc": "TRANSACTIONS_LIMIT",
+      "robin": "TRANSACTIONS_LIMIT",
+      "wifebofa": "TRANSACTIONS_LIMIT",
+      "zillow": "TRANSACTIONS_LIMIT"
     },
     "cached_balances": [],
-    "txns_fetched": 1437,
+    "txns_fetched": 1438,
     "duplicates_removed": 22,
     "duplicate_sample": [
       {
