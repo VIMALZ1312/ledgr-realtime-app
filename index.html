@@ -16,9 +16,9 @@
 /* Pastel theme. Accents (--green, --red…) stay readable as text; the --p-*
    tints are the soft fills behind cards, pills and the active tab. */
 [data-theme="dark"]{--bg:#14121d;--surface:#1b1928;--card:#201e2f;--s2:#29263b;--s3:#322e48;--border:rgba(200,190,255,0.10);--border2:rgba(200,190,255,0.06);--text:#efedf8;--muted:#a29dbd;--muted2:#5d5878;--modal-bg:rgba(8,6,16,0.72);--modal-card:#211f31;--green:#86e0bd;--red:#f6a3b7;--yellow:#f4d48f;--blue:#a5c3fa;--orange:#f7b98e;--purple:#c0b4fc;--accent:#c0b4fc;
-  --p-mint:rgba(134,224,189,0.13);--p-rose:rgba(246,163,183,0.13);--p-sky:rgba(165,195,250,0.13);--p-lav:rgba(192,180,252,0.15);--p-peach:rgba(247,185,142,0.13);--shadow:0 1px 2px rgba(0,0,0,.25),0 8px 24px rgba(0,0,0,.18);--on-accent:#1b1928;}
+  --track:rgba(255,255,255,0.10);--p-mint:rgba(134,224,189,0.13);--p-rose:rgba(246,163,183,0.13);--p-sky:rgba(165,195,250,0.13);--p-lav:rgba(192,180,252,0.15);--p-peach:rgba(247,185,142,0.13);--shadow:0 1px 2px rgba(0,0,0,.25),0 8px 24px rgba(0,0,0,.18);--on-accent:#1b1928;}
 [data-theme="light"]{--bg:#f6f4fb;--surface:#ffffff;--card:#ffffff;--s2:#f3f0fa;--s3:#e9e4f5;--border:rgba(84,64,150,0.10);--border2:rgba(84,64,150,0.06);--text:#272240;--muted:#7f799b;--muted2:#c4bfd8;--modal-bg:rgba(39,34,64,0.35);--modal-card:#ffffff;--green:#1f9d77;--red:#d6577a;--yellow:#b9862a;--blue:#4a7fe0;--orange:#d97b44;--purple:#7a68ee;--accent:#7a68ee;
-  --p-mint:#e2f6ee;--p-rose:#fde9ef;--p-sky:#e6eefd;--p-lav:#efebfe;--p-peach:#fdeee4;--shadow:0 1px 2px rgba(60,40,120,.05),0 6px 20px rgba(60,40,120,.06);--on-accent:#ffffff;}
+  --track:#ffffff;--p-mint:#e2f6ee;--p-rose:#fde9ef;--p-sky:#e6eefd;--p-lav:#efebfe;--p-peach:#fdeee4;--shadow:0 1px 2px rgba(60,40,120,.05),0 6px 20px rgba(60,40,120,.06);--on-accent:#ffffff;}
 *{box-sizing:border-box;margin:0;padding:0;}
 body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;font-size:15px;line-height:1.5;min-height:100vh;}
 .shell{display:flex;min-height:100vh;}
@@ -179,6 +179,34 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:14.5px;-webk
 .txn-restore{border:none;background:var(--p-mint);color:var(--green);border-radius:10px;padding:7px 10px;font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;}
 .toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,20px);opacity:0;background:var(--text);color:var(--bg);padding:10px 16px;border-radius:999px;font-size:13px;font-weight:600;z-index:900;transition:all .25s;box-shadow:var(--shadow);}
 .toast.show{opacity:1;transform:translate(-50%,0);}
+/* Dashboard */
+.dash-net{background:linear-gradient(135deg,var(--p-lav),var(--p-sky));border-radius:24px;padding:22px 22px 18px;margin-bottom:14px;cursor:pointer;box-shadow:var(--shadow);}
+.dash-net-label{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.3px;}
+.dash-net-val{font-size:38px;font-weight:800;letter-spacing:-.03em;margin:4px 0 10px;font-variant-numeric:tabular-nums;}
+.dash-net-sub{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:var(--muted);font-weight:600;}
+.dash-head{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);font-weight:600;margin:4px 4px 8px;}
+.dash-bar{border-radius:20px;padding:14px 16px 16px;margin-bottom:10px;cursor:pointer;box-shadow:var(--shadow);}
+.dash-bar-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:10px;}
+.dash-bar-title{font-size:14px;font-weight:800;}
+.dash-bar-sub{font-size:12px;color:var(--muted);margin-top:2px;font-weight:500;}
+.dash-bar-pct{font-size:22px;font-weight:800;font-variant-numeric:tabular-nums;}
+.dash-track{display:flex;height:16px;background:var(--track);border-radius:99px;overflow:hidden;}
+.dash-fill{height:100%;}
+.dash-fill:first-child{border-radius:99px 0 0 99px;}
+.dash-est{background:repeating-linear-gradient(-45deg,color-mix(in srgb,var(--ink) 45%,transparent) 0 6px,color-mix(in srgb,var(--ink) 22%,transparent) 6px 12px);}
+.dash-cats{margin-top:14px;}
+.dash-cat{padding:9px 6px;margin:0 -6px;border-radius:12px;cursor:pointer;}
+.dash-cat:hover{background:var(--s2);}
+.dash-cat-row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:6px;}
+.dash-cat-name{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;min-width:0;}
+.dash-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;}
+.dash-cat-amt{font-size:13px;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap;}
+.dash-cat-avg{font-weight:500;color:var(--muted);font-size:11.5px;}
+.dash-cat-track{position:relative;height:10px;background:var(--s2);border-radius:99px;}
+.dash-cat-fill{height:100%;border-radius:99px;}
+.dash-cat-mark{position:absolute;top:-3px;width:2px;height:16px;background:var(--text);opacity:.35;border-radius:2px;transform:translateX(-1px);}
+.dash-modal-sum{display:flex;gap:18px;flex-wrap:wrap;background:var(--s2);border-radius:16px;padding:14px 16px;margin-bottom:6px;}
+.dash-modal-sum .kpi-val{font-size:20px;}
 @media(max-width:700px){
   .sidebar{display:none;}
   .topbar{display:flex;}
@@ -830,6 +858,180 @@ function flowCat(desc){
   return '';
 }
 
+// ── Dashboard (Overview top): net balance, this month vs usual, categories ──
+// Layout from the owner's design: one Net Balance card, then two bars —
+// subscriptions/recurring and everything else — whose full width is the
+// 6-month average and whose fill is this month (paid solid, still-expected
+// recurring striped), then one bar per category, biggest first. Every block
+// opens its transactions.
+var DASH_COLORS = ['#a99bf5','#86d3b5','#f5a9bf','#8fb6f2','#f3c58b','#9fd8e6','#d4a9ee','#b9dd96','#f2a88c','#a5b2f3','#e8b0d8','#9fd9c4'];
+
+// Merchant key that survives the noise in bank lines (conf#, ids, dates).
+function merchKey(x){
+  return String(x.n||'').toLowerCase()
+    .replace(/conf#.*|des:.*|id:.*|indn:.*|web id.*/g,'')
+    .replace(/\d{3,}/g,'').replace(/[^a-z& ]/g,' ').trim()
+    .split(/\s+/).slice(0,5).join(' ') || x.g;
+}
+
+// Recurring = a subscription or bill: charged in >= 3 of the last 6 full
+// months, at most twice a month, at a near-constant amount (within 25% of its
+// median), and not an everyday-shopping category — so the weekly ShopRite run
+// or Amazon orders don't pass for subscriptions. Home/car loans always count.
+// Returns {key: {median, day, months}}.
+var LOOSE_RECURRING_GROUPS = { 'Bills & utilities':1, 'Kids':1, 'Bank & card fees':1 };
+var NOT_RECURRING_GROUPS = { 'Groceries':1, 'Restaurants':1, 'Food delivery':1, 'Gas/Travel':1, 'Shopping':1, 'Amazon':1, 'Sent to India':1, 'Refunds & cashback':1, 'Home projects':1 };
+function findRecurring(cf, hist){
+  var seen = {};
+  hist.forEach(function(p){
+    var byKey = {};
+    (cf[p].tx_out||[]).forEach(function(x){
+      if(x.a <= 0 || NOT_RECURRING_GROUPS[x.g]) return;
+      var k = merchKey(x);
+      var e = byKey[k] = byKey[k] || { amt:0, n:0, day:+String(x.d).slice(3,5), loan: x.g === 'Home & car loans', bill: !!LOOSE_RECURRING_GROUPS[x.g] };
+      e.amt += x.a; e.n++;
+    });
+    Object.keys(byKey).forEach(function(k){ (seen[k] = seen[k] || []).push({ p:p, amt:byKey[k].amt, n:byKey[k].n, day:byKey[k].day, loan:byKey[k].loan, bill:byKey[k].bill }); });
+  });
+  var med = function(a){ var s = a.slice().sort(function(x,y){ return x-y; }); var m = s.length>>1; return s.length % 2 ? s[m] : (s[m-1]+s[m])/2; };
+  var out = {};
+  Object.keys(seen).forEach(function(k){
+    var h = seen[k], amts = h.map(function(e){ return e.amt; }), m = med(amts);
+    // Utilities and kids' classes swing with the season or the number of
+    // sessions, so they get a looser band than a fixed-price subscription.
+    var lo = h.some(function(e){ return e.bill; }) ? 0.5 : 0.75, hi = lo === 0.5 ? 2 : 1.25;
+    var steady = amts.filter(function(a){ return a >= m*lo && a <= m*hi; }).length >= 3;
+    var monthly = h.every(function(e){ return e.n <= 2; });
+    if(h.some(function(e){ return e.loan; }) || (h.length >= 3 && steady && monthly)){
+      out[k] = { median: m, day: Math.round(med(h.map(function(e){ return e.day; }))), months: h.map(function(e){ return e.p; }) };
+    }
+  });
+  return out;
+}
+
+function monthBudget(){
+  var cf = D.cashflow; if(!cf) return null;
+  var periods = Object.keys(cf).sort();
+  var cur = periods[periods.length-1];
+  var hist = periods.filter(function(p){ return p < cur; }).slice(-6);
+  if(!hist.length) return null;
+  var rec = findRecurring(cf, hist);
+  var split = function(p){
+    var s = { sub:[], non:[] };
+    (cf[p].tx_out||[]).forEach(function(x){ (rec[merchKey(x)] && x.a > 0 ? s.sub : s.non).push(x); });
+    return s;
+  };
+  var sum = function(l){ return l.reduce(function(t,x){ return t + x.a; }, 0); };
+  var now = split(cur), m = cf[cur];
+  // Still to come this month: recurring merchants active lately (in at least
+  // one of the last 2 months) that haven't charged yet.
+  var paidKeys = {}; now.sub.forEach(function(x){ paidKeys[merchKey(x)] = true; });
+  var recent = hist.slice(-2);
+  var expected = [];
+  if(m.days < m.days_in_month){
+    Object.keys(rec).forEach(function(k){
+      var r = rec[k];
+      if(paidKeys[k] || !r.months.some(function(p){ return recent.indexOf(p) >= 0; })) return;
+      expected.push({ key:k, a:r.median, day:r.day, late: r.day < m.days - 3 });
+    });
+  }
+  expected.sort(function(a,b){ return a.day - b.day; });
+  var avg = { sub:0, non:0 };
+  hist.forEach(function(p){ var s = split(p); avg.sub += sum(s.sub); avg.non += sum(s.non); });
+  avg.sub /= hist.length; avg.non /= hist.length;
+  // Categories: this month's spend per group vs that group's 6-month average.
+  var cats = {};
+  (m.tx_out||[]).forEach(function(x){ if(x.g !== 'Refunds & cashback') cats[x.g] = (cats[x.g]||0) + x.a; });
+  var catAvg = function(g){ return hist.reduce(function(t,p){ return t + (cf[p].tx_out||[]).reduce(function(u,x){ return x.g === g ? u + x.a : u; }, 0); }, 0) / hist.length; };
+  var catList = Object.keys(cats).filter(function(g){ return cats[g] > 0.5; })
+    .map(function(g){ return { g:g, v:cats[g], avg:catAvg(g) }; })
+    .sort(function(a,b){ return b.v - a.v; });
+  return { cur:cur, m:m, now:now, expected:expected, avg:avg, cats:catList, rec:rec,
+           paidSub: sum(now.sub), paidNon: sum(now.non), expSub: sum(expected) };
+}
+window._budget = null;
+
+function renderDashboard(netBal, cashBal, cardBal){
+  var b = window._budget = monthBudget();
+  var html = '';
+  // 1. Net balance
+  html += '<div class="dash-net" onclick="showNetWorth()">'
+    + '<div class="dash-net-label">Net balance</div>'
+    + '<div class="dash-net-val">'+fmt(netBal)+'</div>'
+    + '<div class="dash-net-sub"><span>Cash & investments '+fmt(cashBal)+'</span><span>Cards owed −'+fmt(cardBal)+'</span></div>'
+    + '</div>';
+  if(!b) return html;
+  var mon = new Date(b.cur+'-15T00:00:00').toLocaleString('en-US',{month:'long'});
+  var partial = b.m.days < b.m.days_in_month;
+
+  // 2. This month vs 6-month average
+  var bar = function(kind, title, paid, est, avg, tint, ink){
+    var full = Math.max(avg, 1), pPaid = Math.min(100, paid/full*100), pEst = Math.min(100 - pPaid, est/full*100);
+    var pct = Math.round((paid + est)/full*100);
+    var over = paid + est > avg;
+    return '<div class="dash-bar" style="background:'+tint+'" onclick="showBudget(\''+kind+'\')">'
+      + '<div class="dash-bar-top"><div><div class="dash-bar-title">'+title+'</div>'
+      + '<div class="dash-bar-sub">'+fmt(paid)+' paid'+(est ? ' + ~'+fmt(est)+' expected' : '')+' · usual '+fmt(avg)+'</div></div>'
+      + '<div class="dash-bar-pct" style="color:'+(over ? 'var(--red)' : ink)+'">'+pct+'%</div></div>'
+      + '<div class="dash-track"><div class="dash-fill" style="width:'+pPaid+'%;background:'+ink+'"></div>'
+      + (pEst > 0 ? '<div class="dash-fill dash-est" style="width:'+pEst+'%;--ink:'+ink+'"></div>' : '') + '</div>'
+      + '</div>';
+  };
+  html += '<div class="dash-head"><span>'+mon+(partial ? ' · day '+b.m.days+' of '+b.m.days_in_month : '')+'</span><span>bar = your 6-month average</span></div>';
+  html += bar('sub', 'Subscriptions & recurring', b.paidSub, b.expSub, b.avg.sub, 'var(--p-lav)', '#8b7cf6');
+  html += bar('non', 'Everything else', b.paidNon, 0, b.avg.non, 'var(--p-peach)', '#ec9a6a');
+
+  // 3. Categories, biggest spend first
+  if(b.cats.length){
+    html += '<div class="panel dash-cats"><div class="panel-head"><div class="panel-title">Where it went · '+mon+'</div><div class="panel-action">vs usual</div></div>';
+    b.cats.forEach(function(c, i){
+      var col = DASH_COLORS[i % DASH_COLORS.length];
+      var full = Math.max(c.avg, c.v, 1), w = c.v/full*100, mark = c.avg > 0 ? Math.min(100, c.avg/full*100) : -1;
+      var catEsc = esc(c.g).replace(/\\/g,'\\\\').replace(/'/g,'\\\'');
+      html += '<div class="dash-cat" onclick="showFlow(\''+b.cur+'\',\'out\',\''+catEsc+'\')">'
+        + '<div class="dash-cat-row"><span class="dash-cat-name"><span class="dash-dot" style="background:'+col+'"></span>'+esc(c.g)+'</span>'
+        + '<span class="dash-cat-amt">'+fmt(c.v)+(c.avg > 0 ? '<span class="dash-cat-avg"> / '+fmt(c.avg)+'</span>' : '<span class="dash-cat-avg"> new</span>')+'</span></div>'
+        + '<div class="dash-cat-track"><div class="dash-cat-fill" style="width:'+w+'%;background:'+col+'"></div>'
+        + (mark >= 0 ? '<div class="dash-cat-mark" style="left:'+mark+'%"></div>' : '') + '</div></div>';
+    });
+    html += '<div style="font-size:11px;color:var(--muted);margin-top:8px">The tick marks your 6-month average for that category. Tap a row to see its transactions.</div></div>';
+  }
+  return html;
+}
+
+// Popup for the two bars: what was paid (deletable) and what's still expected.
+function showBudget(kind){
+  var b = window._budget; if(!b) return;
+  var paid = (kind === 'sub' ? b.now.sub : b.now.non).slice().sort(function(x,y){ return Math.abs(y.a) - Math.abs(x.a); });
+  var mon = new Date(b.cur+'-15T00:00:00').toLocaleString('en-US',{month:'long', year:'numeric'});
+  var row = function(x){
+    return '<div class="txn"><div class="txn-date">'+esc(x.d)+'</div>'
+      + '<div class="txn-main"><div class="txn-name">'+esc(cleanDesc(x.n))+'</div><div class="txn-meta"><span class="pill">'+esc(x.g)+'</span>'+(x.b ? ' '+esc(x.b)+(x.k ? ' ••'+esc(x.k) : '') : '')+'</div></div>'
+      + '<div class="txn-amt" style="color:'+(x.a < 0 ? 'var(--green)' : 'var(--text)')+'">'+(x.a < 0 ? '−' : '')+fmt2(Math.abs(x.a))+'</div>'
+      + (x.id ? '<button class="txn-del" title="Delete everywhere" onclick="deleteTxn(\''+esc(x.id)+'\', this, \''+esc(cleanDesc(x.n)).replace(/\\/g,'\\\\').replace(/\'/g,'\\\'')+'\')">🗑</button>' : '')
+      + '</div>';
+  };
+  var total = paid.reduce(function(t,x){ return t + x.a; }, 0);
+  var h = '<div class="dash-modal-sum"><div><div class="kpi-label">Paid so far</div><div class="kpi-val">'+fmt2(total)+'</div></div>';
+  if(kind === 'sub') h += '<div><div class="kpi-label">Still expected</div><div class="kpi-val" style="color:var(--purple)">~'+fmt(b.expSub)+'</div></div>';
+  h += '<div><div class="kpi-label">Usual month</div><div class="kpi-val" style="color:var(--muted)">'+fmt(kind === 'sub' ? b.avg.sub : b.avg.non)+'</div></div></div>';
+  if(kind === 'sub' && b.expected.length){
+    h += '<div class="srch-month">Still expected this month</div>';
+    b.expected.forEach(function(e){
+      h += '<div class="txn" style="opacity:.85"><div class="txn-date">~'+(b.cur.slice(5))+'-'+('0'+e.day).slice(-2)+'</div>'
+        + '<div class="txn-main"><div class="txn-name">'+esc(e.key.replace(/\b\w/g,function(c){ return c.toUpperCase(); }))+'</div>'
+        + '<div class="txn-meta">'+(e.late ? 'usually by the '+e.day+(e.day===1?'st':e.day===2?'nd':e.day===3?'rd':'th')+' — not seen yet' : 'estimate from past months')+'</div></div>'
+        + '<div class="txn-amt" style="color:var(--purple)">~'+fmt2(e.a)+'</div></div>';
+    });
+  }
+  h += '<div class="srch-month">Paid · '+paid.length+'</div>';
+  h += paid.length ? paid.map(row).join('') : '<div style="color:var(--muted);font-size:13px;padding:8px 0">Nothing yet this month.</div>';
+  h += '<div style="font-size:11px;color:var(--muted);margin-top:10px">'+(kind === 'sub'
+    ? 'Recurring = charged in at least 3 of the last 6 months at a similar amount, plus home and car loans.'
+    : 'Everything that isn’t recurring. Refunds show in green and reduce the total.')+'</div>';
+  openModal(kind === 'sub' ? 'Subscriptions & recurring · '+mon : 'Everything else · '+mon, 'Paid so far'+(kind === 'sub' ? ' and still expected' : ''), h);
+}
+
 function renderOverview() {
   var ms = D.monthly_spending || {};
   var mh = D.monthly_history || [];
@@ -846,11 +1048,10 @@ function renderOverview() {
 
   // Connected banks strip — on top so missing banks are obvious
   var html = renderBanksStrip(allAccts);
-  html += '<div class="kpi-row">';
-  html += mkKpi('NET WORTH', fmt(netWorth), netWorth >= 0 ? 'var(--green)' : 'var(--red)', 'tap for breakdown', 'showNetWorth()');
-  html += mkKpi('CHECKING', fmt(checkingBal), 'var(--blue)', 'savings + brokerage', 'showChecking()');
-  html += mkKpi('CREDIT OWED', fmt(creditBal + loanBal), 'var(--red)', loanBal>0 ? 'cards + loans/mortgage' : 'cards balance', 'showCredit()');
-  html += '</div>';
+  // Dashboard per the owner's design: net balance (cash & investments minus
+  // card debt), this month vs usual, then categories. Net worth with the house,
+  // loans and private savings is one tap away (showNetWorth).
+  html += renderDashboard(checkingBal - creditBal, checkingBal, creditBal);
 
   // Text insights — what moved net worth, MoM + last 7 days
   html += renderInsights();
