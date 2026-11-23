@@ -2,7 +2,7 @@
   "kpis": {
     "income": 17291.08,
     "income_period": "November 2026",
-    "true_outflows": 3949.96,
+    "true_outflows": 3998.83,
     "outflows_period": "November 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -92,7 +92,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 5246.33,
-      "available": 5309.33,
+      "available": 4177.68,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -329,8 +329,8 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 52730.25,
-      "available": 14516.19,
+      "balance": 52085.51,
+      "available": 417.2,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -338,10 +338,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 78157.22,
+    "total_checking": 77512.48000000001,
     "total_credit": 3229.24,
     "total_loans": 384584.29,
-    "net": -309656.31
+    "net": -310301.05
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -353,11 +353,11 @@
   },
   "spending": {
     "Entertainment": 3063.0099999999993,
-    "Healthcare": 4588.03,
+    "Healthcare": 4601.179999999999,
     "Tech/Subs": 16298.890000000003,
     "Refund": -11759.72,
     "Gas/Travel": 8132.71,
-    "Shopping": 26859.170000000002,
+    "Shopping": 26894.890000000003,
     "Groceries": 5845.45,
     "Restaurants": 4991.87,
     "Tax/Professional": 19417.010000000002,
@@ -715,9 +715,9 @@
     {
       "desc": "Amazon",
       "category": "Shopping",
-      "count": 101,
+      "count": 102,
       "months": 11,
-      "avg_amount": 27.91,
+      "avg_amount": 27.98,
       "last_amount": 28.95
     },
     {
@@ -755,9 +755,9 @@
     {
       "desc": "Walgreens",
       "category": "Healthcare",
-      "count": 24,
+      "count": 25,
       "months": 10,
-      "avg_amount": 32.19,
+      "avg_amount": 31.21,
       "last_amount": 3.26
     },
     {
@@ -1209,6 +1209,14 @@
       "last_amount": 5.95
     },
     {
+      "desc": "CVS Pharmacy",
+      "category": "Healthcare",
+      "count": 3,
+      "months": 3,
+      "avg_amount": 5.33,
+      "last_amount": 5.33
+    },
+    {
       "desc": "ACCOUNT ADJUSTMENT",
       "category": "Refund",
       "count": 3,
@@ -1551,14 +1559,6 @@
       "months": 2,
       "avg_amount": 5.33,
       "last_amount": 5.33
-    },
-    {
-      "desc": "CVS Pharmacy",
-      "category": "Healthcare",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 5.33,
-      "last_amount": 5.33
     }
   ],
   "monthly_history": [
@@ -1668,7 +1668,7 @@
       "income": 17291.08,
       "bofa_income": 17291.08,
       "td_income": 0,
-      "outflows": 3949.96,
+      "outflows": 3998.83,
       "xoom": 0,
       "investments": 0
     }
@@ -9106,14 +9106,14 @@
       "categories": {
         "Tech/Subs": 1878.0500000000002,
         "Entertainment": 39.41,
-        "Healthcare": 172.35999999999999,
+        "Healthcare": 185.50999999999996,
         "Insurance": 265.9,
-        "Shopping": 833.9,
+        "Shopping": 869.62,
         "Restaurants": 184.27999999999997,
         "Groceries": 455.04,
         "Gas/Travel": 121.02
       },
-      "total": 3949.9600000000005,
+      "total": 3998.8300000000004,
       "transactions": [
         {
           "id": "YDE1KKBbaLt1rwnmzMa3hLnPR4A1mqCzNJDn8",
@@ -9557,6 +9557,48 @@
           "category": "Healthcare",
           "city": "North Brunswick",
           "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "id": "pyLBkagDBXSKJjoooPOdtwqqyrPy8zhZgv9oZ",
+          "date": "11-21",
+          "desc": "Amazon",
+          "amount": 35.72,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "id": "Xx5JzwLjJkIB1Xggg3xMhgbb8rB8PDI05o3gO",
+          "date": "11-21",
+          "desc": "Walgreens",
+          "amount": 7.82,
+          "category": "Healthcare",
+          "city": "North Brunswick",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "id": "NyoKzMbvKZSa5M999Y6kF955kjpkn0Ux9Z1Db",
+          "date": "11-21",
+          "desc": "CVS Pharmacy",
+          "amount": 5.33,
+          "category": "Healthcare",
+          "city": null,
+          "state": "RI",
           "bank": "Wells Fargo",
           "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
           "mask": "9762",
@@ -16019,6 +16061,16 @@
       "category": "Tech/Subs",
       "city": null,
       "state": "CA",
+      "period": "2026-11",
+      "period_label": "November 2026"
+    },
+    {
+      "date": "11-21",
+      "desc": "CVS Pharmacy",
+      "amount": 5.33,
+      "category": "Healthcare",
+      "city": null,
+      "state": "RI",
       "period": "2026-11",
       "period_label": "November 2026"
     },
@@ -27690,8 +27742,8 @@
         "other_in": 0
       },
       "spent": {
-        "total": 10107.72,
-        "purchases": 3543.02,
+        "total": 10156.59,
+        "purchases": 3591.89,
         "refunds": 0,
         "loans": 3909.09,
         "fees": 108.25,
@@ -27703,17 +27755,17 @@
         "invested": 100
       },
       "internal": {
-        "count": 8,
-        "total": 2296.52
+        "count": 9,
+        "total": 2896.52
       },
       "by_category": {
         "Bills & utilities": 785.04,
         "Sent to India": 2392.36,
         "Entertainment": 30.41,
         "Tech/Subs": 16.45,
-        "Healthcare": 172.36,
+        "Healthcare": 185.51,
         "Insurance": 265.9,
-        "Shopping": 708.9,
+        "Shopping": 744.62,
         "Kids": 834.2,
         "Restaurants": 170.25,
         "Groceries": 438.49,
@@ -28399,6 +28451,33 @@
           "g": "Shopping",
           "b": "Robinhood",
           "k": "1345"
+        },
+        {
+          "id": "pyLBkagDBXSKJjoooPOdtwqqyrPy8zhZgv9oZ",
+          "d": "11-21",
+          "n": "Amazon",
+          "a": 35.72,
+          "g": "Shopping",
+          "b": "Wells Fargo",
+          "k": "9762"
+        },
+        {
+          "id": "Xx5JzwLjJkIB1Xggg3xMhgbb8rB8PDI05o3gO",
+          "d": "11-21",
+          "n": "Walgreens",
+          "a": 7.82,
+          "g": "Healthcare",
+          "b": "Wells Fargo",
+          "k": "9762"
+        },
+        {
+          "id": "NyoKzMbvKZSa5M999Y6kF955kjpkn0Ux9Z1Db",
+          "d": "11-21",
+          "n": "CVS Pharmacy",
+          "a": 5.33,
+          "g": "Healthcare",
+          "b": "Wells Fargo",
+          "k": "9762"
         }
       ],
       "tx_moved": [
@@ -28425,6 +28504,11 @@
       "balance": 2629.04,
       "limit": 3000,
       "payments": [
+        {
+          "date": "2026-11-22",
+          "amount": 600,
+          "pending": false
+        },
         {
           "date": "2026-11-08",
           "amount": 500,
@@ -28459,11 +28543,6 @@
           "date": "2026-07-20",
           "amount": 3000,
           "pending": false
-        },
-        {
-          "date": "2026-06-18",
-          "amount": 2972.36,
-          "pending": false
         }
       ],
       "source": "estimated",
@@ -28472,7 +28551,7 @@
       "due_estimated": true,
       "statement_date": "2026-11-02",
       "statement_date_estimated": true,
-      "paid_since_statement": 500,
+      "paid_since_statement": 1100,
       "remaining_due": 2629.04
     },
     {
@@ -28729,8 +28808,8 @@
       "hidden_at": "2026-11-21T22:17:39.649Z"
     }
   ],
-  "generated_at": "2026-11-23T05:02:33.118Z",
-  "rebuilt_at": "2026-11-23T05:02:33.742Z",
+  "generated_at": "2026-11-23T11:01:44.057Z",
+  "rebuilt_at": "2026-11-23T11:01:44.692Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -28758,10 +28837,10 @@
           "7309",
           "8206"
         ],
-        "txns": 234,
+        "txns": 236,
         "pages": 1,
         "truncated": false,
-        "last_txn": "2026-11-22"
+        "last_txn": "2026-11-23"
       },
       {
         "nickname": "wf",
@@ -28773,7 +28852,7 @@
           "8036",
           "9762"
         ],
-        "txns": 631,
+        "txns": 634,
         "pages": 2,
         "truncated": false,
         "last_txn": "2026-11-23"
@@ -28871,14 +28950,14 @@
       "wifebofa",
       "bofa",
       "robin",
-      "wf",
-      "td"
+      "td",
+      "wf"
     ],
     "refresh_errors": {
       "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 1445,
+    "txns_fetched": 1450,
     "liabilities_cards": 0,
     "liabilities_errors": {
       "bofa": "ADDITIONAL_CONSENT_REQUIRED",
