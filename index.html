@@ -1176,7 +1176,7 @@ function showCard(i){
   h += (c.payments || []).length ? c.payments.map(function(p){
     return '<div class="acct-row" style="cursor:default"><span>'+niceDate(p.date)+(p.pending ? ' <span class="pay-est">pending</span>' : '')+'</span><b style="color:var(--green)">'+fmt2(p.amount)+'</b></div>';
   }).join('') : '<div style="color:var(--muted);font-size:13px;padding:6px 0">No payments in the bank data.</div>';
-  h += '<div style="font-size:11px;color:var(--muted);margin-top:10px">'+(c.source === 'bank' ? 'Due date and amounts come from the bank.' : 'The bank didn’t share statement details for this card; the due date is estimated from your usual payment day.')+'</div>';
+  h += '<div style="font-size:11px;color:var(--muted);margin-top:10px">'+(c.source === 'bank' ? 'Due date and amounts come from the bank.' : 'The bank didn’t share statement details for this card yet, so the due date is estimated'+(c.due_basis ? ' from: '+esc(c.due_basis) : '')+'. Allow “Liabilities” for this bank to get the exact date.')+'</div>';
   openModal(c.bank+' ••'+c.mask, c.name, h);
 }
 function testAlert(btn){

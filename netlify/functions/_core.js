@@ -609,21 +609,48 @@ function buildCards(accounts, transactions, liabilities) {
       source: L ? 'bank' : 'estimated',
     };
     if (L) Object.assign(card, L);
-    // No bank data: estimate the due day from the usual payment day.
-    if (!card.due_date && pays.length) {
-      const days = pays.slice(0, 6).map(p => +p.date.slice(8)).sort((x, y) => x - y);
-      const d = days[Math.floor(days.length / 2)];
-      const now = new Date(today + 'T00:00:00Z');
-      let due = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), Math.min(d, 28)));
-      if (due.toISOString().slice(0, 10) < today) due = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 1, Math.min(d, 28)));
-      card.due_date = due.toISOString().slice(0, 10);
-      card.due_estimated = true;
+    // No bank data: estimate, from the card's own history.
+    //  1. A late fee posts the day after a missed due date, so it pins the
+    //     due day exactly (Robinhood: late fees on the 13th -> due the 12th).
+    //  2. Interest posts on the statement closing date; US cards are due
+    //     about 25 days later (at least 21 by law).
+    //  3. Otherwise, the day of the month the card usually gets paid.
+    if (!card.due_date) {
+      const onCard = transactions.filter(t => ids.has(t.account_id) && t.amount > 0).sort((x, y) => y.date.localeCompare(x.date));
+      const late = onCard.find(t => /LATE FEE|LATE PAYMENT/i.test(t.name || ''));
+      const intr = onCard.find(t => /INTEREST/i.test(t.name || ''));
+      const nextDay = (day, after) => {   // first date on that day-of-month strictly after `after`
+        const a = new Date(after + 'T00:00:00Z');
+        for (let k = 0; k < 3; k++) {
+          const y = a.getUTCFullYear(), m = a.getUTCMonth() + k;
+          const last = new Date(Date.UTC(y, m + 1, 0)).getUTCDate();
+          const iso = new Date(Date.UTC(y, m, Math.min(day, last))).toISOString().slice(0, 10);
+          if (iso > after) return iso;
+        }
+        return null;
+      };
+      let close = intr ? intr.date : null;
+      // Roll a stale closing date forward to the latest cycle.
+      while (close && shiftDays(close, 30) <= today) close = shiftDays(close, 30);
+      const after = close || shiftDays(today, -1);
+      if (late) { card.due_date = nextDay(+shiftDays(late.date, -1).slice(8), after); card.due_basis = 'late fee on ' + late.date + ' (posted the day after the due date)'; }
+      else if (intr) { card.due_date = shiftDays(close, 25); card.due_basis = 'statement closed ~' + close + ' (interest posted) + 25 days'; }
+      else if (pays.length) {
+        const days = pays.slice(0, 6).map(p => +p.date.slice(8)).sort((x, y) => x - y);
+        card.due_date = nextDay(days[Math.floor(days.length / 2)], after);
+        card.due_basis = 'the day you usually pay this card';
+      }
+      if (card.due_date) card.due_estimated = true;
+      if (close) { card.statement_date = close; card.statement_date_estimated = true; }
     }
     // Paid since the last statement?
     const since = card.statement_date || (card.due_date ? shiftDays(card.due_date, -25) : null);
     card.paid_since_statement = since ? Math.round(pays.filter(p => p.date > since).reduce((s, p) => s + p.amount, 0) * 100) / 100 : 0;
-    const owedOnStatement = card.statement_balance != null ? card.statement_balance : card.balance;
-    card.remaining_due = Math.max(0, Math.round((owedOnStatement - card.paid_since_statement) * 100) / 100);
+    // With the bank's statement: statement balance minus payments since. Without
+    // it: the current balance, less payments still pending (not yet in it).
+    const owed = card.statement_balance != null ? card.statement_balance - card.paid_since_statement
+      : card.balance - pays.filter(p => p.pending).reduce((t, p) => t + p.amount, 0);
+    card.remaining_due = Math.max(0, Math.round(owed * 100) / 100);
     cards.push(card);
   });
   return cards.sort((x, y) => (x.due_date || '9999').localeCompare(y.due_date || '9999'));
