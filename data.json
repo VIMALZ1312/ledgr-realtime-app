@@ -28418,74 +28418,62 @@
   },
   "cards": [
     {
-      "bank": "Robinhood",
-      "nickname": "robin",
-      "name": "Robinhood Credit Card",
-      "mask": "1345",
-      "balance": 227.01,
-      "limit": 10000,
-      "payments": [
-        {
-          "date": "2026-11-22",
-          "amount": 25,
-          "pending": true
-        },
-        {
-          "date": "2026-10-27",
-          "amount": 1032.66,
-          "pending": false
-        },
-        {
-          "date": "2026-10-23",
-          "amount": 48,
-          "pending": false
-        },
-        {
-          "date": "2026-10-18",
-          "amount": 1030.41,
-          "pending": false
-        },
-        {
-          "date": "2026-10-14",
-          "amount": 36,
-          "pending": false
-        },
-        {
-          "date": "2026-08-29",
-          "amount": 2780.84,
-          "pending": false
-        },
-        {
-          "date": "2026-08-17",
-          "amount": 146.05,
-          "pending": false
-        }
-      ],
-      "source": "estimated",
-      "due_date": "2026-11-23",
-      "due_estimated": true,
-      "paid_since_statement": 25,
-      "remaining_due": 202.01
-    },
-    {
       "bank": "BofA",
-      "nickname": "bofa",
-      "name": "Premium Rewards Visa Signature",
-      "mask": "0910",
-      "balance": 0,
-      "limit": 21000,
+      "nickname": "wifebofa",
+      "name": "Customized Cash Rewards Visa Signature",
+      "mask": "2776",
+      "balance": 371.2,
+      "limit": 2200,
       "payments": [
         {
-          "date": "2026-08-14",
-          "amount": 95,
+          "date": "2026-11-10",
+          "amount": 538.06,
+          "pending": false
+        },
+        {
+          "date": "2026-10-26",
+          "amount": 711.03,
+          "pending": false
+        },
+        {
+          "date": "2026-10-01",
+          "amount": 920.96,
+          "pending": false
+        },
+        {
+          "date": "2026-09-14",
+          "amount": 1110.28,
+          "pending": false
+        },
+        {
+          "date": "2026-07-22",
+          "amount": 738.16,
+          "pending": false
+        },
+        {
+          "date": "2026-06-29",
+          "amount": 316.96,
+          "pending": false
+        },
+        {
+          "date": "2026-06-10",
+          "amount": 685.34,
+          "pending": false
+        },
+        {
+          "date": "2026-05-18",
+          "amount": 776.25,
           "pending": false
         }
       ],
       "source": "estimated",
-      "due_date": "2026-12-14",
+      "due_date": "2026-11-04",
+      "due_basis": "late fee on 2026-03-05 (posted the day after the due date)",
       "due_estimated": true,
-      "paid_since_statement": 0,
-      "remaining_due": 0
+      "statement_date": "2026-11-03",
+      "statement_date_estimated": true,
+      "paid_since_statement": 538.06,
+      "remaining_due": 371.2
     },
     {
       "bank": "Wells Fargo",
@@ -28527,45 +28515,13 @@
         }
       ],
       "source": "estimated",
-      "due_date": "2026-12-14",
+      "due_date": "2026-11-20",
+      "due_basis": "statement closed ~2026-10-26 (interest posted) + 25 days",
       "due_estimated": true,
+      "statement_date": "2026-10-26",
+      "statement_date_estimated": true,
       "paid_since_statement": 0,
       "remaining_due": 1.99
-    },
-    {
-      "bank": "Discover",
-      "nickname": "discover",
-      "name": "Discover it",
-      "mask": "0494",
-      "balance": 0,
-      "limit": null,
-      "payments": [
-        {
-          "date": "2026-11-17",
-          "amount": 10.2,
-          "pending": false
-        },
-        {
-          "date": "2026-09-17",
-          "amount": 37,
-          "pending": false
-        },
-        {
-          "date": "2026-07-17",
-          "amount": 74,
-          "pending": false
-        },
-        {
-          "date": "2026-06-17",
-          "amount": 50,
-          "pending": false
-        }
-      ],
-      "source": "estimated",
-      "due_date": "2026-12-17",
-      "due_estimated": true,
-      "paid_since_statement": 0,
-      "remaining_due": 0
     },
     {
       "bank": "Wells Fargo",
@@ -28617,65 +28573,125 @@
         }
       ],
       "source": "estimated",
-      "due_date": "2026-12-20",
+      "due_date": "2026-11-27",
+      "due_basis": "statement closed ~2026-11-02 (interest posted) + 25 days",
       "due_estimated": true,
-      "paid_since_statement": 0,
+      "statement_date": "2026-11-02",
+      "statement_date_estimated": true,
+      "paid_since_statement": 500,
       "remaining_due": 2580.17
     },
     {
-      "bank": "BofA",
-      "nickname": "wifebofa",
-      "name": "Customized Cash Rewards Visa Signature",
-      "mask": "2776",
-      "balance": 371.2,
-      "limit": 2200,
+      "bank": "Robinhood",
+      "nickname": "robin",
+      "name": "Robinhood Credit Card",
+      "mask": "1345",
+      "balance": 227.01,
+      "limit": 10000,
       "payments": [
         {
-          "date": "2026-11-10",
-          "amount": 538.06,
+          "date": "2026-11-22",
+          "amount": 25,
+          "pending": true
+        },
+        {
+          "date": "2026-10-27",
+          "amount": 1032.66,
           "pending": false
         },
         {
-          "date": "2026-10-26",
-          "amount": 711.03,
+          "date": "2026-10-23",
+          "amount": 48,
           "pending": false
         },
         {
-          "date": "2026-10-01",
-          "amount": 920.96,
+          "date": "2026-10-18",
+          "amount": 1030.41,
           "pending": false
         },
         {
-          "date": "2026-09-14",
-          "amount": 1110.28,
+          "date": "2026-10-14",
+          "amount": 36,
           "pending": false
         },
         {
-          "date": "2026-07-22",
-          "amount": 738.16,
+          "date": "2026-08-29",
+          "amount": 2780.84,
           "pending": false
         },
         {
-          "date": "2026-06-29",
-          "amount": 316.96,
-          "pending": false
-        },
-        {
-          "date": "2026-06-10",
-          "amount": 685.34,
-          "pending": false
-        },
-        {
-          "date": "2026-05-18",
-          "amount": 776.25,
+          "date": "2026-08-17",
+          "amount": 146.05,
           "pending": false
         }
       ],
       "source": "estimated",
-      "due_date": "2026-12-22",
+      "due_date": "2026-12-12",
+      "due_basis": "late fee on 2026-10-13 (posted the day after the due date)",
+      "due_estimated": true,
+      "statement_date": "2026-11-19",
+      "statement_date_estimated": true,
+      "paid_since_statement": 25,
+      "remaining_due": 202.01
+    },
+    {
+      "bank": "BofA",
+      "nickname": "bofa",
+      "name": "Premium Rewards Visa Signature",
+      "mask": "0910",
+      "balance": 0,
+      "limit": 21000,
+      "payments": [
+        {
+          "date": "2026-08-14",
+          "amount": 95,
+          "pending": false
+        }
+      ],
+      "source": "estimated",
+      "due_date": "2026-12-14",
+      "due_basis": "the day you usually pay this card",
       "due_estimated": true,
       "paid_since_statement": 0,
-      "remaining_due": 371.2
+      "remaining_due": 0
+    },
+    {
+      "bank": "Discover",
+      "nickname": "discover",
+      "name": "Discover it",
+      "mask": "0494",
+      "balance": 0,
+      "limit": null,
+      "payments": [
+        {
+          "date": "2026-11-17",
+          "amount": 10.2,
+          "pending": false
+        },
+        {
+          "date": "2026-09-17",
+          "amount": 37,
+          "pending": false
+        },
+        {
+          "date": "2026-07-17",
+          "amount": 74,
+          "pending": false
+        },
+        {
+          "date": "2026-06-17",
+          "amount": 50,
+          "pending": false
+        }
+      ],
+      "source": "estimated",
+      "due_date": "2026-12-18",
+      "due_basis": "statement closed ~2026-11-23 (interest posted) + 25 days",
+      "due_estimated": true,
+      "statement_date": "2026-11-23",
+      "statement_date_estimated": true,
+      "paid_since_statement": 0,
+      "remaining_due": 0
     },
     {
       "bank": "TD Bank",
@@ -28713,8 +28729,8 @@
       "hidden_at": "2026-11-21T22:17:39.649Z"
     }
   ],
-  "generated_at": "2026-11-23T01:33:20.738Z",
-  "rebuilt_at": "2026-11-23T01:33:21.379Z",
+  "generated_at": "2026-11-23T01:54:37.590Z",
+  "rebuilt_at": "2026-11-23T01:54:38.201Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -28852,11 +28868,11 @@
     "forced_refresh": [
       "pnc",
       "zillow",
+      "wifebofa",
       "bofa",
       "robin",
-      "wifebofa",
-      "wf",
-      "td"
+      "td",
+      "wf"
     ],
     "refresh_errors": {
       "discover": "PRODUCTS_NOT_SUPPORTED"
