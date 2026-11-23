@@ -28729,8 +28729,8 @@
       "hidden_at": "2026-11-21T22:17:39.649Z"
     }
   ],
-  "generated_at": "2026-11-23T04:38:10.255Z",
-  "rebuilt_at": "2026-11-23T04:38:10.886Z",
+  "generated_at": "2026-11-23T05:02:33.118Z",
+  "rebuilt_at": "2026-11-23T05:02:33.742Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
