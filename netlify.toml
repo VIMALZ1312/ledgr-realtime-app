@@ -62,3 +62,8 @@
   from = "/api/hide"
   to = "/.netlify/functions/hide"
   status = 200
+
+[[redirects]]
+  from = "/api/notify-test"
+  to = "/.netlify/functions/notify-test"
+  status = 200

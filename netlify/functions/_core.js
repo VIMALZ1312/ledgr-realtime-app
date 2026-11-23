@@ -571,6 +571,130 @@ function dedupeCrossItemTxns(accounts, transactions) {
   return { transactions: kept, removed };
 }
 
+// ── CREDIT CARD DUE DATES (Payment monitor) ─────────────────────────────────
+// Plaid /liabilities/get gives each card's statement balance, minimum payment
+// and next due date straight from the bank. Not every Item has the liabilities
+// product, so each card also carries what the transactions show: its recent
+// payments, and a due day estimated from when it usually gets paid.
+const CARD_PAYMENT_RE = /PAYMENT|AUTOPAY|AUTO PAY|THANK YOU|PMT|EPAY|E-PAY/i;
+function pickLiability(l) {
+  return {
+    due_date: l.next_payment_due_date || null,
+    min_due: l.minimum_payment_amount ?? null,
+    statement_balance: l.last_statement_balance ?? null,
+    statement_date: l.last_statement_issue_date || null,
+    last_payment_date: l.last_payment_date || null,
+    last_payment_amount: l.last_payment_amount ?? null,
+    is_overdue: !!l.is_overdue,
+    apr: (l.aprs || []).filter(a => a.apr_type === 'purchase_apr').map(a => a.apr_percentage)[0] ?? null,
+  };
+}
+function buildCards(accounts, transactions, liabilities) {
+  const liab = liabilities || {};
+  const seen = new Set();
+  const today = new Date().toISOString().slice(0, 10);
+  const cards = [];
+  accounts.filter(a => a.type === 'credit').forEach(a => {
+    if (seen.has(a.mask)) return; seen.add(a.mask);
+    const ids = new Set(accounts.filter(x => x.type === 'credit' && x.mask === a.mask).map(x => x.account_id));
+    const pays = transactions
+      .filter(t => ids.has(t.account_id) && t.amount < 0 && CARD_PAYMENT_RE.test(t.name || ''))
+      .map(t => ({ date: t.date, amount: Math.round(-t.amount * 100) / 100, pending: !!t.pending }))
+      .sort((x, y) => y.date.localeCompare(x.date));
+    const L = [...ids].map(id => liab[id]).find(Boolean);
+    const card = {
+      bank: BANK_OF_NICK[a._nickname] || a._nickname || '', nickname: a._nickname, name: (a.official_name || a.name || '').replace(/[^\x20-\x7E]+/g, '').trim(), mask: a.mask,
+      balance: a.balances?.current ?? 0, limit: a.balances?.limit ?? null,
+      payments: pays.slice(0, 8),
+      source: L ? 'bank' : 'estimated',
+    };
+    if (L) Object.assign(card, L);
+    // No bank data: estimate the due day from the usual payment day.
+    if (!card.due_date && pays.length) {
+      const days = pays.slice(0, 6).map(p => +p.date.slice(8)).sort((x, y) => x - y);
+      const d = days[Math.floor(days.length / 2)];
+      const now = new Date(today + 'T00:00:00Z');
+      let due = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), Math.min(d, 28)));
+      if (due.toISOString().slice(0, 10) < today) due = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 1, Math.min(d, 28)));
+      card.due_date = due.toISOString().slice(0, 10);
+      card.due_estimated = true;
+    }
+    // Paid since the last statement?
+    const since = card.statement_date || (card.due_date ? shiftDays(card.due_date, -25) : null);
+    card.paid_since_statement = since ? Math.round(pays.filter(p => p.date > since).reduce((s, p) => s + p.amount, 0) * 100) / 100 : 0;
+    const owedOnStatement = card.statement_balance != null ? card.statement_balance : card.balance;
+    card.remaining_due = Math.max(0, Math.round((owedOnStatement - card.paid_since_statement) * 100) / 100);
+    cards.push(card);
+  });
+  return cards.sort((x, y) => (x.due_date || '9999').localeCompare(y.due_date || '9999'));
+}
+function shiftDays(iso, n) { const d = new Date(iso + 'T00:00:00Z'); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); }
+
+// ── PHONE ALERTS (ntfy.sh) ───────────────────────────────────────────────────
+// Push notifications through ntfy: install the ntfy app and subscribe to the
+// topic in NTFY_TOPIC. Sent after each real bank sync (twice a day on the cron,
+// plus every manual Sync), never on a delete/restore rebuild.
+//   - a bank or card fee / interest charge posted in the last 5 days
+//   - a card payment due within 3 days that isn't paid yet, and on the due day
+//   - a card the bank reports as overdue
+// Blobs "notified.json" remembers what was sent, so nothing repeats.
+const NOTIFIED_KEY = 'notified.json';
+async function ntfy(title, message, opts = {}) {
+  const topic = process.env.NTFY_TOPIC;
+  if (!topic) return false;
+  const resp = await fetch('https://ntfy.sh/' + encodeURIComponent(topic), {
+    method: 'POST',
+    headers: { Title: title.replace(/[^\x20-\x7E]/g, ''), Priority: String(opts.priority || 3), Tags: opts.tags || 'moneybag', ...(opts.click ? { Click: opts.click } : {}) },
+    body: message,
+  });
+  if (!resp.ok) throw new Error('ntfy HTTP ' + resp.status);
+  return true;
+}
+async function sendAlerts(data) {
+  if (!process.env.NTFY_TOPIC) return { sent: 0, reason: 'NTFY_TOPIC not set' };
+  let state = {};
+  try { const v = await dataStore().get(NOTIFIED_KEY); state = v ? JSON.parse(v) : {}; } catch (e) { console.warn('notified list unavailable:', e.message); }
+  state.fees = state.fees || {}; state.due = state.due || {};
+  const site = process.env.URL || '';
+  const today = new Date().toISOString().slice(0, 10);
+  const cutoff = shiftDays(today, -5);
+  const out = [];
+  // Fees
+  const cf = data.cashflow || {};
+  Object.keys(cf).sort().slice(-2).forEach(p => {
+    (cf[p].tx_out || []).forEach(x => {
+      if (x.g !== 'Bank & card fees' || !x.id || state.fees[x.id]) return;
+      const date = p.slice(0, 4) + '-' + x.d;
+      state.fees[x.id] = today;
+      if (date < cutoff) return; // old: remember silently, don't alert
+      out.push({ title: `Fee charged: ${x.a.toFixed(2)}`, msg: `${x.n} on ${x.b}${x.k ? ' ••' + x.k : ''} (${date}). Call the bank and ask for a refund.`, tags: 'warning', priority: 4 });
+    });
+  });
+  // Card due dates
+  (data.cards || []).forEach(c => {
+    if (!c.due_date) return;
+    const days = Math.round((new Date(c.due_date + 'T00:00:00Z') - new Date(today + 'T00:00:00Z')) / 864e5);
+    const label = `${c.bank} ••${c.mask}`;
+    const amt = c.min_due != null && c.min_due > 0 ? `min ${c.min_due.toFixed(2)} · statement ${(c.statement_balance ?? c.balance).toFixed(2)}` : `${c.remaining_due.toFixed(2)}`;
+    if (c.is_overdue && !state.due[c.mask + '|' + c.due_date + '|over']) {
+      state.due[c.mask + '|' + c.due_date + '|over'] = today;
+      out.push({ title: `OVERDUE: ${label}`, msg: `Payment is past due (${amt}). Pay now to avoid a late fee and interest.`, tags: 'rotating_light', priority: 5 });
+      return;
+    }
+    if (c.remaining_due < 1) return;
+    const stage = days === 0 ? 'today' : (days > 0 && days <= 3 ? 'soon' : null);
+    if (!stage || state.due[c.mask + '|' + c.due_date + '|' + stage]) return;
+    state.due[c.mask + '|' + c.due_date + '|' + stage] = today;
+    out.push({ title: stage === 'today' ? `Due TODAY: ${label}` : `Due in ${days} day${days > 1 ? 's' : ''}: ${label}`, msg: `${amt} due ${c.due_date}${c.due_estimated ? ' (estimated)' : ''}.`, tags: 'calendar', priority: stage === 'today' ? 5 : 4 });
+  });
+  let sent = 0;
+  for (const n of out.slice(0, 10)) {
+    try { await ntfy(n.title, n.msg, { tags: n.tags, priority: n.priority, click: site }); sent++; } catch (e) { console.warn('ntfy failed:', e.message); }
+  }
+  try { await dataStore().set(NOTIFIED_KEY, JSON.stringify(state)); } catch (e) { console.warn('notified list not saved:', e.message); }
+  return { sent, queued: out.length };
+}
+
 // ── HIDDEN TRANSACTIONS: ones the user deleted in the app ─────────────────────
 // Stored in Blobs and applied to the raw bank data before ANY aggregation, so a
 // deleted transaction vanishes from every tab and stays gone across syncs.
@@ -615,6 +739,8 @@ async function publishFromRaw(raw, hiddenNow) {
   const data = buildStructuredData(raw.accounts, deduped.transactions);
   try { data.cashflow = buildCashflow(raw.accounts, deduped.transactions); }
   catch (e) { console.error('cashflow build failed:', e); data.cashflow = null; } // never let insights break a sync
+  try { data.cards = buildCards(raw.accounts, deduped.transactions, raw.liabilities); }
+  catch (e) { console.error('cards build failed:', e); data.cards = []; }
   data.hidden = hidden.map(h => ({ id: h.id, date: h.date, desc: h.desc, amount: h.amount, bank: h.bank, mask: h.mask, hidden_at: h.hidden_at }));
   data.generated_at = raw.fetched_at;   // when the banks were last read
   data.rebuilt_at = new Date().toISOString();
@@ -693,6 +819,8 @@ async function buildDataJson() {
 
   const tokenStatus = [];
   const staleBalances = [];
+  const liabilities = {};      // account_id → due date, minimum, statement
+  const liabilityErrors = {};
   for (const [nickname, token] of Object.entries(tokens)) {
     try {
       // accountsBalanceGet forces a live balance read; accountsGet returns
@@ -707,6 +835,17 @@ async function buildDataJson() {
         staleBalances.push(nickname);
       }
       acctResp.data.accounts.forEach(a => allAccounts.push({ ...a, _nickname: nickname }));
+      // Card due dates for the Payment monitor. Best-effort: an Item linked
+      // without the liabilities product just falls back to estimates.
+      if (acctResp.data.accounts.some(a => a.type === 'credit')) {
+        try {
+          const lr = await plaid.liabilitiesGet({ access_token: token });
+          (lr.data.liabilities?.credit || []).forEach(l => { if (l.account_id) liabilities[l.account_id] = pickLiability(l); });
+        } catch (lErr) {
+          liabilityErrors[nickname] = lErr.response?.data?.error_code || lErr.message;
+          console.warn(`liabilitiesGet skipped for ${nickname}:`, liabilityErrors[nickname]);
+        }
+      }
       // Every sync starts from a null cursor, so this pages an Item's WHOLE
       // history, and /transactions/sync hands back the oldest updates first.
       // That makes an early bail drop the NEWEST transactions, not the oldest:
@@ -754,6 +893,7 @@ async function buildDataJson() {
     fetched_at: new Date().toISOString(),
     accounts: allAccounts,
     transactions: allTransactions.map(slimTxn),
+    liabilities,
     // Per-token diagnostics — surfaces missing/errored banks instead of silently
     // dropping them (e.g. a token that needs re-auth, or one not configured).
     meta: {
@@ -767,13 +907,17 @@ async function buildDataJson() {
       refresh_errors: refreshErrors,
       cached_balances: staleBalances,
       txns_fetched: allTransactions.length,
+      liabilities_cards: Object.keys(liabilities).length,
+      liabilities_errors: liabilityErrors,
     },
   };
   // Keep this download so deleting a transaction can rebuild without the banks.
   try { await dataStore().set(RAW_KEY, JSON.stringify(raw)); } catch (e) { console.warn('raw cache skipped:', e.message); }
   const data = await publishFromRaw(raw);
+  let alerts = null;
+  try { alerts = await sendAlerts(data); console.log('alerts:', alerts); } catch (e) { console.warn('alerts failed:', e.message); }
 
-  return { accounts_synced: allAccounts.length, transactions_synced: allTransactions.length, generated_at: data.generated_at };
+  return { alerts, accounts_synced: allAccounts.length, transactions_synced: allTransactions.length, generated_at: data.generated_at };
 }
 
-module.exports = { connectBlobs, plaid, Products, CountryCode, getTokens, saveToken, buildDataJson, dataStore, dedupeCrossItemTxns, buildCashflow, applyHidden, txnFingerprint, slimTxn, rebuildFromCache, setHidden };
+module.exports = { connectBlobs, plaid, Products, CountryCode, getTokens, saveToken, buildDataJson, dataStore, dedupeCrossItemTxns, buildCashflow, applyHidden, txnFingerprint, slimTxn, rebuildFromCache, setHidden, buildCards, sendAlerts, ntfy };

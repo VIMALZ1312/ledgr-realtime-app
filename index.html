@@ -246,7 +246,26 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:14.5px;-webk
 .fee-col{display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;border-radius:12px;padding:6px 2px;min-width:0;}
 .fee-col:hover{background:var(--s2);}
 .fee-amt{font-size:12px;font-weight:800;font-variant-numeric:tabular-nums;}
-.fee-stack{width:70%;max-width:34px;height:90px;display:flex;flex-direction:column-reverse;border-radius:8px;overflow:hidden;background:var(--s2);}
+.fee-stack{width:70%;max-width:34px;height:96px;display:flex;flex-direction:column-reverse;border-radius:10px;overflow:hidden;background:var(--s2);}
+.fee-stack div{background:linear-gradient(0deg,#f08fab,#f7b9c9);border-radius:10px 10px 0 0;}
+/* Payment monitor */
+.pay-card{border:1px solid var(--border);border-left:5px solid var(--pc);border-radius:16px;padding:12px 14px;margin-bottom:10px;cursor:pointer;background:var(--surface);--pc:var(--border);}
+.pay-card:hover{background:var(--s2);}
+.pay-over{--pc:#e5557a;background:color-mix(in srgb,#e5557a 8%,var(--surface));}
+.pay-soon{--pc:#f0a35e;}
+.pay-mid{--pc:#a99bf5;}
+.pay-ok{--pc:#86d3b5;}
+.pay-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
+.pay-name{font-size:14px;font-weight:800;}
+.pay-mask{color:var(--muted);font-size:11px;font-weight:600;}
+.pay-sub{font-size:11px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.pay-chip{flex-shrink:0;font-size:11px;font-weight:800;padding:3px 10px;border-radius:99px;background:color-mix(in srgb,var(--pc) 25%,transparent);color:var(--text);}
+.pay-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:10px;}
+.pay-k{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);}
+.pay-v{font-size:13px;font-weight:800;font-variant-numeric:tabular-nums;}
+.pay-est{font-size:9.5px;font-weight:700;color:var(--muted);background:var(--s2);padding:0 5px;border-radius:6px;}
+.pay-note{font-size:11px;color:var(--muted);margin-top:6px;}
+@media (max-width:420px){.pay-grid{grid-template-columns:repeat(2,1fr);}}
 .fee-mon{font-size:11px;font-weight:700;}
 .fee-n{font-size:9.5px;color:var(--muted);}
 .fee-legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:11.5px;font-weight:600;margin-top:10px;}
@@ -356,7 +375,7 @@ var CAT_COLORS = {
 var PAGES = [
   {id:'overview',  label:'Overview',  icon:'&#9672;'},
   {id:'accounts',  label:'Accounts',  icon:'&#127974;'},
-  {id:'travel',    label:'Travel',    icon:'&#9992;'},
+  {id:'pay',       label:'Payment monitor', icon:'&#9200;'},
   {id:'subs',      label:'Subscriptions', icon:'&#128179;'},
   {id:'zelle',     label:'Zelle',     icon:'&#128184;'},
   {id:'search',    label:'Search',    icon:'&#128269;'}
@@ -599,7 +618,7 @@ function render() {
   _tid = 0;
   if(TAB === 'overview') renderOverview();
   else if(TAB === 'accounts') renderAccounts();
-  else if(TAB === 'travel') renderTravel();
+  else if(TAB === 'pay') renderPayments();
   else if(TAB === 'subs') renderSubscriptions();
   else if(TAB === 'zelle') renderZelle();
   else if(TAB === 'search') renderSearch();
@@ -1041,18 +1060,12 @@ function renderFeeTimeline(){
     var partial = D.cashflow[m.p].days < D.cashflow[m.p].days_in_month;
     html += '<div class="fee-col" onclick="showFees('+i+')">'
       + '<div class="fee-amt">'+(m.total ? fmt(m.total) : '$0')+'</div>'
-      + '<div class="fee-stack">';
-    FEE_KINDS.forEach(function(f){ if(m.by[f.k] > 0) html += '<div style="height:'+(m.by[f.k]/mx*100)+'%;background:'+f.col+'"></div>'; });
-    html += '</div><div class="fee-mon">'+monShort(m.p)+(partial ? '*' : '')+'</div>'
+      + '<div class="fee-stack"><div style="height:'+(m.total/mx*100)+'%"></div></div>'
+      + '<div class="fee-mon">'+monShort(m.p)+(partial ? '*' : '')+'</div>'
       + '<div class="fee-n">'+m.items.length+' fee'+(m.items.length === 1 ? '' : 's')+'</div></div>';
   });
   html += '</div>';
-  var sums = { late:0, interest:0, bank:0 };
-  ms.forEach(function(m){ FEE_KINDS.forEach(function(f){ sums[f.k] += m.by[f.k]; }); });
-  html += '<div class="fee-legend">' + FEE_KINDS.map(function(f){
-    return '<span><i style="background:'+f.col+'"></i>'+f.label+' '+fmt(sums[f.k])+'</span>';
-  }).join('') + '</div>';
-  html += '<div style="font-size:11px;color:var(--muted);margin-top:6px">About '+fmt(total/ms.length*12)+' a year at this pace — all avoidable with autopay of the full card balance and the minimum balance kept in checking. Tap a month for the charges.</div></div>';
+  html += '<div style="font-size:11px;color:var(--muted);margin-top:6px">About '+fmt(total/ms.length*12)+' a year at this pace — late fees, card interest and bank fees combined, all avoidable. Tap a month for each charge.</div></div>';
   return html;
 }
 function showFees(i){
@@ -1069,6 +1082,98 @@ function showFees(i){
   });
   if(!m.items.length) h += '<div style="color:var(--muted);font-size:13px;padding:8px 0">No fees this month 🎉</div>';
   openModal('Fees & interest · '+mon, fmt2(m.total)+' total', h);
+}
+
+// ── Payment monitor tab: every card's due date and amount, then fees ──
+// D.cards comes from buildCards() in _core.js: due date, minimum and statement
+// balance straight from the bank where Plaid has liabilities for that card,
+// otherwise a due day estimated from when the card usually gets paid.
+function daysUntil(iso){
+  var t = new Date(); t.setHours(0,0,0,0);
+  return Math.round((new Date(iso+'T00:00:00') - t) / 864e5);
+}
+function niceDate(iso){ return new Date(iso+'T00:00:00').toLocaleDateString('en-US',{weekday:'short', month:'short', day:'numeric'}); }
+function cardStatus(c){
+  var d = c.due_date ? daysUntil(c.due_date) : null;
+  if(c.is_overdue) return { cls:'over', chip:'Overdue', note:'Past due — pay now' };
+  if(c.remaining_due < 1) return { cls:'ok', chip:'Paid ✓', note: c.payments && c.payments[0] ? 'Last paid '+fmt2(c.payments[0].amount)+' on '+niceDate(c.payments[0].date) : 'Nothing owed' };
+  if(d === null) return { cls:'muted', chip:'No date', note:'' };
+  if(d < 0) return { cls:'over', chip: (-d)+'d late', note:'Was due '+niceDate(c.due_date) };
+  if(d === 0) return { cls:'over', chip:'Due today', note:'' };
+  if(d <= 3) return { cls:'soon', chip:'In '+d+' day'+(d>1?'s':''), note:'' };
+  if(d <= 10) return { cls:'mid', chip:'In '+d+' days', note:'' };
+  return { cls:'ok', chip:'In '+d+' days', note:'' };
+}
+function renderPayments(){
+  var cards = (D.cards || []).slice();
+  var html = '';
+  var owed = cards.filter(function(c){ return c.remaining_due >= 1; });
+  var next = owed.filter(function(c){ return c.due_date; })[0];
+  var dueSoon = owed.filter(function(c){ return c.due_date && daysUntil(c.due_date) <= 7; });
+  html += '<div class="dash-net" style="cursor:default">'
+    + '<div class="dash-net-label">Due in the next 7 days</div>'
+    + '<div class="dash-net-val">'+fmt(dueSoon.reduce(function(s,c){ return s + c.remaining_due; }, 0))+'</div>'
+    + '<div class="dash-net-sub">'+(next ? '<span>Next: '+esc(next.bank)+' ••'+esc(next.mask)+' · '+niceDate(next.due_date)+'</span>' : '<span>Nothing due — all cards paid</span>')
+    + '<span>'+owed.length+' of '+cards.length+' cards owe</span></div></div>';
+
+  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Credit card due dates</div><div class="panel-action">soonest first</div></div>';
+  if(!cards.length) html += '<div style="color:var(--muted);font-size:13px">No card data yet — tap Sync once.</div>';
+  cards.forEach(function(c, i){
+    var st = cardStatus(c);
+    var stmt = c.statement_balance != null ? c.statement_balance : null;
+    html += '<div class="pay-card pay-'+st.cls+'" onclick="showCard('+i+')">'
+      + '<div class="pay-top"><div style="min-width:0"><div class="pay-name">'+esc(c.bank)+' <span class="pay-mask">••'+esc(c.mask)+'</span></div>'
+      + '<div class="pay-sub">'+esc(c.name)+'</div></div>'
+      + '<span class="pay-chip">'+st.chip+'</span></div>'
+      + '<div class="pay-grid">'
+      +   '<div><div class="pay-k">Due date</div><div class="pay-v">'+(c.due_date ? niceDate(c.due_date)+(c.due_estimated ? ' <span class="pay-est">est.</span>' : '') : '—')+'</div></div>'
+      +   '<div><div class="pay-k">'+(stmt != null ? 'Statement' : 'Balance')+'</div><div class="pay-v">'+fmt2(stmt != null ? stmt : c.balance)+'</div></div>'
+      +   '<div><div class="pay-k">Minimum</div><div class="pay-v">'+(c.min_due != null ? fmt2(c.min_due) : '—')+'</div></div>'
+      +   '<div><div class="pay-k">Left to pay</div><div class="pay-v" style="color:'+(c.remaining_due >= 1 ? 'var(--red)' : 'var(--green)')+'">'+fmt2(c.remaining_due)+'</div></div>'
+      + '</div>'
+      + (st.note ? '<div class="pay-note">'+esc(st.note)+'</div>' : '')
+      + '</div>';
+  });
+  var est = cards.some(function(c){ return c.due_estimated; });
+  html += '<div style="font-size:11px;color:var(--muted);margin-top:4px">Pay the full statement to avoid interest; at least the minimum by the due date to avoid a late fee.'
+    + (est ? ' “est.” = the bank didn’t share the due date, so it’s estimated from when you usually pay that card.' : '') + '</div></div>';
+
+  html += renderFeeTimeline();
+
+  html += '<div class="panel"><div class="panel-head"><div class="panel-title">Phone alerts</div></div>'
+    + '<div style="font-size:12.5px;line-height:1.5">You get a push on your phone (ntfy app) when a fee or interest is charged, 3 days before a card is due, on the due day, and if a card goes overdue. Checked on every sync — twice a day automatically.</div>'
+    + '<button class="seg-btn on" style="margin-top:10px" onclick="testAlert(this)">Send a test alert</button></div>';
+  set('main-content', html);
+}
+function showCard(i){
+  var c = (D.cards || [])[i]; if(!c) return;
+  var h = '<div class="dash-modal-sum">'
+    + '<div><div class="kpi-label">Balance now</div><div class="kpi-val">'+fmt2(c.balance)+'</div></div>'
+    + (c.limit ? '<div><div class="kpi-label">Limit</div><div class="kpi-val" style="color:var(--muted)">'+fmt(c.limit)+'</div></div>' : '')
+    + (c.apr != null ? '<div><div class="kpi-label">APR</div><div class="kpi-val" style="color:var(--red)">'+c.apr+'%</div></div>' : '')
+    + '</div>';
+  var rows = [
+    ['Due date', c.due_date ? niceDate(c.due_date)+(c.due_estimated ? ' (estimated)' : '') : '—'],
+    ['Statement balance', c.statement_balance != null ? fmt2(c.statement_balance) : '—'],
+    ['Statement date', c.statement_date ? niceDate(c.statement_date) : '—'],
+    ['Minimum payment', c.min_due != null ? fmt2(c.min_due) : '—'],
+    ['Paid since statement', fmt2(c.paid_since_statement || 0)],
+    ['Left to pay', fmt2(c.remaining_due)],
+  ];
+  h += rows.map(function(r){ return '<div class="acct-row" style="cursor:default"><span style="color:var(--muted)">'+r[0]+'</span><b>'+r[1]+'</b></div>'; }).join('');
+  h += '<div class="srch-month">Recent payments</div>';
+  h += (c.payments || []).length ? c.payments.map(function(p){
+    return '<div class="acct-row" style="cursor:default"><span>'+niceDate(p.date)+(p.pending ? ' <span class="pay-est">pending</span>' : '')+'</span><b style="color:var(--green)">'+fmt2(p.amount)+'</b></div>';
+  }).join('') : '<div style="color:var(--muted);font-size:13px;padding:6px 0">No payments in the bank data.</div>';
+  h += '<div style="font-size:11px;color:var(--muted);margin-top:10px">'+(c.source === 'bank' ? 'Due date and amounts come from the bank.' : 'The bank didn’t share statement details for this card; the due date is estimated from your usual payment day.')+'</div>';
+  openModal(c.bank+' ••'+c.mask, c.name, h);
+}
+function testAlert(btn){
+  btn.disabled = true; btn.textContent = 'Sending…';
+  fetch(BACKEND + '/api/notify-test', { method:'POST' }).then(function(r){ return r.json(); })
+    .then(function(j){ btn.textContent = j.ok ? 'Sent — check your phone' : (j.error || 'Failed'); })
+    .catch(function(e){ btn.textContent = 'Failed: '+e.message; })
+    .then(function(){ setTimeout(function(){ btn.disabled = false; btn.textContent = 'Send a test alert'; }, 4000); });
 }
 
 function renderOverview() {
@@ -1094,8 +1199,6 @@ function renderOverview() {
 
   // Text insights — what moved net worth, MoM + last 7 days
   html += renderInsights();
-
-  html += renderFeeTimeline();
 
   // Monthly cash flow from D.cashflow — the same money in / money out as the
   // insights and the spending timeline: transfers between our own accounts,
@@ -1815,170 +1918,6 @@ function renderAccounts() {
 
   set('main-content', html);
   setTimeout(function(){ var w = $('tl-wrap'); if(w) w.scrollLeft = w.scrollWidth; }, 30);
-}
-
-function renderTravel() {
-  var raw = (D.travel || []).filter(function(t) {
-    return t.state && HOME_ST.indexOf(t.state) < 0 && !BILLING.some(function(b){ return (t.desc||'').toUpperCase().indexOf(b) >= 0; });
-  });
-  if(!raw.length) { set('main-content', '<div class="panel" style="color:var(--muted);font-size:13px;padding:20px">No travel transactions found.</div>'); return; }
-  raw.sort(function(a,b){ return ((b.period||'')+(b.date||'')).localeCompare((a.period||'')+(a.date||'')); });
-
-  var byState = {};
-  raw.forEach(function(t) {
-    var st = t.state;
-    if(!byState[st]) byState[st] = {total:0, months:{}, online:[]};
-    byState[st].total += t.amount;
-    if(t.city) {
-      if(!byState[st].months[t.period_label]) byState[st].months[t.period_label] = {cities:{}, total:0};
-      if(!byState[st].months[t.period_label].cities[t.city]) byState[st].months[t.period_label].cities[t.city] = {txns:[], total:0};
-      byState[st].months[t.period_label].cities[t.city].txns.push(t);
-      byState[st].months[t.period_label].cities[t.city].total += t.amount;
-      byState[st].months[t.period_label].total += t.amount;
-    } else {
-      byState[st].online.push(t);
-    }
-  });
-
-  var states = Object.keys(byState).sort(function(a,b){ return byState[b].total-byState[a].total; });
-  var grand = raw.reduce(function(s,t){ return s+t.amount; }, 0);
-
-  var html = '<div class="panel"><div class="panel-head"><div class="panel-title">Travel & Vacation</div><div class="panel-action">' + states.length + ' states ' + fmt(grand) + '</div></div>';
-  html += '<div style="margin-bottom:12px">';
-  states.forEach(function(st) {
-    html += '<span class="chip">' + st + ' <span style="font-family:IBM Plex Mono,monospace;font-size:11px">' + fmt(byState[st].total) + '</span></span>';
-  });
-  html += '</div></div>';
-
-  states.forEach(function(st) {
-    var sv = byState[st];
-    var months = Object.keys(sv.months).join(', ');
-    var sid = uid();
-    html += '<div style="background:var(--s2);border-radius:10px;padding:14px;margin-bottom:10px">';
-    html += '<div style="display:flex;align-items:center;gap:10px;cursor:pointer" onclick="expand(\'' + sid + '\')">';
-    html += '<div style="font-family:IBM Plex Mono,monospace;font-size:22px;font-weight:600;color:var(--yellow);width:42px">' + st + '</div>';
-    html += '<div style="flex:1"><div style="font-size:15px;font-weight:600">' + (ST_NAMES[st]||st) + '</div><div style="font-size:11px;color:var(--muted)">' + months + '</div></div>';
-    html += '<div style="font-family:IBM Plex Mono,monospace;font-size:18px;color:var(--yellow)">' + fmt(sv.total) + '</div><span style="color:var(--muted)">&rsaquo;</span></div>';
-    html += '<div id="' + sid + '" class="expand-body">';
-    Object.keys(sv.months).sort().reverse().forEach(function(mo) {
-      var mv = sv.months[mo];
-      var mid = uid();
-      html += '<div style="padding:6px 0;border-top:1px solid var(--border2)">';
-      html += '<div style="display:flex;justify-content:space-between;cursor:pointer;padding:4px 0" onclick="expand(\'' + mid + '\')">';
-      html += '<div style="font-size:13px;font-weight:500">' + mo + '</div>';
-      html += '<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-size:13px;color:var(--yellow)">' + fmt(mv.total) + '</div><span style="color:var(--muted)">&rsaquo;</span></div></div>';
-      html += '<div id="' + mid + '" class="expand-body">';
-      Object.keys(mv.cities).sort(function(a,b){ return mv.cities[b].total-mv.cities[a].total; }).forEach(function(city) {
-        var cv = mv.cities[city];
-        var cvid = uid();
-        cv.txns.sort(function(a,b){ return b.date.localeCompare(a.date); });
-        html += '<div style="padding:5px 0 5px 12px;border-top:1px solid var(--border2)">';
-        html += '<div style="display:flex;justify-content:space-between;cursor:pointer" onclick="expand(\'' + cvid + '\')">';
-        html += '<div style="font-size:13px">@ ' + city + '</div>';
-        html += '<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-size:13px;color:var(--yellow)">' + fmt(cv.total) + '</div><span style="color:var(--muted)">&rsaquo;</span></div></div>';
-        html += '<div id="' + cvid + '" class="expand-body">';
-        cv.txns.forEach(function(t){ html += txnLine(t, 'var(--yellow)', 'padding-left:12px;'); });
-        html += '</div></div>';
-      });
-      html += '</div></div>';
-    });
-    if(sv.online.length) {
-      var onTotal = sv.online.reduce(function(s,t){return s+t.amount;},0);
-      var oid = uid();
-      html += '<div style="padding:6px 0;border-top:1px solid var(--border2)">';
-      html += '<div style="display:flex;justify-content:space-between;cursor:pointer;padding:4px 0" onclick="expand(\'' + oid + '\')">';
-      html += '<div style="font-size:13px;color:var(--muted)">Online / ' + st + '</div>';
-      html += '<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-size:13px;color:var(--muted)">' + fmt(onTotal) + '</div><span style="color:var(--muted)">&rsaquo;</span></div></div>';
-      html += '<div id="' + oid + '" class="expand-body">';
-      sv.online.forEach(function(t){ html += txnLine(t, 'var(--muted)', 'padding-left:12px;'); });
-      html += '</div></div>';
-    }
-    html += '</div></div>';
-  });
-  set('main-content', html);
-}
-
-function renderTravel() {
-  var raw = (D.travel||[]).filter(function(t) {
-    return t.state && HOME_ST.indexOf(t.state)<0 && !BILLING.some(function(b){return (t.desc||'').toUpperCase().indexOf(b)>=0;});
-  });
-  if(!raw.length){set('main-content','<div class="panel" style="color:var(--muted);font-size:13px;padding:20px;text-align:center">No travel transactions found.</div>');return;}
-  raw.sort(function(a,b){return ((b.period||'')+(b.date||'')).localeCompare((a.period||'')+(a.date||''));});
-  var byState={};
-  raw.forEach(function(t){
-    var st=t.state;
-    if(!byState[st])byState[st]={total:0,months:{},online:[]};
-    byState[st].total+=t.amount;
-    if(t.city){
-      var ml=t.period_label||t.period||'';
-      if(!byState[st].months[ml])byState[st].months[ml]={cities:{},total:0};
-      if(!byState[st].months[ml].cities[t.city])byState[st].months[ml].cities[t.city]={txns:[],total:0};
-      byState[st].months[ml].cities[t.city].txns.push(t);
-      byState[st].months[ml].cities[t.city].total+=t.amount;
-      byState[st].months[ml].total+=t.amount;
-    } else {byState[st].online.push(t);}
-  });
-  var states=Object.keys(byState).sort(function(a,b){return byState[b].total-byState[a].total;});
-  var grand=raw.reduce(function(s,t){return s+t.amount;},0);
-  var STATE_NAMES={'CA':'California','NC':'North Carolina','VA':'Virginia','DC':'Washington D.C.','TX':'Texas','FL':'Florida','TN':'Tennessee','MD':'Maryland','GA':'Georgia','CO':'Colorado','NV':'Nevada','AZ':'Arizona','MA':'Massachusetts','RI':'Rhode Island','MO':'Missouri','MI':'Michigan','IL':'Illinois','AR':'Arkansas'};
-  var html='<div class="panel"><div class="panel-head"><div class="panel-title">Travel & Vacation</div><div class="panel-action">'+states.length+' states · '+fmt(grand)+'</div></div>';
-  html+='<div class="travel-chips">';
-  states.forEach(function(st){html+='<span class="chip">'+st+' <span style="font-family:IBM Plex Mono,monospace;font-size:11px;color:var(--muted)">'+fmt(byState[st].total)+'</span></span>';});
-  html+='</div>';
-  states.forEach(function(st){
-    var sv=byState[st];
-    var sid=uid();
-    var monthCount=Object.keys(sv.months).length;
-    var cityCount=Object.keys(sv.months).reduce(function(n,m){return n+Object.keys(sv.months[m].cities).length;},0);
-    var subParts=[];
-    if(monthCount) subParts.push(monthCount+(monthCount===1?' month':' months'));
-    if(cityCount) subParts.push(cityCount+(cityCount===1?' city':' cities'));
-    if(sv.online.length) subParts.push(sv.online.length+' online');
-    html+='<div class="state-block">';
-    html+='<div class="state-head" onclick="expand(\''+sid+'\')">';
-    html+='<div class="state-badge">'+st+'</div>';
-    html+='<div class="state-name"><div class="state-name-main">'+(STATE_NAMES[st]||st)+'</div>';
-    html+='<div class="state-name-sub">'+subParts.join(' · ')+'</div></div>';
-    html+='<div class="state-total">'+fmt(sv.total)+'</div>';
-    html+='<span class="state-chev">›</span></div>';
-    html+='<div id="'+sid+'" class="expand-body state-body">';
-    Object.keys(sv.months).sort().reverse().forEach(function(monthLabel){
-      var mv=sv.months[monthLabel];
-      var mid=uid();
-      html+='<div style="padding:6px 0;border-top:1px solid var(--border2)">';
-      html+='<div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:4px 0" onclick="expand(\''+mid+'\')">';
-      html+='<div style="font-size:13px;font-weight:500">'+monthLabel+'</div>';
-      html+='<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-size:13px;color:var(--yellow)">'+fmt(mv.total)+'</div><span style="color:var(--muted)">›</span></div></div>';
-      html+='<div id="'+mid+'" class="expand-body">';
-      Object.keys(mv.cities).sort(function(a,b){return mv.cities[b].total-mv.cities[a].total;}).forEach(function(city){
-        var cv=mv.cities[city];
-        var cvid=uid();
-        cv.txns.sort(function(a,b){return b.date.localeCompare(a.date);});
-        html+='<div style="padding:5px 0 5px 12px;border-top:1px solid var(--border2)">';
-        html+='<div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer" onclick="expand(\''+cvid+'\')">';
-        html+='<div style="font-size:13px">📍 '+city+'</div>';
-        html+='<div style="display:flex;align-items:center;gap:8px"><div style="font-family:IBM Plex Mono,monospace;font-size:13px;color:var(--yellow)">'+fmt(cv.total)+'</div><span style="color:var(--muted)">›</span></div></div>';
-        html+='<div id="'+cvid+'" class="expand-body">';
-        cv.txns.forEach(function(t){ html += txnLine(t,'var(--yellow)','padding-left:12px;'); });
-        html+='</div></div>';
-      });
-      html+='</div></div>';
-    });
-    if(sv.online.length){
-      var oid=uid();
-      var ot=sv.online.reduce(function(s,t){return s+t.amount;},0);
-      html+='<div style="padding:6px 0;border-top:1px solid var(--border2)">';
-      html+='<div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:4px 0" onclick="expand(\''+oid+'\')">';
-      html+='<div style="font-size:13px;color:var(--muted)">🌐 Online / '+st+'</div>';
-      html+='<div style="display:flex;align-items:center;gap:8px"><span style="font-family:IBM Plex Mono,monospace;font-size:13px;color:var(--muted)">'+fmt(ot)+'</span><span style="color:var(--muted)">›</span></div></div>';
-      html+='<div id="'+oid+'" class="expand-body">';
-      sv.online.forEach(function(t){ html += txnLine(t,'var(--muted)','padding-left:12px;'); });
-      html+='</div></div>';
-    }
-    html+='</div></div>';
-  });
-  html+='</div>';
-  set('main-content',html);
 }
 
 function cleanZelleName(raw){
