@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 2631.0299999999997,
+      "balance": 1.99,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 610.71
@@ -147,8 +147,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 2629.04,
-      "available": 161,
+      "balance": 0,
+      "available": 2690,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -301,7 +301,7 @@
       "mask": "1345",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 227.01,
+      "balance": 467.4,
       "available": 9532,
       "is_credit": true,
       "is_loan": false,
@@ -315,7 +315,7 @@
       "mask": "7397",
       "type": "investment",
       "subtype": "crypto exchange",
-      "balance": 12.7,
+      "balance": 13.41,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -329,8 +329,8 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 52085.51,
-      "available": 417.2,
+      "balance": 55671.24,
+      "available": 4703.7,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -338,10 +338,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 77512.48000000001,
-    "total_credit": 3229.24,
+    "total_checking": 81098.20999999999,
+    "total_credit": 840.5899999999999,
     "total_loans": 384584.29,
-    "net": -310301.05
+    "net": -304326.67
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -684,22 +684,6 @@
       "amount": 16.55,
       "category": "Groceries",
       "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "11-20",
-      "desc": "Verizon",
-      "amount": 256.39,
-      "category": "Tech/Subs",
-      "bank": "Robinhood",
-      "pending": true
-    },
-    {
-      "date": "11-21",
-      "desc": "Regal Center",
-      "amount": 9,
-      "category": "Entertainment",
-      "bank": "Robinhood",
       "pending": true
     }
   ],
@@ -9886,20 +9870,6 @@
           "refund": false
         },
         {
-          "id": "vrQmkY3k9eFoQoK5p0vaC5ob15EB3Ji04xNdB",
-          "date": "11-20",
-          "desc": "Verizon",
-          "amount": 256.39,
-          "category": "Tech/Subs",
-          "city": null,
-          "state": null,
-          "bank": "Robinhood",
-          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
-          "mask": "1345",
-          "pending": false,
-          "refund": false
-        },
-        {
           "id": "DMZn5Xo5ebTYbY80LndZSpeOL7KbERfXdXPpM",
           "date": "11-20",
           "desc": "Five Below",
@@ -9914,7 +9884,21 @@
           "refund": false
         },
         {
-          "id": "1MDZL5EL8qTP5PxzajrktwREvrLR7EfYkyRn3",
+          "id": "VkLyR15ReVukDkBqJgpAfm4eVEZwDnfax5kXV",
+          "date": "11-21",
+          "desc": "Verizon",
+          "amount": 256.39,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "id": "O1R5ZaoZeVCgagwdvyRLFQxeE3LdazINR54VR",
           "date": "11-21",
           "desc": "Regal Center",
           "amount": 9,
@@ -27742,8 +27726,8 @@
         "other_in": 0
       },
       "spent": {
-        "total": 10156.59,
-        "purchases": 3591.89,
+        "total": 10421.98,
+        "purchases": 3857.28,
         "refunds": 0,
         "loans": 3909.09,
         "fees": 108.25,
@@ -27755,13 +27739,13 @@
         "invested": 100
       },
       "internal": {
-        "count": 9,
-        "total": 2896.52
+        "count": 10,
+        "total": 2921.52
       },
       "by_category": {
-        "Bills & utilities": 785.04,
+        "Bills & utilities": 1041.43,
         "Sent to India": 2392.36,
-        "Entertainment": 30.41,
+        "Entertainment": 39.41,
         "Tech/Subs": 16.45,
         "Healthcare": 185.51,
         "Insurance": 265.9,
@@ -28478,6 +28462,24 @@
           "g": "Healthcare",
           "b": "Wells Fargo",
           "k": "9762"
+        },
+        {
+          "id": "VkLyR15ReVukDkBqJgpAfm4eVEZwDnfax5kXV",
+          "d": "11-21",
+          "n": "Verizon",
+          "a": 256.39,
+          "g": "Bills & utilities",
+          "b": "Robinhood",
+          "k": "1345"
+        },
+        {
+          "id": "O1R5ZaoZeVCgagwdvyRLFQxeE3LdazINR54VR",
+          "d": "11-21",
+          "n": "Regal Center",
+          "a": 9,
+          "g": "Entertainment",
+          "b": "Robinhood",
+          "k": "1345"
         }
       ],
       "tx_moved": [
@@ -28501,7 +28503,7 @@
       "nickname": "wf",
       "name": "WELLS FARGO ACTIVE CASH VISA CARD ...9762",
       "mask": "9762",
-      "balance": 2629.04,
+      "balance": 0,
       "limit": 3000,
       "payments": [
         {
@@ -28552,7 +28554,7 @@
       "statement_date": "2026-11-02",
       "statement_date_estimated": true,
       "paid_since_statement": 1100,
-      "remaining_due": 2629.04
+      "remaining_due": 0
     },
     {
       "bank": "BofA",
@@ -28617,13 +28619,13 @@
       "nickname": "robin",
       "name": "Robinhood Credit Card",
       "mask": "1345",
-      "balance": 227.01,
+      "balance": 467.4,
       "limit": 10000,
       "payments": [
         {
           "date": "2026-11-22",
           "amount": 25,
-          "pending": true
+          "pending": false
         },
         {
           "date": "2026-10-27",
@@ -28663,7 +28665,7 @@
       "statement_date": "2026-11-19",
       "statement_date_estimated": true,
       "paid_since_statement": 25,
-      "remaining_due": 202.01
+      "remaining_due": 467.4
     },
     {
       "bank": "BofA",
@@ -28808,8 +28810,8 @@
       "hidden_at": "2026-11-21T22:17:39.649Z"
     }
   ],
-  "generated_at": "2026-11-23T11:01:44.057Z",
-  "rebuilt_at": "2026-11-23T11:01:44.692Z",
+  "generated_at": "2026-11-23T23:01:44.805Z",
+  "rebuilt_at": "2026-11-23T23:01:45.444Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -28852,7 +28854,7 @@
           "8036",
           "9762"
         ],
-        "txns": 634,
+        "txns": 635,
         "pages": 2,
         "truncated": false,
         "last_txn": "2026-11-23"
@@ -28950,14 +28952,14 @@
       "wifebofa",
       "bofa",
       "robin",
-      "td",
-      "wf"
+      "wf",
+      "td"
     ],
     "refresh_errors": {
       "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 1450,
+    "txns_fetched": 1451,
     "liabilities_cards": 0,
     "liabilities_errors": {
       "bofa": "ADDITIONAL_CONSENT_REQUIRED",
