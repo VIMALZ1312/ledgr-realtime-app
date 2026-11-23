@@ -28729,8 +28729,8 @@
       "hidden_at": "2026-11-21T22:17:39.649Z"
     }
   ],
-  "generated_at": "2026-11-23T01:54:37.590Z",
-  "rebuilt_at": "2026-11-23T01:54:38.201Z",
+  "generated_at": "2026-11-23T01:57:03.510Z",
+  "rebuilt_at": "2026-11-23T01:57:03.823Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -28867,12 +28867,12 @@
     "failed": [],
     "forced_refresh": [
       "pnc",
-      "zillow",
       "wifebofa",
       "bofa",
       "robin",
-      "td",
-      "wf"
+      "wf",
+      "zillow",
+      "td"
     ],
     "refresh_errors": {
       "discover": "PRODUCTS_NOT_SUPPORTED"
