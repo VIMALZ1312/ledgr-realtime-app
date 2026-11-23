@@ -640,6 +640,9 @@ function buildCards(accounts, transactions, liabilities) {
         card.due_date = nextDay(days[Math.floor(days.length / 2)], after);
         card.due_basis = 'the day you usually pay this card';
       }
+      // An estimate can't tell a missed payment from a cycle it guessed wrong,
+      // so it never lands in the past: roll it to the next month.
+      while (card.due_date && card.due_date < today) card.due_date = nextDay(+card.due_date.slice(8), card.due_date);
       if (card.due_date) card.due_estimated = true;
       if (close) { card.statement_date = close; card.statement_date_estimated = true; }
     }
