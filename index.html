@@ -282,6 +282,59 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:14.5px;-webk
   .kpi-val{font-size:18px;}
 }
 </style>
+<script>
+// ── Passcode lock ──
+// Every /api call carries the passcode (x-ledgr-key). Without it, or with a
+// wrong one, the functions answer 401 and this shows the unlock screen. The
+// passcode is remembered on this device only.
+(function(){
+  var KEY = 'lgr_key';
+  function getKey(){ try { return localStorage.getItem(KEY) || ''; } catch(e){ return ''; } }
+  var orig = window.fetch.bind(window);
+  window.fetch = function(url, opts){
+    var u = typeof url === 'string' ? url : (url && url.url) || '';
+    if(/^(\/api\/|\/\.netlify\/functions\/)/.test(u)){
+      opts = Object.assign({}, opts || {});
+      opts.headers = Object.assign({}, opts.headers || {}, { 'x-ledgr-key': getKey() });
+      return orig(url, opts).then(function(r){ if(r.status === 401) showLock(!!getKey()); return r; });
+    }
+    return orig(url, opts);
+  };
+  function showLock(wrong){
+    if(document.getElementById('lgr-lock')) return;
+    var d = document.createElement('div'); d.id = 'lgr-lock';
+    d.innerHTML = '<form class="lk-card" onsubmit="return window._lgrUnlock(event)">'
+      + '<div class="lk-logo">L</div><div class="lk-title">Ledgr is locked</div>'
+      + '<div class="lk-sub">' + (wrong ? 'That passcode didn’t work. Try again.' : 'Enter your passcode to see your accounts.') + '</div>'
+      + '<input id="lgr-lock-in" type="password" autocomplete="current-password" placeholder="Passcode" autofocus>'
+      + '<button type="submit">Unlock</button>'
+      + '<div class="lk-note">Remembered on this device.</div></form>';
+    (document.body || document.documentElement).appendChild(d);
+    setTimeout(function(){ var i = document.getElementById('lgr-lock-in'); if(i) i.focus(); }, 50);
+  }
+  window._lgrUnlock = function(e){
+    e.preventDefault();
+    var v = (document.getElementById('lgr-lock-in').value || '').trim();
+    if(!v) return false;
+    try { localStorage.setItem(KEY, v); } catch(err){}
+    location.reload();
+    return false;
+  };
+  window.lgrLock = function(){ try { localStorage.removeItem(KEY); } catch(e){} location.reload(); };
+  if(!getKey()) document.addEventListener('DOMContentLoaded', function(){ showLock(false); });
+})();
+</script>
+<style>
+#lgr-lock{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:16px;background:linear-gradient(140deg,#231c4d,#3a2f80 60%,#4b4fa8);font-family:'Plus Jakarta Sans',system-ui,sans-serif;}
+#lgr-lock .lk-card{width:100%;max-width:340px;background:#fff;border-radius:24px;padding:28px 22px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.35);color:#272240;}
+#lgr-lock .lk-logo{width:48px;height:48px;margin:0 auto 12px;border-radius:14px;background:#7a68ee;color:#fff;font-weight:800;font-size:22px;display:flex;align-items:center;justify-content:center;}
+#lgr-lock .lk-title{font-size:19px;font-weight:800;}
+#lgr-lock .lk-sub{font-size:13px;color:#7f799b;margin:6px 0 16px;}
+#lgr-lock input{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1px solid #e0dbf0;border-radius:12px;outline:none;text-align:center;}
+#lgr-lock input:focus{border-color:#7a68ee;}
+#lgr-lock button{width:100%;margin-top:10px;font:inherit;font-weight:700;font-size:15px;padding:12px;border:none;border-radius:12px;background:#7a68ee;color:#fff;cursor:pointer;}
+#lgr-lock .lk-note{font-size:11px;color:#a29dbd;margin-top:10px;}
+</style>
 </head>
 <body>
 <div class="overlay" id="overlay" onclick="closeDrawer()"></div>
@@ -1405,7 +1458,7 @@ function showTxns(title, txns, col) {
 // the app. Grand total feeds the Overview NET WORTH KPI; the table + pie chart
 // are shown only after the (per-browser) password is entered.
 var MYNW_UNLOCKED = false;
-var SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSV45yHGbG6isPhrJh8aJ8SKyMtj1t3O0XI0FKkoP7-4x4KQOVKfGyZ9ack2uP8aodk-a3SDkZ6Qnrb/pub?gid=769710320&single=true&output=csv';
+var SHEET_CSV_URL = '/api/sheet?v=1'; // proxied: the real URL is the SHEET_CSV_URL env var
 var SAVINGS_ROWS = [], SAVINGS_TOTAL = 0, SAVINGS_LOADED = false, SAVINGS_ERR = null, _savFetching = false, _savChart = null;
 var PIE_COLORS = ['#7fd3b4','#9bb8f5','#b9a9f7','#f6b38a','#f2d184','#f29bb2','#8fd6e8','#d3a8f0','#a8dcb0','#f5c39e','#e9a7d9','#a9c9f2','#cfe39a','#f4a7a0','#b2b6f5','#93d4c4'];
 function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
@@ -2514,19 +2567,13 @@ function toggleExclude(desc) {
 // the Sync button is still there whenever an immediate pull is wanted.
 var AUTO_SYNC_STALE_MIN = 360;
 
-// Read data.json from somewhere that is actually current. /api/data is
-// same-origin and no-store, and the function behind it serves Blobs or the
-// GitHub contents API, both of which reflect a finished sync immediately.
-// raw.githubusercontent.com is only the fallback for when that function is
-// unreachable: it is CDN-cached with max-age=300, so on its own it can hand
-// back a five-minute-old file and make a completed sync look like it failed.
-var RAW_DATA_URL = 'https://raw.githubusercontent.com/VIMALZ1312/ledgr-realtime-app/main/data.json';
+// Read data.json from /api/data: same-origin, no-store, behind the passcode.
+// The function serves Blobs or the GitHub contents API, both current the
+// moment a sync finishes. (The old raw.githubusercontent fallback is gone:
+// the repo is private, and it would have bypassed the lock.)
 function fetchData() {
   return fetch('/api/data?t=' + Date.now(), { cache: 'no-store' })
-    .then(function(r){ if(!r.ok) throw new Error('/api/data HTTP ' + r.status); return r.json(); })
-    .catch(function(){
-      return fetch(RAW_DATA_URL + '?t=' + Date.now(), { cache: 'no-store' }).then(function(r){ return r.json(); });
-    });
+    .then(function(r){ if(!r.ok) throw new Error('/api/data HTTP ' + r.status); return r.json(); });
 }
 
 // Show a data.json: from /api/data on load, or straight from /api/hide's reply.

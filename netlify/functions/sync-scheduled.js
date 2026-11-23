@@ -17,7 +17,7 @@ exports.handler = async () => {
     return { statusCode: 500 };
   }
   try {
-    const resp = await fetch(`${base}/.netlify/functions/sync-background`, { method: 'POST' });
+    const resp = await fetch(`${base}/.netlify/functions/sync-background`, { method: 'POST', headers: { 'x-ledgr-key': process.env.APP_KEY || '' } });
     console.log(`Scheduled sync handed off to sync-background: HTTP ${resp.status}`);
     return { statusCode: 202 };
   } catch (err) {

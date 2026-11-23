@@ -67,3 +67,8 @@
   from = "/api/notify-test"
   to = "/.netlify/functions/notify-test"
   status = 200
+
+[[redirects]]
+  from = "/api/sheet"
+  to = "/.netlify/functions/sheet"
+  status = 200

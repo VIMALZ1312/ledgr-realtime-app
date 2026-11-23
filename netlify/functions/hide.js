@@ -7,9 +7,10 @@
 // transaction drops out of every tab and never comes back on a later sync.
 // data.json is rebuilt right away from the last cached bank download — no bank
 // calls — so the app shows the change within a few seconds.
-const { connectBlobs, setHidden } = require('./_core');
+const { requireKey, connectBlobs, setHidden } = require('./_core');
 
 exports.handler = async (event) => {
+  const denied = requireKey(event); if (denied) return denied;
   connectBlobs(event);
   const headers = {
     'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Content-Type',

@@ -19,6 +19,59 @@ button.sec{background:#191926;color:#c8f060;border:1px solid rgba(200,240,96,0.3
 .acct-bal{color:#5dd8f5;}
 .step{font-size:9px;color:#5e5e7a;margin-bottom:16px;padding:10px;background:#0f0f17;border-radius:6px;border-left:2px solid #c8f060;line-height:1.8;}
 </style>
+<script>
+// ── Passcode lock ──
+// Every /api call carries the passcode (x-ledgr-key). Without it, or with a
+// wrong one, the functions answer 401 and this shows the unlock screen. The
+// passcode is remembered on this device only.
+(function(){
+  var KEY = 'lgr_key';
+  function getKey(){ try { return localStorage.getItem(KEY) || ''; } catch(e){ return ''; } }
+  var orig = window.fetch.bind(window);
+  window.fetch = function(url, opts){
+    var u = typeof url === 'string' ? url : (url && url.url) || '';
+    if(/^(\/api\/|\/\.netlify\/functions\/)/.test(u)){
+      opts = Object.assign({}, opts || {});
+      opts.headers = Object.assign({}, opts.headers || {}, { 'x-ledgr-key': getKey() });
+      return orig(url, opts).then(function(r){ if(r.status === 401) showLock(!!getKey()); return r; });
+    }
+    return orig(url, opts);
+  };
+  function showLock(wrong){
+    if(document.getElementById('lgr-lock')) return;
+    var d = document.createElement('div'); d.id = 'lgr-lock';
+    d.innerHTML = '<form class="lk-card" onsubmit="return window._lgrUnlock(event)">'
+      + '<div class="lk-logo">L</div><div class="lk-title">Ledgr is locked</div>'
+      + '<div class="lk-sub">' + (wrong ? 'That passcode didn’t work. Try again.' : 'Enter your passcode to see your accounts.') + '</div>'
+      + '<input id="lgr-lock-in" type="password" autocomplete="current-password" placeholder="Passcode" autofocus>'
+      + '<button type="submit">Unlock</button>'
+      + '<div class="lk-note">Remembered on this device.</div></form>';
+    (document.body || document.documentElement).appendChild(d);
+    setTimeout(function(){ var i = document.getElementById('lgr-lock-in'); if(i) i.focus(); }, 50);
+  }
+  window._lgrUnlock = function(e){
+    e.preventDefault();
+    var v = (document.getElementById('lgr-lock-in').value || '').trim();
+    if(!v) return false;
+    try { localStorage.setItem(KEY, v); } catch(err){}
+    location.reload();
+    return false;
+  };
+  window.lgrLock = function(){ try { localStorage.removeItem(KEY); } catch(e){} location.reload(); };
+  if(!getKey()) document.addEventListener('DOMContentLoaded', function(){ showLock(false); });
+})();
+</script>
+<style>
+#lgr-lock{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:16px;background:linear-gradient(140deg,#231c4d,#3a2f80 60%,#4b4fa8);font-family:'Plus Jakarta Sans',system-ui,sans-serif;}
+#lgr-lock .lk-card{width:100%;max-width:340px;background:#fff;border-radius:24px;padding:28px 22px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.35);color:#272240;}
+#lgr-lock .lk-logo{width:48px;height:48px;margin:0 auto 12px;border-radius:14px;background:#7a68ee;color:#fff;font-weight:800;font-size:22px;display:flex;align-items:center;justify-content:center;}
+#lgr-lock .lk-title{font-size:19px;font-weight:800;}
+#lgr-lock .lk-sub{font-size:13px;color:#7f799b;margin:6px 0 16px;}
+#lgr-lock input{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1px solid #e0dbf0;border-radius:12px;outline:none;text-align:center;}
+#lgr-lock input:focus{border-color:#7a68ee;}
+#lgr-lock button{width:100%;margin-top:10px;font:inherit;font-weight:700;font-size:15px;padding:12px;border:none;border-radius:12px;background:#7a68ee;color:#fff;cursor:pointer;}
+#lgr-lock .lk-note{font-size:11px;color:#a29dbd;margin-top:10px;}
+</style>
 </head>
 <body>
 <div class="box">

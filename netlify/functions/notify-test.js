@@ -1,8 +1,9 @@
 // Send one test push to the phone, to confirm the ntfy subscription works.
 // POST /api/notify-test
-const { ntfy } = require('./_core');
+const { requireKey, ntfy } = require('./_core');
 
 exports.handler = async (event) => {
+  const denied = requireKey(event); if (denied) return denied;
   const headers = { 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json', 'Cache-Control': 'no-store' };
   if (event.httpMethod !== 'POST') return { statusCode: 405, headers, body: JSON.stringify({ error: 'POST only' }) };
   if (!process.env.NTFY_TOPIC) return { statusCode: 400, headers, body: JSON.stringify({ error: 'Alerts are not set up yet (NTFY_TOPIC is missing).' }) };

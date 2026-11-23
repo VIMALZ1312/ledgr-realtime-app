@@ -36,6 +36,20 @@ function storeArg(name) {
 // site context after connectLambda(event). Without it every Blobs call threw
 // "environment has not been configured" and quietly fell back. Each handler
 // calls this first; explicit NETLIFY_BLOBS_* env config needs nothing.
+// ── PASSCODE LOCK ───────────────────────────────────────────────────────────
+// The site itself is public (Netlify's site password is a paid feature), so
+// every function that returns or changes money data checks a passcode first.
+// The app sends it as the x-ledgr-key header; it is set in the APP_KEY env var.
+function requireKey(event) {
+  const want = process.env.APP_KEY;
+  if (!want || event.httpMethod === 'OPTIONS') return null;
+  const h = event.headers || {};
+  const got = String(h['x-ledgr-key'] || h['X-Ledgr-Key'] || '');
+  const a = Buffer.from(got), b = Buffer.from(want);
+  if (a.length === b.length && require('crypto').timingSafeEqual(a, b)) return null;
+  return { statusCode: 401, headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' }, body: JSON.stringify({ error: 'locked' }) };
+}
+
 function connectBlobs(event) {
   if (BLOBS_SITE && BLOBS_TOKEN) return;
   try { if (event && event.blobs) connectLambda(event); } catch (e) { console.warn('connectLambda failed:', e.message); }
@@ -950,4 +964,4 @@ async function buildDataJson() {
   return { alerts, accounts_synced: allAccounts.length, transactions_synced: allTransactions.length, generated_at: data.generated_at };
 }
 
-module.exports = { connectBlobs, plaid, Products, CountryCode, getTokens, saveToken, buildDataJson, dataStore, dedupeCrossItemTxns, buildCashflow, applyHidden, txnFingerprint, slimTxn, rebuildFromCache, setHidden, buildCards, sendAlerts, ntfy };
+module.exports = { requireKey, connectBlobs, plaid, Products, CountryCode, getTokens, saveToken, buildDataJson, dataStore, dedupeCrossItemTxns, buildCashflow, applyHidden, txnFingerprint, slimTxn, rebuildFromCache, setHidden, buildCards, sendAlerts, ntfy };

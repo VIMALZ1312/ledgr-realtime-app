@@ -2,9 +2,10 @@
 // The `-background` suffix makes this a Netlify Background Function: it returns
 // 202 immediately and may run up to 15 min — enough to page every bank's
 // transactions without hitting the 26s synchronous-function timeout.
-const { connectBlobs, buildDataJson } = require('./_core');
+const { requireKey, connectBlobs, buildDataJson } = require('./_core');
 
 exports.handler = async (event) => {
+  const denied = requireKey(event); if (denied) return denied;
   connectBlobs(event);
   try {
     const result = await buildDataJson();

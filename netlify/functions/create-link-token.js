@@ -12,7 +12,7 @@
 // Re-linking in create mode instead would mint a *second* Item for the same
 // bank: double Plaid billing, duplicate transactions, and the old dead token
 // still sitting in the env var.
-const { connectBlobs, plaid, Products, CountryCode, getTokens } = require('./_core');
+const { requireKey, connectBlobs, plaid, Products, CountryCode, getTokens } = require('./_core');
 
 const BASE = {
   user: { client_user_id: 'vimal-raj' },
@@ -22,6 +22,7 @@ const BASE = {
 };
 
 exports.handler = async (event) => {
+  const denied = requireKey(event); if (denied) return denied;
   connectBlobs(event);
   const headers = { 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': 'Content-Type', 'Access-Control-Allow-Methods': 'POST, OPTIONS', 'Content-Type': 'application/json' };
   if (event.httpMethod === 'OPTIONS') return { statusCode: 200, headers, body: '' };
