@@ -46,6 +46,9 @@ exports.handler = async (event) => {
           ...BASE,
           access_token,
           update: { account_selection_enabled: true },
+          // Asks the bank for card due dates / statements (Payment monitor);
+          // Items linked for transactions only answer ADDITIONAL_CONSENT_REQUIRED.
+          additional_consented_products: [Products.Liabilities],
         });
         return { statusCode: 200, headers, body: JSON.stringify({
           link_token: response.data.link_token, mode: 'update', nickname,
@@ -53,14 +56,14 @@ exports.handler = async (event) => {
       }
       // Fall through to create mode, but say so: a typo'd nickname silently
       // adding a duplicate Item is exactly the outcome this guards against.
-      const response = await plaid.linkTokenCreate({ ...BASE, products: [Products.Transactions] });
+      const response = await plaid.linkTokenCreate({ ...BASE, products: [Products.Transactions], additional_consented_products: [Products.Liabilities] });
       return { statusCode: 200, headers, body: JSON.stringify({
         link_token: response.data.link_token, mode: 'create', nickname,
         note: `No existing token for "${nickname}" — this will add a new bank. Known: ${Object.keys(tokens).join(', ')}`,
       })};
     }
 
-    const response = await plaid.linkTokenCreate({ ...BASE, products: [Products.Transactions] });
+    const response = await plaid.linkTokenCreate({ ...BASE, products: [Products.Transactions], additional_consented_products: [Products.Liabilities] });
     return { statusCode: 200, headers, body: JSON.stringify({ link_token: response.data.link_token, mode: 'create' }) };
   } catch (err) {
     return { statusCode: 500, headers, body: JSON.stringify({ error: err.response?.data || err.message }) };

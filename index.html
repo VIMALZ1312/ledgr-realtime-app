@@ -1138,6 +1138,17 @@ function renderPayments(){
   html += '<div style="font-size:11px;color:var(--muted);margin-top:4px">Pay the full statement to avoid interest; at least the minimum by the due date to avoid a late fee.'
     + (est ? ' “est.” = the bank didn’t share the due date, so it’s estimated from when you usually pay that card.' : '') + '</div></div>';
 
+  // Banks that need a one-time OK before they share due dates and statements.
+  var le = (D.sync_status && D.sync_status.liabilities_errors) || {};
+  var needConsent = Object.keys(le).filter(function(k){ return /ADDITIONAL_CONSENT_REQUIRED/.test(le[k]); });
+  if(needConsent.length){
+    html += '<div class="panel"><div class="panel-head"><div class="panel-title">Get exact due dates</div><div class="panel-action">one-time</div></div>'
+      + '<div style="font-size:12px;color:var(--muted);margin-bottom:10px">These banks were linked for transactions only. Log in once and allow “Liabilities” to get the real due date, statement and minimum from the bank.</div>'
+      + '<div style="display:flex;flex-wrap:wrap;gap:8px">' + needConsent.map(function(k){
+          return '<button class="bank-chip" onclick="goRelink(\''+esc(k)+'\')">'+esc(bankLabelOf(k, k))+' ›</button>';
+        }).join('') + '</div></div>';
+  }
+
   html += renderFeeTimeline();
 
   html += '<div class="panel"><div class="panel-head"><div class="panel-title">Phone alerts</div></div>'
