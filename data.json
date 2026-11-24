@@ -2,7 +2,7 @@
   "kpis": {
     "income": 17291.08,
     "income_period": "November 2026",
-    "true_outflows": 4132.19,
+    "true_outflows": 4157.94,
     "outflows_period": "November 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -148,7 +148,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 133.36,
-      "available": 2599,
+      "available": 2586,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -180,20 +180,6 @@
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
-      "is_savings": false
-    },
-    {
-      "bank": "TD Bank",
-      "nickname": "td",
-      "name": "TD BEYOND CHECKING",
-      "mask": "9222",
-      "type": "depository",
-      "subtype": "checking",
-      "balance": 0,
-      "available": null,
-      "is_credit": false,
-      "is_loan": false,
-      "is_checking": true,
       "is_savings": false
     },
     {
@@ -315,7 +301,7 @@
       "mask": "7397",
       "type": "investment",
       "subtype": "crypto exchange",
-      "balance": 13.41,
+      "balance": 13.16,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -329,8 +315,8 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 55681.04,
-      "available": 4713.5,
+      "balance": 53904.74,
+      "available": 4703.7,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -338,10 +324,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 79876.36,
+    "total_checking": 78100.06,
     "total_credit": 990.5,
     "total_loans": 384584.29,
-    "net": -305698.43
+    "net": -307474.73
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -353,7 +339,7 @@
   },
   "spending": {
     "Entertainment": 3063.0099999999993,
-    "Healthcare": 4601.179999999999,
+    "Healthcare": 4626.929999999999,
     "Tech/Subs": 16298.890000000003,
     "Refund": -11835.699999999999,
     "Gas/Travel": 8132.71,
@@ -683,7 +669,16 @@
       "period_label": "October 2026"
     }
   ],
-  "pending_transactions": [],
+  "pending_transactions": [
+    {
+      "date": "11-24",
+      "desc": "Csc Medical Center",
+      "amount": 25.75,
+      "category": "Healthcare",
+      "bank": "BofA",
+      "pending": true
+    }
+  ],
   "detected_recurring": [
     {
       "desc": "ShopRite",
@@ -1649,7 +1644,7 @@
       "income": 17291.08,
       "bofa_income": 17291.08,
       "td_income": 0,
-      "outflows": 4132.19,
+      "outflows": 4157.94,
       "xoom": 0,
       "investments": 0
     }
@@ -9087,7 +9082,7 @@
       "categories": {
         "Tech/Subs": 1878.0500000000002,
         "Entertainment": 39.41,
-        "Healthcare": 185.50999999999996,
+        "Healthcare": 211.25999999999996,
         "Insurance": 265.9,
         "Shopping": 869.62,
         "Restaurants": 190.82999999999998,
@@ -9095,7 +9090,7 @@
         "Gas/Travel": 121.02,
         "Refund": -75.98
       },
-      "total": 4132.190000000001,
+      "total": 4157.940000000001,
       "transactions": [
         {
           "id": "YDE1KKBbaLt1rwnmzMa3hLnPR4A1mqCzNJDn8",
@@ -9831,6 +9826,20 @@
           "desc": "Deccan Halal Mart",
           "amount": 16.55,
           "category": "Groceries",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "id": "odaDer4pmjibqVvavqRMt7V7MY5O69io8Rbem",
+          "date": "11-24",
+          "desc": "Csc Medical Center",
+          "amount": 25.75,
+          "category": "Healthcare",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -16924,19 +16933,19 @@
     },
     "2026-02": {
       "income": {
-        "total": 14189.83,
-        "salary": 14189.83,
+        "total": 9189.83,
+        "salary": 9189.83,
         "zelle_in": 0,
         "interest": 0,
         "other_in": 0
       },
       "spent": {
-        "total": 16773.87,
+        "total": 13009.8,
         "purchases": 12738.5,
         "refunds": 95.83,
         "loans": 0,
         "fees": 46.88,
-        "zelle_out": 3809.07,
+        "zelle_out": 45,
         "other_out": 275.25,
         "india": 0
       },
@@ -16944,8 +16953,8 @@
         "invested": 40000
       },
       "internal": {
-        "count": 17,
-        "total": 22461.99
+        "count": 16,
+        "total": 20961.99
       },
       "by_category": {
         "Shopping": 6362.85,
@@ -16958,7 +16967,6 @@
         "Entertainment": 447.61,
         "AI tools": 15,
         "Kids": 564.12,
-        "Zelle to people": 3764.07,
         "Tax/Professional": 11
       },
       "ai": {
@@ -16979,11 +16987,6 @@
           "amount": 5815
         },
         {
-          "date": "2026-02-27",
-          "desc": "TD ZELLE SENT 605800H0EO7W Zelle VIMAL LOGANATHA",
-          "amount": 1500
-        },
-        {
           "date": "2026-02-24",
           "desc": "Airbnb",
           "amount": 1410.04
@@ -16992,16 +16995,6 @@
           "date": "2026-02-11",
           "desc": "Spirit Airlines",
           "amount": 1188.4
-        },
-        {
-          "date": "2026-02-27",
-          "desc": "TD ZELLE SENT 605800F059DI Zelle VIMAL LOGANATHA",
-          "amount": 1000
-        },
-        {
-          "date": "2026-02-23",
-          "desc": "TD ZELLE SENT 605300F0BRHH Zelle VIMAL LOGANATHA",
-          "amount": 1000
         }
       ],
       "unmatched": [
@@ -17016,15 +17009,6 @@
       "loan_items": [],
       "bounced": [],
       "tx_in": [
-        {
-          "id": "aJDnzza08zsdrJ0em4ePh7kY7wyv78c4Dyn6r",
-          "d": "02-11",
-          "n": "VERIZON V3 DIR DEP",
-          "a": 2500,
-          "g": "Salary",
-          "b": "TD Bank",
-          "k": "9222"
-        },
         {
           "id": "q69Perxp34hAyv1w19vaHvdMw49eyJI5myeNdK",
           "d": "02-13",
@@ -17042,15 +17026,6 @@
           "g": "Salary",
           "b": "BofA",
           "k": "5677"
-        },
-        {
-          "id": "0AQrpp3RypIbj5XnvZndt67O6gNX6nHJ7xgpX",
-          "d": "02-25",
-          "n": "VERIZON V3 DIR DEP",
-          "a": 2500,
-          "g": "Salary",
-          "b": "TD Bank",
-          "k": "9222"
         },
         {
           "id": "6qQOkeyD5wuyoX5N5rXZCPw8Ek4LzrCZgBM08v",
@@ -17314,15 +17289,6 @@
           "g": "Shopping",
           "b": "BofA",
           "k": "2776"
-        },
-        {
-          "id": "4rNJppAe4pS7YQp4RN4aF4gX4wDo4mtqL1m3e",
-          "d": "02-11",
-          "n": "TD ZELLE SENT 604200D0FVBL Zelle VIMAL LOGANATHA",
-          "a": 264.07,
-          "g": "Zelle to people",
-          "b": "TD Bank",
-          "k": "9222"
         },
         {
           "id": "3Dz73nqwJaSQabJdJNb5f1v0gnRweDIM3mbD18",
@@ -17595,15 +17561,6 @@
           "k": "9762"
         },
         {
-          "id": "rJXPvvndAvsoN6YgBxgmFBj8BxApB5Ub9K3X8",
-          "d": "02-23",
-          "n": "TD ZELLE SENT 605300F0BRHH Zelle VIMAL LOGANATHA",
-          "a": 1000,
-          "g": "Zelle to people",
-          "b": "TD Bank",
-          "k": "9222"
-        },
-        {
           "id": "L9nKVqJR3Mf3koKgKzoZtVjYy95X7BFjb69oq9",
           "d": "02-24",
           "n": "Airbnb",
@@ -17683,24 +17640,6 @@
           "g": "Restaurants",
           "b": "Wells Fargo",
           "k": "9762"
-        },
-        {
-          "id": "AyK3zzbYwzUyqLAeg0erHnv9nJ1VnMHjpZdV9",
-          "d": "02-27",
-          "n": "TD ZELLE SENT 605800H0EO7W Zelle VIMAL LOGANATHA",
-          "a": 1500,
-          "g": "Zelle to people",
-          "b": "TD Bank",
-          "k": "9222"
-        },
-        {
-          "id": "vLOy44wDJ4S4zOVDP5DAtm1vm5ywm7IgyYoZv",
-          "d": "02-27",
-          "n": "TD ZELLE SENT 605800F059DI Zelle VIMAL LOGANATHA",
-          "a": 1000,
-          "g": "Zelle to people",
-          "b": "TD Bank",
-          "k": "9222"
         },
         {
           "id": "YJQ8z6Dj8AH6mpeeeARBFmKeNP1OkNU9Y37QV",
@@ -17791,9 +17730,9 @@
     },
     "2026-03": {
       "income": {
-        "total": 12258.12,
-        "salary": 12049.41,
-        "zelle_in": 138,
+        "total": 7120.11,
+        "salary": 7049.4,
+        "zelle_in": 0,
         "interest": 0,
         "other_in": 70.71
       },
@@ -17811,8 +17750,8 @@
         "invested": 0
       },
       "internal": {
-        "count": 12,
-        "total": 43348.41
+        "count": 10,
+        "total": 40848.41
       },
       "by_category": {
         "Shopping": 1225.97,
@@ -17877,33 +17816,6 @@
       "bounced": [],
       "tx_in": [
         {
-          "id": "kZgxqq9MzquJpQVgY7gnsRAbROV1R7HEPpM50",
-          "d": "03-03",
-          "n": "TD ZELLE RECEIVED 606200N06600 Zelle RAKESH KUMAR ",
-          "a": 88,
-          "g": "Zelle from people",
-          "b": "TD Bank",
-          "k": "9222"
-        },
-        {
-          "id": "KdQvzzn3Jzh1rq85EX5OFmj4mEeomZINVL09N",
-          "d": "03-05",
-          "n": "IOD INTEREST PAID",
-          "a": 0.01,
-          "g": "Salary",
-          "b": "TD Bank",
-          "k": "9222"
-        },
-        {
-          "id": "yPRXJJDqgJcVw5zjoEjYuOZROEw0OniazD0Qo",
-          "d": "03-11",
-          "n": "VERIZON V3 DIR DEP",
-          "a": 2500,
-          "g": "Salary",
-          "b": "TD Bank",
-          "k": "9222"
-        },
-        {
           "id": "YYA5VXp78gTReb5y51bnI0y16eBvaAf7k8Rey3",
           "d": "03-13",
           "n": "WIPRO LTD DES:PAYROLL ID:XXXXX0519762ZSL INDN:VIST",
@@ -17911,15 +17823,6 @@
           "g": "Salary",
           "b": "BofA",
           "k": "9715"
-        },
-        {
-          "id": "3m0Rppkbjps9oNXB4dBpCDoaDgJKDwHLvzb1z",
-          "d": "03-16",
-          "n": "TD ZELLE RECEIVED 607400L09VLW Zelle RAM ANGU",
-          "a": 50,
-          "g": "Zelle from people",
-          "b": "TD Bank",
-          "k": "9222"
         },
         {
           "id": "wYxqop4Rd1T8N5D4bRQAuD6ewA3mRJURy6jA3",
@@ -17938,15 +17841,6 @@
           "g": "Salary",
           "b": "BofA",
           "k": "5677"
-        },
-        {
-          "id": "54JrppvOxpiqmRX1b91afZjJDZZamPF6kyRKv",
-          "d": "03-25",
-          "n": "VERIZON V3 DIR DEP",
-          "a": 2500,
-          "g": "Salary",
-          "b": "TD Bank",
-          "k": "9222"
         },
         {
           "id": "aYQMpdmRV6T7gOM4MJOEHNnO8EZww7CrKKA9g",
@@ -18758,9 +18652,9 @@
     },
     "2026-04": {
       "income": {
-        "total": 10819.58,
-        "salary": 9910.97,
-        "zelle_in": 667.9,
+        "total": 8135.56,
+        "salary": 7410.95,
+        "zelle_in": 483.9,
         "interest": 0,
         "other_in": 240.71
       },
@@ -18778,8 +18672,8 @@
         "invested": 0
       },
       "internal": {
-        "count": 11,
-        "total": 10169.43
+        "count": 7,
+        "total": 4969.43
       },
       "by_category": {
         "Shopping": 918.84,
@@ -18845,33 +18739,6 @@
       "bounced": [],
       "tx_in": [
         {
-          "id": "8wJdppr5bpFNqkreo6eBFNLX1NNaYDUJapz9d",
-          "d": "04-03",
-          "n": "IOD INTEREST PAID",
-          "a": 0.02,
-          "g": "Salary",
-          "b": "TD Bank",
-          "k": "9222"
-        },
-        {
-          "id": "Z0yJzzkmBzT39JVOBKObCKqw7KKg4ASV6XEx1",
-          "d": "04-03",
-          "n": "TD ZELLE RECEIVED 609300I0H3QK Zelle RAKESH KUMAR ",
-          "a": 88,
-          "g": "Zelle from people",
-          "b": "TD Bank",
-          "k": "9222"
-        },
-        {
-          "id": "aJDnzza08zsdrJ0em4ePh7kNR7768Mu9XRVeD",
-          "d": "04-08",
-          "n": "VERIZON V3 DIR DEP",
-          "a": 2500,
-          "g": "Salary",
-          "b": "TD Bank",
-          "k": "9222"
-        },
-        {
           "id": "dM5Ed30xEot9Ap000VOXuYRM4vxmqbCKNPxp7",
           "d": "04-10",
           "n": "ONLINE TRANSFER FROM BANK OF AMERICA, N.A. CHK XXX",
@@ -18897,15 +18764,6 @@
           "g": "Zelle from people",
           "b": "PNC",
           "k": "5961"
-        },
-        {
-          "id": "jbAXPP7nePh5kNQM9YMjIDwzgDD7N8I1NABX5",
-          "d": "04-17",
-          "n": "TD ZELLE RECEIVED 610700M061E8 Zelle RAKESH KUMAR ",
-          "a": 96,
-          "g": "Zelle from people",
-          "b": "TD Bank",
-          "k": "9222"
         },
         {
           "id": "DJDLbxYRw0SaEvL0LMvNI8R1Q9kmKqIwdA0zN",
@@ -19690,18 +19548,18 @@
     },
     "2026-05": {
       "income": {
-        "total": 13073.12,
+        "total": 12985.12,
         "salary": 8900.41,
-        "zelle_in": 4132,
+        "zelle_in": 4044,
         "interest": 0,
         "other_in": 40.71
       },
       "spent": {
-        "total": 4185.76,
+        "total": 4160.76,
         "purchases": 4548.71,
         "refunds": 689.42,
         "loans": 47.66,
-        "fees": 69.81,
+        "fees": 44.81,
         "zelle_out": 209,
         "other_out": 0,
         "india": 0
@@ -19736,12 +19594,6 @@
           "desc": "INTEREST CHARGE ON PURCHASES",
           "amount": 44.81,
           "label": "interest"
-        },
-        {
-          "date": "2026-05-05",
-          "desc": "MAINTENANCE FEE",
-          "amount": 25,
-          "label": "maintenance"
         }
       ],
       "big": [],
@@ -19779,15 +19631,6 @@
       ],
       "bounced": [],
       "tx_in": [
-        {
-          "id": "4rNJppAe4pS7YQp4RN4ghqem9kY0nBFD3bEDm",
-          "d": "05-04",
-          "n": "TD ZELLE RECEIVED 612300F06X12 Zelle RAKESH KUMAR ",
-          "a": 88,
-          "g": "Zelle from people",
-          "b": "TD Bank",
-          "k": "9222"
-        },
         {
           "id": "o36mK0bLmacYOkqqqNbACzepXaKDv9H0me7vJv",
           "d": "05-08",
@@ -20014,15 +19857,6 @@
           "g": "Shopping",
           "b": "Wells Fargo",
           "k": "9762"
-        },
-        {
-          "id": "VKMOzzBDdzHy71N8rq8JTPp1e5ovvEUkRMvVd",
-          "d": "05-05",
-          "n": "MAINTENANCE FEE",
-          "a": 25,
-          "g": "Bank & card fees",
-          "b": "TD Bank",
-          "k": "9222"
         },
         {
           "id": "7BEMAxK1o6i4YQp3pYJqH7LmJrB0DNs0N7vkE",
@@ -20706,32 +20540,31 @@
     },
     "2026-06": {
       "income": {
-        "total": 16036.76,
+        "total": 15948.76,
         "salary": 15908.05,
-        "zelle_in": 88,
+        "zelle_in": 0,
         "interest": 0,
         "other_in": 40.71
       },
       "spent": {
-        "total": 20954.92,
+        "total": 21649.92,
         "purchases": 6425.35,
         "refunds": 800.76,
         "loans": 4479.46,
-        "fees": 25,
-        "zelle_out": 258,
-        "other_out": 0,
+        "fees": 0,
+        "zelle_out": 228,
+        "other_out": 750,
         "india": 10567.87
       },
       "moved": {
         "invested": 21198.11
       },
       "internal": {
-        "count": 29,
-        "total": 34625.15
+        "count": 26,
+        "total": 32175.15
       },
       "by_category": {
         "Sent to India": 10567.87,
-        "Zelle to people": 78,
         "Healthcare": 1214.85,
         "Bills & utilities": 760.36,
         "Entertainment": 688.15,
@@ -20742,20 +20575,14 @@
         "Gas/Travel": 739.28,
         "Tech/Subs": 145.67,
         "AI tools": 155.52,
+        "Zelle to people": 48,
         "Groceries": 269.65
       },
       "ai": {
         "Claude Sub Anthropic.comca": 100,
         "Replit Inc.": 55.52
       },
-      "fees": [
-        {
-          "date": "2026-06-05",
-          "desc": "MAINTENANCE FEE",
-          "amount": 25,
-          "label": "maintenance"
-        }
-      ],
+      "fees": [],
       "big": [
         {
           "date": "2026-06-08",
@@ -20764,6 +20591,12 @@
         }
       ],
       "unmatched": [
+        {
+          "date": "2026-06-17",
+          "desc": "ZEL TO VIMAL RAJ LOGANATHAN",
+          "amount": 750,
+          "label": "out"
+        },
         {
           "date": "2026-06-30",
           "desc": "ZEL FROM DEEPAK REDDY DEVULAPALLY",
@@ -20812,15 +20645,6 @@
       ],
       "bounced": [],
       "tx_in": [
-        {
-          "id": "pJmDkkR73kszLk7VePA1uX43PO07rJFL1ny4pp",
-          "d": "06-03",
-          "n": "TD ZELLE RECEIVED 615400B0BXTY Zelle RAKESH KUMAR ",
-          "a": 88,
-          "g": "Zelle from people",
-          "b": "TD Bank",
-          "k": "9222"
-        },
         {
           "id": "obYxEEgoQwt34xnO1JMkh0zErEOa7bIbDAY0y",
           "d": "06-05",
@@ -21056,15 +20880,6 @@
           "g": "Shopping",
           "b": "Wells Fargo",
           "k": "8036"
-        },
-        {
-          "id": "yPRXJJDqgJcVw5zjoE1wf6PObEOgyOUpRxXB3",
-          "d": "06-05",
-          "n": "MAINTENANCE FEE",
-          "a": 25,
-          "g": "Bank & card fees",
-          "b": "TD Bank",
-          "k": "9222"
         },
         {
           "id": "q69Perxp34hAyv1w1ynVFQpjygVqLPID3wQkp",
@@ -21400,6 +21215,15 @@
           "k": "7309"
         },
         {
+          "id": "peOm0pKx47FVdpZqbYKMIm4E1zezQ6S3a5wp8",
+          "d": "06-17",
+          "n": "ZEL TO VIMAL RAJ LOGANATHAN",
+          "a": 750,
+          "g": "Cash & other money out",
+          "b": "PNC",
+          "k": "5961"
+        },
+        {
           "id": "3Dz73nqwJaSQabJdJa7NIYRDP8Z5ODuPe5gBM",
           "d": "06-17",
           "n": "CHECKCARD 0616 KIDS SMILE SOUTH BRUNSWINJ XXXXX976",
@@ -21407,15 +21231,6 @@
           "g": "Refunds & cashback",
           "b": "BofA",
           "k": "9715"
-        },
-        {
-          "id": "k8EK99BDQJtQ9Mrj5n8DidKLbLQ3npIvneLZk",
-          "d": "06-18",
-          "n": "Zelle payment to Rakesh Gallannagari for \"Poker\"; ",
-          "a": 30,
-          "g": "Zelle to people",
-          "b": "BofA",
-          "k": "7309"
         },
         {
           "id": "gwMnLy4znKsadAbbbPkbs65pLae7DrC8B7aZ6",
@@ -21974,18 +21789,18 @@
     },
     "2026-07": {
       "income": {
-        "total": 29003.73,
+        "total": 28915.73,
         "salary": 23862.09,
-        "zelle_in": 2063.67,
+        "zelle_in": 1975.67,
         "interest": 0,
         "other_in": 3077.97
       },
       "spent": {
-        "total": 13504.22,
+        "total": 13479.22,
         "purchases": 7341.94,
         "refunds": 484.19,
         "loans": 4431.79,
-        "fees": 156,
+        "fees": 131,
         "zelle_out": 1003,
         "other_out": 0,
         "india": 1055.68
@@ -22053,12 +21868,6 @@
           "date": "2026-07-10",
           "desc": "MONTHLY SERVICE CHARGE VR",
           "amount": 7,
-          "label": "maintenance"
-        },
-        {
-          "date": "2026-07-03",
-          "desc": "MAINTENANCE FEE",
-          "amount": 25,
           "label": "maintenance"
         }
       ],
@@ -22135,15 +21944,6 @@
           "g": "Salary",
           "b": "BofA",
           "k": "9715"
-        },
-        {
-          "id": "YvMjzzKqPzhPA1Jgxy19fM6gwVMK4Mh71gqR9m",
-          "d": "07-03",
-          "n": "TD ZELLE RECEIVED 618400D00EKH Zelle RAKESH KUMAR ",
-          "a": 88,
-          "g": "Zelle from people",
-          "b": "TD Bank",
-          "k": "9222"
         },
         {
           "id": "OY7vVyOXkETbqNvdvqxzHyvEoyDQK6TPJ48L95",
@@ -22434,15 +22234,6 @@
           "g": "Restaurants",
           "b": "Discover",
           "k": "0494"
-        },
-        {
-          "id": "eJyxwwZ7Vwsa10Vje80MUMEQkvMoaMh9Q5bAav",
-          "d": "07-03",
-          "n": "MAINTENANCE FEE",
-          "a": 25,
-          "g": "Bank & card fees",
-          "b": "TD Bank",
-          "k": "9222"
         },
         {
           "id": "VYPJVXQ8agTRoPJqJoQetg7VqgzmaPUJ7krZKY",
@@ -23394,18 +23185,18 @@
     },
     "2026-08": {
       "income": {
-        "total": 17512.3,
+        "total": 17424.3,
         "salary": 16417.61,
-        "zelle_in": 317.91,
+        "zelle_in": 229.91,
         "interest": 0,
         "other_in": 776.78
       },
       "spent": {
-        "total": 17866.43,
+        "total": 17841.43,
         "purchases": 10228.69,
         "refunds": 226.54,
         "loans": 4431.79,
-        "fees": 114.76,
+        "fees": 89.76,
         "zelle_out": 170,
         "other_out": 1053.99,
         "india": 2093.74
@@ -23414,8 +23205,8 @@
         "invested": 15605.36
       },
       "internal": {
-        "count": 33,
-        "total": 55067.05
+        "count": 32,
+        "total": 54923.02
       },
       "by_category": {
         "Entertainment": 687,
@@ -23461,12 +23252,6 @@
           "date": "2026-08-12",
           "desc": "MONTHLY SERVICE CHARGE VR",
           "amount": 7,
-          "label": "maintenance"
-        },
-        {
-          "date": "2026-08-05",
-          "desc": "MAINTENANCE FEE",
-          "amount": 25,
           "label": "maintenance"
         },
         {
@@ -23548,15 +23333,6 @@
         }
       ],
       "tx_in": [
-        {
-          "id": "KdQvzzn3Jzh1rq85EXMpCPnYjRZz8VtNvZ4mq",
-          "d": "08-03",
-          "n": "TD ZELLE RECEIVED 621500O023A1 Zelle RAKESH KUMAR ",
-          "a": 88,
-          "g": "Zelle from people",
-          "b": "TD Bank",
-          "k": "9222"
-        },
         {
           "id": "bYPEew8MOLTn3kEaE3XRCBy7RPp61ZCDABjL9",
           "d": "08-03",
@@ -23927,15 +23703,6 @@
           "g": "Shopping",
           "b": "Robinhood",
           "k": "1345"
-        },
-        {
-          "id": "P13jzz6vOzFz8dNBKwjRhYLXZg3LqXs1Bm700",
-          "d": "08-05",
-          "n": "MAINTENANCE FEE",
-          "a": 25,
-          "g": "Bank & card fees",
-          "b": "TD Bank",
-          "k": "9222"
         },
         {
           "id": "MVjkYBJRygcMbvkqkbDPFqZ8Q4n6YOuXE4xO7",
@@ -25355,18 +25122,18 @@
     },
     "2026-09": {
       "income": {
-        "total": 18220.35,
+        "total": 18132.35,
         "salary": 16096.64,
-        "zelle_in": 2123.71,
+        "zelle_in": 2035.71,
         "interest": 0,
         "other_in": 0
       },
       "spent": {
-        "total": 14043.02,
+        "total": 14018.02,
         "purchases": 8279.92,
         "refunds": 39.07,
         "loans": 4431.79,
-        "fees": 129.3,
+        "fees": 104.3,
         "zelle_out": 135,
         "other_out": 0,
         "india": 1106.08
@@ -25424,12 +25191,6 @@
           "date": "2026-09-11",
           "desc": "MONTHLY SERVICE CHARGE VR",
           "amount": 7,
-          "label": "maintenance"
-        },
-        {
-          "date": "2026-09-04",
-          "desc": "MAINTENANCE FEE",
-          "amount": 25,
           "label": "maintenance"
         },
         {
@@ -25495,15 +25256,6 @@
         }
       ],
       "tx_in": [
-        {
-          "id": "BK3yzzgdLzHABmXa04AdIMY7NXeJ1XSgeEkmE",
-          "d": "09-03",
-          "n": "TD ZELLE RECEIVED 624600L0A5T1 Zelle RAKESH KUMAR ",
-          "a": 88,
-          "g": "Zelle from people",
-          "b": "TD Bank",
-          "k": "9222"
-        },
         {
           "id": "BMpnzkvyn0txKMoooBQOIjZXg88XEaiw3dK7Q",
           "d": "09-08",
@@ -25748,15 +25500,6 @@
           "g": "Shopping",
           "b": "Wells Fargo",
           "k": "9762"
-        },
-        {
-          "id": "LwbEzzpyZzFe4z87Yge1tyZd5AQae1HJnJLDj",
-          "d": "09-04",
-          "n": "MAINTENANCE FEE",
-          "a": 25,
-          "g": "Bank & card fees",
-          "b": "TD Bank",
-          "k": "9222"
         },
         {
           "id": "Jd9b75X7eVUgLgKd35M5Uqk9yxpX0NiAMaPgD",
@@ -26726,18 +26469,18 @@
     },
     "2026-10": {
       "income": {
-        "total": 17713.37,
+        "total": 17625.37,
         "salary": 16769.66,
-        "zelle_in": 943.71,
+        "zelle_in": 855.71,
         "interest": 0,
         "other_in": 0
       },
       "spent": {
-        "total": 20943.25,
+        "total": 20918.25,
         "purchases": 7351.6,
         "refunds": 35.29,
         "loans": 4431.79,
-        "fees": 162.18,
+        "fees": 137.18,
         "zelle_out": 2022,
         "other_out": 0,
         "india": 7010.97
@@ -26746,8 +26489,8 @@
         "invested": 0
       },
       "internal": {
-        "count": 32,
-        "total": 30106.66
+        "count": 31,
+        "total": 29980.66
       },
       "by_category": {
         "Bills & utilities": 869.84,
@@ -26787,12 +26530,6 @@
           "date": "2026-10-10",
           "desc": "MONTHLY SERVICE CHARGE VR",
           "amount": 7,
-          "label": "maintenance"
-        },
-        {
-          "date": "2026-10-05",
-          "desc": "MAINTENANCE FEE",
-          "amount": 25,
           "label": "maintenance"
         },
         {
@@ -26837,15 +26574,6 @@
       ],
       "bounced": [],
       "tx_in": [
-        {
-          "id": "yPRXJJDqgJcVw5zjoE0oTRNebdVmkJUaJ4ALQ",
-          "d": "10-05",
-          "n": "TD ZELLE RECEIVED 627600O03JHD Zelle RAKESH KUMAR ",
-          "a": 88,
-          "g": "Zelle from people",
-          "b": "TD Bank",
-          "k": "9222"
-        },
         {
           "id": "915b44LnrotenXB6V5ybUpV7D4p6mNU4dLNJB",
           "d": "10-09",
@@ -27126,15 +26854,6 @@
           "g": "Shopping",
           "b": "Wells Fargo",
           "k": "9762"
-        },
-        {
-          "id": "3m0Rppkbjps9oNXB4dQ4fadnLOBYV3fLO9wea",
-          "d": "10-05",
-          "n": "MAINTENANCE FEE",
-          "a": 25,
-          "g": "Bank & card fees",
-          "b": "TD Bank",
-          "k": "9222"
         },
         {
           "id": "K7KyXPmNBgCRMgyXyMdztO0rX5VRAXsydwJar",
@@ -27773,18 +27492,18 @@
     },
     "2026-11": {
       "income": {
-        "total": 17449.08,
+        "total": 17361.08,
         "salary": 17291.08,
-        "zelle_in": 158,
+        "zelle_in": 70,
         "interest": 0,
         "other_in": 0
       },
       "spent": {
-        "total": 11203.54,
+        "total": 11178.54,
         "purchases": 4083.17,
         "refunds": 75.98,
         "loans": 4540.74,
-        "fees": 108.25,
+        "fees": 83.25,
         "zelle_out": 155,
         "other_out": 0,
         "india": 2392.36
@@ -27793,8 +27512,8 @@
         "invested": 100
       },
       "internal": {
-        "count": 17,
-        "total": 7776.56
+        "count": 16,
+        "total": 7713.56
       },
       "by_category": {
         "Bills & utilities": 1047.98,
@@ -27825,12 +27544,6 @@
           "label": "maintenance"
         },
         {
-          "date": "2026-11-05",
-          "desc": "MAINTENANCE FEE",
-          "amount": 25,
-          "label": "maintenance"
-        },
-        {
           "date": "2026-11-19",
           "desc": "Interest Charge",
           "amount": 7.83,
@@ -27854,15 +27567,6 @@
       ],
       "bounced": [],
       "tx_in": [
-        {
-          "id": "KdQvzzn3Jzh1rq85EX08uaR9xzeJXZh1JAP6E",
-          "d": "11-03",
-          "n": "TD ZELLE RECEIVED 630700C0F2OY Zelle RAKESH KUMAR ",
-          "a": 88,
-          "g": "Zelle from people",
-          "b": "TD Bank",
-          "k": "9222"
-        },
         {
           "id": "r9Mgnn0ZYDi69ke8XmjNuOZZZxZ0MzhwZQ5zj",
           "d": "11-06",
@@ -28080,15 +27784,6 @@
           "g": "Restaurants",
           "b": "Wells Fargo",
           "k": "9762"
-        },
-        {
-          "id": "54JrppvOxpiqmRX1b9pyhJVeAja9mmUNERRYO",
-          "d": "11-05",
-          "n": "MAINTENANCE FEE",
-          "a": 25,
-          "g": "Bank & card fees",
-          "b": "TD Bank",
-          "k": "9222"
         },
         {
           "id": "6qQOkeyD5wuyoX5N5oJxIQ9NpzbOmOTygmaaO",
@@ -28923,8 +28618,8 @@
       "hidden_at": "2026-11-21T22:17:39.649Z"
     }
   ],
-  "generated_at": "2026-11-24T11:01:46.303Z",
-  "rebuilt_at": "2026-11-24T11:01:46.933Z",
+  "generated_at": "2026-11-24T23:02:04.027Z",
+  "rebuilt_at": "2026-11-24T23:02:04.692Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -28988,11 +28683,10 @@
       {
         "nickname": "td",
         "ok": true,
-        "accounts": 2,
+        "accounts": 1,
         "source": "PLAID_TOKEN_TD",
         "masks": [
-          "5186",
-          "9222"
+          "5186"
         ],
         "txns": 42,
         "pages": 1,
@@ -29010,10 +28704,10 @@
           "5677",
           "9715"
         ],
-        "txns": 385,
+        "txns": 386,
         "pages": 1,
         "truncated": false,
-        "last_txn": "2026-11-23"
+        "last_txn": "2026-11-24"
       },
       {
         "nickname": "zillow",
@@ -29062,9 +28756,9 @@
     "forced_refresh": [
       "pnc",
       "zillow",
-      "robin",
-      "wifebofa",
       "td",
+      "wifebofa",
+      "robin",
       "bofa",
       "wf"
     ],
@@ -29072,7 +28766,7 @@
       "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 1457,
+    "txns_fetched": 1458,
     "liabilities_cards": 0,
     "liabilities_errors": {
       "bofa": "ADDITIONAL_CONSENT_REQUIRED",
