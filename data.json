@@ -148,7 +148,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 249.34,
-      "available": 2584,
+      "available": 2556,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -301,7 +301,7 @@
       "mask": "7397",
       "type": "investment",
       "subtype": "crypto exchange",
-      "balance": 13.16,
+      "balance": 13.49,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -315,7 +315,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 53904.74,
+      "balance": 53845.84,
       "available": 4703.7,
       "is_credit": false,
       "is_loan": false,
@@ -324,10 +324,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 75446.01999999999,
+    "total_checking": 75387.12,
     "total_credit": 1106.48,
     "total_loans": 384584.29,
-    "net": -310244.75
+    "net": -310303.64999999997
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -505,78 +505,6 @@
       "amount": 250,
       "period": "2026-03",
       "period_label": "March 2026"
-    },
-    {
-      "from": "TD  RECEIVED 610700M061E8 Zelle RAKESH KUMAR GAL",
-      "amount": 96,
-      "period": "2026-04",
-      "period_label": "April 2026"
-    },
-    {
-      "from": "TD  RECEIVED 609300I0H3QK Zelle RAKESH KUMAR GAL",
-      "amount": 88,
-      "period": "2026-04",
-      "period_label": "April 2026"
-    },
-    {
-      "from": "TD  RECEIVED 607400L09VLW Zelle RAM ANGU",
-      "amount": 50,
-      "period": "2026-03",
-      "period_label": "March 2026"
-    },
-    {
-      "from": "TD  RECEIVED 606200N06600 Zelle RAKESH KUMAR GAL",
-      "amount": 88,
-      "period": "2026-03",
-      "period_label": "March 2026"
-    },
-    {
-      "from": "TD  RECEIVED 612300F06X12 Zelle RAKESH KUMAR GAL",
-      "amount": 88,
-      "period": "2026-05",
-      "period_label": "May 2026"
-    },
-    {
-      "from": "TD  RECEIVED 615400B0BXTY Zelle RAKESH KUMAR GAL",
-      "amount": 88,
-      "period": "2026-06",
-      "period_label": "June 2026"
-    },
-    {
-      "from": "TD  RECEIVED 616600M0IY7A Zelle VIMAL RAJ LOGAN",
-      "amount": 750,
-      "period": "2026-06",
-      "period_label": "June 2026"
-    },
-    {
-      "from": "TD  RECEIVED 618400D00EKH Zelle RAKESH KUMAR GAL",
-      "amount": 88,
-      "period": "2026-07",
-      "period_label": "July 2026"
-    },
-    {
-      "from": "TD  RECEIVED 621500O023A1 Zelle RAKESH KUMAR GAL",
-      "amount": 88,
-      "period": "2026-08",
-      "period_label": "August 2026"
-    },
-    {
-      "from": "TD  RECEIVED 624600L0A5T1 Zelle RAKESH KUMAR GAL",
-      "amount": 88,
-      "period": "2026-09",
-      "period_label": "September 2026"
-    },
-    {
-      "from": "TD  RECEIVED 627600O03JHD Zelle RAKESH KUMAR GAL",
-      "amount": 88,
-      "period": "2026-10",
-      "period_label": "October 2026"
-    },
-    {
-      "from": "TD  RECEIVED 630700C0F2OY Zelle RAKESH KUMAR GAL",
-      "amount": 88,
-      "period": "2026-11",
-      "period_label": "November 2026"
     },
     {
       "from": "payment from RAKESH VISTARAKULA for \"Enjoy\"; Conf# txd9tvy96",
@@ -1559,9 +1487,9 @@
     {
       "period": "2026-02",
       "period_label": "February 2026",
-      "income": 14189.829999999998,
+      "income": 9189.83,
       "bofa_income": 9189.83,
-      "td_income": 5000,
+      "td_income": 0,
       "outflows": 11783.47,
       "xoom": 0,
       "investments": 0
@@ -1569,9 +1497,9 @@
     {
       "period": "2026-03",
       "period_label": "March 2026",
-      "income": 12049.41,
+      "income": 7049.4,
       "bofa_income": 7049.4,
-      "td_income": 5000.01,
+      "td_income": 0,
       "outflows": 21190.05,
       "xoom": 0,
       "investments": 0
@@ -1579,9 +1507,9 @@
     {
       "period": "2026-04",
       "period_label": "April 2026",
-      "income": 9910.97,
+      "income": 7410.95,
       "bofa_income": 7410.95,
-      "td_income": 2500.02,
+      "td_income": 0,
       "outflows": 4886.52,
       "xoom": 0,
       "investments": 0
@@ -28699,8 +28627,8 @@
       "hidden_at": "2026-11-21T22:17:39.649Z"
     }
   ],
-  "generated_at": "2026-11-25T11:01:46.382Z",
-  "rebuilt_at": "2026-11-25T11:01:46.980Z",
+  "generated_at": "2026-11-25T23:01:42.794Z",
+  "rebuilt_at": "2026-11-25T23:01:43.402Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -28769,10 +28697,10 @@
         "masks": [
           "5186"
         ],
-        "txns": 42,
+        "txns": 0,
         "pages": 1,
         "truncated": false,
-        "last_txn": "2026-11-23"
+        "last_txn": null
       },
       {
         "nickname": "wifebofa",
@@ -28837,17 +28765,17 @@
     "forced_refresh": [
       "pnc",
       "zillow",
+      "td",
       "wifebofa",
       "robin",
       "bofa",
-      "wf",
-      "td"
+      "wf"
     ],
     "refresh_errors": {
       "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 1461,
+    "txns_fetched": 1419,
     "liabilities_cards": 0,
     "liabilities_errors": {
       "bofa": "ADDITIONAL_CONSENT_REQUIRED",
