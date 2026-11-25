@@ -2,21 +2,21 @@
   "kpis": {
     "income": 17291.08,
     "income_period": "November 2026",
-    "true_outflows": 4157.94,
+    "true_outflows": 4324.5,
     "outflows_period": "November 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 24109.9,
+      "balance": 21455.86,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
       "outflows": 0
     },
     "wf": {
-      "balance": 135.35000000000002,
+      "balance": 251.33,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 10.71
@@ -91,7 +91,7 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 4177.68,
+      "balance": 1523.64,
       "available": 1523.64,
       "is_credit": false,
       "is_loan": false,
@@ -147,8 +147,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 133.36,
-      "available": 2586,
+      "balance": 249.34,
+      "available": 2584,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -324,10 +324,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 78100.06,
-    "total_credit": 990.5,
+    "total_checking": 75446.01999999999,
+    "total_credit": 1106.48,
     "total_loans": 384584.29,
-    "net": -307474.73
+    "net": -310244.75
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -338,13 +338,13 @@
     "by_month": []
   },
   "spending": {
-    "Entertainment": 3063.0099999999993,
+    "Entertainment": 3078.9899999999993,
     "Healthcare": 4626.929999999999,
-    "Tech/Subs": 16298.890000000003,
+    "Tech/Subs": 16398.890000000003,
     "Refund": -11835.699999999999,
     "Gas/Travel": 8132.71,
     "Shopping": 26894.890000000003,
-    "Groceries": 6048.239999999999,
+    "Groceries": 6098.819999999999,
     "Restaurants": 4998.42,
     "Tax/Professional": 19417.010000000002,
     "Insurance": 496.64
@@ -677,15 +677,23 @@
       "category": "Healthcare",
       "bank": "BofA",
       "pending": true
+    },
+    {
+      "date": "11-24",
+      "desc": "ShopRite",
+      "amount": 50.58,
+      "category": "Groceries",
+      "bank": "BofA",
+      "pending": true
     }
   ],
   "detected_recurring": [
     {
       "desc": "ShopRite",
       "category": "Groceries",
-      "count": 29,
+      "count": 30,
       "months": 11,
-      "avg_amount": 31.15,
+      "avg_amount": 31.8,
       "last_amount": 58.97
     },
     {
@@ -771,9 +779,9 @@
     {
       "desc": "Apple",
       "category": "Shopping",
-      "count": 26,
-      "months": 8,
-      "avg_amount": 22.86,
+      "count": 27,
+      "months": 9,
+      "avg_amount": 22.6,
       "last_amount": 5.32
     },
     {
@@ -1065,6 +1073,14 @@
       "last_amount": 100
     },
     {
+      "desc": "Anthropic",
+      "category": "Tech/Subs",
+      "count": 3,
+      "months": 3,
+      "avg_amount": 100,
+      "last_amount": 100
+    },
+    {
       "desc": "The Music Shop",
       "category": "Entertainment",
       "count": 4,
@@ -1311,14 +1327,6 @@
       "months": 2,
       "avg_amount": 102.16,
       "last_amount": 301.4
-    },
-    {
-      "desc": "Anthropic",
-      "category": "Tech/Subs",
-      "count": 2,
-      "months": 2,
-      "avg_amount": 100,
-      "last_amount": 100
     },
     {
       "desc": "Avis",
@@ -1644,7 +1652,7 @@
       "income": 17291.08,
       "bofa_income": 17291.08,
       "td_income": 0,
-      "outflows": 4157.94,
+      "outflows": 4324.5,
       "xoom": 0,
       "investments": 0
     }
@@ -9080,17 +9088,17 @@
       "label": "November 2026",
       "period": "2026-11",
       "categories": {
-        "Tech/Subs": 1878.0500000000002,
-        "Entertainment": 39.41,
+        "Tech/Subs": 1978.0500000000002,
+        "Entertainment": 55.39,
         "Healthcare": 211.25999999999996,
         "Insurance": 265.9,
         "Shopping": 869.62,
         "Restaurants": 190.82999999999998,
-        "Groceries": 657.8299999999999,
+        "Groceries": 708.41,
         "Gas/Travel": 121.02,
         "Refund": -75.98
       },
-      "total": 4157.940000000001,
+      "total": 4324.500000000001,
       "transactions": [
         {
           "id": "YDE1KKBbaLt1rwnmzMa3hLnPR4A1mqCzNJDn8",
@@ -9639,6 +9647,34 @@
           "refund": false
         },
         {
+          "id": "YJQ8z6Dj8AH6mpeeeyBDFLkZQ9v4OmUgeL9pg",
+          "date": "11-24",
+          "desc": "Apple",
+          "amount": 15.98,
+          "category": "Entertainment",
+          "city": null,
+          "state": "CA",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "id": "zxA48mDX4gImrPdddpeKFM3kbvE5gBUqA7KBY",
+          "date": "11-23",
+          "desc": "Anthropic",
+          "amount": 100,
+          "category": "Tech/Subs",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
           "id": "16xbqn1JarhmwQazawqpUM8KNV0d8aiYXk0Yd",
           "date": "11-04",
           "desc": "Zelle payment to Tere Cleaning Lady Conf# yznyst4l1",
@@ -9840,6 +9876,20 @@
           "desc": "Csc Medical Center",
           "amount": 25.75,
           "category": "Healthcare",
+          "city": null,
+          "state": null,
+          "bank": "BofA",
+          "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
+          "mask": "2776",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "id": "OY7vVyOXkETbqNvdvqZDtPb8rRrw7zFVJy49k",
+          "date": "11-24",
+          "desc": "ShopRite",
+          "amount": 50.58,
+          "category": "Groceries",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -16118,6 +16168,16 @@
       "category": "Healthcare",
       "city": null,
       "state": "RI",
+      "period": "2026-11",
+      "period_label": "November 2026"
+    },
+    {
+      "date": "11-24",
+      "desc": "Apple",
+      "amount": 15.98,
+      "category": "Entertainment",
+      "city": null,
+      "state": "CA",
       "period": "2026-11",
       "period_label": "November 2026"
     },
@@ -27499,8 +27559,8 @@
         "other_in": 0
       },
       "spent": {
-        "total": 11178.54,
-        "purchases": 4083.17,
+        "total": 11294.52,
+        "purchases": 4199.15,
         "refunds": 75.98,
         "loans": 4540.74,
         "fees": 83.25,
@@ -27512,13 +27572,13 @@
         "invested": 100
       },
       "internal": {
-        "count": 16,
-        "total": 7713.56
+        "count": 18,
+        "total": 10367.6
       },
       "by_category": {
         "Bills & utilities": 1047.98,
         "Sent to India": 2392.36,
-        "Entertainment": 39.41,
+        "Entertainment": 55.39,
         "Tech/Subs": 16.45,
         "Healthcare": 185.51,
         "Insurance": 265.9,
@@ -27527,9 +27587,12 @@
         "Restaurants": 170.25,
         "Groceries": 657.83,
         "Gas/Travel": 121.02,
+        "AI tools": 100,
         "Zelle to people": 155
       },
-      "ai": {},
+      "ai": {
+        "Anthropic": 100
+      },
       "fees": [
         {
           "date": "2026-11-02",
@@ -28281,6 +28344,15 @@
           "k": "9762"
         },
         {
+          "id": "zxA48mDX4gImrPdddpeKFM3kbvE5gBUqA7KBY",
+          "d": "11-23",
+          "n": "Anthropic",
+          "a": 100,
+          "g": "AI tools",
+          "b": "Wells Fargo",
+          "k": "9762"
+        },
+        {
           "id": "A49dZ8N0QkcPzvd0dzEmfog8g05kZptbqPa4m",
           "d": "11-23",
           "n": "Deccan Halal Mart",
@@ -28288,6 +28360,15 @@
           "g": "Groceries",
           "b": "BofA",
           "k": "2776"
+        },
+        {
+          "id": "YJQ8z6Dj8AH6mpeeeyBDFLkZQ9v4OmUgeL9pg",
+          "d": "11-24",
+          "n": "Apple",
+          "a": 15.98,
+          "g": "Entertainment",
+          "b": "Wells Fargo",
+          "k": "9762"
         }
       ],
       "tx_moved": [
@@ -28301,7 +28382,7 @@
           "k": "7309"
         }
       ],
-      "days": 24,
+      "days": 25,
       "days_in_month": 30
     }
   },
@@ -28311,7 +28392,7 @@
       "nickname": "wf",
       "name": "WELLS FARGO ACTIVE CASH VISA CARD ...9762",
       "mask": "9762",
-      "balance": 133.36,
+      "balance": 249.34,
       "limit": 3000,
       "payments": [
         {
@@ -28362,7 +28443,7 @@
       "statement_date": "2026-11-02",
       "statement_date_estimated": true,
       "paid_since_statement": 3805.02,
-      "remaining_due": 133.36
+      "remaining_due": 249.34
     },
     {
       "bank": "BofA",
@@ -28575,9 +28656,9 @@
       ],
       "source": "estimated",
       "due_date": "2026-12-20",
-      "due_basis": "statement closed ~2026-10-26 (interest posted) + 25 days",
+      "due_basis": "statement closed ~2026-11-25 (interest posted) + 25 days",
       "due_estimated": true,
-      "statement_date": "2026-10-26",
+      "statement_date": "2026-11-25",
       "statement_date_estimated": true,
       "paid_since_statement": 0,
       "remaining_due": 1.99
@@ -28618,8 +28699,8 @@
       "hidden_at": "2026-11-21T22:17:39.649Z"
     }
   ],
-  "generated_at": "2026-11-24T23:02:04.027Z",
-  "rebuilt_at": "2026-11-24T23:02:04.692Z",
+  "generated_at": "2026-11-25T11:01:46.382Z",
+  "rebuilt_at": "2026-11-25T11:01:46.980Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -28662,10 +28743,10 @@
           "8036",
           "9762"
         ],
-        "txns": 639,
+        "txns": 641,
         "pages": 2,
         "truncated": false,
-        "last_txn": "2026-11-23"
+        "last_txn": "2026-11-24"
       },
       {
         "nickname": "pnc",
@@ -28704,7 +28785,7 @@
           "5677",
           "9715"
         ],
-        "txns": 386,
+        "txns": 387,
         "pages": 1,
         "truncated": false,
         "last_txn": "2026-11-24"
@@ -28756,17 +28837,17 @@
     "forced_refresh": [
       "pnc",
       "zillow",
-      "td",
       "wifebofa",
       "robin",
       "bofa",
-      "wf"
+      "wf",
+      "td"
     ],
     "refresh_errors": {
       "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 1458,
+    "txns_fetched": 1461,
     "liabilities_cards": 0,
     "liabilities_errors": {
       "bofa": "ADDITIONAL_CONSENT_REQUIRED",
