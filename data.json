@@ -28768,8 +28768,8 @@
       "hidden_at": "2026-11-21T22:17:39.649Z"
     }
   ],
-  "generated_at": "2026-11-26T21:54:25.309Z",
-  "rebuilt_at": "2026-11-26T21:54:25.664Z",
+  "generated_at": "2026-11-26T21:54:33.029Z",
+  "rebuilt_at": "2026-11-26T21:54:33.692Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -28904,9 +28904,9 @@
     ],
     "failed": [],
     "forced_refresh": [
-      "td",
       "pnc",
       "zillow",
+      "td",
       "robin",
       "wifebofa",
       "bofa",
