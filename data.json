@@ -64,7 +64,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 542.63,
-      "available": 542.63,
+      "available": 22.63,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -106,7 +106,7 @@
       "type": "depository",
       "subtype": "savings",
       "balance": -17.29,
-      "available": -17.29,
+      "available": 502.71,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -176,7 +176,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 542.63,
-      "available": 542.63,
+      "available": 22.63,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -28694,8 +28694,8 @@
       "hidden_at": "2026-11-21T22:17:39.649Z"
     }
   ],
-  "generated_at": "2026-11-26T11:01:41.241Z",
-  "rebuilt_at": "2026-11-26T11:01:41.876Z",
+  "generated_at": "2026-11-26T21:52:20.445Z",
+  "rebuilt_at": "2026-11-26T21:52:21.069Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -28723,10 +28723,10 @@
           "7309",
           "8206"
         ],
-        "txns": 238,
+        "txns": 240,
         "pages": 1,
         "truncated": false,
-        "last_txn": "2026-11-24"
+        "last_txn": "2026-11-26"
       },
       {
         "nickname": "wf",
@@ -28774,10 +28774,10 @@
           "5677",
           "9715"
         ],
-        "txns": 387,
+        "txns": 388,
         "pages": 1,
         "truncated": false,
-        "last_txn": "2026-11-25"
+        "last_txn": "2026-11-26"
       },
       {
         "nickname": "zillow",
@@ -28829,16 +28829,16 @@
       "pnc",
       "zillow",
       "wifebofa",
-      "bofa",
+      "wf",
       "robin",
-      "wf"
+      "bofa"
     ],
     "refresh_errors": {
-      "discover": "PRODUCTS_NOT_SUPPORTED",
-      "td": "NO_ACCOUNTS"
+      "td": "NO_ACCOUNTS",
+      "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 1423,
+    "txns_fetched": 1426,
     "liabilities_cards": 0,
     "liabilities_errors": {
       "bofa": "ADDITIONAL_CONSENT_REQUIRED",
@@ -28847,7 +28847,7 @@
       "discover": "ADDITIONAL_CONSENT_REQUIRED",
       "robin": "ADDITIONAL_CONSENT_REQUIRED"
     },
-    "duplicates_removed": 23,
+    "duplicates_removed": 24,
     "duplicate_sample": [
       {
         "mask": "1739",
