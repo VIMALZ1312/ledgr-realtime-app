@@ -92,7 +92,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 1523.64,
-      "available": 1523.64,
+      "available": 1023.64,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -148,7 +148,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 415.78,
-      "available": 2543,
+      "available": 2473,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -162,7 +162,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 74.71,
-      "available": 74.71,
+      "available": 574.71,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -28768,8 +28768,8 @@
       "hidden_at": "2026-11-21T22:17:39.649Z"
     }
   ],
-  "generated_at": "2026-11-26T21:54:33.029Z",
-  "rebuilt_at": "2026-11-26T21:54:33.692Z",
+  "generated_at": "2026-11-26T23:01:43.886Z",
+  "rebuilt_at": "2026-11-26T23:01:44.464Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -28797,7 +28797,7 @@
           "7309",
           "8206"
         ],
-        "txns": 240,
+        "txns": 241,
         "pages": 1,
         "truncated": false,
         "last_txn": "2026-11-26"
@@ -28907,16 +28907,16 @@
       "pnc",
       "zillow",
       "td",
-      "robin",
       "wifebofa",
       "bofa",
+      "robin",
       "wf"
     ],
     "refresh_errors": {
       "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 1432,
+    "txns_fetched": 1433,
     "liabilities_cards": 0,
     "liabilities_errors": {
       "bofa": "ADDITIONAL_CONSENT_REQUIRED",
