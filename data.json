@@ -169,6 +169,20 @@
       "is_savings": false
     },
     {
+      "bank": "TD Bank",
+      "nickname": "td",
+      "name": "TD BEYOND CHECKING",
+      "mask": "9222",
+      "type": "depository",
+      "subtype": "checking",
+      "balance": 0,
+      "available": null,
+      "is_credit": false,
+      "is_loan": false,
+      "is_checking": true,
+      "is_savings": false
+    },
+    {
       "bank": "BofA",
       "nickname": "wifebofa",
       "name": "Adv Plus Banking",
@@ -491,6 +505,18 @@
       "amount": 250,
       "period": "2026-03",
       "period_label": "March 2026"
+    },
+    {
+      "from": "TD  RECEIVED 630700C0F2OY Zelle RAKESH KUMAR GAL",
+      "amount": 88,
+      "period": "2026-11",
+      "period_label": "November 2026"
+    },
+    {
+      "from": "TD  RECEIVED 627600O03JHD Zelle RAKESH KUMAR GAL",
+      "amount": 88,
+      "period": "2026-10",
+      "period_label": "October 2026"
     },
     {
       "from": "payment from RAKESH VISTARAKULA for \"Enjoy\"; Conf# txd9tvy96",
@@ -26491,18 +26517,18 @@
     },
     "2026-10": {
       "income": {
-        "total": 17625.37,
+        "total": 17713.37,
         "salary": 16769.66,
-        "zelle_in": 855.71,
+        "zelle_in": 943.71,
         "interest": 0,
         "other_in": 0
       },
       "spent": {
-        "total": 20918.25,
+        "total": 20943.25,
         "purchases": 7351.6,
         "refunds": 35.29,
         "loans": 4431.79,
-        "fees": 137.18,
+        "fees": 162.18,
         "zelle_out": 2022,
         "other_out": 0,
         "india": 7010.97
@@ -26511,8 +26537,8 @@
         "invested": 0
       },
       "internal": {
-        "count": 31,
-        "total": 29980.66
+        "count": 32,
+        "total": 30106.66
       },
       "by_category": {
         "Bills & utilities": 869.84,
@@ -26552,6 +26578,12 @@
           "date": "2026-10-10",
           "desc": "MONTHLY SERVICE CHARGE VR",
           "amount": 7,
+          "label": "maintenance"
+        },
+        {
+          "date": "2026-10-05",
+          "desc": "MAINTENANCE FEE",
+          "amount": 25,
           "label": "maintenance"
         },
         {
@@ -26596,6 +26628,15 @@
       ],
       "bounced": [],
       "tx_in": [
+        {
+          "id": "Z0yJzzkmBzT39JVOBKYYFQ44O5Bo60t8Jbxd6",
+          "d": "10-05",
+          "n": "TD ZELLE RECEIVED 627600O03JHD Zelle RAKESH KUMAR ",
+          "a": 88,
+          "g": "Zelle from people",
+          "b": "TD Bank",
+          "k": "9222"
+        },
         {
           "id": "915b44LnrotenXB6V5ybUpV7D4p6mNU4dLNJB",
           "d": "10-09",
@@ -26876,6 +26917,15 @@
           "g": "Shopping",
           "b": "Wells Fargo",
           "k": "9762"
+        },
+        {
+          "id": "8wJdppr5bpFNqkreo6KKHpYYBM6kbwIYQx9nL",
+          "d": "10-05",
+          "n": "MAINTENANCE FEE",
+          "a": 25,
+          "g": "Bank & card fees",
+          "b": "TD Bank",
+          "k": "9222"
         },
         {
           "id": "K7KyXPmNBgCRMgyXyMdztO0rX5VRAXsydwJar",
@@ -27514,18 +27564,18 @@
     },
     "2026-11": {
       "income": {
-        "total": 17361.08,
+        "total": 17449.08,
         "salary": 17291.08,
-        "zelle_in": 70,
+        "zelle_in": 158,
         "interest": 0,
         "other_in": 0
       },
       "spent": {
-        "total": 11537.29,
+        "total": 11562.29,
         "purchases": 4441.92,
         "refunds": 75.98,
         "loans": 4540.74,
-        "fees": 83.25,
+        "fees": 108.25,
         "zelle_out": 155,
         "other_out": 0,
         "india": 2392.36
@@ -27534,8 +27584,8 @@
         "invested": 100
       },
       "internal": {
-        "count": 18,
-        "total": 10367.6
+        "count": 19,
+        "total": 10430.6
       },
       "by_category": {
         "Bills & utilities": 1047.98,
@@ -27569,6 +27619,12 @@
           "label": "maintenance"
         },
         {
+          "date": "2026-11-05",
+          "desc": "MAINTENANCE FEE",
+          "amount": 25,
+          "label": "maintenance"
+        },
+        {
           "date": "2026-11-19",
           "desc": "Interest Charge",
           "amount": 7.83,
@@ -27592,6 +27648,15 @@
       ],
       "bounced": [],
       "tx_in": [
+        {
+          "id": "YvMjzzKqPzhPA1JgxyddsrveR47M0AH37NPAN",
+          "d": "11-03",
+          "n": "TD ZELLE RECEIVED 630700C0F2OY Zelle RAKESH KUMAR ",
+          "a": 88,
+          "g": "Zelle from people",
+          "b": "TD Bank",
+          "k": "9222"
+        },
         {
           "id": "r9Mgnn0ZYDi69ke8XmjNuOZZZxZ0MzhwZQ5zj",
           "d": "11-06",
@@ -27809,6 +27874,15 @@
           "g": "Restaurants",
           "b": "Wells Fargo",
           "k": "9762"
+        },
+        {
+          "id": "eJyxwwZ7Vwsa10Vje8ggfeL8zamM7dT19Mry1",
+          "d": "11-05",
+          "n": "MAINTENANCE FEE",
+          "a": 25,
+          "g": "Bank & card fees",
+          "b": "TD Bank",
+          "k": "9222"
         },
         {
           "id": "6qQOkeyD5wuyoX5N5oJxIQ9NpzbOmOTygmaaO",
@@ -28694,8 +28768,8 @@
       "hidden_at": "2026-11-21T22:17:39.649Z"
     }
   ],
-  "generated_at": "2026-11-26T21:52:20.445Z",
-  "rebuilt_at": "2026-11-26T21:52:21.069Z",
+  "generated_at": "2026-11-26T21:54:25.309Z",
+  "rebuilt_at": "2026-11-26T21:54:25.664Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -28758,10 +28832,16 @@
       },
       {
         "nickname": "td",
-        "ok": false,
-        "accounts": 0,
-        "error": "NO_ACCOUNTS",
-        "source": "PLAID_TOKEN_TD"
+        "ok": true,
+        "accounts": 1,
+        "source": "PLAID_TOKEN_TD",
+        "masks": [
+          "9222"
+        ],
+        "txns": 6,
+        "pages": 1,
+        "truncated": false,
+        "last_txn": "2026-11-23"
       },
       {
         "nickname": "wifebofa",
@@ -28822,23 +28902,21 @@
         "last_txn": "2026-11-26"
       }
     ],
-    "failed": [
-      "td (NO_ACCOUNTS)"
-    ],
+    "failed": [],
     "forced_refresh": [
+      "td",
       "pnc",
       "zillow",
-      "wifebofa",
-      "wf",
       "robin",
-      "bofa"
+      "wifebofa",
+      "bofa",
+      "wf"
     ],
     "refresh_errors": {
-      "td": "NO_ACCOUNTS",
       "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 1426,
+    "txns_fetched": 1432,
     "liabilities_cards": 0,
     "liabilities_errors": {
       "bofa": "ADDITIONAL_CONSENT_REQUIRED",
