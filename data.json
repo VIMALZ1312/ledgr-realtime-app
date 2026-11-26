@@ -2,7 +2,7 @@
   "kpis": {
     "income": 17291.08,
     "income_period": "November 2026",
-    "true_outflows": 4324.5,
+    "true_outflows": 4504.94,
     "outflows_period": "November 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 251.33,
+      "balance": 417.77,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 10.71
@@ -147,8 +147,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 249.34,
-      "available": 2556,
+      "balance": 415.78,
+      "available": 2543,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -166,20 +166,6 @@
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
-      "is_savings": false
-    },
-    {
-      "bank": "TD Bank",
-      "nickname": "td",
-      "name": "CREDITCARD",
-      "mask": "5186",
-      "type": "credit",
-      "subtype": "credit card",
-      "balance": 0,
-      "available": 8500,
-      "is_credit": true,
-      "is_loan": false,
-      "is_checking": false,
       "is_savings": false
     },
     {
@@ -203,8 +189,8 @@
       "mask": "2776",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 387.75,
-      "available": 1812.25,
+      "balance": 464.08,
+      "available": 1735.92,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -288,7 +274,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 467.4,
-      "available": 9532,
+      "available": 9518,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -325,9 +311,9 @@
   ],
   "net_worth": {
     "total_checking": 75387.12,
-    "total_credit": 1106.48,
+    "total_credit": 1349.25,
     "total_loans": 384584.29,
-    "net": -310303.64999999997
+    "net": -310546.42
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -338,14 +324,14 @@
     "by_month": []
   },
   "spending": {
-    "Entertainment": 3078.9899999999993,
+    "Entertainment": 3092.9899999999993,
     "Healthcare": 4626.929999999999,
     "Tech/Subs": 16398.890000000003,
     "Refund": -11835.699999999999,
     "Gas/Travel": 8132.71,
-    "Shopping": 26894.890000000003,
+    "Shopping": 27047.870000000003,
     "Groceries": 6098.819999999999,
-    "Restaurants": 4998.42,
+    "Restaurants": 5011.88,
     "Tax/Professional": 19417.010000000002,
     "Insurance": 496.64
   },
@@ -599,19 +585,11 @@
   ],
   "pending_transactions": [
     {
-      "date": "11-24",
-      "desc": "Csc Medical Center",
-      "amount": 25.75,
-      "category": "Healthcare",
-      "bank": "BofA",
-      "pending": true
-    },
-    {
-      "date": "11-24",
-      "desc": "ShopRite",
-      "amount": 50.58,
-      "category": "Groceries",
-      "bank": "BofA",
+      "date": "11-26",
+      "desc": "Openart Ai",
+      "amount": 14,
+      "category": "Entertainment",
+      "bank": "Robinhood",
       "pending": true
     }
   ],
@@ -627,9 +605,9 @@
     {
       "desc": "Amazon",
       "category": "Shopping",
-      "count": 104,
+      "count": 106,
       "months": 11,
-      "avg_amount": 26.71,
+      "avg_amount": 27.65,
       "last_amount": 28.95
     },
     {
@@ -1107,9 +1085,9 @@
     {
       "desc": "Vzn Br Cafe",
       "category": "Restaurants",
-      "count": 7,
+      "count": 8,
       "months": 3,
-      "avg_amount": 8.56,
+      "avg_amount": 9.18,
       "last_amount": 9.51
     },
     {
@@ -1580,7 +1558,7 @@
       "income": 17291.08,
       "bofa_income": 17291.08,
       "td_income": 0,
-      "outflows": 4324.5,
+      "outflows": 4504.94,
       "xoom": 0,
       "investments": 0
     }
@@ -9017,16 +8995,16 @@
       "period": "2026-11",
       "categories": {
         "Tech/Subs": 1978.0500000000002,
-        "Entertainment": 55.39,
+        "Entertainment": 69.39,
         "Healthcare": 211.25999999999996,
         "Insurance": 265.9,
-        "Shopping": 869.62,
-        "Restaurants": 190.82999999999998,
+        "Shopping": 1022.6,
+        "Restaurants": 204.29,
         "Groceries": 708.41,
         "Gas/Travel": 121.02,
         "Refund": -75.98
       },
-      "total": 4324.500000000001,
+      "total": 4504.9400000000005,
       "transactions": [
         {
           "id": "YDE1KKBbaLt1rwnmzMa3hLnPR4A1mqCzNJDn8",
@@ -9603,6 +9581,48 @@
           "refund": false
         },
         {
+          "id": "eEzRw3jxRoh73oEEE84LHrDea8bAngtnZ8DBq",
+          "date": "11-24",
+          "desc": "Vzn Br Cafe",
+          "amount": 13.46,
+          "category": "Restaurants",
+          "city": "Basking Ridge",
+          "state": "NJ",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "id": "YJQ8z6Dj8AH6mpeeeyBaUp1r4eY8JZCJZKavA",
+          "date": "11-24",
+          "desc": "Amazon",
+          "amount": 28.78,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "id": "zxA48mDX4gImrPdddpe5UA895a6ZxkhvP6me7",
+          "date": "11-24",
+          "desc": "Amazon",
+          "amount": 124.2,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
           "id": "16xbqn1JarhmwQazawqpUM8KNV0d8aiYXk0Yd",
           "date": "11-04",
           "desc": "Zelle payment to Tere Cleaning Lady Conf# yznyst4l1",
@@ -9799,11 +9819,11 @@
           "refund": false
         },
         {
-          "id": "odaDer4pmjibqVvavqRMt7V7MY5O69io8Rbem",
-          "date": "11-24",
-          "desc": "Csc Medical Center",
-          "amount": 25.75,
-          "category": "Healthcare",
+          "id": "odaDer4pmjibqVvavqRAf7NEzDRxZjhr3PaYd",
+          "date": "11-25",
+          "desc": "ShopRite",
+          "amount": 50.58,
+          "category": "Groceries",
           "city": null,
           "state": null,
           "bank": "BofA",
@@ -9813,13 +9833,13 @@
           "refund": false
         },
         {
-          "id": "OY7vVyOXkETbqNvdvqZDtPb8rRrw7zFVJy49k",
-          "date": "11-24",
-          "desc": "ShopRite",
-          "amount": 50.58,
-          "category": "Groceries",
+          "id": "bYPEew8MOLTn3kEaE3ydsoQrKY0kmXtP8mABd",
+          "date": "11-25",
+          "desc": "Csc Medical Center",
+          "amount": 25.75,
+          "category": "Healthcare",
           "city": null,
-          "state": null,
+          "state": "NJ",
           "bank": "BofA",
           "account_id": "aYQMpdmRV6T7gOM4MgAPfQbXxN8n51iKae5JO",
           "mask": "2776",
@@ -9943,6 +9963,20 @@
           "date": "11-21",
           "desc": "Regal Center",
           "amount": 9,
+          "category": "Entertainment",
+          "city": null,
+          "state": null,
+          "bank": "Robinhood",
+          "account_id": "5MB5q7zqbKTgrg69ZA7muD1V9Od3wPU14MOok",
+          "mask": "1345",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "id": "3ePx1ZV153fL8LOdJ3g4hx0YRQgBrkUPv8xad",
+          "date": "11-26",
+          "desc": "Openart Ai",
+          "amount": 14,
           "category": "Entertainment",
           "city": null,
           "state": null,
@@ -27487,8 +27521,8 @@
         "other_in": 0
       },
       "spent": {
-        "total": 11294.52,
-        "purchases": 4199.15,
+        "total": 11537.29,
+        "purchases": 4441.92,
         "refunds": 75.98,
         "loans": 4540.74,
         "fees": 83.25,
@@ -27508,12 +27542,12 @@
         "Sent to India": 2392.36,
         "Entertainment": 55.39,
         "Tech/Subs": 16.45,
-        "Healthcare": 185.51,
+        "Healthcare": 211.26,
         "Insurance": 265.9,
-        "Shopping": 744.62,
+        "Shopping": 897.6,
         "Kids": 834.2,
-        "Restaurants": 170.25,
-        "Groceries": 657.83,
+        "Restaurants": 183.71,
+        "Groceries": 708.41,
         "Gas/Travel": 121.02,
         "AI tools": 100,
         "Zelle to people": 155
@@ -28297,6 +28331,51 @@
           "g": "Entertainment",
           "b": "Wells Fargo",
           "k": "9762"
+        },
+        {
+          "id": "eEzRw3jxRoh73oEEE84LHrDea8bAngtnZ8DBq",
+          "d": "11-24",
+          "n": "Vzn Br Cafe",
+          "a": 13.46,
+          "g": "Restaurants",
+          "b": "Wells Fargo",
+          "k": "9762"
+        },
+        {
+          "id": "YJQ8z6Dj8AH6mpeeeyBaUp1r4eY8JZCJZKavA",
+          "d": "11-24",
+          "n": "Amazon",
+          "a": 28.78,
+          "g": "Shopping",
+          "b": "Wells Fargo",
+          "k": "9762"
+        },
+        {
+          "id": "zxA48mDX4gImrPdddpe5UA895a6ZxkhvP6me7",
+          "d": "11-24",
+          "n": "Amazon",
+          "a": 124.2,
+          "g": "Shopping",
+          "b": "Wells Fargo",
+          "k": "9762"
+        },
+        {
+          "id": "odaDer4pmjibqVvavqRAf7NEzDRxZjhr3PaYd",
+          "d": "11-25",
+          "n": "ShopRite",
+          "a": 50.58,
+          "g": "Groceries",
+          "b": "BofA",
+          "k": "2776"
+        },
+        {
+          "id": "bYPEew8MOLTn3kEaE3ydsoQrKY0kmXtP8mABd",
+          "d": "11-25",
+          "n": "Csc Medical Center",
+          "a": 25.75,
+          "g": "Healthcare",
+          "b": "BofA",
+          "k": "2776"
         }
       ],
       "tx_moved": [
@@ -28310,7 +28389,7 @@
           "k": "7309"
         }
       ],
-      "days": 25,
+      "days": 26,
       "days_in_month": 30
     }
   },
@@ -28320,7 +28399,7 @@
       "nickname": "wf",
       "name": "WELLS FARGO ACTIVE CASH VISA CARD ...9762",
       "mask": "9762",
-      "balance": 249.34,
+      "balance": 415.78,
       "limit": 3000,
       "payments": [
         {
@@ -28371,14 +28450,14 @@
       "statement_date": "2026-11-02",
       "statement_date_estimated": true,
       "paid_since_statement": 3805.02,
-      "remaining_due": 249.34
+      "remaining_due": 415.78
     },
     {
       "bank": "BofA",
       "nickname": "wifebofa",
       "name": "Customized Cash Rewards Visa Signature",
       "mask": "2776",
-      "balance": 387.75,
+      "balance": 464.08,
       "limit": 2200,
       "payments": [
         {
@@ -28429,7 +28508,7 @@
       "statement_date": "2026-11-03",
       "statement_date_estimated": true,
       "paid_since_statement": 538.06,
-      "remaining_due": 387.75
+      "remaining_due": 464.08
     },
     {
       "bank": "Robinhood",
@@ -28592,18 +28671,6 @@
       "remaining_due": 1.99
     },
     {
-      "bank": "TD Bank",
-      "nickname": "td",
-      "name": "CREDITCARD",
-      "mask": "5186",
-      "balance": 0,
-      "limit": 8500,
-      "payments": [],
-      "source": "estimated",
-      "paid_since_statement": 0,
-      "remaining_due": 0
-    },
-    {
       "bank": "Discover",
       "nickname": "discover",
       "name": "VentureOne",
@@ -28627,8 +28694,8 @@
       "hidden_at": "2026-11-21T22:17:39.649Z"
     }
   ],
-  "generated_at": "2026-11-25T23:01:42.794Z",
-  "rebuilt_at": "2026-11-25T23:01:43.402Z",
+  "generated_at": "2026-11-26T11:01:41.241Z",
+  "rebuilt_at": "2026-11-26T11:01:41.876Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -28671,7 +28738,7 @@
           "8036",
           "9762"
         ],
-        "txns": 641,
+        "txns": 644,
         "pages": 2,
         "truncated": false,
         "last_txn": "2026-11-24"
@@ -28691,16 +28758,10 @@
       },
       {
         "nickname": "td",
-        "ok": true,
-        "accounts": 1,
-        "source": "PLAID_TOKEN_TD",
-        "masks": [
-          "5186"
-        ],
-        "txns": 0,
-        "pages": 1,
-        "truncated": false,
-        "last_txn": null
+        "ok": false,
+        "accounts": 0,
+        "error": "NO_ACCOUNTS",
+        "source": "PLAID_TOKEN_TD"
       },
       {
         "nickname": "wifebofa",
@@ -28716,7 +28777,7 @@
         "txns": 387,
         "pages": 1,
         "truncated": false,
-        "last_txn": "2026-11-24"
+        "last_txn": "2026-11-25"
       },
       {
         "nickname": "zillow",
@@ -28755,32 +28816,33 @@
           "7397",
           "7724"
         ],
-        "txns": 93,
+        "txns": 94,
         "pages": 1,
         "truncated": false,
-        "last_txn": "2026-11-22"
+        "last_txn": "2026-11-26"
       }
     ],
-    "failed": [],
+    "failed": [
+      "td (NO_ACCOUNTS)"
+    ],
     "forced_refresh": [
       "pnc",
       "zillow",
-      "td",
       "wifebofa",
-      "robin",
       "bofa",
+      "robin",
       "wf"
     ],
     "refresh_errors": {
-      "discover": "PRODUCTS_NOT_SUPPORTED"
+      "discover": "PRODUCTS_NOT_SUPPORTED",
+      "td": "NO_ACCOUNTS"
     },
     "cached_balances": [],
-    "txns_fetched": 1419,
+    "txns_fetched": 1423,
     "liabilities_cards": 0,
     "liabilities_errors": {
       "bofa": "ADDITIONAL_CONSENT_REQUIRED",
       "wf": "ADDITIONAL_CONSENT_REQUIRED",
-      "td": "ADDITIONAL_CONSENT_REQUIRED",
       "wifebofa": "ADDITIONAL_CONSENT_REQUIRED",
       "discover": "ADDITIONAL_CONSENT_REQUIRED",
       "robin": "ADDITIONAL_CONSENT_REQUIRED"
