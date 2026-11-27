@@ -2,7 +2,7 @@
   "kpis": {
     "income": 17291.08,
     "income_period": "November 2026",
-    "true_outflows": 4504.94,
+    "true_outflows": 4533.18,
     "outflows_period": "November 2026",
     "investments": 0,
     "india_total": 1083.67
@@ -16,7 +16,7 @@
       "outflows": 0
     },
     "wf": {
-      "balance": 417.77,
+      "balance": 446.01,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 10.71
@@ -92,7 +92,7 @@
       "type": "depository",
       "subtype": "checking",
       "balance": 1523.64,
-      "available": 1023.64,
+      "available": 616.56,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -147,8 +147,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 415.78,
-      "available": 2473,
+      "balance": 444.02,
+      "available": 2387,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -325,9 +325,9 @@
   ],
   "net_worth": {
     "total_checking": 75387.12,
-    "total_credit": 1349.25,
+    "total_credit": 1377.4899999999998,
     "total_loans": 384584.29,
-    "net": -310546.42
+    "net": -310574.66
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -338,7 +338,7 @@
     "by_month": []
   },
   "spending": {
-    "Entertainment": 3092.9899999999993,
+    "Entertainment": 3121.2299999999996,
     "Healthcare": 4626.929999999999,
     "Tech/Subs": 16398.890000000003,
     "Refund": -11835.699999999999,
@@ -639,9 +639,9 @@
     {
       "desc": "Regal Cinemas",
       "category": "Entertainment",
-      "count": 21,
+      "count": 22,
       "months": 11,
-      "avg_amount": 17.96,
+      "avg_amount": 18.43,
       "last_amount": 28.24
     },
     {
@@ -1584,7 +1584,7 @@
       "income": 17291.08,
       "bofa_income": 17291.08,
       "td_income": 0,
-      "outflows": 4504.94,
+      "outflows": 4533.18,
       "xoom": 0,
       "investments": 0
     }
@@ -9021,7 +9021,7 @@
       "period": "2026-11",
       "categories": {
         "Tech/Subs": 1978.0500000000002,
-        "Entertainment": 69.39,
+        "Entertainment": 97.63,
         "Healthcare": 211.25999999999996,
         "Insurance": 265.9,
         "Shopping": 1022.6,
@@ -9030,7 +9030,7 @@
         "Gas/Travel": 121.02,
         "Refund": -75.98
       },
-      "total": 4504.9400000000005,
+      "total": 4533.18,
       "transactions": [
         {
           "id": "YDE1KKBbaLt1rwnmzMa3hLnPR4A1mqCzNJDn8",
@@ -9642,6 +9642,20 @@
           "category": "Shopping",
           "city": null,
           "state": null,
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "id": "AOVQzJA3Q9H3X4zzz08Ys0qEQJD4rOUwdpjbv",
+          "date": "11-25",
+          "desc": "Regal Cinemas",
+          "amount": 28.24,
+          "category": "Entertainment",
+          "city": null,
+          "state": "TN",
           "bank": "Wells Fargo",
           "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
           "mask": "9762",
@@ -16166,6 +16180,16 @@
       "category": "Entertainment",
       "city": null,
       "state": "CA",
+      "period": "2026-11",
+      "period_label": "November 2026"
+    },
+    {
+      "date": "11-25",
+      "desc": "Regal Cinemas",
+      "amount": 28.24,
+      "category": "Entertainment",
+      "city": null,
+      "state": "TN",
       "period": "2026-11",
       "period_label": "November 2026"
     },
@@ -27571,8 +27595,8 @@
         "other_in": 0
       },
       "spent": {
-        "total": 11562.29,
-        "purchases": 4441.92,
+        "total": 11590.53,
+        "purchases": 4470.16,
         "refunds": 75.98,
         "loans": 4540.74,
         "fees": 108.25,
@@ -27590,7 +27614,7 @@
       "by_category": {
         "Bills & utilities": 1047.98,
         "Sent to India": 2392.36,
-        "Entertainment": 55.39,
+        "Entertainment": 83.63,
         "Tech/Subs": 16.45,
         "Healthcare": 211.26,
         "Insurance": 265.9,
@@ -28434,6 +28458,15 @@
           "k": "9762"
         },
         {
+          "id": "AOVQzJA3Q9H3X4zzz08Ys0qEQJD4rOUwdpjbv",
+          "d": "11-25",
+          "n": "Regal Cinemas",
+          "a": 28.24,
+          "g": "Entertainment",
+          "b": "Wells Fargo",
+          "k": "9762"
+        },
+        {
           "id": "odaDer4pmjibqVvavqRAf7NEzDRxZjhr3PaYd",
           "d": "11-25",
           "n": "ShopRite",
@@ -28463,7 +28496,7 @@
           "k": "7309"
         }
       ],
-      "days": 26,
+      "days": 27,
       "days_in_month": 30
     }
   },
@@ -28473,7 +28506,7 @@
       "nickname": "wf",
       "name": "WELLS FARGO ACTIVE CASH VISA CARD ...9762",
       "mask": "9762",
-      "balance": 415.78,
+      "balance": 444.02,
       "limit": 3000,
       "payments": [
         {
@@ -28524,7 +28557,7 @@
       "statement_date": "2026-11-02",
       "statement_date_estimated": true,
       "paid_since_statement": 3805.02,
-      "remaining_due": 415.78
+      "remaining_due": 444.02
     },
     {
       "bank": "BofA",
@@ -28768,8 +28801,8 @@
       "hidden_at": "2026-11-21T22:17:39.649Z"
     }
   ],
-  "generated_at": "2026-11-26T23:01:43.886Z",
-  "rebuilt_at": "2026-11-26T23:01:44.464Z",
+  "generated_at": "2026-11-27T11:01:43.307Z",
+  "rebuilt_at": "2026-11-27T11:01:43.932Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -28797,10 +28830,10 @@
           "7309",
           "8206"
         ],
-        "txns": 241,
+        "txns": 243,
         "pages": 1,
         "truncated": false,
-        "last_txn": "2026-11-26"
+        "last_txn": "2026-11-27"
       },
       {
         "nickname": "wf",
@@ -28812,10 +28845,10 @@
           "8036",
           "9762"
         ],
-        "txns": 644,
+        "txns": 645,
         "pages": 2,
         "truncated": false,
-        "last_txn": "2026-11-24"
+        "last_txn": "2026-11-25"
       },
       {
         "nickname": "pnc",
@@ -28906,17 +28939,17 @@
     "forced_refresh": [
       "pnc",
       "zillow",
-      "td",
       "wifebofa",
-      "bofa",
+      "td",
       "robin",
+      "bofa",
       "wf"
     ],
     "refresh_errors": {
       "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 1433,
+    "txns_fetched": 1436,
     "liabilities_cards": 0,
     "liabilities_errors": {
       "bofa": "ADDITIONAL_CONSENT_REQUIRED",
