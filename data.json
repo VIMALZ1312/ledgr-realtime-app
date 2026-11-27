@@ -148,7 +148,7 @@
       "type": "credit",
       "subtype": "credit card",
       "balance": 444.02,
-      "available": 2387,
+      "available": 2367,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -287,7 +287,7 @@
       "mask": "1345",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 467.4,
+      "balance": 481.4,
       "available": 9518,
       "is_credit": true,
       "is_loan": false,
@@ -301,7 +301,7 @@
       "mask": "7397",
       "type": "investment",
       "subtype": "crypto exchange",
-      "balance": 13.49,
+      "balance": 13.58,
       "available": null,
       "is_credit": false,
       "is_loan": false,
@@ -315,7 +315,7 @@
       "mask": "7724",
       "type": "investment",
       "subtype": "brokerage",
-      "balance": 53845.84,
+      "balance": 55700.48,
       "available": 4703.7,
       "is_credit": false,
       "is_loan": false,
@@ -324,10 +324,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 75387.12,
-    "total_credit": 1377.4899999999998,
+    "total_checking": 77241.76000000001,
+    "total_credit": 1391.4899999999998,
     "total_loans": 384584.29,
-    "net": -310574.66
+    "net": -308734.01999999996
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -609,16 +609,7 @@
       "period_label": "October 2026"
     }
   ],
-  "pending_transactions": [
-    {
-      "date": "11-26",
-      "desc": "Openart Ai",
-      "amount": 14,
-      "category": "Entertainment",
-      "bank": "Robinhood",
-      "pending": true
-    }
-  ],
+  "pending_transactions": [],
   "detected_recurring": [
     {
       "desc": "ShopRite",
@@ -10013,7 +10004,7 @@
           "refund": false
         },
         {
-          "id": "3ePx1ZV153fL8LOdJ3g4hx0YRQgBrkUPv8xad",
+          "id": "rmOx5015oeI3Q3qxrKybcnOqYJRVgBHV01XEO",
           "date": "11-26",
           "desc": "Openart Ai",
           "amount": 14,
@@ -27595,8 +27586,8 @@
         "other_in": 0
       },
       "spent": {
-        "total": 11590.53,
-        "purchases": 4470.16,
+        "total": 11604.53,
+        "purchases": 4484.16,
         "refunds": 75.98,
         "loans": 4540.74,
         "fees": 108.25,
@@ -27614,7 +27605,7 @@
       "by_category": {
         "Bills & utilities": 1047.98,
         "Sent to India": 2392.36,
-        "Entertainment": 83.63,
+        "Entertainment": 97.63,
         "Tech/Subs": 16.45,
         "Healthcare": 211.26,
         "Insurance": 265.9,
@@ -28483,6 +28474,15 @@
           "g": "Healthcare",
           "b": "BofA",
           "k": "2776"
+        },
+        {
+          "id": "rmOx5015oeI3Q3qxrKybcnOqYJRVgBHV01XEO",
+          "d": "11-26",
+          "n": "Openart Ai",
+          "a": 14,
+          "g": "Entertainment",
+          "b": "Robinhood",
+          "k": "1345"
         }
       ],
       "tx_moved": [
@@ -28622,7 +28622,7 @@
       "nickname": "robin",
       "name": "Robinhood Credit Card",
       "mask": "1345",
-      "balance": 467.4,
+      "balance": 481.4,
       "limit": 10000,
       "payments": [
         {
@@ -28668,7 +28668,7 @@
       "statement_date": "2026-11-19",
       "statement_date_estimated": true,
       "paid_since_statement": 25,
-      "remaining_due": 467.4
+      "remaining_due": 481.4
     },
     {
       "bank": "BofA",
@@ -28801,8 +28801,8 @@
       "hidden_at": "2026-11-21T22:17:39.649Z"
     }
   ],
-  "generated_at": "2026-11-27T11:01:43.307Z",
-  "rebuilt_at": "2026-11-27T11:01:43.932Z",
+  "generated_at": "2026-11-27T23:01:44.085Z",
+  "rebuilt_at": "2026-11-27T23:01:44.722Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -28939,10 +28939,10 @@
     "forced_refresh": [
       "pnc",
       "zillow",
-      "wifebofa",
       "td",
-      "robin",
+      "wifebofa",
       "bofa",
+      "robin",
       "wf"
     ],
     "refresh_errors": {
