@@ -2,21 +2,21 @@
   "kpis": {
     "income": 17291.08,
     "income_period": "November 2026",
-    "true_outflows": 4533.18,
+    "true_outflows": 5038.51,
     "outflows_period": "November 2026",
     "investments": 0,
     "india_total": 1083.67
   },
   "accounts": {
     "bofa": {
-      "balance": 21455.86,
+      "balance": 19537.29,
       "is_checking": true,
       "period_label": "Live",
       "payroll": 0,
       "outflows": 0
     },
     "wf": {
-      "balance": 446.01,
+      "balance": 457.86,
       "is_credit": true,
       "period_label": "Live",
       "wf_checking": 10.71
@@ -63,7 +63,7 @@
       "mask": "1739",
       "type": "depository",
       "subtype": "checking",
-      "balance": 542.63,
+      "balance": 22.63,
       "available": 22.63,
       "is_credit": false,
       "is_loan": false,
@@ -91,8 +91,8 @@
       "mask": "7309",
       "type": "depository",
       "subtype": "checking",
-      "balance": 1523.64,
-      "available": 616.56,
+      "balance": 125.07,
+      "available": 87.47,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -105,8 +105,8 @@
       "mask": "8206",
       "type": "depository",
       "subtype": "savings",
-      "balance": -17.29,
-      "available": 502.71,
+      "balance": 502.71,
+      "available": 2.71,
       "is_credit": false,
       "is_loan": false,
       "is_checking": false,
@@ -133,8 +133,8 @@
       "mask": "8036",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 1.99,
-      "available": 998,
+      "balance": 0,
+      "available": 1000,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -147,8 +147,8 @@
       "mask": "9762",
       "type": "credit",
       "subtype": "credit card",
-      "balance": 444.02,
-      "available": 2367,
+      "balance": 457.86,
+      "available": 2253,
       "is_credit": true,
       "is_loan": false,
       "is_checking": false,
@@ -161,8 +161,8 @@
       "mask": "5961",
       "type": "depository",
       "subtype": "checking",
-      "balance": 74.71,
-      "available": 574.71,
+      "balance": 574.71,
+      "available": 615.42,
       "is_credit": false,
       "is_loan": false,
       "is_checking": true,
@@ -189,7 +189,7 @@
       "mask": "1739",
       "type": "depository",
       "subtype": "checking",
-      "balance": 542.63,
+      "balance": 22.63,
       "available": 22.63,
       "is_credit": false,
       "is_loan": false,
@@ -324,10 +324,10 @@
     }
   ],
   "net_worth": {
-    "total_checking": 77241.76000000001,
-    "total_credit": 1391.4899999999998,
+    "total_checking": 75823.19,
+    "total_credit": 1403.3400000000001,
     "total_loans": 384584.29,
-    "net": -308734.01999999996
+    "net": -310164.43999999994
   },
   "india": {
     "hdfc_usd": 283.43,
@@ -342,8 +342,8 @@
     "Healthcare": 4626.929999999999,
     "Tech/Subs": 16398.890000000003,
     "Refund": -11835.699999999999,
-    "Gas/Travel": 8132.71,
-    "Shopping": 27047.870000000003,
+    "Gas/Travel": 8624.199999999999,
+    "Shopping": 27061.710000000003,
     "Groceries": 6098.819999999999,
     "Restaurants": 5011.88,
     "Tax/Professional": 19417.010000000002,
@@ -507,6 +507,12 @@
       "period_label": "March 2026"
     },
     {
+      "from": "FROM VIMALRAJ LOGANATHAN",
+      "amount": 500,
+      "period": "2026-11",
+      "period_label": "November 2026"
+    },
+    {
       "from": "TD  RECEIVED 630700C0F2OY Zelle RAKESH KUMAR GAL",
       "amount": 88,
       "period": "2026-11",
@@ -622,9 +628,9 @@
     {
       "desc": "Amazon",
       "category": "Shopping",
-      "count": 106,
+      "count": 107,
       "months": 11,
-      "avg_amount": 27.65,
+      "avg_amount": 27.52,
       "last_amount": 28.95
     },
     {
@@ -1575,7 +1581,7 @@
       "income": 17291.08,
       "bofa_income": 17291.08,
       "td_income": 0,
-      "outflows": 4533.18,
+      "outflows": 5038.51,
       "xoom": 0,
       "investments": 0
     }
@@ -9015,13 +9021,13 @@
         "Entertainment": 97.63,
         "Healthcare": 211.25999999999996,
         "Insurance": 265.9,
-        "Shopping": 1022.6,
+        "Gas/Travel": 612.51,
+        "Shopping": 1036.44,
         "Restaurants": 204.29,
         "Groceries": 708.41,
-        "Gas/Travel": 121.02,
         "Refund": -75.98
       },
-      "total": 4533.18,
+      "total": 5038.509999999999,
       "transactions": [
         {
           "id": "YDE1KKBbaLt1rwnmzMa3hLnPR4A1mqCzNJDn8",
@@ -9129,6 +9135,34 @@
           "category": "Tech/Subs",
           "city": null,
           "state": null,
+          "bank": "BofA",
+          "account_id": "jJEy77qLQxHNznaqxjJAhmEBM05B06iRRwaZd",
+          "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "id": "m5EAOOyXQZtYzNBAmw6AU04aMYny8ntBwRDrY",
+          "date": "11-27",
+          "desc": "Tropicana Atlantic City",
+          "amount": 2.5,
+          "category": "Gas/Travel",
+          "city": "Atlantic City",
+          "state": "NJ",
+          "bank": "BofA",
+          "account_id": "jJEy77qLQxHNznaqxjJAhmEBM05B06iRRwaZd",
+          "mask": "7309",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "id": "66JR00d9voCrzkZnvxbntPy5rXxnoxFwBqo0d",
+          "date": "11-27",
+          "desc": "Tropicana Atlantic City",
+          "amount": 488.99,
+          "category": "Gas/Travel",
+          "city": "Atlantic City",
+          "state": "NJ",
           "bank": "BofA",
           "account_id": "jJEy77qLQxHNznaqxjJAhmEBM05B06iRRwaZd",
           "mask": "7309",
@@ -9647,6 +9681,20 @@
           "category": "Entertainment",
           "city": null,
           "state": "TN",
+          "bank": "Wells Fargo",
+          "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
+          "mask": "9762",
+          "pending": false,
+          "refund": false
+        },
+        {
+          "id": "V45azrwOaPH0L6oooqQDCpLzYzDk5DU4MOOyV",
+          "date": "11-26",
+          "desc": "Amazon",
+          "amount": 13.84,
+          "category": "Shopping",
+          "city": null,
+          "state": null,
           "bank": "Wells Fargo",
           "account_id": "wry0agwK05I7rpdddQjYh4nQ4mj376tweAYXM",
           "mask": "9762",
@@ -27586,34 +27634,34 @@
         "other_in": 0
       },
       "spent": {
-        "total": 11604.53,
-        "purchases": 4484.16,
+        "total": 12516.94,
+        "purchases": 4989.49,
         "refunds": 75.98,
         "loans": 4540.74,
         "fees": 108.25,
         "zelle_out": 155,
         "other_out": 0,
-        "india": 2392.36
+        "india": 2799.44
       },
       "moved": {
         "invested": 100
       },
       "internal": {
-        "count": 19,
-        "total": 10430.6
+        "count": 24,
+        "total": 12472.59
       },
       "by_category": {
         "Bills & utilities": 1047.98,
-        "Sent to India": 2392.36,
+        "Sent to India": 2799.44,
         "Entertainment": 97.63,
         "Tech/Subs": 16.45,
         "Healthcare": 211.26,
         "Insurance": 265.9,
-        "Shopping": 897.6,
+        "Gas/Travel": 612.51,
+        "Shopping": 911.44,
         "Kids": 834.2,
         "Restaurants": 183.71,
         "Groceries": 708.41,
-        "Gas/Travel": 121.02,
         "AI tools": 100,
         "Zelle to people": 155
       },
@@ -28476,6 +28524,15 @@
           "k": "2776"
         },
         {
+          "id": "V45azrwOaPH0L6oooqQDCpLzYzDk5DU4MOOyV",
+          "d": "11-26",
+          "n": "Amazon",
+          "a": 13.84,
+          "g": "Shopping",
+          "b": "Wells Fargo",
+          "k": "9762"
+        },
+        {
           "id": "rmOx5015oeI3Q3qxrKybcnOqYJRVgBHV01XEO",
           "d": "11-26",
           "n": "Openart Ai",
@@ -28483,6 +28540,42 @@
           "g": "Entertainment",
           "b": "Robinhood",
           "k": "1345"
+        },
+        {
+          "id": "m5EAOOyXQZtYzNBAmw6AU04aMYny8ntBwRDrY",
+          "d": "11-27",
+          "n": "Tropicana Atlantic City",
+          "a": 2.5,
+          "g": "Gas/Travel",
+          "b": "BofA",
+          "k": "7309"
+        },
+        {
+          "id": "d0pD88wqzvH5wmbAv38AfJnDbQgdkgUKmk30j",
+          "d": "11-27",
+          "n": "XOOM DES:DEBIT O ID:XXXXXXXXXX48302 INDN:LOGANATHA",
+          "a": 104.29,
+          "g": "Sent to India",
+          "b": "BofA",
+          "k": "7309"
+        },
+        {
+          "id": "wwMA66NxQ3tx4w1rEKkrfbkNoQJvRJtKnO6dO",
+          "d": "11-27",
+          "n": "XOOM DES:DEBIT O ID:XXXXXXXXXX35461 INDN:LOGANATHA",
+          "a": 302.79,
+          "g": "Sent to India",
+          "b": "BofA",
+          "k": "7309"
+        },
+        {
+          "id": "66JR00d9voCrzkZnvxbntPy5rXxnoxFwBqo0d",
+          "d": "11-27",
+          "n": "Tropicana Atlantic City",
+          "a": 488.99,
+          "g": "Gas/Travel",
+          "b": "BofA",
+          "k": "7309"
         }
       ],
       "tx_moved": [
@@ -28496,69 +28589,11 @@
           "k": "7309"
         }
       ],
-      "days": 27,
+      "days": 28,
       "days_in_month": 30
     }
   },
   "cards": [
-    {
-      "bank": "Wells Fargo",
-      "nickname": "wf",
-      "name": "WELLS FARGO ACTIVE CASH VISA CARD ...9762",
-      "mask": "9762",
-      "balance": 444.02,
-      "limit": 3000,
-      "payments": [
-        {
-          "date": "2026-11-23",
-          "amount": 2629.04,
-          "pending": false
-        },
-        {
-          "date": "2026-11-23",
-          "amount": 33.99,
-          "pending": false
-        },
-        {
-          "date": "2026-11-23",
-          "amount": 41.99,
-          "pending": false
-        },
-        {
-          "date": "2026-11-22",
-          "amount": 600,
-          "pending": false
-        },
-        {
-          "date": "2026-11-08",
-          "amount": 500,
-          "pending": false
-        },
-        {
-          "date": "2026-10-27",
-          "amount": 1210,
-          "pending": false
-        },
-        {
-          "date": "2026-10-05",
-          "amount": 384.23,
-          "pending": false
-        },
-        {
-          "date": "2026-09-30",
-          "amount": 18.76,
-          "pending": false
-        }
-      ],
-      "source": "estimated",
-      "due_date": "2026-11-27",
-      "due_basis": "statement closed ~2026-11-02 (interest posted) + 25 days",
-      "due_estimated": true,
-      "statement_date": "2026-11-02",
-      "statement_date_estimated": true,
-      "paid_since_statement": 3805.02,
-      "remaining_due": 444.02
-    },
     {
       "bank": "BofA",
       "nickname": "wifebofa",
@@ -28734,7 +28769,7 @@
       "nickname": "wf",
       "name": "WELLS FARGO REFLECT VISA CARD ...8036",
       "mask": "8036",
-      "balance": 1.99,
+      "balance": 0,
       "limit": 1000,
       "payments": [
         {
@@ -28775,7 +28810,65 @@
       "statement_date": "2026-11-25",
       "statement_date_estimated": true,
       "paid_since_statement": 0,
-      "remaining_due": 1.99
+      "remaining_due": 0
+    },
+    {
+      "bank": "Wells Fargo",
+      "nickname": "wf",
+      "name": "WELLS FARGO ACTIVE CASH VISA CARD ...9762",
+      "mask": "9762",
+      "balance": 457.86,
+      "limit": 3000,
+      "payments": [
+        {
+          "date": "2026-11-23",
+          "amount": 2629.04,
+          "pending": false
+        },
+        {
+          "date": "2026-11-23",
+          "amount": 33.99,
+          "pending": false
+        },
+        {
+          "date": "2026-11-23",
+          "amount": 41.99,
+          "pending": false
+        },
+        {
+          "date": "2026-11-22",
+          "amount": 600,
+          "pending": false
+        },
+        {
+          "date": "2026-11-08",
+          "amount": 500,
+          "pending": false
+        },
+        {
+          "date": "2026-10-27",
+          "amount": 1210,
+          "pending": false
+        },
+        {
+          "date": "2026-10-05",
+          "amount": 384.23,
+          "pending": false
+        },
+        {
+          "date": "2026-09-30",
+          "amount": 18.76,
+          "pending": false
+        }
+      ],
+      "source": "estimated",
+      "due_date": "2026-12-27",
+      "due_basis": "statement closed ~2026-11-02 (interest posted) + 25 days",
+      "due_estimated": true,
+      "statement_date": "2026-11-02",
+      "statement_date_estimated": true,
+      "paid_since_statement": 3805.02,
+      "remaining_due": 457.86
     },
     {
       "bank": "Discover",
@@ -28801,8 +28894,8 @@
       "hidden_at": "2026-11-21T22:17:39.649Z"
     }
   ],
-  "generated_at": "2026-11-27T23:01:44.085Z",
-  "rebuilt_at": "2026-11-27T23:01:44.722Z",
+  "generated_at": "2026-11-28T11:01:41.058Z",
+  "rebuilt_at": "2026-11-28T11:01:41.681Z",
   "source": "plaid_realtime",
   "statement_count": "8 live accounts",
   "sync_status": {
@@ -28830,10 +28923,10 @@
           "7309",
           "8206"
         ],
-        "txns": 243,
+        "txns": 251,
         "pages": 1,
         "truncated": false,
-        "last_txn": "2026-11-27"
+        "last_txn": "2026-11-28"
       },
       {
         "nickname": "wf",
@@ -28845,10 +28938,10 @@
           "8036",
           "9762"
         ],
-        "txns": 645,
+        "txns": 647,
         "pages": 2,
         "truncated": false,
-        "last_txn": "2026-11-25"
+        "last_txn": "2026-11-27"
       },
       {
         "nickname": "pnc",
@@ -28858,10 +28951,10 @@
         "masks": [
           "5961"
         ],
-        "txns": 15,
+        "txns": 16,
         "pages": 1,
         "truncated": false,
-        "last_txn": "2026-11-11"
+        "last_txn": "2026-11-28"
       },
       {
         "nickname": "td",
@@ -28887,10 +28980,10 @@
           "5677",
           "9715"
         ],
-        "txns": 388,
+        "txns": 390,
         "pages": 1,
         "truncated": false,
-        "last_txn": "2026-11-26"
+        "last_txn": "2026-11-28"
       },
       {
         "nickname": "zillow",
@@ -28940,16 +29033,16 @@
       "pnc",
       "zillow",
       "td",
-      "wifebofa",
-      "bofa",
       "robin",
-      "wf"
+      "wf",
+      "wifebofa",
+      "bofa"
     ],
     "refresh_errors": {
       "discover": "PRODUCTS_NOT_SUPPORTED"
     },
     "cached_balances": [],
-    "txns_fetched": 1436,
+    "txns_fetched": 1449,
     "liabilities_cards": 0,
     "liabilities_errors": {
       "bofa": "ADDITIONAL_CONSENT_REQUIRED",
@@ -28958,7 +29051,7 @@
       "discover": "ADDITIONAL_CONSENT_REQUIRED",
       "robin": "ADDITIONAL_CONSENT_REQUIRED"
     },
-    "duplicates_removed": 24,
+    "duplicates_removed": 26,
     "duplicate_sample": [
       {
         "mask": "1739",
